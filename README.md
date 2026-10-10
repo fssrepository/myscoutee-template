@@ -16,6 +16,50 @@ infrastructure into a reusable project template.
 **Current status:** repository groundwork. The template implementation, setup
 instructions and runnable examples have not been published here yet.
 
+## Target and local repository layout
+
+The deliverable is a complete minimal counterpart of `myscoutee-backend`, with
+its own backend/frontend shell, development workflow, versioned releases,
+Debian/Netcup installation, KVM lab and getting started guide/PDF. Backend
+separation is being verified in MyScoutee first; this checkout is not runnable
+yet.
+
+The template retains the backend structure and operational workflows, with smaller
+domain implementations where appropriate. Minimal screens and seed data must not
+discard useful generic schemas or extension points: a developer should be able
+to build a larger application on the same foundations. Simplifications require
+review of existing dependencies and the cost of restoring the capability later.
+MyScoutee virtual-company functionality
+(Registry enrollment, network accounting and global identity) is excluded; generic
+bootstrap, deployment configuration, TLS and software updates remain part of the
+foundation.
+
+Backend capabilities and screens are selected separately. The minimal template
+centers on a member SmartList and chat, with the member data structures they need.
+It retains native identity behavior, including REAL/DEMO sessions, Firebase,
+login/logout and account lifecycle, backed by persisted data and a small seed.
+MyScoutee event, matchmaking, payment and Registry models are excluded.
+
+Retain group/workspace scoping where identity and chat need it, initially with a
+minimal seeded group. The shell includes an avatar menu with a small profile and
+image editor, guide/notification access, minimal settings and the real consent
+flow, including versioned documents, persisted acceptance and enforcement.
+
+The minimal template
+has no administration screen by default, while required account-deletion jobs,
+durable state, schemas and minimal project-owned seed data remain. Help/guide
+storage can be retained without its management UI. The operator installation
+and configuration surface is part of the foundation. Omitting a screen must not
+silently remove the background behavior required by the remaining application.
+
+`frontend` is a Git submodule backed for now by the local repository
+`/home/raxim/workspace/myscoutee-template-frontend`. Its `components` submodule
+uses the existing remote `https://github.com/fssrepository/myscoutee-components.git`.
+The local frontend may receive its own remote later; update its origin and the
+parent's `git submodule set-url frontend <repository-url>` together at that point.
+The current absolute local URL is groundwork for this workspace, not a portable
+published template release.
+
 ## License — free to reuse with required credit
 
 The repository's original code and documentation are licensed under
