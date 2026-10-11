@@ -158,5 +158,349 @@
     "group": "fields",
     "i18nKey": "guide.landing.setup.install",
     "order": 4
+  },
+  {
+    "_id": "profile.integrations--integration-base-url",
+    "id": "integration-base-url",
+    "screenKey": "profile.integrations",
+    "group": "card",
+    "i18nKey": "guide.profile.integrations.integration-base-url",
+    "order": 1
+  },
+  {
+    "_id": "profile.integrations--integration-tokens",
+    "id": "integration-tokens",
+    "screenKey": "profile.integrations",
+    "group": "card",
+    "i18nKey": "guide.profile.integrations.integration-tokens",
+    "order": 2
+  },
+  {
+    "_id": "profile.integrations--generate-integration-token",
+    "id": "generate-integration-token",
+    "screenKey": "profile.integrations",
+    "group": "menus",
+    "i18nKey": "guide.profile.integrations.generate-integration-token",
+    "order": 3
+  },
+  {
+    "_id": "profile.integrations--integration-token-row",
+    "id": "integration-token-row",
+    "screenKey": "profile.integrations",
+    "group": "card",
+    "i18nKey": "guide.profile.integrations.integration-token-row",
+    "order": 4
+  },
+  {
+    "_id": "profile.integrations--integration-token-actions",
+    "id": "integration-token-actions",
+    "screenKey": "profile.integrations",
+    "group": "menus",
+    "i18nKey": "guide.profile.integrations.integration-token-actions",
+    "order": 5
+  },
+  {
+    "_id": "profile.integrations--mcp-purpose",
+    "id": "mcp-purpose",
+    "screenKey": "profile.integrations",
+    "group": "fields",
+    "i18nKey": "guide.profile.integrations.mcp-purpose",
+    "order": 6
+  },
+  {
+    "_id": "profile.integrations--mcp-url",
+    "id": "mcp-url",
+    "screenKey": "profile.integrations",
+    "group": "fields",
+    "i18nKey": "guide.profile.integrations.mcp-url",
+    "order": 7
+  },
+  {
+    "_id": "profile.integrations--mcp-permissions",
+    "id": "mcp-permissions",
+    "screenKey": "profile.integrations",
+    "group": "fields",
+    "i18nKey": "guide.profile.integrations.mcp-permissions",
+    "order": 8
+  },
+  {
+    "_id": "profile.integrations--mcp-connection",
+    "id": "mcp-connection",
+    "screenKey": "profile.integrations",
+    "group": "fields",
+    "i18nKey": "guide.profile.integrations.mcp-connection",
+    "order": 9
+  },
+  {
+    "_id": "profile.integrations--mcp-connection-actions",
+    "id": "mcp-connection-actions",
+    "screenKey": "profile.integrations",
+    "group": "fields",
+    "i18nKey": "guide.profile.integrations.mcp-connection-actions",
+    "order": 10
+  },
+  {
+    "_id": "profile.integrations--mcp-advanced",
+    "id": "mcp-advanced",
+    "screenKey": "profile.integrations",
+    "group": "fields",
+    "i18nKey": "guide.profile.integrations.mcp-advanced",
+    "order": 11
+  },
+  {
+    "_id": "profile.integrations--integration-help",
+    "id": "integration-help",
+    "screenKey": "profile.integrations",
+    "group": "menus",
+    "i18nKey": "guide.profile.integrations.integration-help",
+    "order": 14
+  },
+  {
+    "_id": "profile.integrations--close",
+    "id": "close",
+    "screenKey": "profile.integrations",
+    "group": "popup",
+    "i18nKey": "guide.profile.integrations.close",
+    "order": 15
+  },
+  {
+    "_id": "profile.integrations--integration-token-access",
+    "id": "integration-token-access",
+    "screenKey": "profile.integrations",
+    "group": "menus",
+    "i18nKey": "guide.profile.integrations.integration-token-access",
+    "order": 23
+  },
+  {
+    "_id": "profile.integrations--mcp-main-access",
+    "id": "mcp-main-access",
+    "screenKey": "profile.integrations",
+    "group": "menus",
+    "i18nKey": "guide.profile.integrations.mcp-main-access",
+    "order": 24
+  },
+  {
+    "_id": "profile.integrations--mcp-client-access",
+    "id": "mcp-client-access",
+    "screenKey": "profile.integrations",
+    "group": "menus",
+    "i18nKey": "guide.profile.integrations.mcp-client-access",
+    "order": 25
+  },
+  {
+    "_id": "profile.integrations--integration-access-save",
+    "id": "integration-access-save",
+    "screenKey": "profile.integrations",
+    "group": "menus",
+    "i18nKey": "guide.profile.integrations.integration-access-save",
+    "order": 26
+  },
+  {
+    "_id": "profile.integration-access--integration-access-level",
+    "id": "integration-access-level",
+    "screenKey": "profile.integration-access",
+    "group": "fields",
+    "i18nKey": "guide.profile.integration-access.integration-access-level",
+    "order": 0
+  },
+  {
+    "_id": "profile.integration-access--integration-access-description",
+    "id": "integration-access-description",
+    "screenKey": "profile.integration-access",
+    "group": "fields",
+    "i18nKey": "guide.profile.integration-access.integration-access-description",
+    "order": 1
+  },
+  {
+    "_id": "profile.integration-access--integration-access-apply",
+    "id": "integration-access-apply",
+    "screenKey": "profile.integration-access",
+    "group": "menus",
+    "i18nKey": "guide.profile.integration-access.integration-access-apply",
+    "order": 2
+  },
+  {
+    "_id": "profile.integration-access--close",
+    "id": "close",
+    "screenKey": "profile.integration-access",
+    "group": "popup",
+    "i18nKey": "guide.profile.integration-access.close",
+    "order": 3
+  },
+  {
+    "_id": "profile.integration-help--integration-help-setup",
+    "id": "integration-help-setup",
+    "screenKey": "profile.integration-help",
+    "group": "card",
+    "i18nKey": "guide.profile.integration-help.integration-help-setup",
+    "order": 0
+  },
+  {
+    "_id": "profile.integration-help--integration-help-levels",
+    "id": "integration-help-levels",
+    "screenKey": "profile.integration-help",
+    "group": "card",
+    "i18nKey": "guide.profile.integration-help.integration-help-levels",
+    "order": 1
+  },
+  {
+    "_id": "profile.integration-help--integration-help-roles",
+    "id": "integration-help-roles",
+    "screenKey": "profile.integration-help",
+    "group": "card",
+    "i18nKey": "guide.profile.integration-help.integration-help-roles",
+    "order": 3
+  },
+  {
+    "_id": "profile.integration-help--integration-help-manual",
+    "id": "integration-help-manual",
+    "screenKey": "profile.integration-help",
+    "group": "card",
+    "i18nKey": "guide.profile.integration-help.integration-help-manual",
+    "order": 4
+  },
+  {
+    "_id": "profile.integration-help--close",
+    "id": "close",
+    "screenKey": "profile.integration-help",
+    "group": "popup",
+    "i18nKey": "guide.profile.integration-help.close",
+    "order": 5
+  },
+  {
+    "_id": "profile.mcp-authorization--mcp-authorize-client",
+    "id": "mcp-authorize-client",
+    "screenKey": "profile.mcp-authorization",
+    "order": 1,
+    "i18nKey": "guide.profile.mcp-authorization.mcp-authorize-client",
+    "group": "form"
+  },
+  {
+    "_id": "profile.mcp-authorization--mcp-authorize-profile",
+    "id": "mcp-authorize-profile",
+    "screenKey": "profile.mcp-authorization",
+    "order": 2,
+    "i18nKey": "guide.profile.mcp-authorization.mcp-authorize-profile",
+    "group": "form"
+  },
+  {
+    "_id": "profile.mcp-authorization--mcp-authorize-access",
+    "id": "mcp-authorize-access",
+    "screenKey": "profile.mcp-authorization",
+    "order": 3,
+    "i18nKey": "guide.profile.mcp-authorization.mcp-authorize-access",
+    "group": "form"
+  },
+  {
+    "_id": "profile.mcp-authorization--mcp-authorize-actions",
+    "id": "mcp-authorize-actions",
+    "screenKey": "profile.mcp-authorization",
+    "order": 4,
+    "i18nKey": "guide.profile.mcp-authorization.mcp-authorize-actions",
+    "group": "form"
+  },
+  {
+    "_id": "profile.mcp-authorization--close",
+    "id": "close",
+    "screenKey": "profile.mcp-authorization",
+    "order": 5,
+    "i18nKey": "guide.profile.mcp-authorization.close",
+    "group": "popup"
+  },
+  {
+    "_id": "profile.mcp-advanced--mcp-client-id",
+    "id": "mcp-client-id",
+    "screenKey": "profile.mcp-advanced",
+    "order": 1,
+    "i18nKey": "guide.profile.mcp-advanced.mcp-client-id",
+    "group": "form"
+  },
+  {
+    "_id": "profile.mcp-advanced--mcp-client-access",
+    "id": "mcp-client-access",
+    "screenKey": "profile.mcp-advanced",
+    "order": 2,
+    "i18nKey": "guide.profile.mcp-advanced.mcp-client-access",
+    "group": "form"
+  },
+  {
+    "_id": "profile.mcp-advanced--mcp-client-secret",
+    "id": "mcp-client-secret",
+    "screenKey": "profile.mcp-advanced",
+    "order": 3,
+    "i18nKey": "guide.profile.mcp-advanced.mcp-client-secret",
+    "group": "form"
+  },
+  {
+    "_id": "profile.mcp-advanced--mcp-manual-keys",
+    "id": "mcp-manual-keys",
+    "screenKey": "profile.mcp-advanced",
+    "order": 4,
+    "i18nKey": "guide.profile.mcp-advanced.mcp-manual-keys",
+    "group": "form"
+  },
+  {
+    "_id": "profile.mcp-advanced--mcp-generate",
+    "id": "mcp-generate",
+    "screenKey": "profile.mcp-advanced",
+    "order": 5,
+    "i18nKey": "guide.profile.mcp-advanced.mcp-generate",
+    "group": "form"
+  },
+  {
+    "_id": "profile.mcp-advanced--mcp-client-revoke",
+    "id": "mcp-client-revoke",
+    "screenKey": "profile.mcp-advanced",
+    "order": 6,
+    "i18nKey": "guide.profile.mcp-advanced.mcp-client-revoke",
+    "group": "form"
+  },
+  {
+    "_id": "profile.mcp-advanced--close",
+    "id": "close",
+    "screenKey": "profile.mcp-advanced",
+    "order": 7,
+    "i18nKey": "guide.profile.mcp-advanced.close",
+    "group": "popup"
+  },
+  {
+    "_id": "profile.mcp-details--mcp-client-id",
+    "id": "mcp-client-id",
+    "screenKey": "profile.mcp-details",
+    "order": 1,
+    "i18nKey": "guide.profile.mcp-details.mcp-client-id",
+    "group": "form"
+  },
+  {
+    "_id": "profile.mcp-details--mcp-client-access",
+    "id": "mcp-client-access",
+    "screenKey": "profile.mcp-details",
+    "order": 2,
+    "i18nKey": "guide.profile.mcp-details.mcp-client-access",
+    "group": "form"
+  },
+  {
+    "_id": "profile.mcp-details--mcp-client-secret",
+    "id": "mcp-client-secret",
+    "screenKey": "profile.mcp-details",
+    "order": 3,
+    "i18nKey": "guide.profile.mcp-details.mcp-client-secret",
+    "group": "form"
+  },
+  {
+    "_id": "profile.mcp-details--mcp-client-callback",
+    "id": "mcp-client-callback",
+    "screenKey": "profile.mcp-details",
+    "order": 4,
+    "i18nKey": "guide.profile.mcp-details.mcp-client-callback",
+    "group": "form"
+  },
+  {
+    "_id": "profile.mcp-details--close",
+    "id": "close",
+    "screenKey": "profile.mcp-details",
+    "order": 5,
+    "i18nKey": "guide.profile.mcp-details.close",
+    "group": "popup"
   }
 ]

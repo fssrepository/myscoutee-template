@@ -205,3 +205,23 @@ an owned authenticated session because the native demo selector intentionally
 omits onboarding profiles. It does not impersonate a real Firebase sign-up.
 Actual provider/push delivery, installed PWA, KVM and matched load comparison
 remain open. Only one frontend compiler and one application stack ran at a time.
+
+## Member API and MCP connection settings — 2026-10-11
+
+Frontend `7c9baee` selects the native settings/store/adapters and consent UI,
+without affiliate or product community fields. Eighteen focused tests pass.
+Local and dev HTTP browser checks cover key/client creation, one-time secrets,
+masked reload, staged permissions, persistence and revocation. HTTP OAuth checks
+also cover blocked access, cancellation, login return, explicit approval, PKCE,
+single-use code and revocation. This qualifies the browser/backend authorization
+boundary, not a complete external ChatGPT/MCP connection.
+See [the evidence](../qualification/evidence/MSC122_TEMPLATE_API_MCP_UI_20261011.json).
+
+Run `e2e/functional/ui/integrations/run.mjs` and `integrations/guide.mjs` with
+`--local` or the explicit template Mongo fixture variables documented above.
+`integrations/authorization.mjs` requires HTTP and starts only a temporary
+loopback OAuth callback, not another application stack. Fixture keys, grants,
+registered clients and actors are removed after the run. The guide runner can
+save desktop/mobile screenshots through `E2E_SCREENSHOT_DIR`; it creates no keys.
+Native frontend `c90a5b1f` also repairs the permission button's zero-sized guide
+anchor with one CSS declaration, verified using the selected component.

@@ -3205,10 +3205,10 @@
     {
       "path": "frontend/src/app/shared/core/local/source/entity/user.entity.ts",
       "upstreamSha256": "5746020fad547e4160dec09ebd06cef5648739f649090369c5c99a267fb1e6ac",
-      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
-      "adaptation": "Selected user/device record and table shape using the minimal native UserDto members.",
-      "sourceRevision": "e3eff359c",
-      "sourceFrontendRevision": "1af20e0b"
+      "purpose": "Selected native API/MCP settings, local persistence, consent route and contextual guides for the minimal template.",
+      "adaptation": "Retain native API/MCP contracts, stores and adapter behavior; omit affiliate/payment/product fields and text. Compose member entry/guide contexts with the minimal shell. Operator configuration record contains deployment settings only.",
+      "sourceRevision": "f8a1b83b6",
+      "sourceFrontendRevision": "c90a5b1f"
     },
     {
       "path": "frontend/src/app/shared/core/local/source/repositories/device-registrations.repository.ts",
@@ -3261,18 +3261,18 @@
     {
       "path": "frontend/src/assets/i18n/en.json",
       "upstreamSha256": "e583e163ea2e74507f91cd8d2f8c3d6c412d4475d48f830a675f22ed074ec410",
-      "sourceRevision": "5a639775e",
-      "sourceFrontendRevision": "bf4760f9",
-      "purpose": "Native personal/support chat protocol, local persistence, HTTP/WebSocket transport, shared memory table or scoped fixture transport.",
-      "adaptation": "Select the personal/support chat dependency closure and minimal template composition. Omit event/group/campaign/asset navigation models, product metrics and unselected account fields; retain message IDs, ownership, paging, read receipts and reconnect behavior. Template seed IDs/data replace product actors."
+      "sourceRevision": "f8a1b83b6",
+      "sourceFrontendRevision": "c90a5b1f",
+      "purpose": "Selected native API/MCP settings, local persistence, consent route and contextual guides for the minimal template.",
+      "adaptation": "Retain native API/MCP contracts, stores and adapter behavior; omit affiliate/payment/product fields and text. Compose member entry/guide contexts with the minimal shell. Operator configuration record contains deployment settings only."
     },
     {
       "path": "frontend/src/assets/i18n/hu.json",
       "upstreamSha256": "cb9ab4093aa0c0b62b114efc9a774dc9d9193c28edbb1cba5bbede131320e902",
-      "sourceRevision": "5a639775e",
-      "sourceFrontendRevision": "bf4760f9",
-      "purpose": "Native personal/support chat protocol, local persistence, HTTP/WebSocket transport, shared memory table or scoped fixture transport.",
-      "adaptation": "Select the personal/support chat dependency closure and minimal template composition. Omit event/group/campaign/asset navigation models, product metrics and unselected account fields; retain message IDs, ownership, paging, read receipts and reconnect behavior. Template seed IDs/data replace product actors."
+      "sourceRevision": "f8a1b83b6",
+      "sourceFrontendRevision": "c90a5b1f",
+      "purpose": "Selected native API/MCP settings, local persistence, consent route and contextual guides for the minimal template.",
+      "adaptation": "Retain native API/MCP contracts, stores and adapter behavior; omit affiliate/payment/product fields and text. Compose member entry/guide contexts with the minimal shell. Operator configuration record contains deployment settings only."
     },
     {
       "path": "frontend/src/environments/environment.dev.ts",
@@ -3373,10 +3373,10 @@
     {
       "path": "frontend/src/app/app.routes.ts",
       "upstreamSha256": "1322cad5960f79b629885184390cf3e54252bc1f2126dd4f21e00ab0fbd63e6a",
-      "purpose": "Native guide, document bootstrap and shared popup geometry dependency.",
-      "adaptation": "Reuse the existing public-content resolver for entry guides, privacy and terms in local mode; select retained template routes and role/session guards.",
-      "sourceRevision": "5a639775e",
-      "sourceFrontendRevision": "bf4760f9"
+      "purpose": "Selected native API/MCP settings, local persistence, consent route and contextual guides for the minimal template.",
+      "adaptation": "Retain native API/MCP contracts, stores and adapter behavior; omit affiliate/payment/product fields and text. Compose member entry/guide contexts with the minimal shell. Operator configuration record contains deployment settings only.",
+      "sourceRevision": "f8a1b83b6",
+      "sourceFrontendRevision": "c90a5b1f"
     },
     {
       "path": "frontend/src/app/entry/components/entry-firebase-auth-popup/entry-firebase-auth-popup.component.html",
@@ -3477,10 +3477,10 @@
     {
       "path": "frontend/src/app/shared/core/common/app-static-data.ts",
       "upstreamSha256": "29f369e3f94786f536e4f8c4509540684d1d4f8cd48515844cb0ee5d340ed445",
-      "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
-      "adaptation": "Select template guide/content languages and retained memory tables. Preserve native notification persistence and the native contacts chat-access persistence rule; use template-owned content and catalogue data.",
-      "sourceRevision": "5a639775e",
-      "sourceFrontendRevision": "bf4760f9"
+      "purpose": "Selected native API/MCP settings, local persistence, consent route and contextual guides for the minimal template.",
+      "adaptation": "Retain native API/MCP contracts, stores and adapter behavior; omit affiliate/payment/product fields and text. Compose member entry/guide contexts with the minimal shell. Operator configuration record contains deployment settings only.",
+      "sourceRevision": "f8a1b83b6",
+      "sourceFrontendRevision": "c90a5b1f"
     },
     {
       "path": "frontend/src/app/shared/core/common/deployment-privacy-token.resolver.ts",
@@ -3541,10 +3541,10 @@
     {
       "path": "frontend/src/app/shared/core/local/seed/data/help-center-guide-fields.json",
       "upstreamSha256": "c9c462c0617893444853ed891a1c9d9b34e6be5c820eed66fad89e1e24440ba0",
-      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
-      "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
-      "sourceRevision": "bfc9a167c",
-      "sourceFrontendRevision": "5fbf3e62"
+      "purpose": "Selected native API/MCP settings, local persistence, consent route and contextual guides for the minimal template.",
+      "adaptation": "Retain native API/MCP contracts, stores and adapter behavior; omit affiliate/payment/product fields and text. Compose member entry/guide contexts with the minimal shell. Operator configuration record contains deployment settings only.",
+      "sourceRevision": "f8a1b83b6",
+      "sourceFrontendRevision": "c90a5b1f"
     },
     {
       "path": "frontend/src/app/shared/core/local/seed/repositories/help-center-seed.repository.ts",
@@ -3605,10 +3605,10 @@
     {
       "path": "frontend/src/app/shared/core/local/source/mappers/user.mapper.ts",
       "upstreamSha256": "5eaa7b296e6f7335b5294bb5117dc2900a81b1858c13d29bafc07b109719e233",
-      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
-      "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
-      "sourceRevision": "bfc9a167c",
-      "sourceFrontendRevision": "5fbf3e62"
+      "purpose": "Selected native API/MCP settings, local persistence, consent route and contextual guides for the minimal template.",
+      "adaptation": "Retain native API/MCP contracts, stores and adapter behavior; omit affiliate/payment/product fields and text. Compose member entry/guide contexts with the minimal shell. Operator configuration record contains deployment settings only.",
+      "sourceRevision": "f8a1b83b6",
+      "sourceFrontendRevision": "c90a5b1f"
     },
     {
       "path": "frontend/src/app/shared/core/local/source/repositories/country-de.generated.ts",
@@ -4457,6 +4457,158 @@
       "sourceFrontendRevision": "bf4760f9",
       "purpose": "Native device permissions, location synchronization and optional PWA installation.",
       "adaptation": "Supply the existing components matchMedia mock and current-language contract in the template unit environment."
+    },
+    {
+      "path": "frontend/src/app/profile/components/integration-settings-popup/integration-access-button.component.scss",
+      "upstreamSha256": "11e6e4d8ce8071da2be34b48bf133c5c050db0e422d80ca82675fffb604e10e7",
+      "sourceRevision": "f8a1b83b6",
+      "sourceFrontendRevision": "c90a5b1f",
+      "purpose": "Selected native API/MCP settings, local persistence, consent route and contextual guides for the minimal template.",
+      "adaptation": null
+    },
+    {
+      "path": "frontend/src/app/profile/components/integration-settings-popup/integration-access-button.component.ts",
+      "upstreamSha256": "0d39b1f4373f0694433dfb53ecf1e3a4b5fcf0a0582d2d80b01d64bd6bfcabb2",
+      "sourceRevision": "f8a1b83b6",
+      "sourceFrontendRevision": "c90a5b1f",
+      "purpose": "Selected native API/MCP settings, local persistence, consent route and contextual guides for the minimal template.",
+      "adaptation": null
+    },
+    {
+      "path": "frontend/src/app/profile/components/integration-settings-popup/integration-settings-popup.component.html",
+      "upstreamSha256": "795245730d8847e5fc4933ab80f4dfdfeefdbe37cc0288bda51ee4b1485ef114",
+      "sourceRevision": "f8a1b83b6",
+      "sourceFrontendRevision": "c90a5b1f",
+      "purpose": "Selected native API/MCP settings, local persistence, consent route and contextual guides for the minimal template.",
+      "adaptation": "Retain native API/MCP contracts, stores and adapter behavior; omit affiliate/payment/product fields and text. Compose member entry/guide contexts with the minimal shell. Operator configuration record contains deployment settings only."
+    },
+    {
+      "path": "frontend/src/app/profile/components/integration-settings-popup/integration-settings-popup.component.scss",
+      "upstreamSha256": "f3aad3df650568fef11ac03bae1451a61a097061fecdbb86328a52045cccea67",
+      "sourceRevision": "f8a1b83b6",
+      "sourceFrontendRevision": "c90a5b1f",
+      "purpose": "Selected native API/MCP settings, local persistence, consent route and contextual guides for the minimal template.",
+      "adaptation": "Retain native API/MCP contracts, stores and adapter behavior; omit affiliate/payment/product fields and text. Compose member entry/guide contexts with the minimal shell. Operator configuration record contains deployment settings only."
+    },
+    {
+      "path": "frontend/src/app/profile/components/integration-settings-popup/integration-settings-popup.component.ts",
+      "upstreamSha256": "bbdc6250f782f0c63d05453d2864b6bb98881462a42a2018e5229aa9bcb4ebc4",
+      "sourceRevision": "f8a1b83b6",
+      "sourceFrontendRevision": "c90a5b1f",
+      "purpose": "Selected native API/MCP settings, local persistence, consent route and contextual guides for the minimal template.",
+      "adaptation": "Retain native API/MCP contracts, stores and adapter behavior; omit affiliate/payment/product fields and text. Compose member entry/guide contexts with the minimal shell. Operator configuration record contains deployment settings only."
+    },
+    {
+      "path": "frontend/src/app/profile/components/integration-settings-popup/mcp-authorization.component.scss",
+      "upstreamSha256": "6ea454a1322c459e41d49f0664a8f5d96e0852f8412f59560b9ca4cf62a5cf06",
+      "sourceRevision": "f8a1b83b6",
+      "sourceFrontendRevision": "c90a5b1f",
+      "purpose": "Selected native API/MCP settings, local persistence, consent route and contextual guides for the minimal template.",
+      "adaptation": null
+    },
+    {
+      "path": "frontend/src/app/profile/components/integration-settings-popup/mcp-authorization.component.ts",
+      "upstreamSha256": "1e9567360c290075b0d3492ac4e00a8099f31f3e820aa182efd4fbddd0438a27",
+      "sourceRevision": "f8a1b83b6",
+      "sourceFrontendRevision": "c90a5b1f",
+      "purpose": "Selected native API/MCP settings, local persistence, consent route and contextual guides for the minimal template.",
+      "adaptation": "Retain native API/MCP contracts, stores and adapter behavior; omit affiliate/payment/product fields and text. Compose member entry/guide contexts with the minimal shell. Operator configuration record contains deployment settings only."
+    },
+    {
+      "path": "frontend/src/app/profile/components/integration-settings-popup/mcp-connections.component.ts",
+      "upstreamSha256": "a2e0641ebab90e826dc2d4a919f13061506f2f6308d9e4e2a1c49c32ef64abb4",
+      "sourceRevision": "f8a1b83b6",
+      "sourceFrontendRevision": "c90a5b1f",
+      "purpose": "Selected native API/MCP settings, local persistence, consent route and contextual guides for the minimal template.",
+      "adaptation": null
+    },
+    {
+      "path": "frontend/src/app/shared/core/base/services/integration.service.ts",
+      "upstreamSha256": "07a8bc63467dccd6264b21290124c5d31755a4d3bdd867660bf4a8af87fcb327",
+      "sourceRevision": "f8a1b83b6",
+      "sourceFrontendRevision": "c90a5b1f",
+      "purpose": "Selected native API/MCP settings, local persistence, consent route and contextual guides for the minimal template.",
+      "adaptation": "Retain native API/MCP contracts, stores and adapter behavior; omit affiliate/payment/product fields and text. Compose member entry/guide contexts with the minimal shell. Operator configuration record contains deployment settings only."
+    },
+    {
+      "path": "frontend/src/app/shared/core/contracts/integration.interface.ts",
+      "upstreamSha256": "cad413d3de950b9d0ecc15fc92ea46c251195e0fb17b9bb2c5137cf5a8fc4742",
+      "sourceRevision": "f8a1b83b6",
+      "sourceFrontendRevision": "c90a5b1f",
+      "purpose": "Selected native API/MCP settings, local persistence, consent route and contextual guides for the minimal template.",
+      "adaptation": "Retain native API/MCP contracts, stores and adapter behavior; omit affiliate/payment/product fields and text. Compose member entry/guide contexts with the minimal shell. Operator configuration record contains deployment settings only."
+    },
+    {
+      "path": "frontend/src/app/shared/core/contracts/operator.interface.ts",
+      "upstreamSha256": "e56b1bd6232786733bd2f045a1e7f190c974ef43d664c89a7c6a9adea5f6223f",
+      "sourceRevision": "f8a1b83b6",
+      "sourceFrontendRevision": "c90a5b1f",
+      "purpose": "Selected native API/MCP settings, local persistence, consent route and contextual guides for the minimal template.",
+      "adaptation": "Retain native API/MCP contracts, stores and adapter behavior; omit affiliate/payment/product fields and text. Compose member entry/guide contexts with the minimal shell. Operator configuration record contains deployment settings only."
+    },
+    {
+      "path": "frontend/src/app/shared/core/http/services/integration.service.ts",
+      "upstreamSha256": "162507d1723faec0d5be6188663c63ea2f5897e44e45903d0abc134300977f16",
+      "sourceRevision": "f8a1b83b6",
+      "sourceFrontendRevision": "c90a5b1f",
+      "purpose": "Selected native API/MCP settings, local persistence, consent route and contextual guides for the minimal template.",
+      "adaptation": "Retain native API/MCP contracts, stores and adapter behavior; omit affiliate/payment/product fields and text. Compose member entry/guide contexts with the minimal shell. Operator configuration record contains deployment settings only."
+    },
+    {
+      "path": "frontend/src/app/shared/core/local/source/entity/integration.entity.ts",
+      "upstreamSha256": "175680b7891166f9c6477871c11e8d4f42bb95914bd4e6298395b675b1d0a2e1",
+      "sourceRevision": "f8a1b83b6",
+      "sourceFrontendRevision": "c90a5b1f",
+      "purpose": "Selected native API/MCP settings, local persistence, consent route and contextual guides for the minimal template.",
+      "adaptation": null
+    },
+    {
+      "path": "frontend/src/app/shared/core/local/source/entity/operator.entity.ts",
+      "upstreamSha256": "66a3bc36717705b56f5f4485e820f44f21487c32a1586102339d4123a94056fc",
+      "sourceRevision": "f8a1b83b6",
+      "sourceFrontendRevision": "c90a5b1f",
+      "purpose": "Selected native API/MCP settings, local persistence, consent route and contextual guides for the minimal template.",
+      "adaptation": "Retain native API/MCP contracts, stores and adapter behavior; omit affiliate/payment/product fields and text. Compose member entry/guide contexts with the minimal shell. Operator configuration record contains deployment settings only."
+    },
+    {
+      "path": "frontend/src/app/shared/core/local/source/repositories/integration.repository.spec.ts",
+      "upstreamSha256": "4b88a1a7c45b6689034b03d8abb7f0c3a0934c0d2de1b6e460b28a3cf82b3155",
+      "sourceRevision": "f8a1b83b6",
+      "sourceFrontendRevision": "c90a5b1f",
+      "purpose": "Selected native API/MCP settings, local persistence, consent route and contextual guides for the minimal template.",
+      "adaptation": "Retain native API/MCP contracts, stores and adapter behavior; omit affiliate/payment/product fields and text. Compose member entry/guide contexts with the minimal shell. Operator configuration record contains deployment settings only."
+    },
+    {
+      "path": "frontend/src/app/shared/core/local/source/repositories/integration.repository.ts",
+      "upstreamSha256": "9f71e14ceddca2904e54b6c2aa5e81b0dad07fdfed6f1fa4cf814c13ac590b0d",
+      "sourceRevision": "f8a1b83b6",
+      "sourceFrontendRevision": "c90a5b1f",
+      "purpose": "Selected native API/MCP settings, local persistence, consent route and contextual guides for the minimal template.",
+      "adaptation": "Retain native API/MCP contracts, stores and adapter behavior; omit affiliate/payment/product fields and text. Compose member entry/guide contexts with the minimal shell. Operator configuration record contains deployment settings only."
+    },
+    {
+      "path": "frontend/src/app/shared/core/local/source/services/integration.service.ts",
+      "upstreamSha256": "bdc895d6adcfc0e155f00b5e5ed25174a0b87a901294fbd4f141468f4cbf1dce",
+      "sourceRevision": "f8a1b83b6",
+      "sourceFrontendRevision": "c90a5b1f",
+      "purpose": "Selected native API/MCP settings, local persistence, consent route and contextual guides for the minimal template.",
+      "adaptation": "Retain native API/MCP contracts, stores and adapter behavior; omit affiliate/payment/product fields and text. Compose member entry/guide contexts with the minimal shell. Operator configuration record contains deployment settings only."
+    },
+    {
+      "path": "frontend/src/app/shared/ui/context/stores/profile/integration-settings.store.spec.ts",
+      "upstreamSha256": "7b6b6ce1f1dc7f371a9e3f22f16143411dab29681b9723154126b3aa8ef65527",
+      "sourceRevision": "f8a1b83b6",
+      "sourceFrontendRevision": "c90a5b1f",
+      "purpose": "Selected native API/MCP settings, local persistence, consent route and contextual guides for the minimal template.",
+      "adaptation": "Retain native API/MCP contracts, stores and adapter behavior; omit affiliate/payment/product fields and text. Compose member entry/guide contexts with the minimal shell. Operator configuration record contains deployment settings only."
+    },
+    {
+      "path": "frontend/src/app/shared/ui/context/stores/profile/integration-settings.store.ts",
+      "upstreamSha256": "4c7507f7240d5f90f6cc308426d96dbd9705d71e9c8823ae0190c30412a94ae5",
+      "sourceRevision": "f8a1b83b6",
+      "sourceFrontendRevision": "c90a5b1f",
+      "purpose": "Selected native API/MCP settings, local persistence, consent route and contextual guides for the minimal template.",
+      "adaptation": null
     }
   ],
   "templateOwnedFeatures": [

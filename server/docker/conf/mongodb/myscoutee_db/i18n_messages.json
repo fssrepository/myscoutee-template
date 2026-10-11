@@ -12106,5 +12106,2081 @@
     "key": "This account is not active.",
     "lang": "hu",
     "value": "Ez a fiók nem aktív."
+  },
+  {
+    "_id": "i18n-message-en-integration-access-apply",
+    "key": "integration.access.apply",
+    "lang": "en",
+    "value": "Apply selection"
+  },
+  {
+    "_id": "i18n-message-en-integration-access-blocked",
+    "key": "integration.access.blocked",
+    "lang": "en",
+    "value": "Blocked"
+  },
+  {
+    "_id": "i18n-message-en-integration-access-blocked-description",
+    "key": "integration.access.blocked.description",
+    "lang": "en",
+    "value": "This connection cannot read or write personal or workspace data."
+  },
+  {
+    "_id": "i18n-message-en-integration-access-blocked-open",
+    "key": "integration.access.blocked.open",
+    "lang": "en",
+    "value": "Access: blocked. Change permissions."
+  },
+  {
+    "_id": "i18n-message-en-integration-access-conflict",
+    "key": "integration.access.conflict",
+    "lang": "en",
+    "value": "The connection settings changed meanwhile. Close and reopen this window, then apply your changes again."
+  },
+  {
+    "_id": "i18n-message-en-integration-access-draft-hint",
+    "key": "integration.access.draft.hint",
+    "lang": "en",
+    "value": "Save with the tick in the previous window."
+  },
+  {
+    "_id": "i18n-message-en-integration-access-full",
+    "key": "integration.access.full",
+    "lang": "en",
+    "value": "Full"
+  },
+  {
+    "_id": "i18n-message-en-integration-access-full-description",
+    "key": "integration.access.full.description",
+    "lang": "en",
+    "value": "Allows all integration operations permitted by this account. The application checks access for every request."
+  },
+  {
+    "_id": "i18n-message-en-integration-access-full-open",
+    "key": "integration.access.full.open",
+    "lang": "en",
+    "value": "Access: full. Change permissions."
+  },
+  {
+    "_id": "i18n-message-en-integration-access-invalid",
+    "key": "integration.access.invalid",
+    "lang": "en",
+    "value": "Invalid connection permissions."
+  },
+  {
+    "_id": "i18n-message-en-integration-access-level",
+    "key": "integration.access.level",
+    "lang": "en",
+    "value": "Access level"
+  },
+  {
+    "_id": "i18n-message-en-integration-access-mcp-limit",
+    "key": "integration.access.mcp.limit",
+    "lang": "en",
+    "value": "An MCP client is limited by both its own access level and the main MCP setting."
+  },
+  {
+    "_id": "i18n-message-en-integration-access-read-description",
+    "key": "integration.access.read.description",
+    "lang": "en",
+    "value": "Can read conversations and notifications that this account may access."
+  },
+  {
+    "_id": "i18n-message-en-integration-access-read-open",
+    "key": "integration.access.read.open",
+    "lang": "en",
+    "value": "Access: read. Change permissions."
+  },
+  {
+    "_id": "i18n-message-en-integration-access-save-failed",
+    "key": "integration.access.save.failed",
+    "lang": "en",
+    "value": "Permissions could not be saved. Your changes remain here; retry saving."
+  },
+  {
+    "_id": "i18n-message-en-integration-access-title",
+    "key": "integration.access.title",
+    "lang": "en",
+    "value": "Connection access"
+  },
+  {
+    "_id": "i18n-message-en-integration-access-write",
+    "key": "integration.access.write",
+    "lang": "en",
+    "value": "Write"
+  },
+  {
+    "_id": "i18n-message-en-integration-access-write-description",
+    "key": "integration.access.write.description",
+    "lang": "en",
+    "value": "Only performs permitted changes. Reading account data requires Read or Full access."
+  },
+  {
+    "_id": "i18n-message-en-integration-access-write-open",
+    "key": "integration.access.write.open",
+    "lang": "en",
+    "value": "Access: write. Change permissions."
+  },
+  {
+    "_id": "i18n-message-en-integration-aria",
+    "key": "integration.aria",
+    "lang": "en",
+    "value": "API integration settings"
+  },
+  {
+    "_id": "i18n-message-en-integration-base-url",
+    "key": "integration.base.url",
+    "lang": "en",
+    "value": "Base URL"
+  },
+  {
+    "_id": "i18n-message-en-integration-base-url-copy-aria",
+    "key": "integration.base.url.copy.aria",
+    "lang": "en",
+    "value": "Copy Base URL"
+  },
+  {
+    "_id": "i18n-message-en-integration-batch-maximum",
+    "key": "integration.batch.maximum",
+    "lang": "en",
+    "value": "Maximum items per request:"
+  },
+  {
+    "_id": "i18n-message-en-integration-client-keys",
+    "key": "integration.client.keys",
+    "lang": "en",
+    "value": "Client keys"
+  },
+  {
+    "_id": "i18n-message-en-integration-help-aria",
+    "key": "integration.help.aria",
+    "lang": "en",
+    "value": "Open API documentation help"
+  },
+  {
+    "_id": "i18n-message-en-integration-help-description",
+    "key": "integration.help.description",
+    "lang": "en",
+    "value": "The public GitHub README contains the documentation table and the current Integration API Guide."
+  },
+  {
+    "_id": "i18n-message-en-integration-help-open-documentation",
+    "key": "integration.help.open.documentation",
+    "lang": "en",
+    "value": "Open the documentation on GitHub"
+  },
+  {
+    "_id": "i18n-message-en-integration-help-title",
+    "key": "integration.help.title",
+    "lang": "en",
+    "value": "API documentation"
+  },
+  {
+    "_id": "i18n-message-en-integration-load-failed",
+    "key": "integration.load.failed",
+    "lang": "en",
+    "value": "Unable to load API integration settings."
+  },
+  {
+    "_id": "i18n-message-en-integration-loading",
+    "key": "integration.loading",
+    "lang": "en",
+    "value": "Loading API settings…"
+  },
+  {
+    "_id": "i18n-message-en-integration-mutation-failed",
+    "key": "integration.mutation.failed",
+    "lang": "en",
+    "value": "The connection change failed. Please retry."
+  },
+  {
+    "_id": "i18n-message-en-integration-roles-help",
+    "key": "integration.roles.help",
+    "lang": "en",
+    "value": "API and MCP clients retain the account’s permissions. A client cannot gain administrator or operator access by changing its requested access level."
+  },
+  {
+    "_id": "i18n-message-en-integration-roles-summary",
+    "key": "integration.roles.summary",
+    "lang": "en",
+    "value": "Role connections retain their existing account permissions."
+  },
+  {
+    "_id": "i18n-message-en-integration-roles-title",
+    "key": "integration.roles.title",
+    "lang": "en",
+    "value": "API / MCP statistics"
+  },
+  {
+    "_id": "i18n-message-en-integration-subtitle",
+    "key": "integration.subtitle",
+    "lang": "en",
+    "value": "Create one expiring key for each connected client."
+  },
+  {
+    "_id": "i18n-message-en-integration-title",
+    "key": "integration.title",
+    "lang": "en",
+    "value": "API integration"
+  },
+  {
+    "_id": "i18n-message-en-integration-token-client-name",
+    "key": "integration.token.client.name",
+    "lang": "en",
+    "value": "Client {index}"
+  },
+  {
+    "_id": "i18n-message-en-integration-token-copy-aria",
+    "key": "integration.token.copy.aria",
+    "lang": "en",
+    "value": "Copy API token"
+  },
+  {
+    "_id": "i18n-message-en-integration-token-copy-now",
+    "key": "integration.token.copy.now",
+    "lang": "en",
+    "value": "Copy it now. The full token will not be shown again."
+  },
+  {
+    "_id": "i18n-message-en-integration-token-empty",
+    "key": "integration.token.empty",
+    "lang": "en",
+    "value": "No active client keys."
+  },
+  {
+    "_id": "i18n-message-en-integration-token-expires",
+    "key": "integration.token.expires",
+    "lang": "en",
+    "value": "Expires"
+  },
+  {
+    "_id": "i18n-message-en-integration-token-generate",
+    "key": "integration.token.generate",
+    "lang": "en",
+    "value": "Generate token"
+  },
+  {
+    "_id": "i18n-message-en-integration-token-generate-aria",
+    "key": "integration.token.generate.aria",
+    "lang": "en",
+    "value": "Generate API token"
+  },
+  {
+    "_id": "i18n-message-en-integration-token-generate-confirm-message",
+    "key": "integration.token.generate.confirm.message",
+    "lang": "en",
+    "value": "This key will belong to “{name}” and expire after {days} days."
+  },
+  {
+    "_id": "i18n-message-en-integration-token-generate-confirm-title",
+    "key": "integration.token.generate.confirm.title",
+    "lang": "en",
+    "value": "Generate API key?"
+  },
+  {
+    "_id": "i18n-message-en-integration-token-generate-failed",
+    "key": "integration.token.generate.failed",
+    "lang": "en",
+    "value": "Unable to generate the API key."
+  },
+  {
+    "_id": "i18n-message-en-integration-token-generating",
+    "key": "integration.token.generating",
+    "lang": "en",
+    "value": "Generating…"
+  },
+  {
+    "_id": "i18n-message-en-integration-token-ip",
+    "key": "integration.token.ip",
+    "lang": "en",
+    "value": "IP:"
+  },
+  {
+    "_id": "i18n-message-en-integration-token-revoke",
+    "key": "integration.token.revoke",
+    "lang": "en",
+    "value": "Revoke"
+  },
+  {
+    "_id": "i18n-message-en-integration-token-revoke-aria",
+    "key": "integration.token.revoke.aria",
+    "lang": "en",
+    "value": "Revoke {name}"
+  },
+  {
+    "_id": "i18n-message-en-integration-token-revoke-confirm-message",
+    "key": "integration.token.revoke.confirm.message",
+    "lang": "en",
+    "value": "“{name}” will immediately lose API access."
+  },
+  {
+    "_id": "i18n-message-en-integration-token-revoke-confirm-title",
+    "key": "integration.token.revoke.confirm.title",
+    "lang": "en",
+    "value": "Revoke API key?"
+  },
+  {
+    "_id": "i18n-message-en-integration-token-revoke-failed",
+    "key": "integration.token.revoke.failed",
+    "lang": "en",
+    "value": "Unable to revoke the API key."
+  },
+  {
+    "_id": "i18n-message-en-integration-token-revoke-warning",
+    "key": "integration.token.revoke.warning",
+    "lang": "en",
+    "value": "This action cannot be undone."
+  },
+  {
+    "_id": "i18n-message-en-integration-token-revoking",
+    "key": "integration.token.revoking",
+    "lang": "en",
+    "value": "Revoking…"
+  },
+  {
+    "_id": "i18n-message-en-mcp-advanced",
+    "key": "mcp.advanced",
+    "lang": "en",
+    "value": "MCP Advanced"
+  },
+  {
+    "_id": "i18n-message-en-mcp-approve",
+    "key": "mcp.approve",
+    "lang": "en",
+    "value": "Allow access"
+  },
+  {
+    "_id": "i18n-message-en-mcp-authorization-failed",
+    "key": "mcp.authorization.failed",
+    "lang": "en",
+    "value": "This authorization request is invalid or belongs to another account. Reconnect from your AI client using the correct account."
+  },
+  {
+    "_id": "i18n-message-en-mcp-authorize",
+    "key": "mcp.authorize",
+    "lang": "en",
+    "value": "Authorize AI connection"
+  },
+  {
+    "_id": "i18n-message-en-mcp-base-profile",
+    "key": "mcp.base.profile",
+    "lang": "en",
+    "value": "Base profile"
+  },
+  {
+    "_id": "i18n-message-en-mcp-callback",
+    "key": "mcp.callback",
+    "lang": "en",
+    "value": "Callback URL"
+  },
+  {
+    "_id": "i18n-message-en-mcp-callback-help",
+    "key": "mcp.callback.help",
+    "lang": "en",
+    "value": "Copy the exact callback URL shown by your AI client. HTTPS is required, except for local loopback clients."
+  },
+  {
+    "_id": "i18n-message-en-mcp-client-id",
+    "key": "mcp.client.id",
+    "lang": "en",
+    "value": "Client ID"
+  },
+  {
+    "_id": "i18n-message-en-mcp-connections",
+    "key": "mcp.connections",
+    "lang": "en",
+    "value": "AI / MCP connections"
+  },
+  {
+    "_id": "i18n-message-en-mcp-consent-message",
+    "key": "mcp.consent.message",
+    "lang": "en",
+    "value": "This client can use the API actions allowed for this profile only. Revoke access under API → OAuth permissions."
+  },
+  {
+    "_id": "i18n-message-en-mcp-copy-callback",
+    "key": "mcp.copy.callback",
+    "lang": "en",
+    "value": "Copy callback URL"
+  },
+  {
+    "_id": "i18n-message-en-mcp-copy-client",
+    "key": "mcp.copy.client",
+    "lang": "en",
+    "value": "Copy client ID"
+  },
+  {
+    "_id": "i18n-message-en-mcp-copy-secret",
+    "key": "mcp.copy.secret",
+    "lang": "en",
+    "value": "Copy client secret"
+  },
+  {
+    "_id": "i18n-message-en-mcp-copy-url",
+    "key": "mcp.copy.url",
+    "lang": "en",
+    "value": "Copy MCP URL"
+  },
+  {
+    "_id": "i18n-message-en-mcp-create",
+    "key": "mcp.create",
+    "lang": "en",
+    "value": "New connection"
+  },
+  {
+    "_id": "i18n-message-en-mcp-empty",
+    "key": "mcp.empty",
+    "lang": "en",
+    "value": "No active MCP connections."
+  },
+  {
+    "_id": "i18n-message-en-mcp-failed",
+    "key": "mcp.failed",
+    "lang": "en",
+    "value": "The operation failed. Check the details and retry."
+  },
+  {
+    "_id": "i18n-message-en-mcp-last-used",
+    "key": "mcp.last.used",
+    "lang": "en",
+    "value": "Last used:"
+  },
+  {
+    "_id": "i18n-message-en-mcp-local-only",
+    "key": "mcp.local.only",
+    "lang": "en",
+    "value": "Browser-only local mode cannot receive external OAuth requests. In dev with the backend running, the normal demo sign-in can be used; deployed installations use their configured sign-in methods."
+  },
+  {
+    "_id": "i18n-message-en-mcp-manual-help",
+    "key": "mcp.manual.help",
+    "lang": "en",
+    "value": "Generate creates a client ID and a one-time secret. Copy them into your client’s settings, never into chat."
+  },
+  {
+    "_id": "i18n-message-en-mcp-manual-help-badge",
+    "key": "mcp.manual.help.badge",
+    "lang": "en",
+    "value": "The badge counts manual keys. Manage or revoke them here; URL-based connections remain under OAuth permissions."
+  },
+  {
+    "_id": "i18n-message-en-mcp-name",
+    "key": "mcp.name",
+    "lang": "en",
+    "value": "Name (e.g. Claude)"
+  },
+  {
+    "_id": "i18n-message-en-mcp-oauth-permissions",
+    "key": "mcp.oauth.permissions",
+    "lang": "en",
+    "value": "OAuth permissions"
+  },
+  {
+    "_id": "i18n-message-en-mcp-revoke",
+    "key": "mcp.revoke",
+    "lang": "en",
+    "value": "Revoke connection"
+  },
+  {
+    "_id": "i18n-message-en-mcp-revoke-message",
+    "key": "mcp.revoke.message",
+    "lang": "en",
+    "value": "Revoke this AI client’s access? Existing access and refresh tokens will stop working."
+  },
+  {
+    "_id": "i18n-message-en-mcp-revoke-question",
+    "key": "mcp.revoke.question",
+    "lang": "en",
+    "value": "Would you like to revoke this AI connection?"
+  },
+  {
+    "_id": "i18n-message-en-mcp-secret",
+    "key": "mcp.secret",
+    "lang": "en",
+    "value": "Client secret"
+  },
+  {
+    "_id": "i18n-message-en-mcp-setup",
+    "key": "mcp.setup",
+    "lang": "en",
+    "value": "Copy the MCP URL into your AI client and choose Connect. No manual client ID or secret is needed."
+  },
+  {
+    "_id": "i18n-message-en-mcp-setup-approve",
+    "key": "mcp.setup.approve",
+    "lang": "en",
+    "value": "Sign in, check the displayed profile, then approve access."
+  },
+  {
+    "_id": "i18n-message-en-mcp-setup-enable",
+    "key": "mcp.setup.enable",
+    "lang": "en",
+    "value": "The main MCP link starts Blocked. Open its shield, choose a pack, confirm, then save with the tick in the integration window. Client generation stays separate."
+  },
+  {
+    "_id": "i18n-message-en-mcp-setup-return",
+    "key": "mcp.setup.return",
+    "lang": "en",
+    "value": "Return to your AI client and enable the connection for the conversation."
+  },
+  {
+    "_id": "i18n-message-en-mcp-setup-revoke",
+    "key": "mcp.setup.revoke",
+    "lang": "en",
+    "value": "Revoke access under OAuth permissions. Connections expire after 90 days."
+  },
+  {
+    "_id": "i18n-message-en-mcp-technical-details",
+    "key": "mcp.technical.details",
+    "lang": "en",
+    "value": "Connection details"
+  },
+  {
+    "_id": "i18n-message-en-mcp-url",
+    "key": "mcp.url",
+    "lang": "en",
+    "value": "MCP URL"
+  },
+  {
+    "_id": "i18n-message-hu-integration-access-apply",
+    "key": "integration.access.apply",
+    "lang": "hu",
+    "value": "Választás alkalmazása"
+  },
+  {
+    "_id": "i18n-message-hu-integration-access-blocked",
+    "key": "integration.access.blocked",
+    "lang": "hu",
+    "value": "Tiltva"
+  },
+  {
+    "_id": "i18n-message-hu-integration-access-blocked-description",
+    "key": "integration.access.blocked.description",
+    "lang": "hu",
+    "value": "Ez a kapcsolat nem olvashat és nem írhat személyes vagy munkatéradatot."
+  },
+  {
+    "_id": "i18n-message-hu-integration-access-blocked-open",
+    "key": "integration.access.blocked.open",
+    "lang": "hu",
+    "value": "Jogosultság: tiltva. Jogosultság módosítása."
+  },
+  {
+    "_id": "i18n-message-hu-integration-access-conflict",
+    "key": "integration.access.conflict",
+    "lang": "hu",
+    "value": "A kapcsolat beállításai közben megváltoztak. Zárd be, majd nyisd meg újra az ablakot, és végezd el újra a módosítást."
+  },
+  {
+    "_id": "i18n-message-hu-integration-access-draft-hint",
+    "key": "integration.access.draft.hint",
+    "lang": "hu",
+    "value": "Mentés az előző ablak pipájával."
+  },
+  {
+    "_id": "i18n-message-hu-integration-access-full",
+    "key": "integration.access.full",
+    "lang": "hu",
+    "value": "Teljes"
+  },
+  {
+    "_id": "i18n-message-hu-integration-access-full-description",
+    "key": "integration.access.full.description",
+    "lang": "hu",
+    "value": "Engedélyezi a fiókhoz tartozó integrációs műveleteket. Az alkalmazás minden kérésnél ellenőrzi a hozzáférést."
+  },
+  {
+    "_id": "i18n-message-hu-integration-access-full-open",
+    "key": "integration.access.full.open",
+    "lang": "hu",
+    "value": "Jogosultság: teljes. Jogosultság módosítása."
+  },
+  {
+    "_id": "i18n-message-hu-integration-access-invalid",
+    "key": "integration.access.invalid",
+    "lang": "hu",
+    "value": "Érvénytelen kapcsolati jogosultságok."
+  },
+  {
+    "_id": "i18n-message-hu-integration-access-level",
+    "key": "integration.access.level",
+    "lang": "hu",
+    "value": "Jogosultsági szint"
+  },
+  {
+    "_id": "i18n-message-hu-integration-access-mcp-limit",
+    "key": "integration.access.mcp.limit",
+    "lang": "hu",
+    "value": "Az MCP-kliens jogait a saját hozzáférési szintje és a fő MCP-beállítás együtt korlátozza."
+  },
+  {
+    "_id": "i18n-message-hu-integration-access-read-description",
+    "key": "integration.access.read.description",
+    "lang": "hu",
+    "value": "Olvashatja a fiók számára elérhető beszélgetéseket és értesítéseket."
+  },
+  {
+    "_id": "i18n-message-hu-integration-access-read-open",
+    "key": "integration.access.read.open",
+    "lang": "hu",
+    "value": "Hozzáférés: olvasás. Jogosultság módosítása."
+  },
+  {
+    "_id": "i18n-message-hu-integration-access-save-failed",
+    "key": "integration.access.save.failed",
+    "lang": "hu",
+    "value": "A jogosultságokat nem sikerült menteni. A módosításaid megmaradtak itt; próbáld újra a mentést."
+  },
+  {
+    "_id": "i18n-message-hu-integration-access-title",
+    "key": "integration.access.title",
+    "lang": "hu",
+    "value": "Kapcsolat jogosultsága"
+  },
+  {
+    "_id": "i18n-message-hu-integration-access-write",
+    "key": "integration.access.write",
+    "lang": "hu",
+    "value": "Írás"
+  },
+  {
+    "_id": "i18n-message-hu-integration-access-write-description",
+    "key": "integration.access.write.description",
+    "lang": "hu",
+    "value": "Csak az engedélyezett módosításokat hajtja végre. A fiók adatainak olvasásához Olvasás vagy Teljes hozzáférés kell."
+  },
+  {
+    "_id": "i18n-message-hu-integration-access-write-open",
+    "key": "integration.access.write.open",
+    "lang": "hu",
+    "value": "Jogosultság: írás. Jogosultság módosítása."
+  },
+  {
+    "_id": "i18n-message-hu-integration-aria",
+    "key": "integration.aria",
+    "lang": "hu",
+    "value": "API-integráció beállításai"
+  },
+  {
+    "_id": "i18n-message-hu-integration-base-url",
+    "key": "integration.base.url",
+    "lang": "hu",
+    "value": "Alap URL"
+  },
+  {
+    "_id": "i18n-message-hu-integration-base-url-copy-aria",
+    "key": "integration.base.url.copy.aria",
+    "lang": "hu",
+    "value": "Alap URL másolása"
+  },
+  {
+    "_id": "i18n-message-hu-integration-batch-maximum",
+    "key": "integration.batch.maximum",
+    "lang": "hu",
+    "value": "Kérésenként legfeljebb ennyi elem küldhető:"
+  },
+  {
+    "_id": "i18n-message-hu-integration-client-keys",
+    "key": "integration.client.keys",
+    "lang": "hu",
+    "value": "Klienskulcsok"
+  },
+  {
+    "_id": "i18n-message-hu-integration-help-aria",
+    "key": "integration.help.aria",
+    "lang": "hu",
+    "value": "API-dokumentációs súgó megnyitása"
+  },
+  {
+    "_id": "i18n-message-hu-integration-help-description",
+    "key": "integration.help.description",
+    "lang": "hu",
+    "value": "A nyilvános GitHub README dokumentációs táblája tartalmazza az aktuális Integrációs API útmutatót."
+  },
+  {
+    "_id": "i18n-message-hu-integration-help-open-documentation",
+    "key": "integration.help.open.documentation",
+    "lang": "hu",
+    "value": "Dokumentáció megnyitása a GitHubon"
+  },
+  {
+    "_id": "i18n-message-hu-integration-help-title",
+    "key": "integration.help.title",
+    "lang": "hu",
+    "value": "API-dokumentáció"
+  },
+  {
+    "_id": "i18n-message-hu-integration-load-failed",
+    "key": "integration.load.failed",
+    "lang": "hu",
+    "value": "Az API-integráció beállításai nem tölthetők be."
+  },
+  {
+    "_id": "i18n-message-hu-integration-loading",
+    "key": "integration.loading",
+    "lang": "hu",
+    "value": "API-beállítások betöltése…"
+  },
+  {
+    "_id": "i18n-message-hu-integration-mutation-failed",
+    "key": "integration.mutation.failed",
+    "lang": "hu",
+    "value": "A kapcsolat módosítása nem sikerült. Próbáld újra."
+  },
+  {
+    "_id": "i18n-message-hu-integration-roles-help",
+    "key": "integration.roles.help",
+    "lang": "hu",
+    "value": "Az API- és MCP-kliensek a fiók jogosultságait használják. A kért hozzáférési szint módosítása nem ad adminisztrátori vagy operátori jogosultságot."
+  },
+  {
+    "_id": "i18n-message-hu-integration-roles-summary",
+    "key": "integration.roles.summary",
+    "lang": "hu",
+    "value": "A szerepköri kapcsolatok a fiók meglévő jogosultságait tartják meg."
+  },
+  {
+    "_id": "i18n-message-hu-integration-roles-title",
+    "key": "integration.roles.title",
+    "lang": "hu",
+    "value": "API / MCP statisztikák"
+  },
+  {
+    "_id": "i18n-message-hu-integration-subtitle",
+    "key": "integration.subtitle",
+    "lang": "hu",
+    "value": "Minden csatlakozó klienshez külön lejáró kulcsot hozz létre."
+  },
+  {
+    "_id": "i18n-message-hu-integration-title",
+    "key": "integration.title",
+    "lang": "hu",
+    "value": "API-integráció"
+  },
+  {
+    "_id": "i18n-message-hu-integration-token-client-name",
+    "key": "integration.token.client.name",
+    "lang": "hu",
+    "value": "Kliens {index}"
+  },
+  {
+    "_id": "i18n-message-hu-integration-token-copy-aria",
+    "key": "integration.token.copy.aria",
+    "lang": "hu",
+    "value": "API-token másolása"
+  },
+  {
+    "_id": "i18n-message-hu-integration-token-copy-now",
+    "key": "integration.token.copy.now",
+    "lang": "hu",
+    "value": "Másold ki most; a teljes token később nem jelenik meg újra."
+  },
+  {
+    "_id": "i18n-message-hu-integration-token-empty",
+    "key": "integration.token.empty",
+    "lang": "hu",
+    "value": "Nincs aktív klienskulcs."
+  },
+  {
+    "_id": "i18n-message-hu-integration-token-expires",
+    "key": "integration.token.expires",
+    "lang": "hu",
+    "value": "Lejár"
+  },
+  {
+    "_id": "i18n-message-hu-integration-token-generate",
+    "key": "integration.token.generate",
+    "lang": "hu",
+    "value": "Kulcs létrehozása"
+  },
+  {
+    "_id": "i18n-message-hu-integration-token-generate-aria",
+    "key": "integration.token.generate.aria",
+    "lang": "hu",
+    "value": "API-kulcs létrehozása"
+  },
+  {
+    "_id": "i18n-message-hu-integration-token-generate-confirm-message",
+    "key": "integration.token.generate.confirm.message",
+    "lang": "hu",
+    "value": "A kulcs a(z) „{name}” klienshez tartozik majd, és {days} nap múlva lejár."
+  },
+  {
+    "_id": "i18n-message-hu-integration-token-generate-confirm-title",
+    "key": "integration.token.generate.confirm.title",
+    "lang": "hu",
+    "value": "Létrehozod az API-kulcsot?"
+  },
+  {
+    "_id": "i18n-message-hu-integration-token-generate-failed",
+    "key": "integration.token.generate.failed",
+    "lang": "hu",
+    "value": "Az API-kulcs nem hozható létre."
+  },
+  {
+    "_id": "i18n-message-hu-integration-token-generating",
+    "key": "integration.token.generating",
+    "lang": "hu",
+    "value": "Létrehozás…"
+  },
+  {
+    "_id": "i18n-message-hu-integration-token-ip",
+    "key": "integration.token.ip",
+    "lang": "hu",
+    "value": "IP:"
+  },
+  {
+    "_id": "i18n-message-hu-integration-token-revoke",
+    "key": "integration.token.revoke",
+    "lang": "hu",
+    "value": "Visszavonás"
+  },
+  {
+    "_id": "i18n-message-hu-integration-token-revoke-aria",
+    "key": "integration.token.revoke.aria",
+    "lang": "hu",
+    "value": "{name} visszavonása"
+  },
+  {
+    "_id": "i18n-message-hu-integration-token-revoke-confirm-message",
+    "key": "integration.token.revoke.confirm.message",
+    "lang": "hu",
+    "value": "A(z) „{name}” azonnal elveszíti az API-hozzáférést."
+  },
+  {
+    "_id": "i18n-message-hu-integration-token-revoke-confirm-title",
+    "key": "integration.token.revoke.confirm.title",
+    "lang": "hu",
+    "value": "Visszavonod az API-kulcsot?"
+  },
+  {
+    "_id": "i18n-message-hu-integration-token-revoke-failed",
+    "key": "integration.token.revoke.failed",
+    "lang": "hu",
+    "value": "Az API-kulcs nem vonható vissza."
+  },
+  {
+    "_id": "i18n-message-hu-integration-token-revoke-warning",
+    "key": "integration.token.revoke.warning",
+    "lang": "hu",
+    "value": "Ez a művelet nem vonható vissza."
+  },
+  {
+    "_id": "i18n-message-hu-integration-token-revoking",
+    "key": "integration.token.revoking",
+    "lang": "hu",
+    "value": "Visszavonás…"
+  },
+  {
+    "_id": "i18n-message-hu-mcp-advanced",
+    "key": "mcp.advanced",
+    "lang": "hu",
+    "value": "MCP Haladó"
+  },
+  {
+    "_id": "i18n-message-hu-mcp-approve",
+    "key": "mcp.approve",
+    "lang": "hu",
+    "value": "Hozzáférés engedélyezése"
+  },
+  {
+    "_id": "i18n-message-hu-mcp-authorization-failed",
+    "key": "mcp.authorization.failed",
+    "lang": "hu",
+    "value": "Ez az engedélykérés érvénytelen, vagy másik fiókhoz tartozik. A megfelelő fiókkal indíts új csatlakozást az AI-kliensből."
+  },
+  {
+    "_id": "i18n-message-hu-mcp-authorize",
+    "key": "mcp.authorize",
+    "lang": "hu",
+    "value": "AI-kapcsolat engedélyezése"
+  },
+  {
+    "_id": "i18n-message-hu-mcp-base-profile",
+    "key": "mcp.base.profile",
+    "lang": "hu",
+    "value": "Alapprofil"
+  },
+  {
+    "_id": "i18n-message-hu-mcp-callback",
+    "key": "mcp.callback",
+    "lang": "hu",
+    "value": "Visszahívási cím"
+  },
+  {
+    "_id": "i18n-message-hu-mcp-callback-help",
+    "key": "mcp.callback.help",
+    "lang": "hu",
+    "value": "Másold be az AI-kliens által megadott pontos visszahívási címet. HTTPS szükséges, kivéve a helyben futó klienseknél."
+  },
+  {
+    "_id": "i18n-message-hu-mcp-client-id",
+    "key": "mcp.client.id",
+    "lang": "hu",
+    "value": "Kliensazonosító"
+  },
+  {
+    "_id": "i18n-message-hu-mcp-connections",
+    "key": "mcp.connections",
+    "lang": "hu",
+    "value": "AI / MCP-kapcsolatok"
+  },
+  {
+    "_id": "i18n-message-hu-mcp-consent-message",
+    "key": "mcp.consent.message",
+    "lang": "hu",
+    "value": "A kliens csak ehhez a profilhoz engedélyezett API-műveleteket használhatja. A hozzáférés az API → OAuth-engedélyek alatt visszavonható."
+  },
+  {
+    "_id": "i18n-message-hu-mcp-copy-callback",
+    "key": "mcp.copy.callback",
+    "lang": "hu",
+    "value": "Visszahívási cím másolása"
+  },
+  {
+    "_id": "i18n-message-hu-mcp-copy-client",
+    "key": "mcp.copy.client",
+    "lang": "hu",
+    "value": "Kliensazonosító másolása"
+  },
+  {
+    "_id": "i18n-message-hu-mcp-copy-secret",
+    "key": "mcp.copy.secret",
+    "lang": "hu",
+    "value": "Kliens titkának másolása"
+  },
+  {
+    "_id": "i18n-message-hu-mcp-copy-url",
+    "key": "mcp.copy.url",
+    "lang": "hu",
+    "value": "MCP URL másolása"
+  },
+  {
+    "_id": "i18n-message-hu-mcp-create",
+    "key": "mcp.create",
+    "lang": "hu",
+    "value": "Új kapcsolat"
+  },
+  {
+    "_id": "i18n-message-hu-mcp-empty",
+    "key": "mcp.empty",
+    "lang": "hu",
+    "value": "Nincs aktív MCP-kapcsolat."
+  },
+  {
+    "_id": "i18n-message-hu-mcp-failed",
+    "key": "mcp.failed",
+    "lang": "hu",
+    "value": "A művelet nem sikerült. Ellenőrizd az adatokat, majd próbáld újra."
+  },
+  {
+    "_id": "i18n-message-hu-mcp-last-used",
+    "key": "mcp.last.used",
+    "lang": "hu",
+    "value": "Utoljára használva:"
+  },
+  {
+    "_id": "i18n-message-hu-mcp-local-only",
+    "key": "mcp.local.only",
+    "lang": "hu",
+    "value": "A kizárólag böngészőben működő local mód nem tud külső OAuth-kérést fogadni. Futó backenddel devben a szokásos demóbelépés is használható; telepített környezetben az ott beállított belépési módok érvényesek."
+  },
+  {
+    "_id": "i18n-message-hu-mcp-manual-help",
+    "key": "mcp.manual.help",
+    "lang": "hu",
+    "value": "A Generálás kliensazonosítót és egyszer megjelenő titkot készít. A kliens beállításaiba másold őket, ne a csevegésbe."
+  },
+  {
+    "_id": "i18n-message-hu-mcp-manual-help-badge",
+    "key": "mcp.manual.help.badge",
+    "lang": "hu",
+    "value": "A számláló a kézi kulcsokat mutatja. Itt kezelheted vagy vonhatod vissza őket; az URL-es kapcsolatok az OAuth-engedélyeknél maradnak."
+  },
+  {
+    "_id": "i18n-message-hu-mcp-name",
+    "key": "mcp.name",
+    "lang": "hu",
+    "value": "Név (pl. Claude)"
+  },
+  {
+    "_id": "i18n-message-hu-mcp-oauth-permissions",
+    "key": "mcp.oauth.permissions",
+    "lang": "hu",
+    "value": "OAuth-engedélyek"
+  },
+  {
+    "_id": "i18n-message-hu-mcp-revoke",
+    "key": "mcp.revoke",
+    "lang": "hu",
+    "value": "Kapcsolat visszavonása"
+  },
+  {
+    "_id": "i18n-message-hu-mcp-revoke-message",
+    "key": "mcp.revoke.message",
+    "lang": "hu",
+    "value": "Visszavonod az AI-kliens hozzáférését? A meglévő hozzáférési és megújítási tokenjei is érvénytelenné válnak."
+  },
+  {
+    "_id": "i18n-message-hu-mcp-revoke-question",
+    "key": "mcp.revoke.question",
+    "lang": "hu",
+    "value": "Visszavonod ezt az AI-kapcsolatot?"
+  },
+  {
+    "_id": "i18n-message-hu-mcp-secret",
+    "key": "mcp.secret",
+    "lang": "hu",
+    "value": "Kliens titka"
+  },
+  {
+    "_id": "i18n-message-hu-mcp-setup",
+    "key": "mcp.setup",
+    "lang": "hu",
+    "value": "Másold az MCP URL-t az AI-kliensbe, és válaszd a Connect lehetőséget. Nem kell kézzel kliensazonosítót vagy titkot megadni."
+  },
+  {
+    "_id": "i18n-message-hu-mcp-setup-approve",
+    "key": "mcp.setup.approve",
+    "lang": "hu",
+    "value": "Jelentkezz be, ellenőrizd a megjelenő profilt, majd engedélyezd a hozzáférést."
+  },
+  {
+    "_id": "i18n-message-hu-mcp-setup-enable",
+    "key": "mcp.setup.enable",
+    "lang": "hu",
+    "value": "Az MCP-főkapcsolat alapból Tiltva van. A pajzsnál válassz csomagot, erősítsd meg, majd az integrációs ablak pipájával mentsd el. A kliensgenerálás ettől független művelet."
+  },
+  {
+    "_id": "i18n-message-hu-mcp-setup-return",
+    "key": "mcp.setup.return",
+    "lang": "hu",
+    "value": "Térj vissza az AI-kliensbe, és kapcsold be a kapcsolatot a beszélgetéshez."
+  },
+  {
+    "_id": "i18n-message-hu-mcp-setup-revoke",
+    "key": "mcp.setup.revoke",
+    "lang": "hu",
+    "value": "Az OAuth-engedélyeknél vonhatod vissza a hozzáférést. A kapcsolatok 90 nap után lejárnak."
+  },
+  {
+    "_id": "i18n-message-hu-mcp-technical-details",
+    "key": "mcp.technical.details",
+    "lang": "hu",
+    "value": "Kapcsolat adatai"
+  },
+  {
+    "_id": "i18n-message-hu-mcp-url",
+    "key": "mcp.url",
+    "lang": "hu",
+    "value": "MCP-cím"
+  },
+  {
+    "_id": "i18n-message-en-admin-api-help",
+    "key": "admin.api.help",
+    "lang": "en",
+    "value": "Use this URL and an API key to connect an authorized administrator client."
+  },
+  {
+    "_id": "i18n-message-hu-admin-api-help",
+    "key": "admin.api.help",
+    "lang": "hu",
+    "value": "Ezzel az URL-lel és egy API-kulccsal csatlakoztathatsz egy jogosult adminisztrátori klienst."
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-integration-access-close-description",
+    "key": "guide.profile.integration-access.close.description",
+    "lang": "en",
+    "value": "Close without confirming to keep the parent draft unchanged."
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-integration-access-close-label",
+    "key": "guide.profile.integration-access.close.label",
+    "lang": "en",
+    "value": "Discard this selection"
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-integration-access-integration-access-apply-description",
+    "key": "guide.profile.integration-access.integration-access-apply.description",
+    "lang": "en",
+    "value": "The tick appears when the level differs from the opening value. It closes this popup and updates the parent draft. Save that parent draft to persist the change."
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-integration-access-integration-access-apply-label",
+    "key": "guide.profile.integration-access.integration-access-apply.label",
+    "lang": "en",
+    "value": "Confirm selection"
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-integration-access-integration-access-description-descript",
+    "key": "guide.profile.integration-access.integration-access-description.description",
+    "lang": "en",
+    "value": "Read the description before confirming. Access levels never grant permissions that the profile itself does not have."
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-integration-access-integration-access-description-label",
+    "key": "guide.profile.integration-access.integration-access-description.label",
+    "lang": "en",
+    "value": "What this pack permits"
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-integration-access-integration-access-level-description",
+    "key": "guide.profile.integration-access.integration-access-level.description",
+    "lang": "en",
+    "value": "Choose Blocked, Write, Read or Full. Read includes permitted queries and writes; Full allows every supported operation within your existing permissions."
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-integration-access-integration-access-level-label",
+    "key": "guide.profile.integration-access.integration-access-level.label",
+    "lang": "en",
+    "value": "Four access levels"
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-integration-help-close-description",
+    "key": "guide.profile.integration-help.close.description",
+    "lang": "en",
+    "value": "Return to connection settings. Reading this help does not save a permission change."
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-integration-help-close-label",
+    "key": "guide.profile.integration-help.close.label",
+    "lang": "en",
+    "value": "Close help"
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-integration-help-integration-help-levels-description",
+    "key": "guide.profile.integration-help.integration-help-levels.description",
+    "lang": "en",
+    "value": "Choose Blocked, Write, Read or Full. The permission description lists what the selected level allows."
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-integration-help-integration-help-levels-label",
+    "key": "guide.profile.integration-help.integration-help-levels.label",
+    "lang": "en",
+    "value": "Four permission packs"
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-integration-help-integration-help-manual-description",
+    "key": "guide.profile.integration-help.integration-help-manual.description",
+    "lang": "en",
+    "value": "Generate creates a client ID and a one-time secret. Copy them into your client’s settings, never into chat."
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-integration-help-integration-help-manual-label",
+    "key": "guide.profile.integration-help.integration-help-manual.label",
+    "lang": "en",
+    "value": "Manual client credentials"
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-integration-help-integration-help-roles-description",
+    "key": "guide.profile.integration-help.integration-help-roles.description",
+    "lang": "en",
+    "value": "A connection acts only with the account’s existing permissions. It cannot gain an administrator or operator role through an access level."
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-integration-help-integration-help-roles-label",
+    "key": "guide.profile.integration-help.integration-help-roles.label",
+    "lang": "en",
+    "value": "Account permissions"
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-integration-help-integration-help-setup-description",
+    "key": "guide.profile.integration-help.integration-help-setup.description",
+    "lang": "en",
+    "value": "The main MCP link starts Blocked. Open its shield, choose a pack, confirm, then save with the tick in the integration window. Client generation stays separate."
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-integration-help-integration-help-setup-label",
+    "key": "guide.profile.integration-help.integration-help-setup.label",
+    "lang": "en",
+    "value": "Enable and connect"
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-integrations-close-description",
+    "key": "guide.profile.integrations.close.description",
+    "lang": "en",
+    "value": "Close these settings and return to the previous screen. Existing client keys keep their current access until you revoke them."
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-integrations-close-label",
+    "key": "guide.profile.integrations.close.label",
+    "lang": "en",
+    "value": "Close integrations"
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-integrations-generate-integration-token-description",
+    "key": "guide.profile.integrations.generate-integration-token.description",
+    "lang": "en",
+    "value": "A new key allows a supported client to connect. Its secret appears once: copy it into that client’s settings, never into a public message."
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-integrations-generate-integration-token-label",
+    "key": "guide.profile.integrations.generate-integration-token.label",
+    "lang": "en",
+    "value": "Create client access"
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-integrations-integration-access-save-description",
+    "key": "guide.profile.integrations.integration-access-save.description",
+    "lang": "en",
+    "value": "The tick appears when permissions change. It saves all staged API and MCP levels together and closes this window after success. Closing with X discards unsaved permission changes."
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-integrations-integration-access-save-label",
+    "key": "guide.profile.integrations.integration-access-save.label",
+    "lang": "en",
+    "value": "Save permissions"
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-integrations-integration-base-url-description",
+    "key": "guide.profile.integrations.integration-base-url.description",
+    "lang": "en",
+    "value": "Your client sends API requests to this address. Use this installation’s exact URL; the client key determines which account it acts for."
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-integrations-integration-base-url-label",
+    "key": "guide.profile.integrations.integration-base-url.label",
+    "lang": "en",
+    "value": "API destination"
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-integrations-integration-help-description",
+    "key": "guide.profile.integrations.integration-help.description",
+    "lang": "en",
+    "value": "Open the help panel for connection guidance. It explains what information a client needs and where to configure it."
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-integrations-integration-help-label",
+    "key": "guide.profile.integrations.integration-help.label",
+    "lang": "en",
+    "value": "Integration help"
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-integrations-integration-token-access-description",
+    "key": "guide.profile.integrations.integration-token-access.description",
+    "lang": "en",
+    "value": "Choose Blocked, Write, Read or Full. Confirm stages the choice; the tick in the API window saves it."
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-integrations-integration-token-access-label",
+    "key": "guide.profile.integrations.integration-token-access.label",
+    "lang": "en",
+    "value": "API client access"
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-integrations-integration-token-actions-description",
+    "key": "guide.profile.integrations.integration-token-actions.description",
+    "lang": "en",
+    "value": "Revoking invalidates this key. That client loses API access with it; the other keys remain independently managed."
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-integrations-integration-token-actions-label",
+    "key": "guide.profile.integrations.integration-token-actions.label",
+    "lang": "en",
+    "value": "End client access"
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-integrations-integration-token-row-description",
+    "key": "guide.profile.integrations.integration-token-row.description",
+    "lang": "en",
+    "value": "Connected means this key has been claimed by a client. Expiry ends its validity; the prefix identifies the key without revealing its secret."
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-integrations-integration-token-row-label",
+    "key": "guide.profile.integrations.integration-token-row.label",
+    "lang": "en",
+    "value": "Connection and expiry"
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-integrations-integration-tokens-description",
+    "key": "guide.profile.integrations.integration-tokens.description",
+    "lang": "en",
+    "value": "Each key connects a client to your profile. Separate keys let you revoke one client independently."
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-integrations-integration-tokens-label",
+    "key": "guide.profile.integrations.integration-tokens.label",
+    "lang": "en",
+    "value": "Separate client access"
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-integrations-mcp-advanced-description",
+    "key": "guide.profile.integrations.mcp-advanced.description",
+    "lang": "en",
+    "value": "Use Advanced only for a client that needs an ID and secret. Normal URL-based Connect does not need a manually generated key."
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-integrations-mcp-advanced-label",
+    "key": "guide.profile.integrations.mcp-advanced.label",
+    "lang": "en",
+    "value": "Manual client setup"
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-integrations-mcp-client-access-description",
+    "key": "guide.profile.integrations.mcp-client-access.description",
+    "lang": "en",
+    "value": "Set this client independently. Its effective access is the lower of this choice and the main MCP setting."
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-integrations-mcp-client-access-label",
+    "key": "guide.profile.integrations.mcp-client-access.label",
+    "lang": "en",
+    "value": "MCP client access"
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-integrations-mcp-connection-actions-description",
+    "key": "guide.profile.integrations.mcp-connection-actions.description",
+    "lang": "en",
+    "value": "Details identify the client and callback. Revoke ends its access and refresh tokens. Browser logout does not revoke this separate authorization."
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-integrations-mcp-connection-actions-label",
+    "key": "guide.profile.integrations.mcp-connection-actions.label",
+    "lang": "en",
+    "value": "Inspect or revoke access"
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-integrations-mcp-connection-description",
+    "key": "guide.profile.integrations.mcp-connection.description",
+    "lang": "en",
+    "value": "Check the client name, last use and expiry to recognize active access. An expired permission must be renewed before the client can use it again."
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-integrations-mcp-connection-label",
+    "key": "guide.profile.integrations.mcp-connection.label",
+    "lang": "en",
+    "value": "When access was used"
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-integrations-mcp-main-access-description",
+    "key": "guide.profile.integrations.mcp-main-access.description",
+    "lang": "en",
+    "value": "The main MCP link starts Blocked and limits every MCP client of this profile. Enable and save it deliberately."
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-integrations-mcp-main-access-label",
+    "key": "guide.profile.integrations.mcp-main-access.label",
+    "lang": "en",
+    "value": "Main MCP access"
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-integrations-mcp-permissions-description",
+    "key": "guide.profile.integrations.mcp-permissions.description",
+    "lang": "en",
+    "value": "These are URL-based connections you approved. Each acts within the displayed account’s permissions; access does not bypass ownership rules."
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-integrations-mcp-permissions-label",
+    "key": "guide.profile.integrations.mcp-permissions.label",
+    "lang": "en",
+    "value": "Approved AI clients"
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-integrations-mcp-purpose-description",
+    "key": "guide.profile.integrations.mcp-purpose.description",
+    "lang": "en",
+    "value": "An approved AI client can use the operations allowed for this profile. Read includes permitted conversation and notification queries."
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-integrations-mcp-purpose-label",
+    "key": "guide.profile.integrations.mcp-purpose.label",
+    "lang": "en",
+    "value": "What an AI client can do"
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-integrations-mcp-url-description",
+    "key": "guide.profile.integrations.mcp-url.description",
+    "lang": "en",
+    "value": "Paste this MCP URL into your AI client and choose Connect. Sign in and check the displayed profile before approving access."
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-integrations-mcp-url-label",
+    "key": "guide.profile.integrations.mcp-url.label",
+    "lang": "en",
+    "value": "Connect through the URL"
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-mcp-advanced-close-description",
+    "key": "guide.profile.mcp-advanced.close.description",
+    "lang": "en",
+    "value": "Return to API / MCP settings. Generated or revoked credentials have already changed; staged access-pack edits still require the save tick in the parent window."
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-mcp-advanced-mcp-client-access-description",
+    "key": "guide.profile.mcp-advanced.mcp-client-access.description",
+    "lang": "en",
+    "value": "Set the access pack for this client. The tick stages the change; save it with the tick in the parent API / MCP window. The main MCP limit still applies."
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-mcp-advanced-mcp-client-access-label",
+    "key": "guide.profile.mcp-advanced.mcp-client-access.label",
+    "lang": "en",
+    "value": "Client access"
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-mcp-advanced-mcp-client-id-description",
+    "key": "guide.profile.mcp-advanced.mcp-client-id.description",
+    "lang": "en",
+    "value": "Copy this identifier when the client’s setup asks for a client ID. It identifies this credential."
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-mcp-advanced-mcp-client-id-label",
+    "key": "guide.profile.mcp-advanced.mcp-client-id.label",
+    "lang": "en",
+    "value": "Client identifier"
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-mcp-advanced-mcp-client-revoke-description",
+    "key": "guide.profile.mcp-advanced.mcp-client-revoke.description",
+    "lang": "en",
+    "value": "Remove this client after confirming the dialog. It will no longer be able to authenticate with these credentials."
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-mcp-advanced-mcp-client-revoke-label",
+    "key": "guide.profile.mcp-advanced.mcp-client-revoke.label",
+    "lang": "en",
+    "value": "Revoke client"
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-mcp-advanced-mcp-client-secret-description",
+    "key": "guide.profile.mcp-advanced.mcp-client-secret.description",
+    "lang": "en",
+    "value": "Copy the new secret now into the client’s secure setup. The complete value is shown only after generation."
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-mcp-advanced-mcp-client-secret-label",
+    "key": "guide.profile.mcp-advanced.mcp-client-secret.label",
+    "lang": "en",
+    "value": "Client secret"
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-mcp-advanced-mcp-generate-description",
+    "key": "guide.profile.mcp-advanced.mcp-generate.description",
+    "lang": "en",
+    "value": "Generate a client key with the existing Write default. Creation happens immediately; copy the secret before closing. You may then stage a different access pack."
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-mcp-advanced-mcp-generate-label",
+    "key": "guide.profile.mcp-advanced.mcp-generate.label",
+    "lang": "en",
+    "value": "Create client"
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-mcp-advanced-mcp-manual-keys-description",
+    "key": "guide.profile.mcp-advanced.mcp-manual-keys.description",
+    "lang": "en",
+    "value": "Use this section only when your AI client asks for manual credentials. Ordinary OAuth connections are listed in the parent window."
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-mcp-advanced-mcp-manual-keys-label",
+    "key": "guide.profile.mcp-advanced.mcp-manual-keys.label",
+    "lang": "en",
+    "value": "Manual client keys"
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-mcp-authorization-close-description",
+    "key": "guide.profile.mcp-authorization.close.description",
+    "lang": "en",
+    "value": "Close the authorization request without granting access. When a client request is active, closing sends the refusal back to that client."
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-mcp-authorization-mcp-authorize-access-description",
+    "key": "guide.profile.mcp-authorization.mcp-authorize-access.description",
+    "lang": "en",
+    "value": "The displayed level limits this connection. The main MCP limit and the client’s limit both apply."
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-mcp-authorization-mcp-authorize-access-label",
+    "key": "guide.profile.mcp-authorization.mcp-authorize-access.label",
+    "lang": "en",
+    "value": "Access pack"
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-mcp-authorization-mcp-authorize-actions-description",
+    "key": "guide.profile.mcp-authorization.mcp-authorize-actions.description",
+    "lang": "en",
+    "value": "Approve grants this client the displayed access for this profile. Cancel returns without granting access. You can revoke a granted connection later under API / MCP."
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-mcp-authorization-mcp-authorize-actions-label",
+    "key": "guide.profile.mcp-authorization.mcp-authorize-actions.label",
+    "lang": "en",
+    "value": "Approve or cancel"
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-mcp-authorization-mcp-authorize-client-description",
+    "key": "guide.profile.mcp-authorization.mcp-authorize-client.description",
+    "lang": "en",
+    "value": "Check the name of the AI client requesting access. Continue only if this is the connection you started."
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-mcp-authorization-mcp-authorize-client-label",
+    "key": "guide.profile.mcp-authorization.mcp-authorize-client.label",
+    "lang": "en",
+    "value": "Requesting client"
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-mcp-authorization-mcp-authorize-profile-description",
+    "key": "guide.profile.mcp-authorization.mcp-authorize-profile.description",
+    "lang": "en",
+    "value": "Check the profile shown here. This is the account that the approved client will act for."
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-mcp-authorization-mcp-authorize-profile-label",
+    "key": "guide.profile.mcp-authorization.mcp-authorize-profile.label",
+    "lang": "en",
+    "value": "Profile"
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-mcp-details-close-description",
+    "key": "guide.profile.mcp-details.close.description",
+    "lang": "en",
+    "value": "Return from this client’s details without saving the parent API / MCP form. If you staged an access-pack change, use the parent window’s save tick to persist it."
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-mcp-details-mcp-client-access-description",
+    "key": "guide.profile.mcp-details.mcp-client-access.description",
+    "lang": "en",
+    "value": "Set the access pack for this client. The tick stages the change; save it with the tick in the parent API / MCP window. The main MCP limit still applies."
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-mcp-details-mcp-client-access-label",
+    "key": "guide.profile.mcp-details.mcp-client-access.label",
+    "lang": "en",
+    "value": "Client access"
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-mcp-details-mcp-client-callback-description",
+    "key": "guide.profile.mcp-details.mcp-client-callback.description",
+    "lang": "en",
+    "value": "This is the return address registered by the AI client for authorization. It is a technical connection detail, not the MCP address to add to your client."
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-mcp-details-mcp-client-callback-label",
+    "key": "guide.profile.mcp-details.mcp-client-callback.label",
+    "lang": "en",
+    "value": "Callback address"
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-mcp-details-mcp-client-id-description",
+    "key": "guide.profile.mcp-details.mcp-client-id.description",
+    "lang": "en",
+    "value": "Copy this identifier when the client’s setup asks for a client ID. It identifies this credential."
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-mcp-details-mcp-client-id-label",
+    "key": "guide.profile.mcp-details.mcp-client-id.label",
+    "lang": "en",
+    "value": "Client identifier"
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-mcp-details-mcp-client-secret-description",
+    "key": "guide.profile.mcp-details.mcp-client-secret.description",
+    "lang": "en",
+    "value": "Copy the new secret now into the client’s secure setup. The complete value is shown only after generation."
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-mcp-details-mcp-client-secret-label",
+    "key": "guide.profile.mcp-details.mcp-client-secret.label",
+    "lang": "en",
+    "value": "Client secret"
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-integration-access-close-description",
+    "key": "guide.profile.integration-access.close.description",
+    "lang": "hu",
+    "value": "Megerősítés nélkül bezárva a szülőablak piszkozata változatlan marad."
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-integration-access-close-label",
+    "key": "guide.profile.integration-access.close.label",
+    "lang": "hu",
+    "value": "Választás elvetése"
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-integration-access-integration-access-apply-description",
+    "key": "guide.profile.integration-access.integration-access-apply.description",
+    "lang": "hu",
+    "value": "A pipa akkor jelenik meg, ha eltérsz a megnyitáskor érvényes szinttől. Bezárja ezt a popupot, és frissíti a szülőablak piszkozatát. A véglegesítéshez azt a piszkozatot is mentsd el."
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-integration-access-integration-access-apply-label",
+    "key": "guide.profile.integration-access.integration-access-apply.label",
+    "lang": "hu",
+    "value": "Választás megerősítése"
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-integration-access-integration-access-description-descript",
+    "key": "guide.profile.integration-access.integration-access-description.description",
+    "lang": "hu",
+    "value": "Megerősítés előtt olvasd el a leírást. Egy hozzáférési szint sem ad olyan jogosultságot, amellyel maga a profil nem rendelkezik."
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-integration-access-integration-access-description-label",
+    "key": "guide.profile.integration-access.integration-access-description.label",
+    "lang": "hu",
+    "value": "Mit enged ez a csomag?"
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-integration-access-integration-access-level-description",
+    "key": "guide.profile.integration-access.integration-access-level.description",
+    "lang": "hu",
+    "value": "Válassz Tiltott, Írás, Olvasás vagy Teljes szintet. Az Olvasás engedélyezett lekérdezést és írást is tartalmaz; a Teljes minden támogatott műveletet enged a meglévő jogosultságokon belül."
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-integration-access-integration-access-level-label",
+    "key": "guide.profile.integration-access.integration-access-level.label",
+    "lang": "hu",
+    "value": "Négy jogosultsági szint"
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-integration-help-close-description",
+    "key": "guide.profile.integration-help.close.description",
+    "lang": "hu",
+    "value": "Visszatérés a kapcsolat beállításaihoz. A súgó olvasása nem ment jogosultságváltozást."
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-integration-help-close-label",
+    "key": "guide.profile.integration-help.close.label",
+    "lang": "hu",
+    "value": "Súgó bezárása"
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-integration-help-integration-help-levels-description",
+    "key": "guide.profile.integration-help.integration-help-levels.description",
+    "lang": "hu",
+    "value": "Válassz Tiltott, Írás, Olvasás vagy Teljes szintet. A jogosultság leírása mutatja, mit enged a kiválasztott szint."
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-integration-help-integration-help-levels-label",
+    "key": "guide.profile.integration-help.integration-help-levels.label",
+    "lang": "hu",
+    "value": "Négy jogosultsági csomag"
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-integration-help-integration-help-manual-description",
+    "key": "guide.profile.integration-help.integration-help-manual.description",
+    "lang": "hu",
+    "value": "A Generálás kliensazonosítót és egyszer megjelenő titkot készít. A kliens beállításaiba másold őket, ne a csevegésbe."
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-integration-help-integration-help-manual-label",
+    "key": "guide.profile.integration-help.integration-help-manual.label",
+    "lang": "hu",
+    "value": "Kézi kliensadatok"
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-integration-help-integration-help-roles-description",
+    "key": "guide.profile.integration-help.integration-help-roles.description",
+    "lang": "hu",
+    "value": "A kapcsolat csak a fiók meglévő jogosultságaival járhat el. Egy hozzáférési szint nem ad adminisztrátori vagy operátori szerepet."
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-integration-help-integration-help-roles-label",
+    "key": "guide.profile.integration-help.integration-help-roles.label",
+    "lang": "hu",
+    "value": "Fiókjogosultságok"
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-integration-help-integration-help-setup-description",
+    "key": "guide.profile.integration-help.integration-help-setup.description",
+    "lang": "hu",
+    "value": "Az MCP-főkapcsolat alapból Tiltva van. A pajzsnál válassz csomagot, erősítsd meg, majd az integrációs ablak pipájával mentsd el. A kliensgenerálás ettől független művelet."
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-integration-help-integration-help-setup-label",
+    "key": "guide.profile.integration-help.integration-help-setup.label",
+    "lang": "hu",
+    "value": "Engedélyezés és csatlakozás"
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-integrations-close-description",
+    "key": "guide.profile.integrations.close.description",
+    "lang": "hu",
+    "value": "Zárd be a beállításokat az előző képernyőhöz való visszatéréshez. A meglévő klienskulcsok visszavonásig megtartják a hozzáférésüket."
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-integrations-close-label",
+    "key": "guide.profile.integrations.close.label",
+    "lang": "hu",
+    "value": "Integrációk bezárása"
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-integrations-generate-integration-token-description",
+    "key": "guide.profile.integrations.generate-integration-token.description",
+    "lang": "hu",
+    "value": "Az új kulccsal támogatott kliens kapcsolódhat. A titok egyszer látható: a kliens beállításaiba másold, ne nyilvános üzenetbe."
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-integrations-generate-integration-token-label",
+    "key": "guide.profile.integrations.generate-integration-token.label",
+    "lang": "hu",
+    "value": "Klienshozzáférés létrehozása"
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-integrations-integration-access-save-description",
+    "key": "guide.profile.integrations.integration-access-save.description",
+    "lang": "hu",
+    "value": "A pipa akkor jelenik meg, ha jogosultságot módosítottál. Együtt menti az előkészített API- és MCP-szinteket, majd siker esetén bezárja az ablakot. Az X elveti az el nem mentett jogosultságmódosításokat."
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-integrations-integration-access-save-label",
+    "key": "guide.profile.integrations.integration-access-save.label",
+    "lang": "hu",
+    "value": "Jogosultságok mentése"
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-integrations-integration-base-url-description",
+    "key": "guide.profile.integrations.integration-base-url.description",
+    "lang": "hu",
+    "value": "A kliens ide küldi az API-kéréseket. Ennek a telepítésnek a címét használd; a kulcs határozza meg, melyik fiók nevében jár el."
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-integrations-integration-base-url-label",
+    "key": "guide.profile.integrations.integration-base-url.label",
+    "lang": "hu",
+    "value": "Az API célcíme"
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-integrations-integration-help-description",
+    "key": "guide.profile.integrations.integration-help.description",
+    "lang": "hu",
+    "value": "Nyisd meg a csatlakozási útmutatót. Megmutatja, milyen adatokra van szüksége a kliensnek, és hol kell beállítani őket."
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-integrations-integration-help-label",
+    "key": "guide.profile.integrations.integration-help.label",
+    "lang": "hu",
+    "value": "Integrációs súgó"
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-integrations-integration-token-access-description",
+    "key": "guide.profile.integrations.integration-token-access.description",
+    "lang": "hu",
+    "value": "Válassz a Tiltott, Írás, Olvasás és Teljes szintek közül. A megerősítés előkészíti, az API-ablak pipája menti a változást."
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-integrations-integration-token-access-label",
+    "key": "guide.profile.integrations.integration-token-access.label",
+    "lang": "hu",
+    "value": "API-kliens jogosultsága"
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-integrations-integration-token-actions-description",
+    "key": "guide.profile.integrations.integration-token-actions.description",
+    "lang": "hu",
+    "value": "A visszavonás érvényteleníti ezt a kulcsot, így a kliens ezzel már nem éri el az API-t. A többi kulcs külön kezelhető."
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-integrations-integration-token-actions-label",
+    "key": "guide.profile.integrations.integration-token-actions.label",
+    "lang": "hu",
+    "value": "Klienshozzáférés megszüntetése"
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-integrations-integration-token-row-description",
+    "key": "guide.profile.integrations.integration-token-row.description",
+    "lang": "hu",
+    "value": "A kapcsolódott kulcsot már használatba vette egy kliens. Lejáratkor érvényét veszti; az előtag a titok megjelenítése nélkül azonosítja."
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-integrations-integration-token-row-label",
+    "key": "guide.profile.integrations.integration-token-row.label",
+    "lang": "hu",
+    "value": "Kapcsolódás és lejárat"
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-integrations-integration-tokens-description",
+    "key": "guide.profile.integrations.integration-tokens.description",
+    "lang": "hu",
+    "value": "Minden kulcs a profilodhoz kapcsol egy klienst. Külön kulcsokkal egyenként visszavonhatod a hozzáférést."
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-integrations-integration-tokens-label",
+    "key": "guide.profile.integrations.integration-tokens.label",
+    "lang": "hu",
+    "value": "Külön klienshozzáférések"
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-integrations-mcp-advanced-description",
+    "key": "guide.profile.integrations.mcp-advanced.description",
+    "lang": "hu",
+    "value": "Haladó beállítás akkor kell, ha a kliens azonosítót és titkot kér. A szokásos, címen keresztüli kapcsolódáshoz nem kell kézi kulcs."
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-integrations-mcp-advanced-label",
+    "key": "guide.profile.integrations.mcp-advanced.label",
+    "lang": "hu",
+    "value": "Kézi kliensbeállítás"
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-integrations-mcp-client-access-description",
+    "key": "guide.profile.integrations.mcp-client-access.description",
+    "lang": "hu",
+    "value": "A kliens jogosultságát külön állíthatod. A tényleges hozzáférést ez és a fő MCP-beállítás közül a szigorúbb határozza meg."
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-integrations-mcp-client-access-label",
+    "key": "guide.profile.integrations.mcp-client-access.label",
+    "lang": "hu",
+    "value": "MCP-kliens jogosultsága"
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-integrations-mcp-connection-actions-description",
+    "key": "guide.profile.integrations.mcp-connection-actions.description",
+    "lang": "hu",
+    "value": "A részletek azonosítják a klienst és a visszatérési címet. A visszavonás megszünteti a hozzáférést és a frissítési tokeneket. A böngészőből történő kilépés ezt a külön engedélyt nem vonja vissza."
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-integrations-mcp-connection-actions-label",
+    "key": "guide.profile.integrations.mcp-connection-actions.label",
+    "lang": "hu",
+    "value": "Ellenőrzés vagy visszavonás"
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-integrations-mcp-connection-description",
+    "key": "guide.profile.integrations.mcp-connection.description",
+    "lang": "hu",
+    "value": "A név, utolsó használat és lejárat alapján ellenőrizheted a hozzáférést. Lejárt engedéllyel a kliens csak újbóli engedélyezés után működik."
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-integrations-mcp-connection-label",
+    "key": "guide.profile.integrations.mcp-connection.label",
+    "lang": "hu",
+    "value": "A hozzáférés használata"
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-integrations-mcp-main-access-description",
+    "key": "guide.profile.integrations.mcp-main-access.description",
+    "lang": "hu",
+    "value": "A fő MCP-kapcsolat alapból Tiltott, és a profil összes MCP-kliensének hozzáférését korlátozza. Tudatosan engedélyezd és mentsd."
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-integrations-mcp-main-access-label",
+    "key": "guide.profile.integrations.mcp-main-access.label",
+    "lang": "hu",
+    "value": "MCP fő jogosultság"
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-integrations-mcp-permissions-description",
+    "key": "guide.profile.integrations.mcp-permissions.description",
+    "lang": "hu",
+    "value": "Itt vannak a címen keresztül engedélyezett kapcsolatok. A fiók jogaival működnek; a hozzáférés nem kerüli meg a tulajdonosi korlátokat."
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-integrations-mcp-permissions-label",
+    "key": "guide.profile.integrations.mcp-permissions.label",
+    "lang": "hu",
+    "value": "Engedélyezett AI-kliensek"
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-integrations-mcp-purpose-description",
+    "key": "guide.profile.integrations.mcp-purpose.description",
+    "lang": "hu",
+    "value": "A jóváhagyott AI-kliens a profilnak engedélyezett műveleteket használhatja. Az Olvasás a beszélgetések és értesítések engedélyezett lekérdezéseit is tartalmazza."
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-integrations-mcp-purpose-label",
+    "key": "guide.profile.integrations.mcp-purpose.label",
+    "lang": "hu",
+    "value": "Mit tud az AI-kliens?"
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-integrations-mcp-url-description",
+    "key": "guide.profile.integrations.mcp-url.description",
+    "lang": "hu",
+    "value": "Illeszd ezt az MCP-címet az AI-kliensbe, és válaszd a csatlakozást. Belépés után ellenőrizd a megjelenített profilt, mielőtt engedélyezed a hozzáférést."
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-integrations-mcp-url-label",
+    "key": "guide.profile.integrations.mcp-url.label",
+    "lang": "hu",
+    "value": "Kapcsolódás a címmel"
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-mcp-advanced-close-description",
+    "key": "guide.profile.mcp-advanced.close.description",
+    "lang": "hu",
+    "value": "Visszatér az API / MCP beállításaihoz. A létrehozott vagy visszavont kulcsok változása már megtörtént; az előkészített hozzáférési csomag módosításához még menteni kell a szülőablak pipájával."
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-mcp-advanced-mcp-client-access-description",
+    "key": "guide.profile.mcp-advanced.mcp-client-access.description",
+    "lang": "hu",
+    "value": "Állítsd be ennek a kliensnek a csomagját. A pipa előkészíti a módosítást; az API / MCP főablak pipájával mented el. A fő MCP-korlát is érvényes marad."
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-mcp-advanced-mcp-client-access-label",
+    "key": "guide.profile.mcp-advanced.mcp-client-access.label",
+    "lang": "hu",
+    "value": "A kliens hozzáférése"
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-mcp-advanced-mcp-client-id-description",
+    "key": "guide.profile.mcp-advanced.mcp-client-id.description",
+    "lang": "hu",
+    "value": "Ezt az azonosítót másold be, amikor a kliens beállítása kliensazonosítót kér."
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-mcp-advanced-mcp-client-id-label",
+    "key": "guide.profile.mcp-advanced.mcp-client-id.label",
+    "lang": "hu",
+    "value": "Kliensazonosító"
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-mcp-advanced-mcp-client-revoke-description",
+    "key": "guide.profile.mcp-advanced.mcp-client-revoke.description",
+    "lang": "hu",
+    "value": "A megerősítő ablak jóváhagyása visszavonja ezt a klienst. Ezekkel az adatokkal többé nem tud hitelesíteni."
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-mcp-advanced-mcp-client-revoke-label",
+    "key": "guide.profile.mcp-advanced.mcp-client-revoke.label",
+    "lang": "hu",
+    "value": "Kliens visszavonása"
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-mcp-advanced-mcp-client-secret-description",
+    "key": "guide.profile.mcp-advanced.mcp-client-secret.description",
+    "lang": "hu",
+    "value": "Az új titkot most másold a kliens biztonságos beállításába. A teljes érték csak létrehozás után látható."
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-mcp-advanced-mcp-client-secret-label",
+    "key": "guide.profile.mcp-advanced.mcp-client-secret.label",
+    "lang": "hu",
+    "value": "Kliens titka"
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-mcp-advanced-mcp-generate-description",
+    "key": "guide.profile.mcp-advanced.mcp-generate.description",
+    "lang": "hu",
+    "value": "Hozz létre klienskulcsot az alap Írás csomaggal. A létrehozás azonnali; bezárás előtt másold ki a titkot. Utána másik hozzáférési csomagot is beállíthatsz."
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-mcp-advanced-mcp-generate-label",
+    "key": "guide.profile.mcp-advanced.mcp-generate.label",
+    "lang": "hu",
+    "value": "Kliens létrehozása"
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-mcp-advanced-mcp-manual-keys-description",
+    "key": "guide.profile.mcp-advanced.mcp-manual-keys.description",
+    "lang": "hu",
+    "value": "Akkor használd ezt a részt, ha az AI-kliens kézi hitelesítő adatokat kér. A szokásos OAuth-kapcsolatokat a főablak sorolja fel."
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-mcp-advanced-mcp-manual-keys-label",
+    "key": "guide.profile.mcp-advanced.mcp-manual-keys.label",
+    "lang": "hu",
+    "value": "Kézi klienskulcsok"
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-mcp-authorization-close-description",
+    "key": "guide.profile.mcp-authorization.close.description",
+    "lang": "hu",
+    "value": "Hozzáférés megadása nélkül bezárja az engedélykérést. Aktív klienskérés esetén a bezárás az elutasítást küldi vissza a kliensnek."
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-mcp-authorization-mcp-authorize-access-description",
+    "key": "guide.profile.mcp-authorization.mcp-authorize-access.description",
+    "lang": "hu",
+    "value": "A megjelenített szint korlátozza ezt a kapcsolatot. A fő MCP-korlát és a kliens saját korlátja egyaránt érvényes."
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-mcp-authorization-mcp-authorize-access-label",
+    "key": "guide.profile.mcp-authorization.mcp-authorize-access.label",
+    "lang": "hu",
+    "value": "Hozzáférési csomag"
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-mcp-authorization-mcp-authorize-actions-description",
+    "key": "guide.profile.mcp-authorization.mcp-authorize-actions.description",
+    "lang": "hu",
+    "value": "A jóváhagyás az itt jelzett hozzáférést adja ehhez a profilhoz. A Mégse nem ad hozzáférést. A létrejött kapcsolat később visszavonható az API / MCP ablakban."
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-mcp-authorization-mcp-authorize-actions-label",
+    "key": "guide.profile.mcp-authorization.mcp-authorize-actions.label",
+    "lang": "hu",
+    "value": "Jóváhagyás vagy megszakítás"
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-mcp-authorization-mcp-authorize-client-description",
+    "key": "guide.profile.mcp-authorization.mcp-authorize-client.description",
+    "lang": "hu",
+    "value": "Ellenőrizd a hozzáférést kérő AI-kliens nevét. Akkor folytasd, ha ezt a kapcsolódást indítottad."
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-mcp-authorization-mcp-authorize-client-label",
+    "key": "guide.profile.mcp-authorization.mcp-authorize-client.label",
+    "lang": "hu",
+    "value": "Kapcsolódó kliens"
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-mcp-authorization-mcp-authorize-profile-description",
+    "key": "guide.profile.mcp-authorization.mcp-authorize-profile.description",
+    "lang": "hu",
+    "value": "Ellenőrizd az itt látható profilt. A jóváhagyott kliens ennek a fióknak a nevében jár majd el."
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-mcp-authorization-mcp-authorize-profile-label",
+    "key": "guide.profile.mcp-authorization.mcp-authorize-profile.label",
+    "lang": "hu",
+    "value": "Profil"
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-mcp-details-close-description",
+    "key": "guide.profile.mcp-details.close.description",
+    "lang": "hu",
+    "value": "Visszatér a kliens részleteitől a szülő API / MCP űrlap mentése nélkül. Ha hozzáférési csomagot módosítottál, azt a szülőablak mentési pipájával rögzítsd."
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-mcp-details-mcp-client-access-description",
+    "key": "guide.profile.mcp-details.mcp-client-access.description",
+    "lang": "hu",
+    "value": "Állítsd be ennek a kliensnek a csomagját. A pipa előkészíti a módosítást; az API / MCP főablak pipájával mented el. A fő MCP-korlát is érvényes marad."
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-mcp-details-mcp-client-access-label",
+    "key": "guide.profile.mcp-details.mcp-client-access.label",
+    "lang": "hu",
+    "value": "A kliens hozzáférése"
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-mcp-details-mcp-client-callback-description",
+    "key": "guide.profile.mcp-details.mcp-client-callback.description",
+    "lang": "hu",
+    "value": "Ide irányít vissza az engedélyezés a kliens regisztrált beállítása szerint. Ez technikai kapcsolati adat; az AI-klienshez a főablak MCP-címét kell felvenned."
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-mcp-details-mcp-client-callback-label",
+    "key": "guide.profile.mcp-details.mcp-client-callback.label",
+    "lang": "hu",
+    "value": "Visszahívási cím"
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-mcp-details-mcp-client-id-description",
+    "key": "guide.profile.mcp-details.mcp-client-id.description",
+    "lang": "hu",
+    "value": "Ezt az azonosítót másold be, amikor a kliens beállítása kliensazonosítót kér."
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-mcp-details-mcp-client-id-label",
+    "key": "guide.profile.mcp-details.mcp-client-id.label",
+    "lang": "hu",
+    "value": "Kliensazonosító"
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-mcp-details-mcp-client-secret-description",
+    "key": "guide.profile.mcp-details.mcp-client-secret.description",
+    "lang": "hu",
+    "value": "Az új titkot most másold a kliens biztonságos beállításába. A teljes érték csak létrehozás után látható."
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-mcp-details-mcp-client-secret-label",
+    "key": "guide.profile.mcp-details.mcp-client-secret.label",
+    "lang": "hu",
+    "value": "Kliens titka"
   }
 ]

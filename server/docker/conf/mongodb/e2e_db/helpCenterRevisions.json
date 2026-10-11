@@ -700,5 +700,353 @@
       }
     ],
     "isSystem": true
+  },
+  {
+    "_id": "template-guide-profile.integrations-en-v1",
+    "contextKey": "profile.integrations",
+    "isSystem": true,
+    "lang": "en",
+    "languageLabel": "English",
+    "version": 1,
+    "active": true,
+    "title": "API / MCP connections",
+    "summary": "API / MCP connections",
+    "description": "API / MCP connections",
+    "documentType": "explanation",
+    "presentation": "tour",
+    "sections": [
+      {
+        "id": "overview",
+        "icon": "api",
+        "title": "API / MCP connections",
+        "blurb": "",
+        "contentHtml": "<p>API / MCP connections</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed"
+  },
+  {
+    "_id": "template-guide-profile.integration-access-en-v1",
+    "contextKey": "profile.integration-access",
+    "isSystem": true,
+    "lang": "en",
+    "languageLabel": "English",
+    "version": 1,
+    "active": true,
+    "title": "Connection permissions",
+    "summary": "Connection permissions",
+    "description": "Connection permissions",
+    "documentType": "explanation",
+    "presentation": "tour",
+    "sections": [
+      {
+        "id": "overview",
+        "icon": "api",
+        "title": "Connection permissions",
+        "blurb": "",
+        "contentHtml": "<p>Connection permissions</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed"
+  },
+  {
+    "_id": "template-guide-profile.integration-help-en-v1",
+    "contextKey": "profile.integration-help",
+    "isSystem": true,
+    "lang": "en",
+    "languageLabel": "English",
+    "version": 1,
+    "active": true,
+    "title": "API / MCP help",
+    "summary": "API / MCP help",
+    "description": "API / MCP help",
+    "documentType": "explanation",
+    "presentation": "tour",
+    "sections": [
+      {
+        "id": "overview",
+        "icon": "api",
+        "title": "API / MCP help",
+        "blurb": "",
+        "contentHtml": "<p>API / MCP help</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed"
+  },
+  {
+    "_id": "template-guide-profile.mcp-authorization-en-v1",
+    "contextKey": "profile.mcp-authorization",
+    "isSystem": true,
+    "lang": "en",
+    "languageLabel": "English",
+    "version": 1,
+    "active": true,
+    "title": "Connect an AI client",
+    "summary": "Connect an AI client",
+    "description": "Connect an AI client",
+    "documentType": "explanation",
+    "presentation": "tour",
+    "sections": [
+      {
+        "id": "overview",
+        "icon": "api",
+        "title": "Connect an AI client",
+        "blurb": "",
+        "contentHtml": "<p>Connect an AI client</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed"
+  },
+  {
+    "_id": "template-guide-profile.mcp-advanced-en-v1",
+    "contextKey": "profile.mcp-advanced",
+    "isSystem": true,
+    "lang": "en",
+    "languageLabel": "English",
+    "version": 1,
+    "active": true,
+    "title": "Manual MCP clients",
+    "summary": "Manual MCP clients",
+    "description": "Manual MCP clients",
+    "documentType": "explanation",
+    "presentation": "tour",
+    "sections": [
+      {
+        "id": "overview",
+        "icon": "api",
+        "title": "Manual MCP clients",
+        "blurb": "",
+        "contentHtml": "<p>Manual MCP clients</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed"
+  },
+  {
+    "_id": "template-guide-profile.mcp-details-en-v1",
+    "contextKey": "profile.mcp-details",
+    "isSystem": true,
+    "lang": "en",
+    "languageLabel": "English",
+    "version": 1,
+    "active": true,
+    "title": "MCP connection details",
+    "summary": "MCP connection details",
+    "description": "MCP connection details",
+    "documentType": "explanation",
+    "presentation": "tour",
+    "sections": [
+      {
+        "id": "overview",
+        "icon": "api",
+        "title": "MCP connection details",
+        "blurb": "",
+        "contentHtml": "<p>MCP connection details</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed"
+  },
+  {
+    "_id": "template-guide-profile.integrations-hu-v1",
+    "contextKey": "profile.integrations",
+    "isSystem": true,
+    "lang": "hu",
+    "languageLabel": "Magyar",
+    "version": 1,
+    "active": true,
+    "title": "API- és MCP-kapcsolatok",
+    "summary": "API- és MCP-kapcsolatok",
+    "description": "API- és MCP-kapcsolatok",
+    "documentType": "explanation",
+    "presentation": "tour",
+    "sections": [
+      {
+        "id": "overview",
+        "icon": "api",
+        "title": "API- és MCP-kapcsolatok",
+        "blurb": "",
+        "contentHtml": "<p>API- és MCP-kapcsolatok</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed"
+  },
+  {
+    "_id": "template-guide-profile.integration-access-hu-v1",
+    "contextKey": "profile.integration-access",
+    "isSystem": true,
+    "lang": "hu",
+    "languageLabel": "Magyar",
+    "version": 1,
+    "active": true,
+    "title": "Kapcsolati jogosultságok",
+    "summary": "Kapcsolati jogosultságok",
+    "description": "Kapcsolati jogosultságok",
+    "documentType": "explanation",
+    "presentation": "tour",
+    "sections": [
+      {
+        "id": "overview",
+        "icon": "api",
+        "title": "Kapcsolati jogosultságok",
+        "blurb": "",
+        "contentHtml": "<p>Kapcsolati jogosultságok</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed"
+  },
+  {
+    "_id": "template-guide-profile.integration-help-hu-v1",
+    "contextKey": "profile.integration-help",
+    "isSystem": true,
+    "lang": "hu",
+    "languageLabel": "Magyar",
+    "version": 1,
+    "active": true,
+    "title": "API- és MCP-súgó",
+    "summary": "API- és MCP-súgó",
+    "description": "API- és MCP-súgó",
+    "documentType": "explanation",
+    "presentation": "tour",
+    "sections": [
+      {
+        "id": "overview",
+        "icon": "api",
+        "title": "API- és MCP-súgó",
+        "blurb": "",
+        "contentHtml": "<p>API- és MCP-súgó</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed"
+  },
+  {
+    "_id": "template-guide-profile.mcp-authorization-hu-v1",
+    "contextKey": "profile.mcp-authorization",
+    "isSystem": true,
+    "lang": "hu",
+    "languageLabel": "Magyar",
+    "version": 1,
+    "active": true,
+    "title": "AI-kliens csatlakoztatása",
+    "summary": "AI-kliens csatlakoztatása",
+    "description": "AI-kliens csatlakoztatása",
+    "documentType": "explanation",
+    "presentation": "tour",
+    "sections": [
+      {
+        "id": "overview",
+        "icon": "api",
+        "title": "AI-kliens csatlakoztatása",
+        "blurb": "",
+        "contentHtml": "<p>AI-kliens csatlakoztatása</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed"
+  },
+  {
+    "_id": "template-guide-profile.mcp-advanced-hu-v1",
+    "contextKey": "profile.mcp-advanced",
+    "isSystem": true,
+    "lang": "hu",
+    "languageLabel": "Magyar",
+    "version": 1,
+    "active": true,
+    "title": "Kézi MCP-kliensek",
+    "summary": "Kézi MCP-kliensek",
+    "description": "Kézi MCP-kliensek",
+    "documentType": "explanation",
+    "presentation": "tour",
+    "sections": [
+      {
+        "id": "overview",
+        "icon": "api",
+        "title": "Kézi MCP-kliensek",
+        "blurb": "",
+        "contentHtml": "<p>Kézi MCP-kliensek</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed"
+  },
+  {
+    "_id": "template-guide-profile.mcp-details-hu-v1",
+    "contextKey": "profile.mcp-details",
+    "isSystem": true,
+    "lang": "hu",
+    "languageLabel": "Magyar",
+    "version": 1,
+    "active": true,
+    "title": "MCP-kapcsolat részletei",
+    "summary": "MCP-kapcsolat részletei",
+    "description": "MCP-kapcsolat részletei",
+    "documentType": "explanation",
+    "presentation": "tour",
+    "sections": [
+      {
+        "id": "overview",
+        "icon": "api",
+        "title": "MCP-kapcsolat részletei",
+        "blurb": "",
+        "contentHtml": "<p>MCP-kapcsolat részletei</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed"
   }
 ]

@@ -371,6 +371,11 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     update/status and other required operational controls. Omit virtual-company
     Registry screens. Reuse existing components and authority checks. Close with
     member/admin/operator access checks and the retained operations exercised.
+    Member API/MCP settings are selected and qualified at frontend `7c9baee`: 18
+    focused tests, local/HTTP create/mask/permission/revoke flows, contextual guides
+    and dev HTTP browser OAuth consent/PKCE/login return pass. See
+    `MSC122_TEMPLATE_API_MCP_UI_20261011.json`. Admin/operator controls and full
+    external MCP transport remain open; this does not close step 19.
 
 20. **Consolidate JUnit and frontend unit/component coverage — IN PROGRESS.**
     Preserve `tools/run-backend-junit.sh`, native standard/embedded/integration
