@@ -240,3 +240,8 @@ node e2e/functional/ui/operator/configuration.mjs --local
 E2E_MONGO_CONTAINER=myscoutee-template-dev-mongodb E2E_DATABASE=demo_db \
   node e2e/functional/ui/operator/configuration.mjs
 ```
+
+The TLS extension at frontend `800ff16` also passes local save/reopen/disable and
+dev HTTP host-capability denial. Its backend selection has 36 focused passing
+Java checks; 16 TLS/configuration frontend tests pass. See [TLS/update selection](../qualification/evidence/MSC122_TEMPLATE_TLS_UPDATE_SELECTION_20261011.json).
+The backend batch still requires KVM and real host-worker qualification.

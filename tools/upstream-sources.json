@@ -4711,6 +4711,202 @@
       "sourceFrontendRevision": "c90a5b1f",
       "purpose": "Minimal deployment configuration: branding, privacy contact, administrator email allowlist, social links, API URL and Firebase setup.",
       "adaptation": "Select configuration members and existing UI sections; no company Registry, payments, revenue or community state. Use the existing private deployment configuration repository and native HTTP authority. Template title and popup shell composition."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/config/OperatorTlsProperties.java",
+      "upstreamSha256": "1ee2597f8a6f7b16a6c66bfd15242efcdfbf37bb0e7c5c2d23657dce5bdbb612",
+      "sourceRevision": "7a1d375c8",
+      "purpose": "Retained TLS/update signing, staged host requests and role notifications.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/controller/OperatorTlsController.java",
+      "upstreamSha256": "e6ad182665b7fff96dda561e297bbdf6df1f46387c3205898f9fd4a197ac25ca",
+      "sourceRevision": "7a1d375c8",
+      "purpose": "Retained TLS/update signing, staged host requests and role notifications.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/repository/OperatorTlsRepository.java",
+      "upstreamSha256": "76ada60548d7ee3ff22d8371278e47538e0fe327a0d3956cc2a3717087158eab",
+      "sourceRevision": "7a1d375c8",
+      "purpose": "Retained TLS/update signing, staged host requests and role notifications.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/service/OperatorTlsService.java",
+      "upstreamSha256": "3b88d21e7cfde87d949718a67e6c93b30ef7500c4997eff97cf79c5e3607213e",
+      "sourceRevision": "7a1d375c8",
+      "purpose": "Retained TLS/update signing, staged host requests and role notifications.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/mapper/OperatorTlsMapper.java",
+      "upstreamSha256": "50f0fb0998a526f2347ce25c86d4b25a698cee4daf2f23660116457ceb961034",
+      "sourceRevision": "7a1d375c8",
+      "purpose": "Retained TLS/update signing, staged host requests and role notifications.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/dto/OperatorTlsDtos.java",
+      "upstreamSha256": "aae2ff9fbef7d422f1e00a25c89c70c61cc68bb9a69e301d29c8be8d20aa2dea",
+      "sourceRevision": "7a1d375c8",
+      "purpose": "Retained TLS/update signing, staged host requests and role notifications.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/platform/repository/OperatorTlsRepositoryTest.java",
+      "upstreamSha256": "d063635c39f286855e823032c45b636093817c32f5f1c7f23351cf549ed88bcd",
+      "sourceRevision": "7a1d375c8",
+      "purpose": "Retained TLS/update signing, staged host requests and role notifications.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/platform/service/OperatorTlsServiceTest.java",
+      "upstreamSha256": "352cb97852f25f2a1f81e6c497e51a0ddff858f002755749411295afcb3f5b63",
+      "sourceRevision": "7a1d375c8",
+      "purpose": "Retained TLS/update signing, staged host requests and role notifications.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/config/OperatorUpdateProperties.java",
+      "upstreamSha256": "a8d76d66fc751fdfa84f0db3370f7d4bd89e22c6946552807ba3f25df4e4d92e",
+      "sourceRevision": "7a1d375c8",
+      "purpose": "Retained TLS/update signing, staged host requests and role notifications.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/controller/OperatorUpdateController.java",
+      "upstreamSha256": "3c82eb6efecc948cb60e7f17817fbccf514aace27fe41867688ab7f6699d79fb",
+      "sourceRevision": "7a1d375c8",
+      "purpose": "Retained TLS/update signing, staged host requests and role notifications.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/service/OperatorUpdateReleaseService.java",
+      "upstreamSha256": "ed2d636e633cbcf1cdd375ad1f1d4284d2073fdc67b23854071a54525a0317ef",
+      "sourceRevision": "7a1d375c8",
+      "purpose": "Retained TLS/update signing, staged host requests and role notifications.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/service/OperatorUpdateService.java",
+      "upstreamSha256": "a80b60742698c57508dbf0fba88b42367609759f271aec49779ec548604cb694",
+      "sourceRevision": "7a1d375c8",
+      "purpose": "Retained TLS/update signing, staged host requests and role notifications.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/service/OperatorUpdateHttpClient.java",
+      "upstreamSha256": "a27b0b849bb4d60940ccb504773ebd3e6186fd4cd474ae070fd7e82adc427990",
+      "sourceRevision": "7a1d375c8",
+      "purpose": "Retained TLS/update signing, staged host requests and role notifications.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/service/OperatorUpdateArtifactDownloader.java",
+      "upstreamSha256": "38d4327c9ca37fe6988fab08605053191f0fc4f832c4668d79b02fc525b69d9a",
+      "sourceRevision": "7a1d375c8",
+      "purpose": "Retained TLS/update signing, staged host requests and role notifications.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/dto/OperatorUpdateDtos.java",
+      "upstreamSha256": "a35e6ab2847bbf2b487abf613feb885416d72a74d31db566d529078709557945",
+      "sourceRevision": "7a1d375c8",
+      "purpose": "Retained TLS/update signing, staged host requests and role notifications.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/platform/controller/OperatorUpdateControllerTest.java",
+      "upstreamSha256": "a5f1bb0d88f54603a5cfcc673a5a969aedccd2efb6087bf0dfe3f03cd13b6bf4",
+      "sourceRevision": "7a1d375c8",
+      "purpose": "Retained TLS/update signing, staged host requests and role notifications.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/platform/service/OperatorUpdateHttpClientTest.java",
+      "upstreamSha256": "dd1808f7fa592aa29cba6522995c38ebdf67afa5eb5cc492531780999c3b5890",
+      "sourceRevision": "7a1d375c8",
+      "purpose": "Retained TLS/update signing, staged host requests and role notifications.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/platform/service/OperatorUpdateReleaseServiceTest.java",
+      "upstreamSha256": "11e3f579c60fc6e26dd04bd5964ea2788625882f4c1f2a3cbfa58fdd5e8a86e6",
+      "sourceRevision": "7a1d375c8",
+      "purpose": "Retained TLS/update signing, staged host requests and role notifications.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/platform/service/OperatorUpdateServiceTest.java",
+      "upstreamSha256": "78928dfd29ed4a214c4186f1a7ad267cf5e94113924c94dcab5bfba3734250b6",
+      "sourceRevision": "7a1d375c8",
+      "purpose": "Retained TLS/update signing, staged host requests and role notifications.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/platform/service/OperatorUpdateArtifactDownloaderTest.java",
+      "upstreamSha256": "685aaf0883451a093c95b5afa3c83ea2762834123d90e5113407221f9375f727",
+      "sourceRevision": "7a1d375c8",
+      "purpose": "Retained TLS/update signing, staged host requests and role notifications.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/common/security/crypto/CanonicalValues.java",
+      "upstreamSha256": "985271088214a97c62032fb8684965a0740d0c2872e09e32115241c79f4c92ef",
+      "sourceRevision": "7a1d375c8",
+      "purpose": "Retained TLS/update signing, staged host requests and role notifications.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/common/security/crypto/Ed25519Signatures.java",
+      "upstreamSha256": "4be0952b7f4280dfa25b768756e7fad37916e6a0535184f09a0e5f574cb8cf72",
+      "sourceRevision": "7a1d375c8",
+      "purpose": "Retained TLS/update signing, staged host requests and role notifications.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/api/ReleaseProtocol.java",
+      "upstreamSha256": "82273eb541ea4fb1b09f970362d41659ecde61b9366ad45923ec3535eec2fd99",
+      "sourceRevision": "7a1d375c8",
+      "purpose": "Retained TLS/update signing, staged host requests and role notifications.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/notifications/api/RoleNotifications.java",
+      "upstreamSha256": "083cd7ec57fa912c0edcf3044d6a1c89e776812c642d9d248bd4bdd9ba163893",
+      "sourceRevision": "7a1d375c8",
+      "purpose": "Retained TLS/update signing, staged host requests and role notifications.",
+      "adaptation": "Omit member-statistics registration notification and use neutral release fallback text; retain update/moderation delivery and authority."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/notifications/service/RoleNotificationService.java",
+      "upstreamSha256": "cd866535e683a7271a184ce38715b12e4f4ffe5ab863741a4e3b6aa93b9431c0",
+      "sourceRevision": "7a1d375c8",
+      "purpose": "Retained TLS/update signing, staged host requests and role notifications.",
+      "adaptation": "Omit member-statistics registration notification and use neutral release fallback text; retain update/moderation delivery and authority."
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/notifications/service/RoleNotificationServiceTest.java",
+      "upstreamSha256": "c2f5bd120a88321694d0647822beef86aefd528ef4c82a9526d397f14c312050",
+      "sourceRevision": "7a1d375c8",
+      "purpose": "Retained TLS/update signing, staged host requests and role notifications.",
+      "adaptation": "Omit member-statistics registration notification and use neutral release fallback text; retain update/moderation delivery and authority."
+    },
+    {
+      "path": "packaging/release/sign-update-manifest.py",
+      "upstreamSha256": "dd3e21c5cce162470f8594cf38b13217c5e56361c5cfe738d6f715de663a68e5",
+      "sourceRevision": "7a1d375c8",
+      "purpose": "Retained TLS/update signing, staged host requests and role notifications.",
+      "adaptation": null
+    },
+    {
+      "path": "frontend/src/app/shared/core/local/source/mappers/operator-tls.mapper.ts",
+      "upstreamSha256": "9f1c4b6e4548265164de391e615232f1af18987a702f6746bdb1409e0331d132",
+      "sourceRevision": "7a1d375c8",
+      "purpose": "Retained TLS/update signing, staged host requests and role notifications.",
+      "adaptation": null
     }
   ],
   "templateOwnedFeatures": [
@@ -4781,6 +4977,12 @@
       "implementation": "Selected native configuration facade/adapters/workspace and six action-popup sections under a dedicated configuration popup. Existing member shell adds operator-only access; local bootstrap seeds its single private configuration record once. Native guide engine uses selected controls and template API/social descriptions.",
       "qualification": "MSC122_TEMPLATE_OPERATOR_CONFIGURATION_20261011.json",
       "remaining": "TLS/host worker, signed update and live Firebase tests remain separate gates."
+    },
+    {
+      "name": "tls-update-selection",
+      "qualification": "MSC122_TEMPLATE_TLS_UPDATE_SELECTION_20261011.json",
+      "implementation": "Retain native TLS controls and update backend/signatures. Use template-owned paths/repository/version in application configuration. Retain cryptographic protocol identifiers and internal staging filename; no Registry state.",
+      "remaining": "KVM and privileged host workers/package inventory selection; no installation qualification yet."
     }
   ]
 }

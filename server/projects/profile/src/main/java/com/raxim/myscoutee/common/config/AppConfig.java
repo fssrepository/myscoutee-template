@@ -17,6 +17,8 @@ import com.raxim.myscoutee.domain.administration.config.AdminStatsProperties;
 import com.raxim.myscoutee.domain.platform.config.ConfigProperties;
 import com.raxim.myscoutee.domain.media.config.MediaStorageProperties;
 import com.raxim.myscoutee.domain.platform.config.OperatorConfigurationProperties;
+import com.raxim.myscoutee.domain.platform.config.OperatorTlsProperties;
+import com.raxim.myscoutee.domain.platform.config.OperatorUpdateProperties;
 import com.raxim.myscoutee.domain.access.config.RegionSecurityProperties;
 
 @Configuration
@@ -26,6 +28,8 @@ import com.raxim.myscoutee.domain.access.config.RegionSecurityProperties;
         AdminStatsProperties.class,
         RegionSecurityProperties.class,
         OperatorConfigurationProperties.class,
+        OperatorTlsProperties.class,
+        OperatorUpdateProperties.class,
 })
 @EnableSpringDataWebSupport
 @EnableScheduling

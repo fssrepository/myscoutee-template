@@ -558,5 +558,13 @@
     "group": "popup",
     "i18nKey": "guide.operator.configuration.close",
     "order": 6
+  },
+  {
+    "_id": "operator.configuration--operator-save-tls",
+    "id": "operator-save-tls",
+    "screenKey": "operator.configuration",
+    "group": "menus",
+    "i18nKey": "guide.operator.configuration.operator-save-tls",
+    "order": 7
   }
 ]

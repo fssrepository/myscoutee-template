@@ -15562,5 +15562,401 @@
     "key": "guide.operator.configuration.operator-save-social-links.label",
     "lang": "hu",
     "value": "Közösségi linkek"
+  },
+  {
+    "_id": "i18n-message-en-guide-operator-configuration-operator-save-tls-description",
+    "key": "guide.operator.configuration.operator-save-tls.description",
+    "lang": "en",
+    "value": "Submit the selected TLS mode, domain and certificate settings. Follow the returned job state to confirm completion; a save request alone does not prove the new certificate is already active."
+  },
+  {
+    "_id": "i18n-message-en-guide-operator-configuration-operator-save-tls-label",
+    "key": "guide.operator.configuration.operator-save-tls.label",
+    "lang": "en",
+    "value": "TLS"
+  },
+  {
+    "_id": "i18n-message-en-notification-kind-release-available-message",
+    "key": "notification.kind.release-available.message",
+    "lang": "en",
+    "value": "Version {releaseVersion} is available. Review it before installing."
+  },
+  {
+    "_id": "i18n-message-en-notification-kind-release-available-title",
+    "key": "notification.kind.release-available.title",
+    "lang": "en",
+    "value": "New version"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-tls",
+    "key": "operator.configuration.tls",
+    "lang": "en",
+    "value": "HTTPS and certificates"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-tls-auto-renew",
+    "key": "operator.configuration.tls.auto.renew",
+    "lang": "en",
+    "value": "Automatic renewal"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-tls-backend-unavailable",
+    "key": "operator.configuration.tls.backend.unavailable",
+    "lang": "en",
+    "value": "This deployment does not expose managed HTTPS controls."
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-tls-certificate",
+    "key": "operator.configuration.tls.certificate",
+    "lang": "en",
+    "value": "Full certificate chain (PEM)"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-tls-certificate-configured",
+    "key": "operator.configuration.tls.certificate.configured",
+    "lang": "en",
+    "value": "Certificate configured"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-tls-certificate-placeholder",
+    "key": "operator.configuration.tls.certificate.placeholder",
+    "lang": "en",
+    "value": "-----BEGIN CERTIFICATE-----"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-tls-certificate-required",
+    "key": "operator.configuration.tls.certificate.required",
+    "lang": "en",
+    "value": "Provide both the certificate chain and private key."
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-tls-contact-email",
+    "key": "operator.configuration.tls.contact.email",
+    "lang": "en",
+    "value": "Certificate contact email"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-tls-credential-configured",
+    "key": "operator.configuration.tls.credential.configured",
+    "lang": "en",
+    "value": "A certificate and private key are already installed"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-tls-disable",
+    "key": "operator.configuration.tls.disable",
+    "lang": "en",
+    "value": "Turn HTTPS off"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-tls-domain",
+    "key": "operator.configuration.tls.domain",
+    "lang": "en",
+    "value": "Public domain"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-tls-domain-invalid",
+    "key": "operator.configuration.tls.domain.invalid",
+    "lang": "en",
+    "value": "Enter a valid public DNS domain."
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-tls-enabled",
+    "key": "operator.configuration.tls.enabled",
+    "lang": "en",
+    "value": "Turn HTTPS configuration on or off"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-tls-eyebrow",
+    "key": "operator.configuration.tls.eyebrow",
+    "lang": "en",
+    "value": "Deployment transport"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-tls-guidance",
+    "key": "operator.configuration.tls.guidance",
+    "lang": "en",
+    "value": "Point this domain at the deployment before applying automatic certificates. Saving may briefly restart the web gateway."
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-tls-job-queued",
+    "key": "operator.configuration.tls.job.queued",
+    "lang": "en",
+    "value": "HTTPS change queued."
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-tls-mode",
+    "key": "operator.configuration.tls.mode",
+    "lang": "en",
+    "value": "Certificate source"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-tls-mode-automatic",
+    "key": "operator.configuration.tls.mode.automatic",
+    "lang": "en",
+    "value": "Automatic certificate"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-tls-mode-manual",
+    "key": "operator.configuration.tls.mode.manual",
+    "lang": "en",
+    "value": "Certificate and key"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-tls-private-key",
+    "key": "operator.configuration.tls.private.key",
+    "lang": "en",
+    "value": "Private key (PEM)"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-tls-private-key-placeholder",
+    "key": "operator.configuration.tls.private.key.placeholder",
+    "lang": "en",
+    "value": "Paste an unencrypted PEM private key"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-tls-save",
+    "key": "operator.configuration.tls.save",
+    "lang": "en",
+    "value": "Configure HTTPS"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-tls-saved",
+    "key": "operator.configuration.tls.saved",
+    "lang": "en",
+    "value": "HTTPS configuration applied."
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-tls-test-certificate",
+    "key": "operator.configuration.tls.test.certificate",
+    "lang": "en",
+    "value": "Test certificate"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-tls-test-certificate-success",
+    "key": "operator.configuration.tls.test.certificate.success",
+    "lang": "en",
+    "value": "The certificate, private key, and domain match."
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-tls-test-domain",
+    "key": "operator.configuration.tls.test.domain",
+    "lang": "en",
+    "value": "Test domain"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-tls-test-domain-success",
+    "key": "operator.configuration.tls.test.domain.success",
+    "lang": "en",
+    "value": "The domain and ACME path are reachable."
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-tls-test-failed",
+    "key": "operator.configuration.tls.test.failed",
+    "lang": "en",
+    "value": "The HTTPS test failed."
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-tls-validation-invalid",
+    "key": "operator.configuration.tls.validation.invalid",
+    "lang": "en",
+    "value": "Complete the HTTPS fields before testing or saving."
+  },
+  {
+    "_id": "i18n-message-hu-guide-operator-configuration-operator-save-tls-description",
+    "key": "guide.operator.configuration.operator-save-tls.description",
+    "lang": "hu",
+    "value": "Beküldi a TLS-módot, a domaint és a tanúsítvány beállításait. A visszakapott feladatállapotból ellenőrizd a befejezést; a mentési kérés önmagában nem bizonyítja, hogy az új tanúsítvány már aktív."
+  },
+  {
+    "_id": "i18n-message-hu-guide-operator-configuration-operator-save-tls-label",
+    "key": "guide.operator.configuration.operator-save-tls.label",
+    "lang": "hu",
+    "value": "TLS"
+  },
+  {
+    "_id": "i18n-message-hu-notification-kind-release-available-message",
+    "key": "notification.kind.release-available.message",
+    "lang": "hu",
+    "value": "Elérhető a(z) {releaseVersion} verzió. Telepítés előtt nézd át."
+  },
+  {
+    "_id": "i18n-message-hu-notification-kind-release-available-title",
+    "key": "notification.kind.release-available.title",
+    "lang": "hu",
+    "value": "Új verzió"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-tls",
+    "key": "operator.configuration.tls",
+    "lang": "hu",
+    "value": "HTTPS és tanúsítványok"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-tls-auto-renew",
+    "key": "operator.configuration.tls.auto.renew",
+    "lang": "hu",
+    "value": "Automatikus megújítás"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-tls-backend-unavailable",
+    "key": "operator.configuration.tls.backend.unavailable",
+    "lang": "hu",
+    "value": "Ez a telepítés nem biztosít felületi HTTPS-kezelést."
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-tls-certificate",
+    "key": "operator.configuration.tls.certificate",
+    "lang": "hu",
+    "value": "Teljes tanúsítványlánc (PEM)"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-tls-certificate-configured",
+    "key": "operator.configuration.tls.certificate.configured",
+    "lang": "hu",
+    "value": "Tanúsítvány beállítva"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-tls-certificate-placeholder",
+    "key": "operator.configuration.tls.certificate.placeholder",
+    "lang": "hu",
+    "value": "-----BEGIN CERTIFICATE-----"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-tls-certificate-required",
+    "key": "operator.configuration.tls.certificate.required",
+    "lang": "hu",
+    "value": "Add meg a tanúsítványláncot és a privát kulcsot is."
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-tls-contact-email",
+    "key": "operator.configuration.tls.contact.email",
+    "lang": "hu",
+    "value": "Tanúsítvány kapcsolattartó e-mail"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-tls-credential-configured",
+    "key": "operator.configuration.tls.credential.configured",
+    "lang": "hu",
+    "value": "Már telepítve van tanúsítvány és privát kulcs"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-tls-disable",
+    "key": "operator.configuration.tls.disable",
+    "lang": "hu",
+    "value": "HTTPS kikapcsolása"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-tls-domain",
+    "key": "operator.configuration.tls.domain",
+    "lang": "hu",
+    "value": "Nyilvános domain"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-tls-domain-invalid",
+    "key": "operator.configuration.tls.domain.invalid",
+    "lang": "hu",
+    "value": "Adj meg érvényes nyilvános DNS domaint."
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-tls-enabled",
+    "key": "operator.configuration.tls.enabled",
+    "lang": "hu",
+    "value": "HTTPS-beállítás be- vagy kikapcsolása"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-tls-eyebrow",
+    "key": "operator.configuration.tls.eyebrow",
+    "lang": "hu",
+    "value": "Telepítési kapcsolat"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-tls-guidance",
+    "key": "operator.configuration.tls.guidance",
+    "lang": "hu",
+    "value": "Az automatikus tanúsítvány alkalmazása előtt irányítsd a domaint erre a telepítésre. A mentés röviden újraindíthatja a webes átjárót."
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-tls-job-queued",
+    "key": "operator.configuration.tls.job.queued",
+    "lang": "hu",
+    "value": "A HTTPS módosítás sorba állítva."
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-tls-mode",
+    "key": "operator.configuration.tls.mode",
+    "lang": "hu",
+    "value": "Tanúsítvány forrása"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-tls-mode-automatic",
+    "key": "operator.configuration.tls.mode.automatic",
+    "lang": "hu",
+    "value": "Automatikus tanúsítvány"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-tls-mode-manual",
+    "key": "operator.configuration.tls.mode.manual",
+    "lang": "hu",
+    "value": "Tanúsítvány és kulcs"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-tls-private-key",
+    "key": "operator.configuration.tls.private.key",
+    "lang": "hu",
+    "value": "Privát kulcs (PEM)"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-tls-private-key-placeholder",
+    "key": "operator.configuration.tls.private.key.placeholder",
+    "lang": "hu",
+    "value": "Illessze be a titkosítatlan PEM privát kulcsot"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-tls-save",
+    "key": "operator.configuration.tls.save",
+    "lang": "hu",
+    "value": "HTTPS beállítása"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-tls-saved",
+    "key": "operator.configuration.tls.saved",
+    "lang": "hu",
+    "value": "A HTTPS beállítás alkalmazva."
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-tls-test-certificate",
+    "key": "operator.configuration.tls.test.certificate",
+    "lang": "hu",
+    "value": "Tanúsítvány tesztelése"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-tls-test-certificate-success",
+    "key": "operator.configuration.tls.test.certificate.success",
+    "lang": "hu",
+    "value": "A tanúsítvány, a privát kulcs és a domain egyezik."
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-tls-test-domain",
+    "key": "operator.configuration.tls.test.domain",
+    "lang": "hu",
+    "value": "Domain tesztelése"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-tls-test-domain-success",
+    "key": "operator.configuration.tls.test.domain.success",
+    "lang": "hu",
+    "value": "A domain és az ACME útvonal elérhető."
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-tls-test-failed",
+    "key": "operator.configuration.tls.test.failed",
+    "lang": "hu",
+    "value": "A HTTPS teszt sikertelen."
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-tls-validation-invalid",
+    "key": "operator.configuration.tls.validation.invalid",
+    "lang": "hu",
+    "value": "Tesztelés vagy mentés előtt töltsd ki a HTTPS mezőket."
   }
 ]

@@ -1,0 +1,108 @@
+{
+  "date": "2026-10-11",
+  "status": "IN PROGRESS: selected backend tests and local/dev HTTP TLS controls pass; KVM and host execution remain pending.",
+  "templateFrontendRevision": "800ff16",
+  "templateParentBaseRevision": "d73bbae",
+  "sourceBackendRevision": "7a1d375c8",
+  "sourceFrontendRevision": "c90a5b1f",
+  "scope": "Native TLS and signed updater backend, required signing primitives and release/moderation role notifications. Native TLS UI/local adapters and bounded HTTP worker polling. No Registry/company/payment dependency; historical signature domain separators remain unchanged.",
+  "checks": [
+    {
+      "name": "Standard JUnit",
+      "tests": 17,
+      "files": 4,
+      "result": "PASS",
+      "command": "tools/run-backend-junit.sh standard --tests '*OperatorTls*' --tests '*OperatorUpdateServiceTest' --tests '*RoleNotificationServiceTest'",
+      "log": "/tmp/msc122-template-operations-junit.log"
+    },
+    {
+      "name": "Embedded HTTP/downloader JUnit",
+      "tests": 10,
+      "files": 2,
+      "result": "PASS",
+      "command": "tools/run-backend-junit.sh embedded --tests '*OperatorUpdateArtifactDownloaderTest' --tests '*OperatorUpdateHttpClientTest'",
+      "log": "/tmp/msc122-template-operations-embedded.log"
+    },
+    {
+      "name": "Signed release integration JUnit",
+      "tests": 9,
+      "files": 1,
+      "result": "PASS",
+      "command": "tools/run-backend-junit.sh integration --tests '*OperatorUpdateReleaseServiceTest'",
+      "log": "/tmp/msc122-template-operations-release.log",
+      "note": "Disposable keys, signed metadata and mocked HTTP. No existing release/signing key or dev database mutation."
+    },
+    {
+      "name": "Frontend TLS/workspace tests",
+      "tests": 16,
+      "files": 2,
+      "result": "PASS",
+      "log": "/tmp/msc122-template-tls-unit.log",
+      "assertions": [
+        "Native shared draft/feedback behavior",
+        "Explicit TLS save",
+        "Local persisted TLS survives unrelated configuration saves",
+        "Private keys/certificate drafts are not persisted in local storage"
+      ]
+    },
+    {
+      "name": "Local configuration/TLS browser",
+      "result": "PASS",
+      "log": "/tmp/msc122-template-tls-local.log",
+      "assertions": [
+        "Retained configuration regression",
+        "TLS enable, domain/contact save, reopen and disable",
+        "Eight native guide targets when TLS save is rendered"
+      ],
+      "limit": "The native local adapter simulates TLS; this does not prove certificate issuance or host changes."
+    },
+    {
+      "name": "Dev HTTP operator browser/API",
+      "result": "PASS",
+      "log": "/tmp/msc122-template-tls-http.log",
+      "assertions": [
+        "Existing configuration/guide flow",
+        "TLS toggle disabled for DEMO host capability",
+        "Updater overview reports version 1.0.0 and execution disabled in DEMO",
+        "Members denied TLS and update status with 403",
+        "No browser runtime/resource errors; exact owned-fixture cleanup"
+      ]
+    },
+    {
+      "name": "Existing hot-deploy",
+      "result": "PASS",
+      "note": "Native dev watcher compiled the batch; backend restarted healthy at 20:38:18. Frontend-sync compiled TLS controls; local watcher and frontend-sync ran serially."
+    },
+    {
+      "name": "Localization",
+      "result": "PASS",
+      "messages": 2660,
+      "version": "2026.10.11.13",
+      "bundles": 2,
+      "physicalMongoSeedSets": 3
+    }
+  ],
+  "performance": {
+    "operatorReadMs": 26,
+    "runtimeSample": {
+      "backendCpuPercent": 9.29,
+      "backendMemory": "1.783 GiB",
+      "mongoCpuPercent": 2.22
+    },
+    "limits": "Diagnostic sample after development reload and browser work. Prior configuration sample was 7.99% CPU and 1.681 GiB, under a different workload; this is not a matched comparison and does not establish performance parity. No added database polling; existing bounded TLS job polling is active only during an explicit host operation. Matched measurement and KVM remain open."
+  },
+  "upstreamSeparation": {
+    "sourceCommit": "7a1d375c8",
+    "evidence": "myscoutee-backend/guides/qualification/evidence/MSC122_UPDATE_SIGNER_POLICY_20261011.json",
+    "template": "The signer is byte-identical; an explicit empty compatibility policy starts the independent template release history at 1.0.0. Source MyScoutee retains its seven-image/1.3.0 worker rule."
+  },
+  "remaining": [
+    "KVM validation of this backend batch and complete monolith runtime flows",
+    "Updater UI and progress/reconnect",
+    "Host TLS worker and genuine certificate apply/restart",
+    "Signed DEB install/rollback and package/worker identity checks",
+    "Versioned source-side separation of hard-coded update-worker image inventory/package paths before template selection",
+    "Admin moderation/support and their role notification targets",
+    "Live Firebase and production deployment qualification"
+  ]
+}

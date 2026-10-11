@@ -381,7 +381,11 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     public/private settings separation. Branding, API URL, privacy, administrator
     emails, social links and Firebase configuration are selected without Registry
     or payment state. See `MSC122_TEMPLATE_OPERATOR_CONFIGURATION_20261011.json`.
-    TLS/update, host execution and live Firebase remain open.
+    TLS controls and the TLS/update backend are now selected at frontend
+    `800ff16`: 36 focused Java checks and 16 frontend checks pass. Local TLS
+    save/reopen/disable and dev HTTP capability/role denial pass. See
+    `MSC122_TEMPLATE_TLS_UPDATE_SELECTION_20261011.json`. This backend batch still needs
+    KVM qualification; update UI, host execution and live Firebase remain open.
 
 20. **Consolidate JUnit and frontend unit/component coverage — IN PROGRESS.**
     Preserve `tools/run-backend-junit.sh`, native standard/embedded/integration
@@ -453,6 +457,13 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     retained-flow checks using the actual built images, not a dev bind mount.
 
 26. **Complete DEB, host operations and Debian/Netcup installation — PENDING.**
+    Concrete source-reuse gap identified: the existing update worker hard-codes
+    the MyScoutee package name/path, installed service and image inventory
+    (including Registry/payment images and the 1.3.0 MCP transition). Separate
+    these product inputs in the source owner before copying the worker. Preserve
+    its strict schema, signature, ownership and image-identity validation. The
+    signing script is already shared unchanged after source `7a1d375c8`; its
+    product-specific installed-worker history is in an adjacent JSON policy.
     Select the existing `packaging/debian`, `packaging/scripts`, release tools,
     client tools and deployment verifier. Preserve install/configure/start/status/
     stop, systemd and privileged-helper boundaries, TLS, permissions, fresh

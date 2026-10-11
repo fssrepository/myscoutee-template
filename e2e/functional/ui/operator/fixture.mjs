@@ -30,6 +30,13 @@ export async function stageOperatorConfigurationFixture(baseUrl){
   assert.equal(publicResponse.status,200);const publicSettings=await publicResponse.json();
   assert(!('adminEmails' in publicSettings));assert(!('firebase' in publicSettings));
   assert(!('authenticationCredential' in before.firebase));assert(!('messagingCredential' in before.firebase));
+  const tls=await fetch(baseUrl+'/api/operator/configuration/tls',{headers});assert.equal(tls.status,200);
+  assert.equal((await tls.json()).capability,'BACKEND_UNAVAILABLE','Demo cannot change host TLS');
+  const updateStatus=await fetch(baseUrl+'/api/operator/updates',{headers});assert.equal(updateStatus.status,200);
+  const overview=await updateStatus.json();assert.equal(overview.enabled,false);assert.equal(overview.currentVersion,'1.0.0');
+  for(const route of ['/api/operator/configuration/tls','/api/operator/updates']){
+   const denied=await fetch(baseUrl+route,{headers:memberHeaders});assert.equal(denied.status,403,'Operator-only host status');
+  }
  },async close(){
   try{
    // Restore through the owning endpoint first so its in-memory settings/public caches agree.
