@@ -112,6 +112,8 @@ services:
     env_file:
     - .env.secrets
     environment:
+      EMAIL_BASE_URL: ${EMAIL_BASE_URL:-http://localhost}
+      SENDGRID_ENDPOINT: ${SENDGRID_ENDPOINT:-https://api.sendgrid.com/v3/mail/send}
       CHAT_CALL_STUN_URLS: ${CHAT_CALL_STUN_URLS:-}
       CHAT_CALL_STUN_PORT: ${CHAT_CALL_STUN_PORT:-3478}
       SPRING_PROFILES_ACTIVE: prod

@@ -127,5 +127,46 @@
     "createdUser": "system",
     "updatedDate": "2026-09-20T12:00:00.000Z",
     "updatedUser": "system"
+  },
+  {
+    "_id": "notification-rule-account-deletion-warning",
+    "syncKey": "notification-rule-account-deletion-warning",
+    "ruleKey": "account-deletion-warning",
+    "label": "admin.jobs.rule.account.deletion.warning",
+    "category": "admin.jobs.category.scheduled",
+    "description": "admin.jobs.rule.account.deletion.warning.description",
+    "actionKey": "users.account-deletion-warning",
+    "triggerKind": "scheduled_process",
+    "enabled": true,
+    "manualRunEnabled": false,
+    "adminManageable": true,
+    "priority": 258,
+    "channels": {
+      "pushEnabled": false,
+      "emailEnabled": false,
+      "inAppEnabled": false,
+      "supportChatEnabled": false
+    },
+    "timing": {
+      "mode": "interval",
+      "intervalMinutes": 60,
+      "intervalSeconds": 3600,
+      "intervalAmount": 1,
+      "intervalUnit": "hours",
+      "month": null,
+      "dayOfMonth": null,
+      "time": "00:00",
+      "timezone": "UTC",
+      "cronExpression": "0 0 0/1 * * ?"
+    },
+    "scheduleSlots": [],
+    "parameters": [],
+    "message": {},
+    "runState": {},
+    "runHistory": [],
+    "createdDate": "2026-05-31T00:00:00.000Z",
+    "createdUser": "notification-registry",
+    "updatedDate": "2026-05-31T00:00:00.000Z",
+    "updatedUser": "notification-registry"
   }
 ]

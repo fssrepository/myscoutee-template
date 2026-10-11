@@ -111,6 +111,9 @@ services:
     container_name: myscoutee-template-e2e-profilemanagement
     hostname: profilemanagement
     environment:
+      EMAIL_BASE_URL: ${EMAIL_BASE_URL:-https://127.0.0.1}
+      EMAIL_ACCOUNT_WARNING_CHECK_DELAY_MS: ${EMAIL_ACCOUNT_WARNING_CHECK_DELAY_MS:-60000}
+      SENDGRID_ENDPOINT: ${SENDGRID_ENDPOINT:-https://api.sendgrid.com/v3/mail/send}
       SPRING_PROFILES_ACTIVE: prod
       SPRING_DEVTOOLS_RESTART_ENABLED: 'false'
       SPRING_DEVTOOLS_ADD_PROPERTIES: 'false'

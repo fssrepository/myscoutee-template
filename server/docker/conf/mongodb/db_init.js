@@ -2,6 +2,9 @@ const requiredCollections = [
   "accessGrants",
   "accessPolicyDefinitions",
   "accountPurgeJobs",
+  "accountDeletionWarnings",
+  "operatorEmailConfigurations",
+  "emailUnsubscriptions",
   "appSettings",
   "chatMessages",
   "chats",
@@ -64,6 +67,10 @@ Array.from(new Set(configuredDatabases)).forEach(databaseName => {
     { geometry: '2dsphere' },
     { name: 'country_partition_geometry' }
   );
+  // Selected account-warning delivery claims; the _id remains the native episode key.
+  portalDb.accountDeletionWarnings.createIndex({ status: 1, nextAttemptAtIso: 1, _id: 1 }, { name: 'account_warning_retry_due' });
+  portalDb.accountDeletionWarnings.createIndex({ status: 1, startedAtIso: 1 }, { name: 'account_warning_stale_claim' });
+  portalDb.accountDeletionWarnings.createIndex({ userId: 1 }, { name: 'account_warning_user' });
   portalDb.integrationTokens.createIndex({ tokenHash: 1 }, { name: 'integration_token_hash', unique: true });
   portalDb.integrationTokens.createIndex({ ownerUserId: 1, createdAtIso: -1 }, { name: 'integration_token_owner_created' });
   portalDb.mcpOAuthClients.createIndex({ createdAt: 1 }, { name: 'createdAt' });

@@ -223,10 +223,14 @@ deep-link behavior. A working `local` build alone does not close frontend work.
    HTTP contract cases pass; see `MSC122_TEMPLATE_ACCOUNT_PURGE_20261011.json`.
    API/MCP credential cleanup now joins the same worker, with embedded retry
    and retained-owner checks in `MSC122_TEMPLATE_API_MCP_20261011.json`.
-   The native deletion-warning email job (five days before the purge deadline) is
-   not yet selected; retain its delivery/retry/deduplication and email cleanup
-   together with the email owner. The already-selected background jobs are account
-   purge, notification delivery and integration/MCP callback delivery. Provider callbacks and full HTTP/UI/REAL-DEMO/KVM deletion
+   The native five-day deletion-warning email job is now selected with configured
+   provider delivery/retry/deduplication, encrypted operator configuration and
+   anonymous unsubscribe. Twenty-two standard tests, four provider HTTP tests,
+   one Mongo purge test, local/HTTP operator settings and the full warning-to-
+   unsubscribe/suppression flow pass. The source warning-claim purge fix is
+   `4b63e893d`; source runtime qualification is still pending. See
+   `MSC122_TEMPLATE_ACCOUNT_EMAIL_20261011.json`. Four seeded jobs are retained:
+   purge, warning email, notification delivery and integration/MCP callback delivery. Provider callbacks and full HTTP/UI/REAL-DEMO/KVM deletion
    qualification remain pending; this checkpoint does not close the step.
 
    Retained background-work inventory (source audit, 2026-10-11):
@@ -236,8 +240,8 @@ deep-link behavior. A working `local` build alone does not close frontend work.
    | Deleted-account purge | `DeletedAccountPurgeService` | Selected; default `users.account-purge-window-days=30`, native rule-gated scheduled scan, durable cleanup retry |
    | Notification delivery/retry | `NotificationOutboxWorkerService` | Selected; native Mongo change-stream wakeup and due-time scheduling, not an added constant polling loop |
    | Integration/MCP callbacks | `IntegrationWebhookService` | Selected; native durable claims/retry and bounded delivery; external public callback qualification remains open |
-   | Pre-purge warning email | Source `DeletedAccountWarningWorker` | Missing; five-day warning window. Select the native email sending/configuration/rendering/unsubscribe dependencies and required data/index/cleanup contracts together |
-   | Chat realtime, call availability, runtime status | Native chat stream consumer, STUN probe, runtime publisher | Infrastructure workers are selected separately from the three seeded job rules; call behavior still needs the step 9 audit |
+   | Pre-purge warning email | Native `DeletedAccountWarningWorker` | Selected; five-day warning, provider retry/deduplication, operator configuration, unsubscribe and purge cleanup pass focused tests and artifact monolith; KVM/installed delivery pending |
+   | Chat realtime, call availability, runtime status | Native chat stream consumer, STUN probe, runtime publisher | Infrastructure workers are selected separately from the four seeded job rules; call behavior still needs the step 9 audit |
    | Events, payments, affinity, product content approval and business reports | Omitted product owners | Not required by retained template screens/models; do not import their jobs or model graphs |
 
    An admin Jobs screen is not required to run these owners. Preserve the native
@@ -595,9 +599,11 @@ deep-link behavior. A working `local` build alone does not close frontend work.
 
 The standalone E2E composition in **21** passes 17 backend cases, admin
 mutations and 15 UI flows. Step **22** also passes all 14 applicable local flows.
-Continue the retained account warning/email gap in **8–9** (native selected
-files are now being wired and are not qualified yet), then the coherent
-performance and KVM batches in **23–24**. Step **20** passes all
+The account warning/email batch in **8–9** now passes its focused JUnit and
+local/artifact-monolith flows. Complete the user-requested frontend domain-folder
+organization next (source first, then template; services/repositories and related
+contracts retain their behavior), followed by the source warning-cleanup runtime
+checks and remaining **8–9**, performance and KVM batches in **23–24**. Step **20** passes all
 400 selected backend and 256 frontend tests. Step **19** has local/dev HTTP
 moderation, support and administrator API evidence at frontend `43980be` and
 parent `e1118fe`. Member steps **15–18** and operator configuration/TLS/update

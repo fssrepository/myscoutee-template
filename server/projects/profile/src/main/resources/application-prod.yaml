@@ -61,3 +61,15 @@ logging:
   level:
     org.springframework.data.mongodb.core.MongoTemplate: WARN
     org.springframework.integration: WARN
+
+email:
+  # Actual sends require the operator's encrypted provider configuration.
+  enabled: ${EMAIL_ENABLED:false}
+  provider: ${EMAIL_PROVIDER:noop}
+  from-email: ${EMAIL_FROM_EMAIL:no-reply@template.local}
+  from-name: ${EMAIL_FROM_NAME:Templates}
+  reply-to: ${EMAIL_REPLY_TO:support@template.local}
+  base-url: ${EMAIL_BASE_URL:http://localhost}
+  sendgrid:
+    api-key: ${SENDGRID_API_KEY:}
+    endpoint: ${SENDGRID_ENDPOINT:https://api.sendgrid.com/v3/mail/send}

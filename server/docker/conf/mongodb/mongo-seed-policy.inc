@@ -131,6 +131,21 @@ db.userFeedback.createIndex({userId: 1, createdDate: -1}, {name: 'user_feedback_
 db.userFeedback.createIndex({resolvedAtIso: 1}, {name: 'user_feedback_resolved'});
 " >/dev/null
       ;;
+    accountDeletionWarnings)
+      mongosh \
+        --host "${mongo_host}" \
+        --port "${mongo_port}" \
+        --username "${mongo_username}" \
+        --password "${mongo_password}" \
+        --authenticationDatabase "${target_db}" \
+        --quiet \
+        "${target_db}" \
+        --eval "
+db.getCollection('accountDeletionWarnings').createIndex({ status: 1, nextAttemptAtIso: 1, _id: 1 }, { name: 'account_warning_retry_due' });
+db.getCollection('accountDeletionWarnings').createIndex({ status: 1, startedAtIso: 1 }, { name: 'account_warning_stale_claim' });
+db.getCollection('accountDeletionWarnings').createIndex({ userId: 1 }, { name: 'account_warning_user' });
+" >/dev/null
+      ;;
     integrationTokens|mcpOAuthClients|mcpAuthorizations|integrationWebhookDeliveries|mcpEventSubscriptions)
       mongosh \
         --host "${mongo_host}" \
@@ -344,6 +359,7 @@ ensure_collection_versions() {
 ensure_runtime_indexes() {
   local target_db="$1"
   ensure_collection_indexes "${target_db}" "integrationTokens"
+  ensure_collection_indexes "${target_db}" "accountDeletionWarnings"
   ensure_collection_indexes "${target_db}" "userReports"
 }
 

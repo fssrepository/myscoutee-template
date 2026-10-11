@@ -69,3 +69,25 @@ Each flow directory contains its log and available screenshots. The source
 External provider login, public callback delivery, KVM, installed packages and
 matched load measurements have separate gates in the numbered implementation
 plan. Passing these functional cases does not close those gates.
+
+## Account-warning email (local provider only)
+
+Reuse `guides/qa/tools/email-provider-stub.py`; it records disposable fixture
+mail and never forwards it. Bind it to the host's Docker bridge address (for
+example `172.17.0.1`) on port `18991`, with its `--output` set to
+`.e2e-artifacts/functional/email/received.jsonl`. Start E2E with
+`SENDGRID_ENDPOINT=http://172.17.0.1:18991/v3/mail/send` and, for this focused
+scheduler test, `EMAIL_ACCOUNT_WARNING_CHECK_DELAY_MS=1000`. Keep the normal
+60000ms tick outside this test. Use the usual isolated E2E variables above.
+
+With the receiver running, execute serially:
+
+```sh
+E2E_EMAIL_PROVIDER_STUB=true node e2e/functional/ui/operator/configuration.mjs
+E2E_EMAIL_PROVIDER_STUB=true node e2e/functional/ui/operator/email-warning.mjs
+```
+
+The second test restores its owned actors, warning schedule, email configuration
+and suppression rows. Captured email bodies and opaque unsubscribe links stay in
+ignored private files. Stop the receiver and E2E stack afterward. This proves
+the configured protocol path with the local receiver, not external email delivery.

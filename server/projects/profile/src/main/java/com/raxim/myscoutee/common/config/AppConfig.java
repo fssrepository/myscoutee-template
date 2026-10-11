@@ -24,6 +24,7 @@ import com.raxim.myscoutee.domain.access.config.RegionSecurityProperties;
 @Configuration
 @EnableConfigurationProperties({
         ConfigProperties.class,
+        com.raxim.myscoutee.domain.email.config.EmailProperties.class,
         MediaStorageProperties.class,
         AdminStatsProperties.class,
         RegionSecurityProperties.class,

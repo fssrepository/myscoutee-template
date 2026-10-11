@@ -2421,10 +2421,10 @@
     },
     {
       "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/service/DeletedAccountPurgeService.java",
-      "upstreamSha256": "127171db7d7a865c7c27ff5674ba27a829f3f90f839baeea50d11975409218a3",
-      "sourceRevision": "7a1d375c87379521c890c3984f42ee6d6e0f2e71",
+      "upstreamSha256": "680a5e01ffc19d44865bf6a0bdbef6b3c4372bb413c16b64f2c527e5b3e2dc18",
+      "sourceRevision": "4b63e893d66781ed91691c3f5ec7c8e7ad5e4486",
       "purpose": "Native minimal integration storage, lifecycle and migration ownership.",
-      "adaptation": "Select native durable account/media/chat/integration/consent/notification/help cleanup, leases, retry and stage ordering. Omit absent product actions/global identity and not-yet-installed email stage. Preserve job schema and rejection of unfinished product cleanup."
+      "adaptation": "Retain selected account/media/chat/integration/consent/notification/help cleanup, leases/retry/order and warning-claim cleanup. Omit absent product/global identity and promotional email owners."
     },
     {
       "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/api/SchedulingPolicy.java",
@@ -5616,6 +5616,229 @@
       "upstreamSha256": "308c05b693426d2aaae8af4629f927a96b8190edad8e1a747597cbe0e91c8e43",
       "purpose": "Native artifact-only E2E gateway, selected component workspace build inputs, TLS policy or retained STUN service.",
       "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/email/api/EmailSendRequest.java",
+      "sourceRevision": "bc9003efc252d37568c1fc0a13deeaa8f288e142",
+      "upstreamSha256": "fe2adfc7c9370398b12f21f90fd3bbfdc455817bb5b89724a2e88727f49bbde6",
+      "purpose": "Native five-day pre-purge account warning and its required configured email provider, rendering, unsubscribe and isolated tests. Promotional campaign/outbox/task models are not selected.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/email/api/EmailSendResult.java",
+      "sourceRevision": "bc9003efc252d37568c1fc0a13deeaa8f288e142",
+      "upstreamSha256": "ad624139f84082d9304619f66c37374554e4b50a8ab7acf25169a25e32941612",
+      "purpose": "Native five-day pre-purge account warning and its required configured email provider, rendering, unsubscribe and isolated tests. Promotional campaign/outbox/task models are not selected.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/email/api/EmailRendering.java",
+      "sourceRevision": "bc9003efc252d37568c1fc0a13deeaa8f288e142",
+      "upstreamSha256": "c1f794392f0439bbadb0e09cc03b5db09926cdba52be55429ed339e2317530c4",
+      "purpose": "Native five-day pre-purge account warning and its required configured email provider, rendering, unsubscribe and isolated tests. Promotional campaign/outbox/task models are not selected.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/email/api/EmailSending.java",
+      "sourceRevision": "bc9003efc252d37568c1fc0a13deeaa8f288e142",
+      "upstreamSha256": "56cfe559bfe8b7bdcf3bb23463d5e6922a04af6e22e9338cd84a66fed8ba89f7",
+      "purpose": "Native five-day pre-purge account warning and its required configured email provider, rendering, unsubscribe and isolated tests. Promotional campaign/outbox/task models are not selected.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/email/api/EmailLinks.java",
+      "sourceRevision": "bc9003efc252d37568c1fc0a13deeaa8f288e142",
+      "upstreamSha256": "67c50ff922f7f379d2e733eac724d100dc779b091cf9e79e62a3a6615dfad82c",
+      "purpose": "Native five-day pre-purge account warning and its required configured email provider, rendering, unsubscribe and isolated tests. Promotional campaign/outbox/task models are not selected.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/email/config/EmailProperties.java",
+      "sourceRevision": "bc9003efc252d37568c1fc0a13deeaa8f288e142",
+      "upstreamSha256": "b3dcfab9dac38e3fa42521af82cb411b131f1dce738fd9a12f271f85130a9461",
+      "purpose": "Native five-day pre-purge account warning and its required configured email provider, rendering, unsubscribe and isolated tests. Promotional campaign/outbox/task models are not selected.",
+      "adaptation": "Omit the unselected promotional-campaign configuration class; retain native provider/sender/public-link settings."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/email/service/EmailProvider.java",
+      "sourceRevision": "bc9003efc252d37568c1fc0a13deeaa8f288e142",
+      "upstreamSha256": "0ddb017606fe0bb704b596428ed5a32866b3d081403fd1306f1432bceb649a80",
+      "purpose": "Native five-day pre-purge account warning and its required configured email provider, rendering, unsubscribe and isolated tests. Promotional campaign/outbox/task models are not selected.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/email/service/EmailProviderGateway.java",
+      "sourceRevision": "bc9003efc252d37568c1fc0a13deeaa8f288e142",
+      "upstreamSha256": "d14c9459957641d7947c7e4bc4021eacf9260b5d3205e8c0f63b3430665d5def",
+      "purpose": "Native five-day pre-purge account warning and its required configured email provider, rendering, unsubscribe and isolated tests. Promotional campaign/outbox/task models are not selected.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/email/service/NoopEmailProvider.java",
+      "sourceRevision": "bc9003efc252d37568c1fc0a13deeaa8f288e142",
+      "upstreamSha256": "8dee8a44b3a904e1eed4deefc0fb5c9e1e6e71f38ff95bd12a6d7ff5ef218545",
+      "purpose": "Native five-day pre-purge account warning and its required configured email provider, rendering, unsubscribe and isolated tests. Promotional campaign/outbox/task models are not selected.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/email/service/SendGridEmailProvider.java",
+      "sourceRevision": "bc9003efc252d37568c1fc0a13deeaa8f288e142",
+      "upstreamSha256": "56c1c11de477342b806ec022cd58529628239838ddfee07480463ae4abc596db",
+      "purpose": "Native five-day pre-purge account warning and its required configured email provider, rendering, unsubscribe and isolated tests. Promotional campaign/outbox/task models are not selected.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/email/service/EmailTemplateRenderer.java",
+      "sourceRevision": "bc9003efc252d37568c1fc0a13deeaa8f288e142",
+      "upstreamSha256": "bf7582dd62271ea9096357b1597ff6886fa11f223947f57dcd2e61faf2608bfc",
+      "purpose": "Native five-day pre-purge account warning and its required configured email provider, rendering, unsubscribe and isolated tests. Promotional campaign/outbox/task models are not selected.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/email/service/OperatorEmailConfigurationService.java",
+      "sourceRevision": "bc9003efc252d37568c1fc0a13deeaa8f288e142",
+      "upstreamSha256": "0c4964a21963d886ec5ea89c861c467c7a373162cb50ce01607105a4678173e4",
+      "purpose": "Native five-day pre-purge account warning and its required configured email provider, rendering, unsubscribe and isolated tests. Promotional campaign/outbox/task models are not selected.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/email/service/EmailPresentationService.java",
+      "sourceRevision": "bc9003efc252d37568c1fc0a13deeaa8f288e142",
+      "upstreamSha256": "8bf7e9de1b86c1a0e8015b74f96775315582a56876a8618671ee92c6a3336f8d",
+      "purpose": "Native five-day pre-purge account warning and its required configured email provider, rendering, unsubscribe and isolated tests. Promotional campaign/outbox/task models are not selected.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/email/service/EmailUnsubscribeService.java",
+      "sourceRevision": "bc9003efc252d37568c1fc0a13deeaa8f288e142",
+      "upstreamSha256": "8f22e70e33d4739589b64b87a45d0d4b6a5aad0d72f4237ef914cef0b1ac57e6",
+      "purpose": "Native five-day pre-purge account warning and its required configured email provider, rendering, unsubscribe and isolated tests. Promotional campaign/outbox/task models are not selected.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/email/controller/OperatorEmailConfigurationController.java",
+      "sourceRevision": "bc9003efc252d37568c1fc0a13deeaa8f288e142",
+      "upstreamSha256": "bd6c543715bde1dfe3e4b7faaa786e9375233eb4b11482415685913aba160ab1",
+      "purpose": "Native five-day pre-purge account warning and its required configured email provider, rendering, unsubscribe and isolated tests. Promotional campaign/outbox/task models are not selected.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/email/controller/PublicEmailUnsubscribeController.java",
+      "sourceRevision": "bc9003efc252d37568c1fc0a13deeaa8f288e142",
+      "upstreamSha256": "9b818d31154c57210f67cd49e5fc18fc0223029c5801cbab081ab9f51e1fef30",
+      "purpose": "Native five-day pre-purge account warning and its required configured email provider, rendering, unsubscribe and isolated tests. Promotional campaign/outbox/task models are not selected.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/service/DeletedAccountWarningWorker.java",
+      "sourceRevision": "bc9003efc252d37568c1fc0a13deeaa8f288e142",
+      "upstreamSha256": "0a89a12b5307ad31b33cf4e97bc05ede780cddfa90197182e2ae60a77e65f673",
+      "purpose": "Native five-day pre-purge account warning and its required configured email provider, rendering, unsubscribe and isolated tests. Promotional campaign/outbox/task models are not selected.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/service/AccountJobQueries.java",
+      "sourceRevision": "bc9003efc252d37568c1fc0a13deeaa8f288e142",
+      "upstreamSha256": "ca5ece2cbd1f451b9a2f205d3e173a6f2a5e1a2bab33a0029098ccbc1171ef40",
+      "purpose": "Native five-day pre-purge account warning and its required configured email provider, rendering, unsubscribe and isolated tests. Promotional campaign/outbox/task models are not selected.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/email/service/OperatorEmailConfigurationServiceTest.java",
+      "sourceRevision": "bc9003efc252d37568c1fc0a13deeaa8f288e142",
+      "upstreamSha256": "3ca531e58940c9f270be849f13ef57864a11adf6764cd6d04a1cfb92ef4ebfb5",
+      "purpose": "Native five-day pre-purge account warning and its required configured email provider, rendering, unsubscribe and isolated tests. Promotional campaign/outbox/task models are not selected.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/email/service/EmailUnsubscribeServiceTest.java",
+      "sourceRevision": "bc9003efc252d37568c1fc0a13deeaa8f288e142",
+      "upstreamSha256": "cf72ca3b0ac845c4d254d5d189de9e6ef9322bfc31d419c92cc814a019cc0635",
+      "purpose": "Native five-day pre-purge account warning and its required configured email provider, rendering, unsubscribe and isolated tests. Promotional campaign/outbox/task models are not selected.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/email/service/EmailTemplateRendererTest.java",
+      "sourceRevision": "bc9003efc252d37568c1fc0a13deeaa8f288e142",
+      "upstreamSha256": "56ecf7ec35507dd14ada536faf2086eef9cbad155e32fc38c1788019767c3fc3",
+      "purpose": "Native five-day pre-purge account warning and its required configured email provider, rendering, unsubscribe and isolated tests. Promotional campaign/outbox/task models are not selected.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/email/service/EmailProviderGatewayTest.java",
+      "sourceRevision": "bc9003efc252d37568c1fc0a13deeaa8f288e142",
+      "upstreamSha256": "76d04662936e5fffe7f776d446f431123e40bea0827a75bf4052abe84adb7a0b",
+      "purpose": "Native five-day pre-purge account warning and its required configured email provider, rendering, unsubscribe and isolated tests. Promotional campaign/outbox/task models are not selected.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/email/service/SendGridConfiguredEmailTest.java",
+      "sourceRevision": "bc9003efc252d37568c1fc0a13deeaa8f288e142",
+      "upstreamSha256": "a201d5ece2e06bf34f2b68f4e5eb986396cb9aac6e0030f67c4fc5eb628450c7",
+      "purpose": "Native five-day pre-purge account warning and its required configured email provider, rendering, unsubscribe and isolated tests. Promotional campaign/outbox/task models are not selected.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/accounts/service/DeletedAccountWarningWorkerTest.java",
+      "sourceRevision": "bc9003efc252d37568c1fc0a13deeaa8f288e142",
+      "upstreamSha256": "279b059d91f3ac61ce176f4f576059fb0fa46ba52cd776f63be4e5c946face71",
+      "purpose": "Native five-day pre-purge account warning and its required configured email provider, rendering, unsubscribe and isolated tests. Promotional campaign/outbox/task models are not selected.",
+      "adaptation": "Use the retained deployment-scoped JobAudience instead of the unselected product GroupTestSupport fixture."
+    },
+    {
+      "path": "frontend/src/app/operator/components/operator-email-configuration/operator-email-configuration.component.ts",
+      "sourceRevision": "4b63e893d66781ed91691c3f5ec7c8e7ad5e4486",
+      "upstreamSha256": "7cd0894eb6e08132db03fae6c9b327348bff5b3bcce0d5c692502ec1004ee715",
+      "purpose": "Native configured email UI/adapters or non-forwarding QA provider receiver.",
+      "adaptation": "Unchanged selection.",
+      "sourceFrontendRevision": "30649a62ad719895806e46c9eaa4d67ceff618d2"
+    },
+    {
+      "path": "frontend/src/app/operator/components/operator-email-configuration/operator-email-configuration.component.scss",
+      "sourceRevision": "4b63e893d66781ed91691c3f5ec7c8e7ad5e4486",
+      "upstreamSha256": "7170da6d1a9f7eb67ade73b6670fa10cbb45d06acad5a3295de8f0545cb838c6",
+      "purpose": "Native configured email UI/adapters or non-forwarding QA provider receiver.",
+      "adaptation": "Unchanged selection.",
+      "sourceFrontendRevision": "30649a62ad719895806e46c9eaa4d67ceff618d2"
+    },
+    {
+      "path": "frontend/src/app/shared/core/contracts/operator-email.interface.ts",
+      "sourceRevision": "4b63e893d66781ed91691c3f5ec7c8e7ad5e4486",
+      "upstreamSha256": "8034adab108cca772873f215d3ed01ef10a50f8055aa3cbdadc9698b138b0c18",
+      "purpose": "Native configured email UI/adapters or non-forwarding QA provider receiver.",
+      "adaptation": "Unchanged selection.",
+      "sourceFrontendRevision": "30649a62ad719895806e46c9eaa4d67ceff618d2"
+    },
+    {
+      "path": "frontend/src/app/shared/core/base/services/operator-email.service.ts",
+      "sourceRevision": "4b63e893d66781ed91691c3f5ec7c8e7ad5e4486",
+      "upstreamSha256": "d32d707faf860d404d5e43bfe9941a140a68321ff944abe1cdf42dbcfdcd0ea4",
+      "purpose": "Native configured email UI/adapters or non-forwarding QA provider receiver.",
+      "adaptation": "Unchanged selection.",
+      "sourceFrontendRevision": "30649a62ad719895806e46c9eaa4d67ceff618d2"
+    },
+    {
+      "path": "frontend/src/app/shared/core/http/services/operator-email.service.ts",
+      "sourceRevision": "4b63e893d66781ed91691c3f5ec7c8e7ad5e4486",
+      "upstreamSha256": "db96c2596cae16daf8286c0d8454fa74ba0d28d427fc5bbba96948ac2d231ed3",
+      "purpose": "Native configured email UI/adapters or non-forwarding QA provider receiver.",
+      "adaptation": "Unchanged selection.",
+      "sourceFrontendRevision": "30649a62ad719895806e46c9eaa4d67ceff618d2"
+    },
+    {
+      "path": "frontend/src/app/shared/core/local/source/services/operator-email.service.ts",
+      "sourceRevision": "4b63e893d66781ed91691c3f5ec7c8e7ad5e4486",
+      "upstreamSha256": "0c5e47da3ffc2c0caf1471ff543b8e8e2f19a4bda070aadec26ee12edcce0f99",
+      "purpose": "Native configured email UI/adapters or non-forwarding QA provider receiver.",
+      "adaptation": "Unchanged selection.",
+      "sourceFrontendRevision": "30649a62ad719895806e46c9eaa4d67ceff618d2"
+    },
+    {
+      "path": "guides/qa/tools/email-provider-stub.py",
+      "sourceRevision": "4b63e893d66781ed91691c3f5ec7c8e7ad5e4486",
+      "upstreamSha256": "1d8cac9bf542ea7bfc709805c1c67ac5ecaa69ae655994651aacee8ab7f07984",
+      "purpose": "Native configured email UI/adapters or non-forwarding QA provider receiver.",
+      "adaptation": "Unchanged selection."
     }
   ],
   "templateOwnedFeatures": [
@@ -5700,6 +5923,14 @@
       "qualification": "MSC122_TEMPLATE_UPDATE_UI_20261011.json",
       "implementation": "Selected update DTOs, native facade/HTTP/local service methods, workspace state/progress and action-popup update body. Separate owner name without Registry state. Keep native bounded polling, signature capability, rollback and PWA reload. Local seed starts at version 1.0.0 with no fictitious newer release. Operator-only gear and consumed notification target use existing route/guide owners.",
       "remaining": "KVM, signed host installation/rollback and release publication remain separate gates."
+    },
+    {
+      "name": "account-warning-email",
+      "sourceRevision": "4b63e893d66781ed91691c3f5ec7c8e7ad5e4486",
+      "templateFrontendRevision": "fad8ec46cb21470ef213e690faa17bbd89c0c692",
+      "qualification": "MSC122_TEMPLATE_ACCOUNT_EMAIL_20261011.json",
+      "implementation": "Native email selection plus minimal warning rule, Mongo-owned indexes and operator setting mount. Four seeded retained jobs; no admin Jobs UI required.",
+      "remaining": "KVM, installed/external delivery and source runtime follow-up remain separate gates."
     }
   ]
 }

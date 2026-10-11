@@ -17314,5 +17314,389 @@
     "key": "Chat message",
     "lang": "hu",
     "value": "Chatüzenet"
+  },
+  {
+    "_id": "i18n-message-en-account-deletion-warning-body",
+    "key": "account.deletion.warning.body",
+    "lang": "en",
+    "value": "Hello {{name}},\n\nYour deleted account is scheduled for permanent deletion on {{purgeAt}}. This is your five-day reminder. If you want to keep your account, restore it in the application before that date."
+  },
+  {
+    "_id": "i18n-message-en-account-deletion-warning-completed",
+    "key": "account.deletion.warning.completed",
+    "lang": "en",
+    "value": "Account deletion warnings processed."
+  },
+  {
+    "_id": "i18n-message-en-account-deletion-warning-failed",
+    "key": "account.deletion.warning.failed",
+    "lang": "en",
+    "value": "Some account deletion warnings could not be delivered."
+  },
+  {
+    "_id": "i18n-message-en-account-deletion-warning-started",
+    "key": "account.deletion.warning.started",
+    "lang": "en",
+    "value": "Account deletion warning Job started."
+  },
+  {
+    "_id": "i18n-message-en-account-deletion-warning-subject",
+    "key": "account.deletion.warning.subject",
+    "lang": "en",
+    "value": "Your account is approaching permanent deletion"
+  },
+  {
+    "_id": "i18n-message-en-admin-jobs-rule-account-deletion-warning",
+    "key": "admin.jobs.rule.account.deletion.warning",
+    "lang": "en",
+    "value": "Account deletion warning"
+  },
+  {
+    "_id": "i18n-message-en-admin-jobs-rule-account-deletion-warning-description",
+    "key": "admin.jobs.rule.account.deletion.warning.description",
+    "lang": "en",
+    "value": "Emails deleted-account owners five days before permanent deletion using the operator’s email provider."
+  },
+  {
+    "_id": "i18n-message-en-email-sender",
+    "key": "email.sender",
+    "lang": "en",
+    "value": "Sent by"
+  },
+  {
+    "_id": "i18n-message-en-email-unsubscribe-confirm",
+    "key": "email.unsubscribe.confirm",
+    "lang": "en",
+    "value": "Would you like to stop receiving emails from this service?"
+  },
+  {
+    "_id": "i18n-message-en-email-unsubscribe-error",
+    "key": "email.unsubscribe.error",
+    "lang": "en",
+    "value": "We could not update your email preferences. Please try again."
+  },
+  {
+    "_id": "i18n-message-en-email-unsubscribe-invalid",
+    "key": "email.unsubscribe.invalid",
+    "lang": "en",
+    "value": "This unsubscribe link is invalid. Please use the link in your email."
+  },
+  {
+    "_id": "i18n-message-en-email-unsubscribe-javascript",
+    "key": "email.unsubscribe.javascript",
+    "lang": "en",
+    "value": "Please enable JavaScript to confirm your email preferences."
+  },
+  {
+    "_id": "i18n-message-en-email-unsubscribe-landing",
+    "key": "email.unsubscribe.landing",
+    "lang": "en",
+    "value": "Visit MyScoutee"
+  },
+  {
+    "_id": "i18n-message-en-email-unsubscribe-loading",
+    "key": "email.unsubscribe.loading",
+    "lang": "en",
+    "value": "Checking your email preferences…"
+  },
+  {
+    "_id": "i18n-message-en-email-unsubscribe-pending",
+    "key": "email.unsubscribe.pending",
+    "lang": "en",
+    "value": "Please wait…"
+  },
+  {
+    "_id": "i18n-message-en-email-unsubscribe-success",
+    "key": "email.unsubscribe.success",
+    "lang": "en",
+    "value": "You have unsubscribed. You will no longer receive emails from this service."
+  },
+  {
+    "_id": "i18n-message-en-email-unsubscribe-title",
+    "key": "email.unsubscribe.title",
+    "lang": "en",
+    "value": "Email preferences"
+  },
+  {
+    "_id": "i18n-message-en-operator-email-backendrequired",
+    "key": "operator.email.backendRequired",
+    "lang": "en",
+    "value": "Email configuration requires the connected backend. No credentials are stored in the browser demo."
+  },
+  {
+    "_id": "i18n-message-en-operator-email-changed",
+    "key": "operator.email.changed",
+    "lang": "en",
+    "value": "Email configuration changed. Reload and retry."
+  },
+  {
+    "_id": "i18n-message-en-operator-email-credential",
+    "key": "operator.email.credential",
+    "lang": "en",
+    "value": "API key"
+  },
+  {
+    "_id": "i18n-message-en-operator-email-credentialkept",
+    "key": "operator.email.credentialKept",
+    "lang": "en",
+    "value": "Configured — leave blank to keep the saved key"
+  },
+  {
+    "_id": "i18n-message-en-operator-email-enabled",
+    "key": "operator.email.enabled",
+    "lang": "en",
+    "value": "Email enabled"
+  },
+  {
+    "_id": "i18n-message-en-operator-email-failed",
+    "key": "operator.email.failed",
+    "lang": "en",
+    "value": "Unable to load or save email configuration. Check the fields or reload after another operator’s change."
+  },
+  {
+    "_id": "i18n-message-en-operator-email-fromemail",
+    "key": "operator.email.fromEmail",
+    "lang": "en",
+    "value": "Verified sender email"
+  },
+  {
+    "_id": "i18n-message-en-operator-email-fromname",
+    "key": "operator.email.fromName",
+    "lang": "en",
+    "value": "Sender name"
+  },
+  {
+    "_id": "i18n-message-en-operator-email-invalid",
+    "key": "operator.email.invalid",
+    "lang": "en",
+    "value": "Check the provider, sender email and API key."
+  },
+  {
+    "_id": "i18n-message-en-operator-email-notconfigured",
+    "key": "operator.email.notConfigured",
+    "lang": "en",
+    "value": "Email provider is not configured or is disabled."
+  },
+  {
+    "_id": "i18n-message-en-operator-email-provider",
+    "key": "operator.email.provider",
+    "lang": "en",
+    "value": "Email provider"
+  },
+  {
+    "_id": "i18n-message-en-operator-email-purpose",
+    "key": "operator.email.purpose",
+    "lang": "en",
+    "value": "Warns deleted-account owners five days before permanent deletion. The lead time is fixed."
+  },
+  {
+    "_id": "i18n-message-en-operator-email-saved",
+    "key": "operator.email.saved",
+    "lang": "en",
+    "value": "Email configuration saved."
+  },
+  {
+    "_id": "i18n-message-en-operator-email-selectprovider",
+    "key": "operator.email.selectProvider",
+    "lang": "en",
+    "value": "Select provider"
+  },
+  {
+    "_id": "i18n-message-en-operator-email-title",
+    "key": "operator.email.title",
+    "lang": "en",
+    "value": "Email delivery"
+  },
+  {
+    "_id": "i18n-message-hu-account-deletion-warning-body",
+    "key": "account.deletion.warning.body",
+    "lang": "hu",
+    "value": "Kedves {{name}}!\n\nTörölt fiókod végleges törlésének időpontja: {{purgeAt}}. Ez az öt nappal korábbi emlékeztető. Ha meg szeretnéd tartani fiókodat, állítsd vissza az alkalmazásban a megadott időpont előtt."
+  },
+  {
+    "_id": "i18n-message-hu-account-deletion-warning-completed",
+    "key": "account.deletion.warning.completed",
+    "lang": "hu",
+    "value": "A fióktörlési figyelmeztetések feldolgozása befejeződött."
+  },
+  {
+    "_id": "i18n-message-hu-account-deletion-warning-failed",
+    "key": "account.deletion.warning.failed",
+    "lang": "hu",
+    "value": "Egyes fióktörlési figyelmeztetések kézbesítése sikertelen."
+  },
+  {
+    "_id": "i18n-message-hu-account-deletion-warning-started",
+    "key": "account.deletion.warning.started",
+    "lang": "hu",
+    "value": "A fióktörlési figyelmeztetés Job elindult."
+  },
+  {
+    "_id": "i18n-message-hu-account-deletion-warning-subject",
+    "key": "account.deletion.warning.subject",
+    "lang": "hu",
+    "value": "Közeleg a fiókod végleges törlése"
+  },
+  {
+    "_id": "i18n-message-hu-admin-jobs-rule-account-deletion-warning",
+    "key": "admin.jobs.rule.account.deletion.warning",
+    "lang": "hu",
+    "value": "Figyelmeztetés fióktörlés előtt"
+  },
+  {
+    "_id": "i18n-message-hu-admin-jobs-rule-account-deletion-warning-description",
+    "key": "admin.jobs.rule.account.deletion.warning.description",
+    "lang": "hu",
+    "value": "Az operator email-szolgáltatóján keresztül értesíti a törölt fiókok tulajdonosait öt nappal a végleges törlés előtt."
+  },
+  {
+    "_id": "i18n-message-hu-email-sender",
+    "key": "email.sender",
+    "lang": "hu",
+    "value": "Küldő"
+  },
+  {
+    "_id": "i18n-message-hu-email-unsubscribe-confirm",
+    "key": "email.unsubscribe.confirm",
+    "lang": "hu",
+    "value": "Szeretnél leiratkozni a szolgáltatás emailjeiről?"
+  },
+  {
+    "_id": "i18n-message-hu-email-unsubscribe-error",
+    "key": "email.unsubscribe.error",
+    "lang": "hu",
+    "value": "Nem sikerült módosítani az email-beállításokat. Próbáld újra."
+  },
+  {
+    "_id": "i18n-message-hu-email-unsubscribe-invalid",
+    "key": "email.unsubscribe.invalid",
+    "lang": "hu",
+    "value": "Ez a leiratkozási hivatkozás érvénytelen. Használd az emailben kapott linket."
+  },
+  {
+    "_id": "i18n-message-hu-email-unsubscribe-javascript",
+    "key": "email.unsubscribe.javascript",
+    "lang": "hu",
+    "value": "Az email-beállítások megerősítéséhez engedélyezd a JavaScriptet."
+  },
+  {
+    "_id": "i18n-message-hu-email-unsubscribe-landing",
+    "key": "email.unsubscribe.landing",
+    "lang": "hu",
+    "value": "MyScoutee weboldal"
+  },
+  {
+    "_id": "i18n-message-hu-email-unsubscribe-loading",
+    "key": "email.unsubscribe.loading",
+    "lang": "hu",
+    "value": "Email-beállítások ellenőrzése…"
+  },
+  {
+    "_id": "i18n-message-hu-email-unsubscribe-pending",
+    "key": "email.unsubscribe.pending",
+    "lang": "hu",
+    "value": "Kérjük, várj…"
+  },
+  {
+    "_id": "i18n-message-hu-email-unsubscribe-success",
+    "key": "email.unsubscribe.success",
+    "lang": "hu",
+    "value": "Sikeresen leiratkoztál. Ettől a szolgáltatástól nem kapsz több emailt."
+  },
+  {
+    "_id": "i18n-message-hu-email-unsubscribe-title",
+    "key": "email.unsubscribe.title",
+    "lang": "hu",
+    "value": "Email-beállítások"
+  },
+  {
+    "_id": "i18n-message-hu-operator-email-backendrequired",
+    "key": "operator.email.backendRequired",
+    "lang": "hu",
+    "value": "Az email beállításához csatlakoztatott backend szükséges. A böngészős demó nem tárol hitelesítő adatokat."
+  },
+  {
+    "_id": "i18n-message-hu-operator-email-changed",
+    "key": "operator.email.changed",
+    "lang": "hu",
+    "value": "Az email-beállítás módosult. Töltsd újra és próbáld ismét."
+  },
+  {
+    "_id": "i18n-message-hu-operator-email-credential",
+    "key": "operator.email.credential",
+    "lang": "hu",
+    "value": "API-kulcs"
+  },
+  {
+    "_id": "i18n-message-hu-operator-email-credentialkept",
+    "key": "operator.email.credentialKept",
+    "lang": "hu",
+    "value": "Beállítva – üresen hagyva megmarad a mentett kulcs"
+  },
+  {
+    "_id": "i18n-message-hu-operator-email-enabled",
+    "key": "operator.email.enabled",
+    "lang": "hu",
+    "value": "Email-küldés engedélyezve"
+  },
+  {
+    "_id": "i18n-message-hu-operator-email-failed",
+    "key": "operator.email.failed",
+    "lang": "hu",
+    "value": "Az email-beállítás betöltése vagy mentése sikertelen. Ellenőrizd a mezőket, vagy töltsd újra másik operator módosítása után."
+  },
+  {
+    "_id": "i18n-message-hu-operator-email-fromemail",
+    "key": "operator.email.fromEmail",
+    "lang": "hu",
+    "value": "Hitelesített feladói email"
+  },
+  {
+    "_id": "i18n-message-hu-operator-email-fromname",
+    "key": "operator.email.fromName",
+    "lang": "hu",
+    "value": "Feladó neve"
+  },
+  {
+    "_id": "i18n-message-hu-operator-email-invalid",
+    "key": "operator.email.invalid",
+    "lang": "hu",
+    "value": "Ellenőrizd a szolgáltatót, a feladói emailt és az API-kulcsot."
+  },
+  {
+    "_id": "i18n-message-hu-operator-email-notconfigured",
+    "key": "operator.email.notConfigured",
+    "lang": "hu",
+    "value": "Az email-szolgáltató nincs beállítva vagy ki van kapcsolva."
+  },
+  {
+    "_id": "i18n-message-hu-operator-email-provider",
+    "key": "operator.email.provider",
+    "lang": "hu",
+    "value": "Email-szolgáltató"
+  },
+  {
+    "_id": "i18n-message-hu-operator-email-purpose",
+    "key": "operator.email.purpose",
+    "lang": "hu",
+    "value": "Öt nappal a végleges törlés előtt figyelmezteti a törölt fiókok tulajdonosait. Ez az időtartam rögzített."
+  },
+  {
+    "_id": "i18n-message-hu-operator-email-saved",
+    "key": "operator.email.saved",
+    "lang": "hu",
+    "value": "Email-beállítások mentve."
+  },
+  {
+    "_id": "i18n-message-hu-operator-email-selectprovider",
+    "key": "operator.email.selectProvider",
+    "lang": "hu",
+    "value": "Szolgáltató kiválasztása"
+  },
+  {
+    "_id": "i18n-message-hu-operator-email-title",
+    "key": "operator.email.title",
+    "lang": "hu",
+    "value": "Email-küldés"
   }
 ]

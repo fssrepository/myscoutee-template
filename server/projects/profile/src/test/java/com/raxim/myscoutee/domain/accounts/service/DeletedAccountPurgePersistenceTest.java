@@ -46,7 +46,7 @@ class DeletedAccountPurgePersistenceTest {
                             new Document("_id", "recent-credential").append("ownerUserId", "recent")));
                 }
                 mongo.getCollection("mcpOAuthClients").insertOne(new Document("_id", "shared-client"));
-                for (String collection : List.of("privacyConsents", "userSessionActions", "userReports", "userFeedback")) {
+                for (String collection : List.of("privacyConsents", "userSessionActions", "userReports", "userFeedback", "accountDeletionWarnings")) {
                     mongo.getCollection(collection).insertMany(List.of(
                             new Document("_id", "expired-record").append("userId", "expired"),
                             new Document("_id", "recent-record").append("userId", "recent")));
@@ -89,7 +89,7 @@ class DeletedAccountPurgePersistenceTest {
                     assertThat(mongo.getCollection(collection).countDocuments(new Document("ownerUserId", "recent"))).isEqualTo(1);
                 }
                 assertThat(mongo.getCollection("mcpOAuthClients").countDocuments()).isEqualTo(1);
-                for (String collection : List.of("privacyConsents", "userSessionActions", "userReports", "userFeedback")) {
+                for (String collection : List.of("privacyConsents", "userSessionActions", "userReports", "userFeedback", "accountDeletionWarnings")) {
                     assertThat(mongo.getCollection(collection).countDocuments(new Document("userId", "expired"))).isZero();
                     assertThat(mongo.getCollection(collection).countDocuments(new Document("userId", "recent"))).isEqualTo(1);
                 }

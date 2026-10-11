@@ -89,6 +89,10 @@ public class WebSecurityConfig {
                     authorizeRequests.requestMatchers(
                             "/mcp/oauth/metadata", "/mcp/oauth/resource", "/mcp/oauth/token", "/mcp/oauth/register",
                             "/api/mcp/oauth/metadata", "/api/mcp/oauth/resource", "/api/mcp/oauth/token", "/api/mcp/oauth/register",
+                            "/public/email/unsubscribe",
+                            "/public/email/unsubscribe/status",
+                            "/api/public/email/unsubscribe",
+                            "/api/public/email/unsubscribe/status",
                             "/health",
                             "/error",
                             "/auth/eligibility",

@@ -149,6 +149,8 @@ services:
     - -lc
     - /bin/sh /workspace/docker/scripts/ensure_operator_configuration_master_key.sh && exec bash /workspace/docker/scripts/start_profilemanagement_dev.sh
     environment:
+      EMAIL_BASE_URL: ${EMAIL_BASE_URL:-http://localhost}
+      SENDGRID_ENDPOINT: ${SENDGRID_ENDPOINT:-https://api.sendgrid.com/v3/mail/send}
       MYSCOUTEE_RUNTIME_STATUS_ENABLED: 'true'
       MYSCOUTEE_RUNTIME_STATUS_URL: http://nginx:9081/internal/runtime-status
       MYSCOUTEE_RUNTIME_STATUS_TOKEN_FILE: /run/myscoutee-runtime-status/token

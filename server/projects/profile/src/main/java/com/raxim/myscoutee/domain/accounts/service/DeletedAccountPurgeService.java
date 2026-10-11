@@ -378,6 +378,7 @@ public class DeletedAccountPurgeService {
         contentPrivacy.purgeFeedback(userId);
         contentPrivacy.purgeReports(userId);
         deleteDocumentsByAnyField("privacyConsents", List.of("userId"), userId);
+        deleteDocumentsByAnyField("accountDeletionWarnings", List.of("userId"), userId);
         deleteDocumentsByAnyField("userSessionActions", List.of("userId", "createdUser", "updatedUser"), userId);
         notificationPrivacy.purgeDeliveryData(userId);
         helpPrivacy.anonymizeAuthors(userId);
