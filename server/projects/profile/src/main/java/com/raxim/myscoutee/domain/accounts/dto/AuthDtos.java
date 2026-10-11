@@ -53,4 +53,17 @@ public final class AuthDtos {
             boolean submitted,
             String message) {
     }
+    public record UserMenuCountersDto(Integer chats, UserChatCountersDto chat, Integer notifications) {}
+
+    public record UserChatCountersDto(Integer all, Integer appSupport,
+            UserSupportCaseCountersDto supportCases, Integer contacts) {}
+
+    public record UserSupportCaseCountersDto(
+            Integer pending,
+            Integer warned,
+            Integer picked,
+            Integer solved,
+            Integer blocked,
+            Integer all) {
+    }
 }

@@ -1,6 +1,7 @@
 package com.raxim.myscoutee.domain.chat.dto;
 
 import java.util.List;
+import com.raxim.myscoutee.domain.accounts.dto.AuthDtos.UserChatCountersDto;
 
 public final class ChatDtos {
     private ChatDtos() {}
@@ -174,5 +175,47 @@ public final class ChatDtos {
     public record ChatSupportCaseMutationRequestDto(
             String userId,
             String action) {
+    }
+    public record ChatDto(
+            String id,
+            String avatar,
+            String title,
+            String lastMessage,
+            String lastSenderId,
+            List<String> memberIds,
+            List<ChatMemberDto> members,
+            Integer unread,
+            String dateIso,
+            String contextStartAtIso,
+            String contextEndAtIso,
+            String channelType,
+            String ownerId,
+            Double distanceKm,
+            Integer distanceMetersExact,
+            ChatSupportCaseDto supportCase,
+            String ownerStatus,
+            Long revision) {
+    }
+
+    public record ChatHeaderSyncResponseDto(
+            Long revision,
+            boolean changed,
+            String ownerStatus,
+            Integer unread,
+            String lastMessage,
+            String lastSenderId,
+            String dateIso,
+            String contextStartAtIso,
+            String contextEndAtIso,
+            Integer chats,
+            UserChatCountersDto chatCounters) {
+    }
+
+    public record ChatPageResponseDto(
+            List<ChatDto> items,
+            Integer total,
+            String nextCursor,
+            Integer chats,
+            UserChatCountersDto chatCounters) {
     }
 }

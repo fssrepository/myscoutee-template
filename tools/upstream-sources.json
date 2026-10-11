@@ -354,18 +354,6 @@
       "adaptation": null
     },
     {
-      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/dto/AuthDtos.java",
-      "upstreamSha256": "902d3c24ab04f7eefcf68afdee4d1e9e6c13419c8c78202e75be471aca5423bf",
-      "purpose": "Native operator/member login, logout and account deletion request/response schemas.",
-      "adaptation": "Select only these unchanged records; omit product-profile, discovery, ticket, payment and moderation response types."
-    },
-    {
-      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/repository/UsersRepository.java",
-      "upstreamSha256": "5180d15df42b6c92506d50056a07338a229f9aec98d8bcf5e0251980354a2f17",
-      "purpose": "Native Firebase identity lookups, demo member listing, profile reads and deletion admission.",
-      "adaptation": "Retain selected lookup declarations and their original predicates; omit product/workspace/payment queries. Retain the native batch email lookup for notification recipient resolution."
-    },
-    {
       "path": "server/gradlew",
       "upstreamSha256": "fc977a94723af68aaffa4e5d60496fb4aeed1884b6b19e5e2f2fd7612673313d",
       "purpose": "Existing Gradle toolchain, dependency security policy and isolated JUnit workflow.",
@@ -968,20 +956,6 @@
       "adaptation": "Select existing single-account and batched profile reads; omit product roster queries."
     },
     {
-      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/api/ProfileSummaries.java",
-      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
-      "upstreamSha256": "45291e43aa0b3eac30bed57ecdc5dac107f3a8d825847657d9a27d0c7c63d850",
-      "purpose": "Native account/media/chat access policies, administrator identity and narrow profile/chat lookups.",
-      "adaptation": "Select existing single-account and batched profile reads; omit product roster queries."
-    },
-    {
-      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/service/ProfileDirectoryService.java",
-      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
-      "upstreamSha256": "15c0c437ec869d05a0290045ba8bb1e5be770773b89a1383d2a7830a5078a390",
-      "purpose": "Native account/media/chat access policies, administrator identity and narrow profile/chat lookups.",
-      "adaptation": "Select existing account and batch reads only; no product queries or replacement repository."
-    },
-    {
       "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/administration/dto/AdminDtos.java",
       "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
       "upstreamSha256": "5308b71ab7f75caf15797010d33ec198a0deeaf1c3ac73893d2d47b225af931b",
@@ -1148,13 +1122,6 @@
       "upstreamSha256": "ae2fa6a1b61213a808c10495929c07829f2a692946175533f1682ef5e5218210",
       "purpose": "Native durable notification delivery, inbox and chat transport support for the minimal application.",
       "adaptation": null
-    },
-    {
-      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/chat/dto/ChatDtos.java",
-      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
-      "upstreamSha256": "3c915a7b077fad671f90c09410052734a6fab5cd35d3ce7ea033c56433131ef4",
-      "purpose": "Native durable notification delivery, inbox and chat transport support for the minimal application.",
-      "adaptation": "Select native message, socket, device, member and support DTOs; omit product navigation, event creation and product counters."
     },
     {
       "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/chat/service/ChatStreamEvent.java",
@@ -1435,6 +1402,244 @@
       "upstreamSha256": "b45e18b70d6e5945e6d9ddb05d41ddaad2873562df0ae3d5e0a3aa67f059160d",
       "purpose": "Enable the selected native durable notification worker with its existing schedule.",
       "adaptation": "Select the one deployment-scope outbox rule. Other workers will receive their seed only when implemented; no product job records are included."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/api/AccountDevices.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "eca6fd34f810dd49b8a77e730a97a1f5f1c9b22e2ba47989da5df463faa64ffe",
+      "purpose": "Native personal/support chat, message transport and required account-owned state.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/api/ChatCounters.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "fc3bffd034c25d927a617e001109e8878868259ea7f93c8162b451e9661cc448",
+      "purpose": "Native personal/support chat, message transport and required account-owned state.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/service/AccountDeviceService.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "a04fb719d5fdec56b21f3e63212349ef838b2e6e489bd1020f080d0d7672b74b",
+      "purpose": "Native personal/support chat, message transport and required account-owned state.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/service/AccountChatCounterService.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "b1625a6f0fcc0dbaa2738b395f30bc6b095290100c46dfbc00c506a58ab03150",
+      "purpose": "Native personal/support chat, message transport and required account-owned state.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/chat/api/SupportMessages.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "3935981f5cd47eebcd70ac00ed3bc58e2c06e5e57bdcc52b157db43d99ae8e6b",
+      "purpose": "Native personal/support chat, message transport and required account-owned state.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/chat/api/ChatQueries.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "699dfee09d6a588b290f449021d75ab92bea6ab7166ef59e567fff4ce7ec6d9e",
+      "purpose": "Native personal/support chat, message transport and required account-owned state.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/chat/api/ChatSessionAttributes.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "091a87392386b894de6420d303088d0e8b89afbcf0f229ccd8959fedddde3c03",
+      "purpose": "Native personal/support chat, message transport and required account-owned state.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/chat/repository/ContactChatAccessRepository.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "7659b4c80567f2f4d41cb796f6215eb02edfea9e9361f05f2a21399423a71578",
+      "purpose": "Native personal/support chat, message transport and required account-owned state.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/chat/repository/ChatMessagesRepository.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "9acf941c7ac010be2a911937d8e6d06b2b40c44d4273824f3cb3f9962f27c22f",
+      "purpose": "Native personal/support chat, message transport and required account-owned state.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/chat/mapper/ChatMessageMapper.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "46108be743ed29239d354c951c9cee7ac9302b198651bc6258d183692b2c329b",
+      "purpose": "Native personal/support chat, message transport and required account-owned state.",
+      "adaptation": "Omit the product random-event welcome text override. Preserve native batch profile presentation, message and attachment schemas."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/chat/service/ContactPermissionService.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "8e298720cee36b80d4919d603de02970270fed8ec1ada6a27b59736f7d66539e",
+      "purpose": "Native personal/support chat, message transport and required account-owned state.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/chat/service/ChatStreamPublisher.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "3b2471895f4620bfd83fcc0b0daf2f691bc62125aeb76a80294540c63d5664fc",
+      "purpose": "Native personal/support chat, message transport and required account-owned state.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/chat/service/ChatStreamConsumer.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "61253406b04de9b097cf678be80570149c84385873501b259abaa0f29404db3d",
+      "purpose": "Native personal/support chat, message transport and required account-owned state.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/chat/service/ChatCallSignalingService.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "d84a31d62fdf6ccafcd44d67d8e0be5adec73802200c6afe540ae5b8375657b9",
+      "purpose": "Native personal/support chat, message transport and required account-owned state.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/chat/websocket/ChatHandshakeInterceptor.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "f284ae9a90b9b0ac85fadd2711da7f581ccc3a86e68b1a184ceb21296b7e31b3",
+      "purpose": "Native personal/support chat, message transport and required account-owned state.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/chat/websocket/ChatWebSocketHandler.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "baba4bd188a2def96ba0b4fdcacefb06211a1f8e034be2c8fa7c21c1dae2a13a",
+      "purpose": "Native personal/support chat, message transport and required account-owned state.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/chat/service/ChatPushNotificationService.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "90d6c3b0368a087c3828a7d46affa2afafdb17ccf63958321a5506cbddf9b5e3",
+      "purpose": "Native personal/support chat, message transport and required account-owned state.",
+      "adaptation": "Use the template default logo; retain native recipient exclusion, message preview, routes and durable enqueue."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/dto/AuthDtos.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "902d3c24ab04f7eefcf68afdee4d1e9e6c13419c8c78202e75be471aca5423bf",
+      "purpose": "Native personal/support chat, message transport and required account-owned state.",
+      "adaptation": "Select native session DTOs and minimal chat counter response fields; omit unrelated product counters. Persisted Users counter records are unchanged."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/chat/dto/ChatDtos.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "3c915a7b077fad671f90c09410052734a6fab5cd35d3ce7ea033c56433131ef4",
+      "purpose": "Native personal/support chat, message transport and required account-owned state.",
+      "adaptation": "Select personal/support chat, message, socket and device DTOs. Omit product metrics/navigation, event/group/case references and product chat creation requests from JSON; persisted Chat fields remain unchanged."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/chat/mapper/ChatMapper.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "af9ce0be303df09872906020705b5be24da31de8eac68b3ef958893e6d33ae9a",
+      "purpose": "Native personal/support chat, message transport and required account-owned state.",
+      "adaptation": "Omit product metric/navigation decorators and their JSON fields; retain native batched member presentation and support-case mapping."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/chat/service/ChatService.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "9d9e3cd6a8d3110ee82fb51b1b6db6a883c61cde922b692fce971cf8634dc30f",
+      "purpose": "Native personal/support chat, message transport and required account-owned state.",
+      "adaptation": "Select native personal/support chat creation, paging, messaging, read receipts, mutations, authorization and bulk counters. Omit product creators, metrics/navigation and event/community membership branches. Personal creation uses existing approved pairs without the saved-contact invitation feature. Support moderation is deployment-admin only; persisted chat/message models are unchanged. Batched member lookup, message write executors and durable notifications remain. Omit invalidation calls for excluded impression/affinity/game-stack caches; stored counter reads and bulk updates are retained. Use Templates for the default support/system labels."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/api/ProfileSummaries.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "45291e43aa0b3eac30bed57ecdc5dac107f3a8d825847657d9a27d0c7c63d850",
+      "purpose": "Native personal/support chat, message transport and required account-owned state.",
+      "adaptation": "Select native identity summary and bounded chat-member count/page methods only."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/service/ProfileDirectoryService.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "15c0c437ec869d05a0290045ba8bb1e5be770773b89a1383d2a7830a5078a390",
+      "purpose": "Native personal/support chat, message transport and required account-owned state.",
+      "adaptation": "Select existing account lookup and chat-member count/page queries; omit other product directory operations."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/api/ActivityCounters.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "5d1e24a10d0836ca31c55d1ff55b399207a56cad815caffdf2546ee154c78e12",
+      "purpose": "Native account-owned chat counters used by the minimal communication layer.",
+      "adaptation": "Select the two native support counter operations; omit product event, feedback, feed and asset counters."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/service/UserActivityCountersService.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "d08ea903ab35e9822ef1b61cd5771e0a24c944f1808476f7acc73344221fe3dd",
+      "purpose": "Native account-owned chat counters used by the minimal communication layer.",
+      "adaptation": "Select existing administrator lookup, per-scope support-count aggregation and targeted stored counter updates; omit every unrelated product counter."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/repository/UsersRepository.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "5180d15df42b6c92506d50056a07338a229f9aec98d8bcf5e0251980354a2f17",
+      "purpose": "Native account-owned chat counters used by the minimal communication layer.",
+      "adaptation": "Select only native account/session/purge/notification lookups and the host-tier lookup used by support counters."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/api/ProfileReadState.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "683b6f4216e21c1ddf14c769c16c163a75ac50ccafd7f0f0c21ff90730fce7a7",
+      "purpose": "Native account-owned chat counters used by the minimal communication layer.",
+      "adaptation": "Retain stored menu counter reads. Omit invalidation of product impression, affinity and game-stack caches because those caches do not exist in the template."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/service/HomeUserProfileService.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "dc7cd766faa2b17352d9ee43945bbfa0ee586cc5b0b7674221f59050eba0b302",
+      "purpose": "Native account-owned chat counters used by the minimal communication layer.",
+      "adaptation": "Select stored chat/support/notification menu counters with native selected-account lookup. Omit product counter response fields, account enrichment and product caches; profile HTTP methods remain pending."
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/chat/service/ChatPushNotificationServiceTest.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "219ae84e9261ca33792d9127601804603913dd41744ddc3d7f17bea3b5ca3ea0",
+      "purpose": "Existing native chat correctness, bounded lookup and transport security tests.",
+      "adaptation": "Use the template default icon in existing push tests."
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/chat/websocket/ChatHandshakeInterceptorTest.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "cac7662c465e5ac4cf52770feada8ce93da1762e213956bb405f3c5dd975c763",
+      "purpose": "Existing native chat correctness, bounded lookup and transport security tests.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/chat/service/ChatServiceTest.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "162fbb767f452398f920edecd82a880007aa87a7d31063b8bff84be23fa75dd7",
+      "purpose": "Existing native chat correctness, bounded lookup and transport security tests.",
+      "adaptation": "Select 15 native personal/support message, pagination, idempotency and authorization tests. Adapt only reduced DTOs, constructor dependencies, contact-channel fixtures and admin authorization; omit assertions for excluded product caches. Add five template-boundary tests for approved-pair creation, workspace isolation, non-destructive reopening and denied member/admin access."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/chat/controller/ChatsController.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "14889a136ab4bef1ba12ce903227188fd9913e5c9ee370e0cc906bad70bb7bb7",
+      "purpose": "Native authenticated minimal chat HTTP endpoints.",
+      "adaptation": "Omit product service chat/share creation and contact invitation endpoints. Retain personal chat, paging, message mutations, push devices and support-case policy annotations."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/common/config/ChatWebSocketConfig.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "4e24aceb3f7dbc9292a2568b6c5b0ebe3e273a4d191dc8751c31e5277f2bb73b",
+      "purpose": "Native chat WebSocket configuration and media lookup indexes.",
+      "adaptation": "Select native chat WebSocket registration/origin policy. Omit the product notification/job editor socket endpoint."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/chat/config/ChatMediaIndexInitializer.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "88cec5650b825208bd5a5edec2fae757f48031df03780bad05e5a2d541338df7",
+      "purpose": "Native chat WebSocket configuration and media lookup indexes.",
+      "adaptation": null
     }
   ]
 }

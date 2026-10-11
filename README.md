@@ -16,7 +16,8 @@ infrastructure into a reusable project template.
 **Current status:** minimal backend foundations in progress. The selected native
 account, session, consent, access-policy, help/guide and deployment/Firebase code is covered by
 102 focused JUnit tests across staged runs. The notification checkpoint adds 75
-standard tests and one embedded MongoDB test. HTTP composition, chat, frontend, seed and
+standard tests and one embedded MongoDB test; personal/support chat adds 24
+focused tests. HTTP composition, frontend, seed and
 installation are still being implemented; this is not yet a runnable release.
 
 ## Target and local repository layout
@@ -87,6 +88,13 @@ change-stream wakeups. The template omits product group recipient splitting,
 event invitations and community activity counters. Native delivery limits are
 configured under `myscoutee.notifications`; omitted values use existing defaults.
 The deployment-scope outbox rule is the only job seeded at this checkpoint.
+
+Personal/support chat retains native message storage, paging, read receipts,
+unread counters, stable message identity, WebSocket/Redis transport and durable
+push delivery. Product chat creators, metrics and event navigation are omitted.
+A personal chat requires its existing approved contact pair; reopening it does
+not overwrite the conversation. These are component checks, not live deployment
+qualification.
 
 Staged test evidence is in [`guides/qualification/evidence`](guides/qualification/evidence).
 

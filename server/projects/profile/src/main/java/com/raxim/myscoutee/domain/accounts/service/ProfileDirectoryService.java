@@ -15,4 +15,11 @@ public class ProfileDirectoryService implements ProfileDirectory, ProfileSummari
     public ProfileDirectoryService(UsersRepository users) { this.users = users; }
     @Override public Optional<Users> findByUserId(String userId) { return users.findByUserId(userId); }
     @Override public List<Users> findByUserIdIn(Collection<String> userIds) { return users.findByUserIdIn(userIds); }
+    @org.springframework.beans.factory.annotation.Autowired
+    private org.springframework.data.mongodb.core.MongoTemplate mongo;
+    public long countByUserIdIn(Collection<String> ids) { return mongo.count(org.springframework.data.mongodb.core.query.Query.query(org.springframework.data.mongodb.core.query.Criteria.where("userId").in(ids)), Users.class); }
+    public List<Users> pageByUserIdIn(Collection<String> ids, int offset, int limit) {
+        return mongo.find(org.springframework.data.mongodb.core.query.Query.query(org.springframework.data.mongodb.core.query.Criteria.where("userId").in(ids))
+                .with(org.springframework.data.domain.Sort.by(org.springframework.data.domain.Sort.Direction.ASC, "userId")).limit(limit).skip(offset), Users.class);
+    }
 }
