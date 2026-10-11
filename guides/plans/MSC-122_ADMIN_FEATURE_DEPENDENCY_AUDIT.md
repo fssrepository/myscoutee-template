@@ -1,7 +1,7 @@
 # MSC-122 omitted admin feature dependency audit
 
 Updated: 2026-10-12. Owner: implementation plan step 5.
-Status: source/consumer inventory in progress; no Java changes in this batch yet.
+Status: first native source batch committed (`dc97521d4`); assembly/KVM/monolith qualification in progress; template backend removal pending.
 
 ## Verified starting point
 
@@ -67,3 +67,88 @@ Paths below are relative to `server/projects/profile/src/main/java/com/raxim/mys
 This is an inventory, not proof that backend removal is complete. No empty
 provider, compatibility fallback, report-policy rewrite, chat filtering or
 extra service process has been introduced by this audit.
+
+## First source extraction — 2026-10-12
+
+Move the existing two submission methods and their report-only helper methods
+from `accounts/service/HomeUserProfileService` to the selectable
+`accounts/service/ModerationSubmissionService`. Reuse `SelectedProfileService`
+directly: the old profile method already delegated actor resolution to that
+owner. Move the same two HTTP mappings into
+`accounts/controller/ModerationSubmissionController`. Keep both controllers in
+the identity assembly, so no ingress/transport route changes or added remote hop
+are needed. Remove only the three submission-only constructor dependencies from
+the mandatory profile service (`UserFeedback`, `UserReports`, `ChatReview`).
+Event/member reads needed by other profile functions remain. Existing report
+eligibility, evidence validation, duplicate handling, notification and telemetry
+sequence move unchanged. Preserve the existing regression cases and add focused
+submission/controller checks. This extraction alone does not close step 5 or
+authorize skipping the other dependency rows above.
+
+## Next source boundaries in the same batch
+
+- Split the six report/feedback moderation routes out of `AdminController`,
+  retaining their exact mappings in the administration assembly.
+- Use `AdministrativeActors` for administrator identity and the existing
+  `AdministratorClassification` stateless policy for base-profile classification.
+  Content moderation retains its original single `ProfileSummaries` lookup.
+  Classification must not become an administrator-authorized RPC: on the base
+  group route a non-admin classification must still reach existing group-role
+  authorization, exactly as before.
+- Move telemetry batch scoping out of `AdminModerationService` into an
+  administration-local `AdminTelemetryScopeService`. Statistics and monitoring
+  already live in that assembly. Keep the original distinct actor IDs and one
+  bulk profile lookup per batch; this removes the identity-to-community detour.
+  Preserve independent-workspace exclusion and job-tag behavior. Remove the
+  unused generic identity/telemetry operations from the moderation transport.
+  No new administrator transport operation is needed.
+- The closest existing owners are `AdministrativeActorService` (identity/scope)
+  and `AdminTelemetryService` (event recording). The latter does not perform read
+  projection, so batch scoping gets one local service reused by both statistics
+  consumers; no new deployment, document, queue, or per-record query.
+
+## Support mutation boundary in the same batch
+
+Use the existing `ResourceConversationService` pattern: a chat-local feature
+service reuses package-local `ChatService` mutation/mapping helpers. Extract
+support creation, stable-message retries and support-case state commands into
+`SupportConversationService`; move the support-case HTTP mapping, with its exact
+`RequiresPolicy`, into `SupportChatsController`. The same `SupportMessages` API
+and communication assembly remain. Ordinary chat queries, access checks, message
+persistence, stream delivery and existing-conversation visibility stay unchanged.
+Separate `SupportCaseCounters` implementation from atomic/bulk `ChatCounters`,
+preserving one support read per workspace. Do not create another conversation
+store, publisher, write executor, counter implementation or a new remote hop.
+Make status work's support sender optional only when there is no support work.
+If persisted support intent exists without its owner, retain both intent and
+work marker; never acknowledge or drop it. Native installed delivery order and
+stable message IDs stay unchanged.
+
+## API/MCP attention selection
+
+Reuse the integrations package's `Optional<IntegrationProductCapabilities>`
+composition pattern for a local `AdminModerationAttention` provider. Its installed
+implementation reads the same two `ContentStatistics` counts and the already
+loaded support-case snapshot. No new remote protocol or count query is required.
+`AdminClientService` retains authentication, unread version, normal unread count
+and failed jobs. With the provider installed, all existing numeric moderation
+fields remain unchanged. Without it, omit only `unresolvedReports`,
+`unresolvedFeedback` and `supportCases` from JSON; do not represent a missing
+feature as zero. Qualify both serialized shapes and denied-admin behavior.
+`ContentStatistics` remains the native content owner's API; the feed consumer
+continues to use it. The template needs neither photo-feed nor moderation counts,
+so it omits that owner and API rather than inventing a replacement provider.
+The two MyScoutee count queries remain reachable only through the selected
+moderation attention implementation.
+
+## Native source checkpoint
+
+`dc97521d4` preserves the full MyScoutee feature set while separating these
+owners. The coherent 297-test standard group passed, followed by 60 focused
+checks after the final classification change (includes the existing boundary
+suite), and one embedded Mongo chat/counter persistence check. 25 moved method
+bodies match their originals after owner qualification. These figures are not
+an aggregate count of distinct tests. Native runtime CPU/latency, KVM and monolith
+checks remain pending. Evidence:
+`myscoutee-backend/guides/qualification/evidence/MSC122_ADMIN_FEATURE_SEPARATION_20261012.json`.
+No template Java owner has been removed yet.
