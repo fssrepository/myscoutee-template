@@ -502,5 +502,61 @@
     "order": 5,
     "i18nKey": "guide.profile.mcp-details.close",
     "group": "popup"
+  },
+  {
+    "_id": "operator.configuration--operator-save-branding",
+    "id": "operator-save-branding",
+    "screenKey": "operator.configuration",
+    "group": "menus",
+    "i18nKey": "guide.operator.configuration.operator-save-branding",
+    "order": 0
+  },
+  {
+    "_id": "operator.configuration--operator-save-admin-emails",
+    "id": "operator-save-admin-emails",
+    "screenKey": "operator.configuration",
+    "group": "menus",
+    "i18nKey": "guide.operator.configuration.operator-save-admin-emails",
+    "order": 1
+  },
+  {
+    "_id": "operator.configuration--operator-save-privacy-contact",
+    "id": "operator-save-privacy-contact",
+    "screenKey": "operator.configuration",
+    "group": "menus",
+    "i18nKey": "guide.operator.configuration.operator-save-privacy-contact",
+    "order": 2
+  },
+  {
+    "_id": "operator.configuration--operator-save-firebase",
+    "id": "operator-save-firebase",
+    "screenKey": "operator.configuration",
+    "group": "menus",
+    "i18nKey": "guide.operator.configuration.operator-save-firebase",
+    "order": 3
+  },
+  {
+    "_id": "operator.configuration--operator-save-integration",
+    "id": "operator-save-integration",
+    "screenKey": "operator.configuration",
+    "group": "menus",
+    "i18nKey": "guide.operator.configuration.operator-save-integration",
+    "order": 4
+  },
+  {
+    "_id": "operator.configuration--operator-save-social-links",
+    "id": "operator-save-social-links",
+    "screenKey": "operator.configuration",
+    "group": "menus",
+    "i18nKey": "guide.operator.configuration.operator-save-social-links",
+    "order": 5
+  },
+  {
+    "_id": "operator.configuration--close",
+    "id": "close",
+    "screenKey": "operator.configuration",
+    "group": "popup",
+    "i18nKey": "guide.operator.configuration.close",
+    "order": 6
   }
 ]

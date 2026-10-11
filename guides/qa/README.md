@@ -225,3 +225,18 @@ registered clients and actors are removed after the run. The guide runner can
 save desktop/mobile screenshots through `E2E_SCREENSHOT_DIR`; it creates no keys.
 Native frontend `c90a5b1f` also repairs the permission button's zero-sized guide
 anchor with one CSS declaration, verified using the selected component.
+
+## Operator configuration checkpoint
+
+Frontend `6e532c1` selects native configuration controls without Registry/payment
+state. Twenty focused tests and local/dev HTTP browser save/reload, authority and
+seven-step guide checks pass. See [operator configuration evidence](../qualification/evidence/MSC122_TEMPLATE_OPERATOR_CONFIGURATION_20261011.json).
+The fixtures retain and restore the existing deployment configuration through its
+owner, then restore the exact Mongo snapshot and remove their owned sessions.
+TLS/update/host workers and live Firebase are separate pending qualifications.
+
+```sh
+node e2e/functional/ui/operator/configuration.mjs --local
+E2E_MONGO_CONTAINER=myscoutee-template-dev-mongodb E2E_DATABASE=demo_db \
+  node e2e/functional/ui/operator/configuration.mjs
+```

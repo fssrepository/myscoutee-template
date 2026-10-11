@@ -1,0 +1,99 @@
+{
+  "date": "2026-10-11",
+  "templateFrontendRevision": "6e532c1",
+  "templateParentBaseRevision": "3eb12b7",
+  "sourceBackendRevision": "f8a1b83b6",
+  "sourceFrontendRevision": "c90a5b1f",
+  "status": "PASS for selected operator configuration in local and dev HTTP. TLS/update/host workers and live Firebase remain pending.",
+  "scope": "Native configuration facade/adapters, selected workspace and six UI sections: branding, API URL, privacy contact, administrator emails, social links and Firebase. No Java change, company Registry, payment or community models.",
+  "checks": [
+    {
+      "name": "Focused frontend tests",
+      "result": "PASS",
+      "tests": 20,
+      "files": 4,
+      "log": "/tmp/msc122-template-operator-unit.log",
+      "assertions": [
+        "Validation and normalization",
+        "Local seed does not overwrite edited settings",
+        "One IndexedDB hydration and persisted reload",
+        "Operator-only data excluded from public projection",
+        "Local credential presence only; raw credentials never persisted",
+        "Firebase changes invalidate verification; unverified activation refused",
+        "Stale/closed-popup Firebase results ignored; browser readiness lease released",
+        "Write-only credential and destination token drafts cleared on close"
+      ]
+    },
+    {
+      "name": "Operator browser configuration",
+      "result": "PASS",
+      "modes": [
+        "local",
+        "dev HTTP"
+      ],
+      "logs": [
+        "/tmp/msc122-template-operator-local.log",
+        "/tmp/msc122-template-operator-http-final.log"
+      ],
+      "assertions": [
+        "Dedicated operator role selection and owned session",
+        "Six retained sections",
+        "Close discards unsaved edits after the next native load completes",
+        "Branding save and header propagation survive reload",
+        "Partial privacy contact disables save; complete contact normalizes and persists",
+        "Administrator emails deduplicate/normalize and persist",
+        "API URL normalizes and persists",
+        "Unverified Firebase activation unavailable",
+        "Seven rendered contextual guide targets",
+        "No local Java API calls and no browser errors",
+        "Logout denies the operator route"
+      ]
+    },
+    {
+      "name": "HTTP authority and private data",
+      "result": "PASS",
+      "assertions": [
+        "Member GET and PUT configuration return 403",
+        "Public configuration omits administrator list and private Firebase object",
+        "Operator response contains credential presence rather than raw secrets",
+        "Fixture restores settings through the owning endpoint and exact stored snapshot; removes only owned users/sessions"
+      ]
+    },
+    {
+      "name": "Responsive layout",
+      "result": "PASS",
+      "viewports": [
+        "1440x950",
+        "390x844"
+      ],
+      "note": "Screenshots inspected; mobile has no horizontal overflow. Branding-logo upload is selected from the native ImageCarousel but not separately exercised here."
+    },
+    {
+      "name": "Localization and guide seed",
+      "result": "PASS",
+      "version": "2026.10.11.12",
+      "messages": 2594,
+      "bundles": 2,
+      "physicalMongoSeedSets": 3
+    }
+  ],
+  "performance": {
+    "operatorReadMs": 8,
+    "runtimeSample": {
+      "backendCpuPercent": 7.99,
+      "backendMemory": "1.681 GiB",
+      "frontendSyncCpuPercent": 0.99,
+      "mongoCpuPercent": 2.48
+    },
+    "implementation": "On-demand configuration load and native save response reconciliation. Local bootstrap seeds once and repository hydrates once. No new polling loop or Java/database query.",
+    "limits": "Single request and diagnostic CPU sample, not a matched comparison or performance-parity claim. One compiler and one application stack; local watcher stopped before frontend-sync restarted."
+  },
+  "remaining": [
+    "TLS and signed update UI/backend/host worker selection",
+    "Admin support/moderation/API operations",
+    "Live Firebase authentication and messaging/activation",
+    "Operator bootstrap configuration UI qualification",
+    "Branding logo upload and social-link browser save",
+    "KVM, disposable E2E, production/installed artifacts and matched workload"
+  ]
+}

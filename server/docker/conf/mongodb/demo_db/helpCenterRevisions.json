@@ -1048,5 +1048,63 @@
     "updatedDate": "2026-10-11T00:00:00Z",
     "createdUser": "template-seed",
     "updatedUser": "template-seed"
+  },
+  {
+    "_id": "template-guide-operator.configuration-en-v1",
+    "contextKey": "operator.configuration",
+    "isSystem": true,
+    "lang": "en",
+    "languageLabel": "English",
+    "version": 1,
+    "active": true,
+    "title": "Deployment configuration",
+    "summary": "Deployment configuration",
+    "description": "Deployment configuration",
+    "documentType": "explanation",
+    "presentation": "tour",
+    "sections": [
+      {
+        "id": "overview",
+        "icon": "api",
+        "title": "Deployment configuration",
+        "blurb": "",
+        "contentHtml": "<p>Deployment configuration</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed"
+  },
+  {
+    "_id": "template-guide-operator.configuration-hu-v1",
+    "contextKey": "operator.configuration",
+    "isSystem": true,
+    "lang": "hu",
+    "languageLabel": "Magyar",
+    "version": 1,
+    "active": true,
+    "title": "Telepítési beállítások",
+    "summary": "Telepítési beállítások",
+    "description": "Telepítési beállítások",
+    "documentType": "explanation",
+    "presentation": "tour",
+    "sections": [
+      {
+        "id": "overview",
+        "icon": "api",
+        "title": "Telepítési beállítások",
+        "blurb": "",
+        "contentHtml": "<p>Telepítési beállítások</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed"
   }
 ]

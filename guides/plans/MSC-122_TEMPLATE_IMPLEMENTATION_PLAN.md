@@ -376,6 +376,12 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     and dev HTTP browser OAuth consent/PKCE/login return pass. See
     `MSC122_TEMPLATE_API_MCP_UI_20261011.json`. Admin/operator controls and full
     external MCP transport remain open; this does not close step 19.
+    Operator configuration now passes at frontend `6e532c1`: 20 focused tests,
+    local/HTTP save/reopen/reload and guide flows, member read/write denial, and
+    public/private settings separation. Branding, API URL, privacy, administrator
+    emails, social links and Firebase configuration are selected without Registry
+    or payment state. See `MSC122_TEMPLATE_OPERATOR_CONFIGURATION_20261011.json`.
+    TLS/update, host execution and live Firebase remain open.
 
 20. **Consolidate JUnit and frontend unit/component coverage — IN PROGRESS.**
     Preserve `tools/run-backend-junit.sh`, native standard/embedded/integration

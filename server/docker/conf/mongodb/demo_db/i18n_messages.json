@@ -2304,12 +2304,6 @@
     "value": "Enter an absolute HTTPS API base URL. HTTP is accepted only for localhost development."
   },
   {
-    "_id": "i18n-message-en-operator-configuration-payment",
-    "key": "operator.configuration.payment",
-    "lang": "en",
-    "value": "Payment provider"
-  },
-  {
     "_id": "i18n-message-en-operator-configuration-payment-public-url",
     "key": "operator.configuration.payment.public.url",
     "lang": "en",
@@ -7642,12 +7636,6 @@
     "key": "operator.configuration.integration.public.url.invalid",
     "lang": "hu",
     "value": "Abszolút HTTPS API-alap URL-t adj meg. A HTTP csak helyi fejlesztésnél használható."
-  },
-  {
-    "_id": "i18n-message-hu-operator-configuration-payment",
-    "key": "operator.configuration.payment",
-    "lang": "hu",
-    "value": "Fizetési szolgáltató"
   },
   {
     "_id": "i18n-message-hu-operator-configuration-payment-public-url",
@@ -14182,5 +14170,1397 @@
     "key": "guide.profile.mcp-details.mcp-client-secret.label",
     "lang": "hu",
     "value": "Kliens titka"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-admin-emails",
+    "key": "operator.configuration.admin.emails",
+    "lang": "en",
+    "value": "Administrator email addresses"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-admin-emails-description",
+    "key": "operator.configuration.admin.emails.description",
+    "lang": "en",
+    "value": "Separate addresses with commas or line breaks. Up to 32 addresses; leave empty to disable dedicated-email administrator access."
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-admin-emails-placeholder",
+    "key": "operator.configuration.admin.emails.placeholder",
+    "lang": "en",
+    "value": "admin@example.com, owner@example.com"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-admin-eyebrow",
+    "key": "operator.configuration.admin.eyebrow",
+    "lang": "en",
+    "value": "Deployment access"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-admin-guidance",
+    "key": "operator.configuration.admin.guidance",
+    "lang": "en",
+    "value": "These addresses authorize administrator access for this deployment. Each person uses the existing email login or create-account flow to sign in or set a password in the operator's configured Firebase project. Java stores the authorized address, not the person's password; changes take effect on the next sign-in or token refresh and are never embedded in the package."
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-admin-save",
+    "key": "operator.configuration.admin.save",
+    "lang": "en",
+    "value": "Save administrators"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-admin-saved",
+    "key": "operator.configuration.admin.saved",
+    "lang": "en",
+    "value": "Dedicated administrator access saved."
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-backend-unavailable",
+    "key": "operator.configuration.backend.unavailable",
+    "lang": "en",
+    "value": "This deployment does not expose operator configuration endpoints yet."
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-branding-eyebrow",
+    "key": "operator.configuration.branding.eyebrow",
+    "lang": "en",
+    "value": "Deployment identity"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-branding-home-label",
+    "key": "operator.configuration.branding.home.label",
+    "lang": "en",
+    "value": "Landing label"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-branding-label-required",
+    "key": "operator.configuration.branding.label.required",
+    "lang": "en",
+    "value": "Product name and landing label are required."
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-branding-logo-character-index",
+    "key": "operator.configuration.branding.logo.character.index",
+    "lang": "en",
+    "value": "Logo replacement index"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-branding-logo-character-index-invalid",
+    "key": "operator.configuration.branding.logo.character.index.invalid",
+    "lang": "en",
+    "value": "Enter -1 for no replacement, or a character position from 0 onward."
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-branding-logo-guidance",
+    "key": "operator.configuration.branding.logo.guidance",
+    "lang": "en",
+    "value": "512 × 512 px (1:1) · PNG/WebP preferred · max 10 MB."
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-branding-logo-heart-png",
+    "key": "operator.configuration.branding.logo.heart.png",
+    "lang": "en",
+    "value": "MyScoutee heart (PNG)"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-branding-logo-heart-webp",
+    "key": "operator.configuration.branding.logo.heart.webp",
+    "lang": "en",
+    "value": "MyScoutee heart (WebP)"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-branding-product-name",
+    "key": "operator.configuration.branding.product.name",
+    "lang": "en",
+    "value": "Product name"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-branding-save",
+    "key": "operator.configuration.branding.save",
+    "lang": "en",
+    "value": "Save branding"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-branding-saved",
+    "key": "operator.configuration.branding.saved",
+    "lang": "en",
+    "value": "Deployment branding saved."
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-branding-theme",
+    "key": "operator.configuration.branding.theme",
+    "lang": "en",
+    "value": "Landing theme"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-branding-theme-amber",
+    "key": "operator.configuration.branding.theme.amber",
+    "lang": "en",
+    "value": "Amber"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-branding-theme-aquarius",
+    "key": "operator.configuration.branding.theme.aquarius",
+    "lang": "en",
+    "value": "Aquarius"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-branding-theme-aurora",
+    "key": "operator.configuration.branding.theme.aurora",
+    "lang": "en",
+    "value": "Aurora"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-branding-theme-forest",
+    "key": "operator.configuration.branding.theme.forest",
+    "lang": "en",
+    "value": "Forest"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-branding-theme-monochrome",
+    "key": "operator.configuration.branding.theme.monochrome",
+    "lang": "en",
+    "value": "Monochrome"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-branding-theme-ocean",
+    "key": "operator.configuration.branding.theme.ocean",
+    "lang": "en",
+    "value": "Ocean"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-branding-theme-rose",
+    "key": "operator.configuration.branding.theme.rose",
+    "lang": "en",
+    "value": "Rose"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-branding-theme-slate",
+    "key": "operator.configuration.branding.theme.slate",
+    "lang": "en",
+    "value": "Slate"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-branding-theme-sunset",
+    "key": "operator.configuration.branding.theme.sunset",
+    "lang": "en",
+    "value": "Sunset"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-branding-theme-violet",
+    "key": "operator.configuration.branding.theme.violet",
+    "lang": "en",
+    "value": "Violet"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-credential-placeholder",
+    "key": "operator.configuration.credential.placeholder",
+    "lang": "en",
+    "value": "Enter a new credential"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-credential-registered",
+    "key": "operator.configuration.credential.registered",
+    "lang": "en",
+    "value": "Registered — enter a value to rotate"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-credentials-missing",
+    "key": "operator.configuration.credentials.missing",
+    "lang": "en",
+    "value": "Credentials are not configured."
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-firebase-activate",
+    "key": "operator.configuration.firebase.activate",
+    "lang": "en",
+    "value": "Activate Firebase"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-firebase-activated",
+    "key": "operator.configuration.firebase.activated",
+    "lang": "en",
+    "value": "Firebase configuration activated."
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-firebase-activation-not-ready",
+    "key": "operator.configuration.firebase.activation.not.ready",
+    "lang": "en",
+    "value": "Save the complete configuration and pass both Firebase tests before activation."
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-firebase-active",
+    "key": "operator.configuration.firebase.active",
+    "lang": "en",
+    "value": "Firebase active"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-firebase-api-key",
+    "key": "operator.configuration.firebase.api.key",
+    "lang": "en",
+    "value": "Browser API key"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-firebase-app-id",
+    "key": "operator.configuration.firebase.app.id",
+    "lang": "en",
+    "value": "Browser app ID"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-firebase-auth-domain",
+    "key": "operator.configuration.firebase.auth.domain",
+    "lang": "en",
+    "value": "Authentication domain"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-firebase-authentication-credential",
+    "key": "operator.configuration.firebase.authentication.credential",
+    "lang": "en",
+    "value": "Authentication credential"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-firebase-eyebrow",
+    "key": "operator.configuration.firebase.eyebrow",
+    "lang": "en",
+    "value": "Identity and notifications"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-firebase-measurement-id",
+    "key": "operator.configuration.firebase.measurement.id",
+    "lang": "en",
+    "value": "Measurement ID (optional)"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-firebase-messaging-credential",
+    "key": "operator.configuration.firebase.messaging.credential",
+    "lang": "en",
+    "value": "Messaging credential"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-firebase-messaging-sender-id",
+    "key": "operator.configuration.firebase.messaging.sender.id",
+    "lang": "en",
+    "value": "Messaging sender ID"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-firebase-project-id",
+    "key": "operator.configuration.firebase.project.id",
+    "lang": "en",
+    "value": "Firebase project ID"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-firebase-public-guidance",
+    "key": "operator.configuration.firebase.public.guidance",
+    "lang": "en",
+    "value": "These browser identifiers are public client bootstrap data. Service-account credentials remain write-only."
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-firebase-register",
+    "key": "operator.configuration.firebase.register",
+    "lang": "en",
+    "value": "Register Firebase"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-firebase-registered",
+    "key": "operator.configuration.firebase.registered",
+    "lang": "en",
+    "value": "Firebase credentials registered."
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-firebase-save",
+    "key": "operator.configuration.firebase.save",
+    "lang": "en",
+    "value": "Save Firebase"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-firebase-saved",
+    "key": "operator.configuration.firebase.saved",
+    "lang": "en",
+    "value": "Firebase configuration saved."
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-firebase-storage-bucket",
+    "key": "operator.configuration.firebase.storage.bucket",
+    "lang": "en",
+    "value": "Storage bucket"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-firebase-vapid-key",
+    "key": "operator.configuration.firebase.vapid.key",
+    "lang": "en",
+    "value": "Web Push VAPID public key"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-instructions",
+    "key": "operator.configuration.instructions",
+    "lang": "en",
+    "value": "Manage the deployment-owned product configuration."
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-integration-eyebrow",
+    "key": "operator.configuration.integration.eyebrow",
+    "lang": "en",
+    "value": "External clients"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-integration-public-url-clear-aria",
+    "key": "operator.configuration.integration.public.url.clear.aria",
+    "lang": "en",
+    "value": "Clear public API base URL"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-integration-public-url-open-aria",
+    "key": "operator.configuration.integration.public.url.open.aria",
+    "lang": "en",
+    "value": "Open public API base URL"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-integration-public-url-paste-aria",
+    "key": "operator.configuration.integration.public.url.paste.aria",
+    "lang": "en",
+    "value": "Paste public API base URL"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-integration-public-url-placeholder",
+    "key": "operator.configuration.integration.public.url.placeholder",
+    "lang": "en",
+    "value": "https://your-deployment.example/api/integrations/v1"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-integration-save",
+    "key": "operator.configuration.integration.save",
+    "lang": "en",
+    "value": "Save API URL"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-integration-saved",
+    "key": "operator.configuration.integration.saved",
+    "lang": "en",
+    "value": "Public API base URL saved."
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-not-configured",
+    "key": "operator.configuration.not.configured",
+    "lang": "en",
+    "value": "Credentials missing"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-privacy-contact-email",
+    "key": "operator.configuration.privacy.contact.email",
+    "lang": "en",
+    "value": "Privacy contact email"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-privacy-contact-email-placeholder",
+    "key": "operator.configuration.privacy.contact.email.placeholder",
+    "lang": "en",
+    "value": "privacy@example.com"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-privacy-contact-eyebrow",
+    "key": "operator.configuration.privacy.contact.eyebrow",
+    "lang": "en",
+    "value": "Public privacy details"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-privacy-contact-guidance",
+    "key": "operator.configuration.privacy.contact.guidance",
+    "lang": "en",
+    "value": "Publish the controller and privacy email shown in privacy documents. Leave both blank to publish no contact."
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-privacy-contact-save",
+    "key": "operator.configuration.privacy.contact.save",
+    "lang": "en",
+    "value": "Save privacy contact"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-privacy-contact-saved",
+    "key": "operator.configuration.privacy.contact.saved",
+    "lang": "en",
+    "value": "Public privacy contact saved."
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-privacy-controller-name",
+    "key": "operator.configuration.privacy.controller.name",
+    "lang": "en",
+    "value": "Data controller name"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-privacy-controller-name-placeholder",
+    "key": "operator.configuration.privacy.controller.name.placeholder",
+    "lang": "en",
+    "value": "Example Organization Ltd."
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-saved",
+    "key": "operator.configuration.saved",
+    "lang": "en",
+    "value": "Configuration registered."
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-saving",
+    "key": "operator.configuration.saving",
+    "lang": "en",
+    "value": "Registering configuration…"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-social-add",
+    "key": "operator.configuration.social.add",
+    "lang": "en",
+    "value": "Add social site"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-social-empty",
+    "key": "operator.configuration.social.empty",
+    "lang": "en",
+    "value": "No public social site is configured. Add one when this deployment has a public community destination."
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-social-eyebrow",
+    "key": "operator.configuration.social.eyebrow",
+    "lang": "en",
+    "value": "Public deployment links"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-social-guidance",
+    "key": "operator.configuration.social.guidance",
+    "lang": "en",
+    "value": "Add the deployment-controlled social and community destinations shown on the public landing page. Report Issue remains a fixed MyScoutee support link."
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-social-handle",
+    "key": "operator.configuration.social.handle",
+    "lang": "en",
+    "value": "Handle"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-social-handle-placeholder",
+    "key": "operator.configuration.social.handle.placeholder",
+    "lang": "en",
+    "value": "@community"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-social-icon",
+    "key": "operator.configuration.social.icon",
+    "lang": "en",
+    "value": "Material icon"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-social-label",
+    "key": "operator.configuration.social.label",
+    "lang": "en",
+    "value": "Public label"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-social-remove",
+    "key": "operator.configuration.social.remove",
+    "lang": "en",
+    "value": "Remove social site"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-social-save",
+    "key": "operator.configuration.social.save",
+    "lang": "en",
+    "value": "Save social sites"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-social-saved",
+    "key": "operator.configuration.social.saved",
+    "lang": "en",
+    "value": "Public social sites saved."
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-social-url",
+    "key": "operator.configuration.social.url",
+    "lang": "en",
+    "value": "HTTPS address"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-social-url-clear-aria",
+    "key": "operator.configuration.social.url.clear.aria",
+    "lang": "en",
+    "value": "Clear social-site address"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-social-url-open-aria",
+    "key": "operator.configuration.social.url.open.aria",
+    "lang": "en",
+    "value": "Open social-site address"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-social-url-paste-aria",
+    "key": "operator.configuration.social.url.paste.aria",
+    "lang": "en",
+    "value": "Paste social-site address"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-subtitle",
+    "key": "operator.configuration.subtitle",
+    "lang": "en",
+    "value": "Branding, administrator access, API and Firebase"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-test-authentication",
+    "key": "operator.configuration.test.authentication",
+    "lang": "en",
+    "value": "Test login"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-test-authentication-short",
+    "key": "operator.configuration.test.authentication.short",
+    "lang": "en",
+    "value": "Auth Test"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-test-messaging",
+    "key": "operator.configuration.test.messaging",
+    "lang": "en",
+    "value": "Send test notification"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-test-messaging-destination",
+    "key": "operator.configuration.test.messaging.destination",
+    "lang": "en",
+    "value": "Optional extra test-device token"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-test-messaging-destination-guidance",
+    "key": "operator.configuration.test.messaging.destination.guidance",
+    "lang": "en",
+    "value": "The browser readiness token is generated automatically. This optional extra destination is used once and is not saved."
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-test-messaging-destination-placeholder",
+    "key": "operator.configuration.test.messaging.destination.placeholder",
+    "lang": "en",
+    "value": "Optionally paste an additional Firebase Cloud Messaging registration token"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-test-messaging-destination-required",
+    "key": "operator.configuration.test.messaging.destination.required",
+    "lang": "en",
+    "value": "Browser notification permission and service-worker readiness are required for this test."
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-test-messaging-destination-too-long",
+    "key": "operator.configuration.test.messaging.destination.too.long",
+    "lang": "en",
+    "value": "The test-device registration token is too long."
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-test-messaging-short",
+    "key": "operator.configuration.test.messaging.short",
+    "lang": "en",
+    "value": "Message Test"
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-test-success",
+    "key": "operator.configuration.test.success",
+    "lang": "en",
+    "value": "Configuration check completed successfully."
+  },
+  {
+    "_id": "i18n-message-en-operator-configuration-testing",
+    "key": "operator.configuration.testing",
+    "lang": "en",
+    "value": "Testing configuration…"
+  },
+  {
+    "_id": "i18n-message-en-operator-registration-error-response-unavailable",
+    "key": "operator.registration.error.response.unavailable",
+    "lang": "en",
+    "value": "The operator registry response is unavailable."
+  },
+  {
+    "_id": "i18n-message-en-operator-request-aborted",
+    "key": "operator.request.aborted",
+    "lang": "en",
+    "value": "The operator request was cancelled."
+  },
+  {
+    "_id": "i18n-message-en-operator-request-failed",
+    "key": "operator.request.failed",
+    "lang": "en",
+    "value": "The operator request failed."
+  },
+  {
+    "_id": "i18n-message-en-operator-request-timeout",
+    "key": "operator.request.timeout",
+    "lang": "en",
+    "value": "The operator request timed out."
+  },
+  {
+    "_id": "i18n-message-en-operator-workspace-error-unavailable",
+    "key": "operator.workspace.error.unavailable",
+    "lang": "en",
+    "value": "Operator workspace data is unavailable."
+  },
+  {
+    "_id": "i18n-message-en-organization",
+    "key": "organization",
+    "lang": "en",
+    "value": "Organization"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-admin-emails",
+    "key": "operator.configuration.admin.emails",
+    "lang": "hu",
+    "value": "Adminisztrátori e-mail-címek"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-admin-emails-description",
+    "key": "operator.configuration.admin.emails.description",
+    "lang": "hu",
+    "value": "Az e-mail-címeket vesszővel vagy sortöréssel válaszd el. Legfeljebb 32 cím adható meg; üresen hagyva a kijelölt e-mailes adminisztrátori hozzáférés kikapcsol."
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-admin-emails-placeholder",
+    "key": "operator.configuration.admin.emails.placeholder",
+    "lang": "hu",
+    "value": "admin@example.com, tulajdonos@example.com"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-admin-eyebrow",
+    "key": "operator.configuration.admin.eyebrow",
+    "lang": "hu",
+    "value": "Telepítési hozzáférés"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-admin-guidance",
+    "key": "operator.configuration.admin.guidance",
+    "lang": "hu",
+    "value": "Ezek az e-mail-címek ehhez a telepítéshez adnak adminisztrátori jogosultságot. Minden érintett a meglévő e-mailes bejelentkezési vagy fióklétrehozási folyamatban jelentkezik be, illetve állít be jelszót az operátor konfigurált Firebase-projektjében. A Java csak az engedélyezett címet tárolja, a személy jelszavát nem; a változás a következő bejelentkezéskor vagy tokenfrissítéskor lép életbe, és soha nem kerül a csomagba."
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-admin-save",
+    "key": "operator.configuration.admin.save",
+    "lang": "hu",
+    "value": "Adminisztrátorok mentése"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-admin-saved",
+    "key": "operator.configuration.admin.saved",
+    "lang": "hu",
+    "value": "A kijelölt adminisztrátori hozzáférés elmentve."
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-backend-unavailable",
+    "key": "operator.configuration.backend.unavailable",
+    "lang": "hu",
+    "value": "Ez a telepítés még nem biztosít operátori konfigurációs végpontokat."
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-branding-eyebrow",
+    "key": "operator.configuration.branding.eyebrow",
+    "lang": "hu",
+    "value": "Telepítési identitás"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-branding-home-label",
+    "key": "operator.configuration.branding.home.label",
+    "lang": "hu",
+    "value": "Nyitóoldali felirat"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-branding-label-required",
+    "key": "operator.configuration.branding.label.required",
+    "lang": "hu",
+    "value": "A terméknév és a nyitóoldali felirat kötelező."
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-branding-logo-character-index",
+    "key": "operator.configuration.branding.logo.character.index",
+    "lang": "hu",
+    "value": "A logó helyettesítési indexe"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-branding-logo-character-index-invalid",
+    "key": "operator.configuration.branding.logo.character.index.invalid",
+    "lang": "hu",
+    "value": "Adj meg -1-et, ha a logó nem helyettesít karaktert, vagy egy karakterpozíciót 0-tól."
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-branding-logo-guidance",
+    "key": "operator.configuration.branding.logo.guidance",
+    "lang": "hu",
+    "value": "512 × 512 px (1:1) · PNG/WebP ajánlott · max. 10 MB."
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-branding-logo-heart-png",
+    "key": "operator.configuration.branding.logo.heart.png",
+    "lang": "hu",
+    "value": "MyScoutee szív (PNG)"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-branding-logo-heart-webp",
+    "key": "operator.configuration.branding.logo.heart.webp",
+    "lang": "hu",
+    "value": "MyScoutee szív (WebP)"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-branding-product-name",
+    "key": "operator.configuration.branding.product.name",
+    "lang": "hu",
+    "value": "Terméknév"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-branding-save",
+    "key": "operator.configuration.branding.save",
+    "lang": "hu",
+    "value": "Arculat mentése"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-branding-saved",
+    "key": "operator.configuration.branding.saved",
+    "lang": "hu",
+    "value": "A telepítés arculata elmentve."
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-branding-theme",
+    "key": "operator.configuration.branding.theme",
+    "lang": "hu",
+    "value": "Nyitóoldali téma"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-branding-theme-amber",
+    "key": "operator.configuration.branding.theme.amber",
+    "lang": "hu",
+    "value": "Borostyán"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-branding-theme-aquarius",
+    "key": "operator.configuration.branding.theme.aquarius",
+    "lang": "hu",
+    "value": "Vízöntő"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-branding-theme-aurora",
+    "key": "operator.configuration.branding.theme.aurora",
+    "lang": "hu",
+    "value": "Auróra"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-branding-theme-forest",
+    "key": "operator.configuration.branding.theme.forest",
+    "lang": "hu",
+    "value": "Erdő"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-branding-theme-monochrome",
+    "key": "operator.configuration.branding.theme.monochrome",
+    "lang": "hu",
+    "value": "Monokróm"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-branding-theme-ocean",
+    "key": "operator.configuration.branding.theme.ocean",
+    "lang": "hu",
+    "value": "Óceán"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-branding-theme-rose",
+    "key": "operator.configuration.branding.theme.rose",
+    "lang": "hu",
+    "value": "Rózsa"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-branding-theme-slate",
+    "key": "operator.configuration.branding.theme.slate",
+    "lang": "hu",
+    "value": "Pala"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-branding-theme-sunset",
+    "key": "operator.configuration.branding.theme.sunset",
+    "lang": "hu",
+    "value": "Naplemente"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-branding-theme-violet",
+    "key": "operator.configuration.branding.theme.violet",
+    "lang": "hu",
+    "value": "Ibolya"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-credential-placeholder",
+    "key": "operator.configuration.credential.placeholder",
+    "lang": "hu",
+    "value": "Új hitelesítő adat megadása"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-credential-registered",
+    "key": "operator.configuration.credential.registered",
+    "lang": "hu",
+    "value": "Regisztrálva — új értékkel cserélhető"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-credentials-missing",
+    "key": "operator.configuration.credentials.missing",
+    "lang": "hu",
+    "value": "A hitelesítő adatok nincsenek konfigurálva."
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-firebase-activate",
+    "key": "operator.configuration.firebase.activate",
+    "lang": "hu",
+    "value": "Firebase aktiválása"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-firebase-activated",
+    "key": "operator.configuration.firebase.activated",
+    "lang": "hu",
+    "value": "A Firebase konfiguráció aktiválva."
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-firebase-activation-not-ready",
+    "key": "operator.configuration.firebase.activation.not.ready",
+    "lang": "hu",
+    "value": "Mentsd el a teljes konfigurációt, majd aktiválás előtt teljesítsd mindkét Firebase-tesztet."
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-firebase-active",
+    "key": "operator.configuration.firebase.active",
+    "lang": "hu",
+    "value": "Firebase aktív"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-firebase-api-key",
+    "key": "operator.configuration.firebase.api.key",
+    "lang": "hu",
+    "value": "Böngésző API-kulcsa"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-firebase-app-id",
+    "key": "operator.configuration.firebase.app.id",
+    "lang": "hu",
+    "value": "Böngészőalkalmazás azonosítója"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-firebase-auth-domain",
+    "key": "operator.configuration.firebase.auth.domain",
+    "lang": "hu",
+    "value": "Hitelesítési tartomány"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-firebase-authentication-credential",
+    "key": "operator.configuration.firebase.authentication.credential",
+    "lang": "hu",
+    "value": "Hitelesítési adat"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-firebase-eyebrow",
+    "key": "operator.configuration.firebase.eyebrow",
+    "lang": "hu",
+    "value": "Identitás és értesítések"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-firebase-measurement-id",
+    "key": "operator.configuration.firebase.measurement.id",
+    "lang": "hu",
+    "value": "Mérési azonosító (nem kötelező)"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-firebase-messaging-credential",
+    "key": "operator.configuration.firebase.messaging.credential",
+    "lang": "hu",
+    "value": "Üzenetküldési hitelesítő adat"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-firebase-messaging-sender-id",
+    "key": "operator.configuration.firebase.messaging.sender.id",
+    "lang": "hu",
+    "value": "Üzenetküldő azonosítója"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-firebase-project-id",
+    "key": "operator.configuration.firebase.project.id",
+    "lang": "hu",
+    "value": "Firebase projektazonosító"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-firebase-public-guidance",
+    "key": "operator.configuration.firebase.public.guidance",
+    "lang": "hu",
+    "value": "Ezek nyilvános böngésző-konfigurációs adatok. A szolgáltatásfiók hitelesítő adatai csak írhatók."
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-firebase-register",
+    "key": "operator.configuration.firebase.register",
+    "lang": "hu",
+    "value": "Firebase regisztrálása"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-firebase-registered",
+    "key": "operator.configuration.firebase.registered",
+    "lang": "hu",
+    "value": "A Firebase hitelesítő adatok regisztrálva."
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-firebase-save",
+    "key": "operator.configuration.firebase.save",
+    "lang": "hu",
+    "value": "Firebase mentése"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-firebase-saved",
+    "key": "operator.configuration.firebase.saved",
+    "lang": "hu",
+    "value": "A Firebase konfiguráció elmentve."
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-firebase-storage-bucket",
+    "key": "operator.configuration.firebase.storage.bucket",
+    "lang": "hu",
+    "value": "Tároló"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-firebase-vapid-key",
+    "key": "operator.configuration.firebase.vapid.key",
+    "lang": "hu",
+    "value": "Web Push VAPID nyilvános kulcs"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-instructions",
+    "key": "operator.configuration.instructions",
+    "lang": "hu",
+    "value": "A telepítés saját termékkonfigurációjának kezelése."
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-integration-eyebrow",
+    "key": "operator.configuration.integration.eyebrow",
+    "lang": "hu",
+    "value": "Külső kliensek"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-integration-public-url-clear-aria",
+    "key": "operator.configuration.integration.public.url.clear.aria",
+    "lang": "hu",
+    "value": "Nyilvános API-alap URL törlése"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-integration-public-url-open-aria",
+    "key": "operator.configuration.integration.public.url.open.aria",
+    "lang": "hu",
+    "value": "Nyilvános API-alap URL megnyitása"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-integration-public-url-paste-aria",
+    "key": "operator.configuration.integration.public.url.paste.aria",
+    "lang": "hu",
+    "value": "Nyilvános API-alap URL beillesztése"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-integration-public-url-placeholder",
+    "key": "operator.configuration.integration.public.url.placeholder",
+    "lang": "hu",
+    "value": "https://sajat-telepites.example/api/integrations/v1"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-integration-save",
+    "key": "operator.configuration.integration.save",
+    "lang": "hu",
+    "value": "API URL mentése"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-integration-saved",
+    "key": "operator.configuration.integration.saved",
+    "lang": "hu",
+    "value": "A nyilvános API-alap URL elmentve."
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-not-configured",
+    "key": "operator.configuration.not.configured",
+    "lang": "hu",
+    "value": "Hiányzó hitelesítő adatok"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-privacy-contact-email",
+    "key": "operator.configuration.privacy.contact.email",
+    "lang": "hu",
+    "value": "Adatvédelmi e-mail-cím"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-privacy-contact-email-placeholder",
+    "key": "operator.configuration.privacy.contact.email.placeholder",
+    "lang": "hu",
+    "value": "adatvedelem@example.com"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-privacy-contact-eyebrow",
+    "key": "operator.configuration.privacy.contact.eyebrow",
+    "lang": "hu",
+    "value": "Nyilvános adatvédelmi adatok"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-privacy-contact-guidance",
+    "key": "operator.configuration.privacy.contact.guidance",
+    "lang": "hu",
+    "value": "Tedd közzé az adatvédelmi dokumentumokban megjelenő adatkezelőt és e-mail-címet. Ha nem teszel közzé kapcsolattartót, hagyd mindkettőt üresen."
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-privacy-contact-save",
+    "key": "operator.configuration.privacy.contact.save",
+    "lang": "hu",
+    "value": "Adatvédelmi kapcsolat mentése"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-privacy-contact-saved",
+    "key": "operator.configuration.privacy.contact.saved",
+    "lang": "hu",
+    "value": "A nyilvános adatvédelmi kapcsolat elmentve."
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-privacy-controller-name",
+    "key": "operator.configuration.privacy.controller.name",
+    "lang": "hu",
+    "value": "Adatkezelő neve"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-privacy-controller-name-placeholder",
+    "key": "operator.configuration.privacy.controller.name.placeholder",
+    "lang": "hu",
+    "value": "Példa Szervezet Kft."
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-saved",
+    "key": "operator.configuration.saved",
+    "lang": "hu",
+    "value": "A konfiguráció regisztrálva."
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-saving",
+    "key": "operator.configuration.saving",
+    "lang": "hu",
+    "value": "Konfiguráció regisztrálása…"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-social-add",
+    "key": "operator.configuration.social.add",
+    "lang": "hu",
+    "value": "Közösségi oldal hozzáadása"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-social-empty",
+    "key": "operator.configuration.social.empty",
+    "lang": "hu",
+    "value": "Nincs beállított nyilvános közösségi oldal. Adj hozzá egyet, ha a telepítés rendelkezik nyilvános közösségi céllal."
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-social-eyebrow",
+    "key": "operator.configuration.social.eyebrow",
+    "lang": "hu",
+    "value": "Nyilvános telepítési hivatkozások"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-social-guidance",
+    "key": "operator.configuration.social.guidance",
+    "lang": "hu",
+    "value": "Add meg a telepítés által kezelt közösségi célokat, amelyek a nyilvános nyitóoldalon jelennek meg. A Hibajelentés továbbra is a MyScoutee rögzített támogatási hivatkozása."
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-social-handle",
+    "key": "operator.configuration.social.handle",
+    "lang": "hu",
+    "value": "Azonosító"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-social-handle-placeholder",
+    "key": "operator.configuration.social.handle.placeholder",
+    "lang": "hu",
+    "value": "@kozosseg"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-social-icon",
+    "key": "operator.configuration.social.icon",
+    "lang": "hu",
+    "value": "Material ikon"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-social-label",
+    "key": "operator.configuration.social.label",
+    "lang": "hu",
+    "value": "Nyilvános felirat"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-social-remove",
+    "key": "operator.configuration.social.remove",
+    "lang": "hu",
+    "value": "Közösségi oldal eltávolítása"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-social-save",
+    "key": "operator.configuration.social.save",
+    "lang": "hu",
+    "value": "Közösségi oldalak mentése"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-social-saved",
+    "key": "operator.configuration.social.saved",
+    "lang": "hu",
+    "value": "A nyilvános közösségi oldalak elmentve."
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-social-url",
+    "key": "operator.configuration.social.url",
+    "lang": "hu",
+    "value": "HTTPS-cím"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-social-url-clear-aria",
+    "key": "operator.configuration.social.url.clear.aria",
+    "lang": "hu",
+    "value": "Közösségi oldal címének törlése"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-social-url-open-aria",
+    "key": "operator.configuration.social.url.open.aria",
+    "lang": "hu",
+    "value": "Közösségi oldal címének megnyitása"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-social-url-paste-aria",
+    "key": "operator.configuration.social.url.paste.aria",
+    "lang": "hu",
+    "value": "Közösségi oldal címének beillesztése"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-subtitle",
+    "key": "operator.configuration.subtitle",
+    "lang": "hu",
+    "value": "Arculat, adminisztrátori hozzáférés, API és Firebase"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-test-authentication",
+    "key": "operator.configuration.test.authentication",
+    "lang": "hu",
+    "value": "Bejelentkezés tesztelése"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-test-authentication-short",
+    "key": "operator.configuration.test.authentication.short",
+    "lang": "hu",
+    "value": "Hitelesítés teszt"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-test-messaging",
+    "key": "operator.configuration.test.messaging",
+    "lang": "hu",
+    "value": "Tesztértesítés küldése"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-test-messaging-destination",
+    "key": "operator.configuration.test.messaging.destination",
+    "lang": "hu",
+    "value": "Opcionális extra tesztkészülék-token"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-test-messaging-destination-guidance",
+    "key": "operator.configuration.test.messaging.destination.guidance",
+    "lang": "hu",
+    "value": "A böngésző alkalmassági tokenje automatikusan létrejön. Az opcionális további célpontot csak egyszer használjuk, és nem mentjük el."
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-test-messaging-destination-placeholder",
+    "key": "operator.configuration.test.messaging.destination.placeholder",
+    "lang": "hu",
+    "value": "Opcionálisan illessz be egy további Firebase Cloud Messaging regisztrációs tokent"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-test-messaging-destination-required",
+    "key": "operator.configuration.test.messaging.destination.required",
+    "lang": "hu",
+    "value": "A teszthez engedélyezett böngészőértesítések és működő service worker szükséges."
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-test-messaging-destination-too-long",
+    "key": "operator.configuration.test.messaging.destination.too.long",
+    "lang": "hu",
+    "value": "A tesztkészülék regisztrációs tokenje túl hosszú."
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-test-messaging-short",
+    "key": "operator.configuration.test.messaging.short",
+    "lang": "hu",
+    "value": "Üzenet teszt"
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-test-success",
+    "key": "operator.configuration.test.success",
+    "lang": "hu",
+    "value": "A konfiguráció ellenőrzése sikeres."
+  },
+  {
+    "_id": "i18n-message-hu-operator-configuration-testing",
+    "key": "operator.configuration.testing",
+    "lang": "hu",
+    "value": "Konfiguráció tesztelése…"
+  },
+  {
+    "_id": "i18n-message-hu-operator-registration-error-response-unavailable",
+    "key": "operator.registration.error.response.unavailable",
+    "lang": "hu",
+    "value": "Az operátori nyilvántartás válasza nem érhető el."
+  },
+  {
+    "_id": "i18n-message-hu-operator-request-aborted",
+    "key": "operator.request.aborted",
+    "lang": "hu",
+    "value": "Az operátori kérés megszakadt."
+  },
+  {
+    "_id": "i18n-message-hu-operator-request-failed",
+    "key": "operator.request.failed",
+    "lang": "hu",
+    "value": "Az operátori kérés sikertelen."
+  },
+  {
+    "_id": "i18n-message-hu-operator-request-timeout",
+    "key": "operator.request.timeout",
+    "lang": "hu",
+    "value": "Az operátori kérés időtúllépés miatt megszakadt."
+  },
+  {
+    "_id": "i18n-message-hu-operator-workspace-error-unavailable",
+    "key": "operator.workspace.error.unavailable",
+    "lang": "hu",
+    "value": "Az operátori munkaterület adatai nem érhetők el."
+  },
+  {
+    "_id": "i18n-message-hu-organization",
+    "key": "organization",
+    "lang": "hu",
+    "value": "Szervezet"
+  },
+  {
+    "_id": "i18n-message-en-guide-operator-configuration-close-description",
+    "key": "guide.operator.configuration.close.description",
+    "lang": "en",
+    "value": "Return to the operator page. Use the relevant save action before closing if you want to persist pending configuration changes."
+  },
+  {
+    "_id": "i18n-message-en-guide-operator-configuration-operator-save-admin-emails-description",
+    "key": "guide.operator.configuration.operator-save-admin-emails.description",
+    "lang": "en",
+    "value": "Save the email list that grants app-administration access. Check additions and removals carefully; this also saves other pending changes in the shared configuration draft."
+  },
+  {
+    "_id": "i18n-message-en-guide-operator-configuration-operator-save-admin-emails-label",
+    "key": "guide.operator.configuration.operator-save-admin-emails.label",
+    "lang": "en",
+    "value": "Administrators"
+  },
+  {
+    "_id": "i18n-message-en-guide-operator-configuration-operator-save-branding-description",
+    "key": "guide.operator.configuration.operator-save-branding.description",
+    "lang": "en",
+    "value": "Save the name and logo used by this deployment. This saves the shared configuration draft, including pending edits in its other sections; the updated branding is then applied in the app."
+  },
+  {
+    "_id": "i18n-message-en-guide-operator-configuration-operator-save-firebase-description",
+    "key": "guide.operator.configuration.operator-save-firebase.description",
+    "lang": "en",
+    "value": "Save the Firebase configuration, then run its authentication and messaging checks before activation. Saving credentials and activating them are separate actions; other shared configuration edits are also saved."
+  },
+  {
+    "_id": "i18n-message-en-guide-operator-configuration-operator-save-integration-description",
+    "key": "guide.operator.configuration.operator-save-integration.description",
+    "lang": "en",
+    "value": "Save the public API address used by clients. This also saves other pending edits in the shared configuration draft."
+  },
+  {
+    "_id": "i18n-message-en-guide-operator-configuration-operator-save-integration-label",
+    "key": "guide.operator.configuration.operator-save-integration.label",
+    "lang": "en",
+    "value": "API address"
+  },
+  {
+    "_id": "i18n-message-en-guide-operator-configuration-operator-save-privacy-contact-description",
+    "key": "guide.operator.configuration.operator-save-privacy-contact.description",
+    "lang": "en",
+    "value": "Save the data controller’s name and privacy contact email shown in the app’s privacy information. Other pending edits in the shared configuration draft are saved with them."
+  },
+  {
+    "_id": "i18n-message-en-guide-operator-configuration-operator-save-privacy-contact-label",
+    "key": "guide.operator.configuration.operator-save-privacy-contact.label",
+    "lang": "en",
+    "value": "Privacy contact"
+  },
+  {
+    "_id": "i18n-message-en-guide-operator-configuration-operator-save-social-links-description",
+    "key": "guide.operator.configuration.operator-save-social-links.description",
+    "lang": "en",
+    "value": "Save the links shown on the landing page. This also saves other pending edits in the shared configuration draft."
+  },
+  {
+    "_id": "i18n-message-en-guide-operator-configuration-operator-save-social-links-label",
+    "key": "guide.operator.configuration.operator-save-social-links.label",
+    "lang": "en",
+    "value": "Social links"
+  },
+  {
+    "_id": "i18n-message-hu-guide-operator-configuration-close-description",
+    "key": "guide.operator.configuration.close.description",
+    "lang": "hu",
+    "value": "Visszatér az üzemeltetői oldalra. Bezárás előtt használd a megfelelő mentési műveletet, ha meg szeretnéd őrizni a függő konfigurációs módosításokat."
+  },
+  {
+    "_id": "i18n-message-hu-guide-operator-configuration-operator-save-admin-emails-description",
+    "key": "guide.operator.configuration.operator-save-admin-emails.description",
+    "lang": "hu",
+    "value": "Elmenti az alkalmazás-adminisztrációhoz hozzáférést adó e-mail-listát. Ellenőrizd a felvételeket és törléseket; a közös konfigurációs piszkozat többi függő módosítását is menti."
+  },
+  {
+    "_id": "i18n-message-hu-guide-operator-configuration-operator-save-admin-emails-label",
+    "key": "guide.operator.configuration.operator-save-admin-emails.label",
+    "lang": "hu",
+    "value": "Adminisztrátorok"
+  },
+  {
+    "_id": "i18n-message-hu-guide-operator-configuration-operator-save-branding-description",
+    "key": "guide.operator.configuration.operator-save-branding.description",
+    "lang": "hu",
+    "value": "Elmenti a telepítés nevét és logóját. A közös konfigurációs piszkozat többi szakaszának függő módosításait is menti; az új arculat ezután megjelenik az alkalmazásban."
+  },
+  {
+    "_id": "i18n-message-hu-guide-operator-configuration-operator-save-firebase-description",
+    "key": "guide.operator.configuration.operator-save-firebase.description",
+    "lang": "hu",
+    "value": "Mentsd a Firebase-beállítást, majd aktiválás előtt futtasd a hitelesítési és üzenetküldési ellenőrzéseket. Az adatok mentése és az aktiválás külön művelet; a közös konfiguráció többi módosítása is mentődik."
+  },
+  {
+    "_id": "i18n-message-hu-guide-operator-configuration-operator-save-integration-description",
+    "key": "guide.operator.configuration.operator-save-integration.description",
+    "lang": "hu",
+    "value": "Elmenti az ügyfelek által használt nyilvános API-címet. A közös konfigurációs piszkozat többi függő módosítását is menti."
+  },
+  {
+    "_id": "i18n-message-hu-guide-operator-configuration-operator-save-integration-label",
+    "key": "guide.operator.configuration.operator-save-integration.label",
+    "lang": "hu",
+    "value": "API-cím"
+  },
+  {
+    "_id": "i18n-message-hu-guide-operator-configuration-operator-save-privacy-contact-description",
+    "key": "guide.operator.configuration.operator-save-privacy-contact.description",
+    "lang": "hu",
+    "value": "Elmenti az adatvédelmi tájékoztatásban megjelenő adatkezelő nevét és kapcsolattartási e-mail-címét. Velük együtt a közös konfigurációs piszkozat többi függő módosítását is menti."
+  },
+  {
+    "_id": "i18n-message-hu-guide-operator-configuration-operator-save-privacy-contact-label",
+    "key": "guide.operator.configuration.operator-save-privacy-contact.label",
+    "lang": "hu",
+    "value": "Adatvédelmi kapcsolat"
+  },
+  {
+    "_id": "i18n-message-hu-guide-operator-configuration-operator-save-social-links-description",
+    "key": "guide.operator.configuration.operator-save-social-links.description",
+    "lang": "hu",
+    "value": "Elmenti a nyitóoldalon megjelenő linkeket. A közös konfigurációs piszkozat többi függő módosítását is menti."
+  },
+  {
+    "_id": "i18n-message-hu-guide-operator-configuration-operator-save-social-links-label",
+    "key": "guide.operator.configuration.operator-save-social-links.label",
+    "lang": "hu",
+    "value": "Közösségi linkek"
   }
 ]

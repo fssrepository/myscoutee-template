@@ -1,6 +1,7 @@
 import { assert } from '../../../shared/assertions.mjs';
 
-export async function assertUi({ page, ctx, local = ctx?.mode !== 'full', memberReady, profileSelected, actorId = '100000000000000000000001', actorName = 'Alex Morgan', consentExpected = true, endsSession = false }) {
+export async function assertUi({ page, ctx, local = ctx?.mode !== 'full', memberReady, profileSelected, role = 'member', actorId = '100000000000000000000001', actorName = 'Alex Morgan', consentExpected = true, endsSession = false }) {
+  const workspacePath = role === 'member' ? '/home' : '/' + role;
   await page.navigate('/privacy-policy');
   await page.waitForSelector('.document-viewer-section-body');
   await page.waitForText('Privacy information');
@@ -15,15 +16,19 @@ export async function assertUi({ page, ctx, local = ctx?.mode !== 'full', member
     await page.waitForSelector('app-document-viewer [role="dialog"]');
     await page.clickByText('app-document-viewer button', 'Accept and continue');
   }
+  if (role !== 'member') {
+    await page.clickVisible('[data-guide-control="selector-role"] .app-menu__trigger');
+    await page.clickVisible(`[data-guide-item="${role}"]`);
+  }
   await page.waitForSelector(`.demo-user-item[data-user-id="${actorId}"]`);
   assert(!await page.isSelectorVisible('app-document-viewer [role="dialog"]'), 'Accepted browser consent must allow profile selection');
   await page.clickVisible(`.demo-user-item[data-user-id="${actorId}"]`);
   if (profileSelected) await profileSelected({ page, local });
-  await page.waitForUrlPath('/home', 30000);
+  await page.waitForUrlPath(workspacePath, 30000);
   await page.waitForText(actorName);
-  await page.navigate('/home');
+  await page.navigate(workspacePath);
   await page.waitForText(actorName);
-  assert(new URL(await page.evaluate(() => location.href)).pathname === '/home', 'Session and consent must survive reload');
+  assert(new URL(await page.evaluate(() => location.href)).pathname === workspacePath, 'Session and consent must survive reload');
   const snapshot = await page.evaluate(async () => {
     const databases = await indexedDB.databases();
     const name = databases.find(db => db.name === 'myscoutee-template_demo_db')?.name;
@@ -54,7 +59,7 @@ export async function assertUi({ page, ctx, local = ctx?.mode !== 'full', member
     await page.clickVisible('[data-guide-item="logout"]');
   }
   await page.waitForUrlPath('/entry');
-  await page.navigate('/home');
+  await page.navigate(workspacePath);
   await page.waitForUrlPath('/entry');
   assert(page.pageErrors.length === 0, 'No browser runtime exceptions', { errors: page.pageErrors });
   assert(!page.consoleMessages.some(message => message.type === 'error'), 'No handled Angular errors', { errors: page.consoleMessages.filter(message => message.type === 'error') });

@@ -1058,7 +1058,7 @@
       "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
       "upstreamSha256": "939c31c9f8590263a8755a9ff26341d3a0a198fdc4e83ffab9aec67274d3ffd9",
       "purpose": "Native durable notification delivery, inbox and chat transport support for the minimal application.",
-      "adaptation": "Retain native notification limits and account-purge window bounds without the product affinity catalog; configure purge days through users.account-purge-window-days (default 30, native allowed range 1\u2013365)."
+      "adaptation": "Retain native notification limits and account-purge window bounds without the product affinity catalog; configure purge days through users.account-purge-window-days (default 30, native allowed range 1–365)."
     },
     {
       "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/common/redis/RedisStreamRetentionService.java",
@@ -2836,11 +2836,12 @@
     },
     {
       "path": "frontend/src/app/shared/core/base/mappers/operator-configuration.mapper.ts",
+      "upstreamPath": "frontend/src/app/shared/core/base/mappers/operator-configuration.mapper.ts",
       "upstreamSha256": "36e088987d6b5e2d09ffab5f9c8c15c2ddca41541109fb66d2073a15700fc9a2",
-      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
-      "adaptation": null,
-      "sourceRevision": "e3eff359c",
-      "sourceFrontendRevision": "1af20e0b"
+      "sourceRevision": "f8a1b83b6",
+      "sourceFrontendRevision": "c90a5b1f",
+      "purpose": "Minimal deployment configuration: branding, privacy contact, administrator email allowlist, social links, API URL and Firebase setup.",
+      "adaptation": "Select configuration members and existing UI sections; no company Registry, payments, revenue or community state. Use the existing private deployment configuration repository and native HTTP authority. Template title and popup shell composition."
     },
     {
       "path": "frontend/src/app/shared/core/base/repositories/i18n-bundle.repository.spec.ts",
@@ -3564,11 +3565,12 @@
     },
     {
       "path": "frontend/src/app/shared/core/local/seed/services/demo-bootstrap.service.ts",
+      "upstreamPath": "frontend/src/app/shared/core/local/seed/services/demo-bootstrap.service.ts",
       "upstreamSha256": "6baf530529348252d55143e510e7b52cc4437809d9d8a35953ad801cff1323d7",
-      "sourceRevision": "5a639775e",
-      "sourceFrontendRevision": "bf4760f9",
-      "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
-      "adaptation": "Compose the selected template profile, chat, notification and guide owners; retain native contracts and persistence while omitting unselected product dependencies."
+      "sourceRevision": "f8a1b83b6",
+      "sourceFrontendRevision": "c90a5b1f",
+      "purpose": "Minimal deployment configuration: branding, privacy contact, administrator email allowlist, social links, API URL and Firebase setup.",
+      "adaptation": "Select configuration members and existing UI sections; no company Registry, payments, revenue or community state. Use the existing private deployment configuration repository and native HTTP authority. Template title and popup shell composition."
     },
     {
       "path": "frontend/src/app/shared/core/local/seed/services/static-content.service.ts",
@@ -4540,11 +4542,12 @@
     },
     {
       "path": "frontend/src/app/shared/core/contracts/operator.interface.ts",
+      "upstreamPath": "frontend/src/app/shared/core/contracts/operator.interface.ts",
       "upstreamSha256": "e56b1bd6232786733bd2f045a1e7f190c974ef43d664c89a7c6a9adea5f6223f",
       "sourceRevision": "f8a1b83b6",
       "sourceFrontendRevision": "c90a5b1f",
-      "purpose": "Selected native API/MCP settings, local persistence, consent route and contextual guides for the minimal template.",
-      "adaptation": "Retain native API/MCP contracts, stores and adapter behavior; omit affiliate/payment/product fields and text. Compose member entry/guide contexts with the minimal shell. Operator configuration record contains deployment settings only."
+      "purpose": "Minimal deployment configuration: branding, privacy contact, administrator email allowlist, social links, API URL and Firebase setup.",
+      "adaptation": "Select configuration members and existing UI sections; no company Registry, payments, revenue or community state. Use the existing private deployment configuration repository and native HTTP authority. Template title and popup shell composition."
     },
     {
       "path": "frontend/src/app/shared/core/http/services/integration.service.ts",
@@ -4609,6 +4612,105 @@
       "sourceFrontendRevision": "c90a5b1f",
       "purpose": "Selected native API/MCP settings, local persistence, consent route and contextual guides for the minimal template.",
       "adaptation": null
+    },
+    {
+      "path": "frontend/src/app/shared/core/base/mappers/operator-configuration.mapper.spec.ts",
+      "upstreamPath": "frontend/src/app/shared/core/base/mappers/operator-configuration.mapper.spec.ts",
+      "upstreamSha256": "abf6cca09dbd89e80a31c4c42b0585f8569a67eda81a2ada1b61332a60d45f18",
+      "sourceRevision": "f8a1b83b6",
+      "sourceFrontendRevision": "c90a5b1f",
+      "purpose": "Minimal deployment configuration: branding, privacy contact, administrator email allowlist, social links, API URL and Firebase setup.",
+      "adaptation": "Select configuration members and existing UI sections; no company Registry, payments, revenue or community state. Use the existing private deployment configuration repository and native HTTP authority. Template title and popup shell composition."
+    },
+    {
+      "path": "frontend/src/app/shared/ui/context/stores/operator/operator-workspace.store.ts",
+      "upstreamPath": "frontend/src/app/shared/ui/context/stores/operator/operator-workspace.store.ts",
+      "upstreamSha256": "55cf2d8e5395a7a3d76027bc06bf6733cb755767cf24085ad6d8c40a56a67f06",
+      "sourceRevision": "f8a1b83b6",
+      "sourceFrontendRevision": "c90a5b1f",
+      "purpose": "Minimal deployment configuration: branding, privacy contact, administrator email allowlist, social links, API URL and Firebase setup.",
+      "adaptation": "Select configuration members and existing UI sections; no company Registry, payments, revenue or community state. Use the existing private deployment configuration repository and native HTTP authority. Template title and popup shell composition."
+    },
+    {
+      "path": "frontend/src/app/shared/ui/context/stores/operator/operator-workspace.store.spec.ts",
+      "upstreamPath": "frontend/src/app/shared/ui/context/stores/operator/operator-workspace.store.spec.ts",
+      "upstreamSha256": "93b06d5e17d2b3627e3ba4771bbddcc4bce3f3b870ae9c92bcb1e5fe560be311",
+      "sourceRevision": "f8a1b83b6",
+      "sourceFrontendRevision": "c90a5b1f",
+      "purpose": "Minimal deployment configuration: branding, privacy contact, administrator email allowlist, social links, API URL and Firebase setup.",
+      "adaptation": "Select configuration members and existing UI sections; no company Registry, payments, revenue or community state. Use the existing private deployment configuration repository and native HTTP authority. Template title and popup shell composition."
+    },
+    {
+      "path": "frontend/src/app/operator/components/_operator-configuration.scss",
+      "upstreamPath": "frontend/src/app/operator/components/_operator-configuration.scss",
+      "upstreamSha256": "b4c8c80be0a34c504ad4a145dc068dcabc7d8f118d9c8ef28e450a2b45709172",
+      "sourceRevision": "f8a1b83b6",
+      "sourceFrontendRevision": "c90a5b1f",
+      "purpose": "Minimal deployment configuration: branding, privacy contact, administrator email allowlist, social links, API URL and Firebase setup.",
+      "adaptation": null
+    },
+    {
+      "path": "frontend/src/app/shared/core/base/services/operator-configuration.service.ts",
+      "upstreamPath": "frontend/src/app/shared/core/base/services/operator-registry.service.ts",
+      "upstreamSha256": "c22f0100509804c6f0d58c37eb1263af8ebad4a3d0b84ce9a04bd99a1cec98e6",
+      "sourceRevision": "f8a1b83b6",
+      "sourceFrontendRevision": "c90a5b1f",
+      "purpose": "Minimal deployment configuration: branding, privacy contact, administrator email allowlist, social links, API URL and Firebase setup.",
+      "adaptation": "Select configuration members and existing UI sections; no company Registry, payments, revenue or community state. Use the existing private deployment configuration repository and native HTTP authority. Template title and popup shell composition."
+    },
+    {
+      "path": "frontend/src/app/shared/core/http/services/operator-configuration.service.ts",
+      "upstreamPath": "frontend/src/app/shared/core/http/services/operator-registry.service.ts",
+      "upstreamSha256": "615dfff21bf046610a7425b309983015532008d90d54b41f1ee2a1eea8c05447",
+      "sourceRevision": "f8a1b83b6",
+      "sourceFrontendRevision": "c90a5b1f",
+      "purpose": "Minimal deployment configuration: branding, privacy contact, administrator email allowlist, social links, API URL and Firebase setup.",
+      "adaptation": "Select configuration members and existing UI sections; no company Registry, payments, revenue or community state. Use the existing private deployment configuration repository and native HTTP authority. Template title and popup shell composition."
+    },
+    {
+      "path": "frontend/src/app/shared/core/local/source/services/operator-configuration.service.ts",
+      "upstreamPath": "frontend/src/app/shared/core/local/source/services/operator-registry.service.ts",
+      "upstreamSha256": "96c015f7d1be6e860df46a9a95b35cca7ee9e84a33a54378d6c7751c65c696d8",
+      "sourceRevision": "f8a1b83b6",
+      "sourceFrontendRevision": "c90a5b1f",
+      "purpose": "Minimal deployment configuration: branding, privacy contact, administrator email allowlist, social links, API URL and Firebase setup.",
+      "adaptation": "Select configuration members and existing UI sections; no company Registry, payments, revenue or community state. Use the existing private deployment configuration repository and native HTTP authority. Template title and popup shell composition."
+    },
+    {
+      "path": "frontend/src/app/operator/components/operator-configuration-popup/operator-configuration-popup.component.ts",
+      "upstreamPath": "frontend/src/app/operator/components/operator-action-popup/operator-action-popup.component.ts",
+      "upstreamSha256": "9c4acd2b411aef1eebdd009e393b54434861d4a6108512a743bde9efad21e7fa",
+      "sourceRevision": "f8a1b83b6",
+      "sourceFrontendRevision": "c90a5b1f",
+      "purpose": "Minimal deployment configuration: branding, privacy contact, administrator email allowlist, social links, API URL and Firebase setup.",
+      "adaptation": "Select configuration members and existing UI sections; no company Registry, payments, revenue or community state. Use the existing private deployment configuration repository and native HTTP authority. Template title and popup shell composition."
+    },
+    {
+      "path": "frontend/src/app/operator/components/operator-configuration-popup/operator-configuration-popup.component.html",
+      "upstreamPath": "frontend/src/app/operator/components/operator-action-popup/operator-action-popup.component.html",
+      "upstreamSha256": "ba3117423ceab6f6aa128ed6846f39c65eb500b996f4e52ab7fe98a2067dd142",
+      "sourceRevision": "f8a1b83b6",
+      "sourceFrontendRevision": "c90a5b1f",
+      "purpose": "Minimal deployment configuration: branding, privacy contact, administrator email allowlist, social links, API URL and Firebase setup.",
+      "adaptation": "Select configuration members and existing UI sections; no company Registry, payments, revenue or community state. Use the existing private deployment configuration repository and native HTTP authority. Template title and popup shell composition."
+    },
+    {
+      "path": "frontend/src/app/operator/components/operator-configuration-popup/operator-configuration-popup.component.scss",
+      "upstreamPath": "frontend/src/app/operator/components/operator-action-popup/operator-action-popup.component.scss",
+      "upstreamSha256": "f23c4b28d054720de8ca2f9ee7b1658678cfc3c9dbf71f4023b796228a350310",
+      "sourceRevision": "f8a1b83b6",
+      "sourceFrontendRevision": "c90a5b1f",
+      "purpose": "Minimal deployment configuration: branding, privacy contact, administrator email allowlist, social links, API URL and Firebase setup.",
+      "adaptation": "Select configuration members and existing UI sections; no company Registry, payments, revenue or community state. Use the existing private deployment configuration repository and native HTTP authority. Template title and popup shell composition."
+    },
+    {
+      "path": "frontend/src/app/shared/core/local/seed/builders/operator-configuration-seed.builder.ts",
+      "upstreamPath": "frontend/src/app/shared/core/local/seed/builders/operator-registry-seed.builder.ts",
+      "upstreamSha256": "b26c7e65b210b6c4bcd78d80a52d8cd08ea677813a41de056096c745e860022c",
+      "sourceRevision": "f8a1b83b6",
+      "sourceFrontendRevision": "c90a5b1f",
+      "purpose": "Minimal deployment configuration: branding, privacy contact, administrator email allowlist, social links, API URL and Firebase setup.",
+      "adaptation": "Select configuration members and existing UI sections; no company Registry, payments, revenue or community state. Use the existing private deployment configuration repository and native HTTP authority. Template title and popup shell composition."
     }
   ],
   "templateOwnedFeatures": [
@@ -4657,6 +4759,28 @@
       "scope": "Local and HTTP inbox, read/mute persistence, contextual guides, same-user stale response guards and native 30-second HTTP user realtime scheduler. Production seed includes only guidance/localization, never synthetic notification rows.",
       "qualification": "MSC122_TEMPLATE_NOTIFICATIONS_GUIDE_20261011.json",
       "remaining": "Browser push/device setup and installed/KVM environment qualification remain separate open steps."
+    },
+    {
+      "name": "operator-configuration",
+      "references": [
+        "frontend/src/app/shared/core/contracts/operator.interface.ts",
+        "frontend/src/app/shared/core/base/mappers/operator-configuration.mapper.ts",
+        "frontend/src/app/shared/core/base/mappers/operator-configuration.mapper.spec.ts",
+        "frontend/src/app/shared/core/local/seed/services/demo-bootstrap.service.ts",
+        "frontend/src/app/shared/ui/context/stores/operator/operator-workspace.store.ts",
+        "frontend/src/app/shared/ui/context/stores/operator/operator-workspace.store.spec.ts",
+        "frontend/src/app/operator/components/_operator-configuration.scss",
+        "frontend/src/app/shared/core/base/services/operator-registry.service.ts",
+        "frontend/src/app/shared/core/http/services/operator-registry.service.ts",
+        "frontend/src/app/shared/core/local/source/services/operator-registry.service.ts",
+        "frontend/src/app/operator/components/operator-action-popup/operator-action-popup.component.ts",
+        "frontend/src/app/operator/components/operator-action-popup/operator-action-popup.component.html",
+        "frontend/src/app/operator/components/operator-action-popup/operator-action-popup.component.scss",
+        "frontend/src/app/shared/core/local/seed/builders/operator-registry-seed.builder.ts"
+      ],
+      "implementation": "Selected native configuration facade/adapters/workspace and six action-popup sections under a dedicated configuration popup. Existing member shell adds operator-only access; local bootstrap seeds its single private configuration record once. Native guide engine uses selected controls and template API/social descriptions.",
+      "qualification": "MSC122_TEMPLATE_OPERATOR_CONFIGURATION_20261011.json",
+      "remaining": "TLS/host worker, signed update and live Firebase tests remain separate gates."
     }
   ]
 }
