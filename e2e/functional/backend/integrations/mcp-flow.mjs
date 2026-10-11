@@ -58,7 +58,13 @@ export async function assertMcpFlow({ ctx, result, request }, dynamic = false, t
     const apiHeaders = { Authorization: `Bearer ${grant.access_token}` };
     const connected = (await ctx.http.post(`${path}/v1/connect`, { headers: apiHeaders })).data;
     assert.equal(connected.profileId, ctx.vars.userId);
-    await ctx.http.get(`${path}/v1/${transportRole === 'admin' ? 'query/admin/overview' : 'chats'}`, { headers: apiHeaders });
+    const overview = (await ctx.http.get(`${path}/v1/${transportRole === 'admin' ? 'query/admin/overview' : 'chats'}`, { headers: apiHeaders })).data;
+    if (transportRole === 'admin') {
+      assert.equal(typeof overview.attention.unreadMessages, 'number');
+      for (const field of ['unresolvedReports', 'unresolvedFeedback', 'supportCases']) {
+        assert.equal(Object.hasOwn(overview.attention, field), false, `Omitted moderation field: ${field}`);
+      }
+    }
     if (transportRole) {
       await assertMcpTransport(ctx, grant.access_token, transportRole);
       let settings = (await ctx.http.get(`${path}/settings`, { headers })).data;

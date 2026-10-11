@@ -33,7 +33,7 @@ and session-bearing curl commands in ignored `.e2e-artifacts/`, not in Git.
 
 1. Backend composition: startup, selected seeds, owned login/logout, profile,
    personal chat, documents, notification inbox, location and authority checks.
-2. Stateful features: profile/avatar save and reload; two-user chat and support;
+2. Stateful features: profile/avatar save and reload; two-user chat;
    consent, guide and notification state; account deletion and background jobs.
 3. Frontend: landing/version badge, SmartList views, minimal menus, chat, profile
    and shared components in local and HTTP modes. Include responsive layout,
@@ -275,46 +275,41 @@ E2E_MONGO_CONTAINER=myscoutee-template-dev-mongodb E2E_DATABASE=demo_db \
   node e2e/functional/ui/operator/updates.mjs
 ```
 
-## Admin backend checkpoint
+## Omitted admin features and retained API — 2026-10-12
 
-The retained report/feedback/moderation API uses native chat evidence, admin
-authority, support messages and profile status work. The required MCP role
-notification queue retains native callback security, retries and idle-work guard.
-See [admin backend evidence](../qualification/evidence/MSC122_TEMPLATE_ADMIN_BACKEND_20261011.json).
-UI, external callback transport, KVM and installed qualification remain open.
+The template omits Reports, Feedback, moderation commands and support-chat
+creation/state changes from both frontend adapters and the backend. MyScoutee
+retains these features after its separately qualified dependency extraction.
+Normal two-member chat, account status/lifecycle handling, notifications, guide
+and administrator API/MCP remain. Shared conversation/model shapes are preserved;
+there is no filtering of existing conversations because their creator is absent.
+
+Run the absence/retained-feature check against the already-running artifact stack:
 
 ```sh
-E2E_MONGO_CONTAINER=myscoutee-template-dev-mongodb E2E_DATABASE=demo_db \
+NODE_EXTRA_CA_CERTS=/tmp/myscoutee-template-e2e-nginx-ca.pem \
+E2E_SERVER_BASE_URL=https://127.0.0.1 E2E_SERVER_MODE=e2e \
+E2E_MONGO_CONTAINER=myscoutee-template-e2e-mongodb E2E_DATABASE=e2e_db \
   node e2e/functional/backend/admin/run.mjs
 ```
 
-The runner creates owned actors, reports, feedback and support chats. It restores
-administrator configuration through the existing operator fixture and closes
-its native sessions before removing its data.
+The runner verifies nine removed routes return 404, the admin API is available
+only to the appropriate role, ordinary messages persist and both participants
+can read them, and report/feedback collections are not initialized. It creates
+only owned accounts and a normal chat fixture, restores operator configuration,
+and closes its own sessions and data. It does not create removed feature stores.
 
+`e2e/functional/ui/run.mjs --case admin` checks the empty shell, omitted menus and
+old targets, normal chat persistence, and API-key creation/masking/block/revocation.
+Use `--local` for the same frontend checks with local persistence after stopping
+the backend stack. Also run `--case chat/lifecycle` and `--case guide/member` at
+both boundaries. The API/MCP tests require retained attention fields and explicitly
+reject report/feedback/support counters and omitted moderation event advertisement.
 
-## Minimal moderation, support and administrator API — 2026-10-11
-
-Scope update, 2026-10-12: the following evidence describes the prior UI selection.
-The template now omits Reports, Support chat and Feedback screens and member
-report/feedback controls. The backend remains selected. The replacement
-`admin/run.mjs` checks the empty shell, absent entry points/deep links and retained
-member chat; `admin/api.mjs` continues to qualify API access. The new UI selection passes 309 frontend tests and four local plus four
-artifact HTTP flows; see [current evidence](../qualification/evidence/MSC122_TEMPLATE_MINIMAL_ADMIN_UI_20261012.json). The user subsequently authorized a backend dependency audit,
-source modularization and then template removal; see new plan step 5. That work
-follows the current UI verification, before further service composition and packaging.
-
-Frontend `43980be` and the selected backend owners pass the local/dev HTTP report,
-feedback, warning, block/unblock, resolve/reopen and support-message/reload flows.
-The empty queue is valid; the seeded administrator is classified in canonical JSON.
-Twenty frontend and five administrator API Java checks pass. The native admin
-API key is separate from member keys and grants only the retained read-only
-attention overview. The optional product analytics field is omitted.
-See [the evidence](../qualification/evidence/MSC122_TEMPLATE_ADMIN_UI_20261011.json).
-
-Run `e2e/functional/ui/admin/run.mjs` and `admin/api.mjs` with `--local`, or with
-the explicit template Mongo variable above for HTTP. Fixtures restore the previous
-operator configuration and remove only owned accounts, support threads, reports,
-feedback, sessions and integration credentials. The UI verifies returned-state
-reconciliation without an additional report dashboard read. New admin guide tours,
-live Firebase role login, KVM and installed artifacts remain open.
+See [removal evidence](../qualification/evidence/MSC122_TEMPLATE_ADMIN_FEATURE_REMOVAL_20261012.json).
+Template KVM, installed artifacts, external provider callbacks and live Firebase
+role qualification remain separate gates. The previous
+[backend](../qualification/evidence/MSC122_TEMPLATE_ADMIN_BACKEND_20261011.json),
+[admin UI](../qualification/evidence/MSC122_TEMPLATE_ADMIN_UI_20261011.json) and
+[first UI removal](../qualification/evidence/MSC122_TEMPLATE_MINIMAL_ADMIN_UI_20261012.json)
+records are historical; they do not describe the final backend selection.

@@ -1,7 +1,7 @@
 # MSC-122 omitted admin feature dependency audit
 
 Updated: 2026-10-12. Owner: implementation plan step 5.
-Status: native batch qualified at `37f5f708e`; template backend/adapters removed and unit checks passed; artifact HTTP/local and template KVM qualification pending.
+Status: native batch qualified at `37f5f708e`; template backend/adapters removed and unit checks passed; artifact monolith and local checks passed; template KVM qualification pending.
 
 ## Verified starting point
 
@@ -64,9 +64,10 @@ Paths below are relative to `server/projects/profile/src/main/java/com/raxim/mys
 
 ## Evidence boundary
 
-This is an inventory, not proof that backend removal is complete. No empty
-provider, compatibility fallback, report-policy rewrite, chat filtering or
-extra service process has been introduced by this audit.
+The initial dependency map is an inventory. The dated checkpoints below qualify
+the completed source/removal boundaries and name the remaining runtime gate. No
+empty provider, compatibility fallback, report-policy rewrite, chat filtering or
+extra service process was introduced by this audit.
 
 ## First source extraction — 2026-10-12
 
@@ -148,10 +149,10 @@ owners. The coherent 297-test standard group passed, followed by 60 focused
 checks after the final classification change (includes the existing boundary
 suite), and one embedded Mongo chat/counter persistence check. 25 moved method
 bodies match their originals after owner qualification. These figures are not
-an aggregate count of distinct tests. Native runtime CPU/latency, KVM and monolith
-checks remain pending. Evidence:
+an aggregate count of distinct tests. At that initial source checkpoint, runtime CPU/latency, KVM and monolith
+checks were pending; the subsequent checkpoint below records their completion. Evidence:
 `myscoutee-backend/guides/qualification/evidence/MSC122_ADMIN_FEATURE_SEPARATION_20261012.json`.
-No template Java owner has been removed yet.
+No template Java owner had been removed at that initial source checkpoint.
 
 ## Template selection checkpoint — 2026-10-12
 
@@ -181,3 +182,17 @@ not the removed support chat creator; it is preserved with the identity model.
 tests and the production frontend build passed. Two existing stylesheet-budget
 warnings remain. Runtime absence checks, retained flows and minimal KVM
 composition are still required; step 5 is not yet closed.
+
+## Template runtime checkpoint — 2026-10-12
+
+All 17 retained backend cases pass across the initial run and focused follow-ups.
+The dedicated absence runner verifies nine omitted routes, no report/feedback
+collections, retained admin API authorization and two-member chat persistence.
+Four artifact HTTP and four local browser flows pass: empty admin shell, API key
+create/mask/block/revoke, chat lifecycle and guide. Stale test assertions were
+corrected to require retained fields and the absence of removed moderation fields;
+no product fallback was added. All owned fixtures/sessions were cleaned.
+
+Evidence: `../qualification/evidence/MSC122_TEMPLATE_ADMIN_FEATURE_REMOVAL_20261012.json`.
+The artifact monolith and local frontend were run serially and are stopped.
+The template KVM gate remains open until its independent composition exists.

@@ -25,7 +25,9 @@ try{
   if(!local){
    const overview=await request('/api/admin-client/v1/overview');assert.equal(overview.status,200);
    assert.equal(overview.headers.get('cache-control'),'no-store');const body=await overview.json();
-   assert.equal(typeof body.attention.unresolvedReports,'number');assert(!('statistics' in body),'Unselected product analytics is absent');
+   assert.equal(typeof body.attention.unreadMessages,'number');
+   for(const field of ['unresolvedReports','unresolvedFeedback','supportCases'])assert(!(field in body.attention),'Omitted moderation field: '+field);
+   assert(!('statistics' in body),'Unselected product analytics is absent');
    assert.equal((await request('/api/integrations/v1/chats')).status,401,'Admin API keys cannot become member API keys');
    const url=baseUrl+'/api/admin/client-api/settings';
    const headers=await sessions.headersForRequest('GET',url,{headers:{'X-App-Session-Kind':'demo','X-Demo-User-Id':fixture.ids[1]}});

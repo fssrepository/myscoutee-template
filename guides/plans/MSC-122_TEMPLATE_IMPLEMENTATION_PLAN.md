@@ -170,10 +170,10 @@ deep-link behavior. A working `local` build alone does not close frontend work.
    complete frontend, integration or deployment composition. Close with a live healthy application and retained
    routes exercised against its own databases.
 
-5. **Audit, modularize and remove omitted admin features from the template backend — IN PROGRESS (dependency audit).**
+5. **Audit, modularize and remove omitted admin features from the template backend — IN PROGRESS (template KVM qualification pending).**
     Dependency inventory: [admin feature audit](MSC-122_ADMIN_FEATURE_DEPENDENCY_AUDIT.md).
-    Added and prioritized by the user on 2026-10-12. Immediately after the current UI verification,
-    perform a dependency audit for Reports,
+    Added and prioritized by the user on 2026-10-12. The source audit and
+    extraction cover Reports,
     moderation/warning/blocking, admin Support chat, Feedback, and the corresponding
     member report/feedback submission paths. This is authorized implementation
     work, replacing the earlier open decision about whether removal is wanted.
@@ -203,6 +203,17 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     working monolith and independent KVM composition, proportional CPU/latency
     evidence, updated provenance/QA matrix and tested commits. Complete this gate
     before final release acceptance in step 31.
+    Native source is qualified and committed through `37f5f708e`: all existing
+    features remain enabled; KVM and monolith checks pass. The matched KVM admin
+    read profile reports +3.93% throughput, -3.81% p50, -7.98% p95 and -0.84% VM
+    CPU, with zero request errors. These results do not establish every flow's
+    performance. Template source removal is committed at `b520360`, frontend
+    `9d035df`: feature routes/services, local/HTTP adapters and exclusive stores
+    are omitted. Normal chat, account lifecycle and admin API/MCP remain.
+    Unit and artifact-monolith checks pass; runtime evidence is consolidated in
+    `MSC122_TEMPLATE_ADMIN_FEATURE_REMOVAL_20261012.json`. The independent template
+    KVM check requires the minimal composition from step 25. Start that composition
+    from the now-selected sources, then close this remaining gate before release.
 
 6. **Restore the complete dev/prod/E2E runtime structure — IN PROGRESS.**
    Select the necessary services from the existing Compose files, Dockerfiles,
@@ -456,10 +467,11 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     four local plus four artifact HTTP flows at frontend `87b9715`; see
     `MSC122_TEMPLATE_MINIMAL_ADMIN_UI_20261012.json`.
     The earlier moderation UI evidence below describes the previous selection.
-    **Backend follow-up authorized on 2026-10-12:** step **5** replaces the
-    earlier deferred design decision. Keep the backend intact during this UI
-    batch; audit and modularize the owners in MyScoutee first, verify them, then
-    remove the omitted feature implementations from the template backend.
+    **Backend removal implemented on 2026-10-12:** step **5** supersedes the
+    earlier retention decision. The native owners remain installed and qualified;
+    the template omits their implementations and exclusive bindings at `b520360`.
+    Admin API attention omits the report/feedback/support fields, retaining normal
+    unread messages, version and job status. Template KVM is still unverified.
     Member API/MCP settings are selected and qualified at frontend `7c9baee`: 18
     focused tests, local/HTTP create/mask/permission/revoke flows, contextual guides
     and dev HTTP browser OAuth consent/PKCE/login return pass. See
@@ -479,7 +491,8 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     local simulated installation/PWA reload, dev HTTP version/check and notification
     target/guide flows pass. See `MSC122_TEMPLATE_UPDATE_UI_20261011.json`.
     This is not signed DEB installation or rollback qualification.
-    Admin report/feedback/moderation and support HTTP actions now pass with native
+    Historical, superseded selection: admin report/feedback/moderation and support
+    HTTP actions passed with native
     chat evidence, role isolation and required MCP role-delivery ownership. See
     `MSC122_TEMPLATE_ADMIN_BACKEND_20261011.json`. Frontend `43980be` now also
     qualifies local/dev HTTP feedback/report/moderation/support flows, empty queues,
@@ -487,7 +500,7 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     Twenty frontend checks and five administrator API Java checks pass; see
     `MSC122_TEMPLATE_ADMIN_UI_20261011.json`. The minimal admin API keeps the native
     Attention shape and omits the optional analytics statistics field/model/worker.
-    Five admin contextual tours now pass in local and artifact E2E, including
+    Five former admin contextual tours passed in local and artifact E2E, including
     warning and read-only evidence contexts. Live role login and KVM/installed
     host controls remain open.
 
@@ -515,6 +528,12 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     `MSC122_FRONTEND_DOMAINS_20261011.json` for the exact revisions, separately
     committed behavior fixes and validation limits. Build CPU measurements do
     not establish runtime performance parity.
+
+    Current admin-removal selection passes 398 standard Java tests in 68 suites,
+    one embedded Mongo purge check and 293 frontend tests in 34 files. The count
+    changed with the deliberately omitted feature tests; it is not an additional
+    aggregate over earlier runs. Production build also passes. See
+    `MSC122_TEMPLATE_ADMIN_FEATURE_REMOVAL_20261012.json`.
 
 22. **Implement backend functional E2E — IN PROGRESS.**
     Reuse `e2e/shared`, `e2e/functional/backend`, fixture hooks, contract and
@@ -659,30 +678,28 @@ deep-link behavior. A working `local` build alone does not close frontend work.
 
 ## Current continuation point
 
-The standalone E2E composition in **22** passes 17 backend cases, admin
-mutations and 15 UI flows. Step **23** also passes all 14 applicable local flows.
-The account warning/email batch in **9–10** now passes its focused JUnit and
-local/artifact-monolith flows. The user-requested frontend domain-folder
-organization is complete in source and template, with 1267 native and 305
-template frontend tests, both production builds and 14 template local UI flows
-passing. See `MSC122_FRONTEND_DOMAINS_20261011.json`. The user selected removal of the report/feedback/support UI on 2026-10-12,
-while retaining the backend. That UI change is qualified separately at `87b9715`: 309 frontend tests,
-production/artifact builds, four local and four artifact HTTP flows pass; the completed folder-organization revision is unchanged. The
-moderation backend audit, source modularization and subsequent template removal
-are now authorized in **5**, replacing the deferred decision in **20**. Source warning-cleanup runtime qualification is complete
-at `5d71945a2`; the minimal-admin UI checks are complete; execute **5** (dependency audit, source
-modularization and template backend removal) before further implementation,
-performance and template KVM batches.
-Step **21** also retains its preceding 400 selected backend-test result.
-Step **20** has local/dev HTTP
-moderation, support and administrator API evidence at frontend `43980be` and
-parent `e1118fe`. Member steps **16–19** and operator configuration/TLS/update
-UI have their recorded local/dev evidence. Administrator tours pass in local and artifact E2E; live Firebase,
-operator bootstrap, external provider MCP and KVM/installed host controls remain open.
+Step **5** source modularization is qualified in MyScoutee on KVM and monolith
+through `37f5f708e`. The original features remain available there. The template
+removal is implemented at parent `b520360` and frontend `9d035df`; 398 standard
+JUnit checks, one embedded Mongo purge check, 293 frontend checks and production
+build pass. The retained backend collection passes all 17 cases across its initial
+run and focused follow-ups. The artifact monolith also rejects the nine omitted
+routes, preserves two-member chat and does not create report/feedback collections.
+See `MSC122_TEMPLATE_ADMIN_FEATURE_REMOVAL_20261012.json` for the final local/HTTP
+browser results, test corrections, exact source revisions and evidence limits.
 
-Then complete KVM, packaging and release qualification. Earlier backend steps
-still have the pending checks recorded above; the current step number does not
-mean that every earlier qualification gate is closed.
+Next, compose the minimal independent services in **25**, using the same selected
+source owners. This is required to close step 5's outstanding template KVM gate;
+it is not permission to reinstate removed features. Reuse the native shell and
+separate its hard-coded project/lab inputs at their original owners before copying.
+Then complete remaining runtime, performance, packaging and release gates. Earlier
+steps retain their explicitly pending provider, live Firebase, installed-host and
+release checks; completed component or E2E checks do not close those gates.
+
+The previous report/feedback/support UI and backend evidence describes the earlier
+selection only. Ordinary member chat, API/MCP, operator configuration/TLS/update,
+notifications/help/guide/consent, local/HTTP adapter modes and lifecycle jobs remain
+selected. The current step number does not mean every earlier gate is complete.
 
 ## Outstanding source QA and template impact
 

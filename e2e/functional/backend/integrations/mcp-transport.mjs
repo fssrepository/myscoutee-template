@@ -64,7 +64,10 @@ export async function assertMcpTransport(ctx, token, role = 'member') {
   }
   if (role === 'admin') {
     const overview = result(await mcpRequest(ctx, token, 'tools/call', { name: 'adminOverview', arguments: {} })).structuredContent;
-    assert.equal(typeof overview.attention.unresolvedReports, 'number');
+    assert.equal(typeof overview.attention.unreadMessages, 'number');
+    for (const field of ['unresolvedReports', 'unresolvedFeedback', 'supportCases']) {
+      assert.equal(Object.hasOwn(overview.attention, field), false);
+    }
     assert(!('statistics' in overview));
   } else {
     result(await mcpRequest(ctx, token, 'tools/call', { name: 'listChats', arguments: { limit: 2 } }));

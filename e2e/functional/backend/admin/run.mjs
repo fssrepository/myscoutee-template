@@ -27,7 +27,7 @@ try{
   [`/activities/chats/${fixture.chatId}/support-case?userId=${admin}`,'POST',{userId:admin,action:'pick'}]
  ];
  for(const [path,method,body] of omitted)await request(admin,path,method,body,404);
- const profile=await request(target,'/auth/me');assert.equal(profile.user.id,target);assert.equal(profile.user.profileStatus,'public');
+ const profile=await request(target,'/auth/me');assert.equal(profile.id,target);assert.equal(profile.profileStatus,'public');
  const message=await request(target,`/activities/chats/${encodeURIComponent(fixture.chatId)}/messages?userId=${target}`,'POST',{text:'Retained personal chat',attachments:[]});assert(message.id);
  const messages=await request(reporter,`/activities/chats/${encodeURIComponent(fixture.chatId)}/messages?userId=${reporter}`);assert(messages.items.some(item=>item.id===message.id));
  const collections=await fixture.query('db.getCollectionNames()');assert(!collections.includes('userReports'));assert(!collections.includes('userFeedback'));
