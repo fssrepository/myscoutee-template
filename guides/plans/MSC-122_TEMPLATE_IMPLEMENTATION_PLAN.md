@@ -171,6 +171,7 @@ deep-link behavior. A working `local` build alone does not close frontend work.
    routes exercised against its own databases.
 
 5. **Audit, modularize and remove omitted admin features from the template backend — IN PROGRESS (dependency audit).**
+    Dependency inventory: [admin feature audit](MSC-122_ADMIN_FEATURE_DEPENDENCY_AUDIT.md).
     Added and prioritized by the user on 2026-10-12. Immediately after the current UI verification,
     perform a dependency audit for Reports,
     moderation/warning/blocking, admin Support chat, Feedback, and the corresponding
