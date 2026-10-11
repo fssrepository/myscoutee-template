@@ -401,15 +401,21 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     Complete new admin contextual tours, live role login and KVM/installed host
     controls remain open; implementation continues with consolidated tests.
 
-20. **Consolidate JUnit and frontend unit/component coverage — IN PROGRESS.**
+20. **Consolidate JUnit and frontend unit/component coverage — PASS for selected suites.**
     Preserve `tools/run-backend-junit.sh`, native standard/embedded/integration
     groups and the existing frontend test runner. Select tests for retained
     contracts and add meaningful checks for composition or adapted behavior.
     Integration tests remain explicit; test runs must not touch dev/production
     data or trigger a second compiler. Close with a reproducible coherent batch,
     recorded counts and no unexplained failure or skipped required contract.
+    The complete selected suites now pass: 400 backend tests in 69 classes and
+    256 frontend tests in 33 files, with no backend failures/errors/skips. Two
+    test fixtures were aligned with the already-selected security filter and
+    canonical media policy; no application behavior changed. See
+    `MSC122_TEMPLATE_CONSOLIDATED_TESTS_20261011.json`. Explicit integration and
+    deployment qualification remain separate gates.
 
-21. **Implement backend functional E2E — PENDING.**
+21. **Implement backend functional E2E — IN PROGRESS.**
     Reuse `e2e/shared`, `e2e/functional/backend`, fixture hooks, contract and
     concurrent runners. Select and adapt health, identity, profile, chat, media,
     guide/consent, notifications, API/MCP and operator flows. Preserve safe read
@@ -417,7 +423,7 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     auditing. Close with real HTTP mutation/read/reload checks and negative
     authorization checks on the standalone template E2E stack.
     The shared collection/HTTP/assertion/session helpers are now selected unchanged;
-    ten initial contract/session cases run against the dev backend. This preliminary
+    thirteen initial contract/session cases run against the dev backend. This preliminary
     qualification does not close disposable E2E fixtures or mutation flows.
 
 22. **Implement frontend E2E and local/HTTP parity checks — PENDING.**
@@ -543,14 +549,14 @@ deep-link behavior. A working `local` build alone does not close frontend work.
 
 ## Current continuation point
 
-Continue **19**, minimal admin support/moderation and privileged API access.
-Member SmartList **15**, chat **16**, profile/setup/lifecycle **17**, and
-notification/guide **18** have local/dev HTTP evidence. Operator configuration,
-TLS controls and update UI are selected and qualified at frontend `4b13d99`.
-Their backend batch still requires KVM; actual TLS and signed update installation
-remain host/package gates. Preserve the explicit live Firebase, operator bootstrap,
-external MCP and deployment limits in their evidence files.
+Continue **21**, the standalone E2E composition and external MCP transport,
+then **22**, consolidated UI/local/HTTP qualification. Step **20** passes all
+400 selected backend and 256 frontend tests. Step **19** has local/dev HTTP
+moderation, support and administrator API evidence at frontend `43980be` and
+parent `e1118fe`. Member steps **15–18** and operator configuration/TLS/update
+UI have their recorded local/dev evidence. New administrator tours, live Firebase,
+operator bootstrap, external MCP and KVM/installed host controls remain open.
 
-Then complete environment, E2E, KVM, packaging and release qualification. Earlier
-backend steps still have the pending checks recorded above; the current step
-number does not mean that every earlier qualification gate is closed.
+Then complete KVM, packaging and release qualification. Earlier backend steps
+still have the pending checks recorded above; the current step number does not
+mean that every earlier qualification gate is closed.

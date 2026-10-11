@@ -49,10 +49,15 @@ class AccessControlServiceTest {
             definition.setAnyOf(List.of());
             policies.add(definition);
         }
-        assertThat(policies).hasSize(12);
+        assertThat(policies).extracting(AccessPolicyDefinition::getPolicyKey)
+                .containsExactlyInAnyOrder("chat.message.create", "chat.message.edit", "chat.message.delete",
+                        "chat.message.pin", "chat.reaction.manage", "chat.attachment.add", "chat.support.manage",
+                        "user.profile.edit", "user.profile.delete", "user.media.upload", "user.media.import",
+                        "privacy.consent.submit", "media.read");
         when(definitions.findAll()).thenReturn(policies);
         var conditions = new AccessPolicyConditionRegistry(List.of(new ActorMatchesSubjectCondition(),
-                new NoExplicitDenyCondition(), new ActorCanAccessChatCondition(), new ActorCanManageSupportChatCondition()));
+                new NoExplicitDenyCondition(), new ActorCanAccessChatCondition(), new ActorCanManageSupportChatCondition(),
+                new ActorCanReadMediaCondition(mock(MediaPolicyFacts.class))));
         var facts = new ChatPolicyFacts(chats, profiles, new AdministratorClassification() {});
         access = new AccessControlService(grants, definitions, new ConfigProperties(), conditions, facts);
         access.loadAccessControlCacheAtStartup();

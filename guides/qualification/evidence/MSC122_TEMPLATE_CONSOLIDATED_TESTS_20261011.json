@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-11",
+  "status": "PASS: complete selected standard/embedded backend and frontend suites",
+  "templateBaseRevision": "e1118fe",
+  "frontendRevision": "43980be",
+  "checks": {
+    "backend": {
+      "command": "tools/run-backend-junit.sh local",
+      "tests": 400,
+      "classes": 69,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "log": "/tmp/msc122-template-backend-consolidated.log"
+    },
+    "frontend": {
+      "command": "NG_BUILD_MAX_WORKERS=4 npm test -- --watch=false",
+      "tests": 256,
+      "files": 33,
+      "failures": 0,
+      "log": "/tmp/msc122-template-frontend-consolidated.log"
+    }
+  },
+  "fixtureCorrections": [
+    "Registered the selected native administrator API authentication filter in the isolated security bootstrap test.",
+    "Asserted the exact 13 selected canonical policy keys, including media.read, and supplied its native condition to the isolated policy registry."
+  ],
+  "applicationChanges": [],
+  "runtime": "Backend suites ran through the isolated serial JUnit wrapper. The sole frontend-sync compiler was stopped for the frontend suite and restarted afterward. No second server was started.",
+  "limitations": [
+    "Integration/qualification JUnit groups remain explicit and were not run by the local suite.",
+    "Passing unit suites does not qualify KVM, installed artifacts, external providers or performance parity."
+  ],
+  "sha256": {
+    "server/projects/profile/src/test/java/com/raxim/myscoutee/common/config/WebSecurityConfigBootstrapTest.java": "3c9828b0c40b2b976d55518899c0b92307e65f8c66759a35c126ae655bec1cb5",
+    "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/access/security/AccessControlServiceTest.java": "14cacc9497be5a3e8478f956d245f84a2477c0b2416fdd4998df5210a7a65351"
+  }
+}
