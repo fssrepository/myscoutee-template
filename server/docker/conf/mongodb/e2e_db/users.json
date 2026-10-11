@@ -78,7 +78,8 @@
         "contacts": 0,
         "appSupport": 0
       }
-    }
+    },
+    "hostTier": "Admin"
   },
   {
     "_id": {

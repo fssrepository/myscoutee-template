@@ -1164,5 +1164,295 @@
     "updatedDate": "2026-10-11T00:00:00Z",
     "createdUser": "template-seed",
     "updatedUser": "template-seed"
+  },
+  {
+    "_id": "template-guide-admin.reports-en-v1",
+    "contextKey": "admin.reports",
+    "isSystem": true,
+    "lang": "en",
+    "languageLabel": "English",
+    "version": 1,
+    "active": true,
+    "title": "Reports",
+    "summary": "Reports",
+    "description": "Reports",
+    "documentType": "explanation",
+    "presentation": "tour",
+    "sections": [
+      {
+        "id": "overview",
+        "icon": "api",
+        "title": "Reports",
+        "blurb": "",
+        "contentHtml": "<p>Reports</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed"
+  },
+  {
+    "_id": "template-guide-admin.reports-hu-v1",
+    "contextKey": "admin.reports",
+    "isSystem": true,
+    "lang": "hu",
+    "languageLabel": "Magyar",
+    "version": 1,
+    "active": true,
+    "title": "Bejelentések",
+    "summary": "Bejelentések",
+    "description": "Bejelentések",
+    "documentType": "explanation",
+    "presentation": "tour",
+    "sections": [
+      {
+        "id": "overview",
+        "icon": "api",
+        "title": "Bejelentések",
+        "blurb": "",
+        "contentHtml": "<p>Bejelentések</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed"
+  },
+  {
+    "_id": "template-guide-admin.report-detail-en-v1",
+    "contextKey": "admin.report-detail",
+    "isSystem": true,
+    "lang": "en",
+    "languageLabel": "English",
+    "version": 1,
+    "active": true,
+    "title": "Report details",
+    "summary": "Report details",
+    "description": "Report details",
+    "documentType": "explanation",
+    "presentation": "tour",
+    "sections": [
+      {
+        "id": "overview",
+        "icon": "api",
+        "title": "Report details",
+        "blurb": "",
+        "contentHtml": "<p>Report details</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed"
+  },
+  {
+    "_id": "template-guide-admin.report-detail-hu-v1",
+    "contextKey": "admin.report-detail",
+    "isSystem": true,
+    "lang": "hu",
+    "languageLabel": "Magyar",
+    "version": 1,
+    "active": true,
+    "title": "Bejelentés részletei",
+    "summary": "Bejelentés részletei",
+    "description": "Bejelentés részletei",
+    "documentType": "explanation",
+    "presentation": "tour",
+    "sections": [
+      {
+        "id": "overview",
+        "icon": "api",
+        "title": "Bejelentés részletei",
+        "blurb": "",
+        "contentHtml": "<p>Bejelentés részletei</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed"
+  },
+  {
+    "_id": "template-guide-admin.feedback-en-v1",
+    "contextKey": "admin.feedback",
+    "isSystem": true,
+    "lang": "en",
+    "languageLabel": "English",
+    "version": 1,
+    "active": true,
+    "title": "Application feedback",
+    "summary": "Application feedback",
+    "description": "Application feedback",
+    "documentType": "explanation",
+    "presentation": "tour",
+    "sections": [
+      {
+        "id": "overview",
+        "icon": "api",
+        "title": "Application feedback",
+        "blurb": "",
+        "contentHtml": "<p>Application feedback</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed"
+  },
+  {
+    "_id": "template-guide-admin.feedback-hu-v1",
+    "contextKey": "admin.feedback",
+    "isSystem": true,
+    "lang": "hu",
+    "languageLabel": "Magyar",
+    "version": 1,
+    "active": true,
+    "title": "Alkalmazás-visszajelzések",
+    "summary": "Alkalmazás-visszajelzések",
+    "description": "Alkalmazás-visszajelzések",
+    "documentType": "explanation",
+    "presentation": "tour",
+    "sections": [
+      {
+        "id": "overview",
+        "icon": "api",
+        "title": "Alkalmazás-visszajelzések",
+        "blurb": "",
+        "contentHtml": "<p>Alkalmazás-visszajelzések</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed"
+  },
+  {
+    "_id": "template-guide-admin.feedback-detail-en-v1",
+    "contextKey": "admin.feedback-detail",
+    "isSystem": true,
+    "lang": "en",
+    "languageLabel": "English",
+    "version": 1,
+    "active": true,
+    "title": "Feedback details",
+    "summary": "Feedback details",
+    "description": "Feedback details",
+    "documentType": "explanation",
+    "presentation": "tour",
+    "sections": [
+      {
+        "id": "overview",
+        "icon": "api",
+        "title": "Feedback details",
+        "blurb": "",
+        "contentHtml": "<p>Feedback details</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed"
+  },
+  {
+    "_id": "template-guide-admin.feedback-detail-hu-v1",
+    "contextKey": "admin.feedback-detail",
+    "isSystem": true,
+    "lang": "hu",
+    "languageLabel": "Magyar",
+    "version": 1,
+    "active": true,
+    "title": "Visszajelzés részletei",
+    "summary": "Visszajelzés részletei",
+    "description": "Visszajelzés részletei",
+    "documentType": "explanation",
+    "presentation": "tour",
+    "sections": [
+      {
+        "id": "overview",
+        "icon": "api",
+        "title": "Visszajelzés részletei",
+        "blurb": "",
+        "contentHtml": "<p>Visszajelzés részletei</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed"
+  },
+  {
+    "_id": "template-guide-admin.chat-review-en-v1",
+    "contextKey": "admin.chat-review",
+    "isSystem": true,
+    "lang": "en",
+    "languageLabel": "English",
+    "version": 1,
+    "active": true,
+    "title": "Reported chat message",
+    "summary": "Reported chat message",
+    "description": "Reported chat message",
+    "documentType": "explanation",
+    "presentation": "tour",
+    "sections": [
+      {
+        "id": "overview",
+        "icon": "api",
+        "title": "Reported chat message",
+        "blurb": "",
+        "contentHtml": "<p>Reported chat message</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed"
+  },
+  {
+    "_id": "template-guide-admin.chat-review-hu-v1",
+    "contextKey": "admin.chat-review",
+    "isSystem": true,
+    "lang": "hu",
+    "languageLabel": "Magyar",
+    "version": 1,
+    "active": true,
+    "title": "Bejelentett chatüzenet",
+    "summary": "Bejelentett chatüzenet",
+    "description": "Bejelentett chatüzenet",
+    "documentType": "explanation",
+    "presentation": "tour",
+    "sections": [
+      {
+        "id": "overview",
+        "icon": "api",
+        "title": "Bejelentett chatüzenet",
+        "blurb": "",
+        "contentHtml": "<p>Bejelentett chatüzenet</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed"
   }
 ]

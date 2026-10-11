@@ -606,5 +606,109 @@
     "group": "popup",
     "i18nKey": "guide.operator.updates.close",
     "order": 4
+  },
+  {
+    "_id": "admin.reports--overview",
+    "id": "overview",
+    "screenKey": "admin.reports",
+    "group": "menus",
+    "i18nKey": "guide.admin.reports.overview",
+    "order": 0
+  },
+  {
+    "_id": "admin.reports--close",
+    "id": "close",
+    "screenKey": "admin.reports",
+    "group": "popup",
+    "i18nKey": "guide.admin.reports.close",
+    "order": 3
+  },
+  {
+    "_id": "admin.report-detail--overview",
+    "id": "overview",
+    "screenKey": "admin.report-detail",
+    "group": "menus",
+    "i18nKey": "guide.admin.report-detail.overview",
+    "order": 0
+  },
+  {
+    "_id": "admin.report-detail--close",
+    "id": "close",
+    "screenKey": "admin.report-detail",
+    "group": "popup",
+    "i18nKey": "guide.admin.report-detail.close",
+    "order": 1
+  },
+  {
+    "_id": "admin.feedback--overview",
+    "id": "overview",
+    "screenKey": "admin.feedback",
+    "group": "menus",
+    "i18nKey": "guide.admin.feedback.overview",
+    "order": 0
+  },
+  {
+    "_id": "admin.feedback--feedback-review-status-filter",
+    "id": "feedback-review-status-filter",
+    "screenKey": "admin.feedback",
+    "group": "menus",
+    "i18nKey": "guide.admin.feedback.feedback-review-status-filter",
+    "order": 1
+  },
+  {
+    "_id": "admin.feedback--close",
+    "id": "close",
+    "screenKey": "admin.feedback",
+    "group": "popup",
+    "i18nKey": "guide.admin.feedback.close",
+    "order": 2
+  },
+  {
+    "_id": "admin.feedback-detail--overview",
+    "id": "overview",
+    "screenKey": "admin.feedback-detail",
+    "group": "menus",
+    "i18nKey": "guide.admin.feedback-detail.overview",
+    "order": 0
+  },
+  {
+    "_id": "admin.feedback-detail--close",
+    "id": "close",
+    "screenKey": "admin.feedback-detail",
+    "group": "popup",
+    "i18nKey": "guide.admin.feedback-detail.close",
+    "order": 1
+  },
+  {
+    "_id": "admin.chat-review--overview",
+    "id": "overview",
+    "screenKey": "admin.chat-review",
+    "group": "menus",
+    "i18nKey": "guide.admin.chat-review.overview",
+    "order": 0
+  },
+  {
+    "_id": "admin.chat-review--message",
+    "id": "message",
+    "screenKey": "admin.chat-review",
+    "group": "menus",
+    "i18nKey": "guide.admin.chat-review.message",
+    "order": 1
+  },
+  {
+    "_id": "admin.chat-review--send-warning",
+    "id": "send-warning",
+    "screenKey": "admin.chat-review",
+    "group": "menus",
+    "i18nKey": "guide.admin.chat-review.send-warning",
+    "order": 2
+  },
+  {
+    "_id": "admin.chat-review--close",
+    "id": "close",
+    "screenKey": "admin.chat-review",
+    "group": "popup",
+    "i18nKey": "guide.admin.chat-review.close",
+    "order": 3
   }
 ]

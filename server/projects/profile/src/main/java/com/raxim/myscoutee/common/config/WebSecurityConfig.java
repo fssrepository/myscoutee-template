@@ -41,6 +41,7 @@ public class WebSecurityConfig {
     private final UserLoginSessionService userLoginSessionService;
     private final MediaSessionAccessService mediaSessionAccess;
     @Autowired private com.raxim.myscoutee.domain.integrations.config.IntegrationTokenAuthenticationFilter integrationTokenAuthenticationFilter;
+    @Autowired private com.raxim.myscoutee.domain.integrations.config.AdminClientAuthenticationFilter adminClientAuthenticationFilter;
     @Autowired private com.raxim.myscoutee.domain.accounts.api.ProfileAuthentication profileAuthentication;
 
     public WebSecurityConfig(FirebaseService firebaseService,
@@ -75,7 +76,8 @@ public class WebSecurityConfig {
                         operatorBootstrapAuthenticationFilter(),
                         SessionMongoRoutingFilter.class)
                 .addFilterAfter(integrationTokenAuthenticationFilter, OperatorBootstrapAuthenticationFilter.class)
-                .addFilterAfter(tokenAuthorizationFilter(), com.raxim.myscoutee.domain.integrations.config.IntegrationTokenAuthenticationFilter.class)
+                .addFilterAfter(adminClientAuthenticationFilter, com.raxim.myscoutee.domain.integrations.config.IntegrationTokenAuthenticationFilter.class)
+                .addFilterAfter(tokenAuthorizationFilter(), com.raxim.myscoutee.domain.integrations.config.AdminClientAuthenticationFilter.class)
                 .authorizeHttpRequests(authorizeRequests -> {
                     authorizeRequests.requestMatchers("/admin-client/v1/**", "/api/admin-client/v1/**").hasAuthority("ADMIN_CLIENT");
                     authorizeRequests.requestMatchers("/shutdown").denyAll();

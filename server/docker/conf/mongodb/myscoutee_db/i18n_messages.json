@@ -16498,5 +16498,821 @@
     "key": "operator.update.subtitle",
     "lang": "hu",
     "value": "A telepítés ellenőrzése és frissítése"
+  },
+  {
+    "_id": "i18n-message-en-about",
+    "key": "about",
+    "lang": "en",
+    "value": "About"
+  },
+  {
+    "_id": "i18n-message-en-admin-feedback-confirm-mark-solved-message",
+    "key": "admin.feedback.confirm.mark.solved.message",
+    "lang": "en",
+    "value": "{user} will receive a support message saying the feedback was reviewed."
+  },
+  {
+    "_id": "i18n-message-en-admin-feedback-confirm-mark-solved-title",
+    "key": "admin.feedback.confirm.mark.solved.title",
+    "lang": "en",
+    "value": "Would you like to mark this feedback as resolved?"
+  },
+  {
+    "_id": "i18n-message-en-admin-feedback-confirm-mark-unresolved-message",
+    "key": "admin.feedback.confirm.mark.unresolved.message",
+    "lang": "en",
+    "value": "The feedback will return to the unresolved list."
+  },
+  {
+    "_id": "i18n-message-en-admin-feedback-confirm-mark-unresolved-title",
+    "key": "admin.feedback.confirm.mark.unresolved.title",
+    "lang": "en",
+    "value": "Would you like to mark this feedback as unresolved?"
+  },
+  {
+    "_id": "i18n-message-en-admin-feedback-empty-description",
+    "key": "admin.feedback.empty.description",
+    "lang": "en",
+    "value": "No application feedback has been submitted."
+  },
+  {
+    "_id": "i18n-message-en-admin-feedback-empty-title",
+    "key": "admin.feedback.empty.title",
+    "lang": "en",
+    "value": "No feedback"
+  },
+  {
+    "_id": "i18n-message-en-admin-feedback-fallback-user",
+    "key": "admin.feedback.fallback.user",
+    "lang": "en",
+    "value": "The user"
+  },
+  {
+    "_id": "i18n-message-en-admin-feedback-review-status-filter",
+    "key": "admin.feedback.review.status.filter",
+    "lang": "en",
+    "value": "Feedback status filter"
+  },
+  {
+    "_id": "i18n-message-en-admin-reports-action-block",
+    "key": "admin.reports.action.block",
+    "lang": "en",
+    "value": "Block"
+  },
+  {
+    "_id": "i18n-message-en-admin-reports-action-block-busy",
+    "key": "admin.reports.action.block.busy",
+    "lang": "en",
+    "value": "Blocking..."
+  },
+  {
+    "_id": "i18n-message-en-admin-reports-action-unblock",
+    "key": "admin.reports.action.unblock",
+    "lang": "en",
+    "value": "Unblock"
+  },
+  {
+    "_id": "i18n-message-en-admin-reports-action-unblock-busy",
+    "key": "admin.reports.action.unblock.busy",
+    "lang": "en",
+    "value": "Unblocking..."
+  },
+  {
+    "_id": "i18n-message-en-admin-reports-confirm-block-message",
+    "key": "admin.reports.confirm.block.message",
+    "lang": "en",
+    "value": "The user will be blocked and a support chat message will be sent."
+  },
+  {
+    "_id": "i18n-message-en-admin-reports-confirm-block-title",
+    "key": "admin.reports.confirm.block.title",
+    "lang": "en",
+    "value": "Block {user}?"
+  },
+  {
+    "_id": "i18n-message-en-admin-reports-confirm-mark-solved-message",
+    "key": "admin.reports.confirm.mark.solved.message",
+    "lang": "en",
+    "value": "{user} will receive a support message saying the report was reviewed."
+  },
+  {
+    "_id": "i18n-message-en-admin-reports-confirm-mark-solved-title",
+    "key": "admin.reports.confirm.mark.solved.title",
+    "lang": "en",
+    "value": "Would you like to mark this report as resolved?"
+  },
+  {
+    "_id": "i18n-message-en-admin-reports-confirm-mark-unresolved-message",
+    "key": "admin.reports.confirm.mark.unresolved.message",
+    "lang": "en",
+    "value": "The report will return to the unresolved list."
+  },
+  {
+    "_id": "i18n-message-en-admin-reports-confirm-mark-unresolved-title",
+    "key": "admin.reports.confirm.mark.unresolved.title",
+    "lang": "en",
+    "value": "Would you like to mark this report as unresolved?"
+  },
+  {
+    "_id": "i18n-message-en-admin-reports-confirm-unblock-message",
+    "key": "admin.reports.confirm.unblock.message",
+    "lang": "en",
+    "value": "The user profile status will be restored and they can use MyScoutee again."
+  },
+  {
+    "_id": "i18n-message-en-admin-reports-confirm-unblock-title",
+    "key": "admin.reports.confirm.unblock.title",
+    "lang": "en",
+    "value": "Unblock {user}?"
+  },
+  {
+    "_id": "i18n-message-en-admin-reports-empty-description",
+    "key": "admin.reports.empty.description",
+    "lang": "en",
+    "value": "No moderation reports are waiting for review."
+  },
+  {
+    "_id": "i18n-message-en-admin-reports-empty-title",
+    "key": "admin.reports.empty.title",
+    "lang": "en",
+    "value": "No reports"
+  },
+  {
+    "_id": "i18n-message-en-admin-reports-fallback-reporter",
+    "key": "admin.reports.fallback.reporter",
+    "lang": "en",
+    "value": "The reporter"
+  },
+  {
+    "_id": "i18n-message-en-admin-reports-review-status-filter",
+    "key": "admin.reports.review.status.filter",
+    "lang": "en",
+    "value": "Report status filter"
+  },
+  {
+    "_id": "i18n-message-en-admin-review-action-mark-solved-busy",
+    "key": "admin.review.action.mark.solved.busy",
+    "lang": "en",
+    "value": "Marking solved..."
+  },
+  {
+    "_id": "i18n-message-en-admin-review-action-mark-unresolved-busy",
+    "key": "admin.review.action.mark.unresolved.busy",
+    "lang": "en",
+    "value": "Reopening..."
+  },
+  {
+    "_id": "i18n-message-en-admin-review-status-unresolved",
+    "key": "admin.review.status.unresolved",
+    "lang": "en",
+    "value": "Unresolved"
+  },
+  {
+    "_id": "i18n-message-en-application-feedback",
+    "key": "application.feedback",
+    "lang": "en",
+    "value": "Application feedback"
+  },
+  {
+    "_id": "i18n-message-en-block-user",
+    "key": "Block user?",
+    "lang": "en",
+    "value": "Block user?"
+  },
+  {
+    "_id": "i18n-message-en-feedback-details",
+    "key": "feedback.details",
+    "lang": "en",
+    "value": "Feedback details"
+  },
+  {
+    "_id": "i18n-message-en-feedback-submitted-category-success",
+    "key": "feedback.submitted.category.success",
+    "lang": "en",
+    "value": "Feedback sent successfully in \"{category}\". Thank you for helping improve MyScoutee."
+  },
+  {
+    "_id": "i18n-message-en-feedback-submitted-from-the-app",
+    "key": "feedback.submitted.from.the.app",
+    "lang": "en",
+    "value": "Feedback submitted from the app."
+  },
+  {
+    "_id": "i18n-message-en-general",
+    "key": "general",
+    "lang": "en",
+    "value": "General"
+  },
+  {
+    "_id": "i18n-message-en-guide-admin-chat-review-close-description",
+    "key": "guide.admin.chat-review.close.description",
+    "lang": "en",
+    "value": "Return to the previous surface."
+  },
+  {
+    "_id": "i18n-message-en-guide-admin-chat-review-message-description",
+    "key": "guide.admin.chat-review.message.description",
+    "lang": "en",
+    "value": "Write the warning the selected user will receive: identify the reported conduct and explain what needs to change. Check the recipient and wording before sending."
+  },
+  {
+    "_id": "i18n-message-en-guide-admin-chat-review-message-label",
+    "key": "guide.admin.chat-review.message.label",
+    "lang": "en",
+    "value": "Warning text"
+  },
+  {
+    "_id": "i18n-message-en-guide-admin-chat-review-overview-description",
+    "key": "guide.admin.chat-review.overview.description",
+    "lang": "en",
+    "value": "Review the selected user and report context before composing a warning. Sending records a moderation warning for that user; it is an action, not a private draft note."
+  },
+  {
+    "_id": "i18n-message-en-guide-admin-chat-review-overview-label",
+    "key": "guide.admin.chat-review.overview.label",
+    "lang": "en",
+    "value": "Chat review"
+  },
+  {
+    "_id": "i18n-message-en-guide-admin-chat-review-send-warning-description",
+    "key": "guide.admin.chat-review.send-warning.description",
+    "lang": "en",
+    "value": "Send the written warning to the selected user, linked to the selected report when present. Wait for the success message; after a successful send the text field is cleared."
+  },
+  {
+    "_id": "i18n-message-en-guide-admin-chat-review-send-warning-label",
+    "key": "guide.admin.chat-review.send-warning.label",
+    "lang": "en",
+    "value": "Send warning"
+  },
+  {
+    "_id": "i18n-message-en-guide-admin-feedback-close-description",
+    "key": "guide.admin.feedback.close.description",
+    "lang": "en",
+    "value": "Return to the previous surface."
+  },
+  {
+    "_id": "i18n-message-en-guide-admin-feedback-detail-close-description",
+    "key": "guide.admin.feedback-detail.close.description",
+    "lang": "en",
+    "value": "Return to the previous surface."
+  },
+  {
+    "_id": "i18n-message-en-guide-admin-feedback-detail-overview-description",
+    "key": "guide.admin.feedback-detail.overview.description",
+    "lang": "en",
+    "value": "Read the full submission and its category before deciding whether it has been handled. Return to the feedback list to use the row’s solved or unresolved action."
+  },
+  {
+    "_id": "i18n-message-en-guide-admin-feedback-detail-overview-label",
+    "key": "guide.admin.feedback-detail.overview.label",
+    "lang": "en",
+    "value": "Review feedback"
+  },
+  {
+    "_id": "i18n-message-en-guide-admin-feedback-feedback-review-status-filter-description",
+    "key": "guide.admin.feedback.feedback-review-status-filter.description",
+    "lang": "en",
+    "value": "Choose unresolved feedback for current work or solved feedback for follow-up. Marking an item solved changes which queue contains it; it does not delete the submission."
+  },
+  {
+    "_id": "i18n-message-en-guide-admin-feedback-overview-description",
+    "key": "guide.admin.feedback.overview.description",
+    "lang": "en",
+    "value": "Read submitted bug reports, requests and other feedback. After handling an item, use its row menu to mark it solved; a solved item can be returned to unresolved when further work is needed."
+  },
+  {
+    "_id": "i18n-message-en-guide-admin-feedback-overview-label",
+    "key": "guide.admin.feedback.overview.label",
+    "lang": "en",
+    "value": "Feedback"
+  },
+  {
+    "_id": "i18n-message-en-guide-admin-report-detail-close-description",
+    "key": "guide.admin.report-detail.close.description",
+    "lang": "en",
+    "value": "Return to the previous surface."
+  },
+  {
+    "_id": "i18n-message-en-guide-admin-report-detail-overview-description",
+    "key": "guide.admin.report-detail.overview.description",
+    "lang": "en",
+    "value": "Read the report’s reason and linked context alongside the reported user. Review the source before using the available warning or block action; the action applies to that user."
+  },
+  {
+    "_id": "i18n-message-en-guide-admin-report-detail-overview-label",
+    "key": "guide.admin.report-detail.overview.label",
+    "lang": "en",
+    "value": "Review report"
+  },
+  {
+    "_id": "i18n-message-en-guide-admin-reports-blocked-users-description",
+    "key": "guide.admin.reports.blocked-users.description",
+    "lang": "en",
+    "value": "Open the restricted-user list to inspect existing blocks. A user’s menu offers unblocking and, when a support conversation already exists, access to that conversation."
+  },
+  {
+    "_id": "i18n-message-en-guide-admin-reports-blocked-users-label",
+    "key": "guide.admin.reports.blocked-users.label",
+    "lang": "en",
+    "value": "Blocked accounts"
+  },
+  {
+    "_id": "i18n-message-en-guide-admin-reports-close-description",
+    "key": "guide.admin.reports.close.description",
+    "lang": "en",
+    "value": "Return to the previous surface."
+  },
+  {
+    "_id": "i18n-message-en-guide-admin-reports-overview-description",
+    "key": "guide.admin.reports.overview.description",
+    "lang": "en",
+    "value": "Open a report to read its reason, affected user and source context. Use the user’s action menu for a warning or restriction after reviewing the evidence; opening a report alone does not take that action."
+  },
+  {
+    "_id": "i18n-message-en-guide-admin-reports-overview-label",
+    "key": "guide.admin.reports.overview.label",
+    "lang": "en",
+    "value": "Reports"
+  },
+  {
+    "_id": "i18n-message-en-guide-admin-reports-reports-review-status-filter-description",
+    "key": "guide.admin.reports.reports-review-status-filter.description",
+    "lang": "en",
+    "value": "Switch between unresolved reports that need attention and resolved reports you want to revisit. This selects the queue; it does not change a report’s review state."
+  },
+  {
+    "_id": "i18n-message-en-moderation-unblock",
+    "key": "moderation.unblock",
+    "lang": "en",
+    "value": "Unblock"
+  },
+  {
+    "_id": "i18n-message-en-reopen-report",
+    "key": "Reopen report?",
+    "lang": "en",
+    "value": "Reopen report?"
+  },
+  {
+    "_id": "i18n-message-en-report-details",
+    "key": "report.details",
+    "lang": "en",
+    "value": "Report details"
+  },
+  {
+    "_id": "i18n-message-en-report-details-f2gm5l",
+    "key": "Report details",
+    "lang": "en",
+    "value": "Report details"
+  },
+  {
+    "_id": "i18n-message-en-reports-can-only-be-started-from-a-chat-message-you-can-view",
+    "key": "Reports can only be started from a chat message you can view.",
+    "lang": "en",
+    "value": "Reports can only be started from a chat message you can view."
+  },
+  {
+    "_id": "i18n-message-en-resolve-report",
+    "key": "Resolve report?",
+    "lang": "en",
+    "value": "Resolve report?"
+  },
+  {
+    "_id": "i18n-message-en-send-warning",
+    "key": "send.warning",
+    "lang": "en",
+    "value": "Send warning"
+  },
+  {
+    "_id": "i18n-message-en-support-chat",
+    "key": "Support chat",
+    "lang": "en",
+    "value": "Support chat"
+  },
+  {
+    "_id": "i18n-message-en-unblock-user",
+    "key": "Unblock user?",
+    "lang": "en",
+    "value": "Unblock user?"
+  },
+  {
+    "_id": "i18n-message-en-workspace",
+    "key": "workspace",
+    "lang": "en",
+    "value": "Workspace"
+  },
+  {
+    "_id": "i18n-message-hu-about",
+    "key": "about",
+    "lang": "hu",
+    "value": "Rólam"
+  },
+  {
+    "_id": "i18n-message-hu-admin-feedback-confirm-mark-solved-message",
+    "key": "admin.feedback.confirm.mark.solved.message",
+    "lang": "hu",
+    "value": "{user} támogatási üzenetet kap arról, hogy a visszajelzést átnéztük."
+  },
+  {
+    "_id": "i18n-message-hu-admin-feedback-confirm-mark-solved-title",
+    "key": "admin.feedback.confirm.mark.solved.title",
+    "lang": "hu",
+    "value": "Megoldottnak jelölöd ezt a visszajelzést?"
+  },
+  {
+    "_id": "i18n-message-hu-admin-feedback-confirm-mark-unresolved-message",
+    "key": "admin.feedback.confirm.mark.unresolved.message",
+    "lang": "hu",
+    "value": "A visszajelzés visszakerül a megoldatlan listába."
+  },
+  {
+    "_id": "i18n-message-hu-admin-feedback-confirm-mark-unresolved-title",
+    "key": "admin.feedback.confirm.mark.unresolved.title",
+    "lang": "hu",
+    "value": "Megoldatlannak jelölöd ezt a visszajelzést?"
+  },
+  {
+    "_id": "i18n-message-hu-admin-feedback-empty-description",
+    "key": "admin.feedback.empty.description",
+    "lang": "hu",
+    "value": "Még nem érkezett alkalmazás-visszajelzés."
+  },
+  {
+    "_id": "i18n-message-hu-admin-feedback-empty-title",
+    "key": "admin.feedback.empty.title",
+    "lang": "hu",
+    "value": "Nincs visszajelzés"
+  },
+  {
+    "_id": "i18n-message-hu-admin-feedback-fallback-user",
+    "key": "admin.feedback.fallback.user",
+    "lang": "hu",
+    "value": "A felhasználó"
+  },
+  {
+    "_id": "i18n-message-hu-admin-feedback-review-status-filter",
+    "key": "admin.feedback.review.status.filter",
+    "lang": "hu",
+    "value": "Visszajelzés állapotszűrő"
+  },
+  {
+    "_id": "i18n-message-hu-admin-reports-action-block",
+    "key": "admin.reports.action.block",
+    "lang": "hu",
+    "value": "Letiltás"
+  },
+  {
+    "_id": "i18n-message-hu-admin-reports-action-block-busy",
+    "key": "admin.reports.action.block.busy",
+    "lang": "hu",
+    "value": "Letiltás..."
+  },
+  {
+    "_id": "i18n-message-hu-admin-reports-action-unblock",
+    "key": "admin.reports.action.unblock",
+    "lang": "hu",
+    "value": "Feloldás"
+  },
+  {
+    "_id": "i18n-message-hu-admin-reports-action-unblock-busy",
+    "key": "admin.reports.action.unblock.busy",
+    "lang": "hu",
+    "value": "Feloldás..."
+  },
+  {
+    "_id": "i18n-message-hu-admin-reports-confirm-block-message",
+    "key": "admin.reports.confirm.block.message",
+    "lang": "hu",
+    "value": "A felhasználó le lesz tiltva, és támogatási csevegőüzenetet kap."
+  },
+  {
+    "_id": "i18n-message-hu-admin-reports-confirm-block-title",
+    "key": "admin.reports.confirm.block.title",
+    "lang": "hu",
+    "value": "Letiltod {user} felhasználót?"
+  },
+  {
+    "_id": "i18n-message-hu-admin-reports-confirm-mark-solved-message",
+    "key": "admin.reports.confirm.mark.solved.message",
+    "lang": "hu",
+    "value": "{user} támogatási üzenetet kap arról, hogy a jelentést átnéztük."
+  },
+  {
+    "_id": "i18n-message-hu-admin-reports-confirm-mark-solved-title",
+    "key": "admin.reports.confirm.mark.solved.title",
+    "lang": "hu",
+    "value": "Megoldottnak jelölöd ezt a jelentést?"
+  },
+  {
+    "_id": "i18n-message-hu-admin-reports-confirm-mark-unresolved-message",
+    "key": "admin.reports.confirm.mark.unresolved.message",
+    "lang": "hu",
+    "value": "A jelentés visszakerül a megoldatlan listába."
+  },
+  {
+    "_id": "i18n-message-hu-admin-reports-confirm-mark-unresolved-title",
+    "key": "admin.reports.confirm.mark.unresolved.title",
+    "lang": "hu",
+    "value": "Megoldatlannak jelölöd ezt a jelentést?"
+  },
+  {
+    "_id": "i18n-message-hu-admin-reports-confirm-unblock-message",
+    "key": "admin.reports.confirm.unblock.message",
+    "lang": "hu",
+    "value": "A felhasználó profilállapota visszaáll, és újra használhatja a MyScoutee-t."
+  },
+  {
+    "_id": "i18n-message-hu-admin-reports-confirm-unblock-title",
+    "key": "admin.reports.confirm.unblock.title",
+    "lang": "hu",
+    "value": "Feloldod {user} tiltását?"
+  },
+  {
+    "_id": "i18n-message-hu-admin-reports-empty-description",
+    "key": "admin.reports.empty.description",
+    "lang": "hu",
+    "value": "Nincs moderációs jelentés átnézésre."
+  },
+  {
+    "_id": "i18n-message-hu-admin-reports-empty-title",
+    "key": "admin.reports.empty.title",
+    "lang": "hu",
+    "value": "Nincs jelentés"
+  },
+  {
+    "_id": "i18n-message-hu-admin-reports-fallback-reporter",
+    "key": "admin.reports.fallback.reporter",
+    "lang": "hu",
+    "value": "A jelentő"
+  },
+  {
+    "_id": "i18n-message-hu-admin-reports-review-status-filter",
+    "key": "admin.reports.review.status.filter",
+    "lang": "hu",
+    "value": "Jelentés állapotszűrő"
+  },
+  {
+    "_id": "i18n-message-hu-admin-review-action-mark-solved-busy",
+    "key": "admin.review.action.mark.solved.busy",
+    "lang": "hu",
+    "value": "Megoldottra jelölés..."
+  },
+  {
+    "_id": "i18n-message-hu-admin-review-action-mark-unresolved-busy",
+    "key": "admin.review.action.mark.unresolved.busy",
+    "lang": "hu",
+    "value": "Újranyitás..."
+  },
+  {
+    "_id": "i18n-message-hu-admin-review-status-unresolved",
+    "key": "admin.review.status.unresolved",
+    "lang": "hu",
+    "value": "Megoldatlan"
+  },
+  {
+    "_id": "i18n-message-hu-application-feedback",
+    "key": "application.feedback",
+    "lang": "hu",
+    "value": "Alkalmazás-visszajelzés"
+  },
+  {
+    "_id": "i18n-message-hu-block-user",
+    "key": "Block user?",
+    "lang": "hu",
+    "value": "Letiltod a felhasználót?"
+  },
+  {
+    "_id": "i18n-message-hu-feedback-details",
+    "key": "feedback.details",
+    "lang": "hu",
+    "value": "Visszajelzés részletei"
+  },
+  {
+    "_id": "i18n-message-hu-feedback-submitted-category-success",
+    "key": "feedback.submitted.category.success",
+    "lang": "hu",
+    "value": "A „{category}” kategóriájú visszajelzést sikeresen elküldtük. Köszönjük, hogy segítesz javítani a MyScoutee-t."
+  },
+  {
+    "_id": "i18n-message-hu-feedback-submitted-from-the-app",
+    "key": "feedback.submitted.from.the.app",
+    "lang": "hu",
+    "value": "Az alkalmazásból beküldött visszajelzések."
+  },
+  {
+    "_id": "i18n-message-hu-general",
+    "key": "general",
+    "lang": "hu",
+    "value": "Általános"
+  },
+  {
+    "_id": "i18n-message-hu-guide-admin-chat-review-close-description",
+    "key": "guide.admin.chat-review.close.description",
+    "lang": "hu",
+    "value": "Visszatérés az előző felülethez."
+  },
+  {
+    "_id": "i18n-message-hu-guide-admin-chat-review-message-description",
+    "key": "guide.admin.chat-review.message.description",
+    "lang": "hu",
+    "value": "A kiválasztott felhasználónak szánt figyelmeztetést írd ide: nevezd meg a kifogásolt viselkedést és a szükséges változtatást. Küldés előtt ellenőrizd a címzettet és a megfogalmazást."
+  },
+  {
+    "_id": "i18n-message-hu-guide-admin-chat-review-message-label",
+    "key": "guide.admin.chat-review.message.label",
+    "lang": "hu",
+    "value": "Figyelmeztetés szövege"
+  },
+  {
+    "_id": "i18n-message-hu-guide-admin-chat-review-overview-description",
+    "key": "guide.admin.chat-review.overview.description",
+    "lang": "hu",
+    "value": "Figyelmeztetés írása előtt ellenőrizd a kiválasztott felhasználót és a bejelentés előzményeit. A küldés moderátori figyelmeztetést rögzít a felhasználónak; ez művelet, nem privát piszkozatjegyzet."
+  },
+  {
+    "_id": "i18n-message-hu-guide-admin-chat-review-overview-label",
+    "key": "guide.admin.chat-review.overview.label",
+    "lang": "hu",
+    "value": "Beszélgetés ellenőrzése"
+  },
+  {
+    "_id": "i18n-message-hu-guide-admin-chat-review-send-warning-description",
+    "key": "guide.admin.chat-review.send-warning.description",
+    "lang": "hu",
+    "value": "Elküldi a megírt figyelmeztetést a kiválasztott felhasználónak, és ha van kiválasztott bejelentés, ahhoz kapcsolja. Várd meg a sikerjelzést; sikeres küldés után a szövegmező kiürül."
+  },
+  {
+    "_id": "i18n-message-hu-guide-admin-chat-review-send-warning-label",
+    "key": "guide.admin.chat-review.send-warning.label",
+    "lang": "hu",
+    "value": "Figyelmeztetés küldése"
+  },
+  {
+    "_id": "i18n-message-hu-guide-admin-feedback-close-description",
+    "key": "guide.admin.feedback.close.description",
+    "lang": "hu",
+    "value": "Visszatérés az előző felülethez."
+  },
+  {
+    "_id": "i18n-message-hu-guide-admin-feedback-detail-close-description",
+    "key": "guide.admin.feedback-detail.close.description",
+    "lang": "hu",
+    "value": "Visszatérés az előző felülethez."
+  },
+  {
+    "_id": "i18n-message-hu-guide-admin-feedback-detail-overview-description",
+    "key": "guide.admin.feedback-detail.overview.description",
+    "lang": "hu",
+    "value": "A feldolgozottság megítélése előtt olvasd el a teljes visszajelzést és a kategóriáját. A megoldott vagy megoldatlan állapotot a visszajelzési lista sorának menüjében állíthatod."
+  },
+  {
+    "_id": "i18n-message-hu-guide-admin-feedback-detail-overview-label",
+    "key": "guide.admin.feedback-detail.overview.label",
+    "lang": "hu",
+    "value": "Visszajelzés kezelése"
+  },
+  {
+    "_id": "i18n-message-hu-guide-admin-feedback-feedback-review-status-filter-description",
+    "key": "guide.admin.feedback.feedback-review-status-filter.description",
+    "lang": "hu",
+    "value": "A folyamatban lévő munkához válaszd a megoldatlan, utánkövetéshez a megoldott visszajelzéseket. A megoldottra jelölés másik sorba helyezi az elemet, nem törli a beküldést."
+  },
+  {
+    "_id": "i18n-message-hu-guide-admin-feedback-overview-description",
+    "key": "guide.admin.feedback.overview.description",
+    "lang": "hu",
+    "value": "Olvasd el a hibajelzéseket, kéréseket és egyéb visszajelzéseket. Feldolgozás után a sor menüjében jelöld megoldottnak; ha további munka szükséges, a megoldott elem visszaállítható megoldatlanra."
+  },
+  {
+    "_id": "i18n-message-hu-guide-admin-feedback-overview-label",
+    "key": "guide.admin.feedback.overview.label",
+    "lang": "hu",
+    "value": "Visszajelzések"
+  },
+  {
+    "_id": "i18n-message-hu-guide-admin-report-detail-close-description",
+    "key": "guide.admin.report-detail.close.description",
+    "lang": "hu",
+    "value": "Visszatérés az előző felülethez."
+  },
+  {
+    "_id": "i18n-message-hu-guide-admin-report-detail-overview-description",
+    "key": "guide.admin.report-detail.overview.description",
+    "lang": "hu",
+    "value": "A bejelentett felhasználó mellett olvasd el az indokot és a kapcsolódó forrást. Figyelmeztetés vagy tiltás előtt ellenőrizd ezt a tartalmat; a művelet az érintett felhasználóra vonatkozik."
+  },
+  {
+    "_id": "i18n-message-hu-guide-admin-report-detail-overview-label",
+    "key": "guide.admin.report-detail.overview.label",
+    "lang": "hu",
+    "value": "Bejelentés elbírálása"
+  },
+  {
+    "_id": "i18n-message-hu-guide-admin-reports-blocked-users-description",
+    "key": "guide.admin.reports.blocked-users.description",
+    "lang": "hu",
+    "value": "Megnyitja a korlátozott felhasználók listáját a meglévő tiltások áttekintéséhez. A felhasználó menüje feloldást kínál, és meglévő támogatási beszélgetés esetén annak megnyitását is."
+  },
+  {
+    "_id": "i18n-message-hu-guide-admin-reports-blocked-users-label",
+    "key": "guide.admin.reports.blocked-users.label",
+    "lang": "hu",
+    "value": "Letiltott fiókok"
+  },
+  {
+    "_id": "i18n-message-hu-guide-admin-reports-close-description",
+    "key": "guide.admin.reports.close.description",
+    "lang": "hu",
+    "value": "Visszatérés az előző felülethez."
+  },
+  {
+    "_id": "i18n-message-hu-guide-admin-reports-overview-description",
+    "key": "guide.admin.reports.overview.description",
+    "lang": "hu",
+    "value": "Nyiss meg egy bejelentést az indok, az érintett felhasználó és a forrás ellenőrzéséhez. A bizonyítékok átnézése után a felhasználó menüjében indíthatsz figyelmeztetést vagy korlátozást; a megnyitás ezt nem végzi el."
+  },
+  {
+    "_id": "i18n-message-hu-guide-admin-reports-overview-label",
+    "key": "guide.admin.reports.overview.label",
+    "lang": "hu",
+    "value": "Bejelentések"
+  },
+  {
+    "_id": "i18n-message-hu-guide-admin-reports-reports-review-status-filter-description",
+    "key": "guide.admin.reports.reports-review-status-filter.description",
+    "lang": "hu",
+    "value": "Válts a figyelmet igénylő, megoldatlan bejelentések és az újra áttekintendő lezárt bejelentések között. Ez a sor kiválasztása, nem a bejelentések állapotának módosítása."
+  },
+  {
+    "_id": "i18n-message-hu-moderation-unblock",
+    "key": "moderation.unblock",
+    "lang": "hu",
+    "value": "Feloldás"
+  },
+  {
+    "_id": "i18n-message-hu-reopen-report",
+    "key": "Reopen report?",
+    "lang": "hu",
+    "value": "Újranyitod a bejelentést?"
+  },
+  {
+    "_id": "i18n-message-hu-report-details",
+    "key": "report.details",
+    "lang": "hu",
+    "value": "Jelentés részletei"
+  },
+  {
+    "_id": "i18n-message-hu-report-details-f2gm5l",
+    "key": "Report details",
+    "lang": "hu",
+    "value": "Bejelentés részletei"
+  },
+  {
+    "_id": "i18n-message-hu-reports-can-only-be-started-from-a-chat-message-you-can-view",
+    "key": "Reports can only be started from a chat message you can view.",
+    "lang": "hu",
+    "value": "Csak általad megtekinthető chatüzenetből indíthatsz bejelentést."
+  },
+  {
+    "_id": "i18n-message-hu-resolve-report",
+    "key": "Resolve report?",
+    "lang": "hu",
+    "value": "Lezárod a bejelentést?"
+  },
+  {
+    "_id": "i18n-message-hu-send-warning",
+    "key": "send.warning",
+    "lang": "hu",
+    "value": "Figyelmeztetés küldése"
+  },
+  {
+    "_id": "i18n-message-hu-support-chat",
+    "key": "Support chat",
+    "lang": "hu",
+    "value": "Ügyfélszolgálati chat"
+  },
+  {
+    "_id": "i18n-message-hu-unblock-user",
+    "key": "Unblock user?",
+    "lang": "hu",
+    "value": "Feloldod a felhasználó tiltását?"
+  },
+  {
+    "_id": "i18n-message-hu-workspace",
+    "key": "workspace",
+    "lang": "hu",
+    "value": "Munka"
+  },
+  {
+    "_id": "i18n-message-en-chat-message-17zggy0",
+    "key": "Chat message",
+    "lang": "en",
+    "value": "Chat message"
+  },
+  {
+    "_id": "i18n-message-hu-chat-message-17zggy0",
+    "key": "Chat message",
+    "lang": "hu",
+    "value": "Chatüzenet"
   }
 ]

@@ -277,3 +277,21 @@ E2E_MONGO_CONTAINER=myscoutee-template-dev-mongodb E2E_DATABASE=demo_db \
 The runner creates owned actors, reports, feedback and support chats. It restores
 administrator configuration through the existing operator fixture and closes
 its native sessions before removing its data.
+
+
+## Minimal moderation, support and administrator API — 2026-10-11
+
+Frontend `43980be` and the selected backend owners pass the local/dev HTTP report,
+feedback, warning, block/unblock, resolve/reopen and support-message/reload flows.
+The empty queue is valid; the seeded administrator is classified in canonical JSON.
+Twenty frontend and five administrator API Java checks pass. The native admin
+API key is separate from member keys and grants only the retained read-only
+attention overview. The optional product analytics field is omitted.
+See [the evidence](../qualification/evidence/MSC122_TEMPLATE_ADMIN_UI_20261011.json).
+
+Run `e2e/functional/ui/admin/run.mjs` and `admin/api.mjs` with `--local`, or with
+the explicit template Mongo variable above for HTTP. Fixtures restore the previous
+operator configuration and remove only owned accounts, support threads, reports,
+feedback, sessions and integration credentials. The UI verifies returned-state
+reconciliation without an additional report dashboard read. New admin guide tours,
+live Firebase role login, KVM and installed artifacts remain open.

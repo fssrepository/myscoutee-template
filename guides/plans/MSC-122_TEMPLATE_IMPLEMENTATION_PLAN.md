@@ -392,8 +392,14 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     This is not signed DEB installation or rollback qualification.
     Admin report/feedback/moderation and support HTTP actions now pass with native
     chat evidence, role isolation and required MCP role-delivery ownership. See
-    `MSC122_TEMPLATE_ADMIN_BACKEND_20261011.json`. Local/HTTP admin UI, privileged
-    API controls and KVM remain pending; step 19 stays open.
+    `MSC122_TEMPLATE_ADMIN_BACKEND_20261011.json`. Frontend `43980be` now also
+    qualifies local/dev HTTP feedback/report/moderation/support flows, empty queues,
+    canonical admin selection, reload and native admin API create/mask/block/revoke.
+    Twenty frontend checks and five administrator API Java checks pass; see
+    `MSC122_TEMPLATE_ADMIN_UI_20261011.json`. The minimal admin API keeps the native
+    Attention shape and omits the optional analytics statistics field/model/worker.
+    Complete new admin contextual tours, live role login and KVM/installed host
+    controls remain open; implementation continues with consolidated tests.
 
 20. **Consolidate JUnit and frontend unit/component coverage — IN PROGRESS.**
     Preserve `tools/run-backend-junit.sh`, native standard/embedded/integration

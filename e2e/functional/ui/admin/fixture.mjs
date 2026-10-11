@@ -8,6 +8,7 @@ export async function stageAdminFixture(baseUrl){
    db.userReports.deleteMany({userId:{$in:ids}});db.userFeedback.deleteMany({userId:{$in:ids}});
    db.chatMessages.deleteMany({chatId:{$in:support}});db.chats.deleteMany({id:{$in:support}});
    for(const collection of ['privacyConsents','userLoginAudits','userSessionActions','userSessionStates','userNotifications','notificationOutbox'])db.getCollection(collection).deleteMany({$or:[{userId:${JSON.stringify(adminId)}},{recipientUserId:${JSON.stringify(adminId)}},{accountUserId:${JSON.stringify(adminId)}},{recipientUserIds:${JSON.stringify(adminId)}}]});
+   for(const collection of ['integrationTokens','mcpAuthorizations','mcpEventSubscriptions','integrationWebhookDeliveries'])db.getCollection(collection).deleteMany({ownerUserId:{$in:ids}});
    db.users.deleteOne({userId:${JSON.stringify(adminId)}});return {adminRemoved:db.users.countDocuments({userId:${JSON.stringify(adminId)}})===0};})()`);
  }
  try{
