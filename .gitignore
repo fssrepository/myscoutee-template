@@ -1,0 +1,11 @@
+**/.gradle/
+**/build/
+**/node_modules/
+**/__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example
+.trust-mode.local
+*.local
+.agent/

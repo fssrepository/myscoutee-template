@@ -13,8 +13,10 @@
 This repository is the starting point for extracting MyScoutee's common
 infrastructure into a reusable project template.
 
-**Current status:** repository groundwork. The template implementation, setup
-instructions and runnable examples have not been published here yet.
+**Current status:** minimal backend foundations in progress. The selected native
+account, session, consent and deployment/Firebase configuration code passes
+52 focused JUnit tests. HTTP composition, communication, frontend, seed and
+installation are still being implemented; this is not yet a runnable release.
 
 ## Target and local repository layout
 
@@ -40,8 +42,9 @@ It retains native identity behavior, including REAL/DEMO sessions, Firebase,
 login/logout and account lifecycle, backed by persisted data and a small seed.
 MyScoutee event, matchmaking, payment and Registry models are excluded.
 
-Retain group/workspace scoping where identity and chat need it, initially with a
-minimal seeded group. The shell includes an avatar menu with a small profile and
+Retain the native account/workspace identity fields where the selected models
+need them. The initial template does not include the community/group domain or
+seed a group merely to satisfy an unrelated dependency. The shell includes an avatar menu with a small profile and
 image editor, guide/notification access, minimal settings and the real consent
 flow, including versioned documents, persisted acceptance and enforcement.
 
@@ -59,6 +62,29 @@ The local frontend may receive its own remote later; update its origin and the
 parent's `git submodule set-url frontend <repository-url>` together at that point.
 The current absolute local URL is groundwork for this workspace, not a portable
 published template release.
+
+## Selected backend foundations
+
+The file-level source manifest is [`tools/upstream-sources.json`](tools/upstream-sources.json).
+It pins upstream revisions and hashes and records each deliberate adaptation.
+The native `Users` model omits affiliate registration; the deployment document
+and DTOs omit payments. Remaining selected fields keep their upstream names and
+semantics. No events, matchmaking, payment or Registry implementation is included.
+
+Account selection is taken from the MyScoutee revision already checked on KVM
+and monolith. Deployment settings retain branding, privacy contacts, integration
+base URL, encrypted credentials and verified Firebase activation. REAL and DEMO
+separation, optimistic locking and credential redaction remain in place.
+
+With Java 25 installed, run the selected tests from the repository root:
+
+```sh
+tools/run-backend-junit.sh standard
+```
+
+This uses isolated JUnit outputs and does not start a server or connect to an
+application database. Passing these tests does not qualify installation, a live
+Firebase project, frontend flows or the unfinished service composition.
 
 ## License — free to reuse with required credit
 

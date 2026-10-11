@@ -1,0 +1,607 @@
+{
+  "schemaVersion": 1,
+  "source": "https://github.com/fssrepository/myscoutee-backend",
+  "sourceRevision": "ab4f624073457e6f21ace9eb34368cf68e7a4070",
+  "status": "Implementation in progress; this manifest records selected files, not a runnable or qualified release.",
+  "files": [
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/api/AssetAffinityProfile.java",
+      "upstreamSha256": "9e447e4b7d28dd39cf2fbf5fe8d7f8b5b873209ebddc7723d25a1262cbe715ce",
+      "purpose": "Native member, consent, session, account deletion or personal chat model, including its required read interfaces.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/api/AssetProfile.java",
+      "upstreamSha256": "287628f7be20dd5b8b3ec2e9c7ced25d9723f17a6b1407781602c113d637359a",
+      "purpose": "Native member, consent, session, account deletion or personal chat model, including its required read interfaces.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/api/DiscoveryProfile.java",
+      "upstreamSha256": "ff592a01a3519578f2f6ccf21ae62fd717c99a63e86567ae3c75bd5cdfb4d8c8",
+      "purpose": "Native member, consent, session, account deletion or personal chat model, including its required read interfaces.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/api/EmailProfile.java",
+      "upstreamSha256": "14f8a31a883a215e857dc8b77be830353843541a847c42799cc425df0459abac",
+      "purpose": "Native member, consent, session, account deletion or personal chat model, including its required read interfaces.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/api/ProfileSummary.java",
+      "upstreamSha256": "091a9c638580178ab58eeef64a9b606cebf0a6b538ee4c6fed770f8192c30c63",
+      "purpose": "Native member, consent, session, account deletion or personal chat model, including its required read interfaces.",
+      "adaptation": null,
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f"
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/api/ScoringProfile.java",
+      "upstreamSha256": "a0308d6df2421ad6dd96f61eead0aed172ffc68283c194cbd6429bef6351bd3f",
+      "purpose": "Native member, consent, session, account deletion or personal chat model, including its required read interfaces.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/api/WorkspaceIdentity.java",
+      "upstreamSha256": "4e35db94dba874f7a459df3981d22873dd4022501a9d03d192b970c0e27efec0",
+      "purpose": "Native member, consent, session, account deletion or personal chat model, including its required read interfaces.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/api/WorkspaceProfile.java",
+      "upstreamSha256": "038b26e068b705d1898afb47dee1c60b6a7129a0b9361f398336d52115edb335",
+      "purpose": "Native member, consent, session, account deletion or personal chat model, including its required read interfaces.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/document/AccountPurgeJob.java",
+      "upstreamSha256": "4d5fbbdcce67366101a8f8738f37601d08a554d0aa95c859ea35849b2ac63e40",
+      "purpose": "Native member, consent, session, account deletion or personal chat model, including its required read interfaces.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/document/PrivacyConsent.java",
+      "upstreamSha256": "632e55834c5e31ab16a2c2a0d5ac3b9b02423533722b8edbd3864e837add0853",
+      "purpose": "Native member, consent, session, account deletion or personal chat model, including its required read interfaces.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/document/UserLoginAudit.java",
+      "upstreamSha256": "28d69b99ba4eceab594f76ab718c7beebf1d631e23a5613ac8447c1cbcd7569f",
+      "purpose": "Native member, consent, session, account deletion or personal chat model, including its required read interfaces.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/document/UserSessionState.java",
+      "upstreamSha256": "495934ba3c3d4736818986562448dd64e2e56d6867fda8d429c641200d3f1562",
+      "purpose": "Native member, consent, session, account deletion or personal chat model, including its required read interfaces.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/document/Users.java",
+      "upstreamSha256": "8c3bbc99c55891e528e738bb5d3356ad6ae4679e5fcabd8ad331838e90bfee74",
+      "purpose": "Native member, consent, session, account deletion or personal chat model, including its required read interfaces.",
+      "adaptation": "Omit affiliateRegistration and its payment type; retain integrationAccess and every other persisted field unchanged."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/dto/FeedCountersRecord.java",
+      "upstreamSha256": "b5a5276feca9f654df4df1244a82f05e347067b80f345a6f6024f01455e2d6cd",
+      "purpose": "Native member, consent, session, account deletion or personal chat model, including its required read interfaces.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/dto/HostConfidenceFactsDto.java",
+      "upstreamSha256": "3885a3ab679858e4aade3821b5c5a583d805ed3546508fc0dae3cc5e2a3cdbd5",
+      "purpose": "Native member, consent, session, account deletion or personal chat model, including its required read interfaces.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/chat/api/ChatDirectory.java",
+      "upstreamSha256": "66b95595a9cd60968e7dd03d74c85a6af805117681864deb956fad8c50f22503",
+      "purpose": "Native member, consent, session, account deletion or personal chat model, including its required read interfaces.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/chat/api/ContactPermissions.java",
+      "upstreamSha256": "46cad07485638d73a6034acc4425380d0acac52d84a0e809f95f57169dc93f44",
+      "purpose": "Native member, consent, session, account deletion or personal chat model, including its required read interfaces.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/chat/document/Chat.java",
+      "upstreamSha256": "0f21f5d20c77744b533e79b7ec3244aecb1949b299cdd10d90a92f5ad88d4317",
+      "purpose": "Native member, consent, session, account deletion or personal chat model, including its required read interfaces.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/chat/document/ChatMessage.java",
+      "upstreamSha256": "73af75c019f0830ef3dfe7c03f743d96be3969bde29291511f55abf1300abd0d",
+      "purpose": "Native member, consent, session, account deletion or personal chat model, including its required read interfaces.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/chat/document/ContactChatAccess.java",
+      "upstreamSha256": "682a72466fbeeb21c3bcd44616f86fd5f78020de3719de225d1fdcc5b0662949",
+      "purpose": "Native member, consent, session, account deletion or personal chat model, including its required read interfaces.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/dto/IntegrationAccess.java",
+      "upstreamSha256": "2bc8816b3d140a3d73791ad2dafb19a14cc25727c47db31c7f7b1731ef636504",
+      "purpose": "Native member, consent, session, account deletion or personal chat model, including its required read interfaces.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/Main.java",
+      "upstreamSha256": "109a52cee50df74d480a014139ee5a041b58b476b9aaf43d961e18782cd2b0cd",
+      "purpose": "Canonical identity, session, consent or REAL/DEMO persistence foundation.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/common/config/MongoRoutingConfig.java",
+      "upstreamSha256": "6bc2a722a9dbd1e8a4d971e07ded6d7f5f5f3186c1578d5bd55de6d491d8e810",
+      "purpose": "Canonical identity, session, consent or REAL/DEMO persistence foundation.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/common/config/JsonConfig.java",
+      "upstreamSha256": "16809d2d57439ac99a284f194c619577ff24212c3f83cd128d7a97fed12a7f7f",
+      "purpose": "Canonical identity, session, consent or REAL/DEMO persistence foundation.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/common/util/JsonUtil.java",
+      "upstreamSha256": "54d3f575ff2894b9a19d72aaaedd185c2f610a0ab5f52b3b3fbbf0effa1397be",
+      "purpose": "Canonical identity, session, consent or REAL/DEMO persistence foundation.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/common/config/mongo/MongoSessionMode.java",
+      "upstreamSha256": "7028d79d27eeadf12a9a1ce0fe6c966adae4e8750ca06227fe11c68987303331",
+      "purpose": "Canonical identity, session, consent or REAL/DEMO persistence foundation.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/common/config/mongo/MongoSessionModeContext.java",
+      "upstreamSha256": "36c1c0106f363871f73c78324adb954cf9133f6db9af4a60e071936320acc477",
+      "purpose": "Canonical identity, session, consent or REAL/DEMO persistence foundation.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/common/config/mongo/SessionRoutingMongoDatabaseFactory.java",
+      "upstreamSha256": "95eae0c5b62d574f8f5e4e029727becf5ac92985fdcdd5789a65c976e2ba3547",
+      "purpose": "Canonical identity, session, consent or REAL/DEMO persistence foundation.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/common/config/mongo/ScheduledMongoSessionRunner.java",
+      "upstreamSha256": "76bb2d440145edd85e15df53c43c10c2f76a2310c7e71f20b7f26a0377297560",
+      "purpose": "Canonical identity, session, consent or REAL/DEMO persistence foundation.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/api/AccountIdentity.java",
+      "upstreamSha256": "4a35c904c2c3d66c6ecc74648e6f52efa6685f7d684be94e77505be5d08359eb",
+      "purpose": "Canonical identity, session, consent or REAL/DEMO persistence foundation.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/api/AuthenticatedActor.java",
+      "upstreamSha256": "aa71c8183cac13afc55060b0740887895ea1e31c1f5f24f74a09601a7fe90e8d",
+      "purpose": "Canonical identity, session, consent or REAL/DEMO persistence foundation.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/api/AccountMediaSessions.java",
+      "upstreamSha256": "a15684787e145b9813f5f55562241d660cda1dade45e9857f2754f31f44ae4e9",
+      "purpose": "Canonical identity, session, consent or REAL/DEMO persistence foundation.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/api/BootstrapAccounts.java",
+      "upstreamSha256": "021dea485feab687a3a824cdf75ac7a8086c7d64077bd7535a51adba876e2b81",
+      "purpose": "Canonical identity, session, consent or REAL/DEMO persistence foundation.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/api/BootstrapLoginAudit.java",
+      "upstreamSha256": "346e0c817514a20e63c3a2ff29c5e02b099bed07b718f48674a415cf8727f9d8",
+      "purpose": "Canonical identity, session, consent or REAL/DEMO persistence foundation.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/api/FirebaseCredentialMarker.java",
+      "upstreamSha256": "62cc9f9ee1fa9367bef931bc5e405c0d70a3174f2efb0c4f8280c7265a4eba47",
+      "purpose": "Canonical identity, session, consent or REAL/DEMO persistence foundation.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/dto/ProfileIdentityDto.java",
+      "upstreamSha256": "4588a6b4d06acda543bff0ff128137f6609946ab20b4a2d51ff9dba17ec03f1b",
+      "purpose": "Canonical identity, session, consent or REAL/DEMO persistence foundation.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/security/firebase/FirebaseService.java",
+      "upstreamSha256": "e7e7b77dba9ff54b631a3791547442c5752d7c7ce650d64797f195a68478335b",
+      "purpose": "Canonical identity, session, consent or REAL/DEMO persistence foundation.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/security/firebase/FirebaseAuthenticationToken.java",
+      "upstreamSha256": "0235b1c469e86939be6139e467437966f06d345e72900f92c5cacfee5ae1e183",
+      "purpose": "Canonical identity, session, consent or REAL/DEMO persistence foundation.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/security/firebase/FirebaseAuthenticationProvider.java",
+      "upstreamSha256": "269a24ff14954c62597fd3a045dfffcf2a94af1e3f23a18a754ef60ebcbbaeb0",
+      "purpose": "Canonical identity, session, consent or REAL/DEMO persistence foundation.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/security/firebase/FirebaseTokenVerifier.java",
+      "upstreamSha256": "683694273d875b9c1db96e81cb8a6d64aa00027e0eeb1180581b8766fe44692c",
+      "purpose": "Canonical identity, session, consent or REAL/DEMO persistence foundation.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/security/firebase/DefaultFirebaseTokenVerifier.java",
+      "upstreamSha256": "2e00c44f22423e294ccbef40c36f497facd18f4259b7dbcb9a8e9e1ad88c1e54",
+      "purpose": "Canonical identity, session, consent or REAL/DEMO persistence foundation.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/security/firebase/DevelopmentIdentityEmail.java",
+      "upstreamSha256": "d00970b05a091eb31f21aec5f66d267556e10309b5d9d11edcbac387c1239e68",
+      "purpose": "Canonical identity, session, consent or REAL/DEMO persistence foundation.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/security/firebase/dto/FirebasePrincipal.java",
+      "upstreamSha256": "47f99f9530f7797c4c2a5f696cc1861c5c58319f2becf4cf26af9e1b27923fc2",
+      "purpose": "Canonical identity, session, consent or REAL/DEMO persistence foundation.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/security/firebase/dto/FirebaseCredential.java",
+      "upstreamSha256": "d0930f87df5318d166d08f33ac5eeb0a3337226d9ff54e24ab2c271713aba524",
+      "purpose": "Canonical identity, session, consent or REAL/DEMO persistence foundation.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/security/firebase/exception/FirebaseTokenInvalidException.java",
+      "upstreamSha256": "99a59587703cb59b7501d2464f845c2be286ffdf3ccda3e033a6765ca89bca6e",
+      "purpose": "Canonical identity, session, consent or REAL/DEMO persistence foundation.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/service/UserLoginSessionService.java",
+      "upstreamSha256": "e8ede62d99cc46fd5ff1c98c2f66839af89efa1596c603e43915d1420a2084d5",
+      "purpose": "Canonical identity, session, consent or REAL/DEMO persistence foundation.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/repository/UserLoginAuditsRepository.java",
+      "upstreamSha256": "d07daf330062f7d5c3af7763b246fe82ab1fd2467f3349272766c508122509de",
+      "purpose": "Canonical identity, session, consent or REAL/DEMO persistence foundation.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/service/AccountConsentService.java",
+      "upstreamSha256": "19a7ece430557f213c5e86201250c53ae361f59e994f70742ef0f7c8edbe39d6",
+      "purpose": "Canonical identity, session, consent or REAL/DEMO persistence foundation.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/api/AccountConsents.java",
+      "upstreamSha256": "98e8b83ae919bfd9694dbb8ee9df1504186785c305c46157bb70fe0fdbf30195",
+      "purpose": "Canonical identity, session, consent or REAL/DEMO persistence foundation.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/repository/PrivacyConsentsRepository.java",
+      "upstreamSha256": "8eb4db5f97b52c0cadef60760f0c82ac3580b17ec32e9f6d3c75cfd25e5d4283",
+      "purpose": "Canonical identity, session, consent or REAL/DEMO persistence foundation.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/notifications/api/NotificationDelivery.java",
+      "upstreamSha256": "dce614fd4427835dc7aeef0ae7c4e1fa8d3937b3ee9fb3eb5d0aca07414f1fb8",
+      "purpose": "Canonical identity, session, consent or REAL/DEMO persistence foundation.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/config/ConfigProperties.java",
+      "upstreamSha256": "84173429ceb1a5c55819934f3aaca0ef8d84a47ae5f09706a70603183b8d9124",
+      "purpose": "Canonical identity, session, consent or REAL/DEMO persistence foundation.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/api/RuntimeConfiguration.java",
+      "upstreamSha256": "44b262675ac481d4773639d0e6e9d647b3908ce2a291dddd418c4f8db9137b45",
+      "purpose": "Canonical identity, session, consent or REAL/DEMO persistence foundation.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/api/AuthenticationMode.java",
+      "upstreamSha256": "58b29e775a7ce1f2a6ca6375589fb239fc9e783ee8b03e860f863cb055f7c615",
+      "purpose": "Canonical identity, session, consent or REAL/DEMO persistence foundation.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/api/OperatorNotificationSettings.java",
+      "upstreamSha256": "0a633594b1bf175aca7b2cb4146aed91470d1eefefb0d4a444f3fc9713299e42",
+      "purpose": "Canonical identity, session, consent or REAL/DEMO persistence foundation.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/dto/OperatorNotificationRecipientsDto.java",
+      "upstreamSha256": "a1e27744fcb1857c8bc500505091f0a865781428c7dde00f52838d5275d08337",
+      "purpose": "Canonical identity, session, consent or REAL/DEMO persistence foundation.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/api/FirebaseRuntime.java",
+      "upstreamSha256": "e6cb0d815361d7607784383ad87af09b5cbdec5635abeecf695e901db82b16c5",
+      "purpose": "Canonical identity, session, consent or REAL/DEMO persistence foundation.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/api/AdministratorSettings.java",
+      "upstreamSha256": "1861a74f9e602504fe9fcaaef1f938ac8b7c19a1b54f5dada137f7517f0c59aa",
+      "purpose": "Canonical identity, session, consent or REAL/DEMO persistence foundation.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/dto/AuthDtos.java",
+      "upstreamSha256": "902d3c24ab04f7eefcf68afdee4d1e9e6c13419c8c78202e75be471aca5423bf",
+      "purpose": "Native operator/member login, logout and account deletion request/response schemas.",
+      "adaptation": "Select only these unchanged records; omit product-profile, discovery, ticket, payment and moderation response types."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/repository/UsersRepository.java",
+      "upstreamSha256": "5180d15df42b6c92506d50056a07338a229f9aec98d8bcf5e0251980354a2f17",
+      "purpose": "Native Firebase identity lookups, demo member listing, profile reads and deletion admission.",
+      "adaptation": "Retain selected lookup declarations and their original predicates; omit product/workspace/payment queries."
+    },
+    {
+      "path": "server/gradlew",
+      "upstreamSha256": "fc977a94723af68aaffa4e5d60496fb4aeed1884b6b19e5e2f2fd7612673313d",
+      "purpose": "Existing Gradle toolchain, dependency security policy and isolated JUnit workflow.",
+      "adaptation": null
+    },
+    {
+      "path": "server/gradlew.bat",
+      "upstreamSha256": "8e327fcb99d29ce0fe3ee2fec6e6a25de815a2df83a6a44a553dea89ffc92955",
+      "purpose": "Existing Gradle toolchain, dependency security policy and isolated JUnit workflow.",
+      "adaptation": null
+    },
+    {
+      "path": "server/gradle/wrapper/gradle-wrapper.jar",
+      "upstreamSha256": "d3b261c2820e9e3d8d639ed084900f11f4a86050a8f83342ade7b6bc9b0d2bdd",
+      "purpose": "Existing Gradle toolchain, dependency security policy and isolated JUnit workflow.",
+      "adaptation": null
+    },
+    {
+      "path": "server/gradle/wrapper/gradle-wrapper.properties",
+      "upstreamSha256": "917cbae9c254baa50fc0274f5eeca7f280f9c7ceda17a802d11653ef86244044",
+      "purpose": "Existing Gradle toolchain, dependency security policy and isolated JUnit workflow.",
+      "adaptation": null
+    },
+    {
+      "path": "server/gradle/libs.versions.toml",
+      "upstreamSha256": "e68d91bdc74451cce589353ce48773d5c450fdbadae1b5734a0eaad61d3f7a83",
+      "purpose": "Existing Gradle toolchain, dependency security policy and isolated JUnit workflow.",
+      "adaptation": null
+    },
+    {
+      "path": "server/gradle/dependency-policy.gradle",
+      "upstreamSha256": "0204c42583a1b8d3b65c7df301efcbbc36fc0d3c884eba4e2da514340464b881",
+      "purpose": "Existing Gradle toolchain, dependency security policy and isolated JUnit workflow.",
+      "adaptation": null
+    },
+    {
+      "path": "server/settings.gradle",
+      "upstreamSha256": "0b92e5cfcd5c41f334bb31d6551d2575aa0bc42e2cbd9dbc7913e41fdf745c30",
+      "purpose": "Existing Gradle toolchain, dependency security policy and isolated JUnit workflow.",
+      "adaptation": null
+    },
+    {
+      "path": "tools/run-backend-junit.sh",
+      "upstreamSha256": "bb8f8f12470ce12279ba7ef023f8f7d122e917e314f488c666fa4ec3462b613b",
+      "purpose": "Existing Gradle toolchain, dependency security policy and isolated JUnit workflow.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/common/config/mongo/MongoChangeStreamService.java",
+      "upstreamSha256": "816c93be824eba6a336bb0ce6f5f1f3bbef8ace34098d6a6578948e12ca4e688",
+      "purpose": "Native administrator configuration, database change watcher and focused identity/consent regression coverage.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/document/AppSettings.java",
+      "upstreamSha256": "b58858169fe7c418c8010592cd8d99c04d16eddc2473333fa2481dc0e838b407",
+      "purpose": "Native administrator configuration, database change watcher and focused identity/consent regression coverage.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/repository/AppSettingsRepository.java",
+      "upstreamSha256": "71518827f0c5001ad19c3a0dae924105e7f0cfc108cf279e6a70afeecdeeb04f",
+      "purpose": "Native administrator configuration, database change watcher and focused identity/consent regression coverage.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/service/AppSettingsService.java",
+      "upstreamSha256": "fe6ef92f87df49b866347c97af7fa1381b6d2f7776c2dc097592a32730471930",
+      "purpose": "Native administrator configuration, database change watcher and focused identity/consent regression coverage.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/accounts/service/UserLoginSessionServiceTest.java",
+      "upstreamSha256": "1077ffd63bba6dfb2baf06064322f18b9b0d320c5fe26acdb22591937e615e91",
+      "purpose": "Native administrator configuration, database change watcher and focused identity/consent regression coverage.",
+      "adaptation": "Mock the existing NotificationDelivery port instead of the production outbox class; test actions and assertions are unchanged."
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/accounts/service/AccountConsentServiceTest.java",
+      "upstreamSha256": "241414d9c7c3e1485a0138a9b9427a3848142deca94e094f6f77c1c27893052a",
+      "purpose": "Native administrator configuration, database change watcher and focused identity/consent regression coverage.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/accounts/security/firebase/FirebaseServiceTest.java",
+      "upstreamSha256": "496833fb6385d126d8fcd889bba97944aaed8044fe5b8ed6691598aa86078bdc",
+      "purpose": "Native administrator configuration, database change watcher and focused identity/consent regression coverage.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/accounts/security/firebase/dto/FirebaseCredentialTest.java",
+      "upstreamSha256": "ab1b5b1f94d3cef19f23ef439637c3c0cc1cfff0d4bb2ce43254b7f2f2a082e9",
+      "purpose": "Native administrator configuration, database change watcher and focused identity/consent regression coverage.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/api/SecretEncryption.java",
+      "upstreamSha256": "6667eda1dce156b19e116f36e3c56f0caffab6cba2da9d39d4aa3d341bdebec5",
+      "purpose": "Native deployment branding, privacy contact, API base URL, encrypted secrets and Firebase configuration/activation.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/api/EmailSecrets.java",
+      "upstreamSha256": "87c5974e984c823b3a021ef6ee2b7f0b51b334c1f412c9d1f2b59fb3201d32a8",
+      "purpose": "Native deployment branding, privacy contact, API base URL, encrypted secrets and Firebase configuration/activation.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/api/DeploymentConfigurationManagement.java",
+      "upstreamSha256": "7aaa5ffa4f9af1c982dc55170c7018963390a2314174186796e58fd048810b0d",
+      "purpose": "Native deployment branding, privacy contact, API base URL, encrypted secrets and Firebase configuration/activation.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/dto/EncryptedSecret.java",
+      "upstreamSha256": "9a171d40fdaa11f864e0acb36a33159938b3c71b84060c54bcf01ad1c5be8e8b",
+      "purpose": "Native deployment branding, privacy contact, API base URL, encrypted secrets and Firebase configuration/activation.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/config/OperatorConfigurationProperties.java",
+      "upstreamSha256": "8252c5156f07b68d9001c64b3f4521ac6c2129724bca07f41dee80bdf1958491",
+      "purpose": "Native deployment branding, privacy contact, API base URL, encrypted secrets and Firebase configuration/activation.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/repository/DeploymentConfigurationRepository.java",
+      "upstreamSha256": "08e30ea609fe2f5bc3fe0c2de648b5e11033d7307a9ca06780160be8dd415d59",
+      "purpose": "Native deployment branding, privacy contact, API base URL, encrypted secrets and Firebase configuration/activation.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/service/DeploymentFirebaseRuntime.java",
+      "upstreamSha256": "39c320cbcc44550748fdf937fc82629aa72d332a2b01ffc4ca5d22b37e5f7f3c",
+      "purpose": "Native deployment branding, privacy contact, API base URL, encrypted secrets and Firebase configuration/activation.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/service/OperatorFirebaseCapabilityClient.java",
+      "upstreamSha256": "905b28c848681a980c3905c8b87b6b9bc23ebd6e49475fa4c101650030159d23",
+      "purpose": "Native deployment branding, privacy contact, API base URL, encrypted secrets and Firebase configuration/activation.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/service/DefaultOperatorFirebaseCapabilityClient.java",
+      "upstreamSha256": "2026a1135451ddba73c28634e0a2806e419a39d9de5c279d9f03e0d5f2d93127",
+      "purpose": "Native deployment branding, privacy contact, API base URL, encrypted secrets and Firebase configuration/activation.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/config/FirebaseConfig.java",
+      "upstreamSha256": "d23a080c0daf37429aab7ae7f44afb65a9629638a8edf1a0cacaa37d69a83a91",
+      "purpose": "Native deployment branding, privacy contact, API base URL, encrypted secrets and Firebase configuration/activation.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/document/DeploymentConfiguration.java",
+      "upstreamSha256": "dcb4061dacc37df45918669e50d8ad377244751281bb4f1ba9482f56e9157055",
+      "purpose": "Native deployment branding, privacy contact, API base URL, encrypted secrets and Firebase configuration/activation.",
+      "adaptation": "Omit only payment field/accessors/nested model; retain the other stored fields and schema version."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/api/DeploymentSettings.java",
+      "upstreamSha256": "7d3d67d3e0ee8f7f05174d69d69cf16b7cf6bd11110027baa6646797b83a357c",
+      "purpose": "Native deployment branding, privacy contact, API base URL, encrypted secrets and Firebase configuration/activation.",
+      "adaptation": "Omit payment read view; retain deployment integration view."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/service/DeploymentConfigurationCrypto.java",
+      "upstreamSha256": "2b012d858a04eaf184449acf8e0f14d20f935edf971c02b218e59e5e76ae93cd",
+      "purpose": "Native deployment branding, privacy contact, API base URL, encrypted secrets and Firebase configuration/activation.",
+      "adaptation": "Omit payment credential API and payment-envelope check; retain native AES-GCM, AAD, key handling and Firebase/email verification."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/dto/OperatorConfigurationDtos.java",
+      "upstreamSha256": "473781fa136de8603e76ddc3afeedfc8fb24c269977b7b2616820dada1da019d",
+      "purpose": "Native deployment branding, privacy contact, API base URL, encrypted secrets and Firebase configuration/activation.",
+      "adaptation": "Omit payment DTOs/fields and their compatibility constructors; retain validation and safe secret diagnostics of other records."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/mapper/OperatorConfigurationMapper.java",
+      "upstreamSha256": "c9539dd0e935a3d258693bb37245c595f7a226b09aae74be192cc2b59d0d6951",
+      "purpose": "Native deployment branding, privacy contact, API base URL, encrypted secrets and Firebase configuration/activation.",
+      "adaptation": "Omit payment mapping; generic branding, privacy, integration and Firebase views retain native behavior."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/service/OperatorConfigurationService.java",
+      "upstreamSha256": "ef2e81e848e84c59005547a77ae3b196b3df6e49bfd35a60ef3bb7f6dc6226b7",
+      "purpose": "Native deployment branding, privacy contact, API base URL, encrypted secrets and Firebase configuration/activation.",
+      "adaptation": "Omit payment/provider/exchange-rate reads, writes, validation and DTO arguments. Preserve native generic configuration, optimistic concurrency and verified Firebase activation."
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/platform/service/DeploymentFirebaseRuntimeTest.java",
+      "upstreamSha256": "9b45e879c7318395599e09851101207a94a4e0effe4b5467c2feec29934d3725",
+      "purpose": "Native deployment branding, privacy contact, API base URL, encrypted secrets and Firebase configuration/activation.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/platform/service/DefaultOperatorFirebaseCapabilityClientTest.java",
+      "upstreamSha256": "90aaa43a61f139f2f3f2d109222ed68d66a742856b9ef65fc6e23ee759e11c5f",
+      "purpose": "Native deployment branding, privacy contact, API base URL, encrypted secrets and Firebase configuration/activation.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/platform/service/DeploymentConfigurationCryptoTest.java",
+      "upstreamSha256": "955de02632528f590c1d1e499788e561fc81ec7180c77c2679065a075664f8d1",
+      "purpose": "Native authenticated-encryption, tamper/wrong-key detection and purpose-isolation tests.",
+      "adaptation": "Use retained Firebase credentials instead of removed payment credentials; preserve assertions."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/api/SelectedProfile.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "d440fc4a5c4f0804157acdfcfb8d14d60076151c0e84af4e47b82c0307ad06ef",
+      "purpose": "Native account selection validated in MyScoutee KVM and monolith before reuse.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/api/CurrentProfile.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "1d31279145554337c06df6dee883f2cd62aefe663106c000a6389de7c0c77b09",
+      "purpose": "Native account selection validated in MyScoutee KVM and monolith before reuse.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/service/SelectedProfileService.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "f90fb2354373bc7c6575c455cd3be10422df18d76b0460fddfe1efde9d93abd4",
+      "purpose": "Native account selection validated in MyScoutee KVM and monolith before reuse.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/accounts/service/SelectedProfileServiceTest.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "df8a49c5cfbd6428b4f3dd686fedc63ab00f588f701d9b77a2ed1d8c36556df3",
+      "purpose": "Native account selection validated in MyScoutee KVM and monolith before reuse.",
+      "adaptation": null
+    }
+  ]
+}

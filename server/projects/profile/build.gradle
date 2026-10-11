@@ -1,0 +1,49 @@
+plugins {
+    id 'java'
+    alias(libs.plugins.spring.boot)
+    alias(libs.plugins.dependency.management)
+}
+
+group = 'com.raxim'
+version = System.getenv('MYSCOUTEE_VERSION') ?: rootProject.file('../VERSION').text.trim()
+
+// Reuse the canonical isolated JUnit output layout; tests never reload dev.
+def junitTasks = ['test', 'standardTest', 'embeddedTest', 'integrationTest',
+                  'testClasses', 'compileTestJava', 'processTestResources', 'check']
+def isolatedJUnit = providers.gradleProperty('isolatedJUnit').map { it.toBoolean() }
+    .orElse(gradle.startParameter.taskNames.any { junitTasks.contains(it.tokenize(':').last()) })
+if (isolatedJUnit.get()) {
+    layout.buildDirectory = layout.projectDirectory.dir('build/junit')
+}
+
+java {
+    toolchain { languageVersion = JavaLanguageVersion.of(libs.versions.java.get().toInteger()) }
+}
+
+repositories { mavenCentral() }
+apply from: rootProject.file('gradle/dependency-policy.gradle')
+
+dependencies {
+    implementation libs.firebase
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.security:spring-security-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+tasks.withType(JavaCompile).configureEach { options.compilerArgs += ['-parameters'] }
+tasks.named('jar') { enabled = false }
+tasks.named('test') { useJUnitPlatform { excludeTags 'qualification', 'integration' } }
+['standard', 'embedded', 'integration'].each { level ->
+    tasks.register("${level}Test", Test) {
+        group = 'verification'
+        testClassesDirs = sourceSets.test.output.classesDirs
+        classpath = sourceSets.test.runtimeClasspath
+        useJUnitPlatform { includeTags level; excludeTags 'qualification' }
+    }
+}
