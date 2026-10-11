@@ -69,8 +69,9 @@ components workspace inputs; the reconnect probe uses the actual browser
 WebSocket and works in optimized output without Angular debug helpers.
 See [E2E evidence](../qualification/evidence/MSC122_TEMPLATE_E2E_RUNTIME_20261011.json)
 and [reproducible commands](../../e2e/README.md). The QA table has distinct E2E
-API/UI columns. Local consolidation follows after stopping E2E; provider, KVM,
-installed and matched-load gates remain separate.
+API/UI columns. All 14 applicable local flows also pass after stopping E2E;
+see [local suite evidence](../qualification/evidence/MSC122_TEMPLATE_LOCAL_UI_SUITE_20261011.json).
+Provider, KVM, installed and matched-load gates remain separate.
 
 ## Initial backend collection
 

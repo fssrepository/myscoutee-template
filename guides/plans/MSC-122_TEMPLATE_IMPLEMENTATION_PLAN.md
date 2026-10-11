@@ -421,9 +421,9 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     Twenty frontend checks and five administrator API Java checks pass; see
     `MSC122_TEMPLATE_ADMIN_UI_20261011.json`. The minimal admin API keeps the native
     Attention shape and omits the optional analytics statistics field/model/worker.
-    Five admin contextual tours now pass on artifact E2E, including warning and
-    read-only evidence contexts. Live role login and KVM/installed host controls
-    remain open; local tour consolidation is part of step 22.
+    Five admin contextual tours now pass in local and artifact E2E, including
+    warning and read-only evidence contexts. Live role login and KVM/installed
+    host controls remain open.
 
 20. **Consolidate JUnit and frontend unit/component coverage — PASS for selected suites.**
     Preserve `tools/run-backend-junit.sh`, native standard/embedded/integration
@@ -453,7 +453,7 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     images. See MSC122_TEMPLATE_E2E_RUNTIME_20261011.json. Provider callbacks and
     email-owner selection remain earlier-step gaps, not silently passed endpoints.
 
-22. **Implement frontend E2E and local/HTTP parity checks — IN PROGRESS.**
+22. **Implement frontend E2E and local/HTTP parity checks — PASS for selected flows.**
     Reuse `e2e/functional/ui` and existing browser helpers/checks for the retained
     routes and flows. Cover entry, SmartList views, chat, profile/avatar, consent,
     guide/notification/settings and privileged shells in the applicable modes.
@@ -470,8 +470,9 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     isolated E2E evidence rather than screenshots of an unconnected mock UI.
     The serial suite maps existing fixture-owning runners to the QA table and
     records JSON/CSV results. All 15 artifact HTTP flows pass, including the
-    optimized-build chat reconnect and administrator guides; local consolidation
-    is running serially after stopping the E2E stack.
+    optimized-build chat reconnect and administrator guides. All 14 applicable
+    local flows also pass after stopping E2E, including the same admin guides.
+    See MSC122_TEMPLATE_LOCAL_UI_SUITE_20261011.json. OAuth remains HTTP-only.
 
 23. **Restore stress/performance tooling and measure a coherent build — PENDING.**
     Reuse `e2e/stress/backend`, `e2e/stress/ui`, shared measurement helpers and
@@ -580,16 +581,33 @@ deep-link behavior. A working `local` build alone does not close frontend work.
 
 ## Current continuation point
 
-Continue **22**, consolidated UI/local/HTTP qualification. The standalone
-E2E composition in **21** passes 17 backend cases, admin mutations and 15 UI
-flows. Then close the retained account warning/email gap in **8–9**, and proceed
-to the coherent performance and KVM batches in **23–24**. Step **20** passes all
+The standalone E2E composition in **21** passes 17 backend cases, admin
+mutations and 15 UI flows. Step **22** also passes all 14 applicable local flows.
+Continue the retained account warning/email gap in **8–9** (native selected
+files are now being wired and are not qualified yet), then the coherent
+performance and KVM batches in **23–24**. Step **20** passes all
 400 selected backend and 256 frontend tests. Step **19** has local/dev HTTP
 moderation, support and administrator API evidence at frontend `43980be` and
 parent `e1118fe`. Member steps **15–18** and operator configuration/TLS/update
-UI have their recorded local/dev evidence. Administrator tours pass in artifact E2E; local consolidation, live Firebase,
+UI have their recorded local/dev evidence. Administrator tours pass in local and artifact E2E; live Firebase,
 operator bootstrap, external provider MCP and KVM/installed host controls remain open.
 
 Then complete KVM, packaging and release qualification. Earlier backend steps
 still have the pending checks recorded above; the current step number does not
 mean that every earlier qualification gate is closed.
+
+## Outstanding source QA and template impact
+
+The four source tasks previously identified with the user remain separate
+qualification gates; scheduled testing is not a PASS:
+
+| Source task | Retained-template impact |
+| --- | --- |
+| MSC-115 Work/Community | Product owners are omitted; a defect in shared components can still apply |
+| MSC-116 API/MCP access | Direct: retained consent, credentials, permissions and revocation |
+| MSC-117 audio/video calls | Retained chat/signaling backend can be affected; the minimal member screen currently has no call controls |
+| MSC-119 MCP Events, roles and guide | Direct for the selected role/callback/guide paths; omitted product tools stay omitted |
+
+Carry verified corrections from their actual source owner with the selected
+contract and targeted regression evidence. Do not treat these pending source
+checks as passed because template functional suites pass.
