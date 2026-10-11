@@ -14,9 +14,7 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import com.raxim.myscoutee.domain.accounts.api.ProfileReadState;
 import com.raxim.myscoutee.domain.accounts.api.SelectedProfile;
 import com.raxim.myscoutee.domain.accounts.document.Users;
-import com.raxim.myscoutee.domain.accounts.document.UserSessionAction;
 import com.raxim.myscoutee.domain.accounts.repository.UsersRepository;
-import com.raxim.myscoutee.domain.accounts.repository.UserSessionActionsRepository;
 import com.raxim.myscoutee.domain.accounts.dto.AuthDtos.*;
 import com.raxim.myscoutee.domain.accounts.security.firebase.DevelopmentIdentityEmail;
 import com.raxim.myscoutee.domain.accounts.security.firebase.dto.FirebasePrincipal;
@@ -39,7 +37,7 @@ public class HomeUserProfileService implements ProfileReadState {
     private final AccessPermissions accessControlService;
     private final CountryDirectory countryPartitionService;
     private final RegionSecurityProperties regionSecurityProperties;
-    private final UserSessionActionsRepository userSessionActionsRepository;
+    private final AccountLifecycleService lifecycle;
     private final OperationalTelemetry adminTelemetryService;
     private final ProfileStatusWork profileStatusWork;
     private final NotificationJobs notificationRuleRegistryService;
@@ -47,12 +45,12 @@ public class HomeUserProfileService implements ProfileReadState {
 
     public HomeUserProfileService(SelectedProfile selectedProfile, UsersRepository usersRepository,
             AccessPermissions accessControlService, CountryDirectory countryPartitionService,
-            RegionSecurityProperties regionSecurityProperties, UserSessionActionsRepository userSessionActionsRepository,
+            RegionSecurityProperties regionSecurityProperties, AccountLifecycleService lifecycle,
             OperationalTelemetry adminTelemetryService, ProfileStatusWork profileStatusWork,
             NotificationJobs notificationRuleRegistryService, NotificationInbox notifications) {
         this.selectedProfile = selectedProfile; this.usersRepository = usersRepository;
         this.accessControlService = accessControlService; this.countryPartitionService = countryPartitionService;
-        this.regionSecurityProperties = regionSecurityProperties; this.userSessionActionsRepository = userSessionActionsRepository;
+        this.regionSecurityProperties = regionSecurityProperties; this.lifecycle = lifecycle;
         this.adminTelemetryService = adminTelemetryService; this.profileStatusWork = profileStatusWork;
         this.notificationRuleRegistryService = notificationRuleRegistryService; this.notifications = notifications;
     }
@@ -278,79 +276,19 @@ public class HomeUserProfileService implements ProfileReadState {
     }
 
     private void adjustAccountPurgePendingCount(String userId, int delta) {
-        if (delta == 0 || notificationRuleRegistryService == null) {
-            return;
-        }
-        JobGroupContext.run(null, () -> notificationRuleRegistryService.adjustPendingCount(
-                NotificationJobs.RULE_ACCOUNT_PURGE, delta, "admin.jobs.table.affected"));
+        lifecycle.adjustAccountPurgePendingCount(userId, delta);
     }
 
     public UserSubmitActionResponseDto logout(UserLogoutRequestDto request) {
-        String resolvedUserId = resolveSelectedUserId(request == null ? null : request.userId());
-        if (!StringUtils.hasText(resolvedUserId)) {
-            return new UserSubmitActionResponseDto(false, "Unable to logout.");
-        }
-        recordSessionAction(resolvedUserId, "logout", "session");
-        return new UserSubmitActionResponseDto(true, null);
+        return lifecycle.logout(request);
     }
 
     public UserSubmitActionResponseDto deleteUser(UserDeleteRequestDto request) {
-        String resolvedUserId = resolveSelectedUserId(request == null ? null : request.userId());
-        if (!StringUtils.hasText(resolvedUserId)) {
-            return new UserSubmitActionResponseDto(false, "Unable to delete user.");
-        }
-        if (!accessControlService.canCurrentActorDeleteProfile(resolvedUserId)) {
-            throw new ResponseStatusException(HttpStatus.FORBIDDEN, "Authenticated user is not allowed to delete this profile.");
-        }
-        return scheduleUserDeletionByUserId(resolvedUserId, "status:D");
+        return lifecycle.deleteUser(request);
     }
 
     public UserSubmitActionResponseDto scheduleUserDeletionByUserId(String userId, String source) {
-        String resolvedUserId = normalizeId(userId);
-        if (!StringUtils.hasText(resolvedUserId)) {
-            return new UserSubmitActionResponseDto(false, "Unable to delete user.");
-        }
-
-        Users user = usersRepository.findByUserId(resolvedUserId)
-                .or(() -> usersRepository.findById(resolvedUserId))
-                .orElse(null);
-        if (user == null) {
-            return new UserSubmitActionResponseDto(false, "Unable to delete user.");
-        }
-
-        String previousProfileStatus = resolveProfileStatus(user);
-        boolean newlyTrackedForPurge = !Boolean.TRUE.equals(user.getAccountPurgePendingCounterTracked());
-        user.setStatus("D");
-        user.setProfileStatus("deleted");
-        user.setPreviousProfileStatus("deleted".equals(previousProfileStatus) ? user.getPreviousProfileStatus() : previousProfileStatus);
-        user.setDeletedAtIso(Instant.now().toString());
-        user.setAccountPurgePendingCounterTracked(true);
-        profileStatusWork.save(user);
-        if (newlyTrackedForPurge) {
-            adjustAccountPurgePendingCount(user.getUserId(), 1);
-        }
-        recordSessionAction(resolvedUserId, "delete", StringUtils.hasText(source) ? source : "status:D");
-        adminTelemetryService.record("profile.deleted", "profiles", resolvedUserId, resolvedUserId);
-        return new UserSubmitActionResponseDto(true, null);
-    }
-
-    private void recordSessionAction(String userId, String action, String metadata) {
-        String normalizedUserId = normalizeId(userId);
-        if (!StringUtils.hasText(normalizedUserId)) {
-            return;
-        }
-        String nowIso = Instant.now().toString();
-        UserSessionAction document = new UserSessionAction();
-        document.setId(new ObjectId().toHexString());
-        document.setSyncKey(UUID.randomUUID().toString());
-        document.setUserId(normalizedUserId);
-        document.setAction(safeText(action));
-        document.setMetadata(safeText(metadata));
-        document.setCreatedDate(nowIso);
-        document.setCreatedUser(normalizedUserId);
-        document.setUpdatedDate(nowIso);
-        document.setUpdatedUser(normalizedUserId);
-        userSessionActionsRepository.save(document);
+        return lifecycle.scheduleUserDeletionByUserId(userId, source);
     }
 
     private String resolveProfileStatus(Users user) {

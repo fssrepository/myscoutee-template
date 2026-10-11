@@ -202,13 +202,21 @@ deep-link behavior. A working `local` build alone does not close frontend work.
    already exist; close with real controller/session save/reload and rejection of
    forged identities, stale sessions and unauthorized profile writes.
 
-8. **Complete account deletion and required background work — PENDING.**
+8. **Complete account deletion and required background work — IN PROGRESS.**
    Select the qualified account lifecycle/purge owners and retained-domain cleanup
    actions. Preserve durable intent, retries, idempotency, counters and completion
    ordering. Include provider data-deletion callbacks and status when supported by
    the retained authentication flow. Exclude cleanup stages for absent product
    domains explicitly. Close with deletion, retry/restart and retained personal
    data cleanup verified without requiring an admin dashboard.
+   The native lifecycle/purge selection and unchanged chat/help/notification
+   cleanup owners now run in template dev. The deployment-scoped account-purge
+   schedule is seeded in all three physical seed sets. Twenty-four focused
+   standard tests, one embedded MongoDB retry/persistence test and the ten dev
+   HTTP contract cases pass; see `MSC122_TEMPLATE_ACCOUNT_PURGE_20261011.json`.
+   Email/integration cleanup must join this existing worker when those owners
+   are installed. Provider callbacks and full HTTP/UI/REAL-DEMO/KVM deletion
+   qualification remain pending; this checkpoint does not close the step.
 
 9. **Complete personal and support communication — IN PROGRESS.**
    Reuse chat/message storage, participant authorization, paging, mutations,

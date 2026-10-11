@@ -27,7 +27,9 @@ focused tests. Minimal profile saving, location updates and localization now hav
 focused checks, including preservation of account fields omitted from the small
 profile form. The selected dev backend now starts with MongoDB, Redis and MinIO;
 ten automated HTTP cases cover the initial seed and session/access boundaries.
-The account purge worker, frontend, complete runtime composition and installation
+The account purge worker now has focused retry/cleanup and embedded MongoDB
+coverage for the installed domains. Its email/integration cleanup and provider
+callback are still pending. The frontend, complete runtime composition and installation
 are still being implemented; this is not yet a complete runnable release.
 The [QA table and execution notes](guides/qa/README.md) distinguish verified
 backend contracts from pending frontend, KVM and installed-release checks.
@@ -100,7 +102,11 @@ unread counters, REAL/DEMO routing, retries, Firebase delivery snapshots and
 change-stream wakeups. The template omits product group recipient splitting,
 event invitations and community activity counters. Native delivery limits are
 configured under `myscoutee.notifications`; omitted values use existing defaults.
-The deployment-scope outbox rule is the only job seeded at this checkpoint.
+The deployment-scoped outbox and account-purge rules are seeded. Account purge
+keeps the native 30-day grace period; `users.account-purge-window-days` selects
+the native bounded range of 1–365 days. The current purge selection covers the
+installed identity/media/chat/help/notification owners. It keeps durable retries
+and deletes the account only after those cleanup stages succeed.
 
 Personal/support chat retains native message storage, paging, read receipts,
 unread counters, stable message identity, WebSocket/Redis transport and durable

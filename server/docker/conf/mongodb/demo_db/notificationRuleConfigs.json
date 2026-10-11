@@ -44,5 +44,51 @@
     "createdUser": "notification-registry",
     "updatedDate": "2026-05-31T00:00:00.000Z",
     "updatedUser": "notification-registry"
+  },
+  {
+    "_id": "notification-rule-account-purge",
+    "syncKey": "notification-rule-account-purge",
+    "ruleKey": "account-purge",
+    "label": "admin.jobs.rule.account.purge",
+    "category": "admin.jobs.category.scheduled",
+    "description": "admin.jobs.rule.account.purge.description",
+    "actionKey": "users.deleted-account-purge",
+    "triggerKind": "scheduled_process",
+    "enabled": true,
+    "manualRunEnabled": false,
+    "adminManageable": true,
+    "priority": 260,
+    "channels": {
+      "pushEnabled": false,
+      "emailEnabled": false,
+      "inAppEnabled": false,
+      "supportChatEnabled": false
+    },
+    "timing": {
+      "mode": "interval",
+      "intervalMinutes": 1440,
+      "intervalSeconds": 86400,
+      "intervalAmount": 1,
+      "intervalUnit": "days",
+      "month": null,
+      "dayOfMonth": null,
+      "time": "02:00",
+      "timezone": "UTC",
+      "cronExpression": "0 0 2 1/1 * ?"
+    },
+    "scheduleSlots": [],
+    "parameters": [],
+    "message": {},
+    "runState": {
+      "currentStatus": "idle",
+      "progressPercent": 0,
+      "progressDetail": "Ready for the next scheduled slot.",
+      "pendingCount": 0
+    },
+    "runHistory": [],
+    "createdDate": "2026-05-31T00:00:00.000Z",
+    "createdUser": "notification-registry",
+    "updatedDate": "2026-05-31T00:00:00.000Z",
+    "updatedUser": "notification-registry"
   }
 ]

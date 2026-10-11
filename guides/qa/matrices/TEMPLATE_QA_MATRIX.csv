@@ -17,7 +17,7 @@ T-I18N-001,Localization,Selected locale bundles and UI language changes cover al
 T-AUTHORITY-001,Operator authority,Member cannot read operator configuration,operator/member-denied,PASS,NOT RUN,N/A,NOT RUN,NOT RUN,guides/qualification/evidence/MSC122_TEMPLATE_STARTUP_20261011.json,
 T-MEDIA-001,Private media authority,Anonymous private-media request is rejected,media/anonymous-denied,PASS,NOT RUN,N/A,NOT RUN,NOT RUN,guides/qualification/evidence/MSC122_TEMPLATE_STARTUP_20261011.json,
 T-MEDIA-002,Avatar editing,Upload/edit/read/delete and private-media sessions work with MinIO and local adapters,,NOT RUN,NOT RUN,NOT RUN,NOT RUN,NOT RUN,,
-T-PURGE-001,Account deletion,Deletion intent retries and completes required retained-domain cleanup,,NOT RUN,NOT RUN,NOT RUN,NOT RUN,NOT RUN,,
+T-PURGE-001,Account deletion,Deletion intent retries and completes required retained-domain cleanup,,NOT RUN,NOT RUN,NOT RUN,NOT RUN,NOT RUN,guides/qualification/evidence/MSC122_TEMPLATE_ACCOUNT_PURGE_20261011.json,"Focused service and embedded Mongo retry/cleanup checks pass. Full HTTP/UI/REAL-DEMO/KVM flow, retained email/integration cleanup and provider callback remain outstanding."
 T-INTEGRATION-001,API and MCP,Native authorization/scopes/requests/revocation and ChatGPT MCP round trip without affiliate features,,NOT RUN,NOT RUN,N/A,NOT RUN,NOT RUN,,
 T-FRONTEND-001,Minimal shell,Landing branding/version; SmartList view changes; minimal member/admin/operator navigation,,N/A,N/A,NOT RUN,NOT RUN,NOT RUN,,
 T-DEV-001,Dev synchronization,Frontend watcher and frontend-sync publish edits; backend hot reload and seed sync keep working,,NOT RUN,N/A,N/A,NOT RUN,N/A,,

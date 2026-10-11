@@ -3,13 +3,15 @@ package com.raxim.myscoutee.common.config;
 import java.time.Duration;
 import org.springframework.stereotype.Service;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
-import com.raxim.myscoutee.domain.platform.api.NotificationPolicy;
+import com.raxim.myscoutee.domain.platform.api.SchedulingPolicy;
 
 /** Native notification limits, configured per deployment without the product affinity catalog. */
 @Service
 @EnableConfigurationProperties(NotificationParameters.class)
-public class PlatformParametersService implements NotificationPolicy {
+public class PlatformParametersService implements SchedulingPolicy {
     private final NotificationParameters parameters;
+    @org.springframework.beans.factory.annotation.Value("${users.account-purge-window-days:30}")
+    private Integer accountPurgeWindowDays;
 
     public PlatformParametersService(NotificationParameters parameters) {
         this.parameters = parameters;
@@ -49,6 +51,10 @@ public class PlatformParametersService implements NotificationPolicy {
 
     public long notificationOutboxPollDelayMs(long fallback) {
         return millis(parameters.notificationOutboxPollDelayMs(), fallback, 1_000L, 3_600_000L);
+    }
+
+    public int accountPurgeWindowDays(int fallback) {
+        return clampInt(accountPurgeWindowDays, 1, 365, fallback);
     }
 
     private Duration seconds(Integer value, Duration fallback, int min, int max) {

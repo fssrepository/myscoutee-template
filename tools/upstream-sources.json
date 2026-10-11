@@ -950,10 +950,10 @@
     },
     {
       "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/api/ProfileDirectory.java",
-      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
       "upstreamSha256": "43889738211724417481446d766470379c9c85beb208741ef7b3023b12fcd6cd",
       "purpose": "Native account/media/chat access policies, administrator identity and narrow profile/chat lookups.",
-      "adaptation": "Select existing single-account and batched profile reads; omit product roster queries."
+      "adaptation": "Select member lookup/list and native first-user lookup required by shared job ownership; omit product directory queries."
     },
     {
       "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/administration/dto/AdminDtos.java",
@@ -1055,10 +1055,10 @@
     },
     {
       "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/common/config/PlatformParametersService.java",
-      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
-      "upstreamSha256": "c21347466511c71f1007739d62970dc0705b51e9fb4ca99ab3ade7959f6b67fa",
+      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
+      "upstreamSha256": "939c31c9f8590263a8755a9ff26341d3a0a198fdc4e83ffab9aec67274d3ffd9",
       "purpose": "Native durable notification delivery, inbox and chat transport support for the minimal application.",
-      "adaptation": "Keep native notification ranges/defaults; read deployment configuration properties instead of the product affinity catalog. Omit other product scheduling policies."
+      "adaptation": "Retain native notification limits and account-purge window bounds without the product affinity catalog; configure purge days through users.account-purge-window-days (default 30, native allowed range 1\u2013365)."
     },
     {
       "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/common/redis/RedisStreamRetentionService.java",
@@ -1545,10 +1545,10 @@
     },
     {
       "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/service/ProfileDirectoryService.java",
-      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
       "upstreamSha256": "15c0c437ec869d05a0290045ba8bb1e5be770773b89a1383d2a7830a5078a390",
       "purpose": "Native personal/support chat, message transport and required account-owned state.",
-      "adaptation": "Select existing account lookup and chat-member count/page queries; omit other product directory operations."
+      "adaptation": "Select existing member lookup/list and summary queries, including findFirstByUserId for native job ownership."
     },
     {
       "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/api/ActivityCounters.java",
@@ -1769,10 +1769,10 @@
     },
     {
       "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/service/HomeUserProfileService.java",
-      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
-      "upstreamSha256": "dc7cd766faa2b17352d9ee43945bbfa0ee586cc5b0b7674221f59050eba0b302",
+      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
+      "upstreamSha256": "799b50613d3a80fa8b4be603ce85478c4f04f66969ec532521dfa2a09cac87dc",
       "purpose": "Native minimal profile, session and account lifecycle endpoints.",
-      "adaptation": "Select native profile/session/account lifecycle and location logic with minimal JSON fields. Preserve omitted stored fields and server-owned privilege/identity data. Omit affinity, affiliate, community, event, asset, payment and experience enrichment/cache work; use deployment purge scope and no Hungary seed-country fallback. Demo selection keeps role checks and batched coordinate validation; realtime response retains chat/notification/device state only."
+      "adaptation": "Minimal profile/read/save selection; delegate logout/deletion/pending-count changes to the selected native AccountLifecycleService. Preserve all stored fields absent from the small DTO."
     },
     {
       "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/controller/AuthController.java",
@@ -2326,6 +2326,118 @@
       "upstreamSha256": "fd27ff9046c2cd8d346dea0c2be5ee9d032db2411964b64b5ba50a1ce50a35b4",
       "adaptation": null,
       "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac"
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/api/JobAudience.java",
+      "upstreamSha256": "ad78d874815885778262102258a86e7207c4f8d3564fbc5f95656fb666e40c77",
+      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
+      "purpose": "Native account lifecycle, durable purge and retained-domain cleanup dependency.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/api/JobWorkspaceDirectory.java",
+      "upstreamSha256": "6ca56f3b3a38b96b279b3e5b90a95bd35b0396400c485a7387f6e137fe762f0a",
+      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
+      "purpose": "Native account lifecycle, durable purge and retained-domain cleanup dependency.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/api/JobTargetResolver.java",
+      "upstreamSha256": "d1d6a7be1858f73247ca9157b5653d369fa814248b097d4e7f63261d5c7e351d",
+      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
+      "purpose": "Native account lifecycle, durable purge and retained-domain cleanup dependency.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/service/JobGroupScopeService.java",
+      "upstreamSha256": "c14e777ee7f5f92848362e4ccd2e8a6489c1e8e0ea4dca574a861db69ef69231",
+      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
+      "purpose": "Native account lifecycle, durable purge and retained-domain cleanup dependency.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/repository/AccountPurgeJobsRepository.java",
+      "upstreamSha256": "10329a492ede2aeb2a232b49c60f05fb322d089ca5f46523d3a99bd08142db73",
+      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
+      "purpose": "Native account lifecycle, durable purge and retained-domain cleanup dependency.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/service/ProfileStatusValues.java",
+      "upstreamSha256": "c356b677357389b3d3a4ed198dca5e514b34193710d4e5c6e140dab66b036c81",
+      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
+      "purpose": "Native account lifecycle, durable purge and retained-domain cleanup dependency.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/chat/api/ChatPrivacy.java",
+      "upstreamSha256": "484beca4a33ce54409b590b77e78ac21c47a66c386c6d46d0d9810906ee0fbfe",
+      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
+      "purpose": "Native account lifecycle, durable purge and retained-domain cleanup dependency.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/chat/service/ChatPrivacyService.java",
+      "upstreamSha256": "dbcaf74ee3df58eb11ed514366cb0773720f625710efe2ff8c81687fdac20863",
+      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
+      "purpose": "Native account lifecycle, durable purge and retained-domain cleanup dependency.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/help/api/HelpPrivacy.java",
+      "upstreamSha256": "3775750762fec154635a83629fb5a3b91b6401501fec128aaecc7a6e49c805d5",
+      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
+      "purpose": "Native account lifecycle, durable purge and retained-domain cleanup dependency.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/help/service/HelpPrivacyService.java",
+      "upstreamSha256": "540f35e42cbd71b7912f317af2e1d1df80ab036811724ee2f5a5de79a8de511c",
+      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
+      "purpose": "Native account lifecycle, durable purge and retained-domain cleanup dependency.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/notifications/api/NotificationPrivacy.java",
+      "upstreamSha256": "fcb3ce98d88476bcd0c414b4b714d9281a00b8f9bee7a7a893e02b5761d4a5be",
+      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
+      "purpose": "Native account lifecycle, durable purge and retained-domain cleanup dependency.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/notifications/service/NotificationPrivacyService.java",
+      "upstreamSha256": "9242a7c1ae10d7baf38176bb3b65e520e3b82cb8fbb72b29bfd02490570c0167",
+      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
+      "purpose": "Native account lifecycle, durable purge and retained-domain cleanup dependency.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/service/AccountLifecycleService.java",
+      "upstreamSha256": "f6c01c53a3a6b54204df20dcee28e466da3db652d8615115cc0a04d083a999e2",
+      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
+      "purpose": "Native account lifecycle, durable purge and retained-domain cleanup dependency.",
+      "adaptation": "Select native lifecycle unchanged apart from absent product profile/demo-list caches; template profile reads currently have no such cache."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/service/DeletedAccountPurgeService.java",
+      "upstreamSha256": "127171db7d7a865c7c27ff5674ba27a829f3f90f839baeea50d11975409218a3",
+      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
+      "purpose": "Native account lifecycle, durable purge and retained-domain cleanup dependency.",
+      "adaptation": "Select native durable account/media/chat/consent/notification/help cleanup, leases, retry and stage ordering. Omit absent product actions/global identity and not-yet-installed email/integration stages. Preserve the stored job schema and rejection of unfinished product cleanup. Add those retained owners when their capabilities are installed."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/api/SchedulingPolicy.java",
+      "upstreamSha256": "171cf7ca31271791ce4b5f9e22730dc4f80afc8441a51b673ac87170ebfa90c9",
+      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
+      "purpose": "Native account lifecycle, durable purge and retained-domain cleanup dependency.",
+      "adaptation": "Select account-purge scheduling method alongside the retained notification policy."
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/platform/service/JobGroupScopeServiceTest.java",
+      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
+      "upstreamSha256": "b3df802a5ff7b3c099a2e11e9c8fdcdb1fd58913b0a2d8fd3054de27ccd72e1f",
+      "purpose": "Native no-community job scope/bootstrap and installed-owner error propagation regressions.",
+      "adaptation": "Select the two generic tests; omit native event/asset/group-owner implementation tests."
     }
   ]
 }

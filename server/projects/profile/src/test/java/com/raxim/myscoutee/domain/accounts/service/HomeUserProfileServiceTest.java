@@ -38,7 +38,9 @@ class HomeUserProfileServiceTest {
     private HomeUserProfileService service;
 
     @BeforeEach void setup() {
-        service = new HomeUserProfileService(selected, users, access, countries, region, actions,
+        var lifecycle = new AccountLifecycleService(users, actions, selected, statusWork, access, telemetry,
+                mock(com.raxim.myscoutee.domain.platform.api.JobAudience.class), Optional.of(jobs));
+        service = new HomeUserProfileService(selected, users, access, countries, region, lifecycle,
                 telemetry, statusWork, jobs, notifications);
     }
 

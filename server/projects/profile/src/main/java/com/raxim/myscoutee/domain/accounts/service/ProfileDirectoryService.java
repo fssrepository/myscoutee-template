@@ -14,6 +14,7 @@ public class ProfileDirectoryService implements ProfileDirectory, ProfileSummari
     private final UsersRepository users;
     public ProfileDirectoryService(UsersRepository users) { this.users = users; }
     @Override public Optional<Users> findByUserId(String userId) { return users.findByUserId(userId); }
+    @Override public Users findFirstByUserId(String id) { return users.findByUserId(id).orElse(null); }
     @Override public List<Users> findByUserIdIn(Collection<String> userIds) { return users.findByUserIdIn(userIds); }
     @org.springframework.beans.factory.annotation.Autowired
     private org.springframework.data.mongodb.core.MongoTemplate mongo;

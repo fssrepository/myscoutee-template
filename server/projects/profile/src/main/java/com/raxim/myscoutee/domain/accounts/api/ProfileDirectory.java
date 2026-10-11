@@ -6,5 +6,6 @@ import java.util.Optional;
 
 public interface ProfileDirectory {
     Optional<? extends WorkspaceProfile> findByUserId(String userId);
+    WorkspaceProfile findFirstByUserId(String id);
     List<? extends WorkspaceProfile> findByUserIdIn(Collection<String> userIds);
 }
