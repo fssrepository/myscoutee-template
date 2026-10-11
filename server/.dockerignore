@@ -1,0 +1,32 @@
+# Runtime configuration is supplied by Compose or generated after install. It
+# must never enter a managed-image build context or BuildKit cache.
+.env
+.env.*
+projects/profile/secrets/
+docker/scripts/admin-job-fixtures/
+docker/conf/nginx/keys/
+
+# Locally generated deployment/demo identities and other private key material.
+data/
+*.pem
+*.key
+*.p8
+**/*.pem
+**/*.key
+**/*.p8
+**/*private*key*
+**/*service-account*.json
+**/*client-secret*.json
+**/*provider-credentials*.json
+
+# Build output that is either mounted separately or not required as context.
+docker/conf/nginx/app/myscoutee/
+projects/profile/build/*
+!projects/profile/build/libs/
+!projects/profile/build/libs/*.jar
+.gradle/
+.gradle-docker/
+**/.gradle/
+*.log
+docker/.qa-mobile-runtime/
+docker/scripts/manual-qa-checkpoints/

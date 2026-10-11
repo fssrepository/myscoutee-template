@@ -55,7 +55,7 @@ Required environment coverage:
 | Development | Existing dev Compose, hot reload, frontend/backend watchers, seed synchronization and development tools for retained services |
 | E2E | Existing standalone, disposable production-style stack, separate physical E2E fixtures, backend and browser runners |
 | Production | Built frontend/backend artifacts, production security and secrets, durable data and background work; separate REAL and Explore/DEMO state |
-| Microservices / KVM | Existing assembly, transport, deployment, health and measurement tools, with only the retained owners and required supporting services |
+| Microservices / KVM | Existing assembly, transport, deployment, health and measurement tools; Prometheus and Grafana with native metrics/dashboard/access wiring; only the retained application owners and required supporting services |
 | Installed release | Docker images, signed DEB/update metadata, host helpers, Netcup/Debian setup, backup/restore and upgrade verification |
 | GitHub Pages | Native static/local frontend build, correct base path, deep links, assets and visible version; no dependency on a private backend |
 
@@ -106,6 +106,11 @@ deep-link behavior. A working `local` build alone does not close frontend work.
   and decreases; idle CPU samples do not prove throughput or latency parity.
 - Preserve tested commits. Do not publish a release, claim a passed deployment,
   or mark this plan complete while required implementation or verification remains.
+- Maintain the template's own [QA matrix](../qa/matrices/TEMPLATE_QA_MATRIX.csv)
+  and [execution notes](../qa/README.md). The user delegated automatic testing
+  of the template: execute the retained flows as they become available and record
+  actual results. An API pass must not mark local/HTTP UI, KVM or release checks
+  passed. Reuse native runners and fixture/browser startup requirements.
 
 ## Numbered implementation steps
 
@@ -131,7 +136,12 @@ deep-link behavior. A working `local` build alone does not close frontend work.
    not require omitted owners. Classify each required infrastructure helper as
    directly reusable, configured through an existing input, or requiring a narrow
    source-side separation before copying. Record its configuration owner and
-   source/template verification. Close when the remaining steps cover the entire
+   source/template verification. The first completed source separation is Mongo
+   seed import: `mongo_import.sh` is now byte-identical to the backend, with the
+   selected collection rules in `mongo-seed-policy.inc`. Source evidence is
+   `MSC122_SEED_IMPORT_BOUNDARY_20261011.json`; both native deployments passed
+   focused tests on isolated test data. This does not close template startup or
+   the remaining packaging/tool selection. Close when the remaining steps cover the entire
    required dependency closure, including capabilities not individually named by
    the user; do not treat a list of examples as the scope boundary.
 
@@ -149,8 +159,10 @@ deep-link behavior. A working `local` build alone does not close frontend work.
    routing, caching, validation and selected controllers. Retain actual owner
    implementations and native authorization. Complete the application dependency
    graph without fake successful adapters or permissive substitutes. The current
-   HTTP/configuration selection has 17 focused passing checks; full application
-   startup is still unverified. Close with a live healthy application and retained
+   HTTP/configuration selection has 17 focused passing checks. The selected dev
+   backend now starts with MongoDB, Redis and MinIO; ten automated HTTP cases
+   exercise the seed and session/security boundaries. This is not proof of the
+   complete frontend, integration or deployment composition. Close with a live healthy application and retained
    routes exercised against its own databases.
 
 5. **Restore the complete dev/prod/E2E runtime structure — IN PROGRESS.**
@@ -159,7 +171,8 @@ deep-link behavior. A working `local` build alone does not close frontend work.
    common implementations through the source-first infrastructure rule above.
    Supply template-specific service/image/seed settings through their existing
    configuration owners. Preserve the
-   original hot-reload and seed-sync behavior in dev and artifact-only execution
+   original backend hot reload, frontend watcher, frontend-sync and Mongo seed-sync
+   behavior in dev and artifact-only execution
    in E2E/production. Include Mongo replica initialization, Redis, MinIO, nginx,
    STUN and MCP wherever required by the retained flows. Keep operational status
    and health reporting. Some native scripts and Dockerfiles are selected;
@@ -293,6 +306,9 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     mode, explicit mutation cases, isolated fixtures, cleanup and endpoint coverage
     auditing. Close with real HTTP mutation/read/reload checks and negative
     authorization checks on the standalone template E2E stack.
+    The shared collection/HTTP/assertion/session helpers are now selected unchanged;
+    ten initial contract/session cases run against the dev backend. This preliminary
+    qualification does not close disposable E2E fixtures or mutation flows.
 
 22. **Implement frontend E2E and local/HTTP parity checks — PENDING.**
     Reuse `e2e/functional/ui` and existing browser helpers/checks for the retained
@@ -314,9 +330,20 @@ deep-link behavior. A working `local` build alone does not close frontend work.
 24. **Compose and qualify the minimal microservices/KVM deployment — PENDING.**
     Reuse `microservices` assemblies, bindings, transport/authentication, build and
     ownership audits, image locks, manifests/charts, gateway, VM/host tools and
-    monitoring. Select only retained owners; the template need not run MyScoutee's
+    monitoring, including **Prometheus and Grafana**. Retain the existing metric
+    endpoints/exporters, scrape configuration, dashboards, access/port forwarding
+    and resource limits needed by the selected services. Supply the template's own
+    service names, namespace/VM identity and state through the existing configuration
+    owners. Verify healthy Prometheus targets, actual backend/container/VM metrics
+    and populated Grafana panels for the retained CPU, memory, request/latency and
+    service-health measurements; running monitoring containers alone is insufficient.
+    Select only retained owners; the template need not run MyScoutee's
     eight JVMs. Preserve monolith support and REAL/DEMO semantics. Use a template-owned
-    VM with no host-boot autostart. Close with focused KVM checks followed serially
+    VM with no host-boot autostart. Include the native start/stop/status commands
+    and live VM/Kubernetes/container status terminal. Separate its project name,
+    state directory, lock and terminal title at the source owner before reuse.
+    Open the live status terminal when starting KVM, as requested by the user.
+    Close with focused KVM checks followed serially
     by monolith checks, CPU/log evidence, correct service credentials and cleanup.
 
 25. **Build and verify production Docker artifacts — PENDING.**

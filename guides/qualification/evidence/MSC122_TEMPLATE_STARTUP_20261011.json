@@ -1,0 +1,208 @@
+{
+  "recordedAt": "2026-10-11T12:17:33.545843+00:00",
+  "templateBaseRevision": "8c6b63ebe888b10b6d98edeb927317965819788f",
+  "nativeSharedToolsRevision": "d48270b99",
+  "scope": "First live minimal template dev backend composition and initial automated HTTP contract/session collection.",
+  "fixes": [
+    "Use the source-first runtime-directory initializer with only configuration selected in template Compose.",
+    "Restore native MediaStorageProperties registration through AppConfig; remove the duplicate component annotation.",
+    "Use native MinIO behavior with no empty placeholder asset directory.",
+    "Copy native Docker context exclusions, including the dev Gradle cache."
+  ],
+  "http": {
+    "recordedAt": "2026-10-11T12:11:10.573Z",
+    "mode": "contract",
+    "baseUrl": "http://172.22.0.6:8080",
+    "apiPrefix": "",
+    "selection": {
+      "filter": "",
+      "group": "",
+      "qaCase": ""
+    },
+    "passed": 10,
+    "failed": 0,
+    "skipped": 0,
+    "total": 10,
+    "ownedSessionsRevoked": true,
+    "scope": "Backend contracts and owned session lifecycle; not UI, KVM, load or installed-release proof.",
+    "command": "E2E_SERVER_BASE_URL=http://<template-dev-container-ip>:8080 E2E_API_PREFIX= node e2e/functional/backend/run.mjs --record",
+    "cases": [
+      {
+        "id": "chat/seeded-conversation",
+        "qaBranches": [
+          "T-CHAT-001"
+        ],
+        "status": 200,
+        "requestDurationMs": 13.37939799999998,
+        "result": "PASS"
+      },
+      {
+        "id": "content/documents",
+        "qaBranches": [
+          "T-CONTENT-001"
+        ],
+        "status": 200,
+        "requestDurationMs": 6.135589999999979,
+        "result": "PASS"
+      },
+      {
+        "id": "identity/session-revocation",
+        "qaBranches": [
+          "T-IDENTITY-002"
+        ],
+        "status": 200,
+        "requestDurationMs": 11.625256999999976,
+        "result": "PASS"
+      },
+      {
+        "id": "location/eligibility",
+        "qaBranches": [
+          "T-LOCATION-001"
+        ],
+        "status": 200,
+        "requestDurationMs": 6.954338000000007,
+        "result": "PASS"
+      },
+      {
+        "id": "media/anonymous-denied",
+        "qaBranches": [
+          "T-MEDIA-001"
+        ],
+        "status": 401,
+        "requestDurationMs": 3.4755519999999933,
+        "result": "PASS"
+      },
+      {
+        "id": "notifications/inbox",
+        "qaBranches": [
+          "T-NOTIFICATION-001"
+        ],
+        "status": 200,
+        "requestDurationMs": 17.618015000000014,
+        "result": "PASS"
+      },
+      {
+        "id": "operator/member-denied",
+        "qaBranches": [
+          "T-AUTHORITY-001"
+        ],
+        "status": 403,
+        "requestDurationMs": 8.24196500000005,
+        "result": "PASS"
+      },
+      {
+        "id": "profile/auth-me",
+        "qaBranches": [
+          "T-PROFILE-001"
+        ],
+        "status": 200,
+        "requestDurationMs": 12.794301999999988,
+        "result": "PASS"
+      },
+      {
+        "id": "profile/demo-users",
+        "qaBranches": [
+          "T-IDENTITY-001"
+        ],
+        "status": 200,
+        "requestDurationMs": 8.524182999999994,
+        "result": "PASS"
+      },
+      {
+        "id": "runtime/configuration",
+        "qaBranches": [
+          "T-RUNTIME-001"
+        ],
+        "status": 200,
+        "requestDurationMs": 9.728712999999999,
+        "result": "PASS"
+      }
+    ],
+    "semantics": "Member content checks use owned DEMO sessions, matching their application flow. Normal login audits/notifications and chat read receipts are retained. No database reset or product feature mutation."
+  },
+  "resources": {
+    "kind": "Low-load observation, not a matched benchmark",
+    "startedAt": "2026-10-11T12:11:28.405531+00:00",
+    "seconds": 30.69266149699979,
+    "hostBusyPercent": 4.8329994236627645,
+    "containers": {
+      "myscoutee-template-dev-profilemanagement": {
+        "cpuCores": 0.07849550617288445,
+        "memoryMiB": 1539.921875,
+        "throttledSeconds": 0.0
+      },
+      "myscoutee-template-dev-mongodb": {
+        "cpuCores": 0.05480808499336025,
+        "memoryMiB": 257.9296875,
+        "throttledSeconds": 0.0
+      },
+      "myscoutee-template-dev-mongodb-sync": {
+        "cpuCores": 0.01317572280395201,
+        "memoryMiB": 3.46484375,
+        "throttledSeconds": 0.0
+      },
+      "myscoutee-template-dev-redis": {
+        "cpuCores": 0.005834521715150209,
+        "memoryMiB": 5.796875,
+        "throttledSeconds": 0.0
+      },
+      "myscoutee-template-dev-minio": {
+        "cpuCores": 0.005887335642680034,
+        "memoryMiB": 82.75390625,
+        "throttledSeconds": 0.0
+      }
+    },
+    "health": {
+      "myscoutee-template-dev-profilemanagement": "running healthy",
+      "myscoutee-template-dev-mongodb": "running healthy",
+      "myscoutee-template-dev-mongodb-sync": "running",
+      "myscoutee-template-dev-redis": "running",
+      "myscoutee-template-dev-minio": "running healthy"
+    }
+  },
+  "knownOpenDefects": [
+    {
+      "qaId": "T-CONTENT-003",
+      "description": "Anonymous active document read after fallback dev member logout returns 401; reproduced in the native shared FirebaseFilter. Native regression fix is being qualified separately."
+    }
+  ],
+  "notProven": [
+    "Complete frontend/dev sync/edge/MCP/STUN/operator composition",
+    "Standalone production-style E2E fixture reset and mutation flows",
+    "KVM and production template deployment",
+    "Frontend local/HTTP flows, stress comparison, DEB/update and publication"
+  ],
+  "sourceSha256": {
+    "server/docker-compose-dev.yml": "94bb89e6199a1e55988765e02b30a5a34625bc91a38b01eb2f06e24ceb9f5346",
+    "server/.dockerignore": "6765d575e7856e4e72bfe3cd72313080a8a65c04851b5a9a5eb31193303ff70e",
+    "server/docker/scripts/prepare_dev_runtime_directories.sh": "0dcace456bbcc4c316968fbc761ebaea5bb35919426d2fa3bce2760d92096fc4",
+    "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/media/config/MediaStorageProperties.java": "52fbe23d6f45f27bb79f6d5e0a39dea42cab8ae6e824b46114f3216dcb3a0a99",
+    "tools/upstream-sources.json": "586cdf0f647302c51b92f8607548d803941609ffa24a7742785dcb3a6a2b4118",
+    "e2e/functional/backend/fixtures.json": "b3b3946fed8c3f618db7f5f8d27c61f65efea9c91d25a668b2ab1b78e2eea44b",
+    "e2e/functional/backend/run.mjs": "42c60a1e80fe4cdcda8c6d626416d7ccf3f389331d84136950861a8420690dda",
+    "e2e/functional/backend/notifications/inbox/assert.mjs": "549eca370315ccb8e2ac64b81f0173c0c6819d181e90ca9dc1ba0ac1977093ef",
+    "e2e/functional/backend/notifications/inbox/request.json": "2bfd5e99fce0cd9afa2e025a79f7f619e73e441174def00f9a8092fb6c97b775",
+    "e2e/functional/backend/media/anonymous-denied/request.json": "3ca2014b5c9757649add26660e9bcdae3f3415e67f9931c9ee131ec6b08584d1",
+    "e2e/functional/backend/runtime/configuration/assert.mjs": "7b7ed6ebd6f183d635de0883f9b6984fe0b3115cc2af1e6cb0050371b9ff610a",
+    "e2e/functional/backend/runtime/configuration/request.json": "106a6d5c7a9b6d015836bfb5d7e37c7ecc5f0d93d250fefea49321a7378518c8",
+    "e2e/functional/backend/profile/demo-users/assert.mjs": "bc5f8e34d7ee765794850d61704fad68c2906d38e3ea9974c034af0c3c564554",
+    "e2e/functional/backend/profile/demo-users/request.json": "62877ec738a9249b6a4b504b2bcf27d040c049c121ae816cbe9f9bb9aecf8c46",
+    "e2e/functional/backend/profile/auth-me/assert.mjs": "58c3f7f6c3b271e6806ae2d701d589c402682b65a5a79ec5bd8dfe641c7fd3c2",
+    "e2e/functional/backend/profile/auth-me/request.json": "1f1153003766fdc4a1440cad029527ea2d502a0fe280f9f54899868aaca527fc",
+    "e2e/functional/backend/location/eligibility/assert.mjs": "6154a4fdb73be572716da929defc2e390beb67b019a3a97ed9ee41a424a3bef6",
+    "e2e/functional/backend/location/eligibility/request.json": "65292afd2ede0341a571907f113b13ede499c58f7e879eefa443909057f88e35",
+    "e2e/functional/backend/identity/session-revocation/assert.mjs": "41f33428cd9056502857ba62b621c61e919c24de24665e2de735d5f759b33cfc",
+    "e2e/functional/backend/identity/session-revocation/request.json": "db87ca63504b99fcc9cd6f17106e9e320cc7692e342bdf0d3171a755422706dc",
+    "e2e/functional/backend/operator/member-denied/request.json": "6eebb3c9a97dfabec1fc65d8851dec6180daf57b11096ebe9330e5e905ab33ed",
+    "e2e/functional/backend/content/documents/assert.mjs": "8cd4cdc195fa92b7e888de200d16609a0a71c5016ce5f94a811303aeb98be7a4",
+    "e2e/functional/backend/content/documents/request.json": "f380b1cb52c82efff065045654d6fb9418aba066cd0637082705e59fa63f9cc7",
+    "e2e/functional/backend/chat/seeded-conversation/assert.mjs": "d9a2307c594e0f17edd8c991c98a4d9694e31d7d8e96172c876307c599dff578",
+    "e2e/functional/backend/chat/seeded-conversation/request.json": "7293fefdb37ea2252af86298506fc9c281312798149524290318e031f707e32e",
+    "e2e/shared/native-demo-sessions.test.mjs": "ae1a23e831d80099af0adfe2a31f9157358e89e249d398934aed9a739e1faa0e",
+    "e2e/shared/collection-runner.mjs": "e57767a4344cc0f924dc9909d0b9b75b1ca6ed57b515b3bf7c2aa2861aad648e",
+    "e2e/shared/http.mjs": "2714f84734c613942875623d694263efadf97f85cfe50bb2ce21ec37e597bc92",
+    "e2e/shared/native-demo-sessions.mjs": "c16e27b435de4764adafaf2046f2e09973cdfdb781d714689529ca89b070bfc2",
+    "e2e/shared/websocket.mjs": "e1d2b56ca139e096ad919567ef95153114c0843ff764042622c6ca98f5039748",
+    "e2e/shared/assertions.mjs": "bc1c6a63d53da22dcea84a3385b6864c3975c605f99504ff83ab2fea484f3c03"
+  }
+}

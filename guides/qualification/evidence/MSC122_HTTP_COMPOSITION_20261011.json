@@ -61,7 +61,7 @@
     "server/projects/profile/src/test/java/com/raxim/myscoutee/common/config/MongoConverterConfigTest.java": "b3e15c8a4fbc2915d1e0e183d682425a78044f31eb653993612cae84e180f4f2",
     "server/projects/profile/src/test/java/com/raxim/myscoutee/common/config/WebSecurityConfigBootstrapTest.java": "5d662ef215fcbde78e2e353bd0a9c9d6b792be2b1f9a96dcfc3ab59218e524fe",
     "VERSION": "59854984853104df5c353e2f681a15fc7924742f9a2e468c29af248dce45ce03",
-    "server/projects/profile/build.gradle": "9eb4f32162e7e29aec4a57c53152a6ba81ab97b5f3801a00609ee9bb37f9f272",
-    "tools/upstream-sources.json": "daa7853badcedfd716c8fb5cad98105627a4d463704f0424e839dd7f92380aef"
-  }
+    "server/projects/profile/build.gradle": "9eb4f32162e7e29aec4a57c53152a6ba81ab97b5f3801a00609ee9bb37f9f272"
+  },
+  "manifestAtHttpCheckSha256": "daa7853badcedfd716c8fb5cad98105627a4d463704f0424e839dd7f92380aef"
 }

@@ -1891,7 +1891,7 @@
       "upstreamSha256": "52fbe23d6f45f27bb79f6d5e0a39dea42cab8ae6e824b46114f3216dcb3a0a99",
       "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
       "purpose": "Native media storage, avatar visibility and retained chat attachment access.",
-      "adaptation": "Register the existing media properties directly; the MyScoutee all-domain AppConfig is excluded."
+      "adaptation": null
     },
     {
       "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/api/AccountMediaVisibility.java",
@@ -2140,9 +2140,9 @@
     },
     {
       "path": "server/docker/images/mongodb/e2e/Dockerfile",
-      "sourceRevision": "cfa26b923c515cc683ee329b38416d3e8f578d2a",
-      "upstreamSha256": "d9aeafb64c99aa1b98b1e61f1dd634f5d870bd4dcb74443d7693ebf667ab2d6f",
-      "purpose": "Reuse the existing development, isolated E2E, Mongo replica, media seed or configuration-key workflow unchanged.",
+      "sourceRevision": "0d23e240cd95695ac5621ae0a4cd18bce45f48db",
+      "upstreamSha256": "90452859905d379063a1919e81cee81ef9d8605b2e0209aad8334d410342d808",
+      "purpose": "Native artifact-only E2E Mongo image, including the adjacent project policy.",
       "adaptation": null
     },
     {
@@ -2210,10 +2210,10 @@
     },
     {
       "path": "server/docker/conf/mongodb/mongo_import.sh",
-      "sourceRevision": "cfa26b923c515cc683ee329b38416d3e8f578d2a",
-      "upstreamSha256": "78fc766a787382a27a385ac45ff1ef871f2f02669c9781ef72f733801382fe5a",
-      "purpose": "Native allowlisted JSON seed import with preserved mutable operator configuration.",
-      "adaptation": "Select retained collection indexes and production-safe seed allowlist. Omit MyScoutee product collections, payment import and pre-template deployment history; template starts at the retained schema 5."
+      "sourceRevision": "0d23e240cd95695ac5621ae0a4cd18bce45f48db",
+      "upstreamSha256": "d05eb9c538b66f8506d173ea29c1efc4fc7a16ed93b33cb9a38dc752ead8e008",
+      "purpose": "Shared native seed import engine, also used by MyScoutee without a template fork.",
+      "adaptation": null
     },
     {
       "path": "server/docker/conf/mongodb/myscoutee_db/countryPartitions.json",
@@ -2256,6 +2256,69 @@
       "upstreamSha256": "8a9378ec8e05980d6db09b5315a89698e9cdd8ffa3d0c1daa4f16d5200eeb84b",
       "purpose": "Native e2e application/backing-service composition.",
       "adaptation": "Select implemented backing services and backend; isolate container names and template image tags, omit product/runtime dependencies not yet selected. Complete edge/frontend/MCP/STUN/operator composition remains tracked in the plan."
+    },
+    {
+      "path": "server/docker/conf/mongodb/mongo-seed-policy.inc",
+      "upstreamSha256": "6220b6dd4426d2a948e851f352938109b8f38989b89ce546ce829728353640cc",
+      "sourceRevision": "0d23e240cd95695ac5621ae0a4cd18bce45f48db",
+      "purpose": "Project-owned seed policy, separated from the common import engine in the source backend.",
+      "adaptation": "Select minimal collections/indexes and schema-5 insert-only deployment configuration. Omit product versions, payment, Registry, affinity and community migrations/indexes."
+    },
+    {
+      "path": "server/docker/scripts/prepare_dev_runtime_directories.sh",
+      "upstreamSha256": "0dcace456bbcc4c316968fbc761ebaea5bb35919426d2fa3bce2760d92096fc4",
+      "sourceRevision": "4930008c09dab646c7fb5ee849fcda8f67a5a31d",
+      "purpose": "Native dev startup prerequisite; runtime directory selection is supplied by Compose.",
+      "adaptation": null
+    },
+    {
+      "path": "server/.dockerignore",
+      "upstreamSha256": "6765d575e7856e4e72bfe3cd72313080a8a65c04851b5a9a5eb31193303ff70e",
+      "sourceRevision": "d48270b99f6f77e930b609c1391023392a715c3c",
+      "purpose": "Native container build-context exclusions, including runtime secrets and the dev Gradle cache.",
+      "adaptation": null
+    },
+    {
+      "path": "e2e/shared/native-demo-sessions.test.mjs",
+      "upstreamSha256": "ae1a23e831d80099af0adfe2a31f9157358e89e249d398934aed9a739e1faa0e",
+      "sourceRevision": "d48270b99f6f77e930b609c1391023392a715c3c",
+      "purpose": "Shared native E2E runner and owned DEMO session lifecycle.",
+      "adaptation": null
+    },
+    {
+      "path": "e2e/shared/collection-runner.mjs",
+      "upstreamSha256": "e57767a4344cc0f924dc9909d0b9b75b1ca6ed57b515b3bf7c2aa2861aad648e",
+      "sourceRevision": "d48270b99f6f77e930b609c1391023392a715c3c",
+      "purpose": "Shared native E2E runner and owned DEMO session lifecycle.",
+      "adaptation": null
+    },
+    {
+      "path": "e2e/shared/http.mjs",
+      "upstreamSha256": "2714f84734c613942875623d694263efadf97f85cfe50bb2ce21ec37e597bc92",
+      "sourceRevision": "d48270b99f6f77e930b609c1391023392a715c3c",
+      "purpose": "Shared native E2E runner and owned DEMO session lifecycle.",
+      "adaptation": null
+    },
+    {
+      "path": "e2e/shared/native-demo-sessions.mjs",
+      "upstreamSha256": "c16e27b435de4764adafaf2046f2e09973cdfdb781d714689529ca89b070bfc2",
+      "sourceRevision": "d48270b99f6f77e930b609c1391023392a715c3c",
+      "purpose": "Shared native E2E runner and owned DEMO session lifecycle.",
+      "adaptation": null
+    },
+    {
+      "path": "e2e/shared/websocket.mjs",
+      "upstreamSha256": "e1d2b56ca139e096ad919567ef95153114c0843ff764042622c6ca98f5039748",
+      "sourceRevision": "d48270b99f6f77e930b609c1391023392a715c3c",
+      "purpose": "Shared native E2E runner and owned DEMO session lifecycle.",
+      "adaptation": null
+    },
+    {
+      "path": "e2e/shared/assertions.mjs",
+      "upstreamSha256": "bc1c6a63d53da22dcea84a3385b6864c3975c605f99504ff83ab2fea484f3c03",
+      "sourceRevision": "d48270b99f6f77e930b609c1391023392a715c3c",
+      "purpose": "Shared native E2E runner and owned DEMO session lifecycle.",
+      "adaptation": null
     }
   ]
 }

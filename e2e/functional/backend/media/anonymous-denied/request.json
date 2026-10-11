@@ -1,0 +1,16 @@
+{
+  "name": "private media requires an active media session",
+  "group": "media",
+  "order": 9,
+  "method": "GET",
+  "path": "{{apiPrefix}}/media/private",
+  "params": {
+    "key": "profiles/test/avatar.webp"
+  },
+  "headers": {},
+  "expectedStatus": 401,
+  "maxMs": 5000,
+  "qaBranches": [
+    "T-MEDIA-001"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "logout revokes only the owned test session",
+  "group": "identity",
+  "order": 10,
+  "method": "GET",
+  "path": "{{apiPrefix}}/auth/me",
+  "params": {
+    "userId": "{{userId}}"
+  },
+  "headers": {
+    "X-App-Session-Kind": "demo",
+    "X-Demo-User-Id": "{{userId}}"
+  },
+  "expectedStatus": 200,
+  "maxMs": 5000,
+  "qaBranches": [
+    "T-IDENTITY-002"
+  ]
+}

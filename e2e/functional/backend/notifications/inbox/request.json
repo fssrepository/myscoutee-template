@@ -1,0 +1,19 @@
+{
+  "name": "notification inbox belongs to the member and has consistent pagination",
+  "group": "notifications",
+  "order": 6,
+  "method": "GET",
+  "path": "{{apiPrefix}}/notifications",
+  "params": {
+    "userId": "{{userId}}"
+  },
+  "headers": {
+    "X-App-Session-Kind": "demo",
+    "X-Demo-User-Id": "{{userId}}"
+  },
+  "expectedStatus": 200,
+  "maxMs": 5000,
+  "qaBranches": [
+    "T-NOTIFICATION-001"
+  ]
+}

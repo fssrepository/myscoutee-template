@@ -94,8 +94,7 @@ services:
     healthcheck:
       test:
       - CMD-SHELL
-      - test -f /tmp/myscoutee-minio-seeded && curl -fsS http://localhost:9000/minio/health/live >/dev/null || exit
-        1
+      - test -f /tmp/myscoutee-minio-seeded && curl -fsS http://localhost:9000/minio/health/live >/dev/null || exit 1
       interval: 10s
       timeout: 5s
       retries: 30
@@ -170,4 +169,22 @@ services:
         condition: service_started
       minio:
         condition: service_healthy
+      runtime-directories:
+        condition: service_completed_successfully
+  runtime-directories:
+    image: ${MYSCOUTEE_DEV_IMAGE:-myscoutee-template-api:1.0.0-dev}
+    user: 0:0
+    network_mode: none
+    restart: 'no'
+    entrypoint:
+    - /bin/sh
+    - /prepare-runtime-directories.sh
+    environment:
+      MYSCOUTEE_RUNTIME_UID: ${UID:-1000}
+      MYSCOUTEE_RUNTIME_GID: ${GID:-1000}
+      MYSCOUTEE_RUNTIME_DIRECTORIES: configuration
+    volumes:
+    - ./data:/workspace/data
+    - ./docker/scripts/prepare_dev_runtime_directories.sh:/prepare-runtime-directories.sh:ro
+    container_name: myscoutee-template-dev-runtime-directories
 name: myscoutee-template-dev

@@ -3,6 +3,7 @@
 **/node_modules/
 **/__pycache__/
 *.pyc
+.e2e-artifacts/
 .env
 .env.*
 !.env.example

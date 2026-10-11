@@ -3,7 +3,6 @@ package com.raxim.myscoutee.domain.media.config;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 @ConfigurationProperties("media")
-@org.springframework.context.annotation.Configuration
 public class MediaStorageProperties {
     private boolean enabled = true;
     private String endpoint = "http://localhost:9000";
