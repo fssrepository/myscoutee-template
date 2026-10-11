@@ -1,6 +1,6 @@
 import { assert } from '../../../shared/assertions.mjs';
 
-export async function assertUi({ page, ctx, local = ctx?.mode !== 'full' }) {
+export async function assertUi({ page, ctx, local = ctx?.mode !== 'full', memberReady }) {
   await page.navigate('/privacy-policy');
   await page.waitForSelector('.document-viewer-section-body');
   await page.waitForText('Privacy information');
@@ -43,6 +43,7 @@ export async function assertUi({ page, ctx, local = ctx?.mode !== 'full' }) {
       assert(page.network.some(request => new URL(request.url).pathname === '/api' + route && request.status < 400), 'Expected real backend request: ' + route);
     }
   }
+  if (memberReady) await memberReady({ page, local });
   await page.clickByText('app-member-page button', 'Logout');
   await page.waitForUrlPath('/entry');
   await page.navigate('/home');

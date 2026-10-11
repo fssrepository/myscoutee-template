@@ -1058,7 +1058,7 @@
       "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
       "upstreamSha256": "939c31c9f8590263a8755a9ff26341d3a0a198fdc4e83ffab9aec67274d3ffd9",
       "purpose": "Native durable notification delivery, inbox and chat transport support for the minimal application.",
-      "adaptation": "Retain native notification limits and account-purge window bounds without the product affinity catalog; configure purge days through users.account-purge-window-days (default 30, native allowed range 1\u2013365)."
+      "adaptation": "Retain native notification limits and account-purge window bounds without the product affinity catalog; configure purge days through users.account-purge-window-days (default 30, native allowed range 1–365)."
     },
     {
       "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/common/redis/RedisStreamRetentionService.java",
@@ -4073,6 +4073,23 @@
       "adaptation": "Template-owned service composition, retained routes, localization selection or product audit inventory.",
       "sourceRevision": "bd81ab0c1",
       "sourceFrontendRevision": "d64e6620"
+    }
+  ],
+  "templateOwnedFeatures": [
+    {
+      "name": "showcase",
+      "purpose": "Minimal neutral visual sample without importing MyScoutee events or community models.",
+      "references": [
+        "frontend/components/src/lib/ui/components/core/smart-list",
+        "frontend/components/src/lib/ui/components/core/smart-list/card/image-card",
+        "frontend/components/src/lib/ui/components/core/smart-list/card/single-row",
+        "frontend/src/app/shared/core/base/services/base-route-mode.service.ts",
+        "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/api/SelectedProfile.java"
+      ],
+      "implementation": "Template-owned DTO, Mongo repository/controller/service, local/HTTP adapters and four equal demo/E2E/browser seed cards. Native IndexedDB engine, SmartList and card components are reused; no new list engine.",
+      "reason": "Existing MyScoutee event/activity lists carry product models excluded from this standalone example.",
+      "productionSeed": "No sampleCards seed; production starts empty.",
+      "query": "Bounded page; stable Mongo _id index; no per-card IO."
     }
   ]
 }

@@ -1,0 +1,5 @@
+{
+ "name": "anonymous sample-card read is denied",
+ "group": "showcase", "order": 15, "method": "GET",
+ "path": "{{apiPrefix}}/showcase/cards", "expectedStatus": 401, "maxMs": 5000
+}

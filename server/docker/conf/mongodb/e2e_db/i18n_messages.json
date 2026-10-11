@@ -10738,5 +10738,89 @@
     "key": "notification.security.login.title",
     "lang": "hu",
     "value": "Biztonsági figyelmeztetés"
+  },
+  {
+    "_id": "i18n-message-en-showcase-description",
+    "key": "showcase.description",
+    "lang": "en",
+    "value": "Four starting points. Make this space your own."
+  },
+  {
+    "_id": "i18n-message-en-showcase-empty",
+    "key": "showcase.empty",
+    "lang": "en",
+    "value": "No cards yet"
+  },
+  {
+    "_id": "i18n-message-en-showcase-empty-description",
+    "key": "showcase.empty.description",
+    "lang": "en",
+    "value": "Your cards will appear here."
+  },
+  {
+    "_id": "i18n-message-en-showcase-title",
+    "key": "showcase.title",
+    "lang": "en",
+    "value": "Discover"
+  },
+  {
+    "_id": "i18n-message-en-showcase-view-cards",
+    "key": "showcase.view.cards",
+    "lang": "en",
+    "value": "Cards"
+  },
+  {
+    "_id": "i18n-message-en-showcase-view-gallery",
+    "key": "showcase.view.gallery",
+    "lang": "en",
+    "value": "Gallery"
+  },
+  {
+    "_id": "i18n-message-en-showcase-view-rows",
+    "key": "showcase.view.rows",
+    "lang": "en",
+    "value": "Rows"
+  },
+  {
+    "_id": "i18n-message-hu-showcase-description",
+    "key": "showcase.description",
+    "lang": "hu",
+    "value": "Négy kiindulópont. Alakítsd sajátoddá ezt a teret."
+  },
+  {
+    "_id": "i18n-message-hu-showcase-empty",
+    "key": "showcase.empty",
+    "lang": "hu",
+    "value": "Még nincs kártya"
+  },
+  {
+    "_id": "i18n-message-hu-showcase-empty-description",
+    "key": "showcase.empty.description",
+    "lang": "hu",
+    "value": "Itt jelennek majd meg a kártyáid."
+  },
+  {
+    "_id": "i18n-message-hu-showcase-title",
+    "key": "showcase.title",
+    "lang": "hu",
+    "value": "Felfedezés"
+  },
+  {
+    "_id": "i18n-message-hu-showcase-view-cards",
+    "key": "showcase.view.cards",
+    "lang": "hu",
+    "value": "Kártyák"
+  },
+  {
+    "_id": "i18n-message-hu-showcase-view-gallery",
+    "key": "showcase.view.gallery",
+    "lang": "hu",
+    "value": "Galéria"
+  },
+  {
+    "_id": "i18n-message-hu-showcase-view-rows",
+    "key": "showcase.view.rows",
+    "lang": "hu",
+    "value": "Sorok"
   }
 ]

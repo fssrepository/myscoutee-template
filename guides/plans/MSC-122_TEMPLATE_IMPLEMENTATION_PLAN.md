@@ -298,13 +298,23 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     and login entry on opposite sides and the real build version badge. Preserve
     native demo/real entry, responsive layout and theme behavior. Close with both
     entry modes and matching version metadata in dev, production and Pages builds.
+    The requested Gothic title now uses a bundled, unmodified OFL font; it loads
+    locally without a font-provider request at frontend `9d59bf9`.
 
-15. **Build the member SmartList example — PENDING.**
+15. **Build the member SmartList example — DONE (local and dev HTTP).**
     Reuse SmartList, its supported views and native state/adapter patterns. Supply
     a few visually useful, project-neutral seeded cards rather than importing
     MyScoutee events to populate the screen. Keep the feature small but persistent
     in both local and HTTP modes. Close with view switching, relevant list controls,
     reload and matching local/API results using the same component implementation.
+    Frontend `9d59bf9` supplies four neutral landscape cards through native SmartList,
+    ImageCard, SingleRow and AppMenu. Cards, rows and gallery, URL view persistence,
+    consent/session entry and logout pass in local and dev HTTP browsers. All 110
+    frontend tests and three focused backend JUnit checks pass. Seed import,
+    bounded API paging and anonymous denial pass; Mongo uses `_id_` with four
+    keys/documents examined for four cards. No events/groups model is selected.
+    See `MSC122_TEMPLATE_SHOWCASE_20261011.json`. KVM remains step 24; production
+    intentionally has no synthetic sample-card data.
 
 16. **Build the minimal member chat screen — PENDING.**
     Connect the existing chat components and adapters to the retained backend/local
@@ -469,12 +479,13 @@ deep-link behavior. A working `local` build alone does not close frontend work.
 
 ## Current continuation point
 
-Continue **14–19**, starting with the SmartList example in **15** and the final
-landing typography in **14**. Local and dev HTTP entry/consent/reload/logout are
+Continue **16–19**, starting with the minimal chat in **16**. SmartList **15**
+is qualified locally and through the dev gateway; landing typography is in place. Local and dev HTTP entry/consent/reload/logout are
 qualified at frontend `a247371`; native frontend-sync/nginx and Mongo locale sync
 now run in the template dev monolith. See `MSC122_TEMPLATE_LOCAL_ENTRY_20261011.json`
 and `MSC122_TEMPLATE_DEV_GATEWAY_20261011.json` for the exact limits.
-The member/admin/operator routes still show only a guarded name/logout shell.
-SmartList, chat, profile, guide/notification and privileged screens are unfinished.
+The member route now displays the SmartList example; admin/operator still have
+a guarded name/logout shell. Chat, profile, guide/notification and privileged
+screens are unfinished. Production/Pages landing verification remains pending.
 Then complete the remaining environment, KVM, packaging and release steps.
 Earlier backend steps are not all closed; retain their pending checks above.
