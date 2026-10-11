@@ -352,6 +352,18 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     `MSC122_TEMPLATE_CHAT_20261011.json`. Admin support UI remains step 19;
     template KVM remains step 24.
 
+    **Pending source/template naming follow-up:** introduce `ChatFeedFilters` in
+    the chat contract for the existing chat-only filter fields currently named
+    `ActivitiesFeedFilters`. First check all consumers in the source frontend:
+    its shared activity contract also serves non-chat lists. Keep those callers
+    compatible (the broader contract may extend the chat contract where valid),
+    then select the chat type and imports in the template. Preserve field names,
+    serialized queries, filtering behavior and runtime/DB calls. This is a
+    planned type/import cleanup, not an implemented change. Verify source and
+    template TypeScript builds and focused chat-filter tests in one coherent
+    frontend batch; no independent deployment or stress run is needed for a
+    type-only rename.
+
 17. **Build the avatar menu, profile editor and minimal settings — DONE (local/dev HTTP).**
     Reuse the existing menu, FormFlow/profile and image-editor entry points. Show
     only the small editable profile and settings required by retained features.
@@ -611,3 +623,9 @@ qualification gates; scheduled testing is not a PASS:
 Carry verified corrections from their actual source owner with the selected
 contract and targeted regression evidence. Do not treat these pending source
 checks as passed because template functional suites pass.
+
+The source QA checklists and CSV/XLSX ledger now require a separate template
+impact decision for each defect, source/template fix revisions and targeted
+template evidence. The shared policy is in the source repository at
+`guides/qa/checklists/README.md#template-regression-and-fix-propagation--msc-122`.
+A source PASS never substitutes for a template result.
