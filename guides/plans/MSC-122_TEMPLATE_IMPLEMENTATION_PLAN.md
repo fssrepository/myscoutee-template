@@ -260,13 +260,21 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     settings/authorization UI, privileged operations and full MCP server/ChatGPT
     round trip remain pending; this backend checkpoint does not close the step.
 
-13. **Build the frontend foundation and both adapter modes — PENDING.**
+13. **Build the frontend foundation and both adapter modes — IN PROGRESS.**
     Work inside the existing local frontend submodule and reuse the shared
     components. Select Angular configuration, application bootstrap, routing,
     session/store infrastructure, local and HTTP adapters, IndexedDB schema,
     seed loading, translation, error/loading handling and build scripts. Preserve
     all five configurations in the frontend environment inventory above and their
     native serve/build/test wiring.
+    Frontend `7f5e0ff` now contains the native Angular build/environment matrix,
+    session/Firebase/device owners, scoped IndexedDB engine, localization and
+    PWA/version infrastructure. The local build and 97 focused tests pass.
+    MyScoutee source frontend `1af20e0b` separately qualifies the existing test
+    runner path and Firebase fixture repair (three passing checks). This is the
+    foundation only: consent/login screens, local seed, HTTP user adapters and
+    browser persistence checks are not complete. Evidence:
+    `MSC122_TEMPLATE_FRONTEND_FOUNDATION_20261011.json`.
     Close with working local persistence and HTTP persistence for retained flows,
     reload recovery and no silent local fallback in HTTP mode.
 

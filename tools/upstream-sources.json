@@ -2704,6 +2704,670 @@
       "upstreamSha256": "63446e382a080912bdb64f031051be0c988778fc4bb53333e4cc91b04b4954e4",
       "purpose": "Native Mongo schema tests against the one already-running configured deployment.",
       "adaptation": "Select the eight token/client/grant indexes and assert no unselected product collection is created. Use the unchanged native existing-runtime helper with configured container name."
+    },
+    {
+      "path": "frontend/.gitignore",
+      "upstreamSha256": "181eb92cb98992d947fac0ca0dce6742d91933665211d03406a1f35366ab17ca",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": null,
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/angular.json",
+      "upstreamSha256": "7c9a4e9dbe4a98da9cebae3d1a9b35acdd035e720fcdebd18850ae034f48f00e",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": "Template application composition, selected contracts or project-specific metadata/configuration; see the frontend foundation evidence.",
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/package-lock.json",
+      "upstreamSha256": "563feb78a85bb033d96030f9019e2b685a5112284ecd97fc12fa819302855644",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": "Template application composition, selected contracts or project-specific metadata/configuration; see the frontend foundation evidence.",
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/package.json",
+      "upstreamSha256": "b5d3592c6ea88c61589eb50e1e6adb911b17c6158bc9c6e9c60151c2a256e26e",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": "Template application composition, selected contracts or project-specific metadata/configuration; see the frontend foundation evidence.",
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/scripts/stamp-prod-build.js",
+      "upstreamSha256": "8c9abb957eb1588fef461e1f96027c851e684973c8d0ac27200ae947ecc5f839",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": null,
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/scripts/watch-ng-serve-log.sh",
+      "upstreamSha256": "e0f9215f51a346fd5ce4c7c66ac395dd28a2ce3f13afc65a11ae86c4f6c4027d",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": null,
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/scripts/with-components.mjs",
+      "upstreamSha256": "7877330aa15592ccb8519ec327b0dcede6fdbdcb5506af3ee05c1e1484a4a6c0",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": null,
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/404.html",
+      "upstreamSha256": "bebacd4f1f0303c0a2a2beebe194c574cfa7dff8748d904e4cc037f382637cbc",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": "Template application composition, selected contracts or project-specific metadata/configuration; see the frontend foundation evidence.",
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/_styles/_deployment-themes.scss",
+      "upstreamSha256": "4634f12d871ca359d44db2de6339328ae4eb32617425a58f1e487994ba2d2130",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": null,
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/_styles/styles.scss",
+      "upstreamSha256": "e0a17e1a9e6eb68dc28d8032c37c57e56de9c4e3ac14ba794d7bf6a8124abbe5",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": null,
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app-sw.js",
+      "upstreamSha256": "8c56444b8f78ff7290a948bf199d8264dac471d2087e1ba16852450aed6bd5bc",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": "Template application composition, selected contracts or project-specific metadata/configuration; see the frontend foundation evidence.",
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app/app.config.ts",
+      "upstreamSha256": "4cecaed8674b3c4aa876a50f3b725452b1b595834eeff84aa48a0bdf83c736bf",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": "Template application composition, selected contracts or project-specific metadata/configuration; see the frontend foundation evidence.",
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app/app.html",
+      "upstreamSha256": "e3d682de30daec03e90b07168c394a08d24890269d52652b5a8bb19e892fa19e",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": "Template application composition, selected contracts or project-specific metadata/configuration; see the frontend foundation evidence.",
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app/app.scss",
+      "upstreamSha256": "21b21575991b40d41fe6b9f254046b753fbb898f9a63e081afebcf67e7a76c2c",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": "Template application composition, selected contracts or project-specific metadata/configuration; see the frontend foundation evidence.",
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app/app.ts",
+      "upstreamSha256": "133e9d0143f4a1340e1ab3e0535bfe62152f9f2f1e9b4a221d532c79461d38b2",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": "Template application composition, selected contracts or project-specific metadata/configuration; see the frontend foundation evidence.",
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app/shared/core/base/config.ts",
+      "upstreamSha256": "71ab8c319c3c378822003d2e0fb72790c3fc415514cc35dc20348b0428b24800",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": "Native route resolver with retained route configuration entries only.",
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app/shared/core/base/mappers/operator-configuration.mapper.ts",
+      "upstreamSha256": "36e088987d6b5e2d09ffab5f9c8c15c2ddca41541109fb66d2073a15700fc9a2",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": null,
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app/shared/core/base/repositories/i18n-bundle.repository.spec.ts",
+      "upstreamSha256": "3bebe682d79b90175c65e707991984a5eaced11b418da0b718f94eb995641edb",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": null,
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app/shared/core/base/repositories/i18n-bundle.repository.ts",
+      "upstreamSha256": "38a7bae9ce988741bc0939417b9af4da3d15607d5a594b677a89e0169ee6e88d",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": null,
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app/shared/core/base/services/base-route-mode.service.spec.ts",
+      "upstreamSha256": "4193d4de7aadcc66a8c06e4e7216bee98399e62d5343e27b8405f105b7516c73",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": null,
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app/shared/core/base/services/base-route-mode.service.ts",
+      "upstreamSha256": "951347c1a193bf8f387f7aaf4caba76609ca40502c2abaa265fc81a25a90739e",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": null,
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app/shared/core/base/services/deployment-configuration.service.ts",
+      "upstreamSha256": "1679e77e38ff269ce4316545871c333b365141edaa642e578154d38b143a07ef",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": "Selected native branding, privacy contact, social links and Firebase messaging state; omitted payment provider state.",
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app/shared/core/base/services/device-registrations.service.ts",
+      "upstreamSha256": "e16adc30b777de56b8a8c618bc8f071b7d633d87e6897b0a9d970638df74d965",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": null,
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app/shared/core/base/services/firebase-app.service.spec.ts",
+      "upstreamSha256": "e6463f8b9722ad287e7e2cd54716384a3c751a0ac1672adfe8157fb69fdeb2bc",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": null,
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app/shared/core/base/services/firebase-app.service.ts",
+      "upstreamSha256": "bd4dc0040020d648e41e3842a0d585b02cdd7101d7a0a42987cc0f6a4545faba",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": null,
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app/shared/core/base/services/firebase-auth.service.spec.ts",
+      "upstreamSha256": "c3c7c844c8e536d8135b70ece296b5ca784bcf288255b473e9743b4d98e2c44c",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": null,
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app/shared/core/base/services/firebase-auth.service.ts",
+      "upstreamSha256": "aba24be7b5675d2ad7172cbe6b77af7a288accd11f0cca20472bc551943d240f",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": null,
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app/shared/core/base/services/firebase-messaging.service.ts",
+      "upstreamSha256": "3326c073922cc21b3090b998c8afef189b08ff9ee6c1b9cc7c2cde0d9816a451",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": null,
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app/shared/core/base/services/i18n.service.ts",
+      "upstreamSha256": "3338961285dd7d0b87cdeac91f60afc8e2e982206ed2c3bcdae8969c00c30fb0",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": null,
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app/shared/core/base/services/offline-cache.service.ts",
+      "upstreamSha256": "0e99a1e0f2095ba4a4dbe59f7d88378bfcbf622fdb459fe0683245b65f0cc519",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": "Selected native user cache and revocation, removing ticket cache operations and using the template cache prefix.",
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app/shared/core/base/services/pwa.service.ts",
+      "upstreamSha256": "a473a638f87d23580a0129b57819e4b5e0d94e3c6962f54cb7e86185c844e736",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": null,
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app/shared/core/base/services/route-delay.service.spec.ts",
+      "upstreamSha256": "ea5fd9c012a57dc34ca5a1065d602a6a98ff3de929a30a3fa0985bcff5a5876b",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": "Template application composition, selected contracts or project-specific metadata/configuration; see the frontend foundation evidence.",
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app/shared/core/base/services/route-delay.service.ts",
+      "upstreamSha256": "20a600db26ee36ec19727017f97a82d31c8b2657572a1b5fb39ccea36983da06",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": null,
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app/shared/core/base/services/session.service.spec.ts",
+      "upstreamSha256": "d29c7e873d2a055105bcff14a23ba426792417b0b3bcf0f2a63d59213e3e047e",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": null,
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app/shared/core/base/services/session.service.ts",
+      "upstreamSha256": "0b2be6bf7f6afdeb9875102b2bef7f3bc63efec0bd6eed9e778772d03a5364c5",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": null,
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app/shared/core/common/app.db.ts",
+      "upstreamSha256": "ef57b401cc6a766913ca928b4511af3f2c7266e12c3ca6733e440edfe1765fc7",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": "Retains the native IndexedDB hydration, flush and reset engine with only the users schema at this foundation checkpoint; omitted product projections and tables. Further retained owners will add their native tables.",
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app/shared/core/common/constants.ts",
+      "upstreamSha256": "a3b899e0cdb2bea0e47ce6444b79df07c3020ce463acee170aac4ac69777b080",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": "Template application composition, selected contracts or project-specific metadata/configuration; see the frontend foundation evidence.",
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app/shared/core/common/firebase-login-mode.spec.ts",
+      "upstreamSha256": "bc163ef74d50671a80c3e8ac6911e25e24bcce63053580a0c6a9097e28a5299b",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": null,
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app/shared/core/common/firebase-login-mode.ts",
+      "upstreamSha256": "45875e4ca432fca49e288dae263fcf16f27049921e6e13dbd5151d1c51fbe41e",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": null,
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app/shared/core/common/public-media.ts",
+      "upstreamSha256": "8c83a4f89eee67dc4359e9bedf8a34ce6732805db757ea5971eb85a51bfcc9a0",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": null,
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app/shared/core/common/pwa-runtime-policy.ts",
+      "upstreamSha256": "24c180484fb370b5336f1a3f376e5740ba8a85e55f6fdf979ad9007c5022c331",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": null,
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app/shared/core/common/secure-random.ts",
+      "upstreamSha256": "fcd95e262c8f94beb0ea03ad93c1070aec8b858fdf8ba73861f6f973bff2abcf",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": null,
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app/shared/core/common/storage-scope.ts",
+      "upstreamSha256": "5f51dc037aff1c78fc64ec22bf4493031e79fb1a8d167484abc8229be3331a7e",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": "Template-owned storage/cache namespace and selected retained table keys; native scoped key and object-store helpers.",
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app/shared/core/common/user-role.ts",
+      "upstreamSha256": "ee8e0f17a0ffd82eda4ba50ade36ac657a12ae324e15b2e9f5e252acd52929fa",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": null,
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app/shared/core/contracts/deployment-configuration.interface.ts",
+      "upstreamSha256": "42681bef23114af6c41ad4094e5d0a2201fd40bfbe5018bed84bd4463dee8298",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": "Template application composition, selected contracts or project-specific metadata/configuration; see the frontend foundation evidence.",
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app/shared/core/contracts/device-registration.interface.ts",
+      "upstreamSha256": "d2234a0734708b4891980516204f20f5edf124c0742fa775dfa360eac3ee3b8f",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": null,
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app/shared/core/contracts/user.interface.ts",
+      "upstreamSha256": "c013ce4c69c8c5c9da70d70ac62d351cd3c2c30fdc76e2936145a5d58c272e2e",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": "Selected native identity, session, device, consent and minimal profile contract members matching the template backend; no affiliate, payment, activity or workspace imports.",
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app/shared/core/http/interceptors/admin-access.interceptor.ts",
+      "upstreamSha256": "77dd97a6f471b5344ca008518c3044286223df76b255bd8cf1c3fdc412ec6f47",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": null,
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app/shared/core/http/interceptors/api-request.ts",
+      "upstreamSha256": "40c3ecc989ba571e4eae87ef4a54d6d96715ce01aa17df7430c5b37459528549",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": null,
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app/shared/core/http/interceptors/firebase-auth.interceptor.spec.ts",
+      "upstreamSha256": "80ac5cd1a602aa6d369fd31879c07b002b0124a2656fd5557d932f0e3b5412d2",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": null,
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app/shared/core/http/interceptors/firebase-auth.interceptor.ts",
+      "upstreamSha256": "74f74c8f421bb5fa2a438b5d9a17d1417d8109d7792d65d2a097bef10fa6bd4e",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": null,
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app/shared/core/http/interceptors/operator-bootstrap-auth.interceptor.spec.ts",
+      "upstreamSha256": "acd9796462cc8ea51fe55f9fb7377ca61c6bc36e824f11f39164036ea3e1e7bc",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": null,
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app/shared/core/http/interceptors/operator-bootstrap-auth.interceptor.ts",
+      "upstreamSha256": "972eb848d603c86707260fd9c3a15bbb5c7ad1c5775d53e5e5a268c37c91e085",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": null,
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app/shared/core/http/interceptors/session-mode.interceptor.spec.ts",
+      "upstreamSha256": "ff22595495a283aab48e671c7383bd844704b503930309b0a3a251f492f30767",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": null,
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app/shared/core/http/interceptors/session-mode.interceptor.ts",
+      "upstreamSha256": "8c1a529ab26b9aef9c8aa598f2de5e26aaa520c659560f91efa4242ea7d35022",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": null,
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app/shared/core/http/services/deployment-configuration.service.ts",
+      "upstreamSha256": "a4e722b1ce5cd84e347b1fa774c8589b119242c086ff0812c9a1b3dc473ba80e",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": null,
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app/shared/core/http/services/device-registrations.service.ts",
+      "upstreamSha256": "63c3a134dcb0071e2420fc1285eb70db84edc1a985de388d0b5c4b0a5560ee7c",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": null,
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app/shared/core/http/services/firebase-session-registry.service.ts",
+      "upstreamSha256": "45ede04a17f1604f89f3cdbb46e9fa1278c5b79b43fdac7abbf44bc0821fc062",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": null,
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app/shared/core/http/services/operator-bootstrap-auth.service.ts",
+      "upstreamSha256": "23fd8f9f6383011a532075f97b51e6de7695c89cf41853e73450ac33d6d56dac",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": null,
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app/shared/core/local/common/memory.schema.ts",
+      "upstreamSha256": "7af6ef975a6f3cb07cb7842f705d6f3b64c97c84ede8e8f30bab3e93311ba74c",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": "Template application composition, selected contracts or project-specific metadata/configuration; see the frontend foundation evidence.",
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app/shared/core/local/seed/data/deployment-configuration.json",
+      "upstreamSha256": "4046a25d0ccc27a142bae8c4dd10584902262c8f686a05de064d6919740a18e2",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": "Template application composition, selected contracts or project-specific metadata/configuration; see the frontend foundation evidence.",
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app/shared/core/local/source/entity/device-registration.entity.ts",
+      "upstreamSha256": "a082c5f5f9a0dfcd57666def67d8f1ee8d8b77c16757348a2a0543fa0d817065",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": null,
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app/shared/core/local/source/entity/user.entity.ts",
+      "upstreamSha256": "5746020fad547e4160dec09ebd06cef5648739f649090369c5c99a267fb1e6ac",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": "Selected user/device record and table shape using the minimal native UserDto members.",
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app/shared/core/local/source/repositories/device-registrations.repository.ts",
+      "upstreamSha256": "2d025d911d38269a84a97bff314658720a7d44483fb82db8bd4b446e810a536b",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": null,
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app/shared/core/local/source/services/deployment-configuration.service.ts",
+      "upstreamSha256": "20309371725ec229eb972c15d67037f861d1ffc4869f4e98f62f79078c744f41",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": "Uses the selected native configuration repository without virtual-company Registry state.",
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app/shared/core/local/source/services/device-registrations.service.ts",
+      "upstreamSha256": "0f66f7631b88ba2532cda6b7230627cebb959ab00e3ce4a56f8bec892f8f3f0d",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": null,
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app/shared/core/local/source/services/route-delay.service.ts",
+      "upstreamSha256": "db00955b7c97cb71ba3e0271e4b43919a63f57c5192f1b5de0221b86839a3ed1",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": null,
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app/shared/ui/context/stores/profile/user-profile.store.ts",
+      "upstreamSha256": "96baf2f9063c79c045814f6ad2ff16c5d4cf79f63f2d276a64015d2eca0d8a3c",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": "Selected native user/profile/device state and location checks; omitted impressions, workspace, payment and event counters.",
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app/shared/ui/context/ui.providers.ts",
+      "upstreamSha256": "f28fba7d6a391b63e06af020a2f7b46731350f6c66a6873426507e052ed334cc",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": "Template application composition, selected contracts or project-specific metadata/configuration; see the frontend foundation evidence.",
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/assets/i18n/en.json",
+      "upstreamSha256": "e583e163ea2e74507f91cd8d2f8c3d6c412d4475d48f830a675f22ed074ec410",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": "Template application composition, selected contracts or project-specific metadata/configuration; see the frontend foundation evidence.",
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/assets/i18n/hu.json",
+      "upstreamSha256": "cb9ab4093aa0c0b62b114efc9a774dc9d9193c28edbb1cba5bbede131320e902",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": "Template application composition, selected contracts or project-specific metadata/configuration; see the frontend foundation evidence.",
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/environments/environment.dev.ts",
+      "upstreamSha256": "bd938c8438d6baf591628f779b0dc08a0b7181f3d0c690b7e3aa70df0e15b54b",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": "Template application composition, selected contracts or project-specific metadata/configuration; see the frontend foundation evidence.",
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/environments/environment.e2e.ts",
+      "upstreamSha256": "8dd6f30ff09cf65dfdf144ef223e871405147f6e46a2811919fd5b09ecbbfe37",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": "Template application composition, selected contracts or project-specific metadata/configuration; see the frontend foundation evidence.",
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/environments/environment.github.ts",
+      "upstreamSha256": "57a5c6195ec3e6810a27a30f8417223676060ba37764d114750a31992a727004",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": "Template application composition, selected contracts or project-specific metadata/configuration; see the frontend foundation evidence.",
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/environments/environment.production.ts",
+      "upstreamSha256": "f3969259d24e4d36c0ba66b6661b185e09cd2aad2a5721c0fac87ebeeb3543e5",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": "Template application composition, selected contracts or project-specific metadata/configuration; see the frontend foundation evidence.",
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/environments/environment.ts",
+      "upstreamSha256": "29417c771e6ccb3f8c8acab90e6c7c7b92c2599031fd4d4c72193a083c6db587",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": "Template application composition, selected contracts or project-specific metadata/configuration; see the frontend foundation evidence.",
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/index.html",
+      "upstreamSha256": "325876421c6d26dbf8a7127778b730fec324bcabfe83fb21c74f2f7a8ddc84db",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": "Template application composition, selected contracts or project-specific metadata/configuration; see the frontend foundation evidence.",
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/main.ts",
+      "upstreamSha256": "dbbd9bac49ccb881af102ee53939f9dd8ad38851a66adc7251e9319dba3b5abc",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": "Template application composition, selected contracts or project-specific metadata/configuration; see the frontend foundation evidence.",
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/manifest.webmanifest",
+      "upstreamSha256": "1ffc1f182e9c028d29db6ff75b250dc1693ee36e920c4d6f6fd7a13908b8128b",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": "Template application composition, selected contracts or project-specific metadata/configuration; see the frontend foundation evidence.",
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/robots.txt",
+      "upstreamSha256": "16ceb5ee3e0dc13aa9adf31a3ebbe45a1d965b8c2b9f72eaf84e5911e140ed95",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": null,
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/tsconfig.app.json",
+      "upstreamSha256": "3edde0ef69495b7d16cc9c9ce0ceaff9f5b3a689dc6c783044f36ba7a7ca1cd8",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": null,
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/tsconfig.json",
+      "upstreamSha256": "d41594adacc43fef06f8ecae9e0989790115e794bba1aa1e75ef206d31f89b82",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": null,
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/tsconfig.spec.json",
+      "upstreamSha256": "936c82ab0e4399ee089cf05de9888005a8fe063e85036c1148cd9508baa7dd14",
+      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
+      "adaptation": null,
+      "sourceRevision": "e3eff359c",
+      "sourceFrontendRevision": "1af20e0b"
     }
   ]
 }
