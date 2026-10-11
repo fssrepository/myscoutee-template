@@ -245,3 +245,18 @@ The TLS extension at frontend `800ff16` also passes local save/reopen/disable an
 dev HTTP host-capability denial. Its backend selection has 36 focused passing
 Java checks; 16 TLS/configuration frontend tests pass. See [TLS/update selection](../qualification/evidence/MSC122_TEMPLATE_TLS_UPDATE_SELECTION_20261011.json).
 The backend batch still requires KVM and real host-worker qualification.
+
+## Operator update UI checkpoint
+
+Frontend `4b13d99` passes 41 focused tests across HTTP progress/recovery,
+workspace completion/cache behavior and persisted local simulation. Local and dev
+HTTP browser checks cover explicit discovery, version display, guides, notification
+target and logout. The local test stages a release only in its disposable browser,
+then verifies simulated installation and the native PWA reload. Actual host install
+and rollback remain open. See [update UI evidence](../qualification/evidence/MSC122_TEMPLATE_UPDATE_UI_20261011.json).
+
+```sh
+node e2e/functional/ui/operator/updates.mjs --local
+E2E_MONGO_CONTAINER=myscoutee-template-dev-mongodb E2E_DATABASE=demo_db \
+  node e2e/functional/ui/operator/updates.mjs
+```

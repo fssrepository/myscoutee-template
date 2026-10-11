@@ -385,7 +385,11 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     `800ff16`: 36 focused Java checks and 16 frontend checks pass. Local TLS
     save/reopen/disable and dev HTTP capability/role denial pass. See
     `MSC122_TEMPLATE_TLS_UPDATE_SELECTION_20261011.json`. This backend batch still needs
-    KVM qualification; update UI, host execution and live Firebase remain open.
+    KVM qualification; host execution and live Firebase remain open.
+    Updater UI is qualified at frontend `4b13d99`: 41 focused frontend tests,
+    local simulated installation/PWA reload, dev HTTP version/check and notification
+    target/guide flows pass. See `MSC122_TEMPLATE_UPDATE_UI_20261011.json`.
+    This is not signed DEB installation or rollback qualification.
 
 20. **Consolidate JUnit and frontend unit/component coverage — IN PROGRESS.**
     Preserve `tools/run-backend-junit.sh`, native standard/embedded/integration
@@ -529,13 +533,14 @@ deep-link behavior. A working `local` build alone does not close frontend work.
 
 ## Current continuation point
 
-Complete the remaining **17** device/location setup and account reactivation
-entry, then continue **19** admin/operator. Notification/guide **18**, chat **16**
-and SmartList **15** are qualified in local/dev HTTP. Source repositories are
-unchanged by the profile/settings and notification/guide batches. Frontend
-`ae25d6f` preserves the latest tested notification/guide checkpoint. Reuse the
-native app-setup, location and account lifecycle owners for the remaining entry
-and settings work. Keep Firebase REAL/onboarding and operator bootstrap checks
-explicit; do not count an Explore/DEMO pass as proof of those paths.
-Then finish environment, KVM, packaging and release qualification. Earlier
-backend steps still have the pending checks recorded above.
+Continue **19**, minimal admin support/moderation and privileged API access.
+Member SmartList **15**, chat **16**, profile/setup/lifecycle **17**, and
+notification/guide **18** have local/dev HTTP evidence. Operator configuration,
+TLS controls and update UI are selected and qualified at frontend `4b13d99`.
+Their backend batch still requires KVM; actual TLS and signed update installation
+remain host/package gates. Preserve the explicit live Firebase, operator bootstrap,
+external MCP and deployment limits in their evidence files.
+
+Then complete environment, E2E, KVM, packaging and release qualification. Earlier
+backend steps still have the pending checks recorded above; the current step
+number does not mean that every earlier qualification gate is closed.

@@ -1106,5 +1106,63 @@
     "updatedDate": "2026-10-11T00:00:00Z",
     "createdUser": "template-seed",
     "updatedUser": "template-seed"
+  },
+  {
+    "_id": "template-guide-operator.updates-en-v1",
+    "contextKey": "operator.updates",
+    "isSystem": true,
+    "lang": "en",
+    "languageLabel": "English",
+    "version": 1,
+    "active": true,
+    "title": "Updates",
+    "summary": "Updates",
+    "description": "Updates",
+    "documentType": "explanation",
+    "presentation": "tour",
+    "sections": [
+      {
+        "id": "overview",
+        "icon": "api",
+        "title": "Updates",
+        "blurb": "",
+        "contentHtml": "<p>Updates</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed"
+  },
+  {
+    "_id": "template-guide-operator.updates-hu-v1",
+    "contextKey": "operator.updates",
+    "isSystem": true,
+    "lang": "hu",
+    "languageLabel": "Magyar",
+    "version": 1,
+    "active": true,
+    "title": "Frissítések",
+    "summary": "Frissítések",
+    "description": "Frissítések",
+    "documentType": "explanation",
+    "presentation": "tour",
+    "sections": [
+      {
+        "id": "overview",
+        "icon": "api",
+        "title": "Frissítések",
+        "blurb": "",
+        "contentHtml": "<p>Frissítések</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed"
   }
 ]

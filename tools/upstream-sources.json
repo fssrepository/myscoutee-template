@@ -1058,7 +1058,7 @@
       "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
       "upstreamSha256": "939c31c9f8590263a8755a9ff26341d3a0a198fdc4e83ffab9aec67274d3ffd9",
       "purpose": "Native durable notification delivery, inbox and chat transport support for the minimal application.",
-      "adaptation": "Retain native notification limits and account-purge window bounds without the product affinity catalog; configure purge days through users.account-purge-window-days (default 30, native allowed range 1–365)."
+      "adaptation": "Retain native notification limits and account-purge window bounds without the product affinity catalog; configure purge days through users.account-purge-window-days (default 30, native allowed range 1\u2013365)."
     },
     {
       "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/common/redis/RedisStreamRetentionService.java",
@@ -4983,6 +4983,14 @@
       "qualification": "MSC122_TEMPLATE_TLS_UPDATE_SELECTION_20261011.json",
       "implementation": "Retain native TLS controls and update backend/signatures. Use template-owned paths/repository/version in application configuration. Retain cryptographic protocol identifiers and internal staging filename; no Registry state.",
       "remaining": "KVM and privileged host workers/package inventory selection; no installation qualification yet."
+    },
+    {
+      "name": "operator-update-ui",
+      "sourceFrontendRevision": "c90a5b1f",
+      "templateFrontendRevision": "4b13d99",
+      "qualification": "MSC122_TEMPLATE_UPDATE_UI_20261011.json",
+      "implementation": "Selected update DTOs, native facade/HTTP/local service methods, workspace state/progress and action-popup update body. Separate owner name without Registry state. Keep native bounded polling, signature capability, rollback and PWA reload. Local seed starts at version 1.0.0 with no fictitious newer release. Operator-only gear and consumed notification target use existing route/guide owners.",
+      "remaining": "KVM, signed host installation/rollback and release publication remain separate gates."
     }
   ]
 }

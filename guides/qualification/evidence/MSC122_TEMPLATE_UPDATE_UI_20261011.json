@@ -1,0 +1,119 @@
+{
+  "date": "2026-10-11",
+  "status": "PASS for frontend/local/dev HTTP UI; host installation and KVM remain unqualified.",
+  "templateFrontendRevision": "4b13d99",
+  "templateParentBaseRevision": "b8f1744",
+  "sourceFrontendRevision": "c90a5b1f",
+  "sourceBackendRevision": "7a1d375c8",
+  "scope": "Selected native update DTO/facade/HTTP/local/store/action-popup behavior; operator-only menu, route notification target, guide and local 1.0.0 baseline without a fabricated release.",
+  "checks": [
+    {
+      "name": "Focused frontend tests",
+      "result": "PASS",
+      "files": 4,
+      "tests": 41,
+      "log": "/tmp/msc122-template-update-unit.log",
+      "details": [
+        "17 HTTP checks: signed-metadata errors, approval once, durable event cursor, transient restart gaps, permanent failure, host monitor and rollback",
+        "18 workspace checks including configuration/TLS regression, update completion/PWA reload, failure and cached explicit refresh",
+        "6 local persistence checks including configuration preservation, seeded current version and simulated progress"
+      ]
+    },
+    {
+      "name": "Local browser",
+      "result": "PASS",
+      "command": "node e2e/functional/ui/operator/updates.mjs --local",
+      "log": "/tmp/msc122-template-update-local.log",
+      "details": [
+        "Fresh operator demo login and reload",
+        "Version 1.0.0; no install action without an offered release",
+        "Native guide for summary/check/close and install when visible",
+        "Notification route opens the popup and consumes its query parameter",
+        "Disposable IndexedDB release fixture simulates 1.0.1 installation, native PWA reload, final persisted state",
+        "Desktop 1440x950 and mobile 390x844 inspected; no horizontal overflow",
+        "No API calls or browser runtime/resource errors"
+      ]
+    },
+    {
+      "name": "Dev HTTP browser",
+      "result": "PASS",
+      "command": "E2E_MONGO_CONTAINER=myscoutee-template-dev-mongodb E2E_DATABASE=demo_db node e2e/functional/ui/operator/updates.mjs",
+      "log": "/tmp/msc122-template-update-http.log",
+      "details": [
+        "Real backend version/release discovery and explicit refresh",
+        "Current repository returns an empty release list with HTTP 200",
+        "Exactly one status read on open, explicit refresh and full reload; no update approval POST",
+        "Native guide, notification target and logout",
+        "Member cannot read operator-only status; existing owned-fixture cleanup restores original settings",
+        "No browser runtime/resource errors"
+      ]
+    },
+    {
+      "name": "i18n seed audit",
+      "result": "PASS",
+      "messages": 2750,
+      "version": "2026.10.11.14",
+      "bundles": 2,
+      "physicalMongoSeedSets": 3
+    },
+    {
+      "name": "Runtime compilation",
+      "result": "PASS",
+      "note": "Existing frontend-sync compiled dev; stopped before focused tests/local watcher, restored after local verification. No parallel frontend compiler."
+    }
+  ],
+  "performance": {
+    "boundary": "No backend application change in this frontend batch. Existing cached snapshot and bounded polling retained; polling starts only for an explicit update operation. No new background timer or database query.",
+    "initialSample": {
+      "backendCpuPercent": 9.47,
+      "backendMemoryGiB": 1.793,
+      "mongoCpuPercent": 36.05
+    },
+    "followUpSamples": [
+      [
+        {
+          "Name": "myscoutee-template-dev-profilemanagement",
+          "CPUPerc": "4.66%",
+          "MemUsage": "1.793GiB / 15.27GiB"
+        },
+        {
+          "Name": "myscoutee-template-dev-mongodb",
+          "CPUPerc": "1.74%",
+          "MemUsage": "318.5MiB / 15.27GiB"
+        }
+      ],
+      [
+        {
+          "Name": "myscoutee-template-dev-profilemanagement",
+          "CPUPerc": "8.83%",
+          "MemUsage": "1.793GiB / 15.27GiB"
+        },
+        {
+          "Name": "myscoutee-template-dev-mongodb",
+          "CPUPerc": "4.54%",
+          "MemUsage": "318.5MiB / 15.27GiB"
+        }
+      ],
+      [
+        {
+          "Name": "myscoutee-template-dev-profilemanagement",
+          "CPUPerc": "6.09%",
+          "MemUsage": "1.793GiB / 15.27GiB"
+        },
+        {
+          "Name": "myscoutee-template-dev-mongodb",
+          "CPUPerc": "1.91%",
+          "MemUsage": "318.5MiB / 15.27GiB"
+        }
+      ]
+    ],
+    "limits": "Mongo CPU returned to 1.74–4.54% in three follow-up samples; no sustained spike observed in that short window. Previous TLS sample was 9.29% backend CPU and 1.783 GiB, under a different workload. These are diagnostic samples, not matched load evidence and not proof of performance parity."
+  },
+  "remaining": [
+    "Actual signed DEB installation/rollback/recovery and host TLS workers",
+    "KVM runtime validation of the earlier selected backend batch",
+    "Production release publication and trusted signing-key configuration",
+    "Admin support/moderation and privileged API entry",
+    "Matched load/CPU qualification after a coherent deployment batch"
+  ]
+}

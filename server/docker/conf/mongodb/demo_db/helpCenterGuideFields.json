@@ -566,5 +566,45 @@
     "group": "menus",
     "i18nKey": "guide.operator.configuration.operator-save-tls",
     "order": 7
+  },
+  {
+    "_id": "operator.updates--overview",
+    "id": "overview",
+    "screenKey": "operator.updates",
+    "group": "menus",
+    "i18nKey": "guide.operator.updates.overview",
+    "order": 0
+  },
+  {
+    "_id": "operator.updates--operator-refresh-update",
+    "id": "operator-refresh-update",
+    "screenKey": "operator.updates",
+    "group": "menus",
+    "i18nKey": "guide.operator.updates.operator-refresh-update",
+    "order": 1
+  },
+  {
+    "_id": "operator.updates--operator-apply-update",
+    "id": "operator-apply-update",
+    "screenKey": "operator.updates",
+    "group": "menus",
+    "i18nKey": "guide.operator.updates.operator-apply-update",
+    "order": 2
+  },
+  {
+    "_id": "operator.updates--operator-rollback-update",
+    "id": "operator-rollback-update",
+    "screenKey": "operator.updates",
+    "group": "menus",
+    "i18nKey": "guide.operator.updates.operator-rollback-update",
+    "order": 3
+  },
+  {
+    "_id": "operator.updates--close",
+    "id": "close",
+    "screenKey": "operator.updates",
+    "group": "popup",
+    "i18nKey": "guide.operator.updates.close",
+    "order": 4
   }
 ]

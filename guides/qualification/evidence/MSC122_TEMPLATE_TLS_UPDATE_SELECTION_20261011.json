@@ -98,11 +98,11 @@
   },
   "remaining": [
     "KVM validation of this backend batch and complete monolith runtime flows",
-    "Updater UI and progress/reconnect",
     "Host TLS worker and genuine certificate apply/restart",
     "Signed DEB install/rollback and package/worker identity checks",
     "Versioned source-side separation of hard-coded update-worker image inventory/package paths before template selection",
     "Admin moderation/support and their role notification targets",
     "Live Firebase and production deployment qualification"
-  ]
+  ],
+  "followUp": "Updater UI/progress/reconnect is covered by MSC122_TEMPLATE_UPDATE_UI_20261011.json; host operations remain open."
 }

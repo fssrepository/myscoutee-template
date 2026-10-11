@@ -15958,5 +15958,545 @@
     "key": "operator.configuration.tls.validation.invalid",
     "lang": "hu",
     "value": "Tesztelés vagy mentés előtt töltsd ki a HTTPS mezőket."
+  },
+  {
+    "_id": "i18n-message-en-guide-operator-updates-close-description",
+    "key": "guide.operator.updates.close.description",
+    "lang": "en",
+    "value": "Close the progress window and return to the operator page. Closing this window does not cancel an update already started."
+  },
+  {
+    "_id": "i18n-message-en-guide-operator-updates-operator-apply-update-description",
+    "key": "guide.operator.updates.operator-apply-update.description",
+    "lang": "en",
+    "value": "Start installing the offered release on this deployment. Follow its progress here; after successful completion the application reloads to use the installed version."
+  },
+  {
+    "_id": "i18n-message-en-guide-operator-updates-operator-refresh-update-description",
+    "key": "guide.operator.updates.operator-refresh-update.description",
+    "lang": "en",
+    "value": "Fetch the latest release information and update state. This checks what is available; installation starts only with the update action."
+  },
+  {
+    "_id": "i18n-message-en-guide-operator-updates-operator-rollback-update-description",
+    "key": "guide.operator.updates.operator-rollback-update.description",
+    "lang": "en",
+    "value": "Start the supported rollback to the displayed target version. Check that target first; a successful rollback reloads the application just like an update."
+  },
+  {
+    "_id": "i18n-message-en-guide-operator-updates-operator-rollback-update-label",
+    "key": "guide.operator.updates.operator-rollback-update.label",
+    "lang": "en",
+    "value": "Restore version"
+  },
+  {
+    "_id": "i18n-message-en-guide-operator-updates-overview-description",
+    "key": "guide.operator.updates.overview.description",
+    "lang": "en",
+    "value": "Check the installed version, offered release and rollback target before acting. During an update this window shows the current phase, progress and any failure."
+  },
+  {
+    "_id": "i18n-message-en-guide-operator-updates-overview-label",
+    "key": "guide.operator.updates.overview.label",
+    "lang": "en",
+    "value": "Updates"
+  },
+  {
+    "_id": "i18n-message-en-operator-action-updates",
+    "key": "operator.action.updates",
+    "lang": "en",
+    "value": "Updates"
+  },
+  {
+    "_id": "i18n-message-en-operator-loading",
+    "key": "operator.loading",
+    "lang": "en",
+    "value": "Loading…"
+  },
+  {
+    "_id": "i18n-message-en-operator-update-apply",
+    "key": "operator.update.apply",
+    "lang": "en",
+    "value": "Update deployment"
+  },
+  {
+    "_id": "i18n-message-en-operator-update-applying",
+    "key": "operator.update.applying",
+    "lang": "en",
+    "value": "Updating deployment…"
+  },
+  {
+    "_id": "i18n-message-en-operator-update-available-version",
+    "key": "operator.update.available.version",
+    "lang": "en",
+    "value": "Available version"
+  },
+  {
+    "_id": "i18n-message-en-operator-update-completed",
+    "key": "operator.update.completed",
+    "lang": "en",
+    "value": "Deployment update completed."
+  },
+  {
+    "_id": "i18n-message-en-operator-update-current",
+    "key": "operator.update.current",
+    "lang": "en",
+    "value": "Deployment is current"
+  },
+  {
+    "_id": "i18n-message-en-operator-update-current-version",
+    "key": "operator.update.current.version",
+    "lang": "en",
+    "value": "Current version"
+  },
+  {
+    "_id": "i18n-message-en-operator-update-error-check",
+    "key": "operator.update.error.check",
+    "lang": "en",
+    "value": "Could not check for updates. Please try again."
+  },
+  {
+    "_id": "i18n-message-en-operator-update-error-failed",
+    "key": "operator.update.error.failed",
+    "lang": "en",
+    "value": "Deployment update failed."
+  },
+  {
+    "_id": "i18n-message-en-operator-update-error-key",
+    "key": "operator.update.error.key",
+    "lang": "en",
+    "value": "The trusted update signing key is not configured."
+  },
+  {
+    "_id": "i18n-message-en-operator-update-error-metadata",
+    "key": "operator.update.error.metadata",
+    "lang": "en",
+    "value": "This release has no signed update information yet."
+  },
+  {
+    "_id": "i18n-message-en-operator-update-error-recovery-required",
+    "key": "operator.update.error.recovery.required",
+    "lang": "en",
+    "value": "The update stopped in an uncertain state. Follow the recovery procedure before retrying."
+  },
+  {
+    "_id": "i18n-message-en-operator-update-error-response",
+    "key": "operator.update.error.response",
+    "lang": "en",
+    "value": "The deployment update response is invalid."
+  },
+  {
+    "_id": "i18n-message-en-operator-update-error-rollback-unavailable",
+    "key": "operator.update.error.rollback.unavailable",
+    "lang": "en",
+    "value": "The previous verified package is unavailable. Check the release source before retrying."
+  },
+  {
+    "_id": "i18n-message-en-operator-update-error-start",
+    "key": "operator.update.error.start",
+    "lang": "en",
+    "value": "Could not confirm the update request. Check its status before trying again."
+  },
+  {
+    "_id": "i18n-message-en-operator-update-error-status",
+    "key": "operator.update.error.status",
+    "lang": "en",
+    "value": "Could not read update progress. Check the deployment status before trying again."
+  },
+  {
+    "_id": "i18n-message-en-operator-update-error-status-timeout",
+    "key": "operator.update.error.status.timeout",
+    "lang": "en",
+    "value": "Timed out waiting for update progress. The update may still be running. Reopen Updates to check its status."
+  },
+  {
+    "_id": "i18n-message-en-operator-update-error-unavailable",
+    "key": "operator.update.error.unavailable",
+    "lang": "en",
+    "value": "No verified deployment update is available."
+  },
+  {
+    "_id": "i18n-message-en-operator-update-last-updated",
+    "key": "operator.update.last.updated",
+    "lang": "en",
+    "value": "Last updated"
+  },
+  {
+    "_id": "i18n-message-en-operator-update-phase-checking",
+    "key": "operator.update.phase.checking",
+    "lang": "en",
+    "value": "Checking release"
+  },
+  {
+    "_id": "i18n-message-en-operator-update-phase-completed",
+    "key": "operator.update.phase.completed",
+    "lang": "en",
+    "value": "Update completed"
+  },
+  {
+    "_id": "i18n-message-en-operator-update-phase-configuring-package",
+    "key": "operator.update.phase.configuring_package",
+    "lang": "en",
+    "value": "Configuring package"
+  },
+  {
+    "_id": "i18n-message-en-operator-update-phase-downloading",
+    "key": "operator.update.phase.downloading",
+    "lang": "en",
+    "value": "Downloading update"
+  },
+  {
+    "_id": "i18n-message-en-operator-update-phase-failed",
+    "key": "operator.update.phase.failed",
+    "lang": "en",
+    "value": "Update failed"
+  },
+  {
+    "_id": "i18n-message-en-operator-update-phase-idle",
+    "key": "operator.update.phase.idle",
+    "lang": "en",
+    "value": "Ready to check"
+  },
+  {
+    "_id": "i18n-message-en-operator-update-phase-installing",
+    "key": "operator.update.phase.installing",
+    "lang": "en",
+    "value": "Installing update"
+  },
+  {
+    "_id": "i18n-message-en-operator-update-phase-loading-images",
+    "key": "operator.update.phase.loading_images",
+    "lang": "en",
+    "value": "Loading application images"
+  },
+  {
+    "_id": "i18n-message-en-operator-update-phase-preparing-data",
+    "key": "operator.update.phase.preparing_data",
+    "lang": "en",
+    "value": "Preparing built-in data"
+  },
+  {
+    "_id": "i18n-message-en-operator-update-phase-starting-services",
+    "key": "operator.update.phase.starting_services",
+    "lang": "en",
+    "value": "Starting services"
+  },
+  {
+    "_id": "i18n-message-en-operator-update-phase-switching-ingress",
+    "key": "operator.update.phase.switching_ingress",
+    "lang": "en",
+    "value": "Switching web server"
+  },
+  {
+    "_id": "i18n-message-en-operator-update-phase-verifying",
+    "key": "operator.update.phase.verifying",
+    "lang": "en",
+    "value": "Verifying download"
+  },
+  {
+    "_id": "i18n-message-en-operator-update-phase-verifying-images",
+    "key": "operator.update.phase.verifying_images",
+    "lang": "en",
+    "value": "Verifying application images"
+  },
+  {
+    "_id": "i18n-message-en-operator-update-phase-waiting-for-health",
+    "key": "operator.update.phase.waiting_for_health",
+    "lang": "en",
+    "value": "Waiting for application readiness"
+  },
+  {
+    "_id": "i18n-message-en-operator-update-refresh",
+    "key": "operator.update.refresh",
+    "lang": "en",
+    "value": "Check for updates"
+  },
+  {
+    "_id": "i18n-message-en-operator-update-rollback",
+    "key": "operator.update.rollback",
+    "lang": "en",
+    "value": "Roll back deployment"
+  },
+  {
+    "_id": "i18n-message-en-operator-update-rollingback",
+    "key": "operator.update.rollingback",
+    "lang": "en",
+    "value": "Rolling back deployment…"
+  },
+  {
+    "_id": "i18n-message-en-operator-update-subtitle",
+    "key": "operator.update.subtitle",
+    "lang": "en",
+    "value": "Check and update this deployment"
+  },
+  {
+    "_id": "i18n-message-hu-guide-operator-updates-close-description",
+    "key": "guide.operator.updates.close.description",
+    "lang": "hu",
+    "value": "Bezárja a folyamat ablakát, és visszatér az üzemeltetői oldalra. Az ablak bezárása nem szakítja meg a már elindított frissítést."
+  },
+  {
+    "_id": "i18n-message-hu-guide-operator-updates-operator-apply-update-description",
+    "key": "guide.operator.updates.operator-apply-update.description",
+    "lang": "hu",
+    "value": "Elindítja a felajánlott kiadás telepítését ezen a rendszeren. Itt követheted a haladást; sikeres befejezés után az alkalmazás újratöltődik a telepített verzió használatához."
+  },
+  {
+    "_id": "i18n-message-hu-guide-operator-updates-operator-refresh-update-description",
+    "key": "guide.operator.updates.operator-refresh-update.description",
+    "lang": "hu",
+    "value": "Lekéri a legfrissebb kiadási információt és frissítési állapotot. Ezzel az elérhető verziókat ellenőrzöd; a telepítést a frissítési művelet indítja."
+  },
+  {
+    "_id": "i18n-message-hu-guide-operator-updates-operator-rollback-update-description",
+    "key": "guide.operator.updates.operator-rollback-update.description",
+    "lang": "hu",
+    "value": "Elindítja a támogatott visszaállítást a kijelzett célverzióra. Előbb ellenőrizd ezt a verziót; sikeres visszaállítás után az alkalmazás a frissítéshez hasonlóan újratöltődik."
+  },
+  {
+    "_id": "i18n-message-hu-guide-operator-updates-operator-rollback-update-label",
+    "key": "guide.operator.updates.operator-rollback-update.label",
+    "lang": "hu",
+    "value": "Verzió visszaállítása"
+  },
+  {
+    "_id": "i18n-message-hu-guide-operator-updates-overview-description",
+    "key": "guide.operator.updates.overview.description",
+    "lang": "hu",
+    "value": "Művelet előtt ellenőrizd a telepített verziót, a felajánlott kiadást és a visszaállítás célverzióját. Frissítés közben itt látható az aktuális szakasz, a haladás és az esetleges hiba."
+  },
+  {
+    "_id": "i18n-message-hu-guide-operator-updates-overview-label",
+    "key": "guide.operator.updates.overview.label",
+    "lang": "hu",
+    "value": "Frissítések"
+  },
+  {
+    "_id": "i18n-message-hu-operator-action-updates",
+    "key": "operator.action.updates",
+    "lang": "hu",
+    "value": "Frissítések"
+  },
+  {
+    "_id": "i18n-message-hu-operator-loading",
+    "key": "operator.loading",
+    "lang": "hu",
+    "value": "Betöltés…"
+  },
+  {
+    "_id": "i18n-message-hu-operator-update-apply",
+    "key": "operator.update.apply",
+    "lang": "hu",
+    "value": "Telepítés frissítése"
+  },
+  {
+    "_id": "i18n-message-hu-operator-update-applying",
+    "key": "operator.update.applying",
+    "lang": "hu",
+    "value": "Telepítés frissítése…"
+  },
+  {
+    "_id": "i18n-message-hu-operator-update-available-version",
+    "key": "operator.update.available.version",
+    "lang": "hu",
+    "value": "Elérhető verzió"
+  },
+  {
+    "_id": "i18n-message-hu-operator-update-completed",
+    "key": "operator.update.completed",
+    "lang": "hu",
+    "value": "A telepítés frissítése befejeződött."
+  },
+  {
+    "_id": "i18n-message-hu-operator-update-current",
+    "key": "operator.update.current",
+    "lang": "hu",
+    "value": "A telepítés naprakész"
+  },
+  {
+    "_id": "i18n-message-hu-operator-update-current-version",
+    "key": "operator.update.current.version",
+    "lang": "hu",
+    "value": "Jelenlegi verzió"
+  },
+  {
+    "_id": "i18n-message-hu-operator-update-error-check",
+    "key": "operator.update.error.check",
+    "lang": "hu",
+    "value": "Nem sikerült ellenőrizni a frissítéseket. Próbáld újra."
+  },
+  {
+    "_id": "i18n-message-hu-operator-update-error-failed",
+    "key": "operator.update.error.failed",
+    "lang": "hu",
+    "value": "A telepítés frissítése sikertelen."
+  },
+  {
+    "_id": "i18n-message-hu-operator-update-error-key",
+    "key": "operator.update.error.key",
+    "lang": "hu",
+    "value": "A frissítések megbízható aláírókulcsa nincs beállítva."
+  },
+  {
+    "_id": "i18n-message-hu-operator-update-error-metadata",
+    "key": "operator.update.error.metadata",
+    "lang": "hu",
+    "value": "Ehhez a kiadáshoz még nincs aláírt frissítési információ."
+  },
+  {
+    "_id": "i18n-message-hu-operator-update-error-recovery-required",
+    "key": "operator.update.error.recovery.required",
+    "lang": "hu",
+    "value": "A frissítés bizonytalan állapotban állt le. Újrapróbálás előtt kövesd a helyreállítási eljárást."
+  },
+  {
+    "_id": "i18n-message-hu-operator-update-error-response",
+    "key": "operator.update.error.response",
+    "lang": "hu",
+    "value": "A telepítési frissítés válasza érvénytelen."
+  },
+  {
+    "_id": "i18n-message-hu-operator-update-error-rollback-unavailable",
+    "key": "operator.update.error.rollback.unavailable",
+    "lang": "hu",
+    "value": "A korábbi ellenőrzött csomag nem érhető el. Újrapróbálás előtt ellenőrizd a kiadások forrását."
+  },
+  {
+    "_id": "i18n-message-hu-operator-update-error-start",
+    "key": "operator.update.error.start",
+    "lang": "hu",
+    "value": "Nem sikerült megerősíteni a frissítési kérést. Újabb próbálkozás előtt ellenőrizd az állapotát."
+  },
+  {
+    "_id": "i18n-message-hu-operator-update-error-status",
+    "key": "operator.update.error.status",
+    "lang": "hu",
+    "value": "Nem sikerült lekérni a frissítés állapotát. Újabb próbálkozás előtt ellenőrizd a telepítés állapotát."
+  },
+  {
+    "_id": "i18n-message-hu-operator-update-error-status-timeout",
+    "key": "operator.update.error.status.timeout",
+    "lang": "hu",
+    "value": "A frissítés állapotára várva lejárt az idő. A frissítés még folyamatban lehet. Nyisd meg újra a Frissítések ablakot az állapot ellenőrzéséhez."
+  },
+  {
+    "_id": "i18n-message-hu-operator-update-error-unavailable",
+    "key": "operator.update.error.unavailable",
+    "lang": "hu",
+    "value": "Nem érhető el ellenőrzött telepítési frissítés."
+  },
+  {
+    "_id": "i18n-message-hu-operator-update-last-updated",
+    "key": "operator.update.last.updated",
+    "lang": "hu",
+    "value": "Utolsó frissítés"
+  },
+  {
+    "_id": "i18n-message-hu-operator-update-phase-checking",
+    "key": "operator.update.phase.checking",
+    "lang": "hu",
+    "value": "Kiadás ellenőrzése"
+  },
+  {
+    "_id": "i18n-message-hu-operator-update-phase-completed",
+    "key": "operator.update.phase.completed",
+    "lang": "hu",
+    "value": "Frissítés befejezve"
+  },
+  {
+    "_id": "i18n-message-hu-operator-update-phase-configuring-package",
+    "key": "operator.update.phase.configuring_package",
+    "lang": "hu",
+    "value": "Csomag beállítása"
+  },
+  {
+    "_id": "i18n-message-hu-operator-update-phase-downloading",
+    "key": "operator.update.phase.downloading",
+    "lang": "hu",
+    "value": "Frissítés letöltése"
+  },
+  {
+    "_id": "i18n-message-hu-operator-update-phase-failed",
+    "key": "operator.update.phase.failed",
+    "lang": "hu",
+    "value": "A frissítés sikertelen"
+  },
+  {
+    "_id": "i18n-message-hu-operator-update-phase-idle",
+    "key": "operator.update.phase.idle",
+    "lang": "hu",
+    "value": "Ellenőrzésre kész"
+  },
+  {
+    "_id": "i18n-message-hu-operator-update-phase-installing",
+    "key": "operator.update.phase.installing",
+    "lang": "hu",
+    "value": "Frissítés telepítése"
+  },
+  {
+    "_id": "i18n-message-hu-operator-update-phase-loading-images",
+    "key": "operator.update.phase.loading_images",
+    "lang": "hu",
+    "value": "Alkalmazásképek betöltése"
+  },
+  {
+    "_id": "i18n-message-hu-operator-update-phase-preparing-data",
+    "key": "operator.update.phase.preparing_data",
+    "lang": "hu",
+    "value": "Beépített adatok előkészítése"
+  },
+  {
+    "_id": "i18n-message-hu-operator-update-phase-starting-services",
+    "key": "operator.update.phase.starting_services",
+    "lang": "hu",
+    "value": "Szolgáltatások indítása"
+  },
+  {
+    "_id": "i18n-message-hu-operator-update-phase-switching-ingress",
+    "key": "operator.update.phase.switching_ingress",
+    "lang": "hu",
+    "value": "Webszerver átváltása"
+  },
+  {
+    "_id": "i18n-message-hu-operator-update-phase-verifying",
+    "key": "operator.update.phase.verifying",
+    "lang": "hu",
+    "value": "Letöltés ellenőrzése"
+  },
+  {
+    "_id": "i18n-message-hu-operator-update-phase-verifying-images",
+    "key": "operator.update.phase.verifying_images",
+    "lang": "hu",
+    "value": "Alkalmazásképek ellenőrzése"
+  },
+  {
+    "_id": "i18n-message-hu-operator-update-phase-waiting-for-health",
+    "key": "operator.update.phase.waiting_for_health",
+    "lang": "hu",
+    "value": "Várakozás az alkalmazás indulására"
+  },
+  {
+    "_id": "i18n-message-hu-operator-update-refresh",
+    "key": "operator.update.refresh",
+    "lang": "hu",
+    "value": "Frissítések keresése"
+  },
+  {
+    "_id": "i18n-message-hu-operator-update-rollback",
+    "key": "operator.update.rollback",
+    "lang": "hu",
+    "value": "Előző verzió visszaállítása"
+  },
+  {
+    "_id": "i18n-message-hu-operator-update-rollingback",
+    "key": "operator.update.rollingback",
+    "lang": "hu",
+    "value": "Előző verzió visszaállítása…"
+  },
+  {
+    "_id": "i18n-message-hu-operator-update-subtitle",
+    "key": "operator.update.subtitle",
+    "lang": "hu",
+    "value": "A telepítés ellenőrzése és frissítése"
   }
 ]
