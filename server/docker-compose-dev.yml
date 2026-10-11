@@ -3,6 +3,34 @@ networks:
   myscoutee:
     driver: bridge
 services:
+  mcp:
+    image: ${MCP_DEV_IMAGE:-myscoutee-template-mcp:1.0.0-dev}
+    build:
+      context: ../mcp
+      dockerfile: Dockerfile
+    container_name: myscoutee-template-dev-mcp
+    hostname: mcp
+    restart: "no"
+    environment:
+      MYSCOUTEE_MCP_TRANSPORT: http
+      MYSCOUTEE_MCP_LISTEN: 0.0.0.0:8080
+      MYSCOUTEE_API_BASE_URL: http://profilemanagement:8080
+      MYSCOUTEE_PUBLIC_API_BASE_URL: ${MYSCOUTEE_PUBLIC_API_BASE_URL:-http://localhost/api}
+    networks:
+      - myscoutee
+    read_only: true
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    mem_limit: 128m
+    healthcheck:
+      test: ["CMD", "/myscoutee-mcp", "healthcheck"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 5s
+
   mongodb:
     extends:
       file: docker-compose.replicaset.yml
@@ -249,6 +277,8 @@ services:
     networks:
     - myscoutee
     depends_on:
+      mcp:
+        condition: service_healthy
       profilemanagement:
         condition: service_healthy
       frontend-sync:

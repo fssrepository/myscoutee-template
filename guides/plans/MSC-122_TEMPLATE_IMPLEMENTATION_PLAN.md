@@ -266,6 +266,12 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     policy and migration012. See `MSC122_TEMPLATE_API_MCP_20261011.json`. The API
     settings/authorization UI, privileged operations and full MCP server/ChatGPT
     round trip remain pending; this backend checkpoint does not close the step.
+    The native Go transport is selected under `mcp/` after source `c11b292`
+    separated product build inputs. Eight selected Go race tests, 11 Java tests
+    and the complete 17-case dev HTTP collection pass, including actual public
+    help, private member/admin tools, Full role discovery, blocking, rotation and
+    revocation. See `MSC122_TEMPLATE_MCP_TRANSPORT_20261011.json`. External
+    provider acceptance, public callbacks and deployment gates remain distinct.
 
 13. **Build the frontend foundation and both adapter modes — IN PROGRESS.**
     Work inside the existing local frontend submodule and reuse the shared
@@ -423,7 +429,7 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     auditing. Close with real HTTP mutation/read/reload checks and negative
     authorization checks on the standalone template E2E stack.
     The shared collection/HTTP/assertion/session helpers are now selected unchanged;
-    thirteen initial contract/session cases run against the dev backend. This preliminary
+    seventeen contract/session/MCP cases now pass against the dev backend. This preliminary
     qualification does not close disposable E2E fixtures or mutation flows.
 
 22. **Implement frontend E2E and local/HTTP parity checks — PENDING.**

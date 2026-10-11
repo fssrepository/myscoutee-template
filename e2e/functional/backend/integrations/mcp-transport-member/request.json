@@ -1,0 +1,16 @@
+{
+  "name": "member MCP HTTP transport uses native OAuth and retained capabilities",
+  "group": "integrations",
+  "order": 14,
+  "method": "GET",
+  "path": "{{apiPrefix}}/integrations/settings",
+  "headers": {
+    "X-App-Session-Kind": "demo",
+    "X-Demo-User-Id": "{{userId}}"
+  },
+  "expectedStatus": 200,
+  "maxMs": 5000,
+  "qaBranches": [
+    "T-INTEGRATION-008"
+  ]
+}

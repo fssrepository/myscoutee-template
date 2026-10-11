@@ -153,17 +153,36 @@ function parseBody(text, contentType = '') {
 }
 
 function toCurl(method, url, init) {
-  const parts = ['curl', '-i', '-X', shellQuote(method), shellQuote(url)];
+  const safeUrl = new URL(url);
+  for (const key of safeUrl.searchParams.keys()) {
+    if (isCredential(key)) safeUrl.searchParams.set(key, '[REDACTED]');
+  }
+  const parts = ['curl', '-i', '-X', shellQuote(method), shellQuote(safeUrl)];
   for (const [key, value] of Object.entries(init.headers ?? {})) {
     if (value === undefined) {
       continue;
     }
-    parts.push('-H', shellQuote(`${key}: ${value}`));
+    const sensitive = /^(authorization|proxy-authorization|cookie|x-app-session-(?:id|token)|x-api-key)$/i.test(key);
+    parts.push('-H', shellQuote(`${key}: ${sensitive ? '[REDACTED]' : value}`));
   }
   if (init.body !== undefined && typeof init.body === 'string') {
-    parts.push('--data', shellQuote(init.body));
+    const contentType = Object.entries(init.headers ?? {}).find(([key]) => key.toLowerCase() === 'content-type')?.[1] ?? '';
+    let body = '[REDACTED]';
+    if (contentType.includes('application/json')) {
+      try { body = JSON.stringify(JSON.parse(init.body), (key, value) => isCredential(key) ? '[REDACTED]' : value); }
+      catch { /* Malformed request bodies are not safe diagnostic output. */ }
+    } else if (contentType.includes('application/x-www-form-urlencoded')) {
+      const form = new URLSearchParams(init.body);
+      for (const key of form.keys()) if (isCredential(key)) form.set(key, '[REDACTED]');
+      body = form.toString();
+    }
+    parts.push('--data', shellQuote(body));
   }
   return parts.join(' ');
+}
+
+function isCredential(key) {
+  return /^(?:authorization|password|secret|token|access_?token|refresh_?token|id_?token|client_?secret|code|code_?verifier|session_?token|api_?key)$/i.test(key);
 }
 
 function shellQuote(value) {

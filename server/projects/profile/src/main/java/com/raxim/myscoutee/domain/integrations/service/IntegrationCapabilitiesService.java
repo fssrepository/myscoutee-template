@@ -34,7 +34,9 @@ public class IntegrationCapabilitiesService {
         String profileId = profile.getUserId();
         if (roles.privileged(profile)) {
             return new IntegrationConnectDto(true, IntegrationTokenService.MAX_BATCH_SIZE,
-                    profileId, profile.getName(), null, null, List.of(), List.of(), client.accessMode());
+                    profileId, profile.getName(), null, null,
+                    client.accessMode().allowsRead() && roles.admin(profile) ? List.of("adminOverview") : List.of(),
+                    List.of(), client.accessMode());
         }
         if (products.isPresent()) return products.get().describe(profile, client.accessMode());
         return new IntegrationConnectDto(true, IntegrationTokenService.MAX_BATCH_SIZE,

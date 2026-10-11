@@ -1,8 +1,9 @@
 import assert from 'node:assert/strict';
 import { createHash, randomBytes, randomUUID } from 'node:crypto';
 import { saveAccess, restoreAccess } from './access-fixture.mjs';
+import { assertMcpTransport, mcpRequest } from './mcp-transport.mjs';
 
-export async function assertMcpFlow({ ctx, result, request }, dynamic = false) {
+export async function assertMcpFlow({ ctx, result, request }, dynamic = false, transportRole = null) {
   const previous = result.data;
   const headers = request.headers;
   const path = `${ctx.vars.apiPrefix}/integrations`;
@@ -57,17 +58,34 @@ export async function assertMcpFlow({ ctx, result, request }, dynamic = false) {
     const apiHeaders = { Authorization: `Bearer ${grant.access_token}` };
     const connected = (await ctx.http.post(`${path}/v1/connect`, { headers: apiHeaders })).data;
     assert.equal(connected.profileId, ctx.vars.userId);
-    await ctx.http.get(`${path}/v1/chats`, { headers: apiHeaders });
+    await ctx.http.get(`${path}/v1/${transportRole === 'admin' ? 'query/admin/overview' : 'chats'}`, { headers: apiHeaders });
+    if (transportRole) {
+      await assertMcpTransport(ctx, grant.access_token, transportRole);
+      let settings = (await ctx.http.get(`${path}/settings`, { headers })).data;
+      await saveAccess(ctx, headers, settings, { mcpAccess: 'full', clients: [{ id: tokenId, accessMode: 'full' }] });
+      const catalog = (await mcpRequest(ctx, grant.access_token, 'events/list')).data.result;
+      assert.deepEqual(catalog.events.map(event => event.name), transportRole === 'admin' ? ['admin.attention'] : []);
+      settings = (await ctx.http.get(`${path}/settings`, { headers })).data;
+      await saveAccess(ctx, headers, settings, { mcpAccess: 'blocked' });
+      await mcpRequest(ctx, grant.access_token, 'tools/list', {}, 401);
+      settings = (await ctx.http.get(`${path}/settings`, { headers })).data;
+      await saveAccess(ctx, headers, settings, { mcpAccess: 'read', clients: [{ id: tokenId, accessMode: 'read' }] });
+    }
     await exchange(codeRequest, 400);
     const rotated = (await exchange({ grant_type: 'refresh_token', refresh_token: grant.refresh_token })).data;
     assert.notEqual(rotated.access_token, grant.access_token);
     await ctx.http.post(`${path}/v1/connect`, { headers: apiHeaders, expectedStatus: 401 });
-    await ctx.http.get(`${path}/v1/notifications`, { headers: { Authorization: `Bearer ${rotated.access_token}` } });
+    await ctx.http.get(`${path}/v1/${transportRole === 'admin' ? 'query/admin/overview' : 'notifications'}`, { headers: { Authorization: `Bearer ${rotated.access_token}` } });
+    if (transportRole) {
+      await mcpRequest(ctx, grant.access_token, 'tools/list', {}, 401);
+      await mcpRequest(ctx, rotated.access_token, 'tools/list');
+    }
     await ctx.http.delete(`${path}/mcp/clients/${tokenId}`, { headers });
     await ctx.http.post(`${path}/v1/connect`, {
       headers: { Authorization: `Bearer ${rotated.access_token}` }, expectedStatus: 401
     });
     await exchange({ grant_type: 'refresh_token', refresh_token: rotated.refresh_token }, 400);
+    if (transportRole) await mcpRequest(ctx, rotated.access_token, 'tools/list', {}, 401);
   } finally {
     try {
       if (!tokenId && dynamic) {

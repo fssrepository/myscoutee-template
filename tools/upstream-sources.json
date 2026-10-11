@@ -2295,9 +2295,9 @@
     },
     {
       "path": "e2e/shared/http.mjs",
-      "upstreamSha256": "2714f84734c613942875623d694263efadf97f85cfe50bb2ce21ec37e597bc92",
-      "sourceRevision": "d48270b99f6f77e930b609c1391023392a715c3c",
-      "purpose": "Shared native E2E runner and owned DEMO session lifecycle.",
+      "sourceRevision": "f46163d7b38c56c33b1b178419c5b74afac2273f",
+      "upstreamSha256": "f494ecd4e1af43115226ebffb47280e171c908875757903a672ab2f8207f83f4",
+      "purpose": "Native authorized MCP/admin read path or credential-safe E2E diagnostics.",
       "adaptation": null
     },
     {
@@ -2596,10 +2596,10 @@
     },
     {
       "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/service/IntegrationCapabilitiesService.java",
+      "sourceRevision": "f46163d7b38c56c33b1b178419c5b74afac2273f",
       "upstreamSha256": "54276e0085f357c03e56f9d8e3f3a78a5cd51ab2087ba8104ab519a85ca0c6dc",
-      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
-      "purpose": "Native API key and MCP authorization for retained personal chat and notification access.",
-      "adaptation": "Retain native personal operation discovery and role/access checks. No product operator reports or uninstalled admin overview are advertised. Generic optional capability interface remains for extensions."
+      "purpose": "Native authorized MCP/admin read path or credential-safe E2E diagnostics.",
+      "adaptation": "Only retained member communication and administrator attention operations; operator accounting reports omitted."
     },
     {
       "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/config/IntegrationTokenAuthenticationFilter.java",
@@ -5425,6 +5425,155 @@
       "upstreamSha256": "995c2b2763225ef66644dec71f7fabeac16a5d07598f9677f52208ae412b4e01",
       "purpose": "Minimal native admin moderation, support and member report/feedback UI.",
       "adaptation": "Select dashboard normalization and canonical moderation patches; use the active profile as administrator and clear cached data when that identity changes."
+    },
+    {
+      "path": "mcp/README.md",
+      "source": "https://github.com/fssrepository/myscoutee-mcp",
+      "sourceRevision": "c11b292599b3220d7f0c2a7f48bf8f83e3aa8c44",
+      "upstreamSha256": "775cbb4777bdd132e3dc1ca1a6328338a48a19dda29e350159310e528eee1af4",
+      "purpose": "Selected native MCP transport, OAuth isolation, help and role Events with five retained API input contracts.",
+      "adaptation": "Template identity/version/help guidance, selected five-operation catalog or focused retained test fixtures; no product business models."
+    },
+    {
+      "path": "mcp/Dockerfile",
+      "source": "https://github.com/fssrepository/myscoutee-mcp",
+      "sourceRevision": "c11b292599b3220d7f0c2a7f48bf8f83e3aa8c44",
+      "upstreamSha256": "d4eccc270647211511a76d6bfa13d75fd4dabcfae2ccc019178b5bdcd2cd3f61",
+      "purpose": "Selected native MCP transport, OAuth isolation, help and role Events with five retained API input contracts.",
+      "adaptation": null
+    },
+    {
+      "path": "mcp/go.mod",
+      "source": "https://github.com/fssrepository/myscoutee-mcp",
+      "sourceRevision": "c11b292599b3220d7f0c2a7f48bf8f83e3aa8c44",
+      "upstreamSha256": "74c324daafa8f03c9330144f582b5edc5c5f6f1ac31b52c3bf7cb89463dd6b46",
+      "purpose": "Selected native MCP transport, OAuth isolation, help and role Events with five retained API input contracts.",
+      "adaptation": null
+    },
+    {
+      "path": "mcp/go.sum",
+      "source": "https://github.com/fssrepository/myscoutee-mcp",
+      "sourceRevision": "c11b292599b3220d7f0c2a7f48bf8f83e3aa8c44",
+      "upstreamSha256": "3428bb779aa11abf2a99c1830bd3c7ff701ed30185a6de3b06af5d3fec3cde53",
+      "purpose": "Selected native MCP transport, OAuth isolation, help and role Events with five retained API input contracts.",
+      "adaptation": null
+    },
+    {
+      "path": "mcp/Makefile",
+      "source": "https://github.com/fssrepository/myscoutee-mcp",
+      "sourceRevision": "c11b292599b3220d7f0c2a7f48bf8f83e3aa8c44",
+      "upstreamSha256": "747e7ceae71766637edb5fdf4bb4f6450dbef131d06d0f137046c992902eb5fc",
+      "purpose": "Selected native MCP transport, OAuth isolation, help and role Events with five retained API input contracts.",
+      "adaptation": "Template identity/version/help guidance, selected five-operation catalog or focused retained test fixtures; no product business models."
+    },
+    {
+      "path": "mcp/internal/server/server_test.go",
+      "source": "https://github.com/fssrepository/myscoutee-mcp",
+      "sourceRevision": "c11b292599b3220d7f0c2a7f48bf8f83e3aa8c44",
+      "upstreamSha256": "de385f126b0c3a19c2a7aa726c8475f5c0226f31bb24c34e5e6aca7c2503a6f0",
+      "purpose": "Selected native MCP transport, OAuth isolation, help and role Events with five retained API input contracts.",
+      "adaptation": "Template identity/version/help guidance, selected five-operation catalog or focused retained test fixtures; no product business models."
+    },
+    {
+      "path": "mcp/internal/server/product.go",
+      "source": "https://github.com/fssrepository/myscoutee-mcp",
+      "sourceRevision": "c11b292599b3220d7f0c2a7f48bf8f83e3aa8c44",
+      "upstreamSha256": "65c9a0e56fcb36b37c87ef2d18fb62a961faaa7ed31069fe05e455f6def14e3a",
+      "purpose": "Selected native MCP transport, OAuth isolation, help and role Events with five retained API input contracts.",
+      "adaptation": "Template identity/version/help guidance, selected five-operation catalog or focused retained test fixtures; no product business models."
+    },
+    {
+      "path": "mcp/internal/server/events.go",
+      "source": "https://github.com/fssrepository/myscoutee-mcp",
+      "sourceRevision": "c11b292599b3220d7f0c2a7f48bf8f83e3aa8c44",
+      "upstreamSha256": "385f13a92f9912f3ba22895749477c6d1c32cbbd4c940e5f6ecf53bd3a1f4dd7",
+      "purpose": "Selected native MCP transport, OAuth isolation, help and role Events with five retained API input contracts.",
+      "adaptation": null
+    },
+    {
+      "path": "mcp/internal/server/help.go",
+      "source": "https://github.com/fssrepository/myscoutee-mcp",
+      "sourceRevision": "c11b292599b3220d7f0c2a7f48bf8f83e3aa8c44",
+      "upstreamSha256": "9fd45f3d044c75348a8754b5370471891207e493ea601eec25a3d5f05f704f5c",
+      "purpose": "Selected native MCP transport, OAuth isolation, help and role Events with five retained API input contracts.",
+      "adaptation": null
+    },
+    {
+      "path": "mcp/internal/server/server.go",
+      "source": "https://github.com/fssrepository/myscoutee-mcp",
+      "sourceRevision": "c11b292599b3220d7f0c2a7f48bf8f83e3aa8c44",
+      "upstreamSha256": "8cdc5388b418fb9b9c094a1e591fd0ebf03b1af329eb8de632524b4db4b96cbc",
+      "purpose": "Selected native MCP transport, OAuth isolation, help and role Events with five retained API input contracts.",
+      "adaptation": null
+    },
+    {
+      "path": "mcp/internal/server/events_test.go",
+      "source": "https://github.com/fssrepository/myscoutee-mcp",
+      "sourceRevision": "c11b292599b3220d7f0c2a7f48bf8f83e3aa8c44",
+      "upstreamSha256": "846e5f48af4a2f9b0f2cb6f6efb3742074ac4febca4866f7ad9c92e2cf477f86",
+      "purpose": "Selected native MCP transport, OAuth isolation, help and role Events with five retained API input contracts.",
+      "adaptation": "Template identity/version/help guidance, selected five-operation catalog or focused retained test fixtures; no product business models."
+    },
+    {
+      "path": "mcp/internal/api/events.go",
+      "source": "https://github.com/fssrepository/myscoutee-mcp",
+      "sourceRevision": "c11b292599b3220d7f0c2a7f48bf8f83e3aa8c44",
+      "upstreamSha256": "2c134f979a7bc69d29942637c96bd3cdca95c7394f6d6fbd9192a387f795fadb",
+      "purpose": "Selected native MCP transport, OAuth isolation, help and role Events with five retained API input contracts.",
+      "adaptation": null
+    },
+    {
+      "path": "mcp/internal/api/client_test.go",
+      "source": "https://github.com/fssrepository/myscoutee-mcp",
+      "sourceRevision": "c11b292599b3220d7f0c2a7f48bf8f83e3aa8c44",
+      "upstreamSha256": "2129bfab3733801cddd06b3816d02d30a761be2439371276183ab054d439f8ae",
+      "purpose": "Selected native MCP transport, OAuth isolation, help and role Events with five retained API input contracts.",
+      "adaptation": "Template identity/version/help guidance, selected five-operation catalog or focused retained test fixtures; no product business models."
+    },
+    {
+      "path": "mcp/internal/api/contract.json",
+      "source": "https://github.com/fssrepository/myscoutee-mcp",
+      "sourceRevision": "c11b292599b3220d7f0c2a7f48bf8f83e3aa8c44",
+      "upstreamSha256": "74ed192d2af140e456abf48ef67bca92a8106e1a29b0e40fcc494c3ad85d25dc",
+      "purpose": "Selected native MCP transport, OAuth isolation, help and role Events with five retained API input contracts.",
+      "adaptation": "Template identity/version/help guidance, selected five-operation catalog or focused retained test fixtures; no product business models."
+    },
+    {
+      "path": "mcp/internal/api/client.go",
+      "source": "https://github.com/fssrepository/myscoutee-mcp",
+      "sourceRevision": "c11b292599b3220d7f0c2a7f48bf8f83e3aa8c44",
+      "upstreamSha256": "c81dc0c5647b0e9580245553051f1be8af56c9e490d89c12a415e3acae074965",
+      "purpose": "Selected native MCP transport, OAuth isolation, help and role Events with five retained API input contracts.",
+      "adaptation": null
+    },
+    {
+      "path": "mcp/cmd/myscoutee-mcp/main.go",
+      "source": "https://github.com/fssrepository/myscoutee-mcp",
+      "sourceRevision": "c11b292599b3220d7f0c2a7f48bf8f83e3aa8c44",
+      "upstreamSha256": "237777dfc3318ad7800c4f53ded5f2baf4b3ed95b2d9f5853b48cad187478d42",
+      "purpose": "Selected native MCP transport, OAuth isolation, help and role Events with five retained API input contracts.",
+      "adaptation": null
+    },
+    {
+      "path": "e2e/shared/http.test.mjs",
+      "sourceRevision": "f46163d7b38c56c33b1b178419c5b74afac2273f",
+      "upstreamSha256": "d8b3dffaecfd88e479b5565216e3f2c7ec85ac18285a5f0a984066cb5a4946bc",
+      "purpose": "Native authorized MCP/admin read path or credential-safe E2E diagnostics.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/controller/IntegrationRoleReadController.java",
+      "sourceRevision": "f46163d7b38c56c33b1b178419c5b74afac2273f",
+      "upstreamSha256": "0948b53373c716217d21c671a50ba03ec6de46c213b5602547b6a6cf6597fbcc",
+      "purpose": "Native authorized MCP/admin read path or credential-safe E2E diagnostics.",
+      "adaptation": "Only retained member communication and administrator attention operations; operator accounting reports omitted."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/controller/McpEventsController.java",
+      "sourceRevision": "f46163d7b38c56c33b1b178419c5b74afac2273f",
+      "upstreamSha256": "f92fd8d489ee12802d415b33431c805ebdad42de1f1d603d0294c27c6917d487",
+      "purpose": "Native authorized MCP/admin read path or credential-safe E2E diagnostics.",
+      "adaptation": null
     }
   ],
   "templateOwnedFeatures": [

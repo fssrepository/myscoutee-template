@@ -1,5 +1,5 @@
 {
-  "name": "three seeded demo actors without the operator",
+  "name": "seeded members and admin are listed under their own role without the operator",
   "group": "identity",
   "order": 2,
   "method": "GET",

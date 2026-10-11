@@ -1,0 +1,54 @@
+{
+  "date": "2026-10-11",
+  "status": "PASS for selected native MCP and dev HTTP transport; deployment/provider gates remain open",
+  "templateBaseRevision": "b9309c3",
+  "sourceBackendRevision": "f46163d7b38c56c33b1b178419c5b74afac2273f",
+  "sourceMcpRevision": "c11b292599b3220d7f0c2a7f48bf8f83e3aa8c44",
+  "frontendRevision": "43980be115b0b8be0a9968263cd144e1194ac3f8",
+  "checks": {
+    "nativeMcp": "12 top-level Go race tests pass",
+    "templateMcp": "8 top-level selected Go race tests pass",
+    "java": {
+      "command": "tools/run-backend-junit.sh standard --tests '*IntegrationCapabilitiesServiceTest' --tests '*AdminClientServiceTest' --tests '*IntegrationTokenAuthenticationFilterTest'",
+      "tests": 11,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "http": {
+      "command": "E2E_SERVER_BASE_URL=http://localhost node e2e/functional/backend/run.mjs",
+      "passed": 17,
+      "failed": 0,
+      "skipped": 0,
+      "scope": [
+        "Actual nginx/Go/Java/Mongo boundary",
+        "Public EN/HU active help/topic/resource without login",
+        "MCP 2.0 discovery identity/version and private no-store",
+        "Public DCR, own member/admin consent and PKCE",
+        "Only four retained member operations or administrator attention",
+        "No unselected product tool registration; forged caller identity and inaccessible chat denied",
+        "Full role catalog, main-pack block/read restoration, refresh rotation and revocation",
+        "Native fixture session cleanup and access preferences restored"
+      ]
+    },
+    "httpDiagnostics": "Focused native test proves actual credentials sent but removed from diagnostic curl output"
+  },
+  "nativeCorrection": "The existing raw MCP 2.0 Events test omitted required per-request metadata and Mcp-Method. Fixed only the fixture; no protocol validation weakened.",
+  "templateCorrections": [
+    "Selected the native Events controller for the existing role Events service.",
+    "Selected the native admin overview integration route; optional analytics remains absent.",
+    "Demo-role collection assertion now follows the canonical admin classification selected in the previous UI batch."
+  ],
+  "performance": {
+    "classification": "diagnostic only; not matched performance parity",
+    "mcpCpuPercent": 0.0,
+    "mcpMemoryMiB": 7.848,
+    "mcpMemoryLimitMiB": 128,
+    "note": "No new polling, cache or per-user database owner. Capability discovery remains per request; HTTP MCP reuses its verified handshake within that request."
+  },
+  "limitations": [
+    "Standalone E2E artifacts, KVM, production and package deployment remain pending",
+    "Actual external ChatGPT/provider conversation and public HTTPS callback delivery are not proven",
+    "No performance-parity claim"
+  ]
+}
