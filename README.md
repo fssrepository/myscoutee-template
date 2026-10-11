@@ -17,7 +17,9 @@ infrastructure into a reusable project template.
 account, session, consent, access-policy, help/guide and deployment/Firebase code is covered by
 102 focused JUnit tests across staged runs. The notification checkpoint adds 75
 standard tests and one embedded MongoDB test; personal/support chat adds 24
-focused tests. HTTP composition, frontend, seed and
+focused tests. Minimal profile saving, location updates and localization now have
+focused checks, including preservation of account fields omitted from the small
+profile form. HTTP composition, the account purge worker, frontend, seed and
 installation are still being implemented; this is not yet a runnable release.
 
 ## Target and local repository layout
@@ -95,6 +97,11 @@ push delivery. Product chat creators, metrics and event navigation are omitted.
 A personal chat requires its existing approved contact pair; reopening it does
 not overwrite the conversation. These are component checks, not live deployment
 qualification.
+
+Localization keeps native REAL/DEMO caches and change-stream invalidation.
+Location handling keeps native geospatial lookup and targeted coordinate writes;
+the region eligibility gate is configurable. The small profile response omits
+product fields without clearing those fields in the stored account on save.
 
 Staged test evidence is in [`guides/qualification/evidence`](guides/qualification/evidence).
 

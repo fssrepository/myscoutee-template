@@ -1523,13 +1523,6 @@
       "adaptation": "Use the template default logo; retain native recipient exclusion, message preview, routes and durable enqueue."
     },
     {
-      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/dto/AuthDtos.java",
-      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
-      "upstreamSha256": "902d3c24ab04f7eefcf68afdee4d1e9e6c13419c8c78202e75be471aca5423bf",
-      "purpose": "Native personal/support chat, message transport and required account-owned state.",
-      "adaptation": "Select native session DTOs and minimal chat counter response fields; omit unrelated product counters. Persisted Users counter records are unchanged."
-    },
-    {
       "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/chat/dto/ChatDtos.java",
       "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
       "upstreamSha256": "3c915a7b077fad671f90c09410052734a6fab5cd35d3ce7ea033c56433131ef4",
@@ -1579,25 +1572,11 @@
       "adaptation": "Select existing administrator lookup, per-scope support-count aggregation and targeted stored counter updates; omit every unrelated product counter."
     },
     {
-      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/repository/UsersRepository.java",
-      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
-      "upstreamSha256": "5180d15df42b6c92506d50056a07338a229f9aec98d8bcf5e0251980354a2f17",
-      "purpose": "Native account-owned chat counters used by the minimal communication layer.",
-      "adaptation": "Select only native account/session/purge/notification lookups and the host-tier lookup used by support counters."
-    },
-    {
       "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/api/ProfileReadState.java",
       "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
       "upstreamSha256": "683b6f4216e21c1ddf14c769c16c163a75ac50ccafd7f0f0c21ff90730fce7a7",
       "purpose": "Native account-owned chat counters used by the minimal communication layer.",
       "adaptation": "Retain stored menu counter reads. Omit invalidation of product impression, affinity and game-stack caches because those caches do not exist in the template."
-    },
-    {
-      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/service/HomeUserProfileService.java",
-      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
-      "upstreamSha256": "dc7cd766faa2b17352d9ee43945bbfa0ee586cc5b0b7674221f59050eba0b302",
-      "purpose": "Native account-owned chat counters used by the minimal communication layer.",
-      "adaptation": "Select stored chat/support/notification menu counters with native selected-account lookup. Omit product counter response fields, account enrichment and product caches; profile HTTP methods remain pending."
     },
     {
       "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/chat/service/ChatPushNotificationServiceTest.java",
@@ -1640,6 +1619,174 @@
       "upstreamSha256": "88cec5650b825208bd5a5edec2fae757f48031df03780bad05e5a2d541338df7",
       "purpose": "Native chat WebSocket configuration and media lookup indexes.",
       "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/access/api/RegionSecurity.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "cc7e6a188dc42d4f9cd298415991b1e5687c2ce7ab0b2bf1d3b94c5800ab467e",
+      "purpose": "Native localization cache and country/location infrastructure retained by the minimal identity flow.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/access/config/RegionSecurityProperties.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "094984843402c73f2c4e8c5e2a9ca4c370ca91b64fe4a564cf4a87c4e551a588",
+      "purpose": "Native localization cache and country/location infrastructure retained by the minimal identity flow.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/api/CountryDirectory.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "79fc613684f788ad3e2422cee2a12cdae4f7e68414ba902eae445ec3496ba06a",
+      "purpose": "Native localization cache and country/location infrastructure retained by the minimal identity flow.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/document/CountryPartition.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "f1e360e9be725c984de267b7f32276f9b2fd73ff67175a1861de32a67a5fb62c",
+      "purpose": "Native localization cache and country/location infrastructure retained by the minimal identity flow.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/repository/CountryPartitionsRepository.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "0d03a8947cfbe345ef449bc2488477c20d8bf1181532d0441353ec3b73f76dde",
+      "purpose": "Native localization cache and country/location infrastructure retained by the minimal identity flow.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/service/CountryPartitionService.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "e7b3d6ae77773b7a7876438f78a5065ee888df885f1d9248b9fd5112152e92b2",
+      "purpose": "Native localization cache and country/location infrastructure retained by the minimal identity flow.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/localization/api/TranslationBundles.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "4d1ad3cc15db2000d2ee228236ba1f1832bbdb9902d85d4b7394e47141ec7275",
+      "purpose": "Native localization cache and country/location infrastructure retained by the minimal identity flow.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/localization/controller/I18nMessageRestController.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "76e0d885099153b71a099e143dbc2967b36ec52e723d9cd8a418c8ed5fd308be",
+      "purpose": "Native localization cache and country/location infrastructure retained by the minimal identity flow.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/localization/dto/I18nBundleResponseDto.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "2233358b175ef8b4fa788c8dd2342c80dcb861c6007133879d7cbeb73d732809",
+      "purpose": "Native localization cache and country/location infrastructure retained by the minimal identity flow.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/localization/document/I18nBundle.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "51f6d37c80247c5d6d3bc319faf353654396e8ea6a2af7e6f6582989179832d8",
+      "purpose": "Native localization cache and country/location infrastructure retained by the minimal identity flow.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/localization/document/I18nMessage.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "e0b00a740ec67f6ac218d9754af8cc9c2200e944fe4d4f2f852e612a94e7a2ac",
+      "purpose": "Native localization cache and country/location infrastructure retained by the minimal identity flow.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/localization/repository/I18nBundleRepository.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "759ef831623c58254d10d248d108d690d1dbc2499a52c6292a397b50292c7999",
+      "purpose": "Native localization cache and country/location infrastructure retained by the minimal identity flow.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/localization/repository/I18nMessageRepository.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "3101beb21ab7f2da8bdf770256b689b63f0a70fb3a75224482e4489a0ecb879e",
+      "purpose": "Native localization cache and country/location infrastructure retained by the minimal identity flow.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/localization/service/I18nService.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "766299bd9c04769774f3d238de32c86afc06bf941d06222b3670e7bbd94292e7",
+      "purpose": "Native localization cache and country/location infrastructure retained by the minimal identity flow.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/common/dto/SharedDtos.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "61123bacb21b1be2c0286983b0cc9efbbc97cf3462fa34d36ee2dd0e0c84857a",
+      "purpose": "Native localization cache and country/location infrastructure retained by the minimal identity flow.",
+      "adaptation": "Select only the unchanged latitude/longitude DTO needed by profile/location validation."
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/platform/service/CountryPartitionServiceTest.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "d0a85694ce30bc97a025c0e2d3d7d17de7620a062f791b702e418ddc9e282d70",
+      "purpose": "Native localization cache and country/location infrastructure retained by the minimal identity flow.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/localization/service/I18nServiceTest.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "6b3c4bbcda5ac3bebd7532d330a4d7555b42a9e206d5a272832722cf8fcd5a09",
+      "purpose": "Native localization cache and country/location infrastructure retained by the minimal identity flow.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/document/UserSessionAction.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "dbd730e2301106fc2a913b00c542340e63e54f47ca65d3d1acbebdf7298ffc2a",
+      "purpose": "Native minimal profile, session and account lifecycle endpoints.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/repository/UserSessionActionsRepository.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "1365e9a8c87cc3a8ecf336b44a71554c569d3e2fbcf29cf42310e268b277230e",
+      "purpose": "Native minimal profile, session and account lifecycle endpoints.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/service/ProfileStatusWork.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "11b7410b50a13206daa2e296fee44f6bed764682ee55ac6b046f17b22556e7c7",
+      "purpose": "Native minimal profile, session and account lifecycle endpoints.",
+      "adaptation": "Omit product affinity propagation; retain persisted support work, compare-and-clear completion, retries and change-stream recovery."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/dto/AuthDtos.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "902d3c24ab04f7eefcf68afdee4d1e9e6c13419c8c78202e75be471aca5423bf",
+      "purpose": "Native minimal profile, session and account lifecycle endpoints.",
+      "adaptation": "Select native session, minimal profile and chat counter JSON fields. Omit product affinity, event, asset, payment, community, experience and profile-completion inputs; retained persisted Users fields are unchanged."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/repository/UsersRepository.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "5180d15df42b6c92506d50056a07338a229f9aec98d8bcf5e0251980354a2f17",
+      "purpose": "Native minimal profile, session and account lifecycle endpoints.",
+      "adaptation": "Select native account/session/purge/notification/support lookups and the targeted location-field update."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/service/HomeUserProfileService.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "dc7cd766faa2b17352d9ee43945bbfa0ee586cc5b0b7674221f59050eba0b302",
+      "purpose": "Native minimal profile, session and account lifecycle endpoints.",
+      "adaptation": "Select native profile/session/account lifecycle and location logic with minimal JSON fields. Preserve omitted stored fields and server-owned privilege/identity data. Omit affinity, affiliate, community, event, asset, payment and experience enrichment/cache work; use deployment purge scope and no Hungary seed-country fallback. Demo selection keeps role checks and batched coordinate validation; realtime response retains chat/notification/device state only."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/controller/AuthController.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "d46269d671d610cc4833b54f65a01620a99200219a9b916ff005577fb115f368",
+      "purpose": "Native minimal identity, profile, eligibility and session HTTP endpoints.",
+      "adaptation": "Omit community workspace loading, product filters/feedback/report endpoints; retain login/logout/delete/profile policy annotations and native location validation."
     }
   ]
 }

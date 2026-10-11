@@ -20,4 +20,7 @@ public interface UsersRepository extends MongoRepository<Users, String> {
 
     @Query(value = "{}", sort = "{ 'name': 1, 'userId': 1 }", collation = "{ 'locale': 'en', 'strength': 2 }")
     List<Users> findAllByOrderByNameAscUserIdAsc();
+    @Query("{ 'userId': ?0 }")
+    @org.springframework.data.mongodb.repository.Update("{ '$set': { 'locationCoordinates': ?1, 'partitionKey': ?2 } }")
+    long updateLocation(String userId, Users.LocationCoordinatesRecord coordinates, String partitionKey);
 }

@@ -1,5 +1,8 @@
 package com.raxim.myscoutee.domain.accounts.dto;
 
+import java.util.List;
+import com.raxim.myscoutee.common.dto.SharedDtos.LocationCoordinatesDto;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -65,5 +68,41 @@ public final class AuthDtos {
             Integer solved,
             Integer blocked,
             Integer all) {
+    }
+    public record UserDto(String id, String name, String city, String initials, String gender,
+            LocationCoordinatesDto locationCoordinates, String partitionKey, List<String> images,
+            String profileStatus, String previousProfileStatus, String deletedAtIso,
+            Boolean admin, Boolean operator, UserMenuCountersDto activities,
+            UserNotificationPreferencesDto notificationPreferences) {}
+
+    public record UserByIdResponseDto(String id, String name, String city, String initials, String gender,
+            LocationCoordinatesDto locationCoordinates, String partitionKey, List<String> images,
+            String profileStatus, String previousProfileStatus, String deletedAtIso,
+            Boolean admin, Boolean operator, UserMenuCountersDto activities,
+            UserNotificationPreferencesDto notificationPreferences,
+            UserMenuCountersDto counterOverrides) {}
+
+    public record ProfileExtDto(UserDto profile) {}
+    public record ProfileExtByIdResponseDto(ProfileExtDto profileExt, UserMenuCountersDto counterOverrides) {}
+    public record DemoUserListItemDto(String id, LocationCoordinatesDto locationCoordinates,
+            boolean locationRequired, String name, String city, String initials, String avatarUrl,
+            String gender, String statusText, Integer completion, Integer profileFormVersion,
+            String status, String profileStatus, String deletedAtIso) {}
+    public record UserRealtimeLongPollRequestDto(String userId, String cursor) {}
+    public record UserRealtimeLongPollResponseDto(String userId, String profileStatus,
+            LocationCoordinatesDto locationCoordinates, UserMenuCountersDto counters,
+            List<UserNotificationDeviceDto> notificationDevices, String cursor, String serverTsIso) {}
+
+    public record UserLocationEligibilityResponseDto(
+            boolean eligible,
+            String partitionKey,
+            String message,
+            boolean securityGateEnabled,
+            boolean locationRequired) {
+    }
+    public record UserNotificationPreferencesDto(
+            Boolean muted) {
+    }
+    public record UserNotificationDeviceDto(String deviceId, boolean notificationsEnabled) {
     }
 }
