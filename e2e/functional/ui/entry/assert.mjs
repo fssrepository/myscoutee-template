@@ -1,6 +1,6 @@
 import { assert } from '../../../shared/assertions.mjs';
 
-export async function assertUi({ page, ctx, local = ctx?.mode !== 'full', memberReady }) {
+export async function assertUi({ page, ctx, local = ctx?.mode !== 'full', memberReady, actorId = '100000000000000000000001', actorName = 'Alex Morgan', consentExpected = true }) {
   await page.navigate('/privacy-policy');
   await page.waitForSelector('.document-viewer-section-body');
   await page.waitForText('Privacy information');
@@ -11,14 +11,17 @@ export async function assertUi({ page, ctx, local = ctx?.mode !== 'full', member
   await page.waitForText('v1.0.0');
   if (local) await page.clickVisible('.entry-actions .primary');
   else await page.clickByText('.entry-actions button', 'Explore');
-  await page.waitForSelector('app-document-viewer [role="dialog"]');
-  await page.clickByText('app-document-viewer button', 'Accept and continue');
-  await page.waitForSelector('.demo-user-item[data-user-id="100000000000000000000001"]');
-  await page.clickVisible('.demo-user-item[data-user-id="100000000000000000000001"]');
+  if (consentExpected) {
+    await page.waitForSelector('app-document-viewer [role="dialog"]');
+    await page.clickByText('app-document-viewer button', 'Accept and continue');
+  }
+  await page.waitForSelector(`.demo-user-item[data-user-id="${actorId}"]`);
+  assert(!await page.isSelectorVisible('app-document-viewer [role="dialog"]'), 'Accepted browser consent must allow profile selection');
+  await page.clickVisible(`.demo-user-item[data-user-id="${actorId}"]`);
   await page.waitForUrlPath('/home', 30000);
-  await page.waitForText('Alex Morgan');
+  await page.waitForText(actorName);
   await page.navigate('/home');
-  await page.waitForText('Alex Morgan');
+  await page.waitForText(actorName);
   assert(new URL(await page.evaluate(() => location.href)).pathname === '/home', 'Session and consent must survive reload');
   const snapshot = await page.evaluate(async () => {
     const databases = await indexedDB.databases();
@@ -35,7 +38,7 @@ export async function assertUi({ page, ctx, local = ctx?.mode !== 'full', member
   });
   if (local) {
     assert(snapshot?.users === 4, 'Local seed contains the four template actors');
-    assert(snapshot.consentUserIds.includes('100000000000000000000001'), 'Consent must be persisted in IndexedDB');
+    assert(snapshot.consentUserIds.includes(actorId), 'Consent must be persisted in IndexedDB');
     assert(!page.network.some(request => new URL(request.url).pathname.startsWith('/api/')), 'Local mode must not call the Java API');
   } else {
     assert(!snapshot?.users, 'HTTP entry must not seed browser-local demo users');

@@ -1058,7 +1058,7 @@
       "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
       "upstreamSha256": "939c31c9f8590263a8755a9ff26341d3a0a198fdc4e83ffab9aec67274d3ffd9",
       "purpose": "Native durable notification delivery, inbox and chat transport support for the minimal application.",
-      "adaptation": "Retain native notification limits and account-purge window bounds without the product affinity catalog; configure purge days through users.account-purge-window-days (default 30, native allowed range 1–365)."
+      "adaptation": "Retain native notification limits and account-purge window bounds without the product affinity catalog; configure purge days through users.account-purge-window-days (default 30, native allowed range 1\u2013365)."
     },
     {
       "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/common/redis/RedisStreamRetentionService.java",
@@ -2989,10 +2989,10 @@
     {
       "path": "frontend/src/app/shared/core/common/app.db.ts",
       "upstreamSha256": "ef57b401cc6a766913ca928b4511af3f2c7266e12c3ca6733e440edfe1765fc7",
-      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
-      "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
-      "sourceRevision": "bfc9a167c",
-      "sourceFrontendRevision": "5fbf3e62"
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9",
+      "purpose": "Native personal/support chat protocol, local persistence, HTTP/WebSocket transport, shared memory table or scoped fixture transport.",
+      "adaptation": "Select the personal/support chat dependency closure and minimal template composition. Omit event/group/campaign/asset navigation models, product metrics and unselected account fields; retain message IDs, ownership, paging, read receipts and reconnect behavior. Template seed IDs/data replace product actors."
     },
     {
       "path": "frontend/src/app/shared/core/common/constants.ts",
@@ -3045,10 +3045,10 @@
     {
       "path": "frontend/src/app/shared/core/common/storage-scope.ts",
       "upstreamSha256": "5f51dc037aff1c78fc64ec22bf4493031e79fb1a8d167484abc8229be3331a7e",
-      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
-      "adaptation": "Template-owned storage/cache namespace and selected retained table keys; native scoped key and object-store helpers.",
-      "sourceRevision": "e3eff359c",
-      "sourceFrontendRevision": "1af20e0b"
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9",
+      "purpose": "Native personal/support chat protocol, local persistence, HTTP/WebSocket transport, shared memory table or scoped fixture transport.",
+      "adaptation": "Select the personal/support chat dependency closure and minimal template composition. Omit event/group/campaign/asset navigation models, product metrics and unselected account fields; retain message IDs, ownership, paging, read receipts and reconnect behavior. Template seed IDs/data replace product actors."
     },
     {
       "path": "frontend/src/app/shared/core/common/user-role.ts",
@@ -3181,10 +3181,10 @@
     {
       "path": "frontend/src/app/shared/core/local/common/memory.schema.ts",
       "upstreamSha256": "7af6ef975a6f3cb07cb7842f705d6f3b64c97c84ede8e8f30bab3e93311ba74c",
-      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
-      "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
-      "sourceRevision": "bfc9a167c",
-      "sourceFrontendRevision": "5fbf3e62"
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9",
+      "purpose": "Native personal/support chat protocol, local persistence, HTTP/WebSocket transport, shared memory table or scoped fixture transport.",
+      "adaptation": "Select the personal/support chat dependency closure and minimal template composition. Omit event/group/campaign/asset navigation models, product metrics and unselected account fields; retain message IDs, ownership, paging, read receipts and reconnect behavior. Template seed IDs/data replace product actors."
     },
     {
       "path": "frontend/src/app/shared/core/local/seed/data/deployment-configuration.json",
@@ -3261,18 +3261,18 @@
     {
       "path": "frontend/src/assets/i18n/en.json",
       "upstreamSha256": "e583e163ea2e74507f91cd8d2f8c3d6c412d4475d48f830a675f22ed074ec410",
-      "purpose": "Selected native dev gateway, frontend watch/sync, availability lease, localization generator/audit or browser qualification support.",
-      "adaptation": "Template-owned service composition, retained routes, localization selection or product audit inventory.",
-      "sourceRevision": "bd81ab0c1",
-      "sourceFrontendRevision": "d64e6620"
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9",
+      "purpose": "Native personal/support chat protocol, local persistence, HTTP/WebSocket transport, shared memory table or scoped fixture transport.",
+      "adaptation": "Select the personal/support chat dependency closure and minimal template composition. Omit event/group/campaign/asset navigation models, product metrics and unselected account fields; retain message IDs, ownership, paging, read receipts and reconnect behavior. Template seed IDs/data replace product actors."
     },
     {
       "path": "frontend/src/assets/i18n/hu.json",
       "upstreamSha256": "cb9ab4093aa0c0b62b114efc9a774dc9d9193c28edbb1cba5bbede131320e902",
-      "purpose": "Selected native dev gateway, frontend watch/sync, availability lease, localization generator/audit or browser qualification support.",
-      "adaptation": "Template-owned service composition, retained routes, localization selection or product audit inventory.",
-      "sourceRevision": "bd81ab0c1",
-      "sourceFrontendRevision": "d64e6620"
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9",
+      "purpose": "Native personal/support chat protocol, local persistence, HTTP/WebSocket transport, shared memory table or scoped fixture transport.",
+      "adaptation": "Select the personal/support chat dependency closure and minimal template composition. Omit event/group/campaign/asset navigation models, product metrics and unselected account fields; retain message IDs, ownership, paging, read receipts and reconnect behavior. Template seed IDs/data replace product actors."
     },
     {
       "path": "frontend/src/environments/environment.dev.ts",
@@ -3413,10 +3413,10 @@
     {
       "path": "frontend/src/app/shared/core/base/app-utils.ts",
       "upstreamSha256": "9eda907fa85df9ad389587747925ce19a883190a6cd8ad0123a0bf51779f9f38",
-      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
-      "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
-      "sourceRevision": "bfc9a167c",
-      "sourceFrontendRevision": "5fbf3e62"
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9",
+      "purpose": "Native personal/support chat protocol, local persistence, HTTP/WebSocket transport, shared memory table or scoped fixture transport.",
+      "adaptation": "Select the personal/support chat dependency closure and minimal template composition. Omit event/group/campaign/asset navigation models, product metrics and unselected account fields; retain message IDs, ownership, paging, read receipts and reconnect behavior. Template seed IDs/data replace product actors."
     },
     {
       "path": "frontend/src/app/shared/core/base/builders/help-center-content.builder.ts",
@@ -3501,10 +3501,10 @@
     {
       "path": "frontend/src/app/shared/core/contracts/index.ts",
       "upstreamSha256": "65218a45649245b6e9a0491c97dc844d4950cd6c8dbfa2846724a5a6dcf1ebf0",
-      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
-      "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
-      "sourceRevision": "bfc9a167c",
-      "sourceFrontendRevision": "5fbf3e62"
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9",
+      "purpose": "Native personal/support chat protocol, local persistence, HTTP/WebSocket transport, shared memory table or scoped fixture transport.",
+      "adaptation": "Select the personal/support chat dependency closure and minimal template composition. Omit event/group/campaign/asset navigation models, product metrics and unselected account fields; retain message IDs, ownership, paging, read receipts and reconnect behavior. Template seed IDs/data replace product actors."
     },
     {
       "path": "frontend/src/app/shared/core/http/services/help-center.service.ts",
@@ -3565,10 +3565,10 @@
     {
       "path": "frontend/src/app/shared/core/local/seed/services/demo-bootstrap.service.ts",
       "upstreamSha256": "6baf530529348252d55143e510e7b52cc4437809d9d8a35953ad801cff1323d7",
-      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
-      "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
-      "sourceRevision": "bfc9a167c",
-      "sourceFrontendRevision": "5fbf3e62"
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9",
+      "purpose": "Native personal/support chat protocol, local persistence, HTTP/WebSocket transport, shared memory table or scoped fixture transport.",
+      "adaptation": "Select the personal/support chat dependency closure and minimal template composition. Omit event/group/campaign/asset navigation models, product metrics and unselected account fields; retain message IDs, ownership, paging, read receipts and reconnect behavior. Template seed IDs/data replace product actors."
     },
     {
       "path": "frontend/src/app/shared/core/local/seed/services/static-content.service.ts",
@@ -4073,6 +4073,134 @@
       "adaptation": "Template-owned service composition, retained routes, localization selection or product audit inventory.",
       "sourceRevision": "bd81ab0c1",
       "sourceFrontendRevision": "d64e6620"
+    },
+    {
+      "path": "frontend/src/app/shared/core/base/services/chats.service.ts",
+      "upstreamSha256": "63df97631d3508a8c38f5f46a45d79baf274948905aa28ece1449e47293048b5",
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9",
+      "purpose": "Native personal/support chat protocol, local persistence, HTTP/WebSocket transport, shared memory table or scoped fixture transport.",
+      "adaptation": "Select the personal/support chat dependency closure and minimal template composition. Omit event/group/campaign/asset navigation models, product metrics and unselected account fields; retain message IDs, ownership, paging, read receipts and reconnect behavior. Template seed IDs/data replace product actors."
+    },
+    {
+      "path": "frontend/src/app/shared/core/contracts/activity.interface.ts",
+      "upstreamSha256": "72ddb20f26b9119834c913804c0f18e128e657339742f81e9f4dfd2401a24e3b",
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9",
+      "purpose": "Native personal/support chat protocol, local persistence, HTTP/WebSocket transport, shared memory table or scoped fixture transport.",
+      "adaptation": "Select the personal/support chat dependency closure and minimal template composition. Omit event/group/campaign/asset navigation models, product metrics and unselected account fields; retain message IDs, ownership, paging, read receipts and reconnect behavior. Template seed IDs/data replace product actors."
+    },
+    {
+      "path": "frontend/src/app/shared/core/contracts/chat-call.interface.ts",
+      "upstreamSha256": "287f32d1a511ed9874003ec0c1127f513fc288ffa4dfa584550fd9a3451e2584",
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9",
+      "purpose": "Native personal/support chat protocol, local persistence, HTTP/WebSocket transport, shared memory table or scoped fixture transport.",
+      "adaptation": null
+    },
+    {
+      "path": "frontend/src/app/shared/core/contracts/chat.interface.ts",
+      "upstreamSha256": "b8e5bc4fd1c22a7d9969f93d883a8c0a33d20b631cdf514c6337e3ffb353fb56",
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9",
+      "purpose": "Native personal/support chat protocol, local persistence, HTTP/WebSocket transport, shared memory table or scoped fixture transport.",
+      "adaptation": "Select the personal/support chat dependency closure and minimal template composition. Omit event/group/campaign/asset navigation models, product metrics and unselected account fields; retain message IDs, ownership, paging, read receipts and reconnect behavior. Template seed IDs/data replace product actors."
+    },
+    {
+      "path": "frontend/src/app/shared/core/http/services/chats.service.ts",
+      "upstreamSha256": "4b10decceea718c7891ea4365d2c656dbafc96f2c9126c7297486e4adc6931c7",
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9",
+      "purpose": "Native personal/support chat protocol, local persistence, HTTP/WebSocket transport, shared memory table or scoped fixture transport.",
+      "adaptation": "Select the personal/support chat dependency closure and minimal template composition. Omit event/group/campaign/asset navigation models, product metrics and unselected account fields; retain message IDs, ownership, paging, read receipts and reconnect behavior. Template seed IDs/data replace product actors."
+    },
+    {
+      "path": "frontend/src/app/shared/core/local/seed/repositories/chats-seed.repository.ts",
+      "upstreamSha256": "6089fdfe93cd6abf87fd34caa3a705212aa0d04326cc67cddbf153494c913775",
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9",
+      "purpose": "Native personal/support chat protocol, local persistence, HTTP/WebSocket transport, shared memory table or scoped fixture transport.",
+      "adaptation": "Select the personal/support chat dependency closure and minimal template composition. Omit event/group/campaign/asset navigation models, product metrics and unselected account fields; retain message IDs, ownership, paging, read receipts and reconnect behavior. Template seed IDs/data replace product actors."
+    },
+    {
+      "path": "frontend/src/app/shared/core/local/source/entity/chat.entity.ts",
+      "upstreamSha256": "e9602049451a95a489d4dbac01aa3447152bb3264ee14c01b8bbf64ac36651ea",
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9",
+      "purpose": "Native personal/support chat protocol, local persistence, HTTP/WebSocket transport, shared memory table or scoped fixture transport.",
+      "adaptation": "Select the personal/support chat dependency closure and minimal template composition. Omit event/group/campaign/asset navigation models, product metrics and unselected account fields; retain message IDs, ownership, paging, read receipts and reconnect behavior. Template seed IDs/data replace product actors."
+    },
+    {
+      "path": "frontend/src/app/shared/core/local/source/entity/profile.entity.ts",
+      "upstreamSha256": "f5dc192cb13c226a8a0639df21655d71d3d3bf4e005ec2312e98d3955850c274",
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9",
+      "purpose": "Native personal/support chat protocol, local persistence, HTTP/WebSocket transport, shared memory table or scoped fixture transport.",
+      "adaptation": "Select the personal/support chat dependency closure and minimal template composition. Omit event/group/campaign/asset navigation models, product metrics and unselected account fields; retain message IDs, ownership, paging, read receipts and reconnect behavior. Template seed IDs/data replace product actors."
+    },
+    {
+      "path": "frontend/src/app/shared/core/local/source/mappers/chat-message.mapper.ts",
+      "upstreamSha256": "9d13fb757011aab2c58920e767ba0c0d0c815dd6fca782e99b83f50f4ea1c0ad",
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9",
+      "purpose": "Native personal/support chat protocol, local persistence, HTTP/WebSocket transport, shared memory table or scoped fixture transport.",
+      "adaptation": "Select the personal/support chat dependency closure and minimal template composition. Omit event/group/campaign/asset navigation models, product metrics and unselected account fields; retain message IDs, ownership, paging, read receipts and reconnect behavior. Template seed IDs/data replace product actors."
+    },
+    {
+      "path": "frontend/src/app/shared/core/local/source/mappers/chat-thread.mapper.ts",
+      "upstreamSha256": "054d88c14b870c08001aaf317a27a21e5ee5e960b8a8573f8b4f230f2cb2a733",
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9",
+      "purpose": "Native personal/support chat protocol, local persistence, HTTP/WebSocket transport, shared memory table or scoped fixture transport.",
+      "adaptation": "Select the personal/support chat dependency closure and minimal template composition. Omit event/group/campaign/asset navigation models, product metrics and unselected account fields; retain message IDs, ownership, paging, read receipts and reconnect behavior. Template seed IDs/data replace product actors."
+    },
+    {
+      "path": "frontend/src/app/shared/core/local/source/mappers/mapper.types.ts",
+      "upstreamSha256": "be0e40bcb87196ea6ee22ced25d9c0fb5a9d04ea8666e3eda317ce5f26f9b7d3",
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9",
+      "purpose": "Native personal/support chat protocol, local persistence, HTTP/WebSocket transport, shared memory table or scoped fixture transport.",
+      "adaptation": null
+    },
+    {
+      "path": "frontend/src/app/shared/core/local/source/repositories/chats.repository.spec.ts",
+      "upstreamSha256": "a80b829d8c93c7ae03bed249c99c5dec7789462ba9703eb3c2a963f28129c284",
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9",
+      "purpose": "Native personal/support chat protocol, local persistence, HTTP/WebSocket transport, shared memory table or scoped fixture transport.",
+      "adaptation": "Select the personal/support chat dependency closure and minimal template composition. Omit event/group/campaign/asset navigation models, product metrics and unselected account fields; retain message IDs, ownership, paging, read receipts and reconnect behavior. Template seed IDs/data replace product actors."
+    },
+    {
+      "path": "frontend/src/app/shared/core/local/source/repositories/chats.repository.ts",
+      "upstreamSha256": "3dcf13e1d9f7bf979bc1dfe9fc8bccea3ac535d159271585b70b90468af64278",
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9",
+      "purpose": "Native personal/support chat protocol, local persistence, HTTP/WebSocket transport, shared memory table or scoped fixture transport.",
+      "adaptation": "Select the personal/support chat dependency closure and minimal template composition. Omit event/group/campaign/asset navigation models, product metrics and unselected account fields; retain message IDs, ownership, paging, read receipts and reconnect behavior. Template seed IDs/data replace product actors."
+    },
+    {
+      "path": "frontend/src/app/shared/core/local/source/repositories/contacts.repository.ts",
+      "upstreamSha256": "5d83606236789a00067cfdc1a478f9ecccecc517eb69dbfb6efc1e6aef455f9f",
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9",
+      "purpose": "Native personal/support chat protocol, local persistence, HTTP/WebSocket transport, shared memory table or scoped fixture transport.",
+      "adaptation": "Select the personal/support chat dependency closure and minimal template composition. Omit event/group/campaign/asset navigation models, product metrics and unselected account fields; retain message IDs, ownership, paging, read receipts and reconnect behavior. Template seed IDs/data replace product actors."
+    },
+    {
+      "path": "frontend/src/app/shared/core/local/source/services/chats.service.ts",
+      "upstreamSha256": "acad801ef582d381dd118131e4670f2339d0c9b7d6e00634de93b46b64dab475",
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9",
+      "purpose": "Native personal/support chat protocol, local persistence, HTTP/WebSocket transport, shared memory table or scoped fixture transport.",
+      "adaptation": "Select the personal/support chat dependency closure and minimal template composition. Omit event/group/campaign/asset navigation models, product metrics and unselected account fields; retain message IDs, ownership, paging, read receipts and reconnect behavior. Template seed IDs/data replace product actors."
+    },
+    {
+      "path": "e2e/shared/mongo-fixture.mjs",
+      "upstreamSha256": "a1faed9d807c3ca630e6f0eae49bbb23eb2eca1afb2d4ccd84bcf77ee70fea89",
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": null,
+      "purpose": "Native personal/support chat protocol, local persistence, HTTP/WebSocket transport, shared memory table or scoped fixture transport.",
+      "adaptation": null
     }
   ],
   "templateOwnedFeatures": [
@@ -4090,6 +4218,17 @@
       "reason": "Existing MyScoutee event/activity lists carry product models excluded from this standalone example.",
       "productionSeed": "No sampleCards seed; production starts empty.",
       "query": "Bounded page; stable Mongo _id index; no per-card IO."
+    },
+    {
+      "name": "compact-chat",
+      "purpose": "Member chat page with native SmartList/SingleRow, selected native local and HTTP chat adapters.",
+      "reason": "The source event-chat popup includes event/group/campaign/resource navigation excluded from the template.",
+      "implementation": "Small component composition with avatar pill and collapse, text send/edit/delete/read, bounded history and native WebSocket reconnect. No bottom add menu.",
+      "tests": [
+        "e2e/functional/ui/chat/run-local.mjs",
+        "e2e/functional/ui/chat/run.mjs"
+      ],
+      "sourceRepair": "Native frontend bf4760f9 persists read receipts on existing participant copies; carried unchanged into the selected local repository."
     }
   ]
 }

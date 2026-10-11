@@ -316,12 +316,18 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     See `MSC122_TEMPLATE_SHOWCASE_20261011.json`. KVM remains step 24; production
     intentionally has no synthetic sample-card data.
 
-16. **Build the minimal member chat screen — PENDING.**
+16. **Build the minimal member chat screen — DONE (local and dev HTTP).**
     Connect the existing chat components and adapters to the retained backend/local
     owners. Apply the requested compact chrome: avatar pill and collapse control;
     omit the extra top action and bottom add-item “+” menu. Keep the actions needed
     for the retained conversation flow. Close with message send/edit/read/reconnect
     checks and consistent state across two participants and reload.
+    Frontend `7b3ab41`: 114 unit checks, local send/edit/read/delete/reload across
+    both participants, and two-browser HTTP delivery/reconnect/no-duplicate/
+    persistence checks passed. The native local read-receipt repair `bf4760f9`
+    passed 16 focused source tests before selection. See
+    `MSC122_TEMPLATE_CHAT_20261011.json`. Admin support UI remains step 19;
+    template KVM remains step 24.
 
 17. **Build the avatar menu, profile editor and minimal settings — PENDING.**
     Reuse the existing menu, FormFlow/profile and image-editor entry points. Show
@@ -479,7 +485,8 @@ deep-link behavior. A working `local` build alone does not close frontend work.
 
 ## Current continuation point
 
-Continue **16–19**, starting with the minimal chat in **16**. SmartList **15**
+Continue **17–19**, starting with the minimal profile/avatar in **17**. Chat **16**
+is qualified in local/dev HTTP; SmartList **15**
 is qualified locally and through the dev gateway; landing typography is in place. Local and dev HTTP entry/consent/reload/logout are
 qualified at frontend `a247371`; native frontend-sync/nginx and Mongo locale sync
 now run in the template dev monolith. See `MSC122_TEMPLATE_LOCAL_ENTRY_20261011.json`

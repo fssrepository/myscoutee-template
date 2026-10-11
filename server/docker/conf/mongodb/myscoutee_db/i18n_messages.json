@@ -10822,5 +10822,173 @@
     "key": "showcase.view.rows",
     "lang": "hu",
     "value": "Sorok"
+  },
+  {
+    "_id": "i18n-message-en-chat-connection-failed",
+    "key": "chat.connection.failed",
+    "lang": "en",
+    "value": "The conversation could not connect."
+  },
+  {
+    "_id": "i18n-message-en-chat-edited",
+    "key": "chat.edited",
+    "lang": "en",
+    "value": "Edited"
+  },
+  {
+    "_id": "i18n-message-en-chat-editing",
+    "key": "chat.editing",
+    "lang": "en",
+    "value": "Editing message"
+  },
+  {
+    "_id": "i18n-message-en-chat-empty",
+    "key": "chat.empty",
+    "lang": "en",
+    "value": "No conversations yet"
+  },
+  {
+    "_id": "i18n-message-en-chat-message",
+    "key": "chat.message",
+    "lang": "en",
+    "value": "Message"
+  },
+  {
+    "_id": "i18n-message-en-chat-message-deleted",
+    "key": "chat.message.deleted",
+    "lang": "en",
+    "value": "Message deleted"
+  },
+  {
+    "_id": "i18n-message-en-chat-messages-empty",
+    "key": "chat.messages.empty",
+    "lang": "en",
+    "value": "Start the conversation."
+  },
+  {
+    "_id": "i18n-message-en-chat-read",
+    "key": "chat.read",
+    "lang": "en",
+    "value": "Read"
+  },
+  {
+    "_id": "i18n-message-en-chat-read-failed",
+    "key": "chat.read.failed",
+    "lang": "en",
+    "value": "The read receipt could not be saved."
+  },
+  {
+    "_id": "i18n-message-en-chat-reconnecting",
+    "key": "chat.reconnecting",
+    "lang": "en",
+    "value": "Reconnecting…"
+  },
+  {
+    "_id": "i18n-message-en-chat-send-failed",
+    "key": "chat.send.failed",
+    "lang": "en",
+    "value": "The message was not saved. Please try again."
+  },
+  {
+    "_id": "i18n-message-en-chat-update-failed",
+    "key": "chat.update.failed",
+    "lang": "en",
+    "value": "The message could not be updated."
+  },
+  {
+    "_id": "i18n-message-en-collapse",
+    "key": "collapse",
+    "lang": "en",
+    "value": "Close conversation"
+  },
+  {
+    "_id": "i18n-message-en-navigation",
+    "key": "navigation",
+    "lang": "en",
+    "value": "Navigation"
+  },
+  {
+    "_id": "i18n-message-hu-chat-connection-failed",
+    "key": "chat.connection.failed",
+    "lang": "hu",
+    "value": "Nem sikerült kapcsolódni a beszélgetéshez."
+  },
+  {
+    "_id": "i18n-message-hu-chat-edited",
+    "key": "chat.edited",
+    "lang": "hu",
+    "value": "Szerkesztve"
+  },
+  {
+    "_id": "i18n-message-hu-chat-editing",
+    "key": "chat.editing",
+    "lang": "hu",
+    "value": "Üzenet szerkesztése"
+  },
+  {
+    "_id": "i18n-message-hu-chat-empty",
+    "key": "chat.empty",
+    "lang": "hu",
+    "value": "Még nincs beszélgetés"
+  },
+  {
+    "_id": "i18n-message-hu-chat-message",
+    "key": "chat.message",
+    "lang": "hu",
+    "value": "Üzenet"
+  },
+  {
+    "_id": "i18n-message-hu-chat-message-deleted",
+    "key": "chat.message.deleted",
+    "lang": "hu",
+    "value": "Üzenet törölve"
+  },
+  {
+    "_id": "i18n-message-hu-chat-messages-empty",
+    "key": "chat.messages.empty",
+    "lang": "hu",
+    "value": "Kezdd el a beszélgetést."
+  },
+  {
+    "_id": "i18n-message-hu-chat-read",
+    "key": "chat.read",
+    "lang": "hu",
+    "value": "Elolvasva"
+  },
+  {
+    "_id": "i18n-message-hu-chat-read-failed",
+    "key": "chat.read.failed",
+    "lang": "hu",
+    "value": "Az olvasási visszajelzést nem sikerült menteni."
+  },
+  {
+    "_id": "i18n-message-hu-chat-reconnecting",
+    "key": "chat.reconnecting",
+    "lang": "hu",
+    "value": "Újracsatlakozás…"
+  },
+  {
+    "_id": "i18n-message-hu-chat-send-failed",
+    "key": "chat.send.failed",
+    "lang": "hu",
+    "value": "Az üzenet nem lett elmentve. Próbáld újra."
+  },
+  {
+    "_id": "i18n-message-hu-chat-update-failed",
+    "key": "chat.update.failed",
+    "lang": "hu",
+    "value": "Az üzenetet nem sikerült frissíteni."
+  },
+  {
+    "_id": "i18n-message-hu-collapse",
+    "key": "collapse",
+    "lang": "hu",
+    "value": "Beszélgetés bezárása"
+  },
+  {
+    "_id": "i18n-message-hu-navigation",
+    "key": "navigation",
+    "lang": "hu",
+    "value": "Navigáció"
   }
 ]
