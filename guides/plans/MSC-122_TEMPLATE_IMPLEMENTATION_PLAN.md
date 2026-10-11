@@ -387,11 +387,13 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     stop, systemd and privileged-helper boundaries, TLS, permissions, fresh
     credentials, data paths, service readiness, backup/restore and removal behavior.
     Keep generic operational capabilities needed by the minimal installation.
-    Before release qualification, fix the native historical help-migration input:
-    migration008 expects active help v3 while the current seed activates v5. Keep
-    released migration checksums intact; do not copy that obsolete help/product
-    migration chain into the template. Track the native failure in
-    `MSC122_INTEGRATION_MONGO_INDEXES_20261011.json`.
+    Native source `fcce8cfa1` fixes the historical help input and adds the missing
+    forward v5 update as migration013. Twenty focused Mongo check groups pass
+    on each of KVM and monolith; see native `MSC122_HELP_V5_UPGRADE_20261011.json`.
+    Released checksums remain intact. Do not select MyScoutee's help/product
+    migrations into the template. The native test-package attempt additionally
+    found unclassified newer product/guide seeds in `check-system-seed-parity.py`;
+    reconcile that inventory before package qualification, preserving the audit.
     Separate mixed product-specific package names, image/service inventories,
     seed selections and deployment paths at the existing MyScoutee owners first
     when their current inputs cannot already express the template. Copy the
