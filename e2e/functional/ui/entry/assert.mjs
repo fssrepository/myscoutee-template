@@ -1,6 +1,6 @@
 import { assert } from '../../../shared/assertions.mjs';
 
-export async function assertUi({ page, local = true }) {
+export async function assertUi({ page, ctx, local = ctx?.mode !== 'full' }) {
   await page.navigate('/privacy-policy');
   await page.waitForSelector('.document-viewer-section-body');
   await page.waitForText('Privacy information');
@@ -9,7 +9,8 @@ export async function assertUi({ page, local = true }) {
   await page.navigate('/entry');
   await page.waitForText('Templates');
   await page.waitForText('v1.0.0');
-  await page.clickVisible('.entry-actions .primary');
+  if (local) await page.clickVisible('.entry-actions .primary');
+  else await page.clickByText('.entry-actions button', 'Explore');
   await page.waitForSelector('app-document-viewer [role="dialog"]');
   await page.clickByText('app-document-viewer button', 'Accept and continue');
   await page.waitForSelector('.demo-user-item[data-user-id="100000000000000000000001"]');
@@ -36,6 +37,11 @@ export async function assertUi({ page, local = true }) {
     assert(snapshot?.users === 4, 'Local seed contains the four template actors');
     assert(snapshot.consentUserIds.includes('100000000000000000000001'), 'Consent must be persisted in IndexedDB');
     assert(!page.network.some(request => new URL(request.url).pathname.startsWith('/api/')), 'Local mode must not call the Java API');
+  } else {
+    assert(!snapshot?.users, 'HTTP entry must not seed browser-local demo users');
+    for (const route of ['/auth/session/login', '/auth/me', '/privacy/consents']) {
+      assert(page.network.some(request => new URL(request.url).pathname === '/api' + route && request.status < 400), 'Expected real backend request: ' + route);
+    }
   }
   await page.clickByText('app-member-page button', 'Logout');
   await page.waitForUrlPath('/entry');

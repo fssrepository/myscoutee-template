@@ -2238,10 +2238,11 @@
     },
     {
       "path": "server/docker-compose-dev.yml",
-      "sourceRevision": "094af314889106cd193a4058110312c40dee9ebc",
-      "upstreamSha256": "ac992d8a54debf94be3533667ecfa075af9f36d1db4ea7dfbbec2e0d31355a75",
-      "purpose": "Native dev application/backing-service composition.",
-      "adaptation": "Select implemented backing services and backend; isolate container names and template image tags, omit product/runtime dependencies not yet selected. Complete edge/frontend/MCP/STUN/operator composition remains tracked in the plan."
+      "upstreamSha256": "89eb73f98a2e30086455f66547987d596df662bf04f7fcd0ec71b0b9bee72984",
+      "purpose": "Selected native dev gateway, frontend watch/sync, availability lease, localization generator/audit or browser qualification support.",
+      "adaptation": "Template-owned service composition, retained routes, localization selection or product audit inventory.",
+      "sourceRevision": "bd81ab0c1",
+      "sourceFrontendRevision": null
     },
     {
       "path": "server/docker-compose-prod.yml",
@@ -2732,10 +2733,10 @@
     {
       "path": "frontend/package.json",
       "upstreamSha256": "b5d3592c6ea88c61589eb50e1e6adb911b17c6158bc9c6e9c60151c2a256e26e",
-      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
-      "adaptation": "Template application composition, selected contracts or project-specific metadata/configuration; see the frontend foundation evidence.",
-      "sourceRevision": "e3eff359c",
-      "sourceFrontendRevision": "1af20e0b"
+      "purpose": "Selected native dev gateway, frontend watch/sync, availability lease, localization generator/audit or browser qualification support.",
+      "adaptation": "Template-owned service composition, retained routes, localization selection or product audit inventory.",
+      "sourceRevision": "bd81ab0c1",
+      "sourceFrontendRevision": "d64e6620"
     },
     {
       "path": "frontend/scripts/stamp-prod-build.js",
@@ -3260,18 +3261,18 @@
     {
       "path": "frontend/src/assets/i18n/en.json",
       "upstreamSha256": "e583e163ea2e74507f91cd8d2f8c3d6c412d4475d48f830a675f22ed074ec410",
-      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
-      "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
-      "sourceRevision": "bfc9a167c",
-      "sourceFrontendRevision": "5fbf3e62"
+      "purpose": "Selected native dev gateway, frontend watch/sync, availability lease, localization generator/audit or browser qualification support.",
+      "adaptation": "Template-owned service composition, retained routes, localization selection or product audit inventory.",
+      "sourceRevision": "bd81ab0c1",
+      "sourceFrontendRevision": "d64e6620"
     },
     {
       "path": "frontend/src/assets/i18n/hu.json",
       "upstreamSha256": "cb9ab4093aa0c0b62b114efc9a774dc9d9193c28edbb1cba5bbede131320e902",
-      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
-      "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
-      "sourceRevision": "bfc9a167c",
-      "sourceFrontendRevision": "5fbf3e62"
+      "purpose": "Selected native dev gateway, frontend watch/sync, availability lease, localization generator/audit or browser qualification support.",
+      "adaptation": "Template-owned service composition, retained routes, localization selection or product audit inventory.",
+      "sourceRevision": "bd81ab0c1",
+      "sourceFrontendRevision": "d64e6620"
     },
     {
       "path": "frontend/src/environments/environment.dev.ts",
@@ -3819,10 +3820,259 @@
     },
     {
       "path": "e2e/functional/ui/lib/chrome-cdp.mjs",
-      "upstreamSha256": "b130c54eb37c8d04c2563547fe788e1cb3d7c67edd2d959817c8cd7ebce74b8a",
-      "purpose": "Unchanged native isolated headless Chrome lifecycle and browser assertions.",
+      "upstreamSha256": "f0c105b9522b7b4819e56af54d9a4bcbfd48f6575a5bacd9f41d0cdc16f75805",
+      "purpose": "Selected native dev gateway, frontend watch/sync, availability lease, localization generator/audit or browser qualification support.",
       "adaptation": null,
-      "sourceRevision": "bfc9a167c"
+      "sourceRevision": "bd81ab0c1",
+      "sourceFrontendRevision": null
+    },
+    {
+      "path": "server/docker/conf/mongodb/demo_db/i18n_bundles.json",
+      "upstreamSha256": "f4541974340766c53a4b698eedb45a4df9553a5f62f5fd14a9c7fa1687776410",
+      "purpose": "Selected native dev gateway, frontend watch/sync, availability lease, localization generator/audit or browser qualification support.",
+      "adaptation": "Template-owned service composition, retained routes, localization selection or product audit inventory.",
+      "sourceRevision": "bd81ab0c1",
+      "sourceFrontendRevision": null
+    },
+    {
+      "path": "server/docker/conf/mongodb/demo_db/i18n_messages.json",
+      "upstreamSha256": "3f49f47e4c06608cecd29de85ebed9cb77925e329b10413f9462fb772e022c5c",
+      "purpose": "Selected native dev gateway, frontend watch/sync, availability lease, localization generator/audit or browser qualification support.",
+      "adaptation": "Template-owned service composition, retained routes, localization selection or product audit inventory.",
+      "sourceRevision": "bd81ab0c1",
+      "sourceFrontendRevision": null
+    },
+    {
+      "path": "server/docker/conf/mongodb/e2e_db/i18n_bundles.json",
+      "upstreamSha256": "f4541974340766c53a4b698eedb45a4df9553a5f62f5fd14a9c7fa1687776410",
+      "purpose": "Selected native dev gateway, frontend watch/sync, availability lease, localization generator/audit or browser qualification support.",
+      "adaptation": "Template-owned service composition, retained routes, localization selection or product audit inventory.",
+      "sourceRevision": "bd81ab0c1",
+      "sourceFrontendRevision": null
+    },
+    {
+      "path": "server/docker/conf/mongodb/e2e_db/i18n_messages.json",
+      "upstreamSha256": "3f49f47e4c06608cecd29de85ebed9cb77925e329b10413f9462fb772e022c5c",
+      "purpose": "Selected native dev gateway, frontend watch/sync, availability lease, localization generator/audit or browser qualification support.",
+      "adaptation": "Template-owned service composition, retained routes, localization selection or product audit inventory.",
+      "sourceRevision": "bd81ab0c1",
+      "sourceFrontendRevision": null
+    },
+    {
+      "path": "server/docker/conf/mongodb/myscoutee_db/i18n_bundles.json",
+      "upstreamSha256": "f4541974340766c53a4b698eedb45a4df9553a5f62f5fd14a9c7fa1687776410",
+      "purpose": "Selected native dev gateway, frontend watch/sync, availability lease, localization generator/audit or browser qualification support.",
+      "adaptation": "Template-owned service composition, retained routes, localization selection or product audit inventory.",
+      "sourceRevision": "bd81ab0c1",
+      "sourceFrontendRevision": null
+    },
+    {
+      "path": "server/docker/conf/mongodb/myscoutee_db/i18n_messages.json",
+      "upstreamSha256": "3f49f47e4c06608cecd29de85ebed9cb77925e329b10413f9462fb772e022c5c",
+      "purpose": "Selected native dev gateway, frontend watch/sync, availability lease, localization generator/audit or browser qualification support.",
+      "adaptation": "Template-owned service composition, retained routes, localization selection or product audit inventory.",
+      "sourceRevision": "bd81ab0c1",
+      "sourceFrontendRevision": null
+    },
+    {
+      "path": "server/docker/conf/nginx/conf/http/http-transport-policy.conf",
+      "upstreamSha256": "b54dcc4e3911f942fe85641b9f62a1d4c307f9c69abeb8c969208115d7527597",
+      "purpose": "Selected native dev gateway, frontend watch/sync, availability lease, localization generator/audit or browser qualification support.",
+      "adaptation": null,
+      "sourceRevision": "bd81ab0c1",
+      "sourceFrontendRevision": null
+    },
+    {
+      "path": "server/docker/conf/nginx/conf/http/https-response-policy.conf",
+      "upstreamSha256": "8c61bea48c58a8a02f5b16492604eb131349a160731c49cbdf5da9f715553bc7",
+      "purpose": "Selected native dev gateway, frontend watch/sync, availability lease, localization generator/audit or browser qualification support.",
+      "adaptation": null,
+      "sourceRevision": "bd81ab0c1",
+      "sourceFrontendRevision": null
+    },
+    {
+      "path": "server/docker/conf/nginx/conf/http/routing.conf",
+      "upstreamSha256": "9a503875bc99df55420231e0f68ef3ae2004ae6a050feeb10dc1bf16cf9f2606",
+      "purpose": "Selected native dev gateway, frontend watch/sync, availability lease, localization generator/audit or browser qualification support.",
+      "adaptation": "Template-owned service composition, retained routes, localization selection or product audit inventory.",
+      "sourceRevision": "bd81ab0c1",
+      "sourceFrontendRevision": null
+    },
+    {
+      "path": "server/docker/conf/nginx/conf/http/runtime-status.conf",
+      "upstreamSha256": "b9490f7e2175b0c41fd49349c210c2de070d909b35cd0fc910b2725f8335673c",
+      "purpose": "Selected native dev gateway, frontend watch/sync, availability lease, localization generator/audit or browser qualification support.",
+      "adaptation": null,
+      "sourceRevision": "bd81ab0c1",
+      "sourceFrontendRevision": null
+    },
+    {
+      "path": "server/docker/conf/nginx/conf/http/spring.conf",
+      "upstreamSha256": "6553825b38fbc6701ca0b1814493a6fd6c98cd2137d36150c440ddd2c71d94e1",
+      "purpose": "Selected native dev gateway, frontend watch/sync, availability lease, localization generator/audit or browser qualification support.",
+      "adaptation": null,
+      "sourceRevision": "bd81ab0c1",
+      "sourceFrontendRevision": null
+    },
+    {
+      "path": "server/docker/conf/nginx/keys/README.md",
+      "upstreamSha256": "59960bf2a55fe2620ba5f9be332e9ac9ef3946570156bdb4896e779b45face5d",
+      "purpose": "Selected native dev gateway, frontend watch/sync, availability lease, localization generator/audit or browser qualification support.",
+      "adaptation": "Template-owned service composition, retained routes, localization selection or product audit inventory.",
+      "sourceRevision": "bd81ab0c1",
+      "sourceFrontendRevision": null
+    },
+    {
+      "path": "server/docker/conf/nginx/nginx.conf",
+      "upstreamSha256": "b46a628d11f11a087900e2bf25ff3b93f58ab2aabd4bd66edcaa393ae892686a",
+      "purpose": "Selected native dev gateway, frontend watch/sync, availability lease, localization generator/audit or browser qualification support.",
+      "adaptation": null,
+      "sourceRevision": "bd81ab0c1",
+      "sourceFrontendRevision": null
+    },
+    {
+      "path": "server/docker/images/frontend-sync/dev/Dockerfile",
+      "upstreamSha256": "133561edf4a70b2a2aa6dc5b8c8248c3b486267011fde11495ef7ed6565a3a4a",
+      "purpose": "Selected native dev gateway, frontend watch/sync, availability lease, localization generator/audit or browser qualification support.",
+      "adaptation": null,
+      "sourceRevision": "bd81ab0c1",
+      "sourceFrontendRevision": null
+    },
+    {
+      "path": "server/docker/images/nginx/base/Dockerfile",
+      "upstreamSha256": "94a58edca0974abeb28f1d3e80dfb95b68551a6c1420b731cdbad6a6428e6232",
+      "purpose": "Selected native dev gateway, frontend watch/sync, availability lease, localization generator/audit or browser qualification support.",
+      "adaptation": null,
+      "sourceRevision": "bd81ab0c1",
+      "sourceFrontendRevision": null
+    },
+    {
+      "path": "server/docker/images/nginx/dev/Dockerfile",
+      "upstreamSha256": "1c44d015bbd58090424e164dcfb8d768c1bcb18ecad343a4eb83de93cc2217db",
+      "purpose": "Selected native dev gateway, frontend watch/sync, availability lease, localization generator/audit or browser qualification support.",
+      "adaptation": null,
+      "sourceRevision": "bd81ab0c1",
+      "sourceFrontendRevision": null
+    },
+    {
+      "path": "server/docker/images/nginx/dev/nginx-entrypoint.sh",
+      "upstreamSha256": "a36df8d920be3430c11970428ad1a44a293335e6ccee62cc3870744092b0140a",
+      "purpose": "Selected native dev gateway, frontend watch/sync, availability lease, localization generator/audit or browser qualification support.",
+      "adaptation": null,
+      "sourceRevision": "bd81ab0c1",
+      "sourceFrontendRevision": null
+    },
+    {
+      "path": "server/docker/images/nginx/runtime-status.sh",
+      "upstreamSha256": "6afdbc48b386e516ff66f13e06d852f1738ab589132415d9562cebee5eec59e4",
+      "purpose": "Selected native dev gateway, frontend watch/sync, availability lease, localization generator/audit or browser qualification support.",
+      "adaptation": null,
+      "sourceRevision": "bd81ab0c1",
+      "sourceFrontendRevision": null
+    },
+    {
+      "path": "server/docker/images/nginx/runtime-status/events.go",
+      "upstreamSha256": "1406821cb548d22d19545579f88850250ad93410296a329616708a2b6422536c",
+      "purpose": "Selected native dev gateway, frontend watch/sync, availability lease, localization generator/audit or browser qualification support.",
+      "adaptation": null,
+      "sourceRevision": "bd81ab0c1",
+      "sourceFrontendRevision": null
+    },
+    {
+      "path": "server/docker/images/nginx/runtime-status/events_test.go",
+      "upstreamSha256": "692418d30a66bb380e8e4399f9b783ec8da97598b0aff956b5438b890e224d98",
+      "purpose": "Selected native dev gateway, frontend watch/sync, availability lease, localization generator/audit or browser qualification support.",
+      "adaptation": null,
+      "sourceRevision": "bd81ab0c1",
+      "sourceFrontendRevision": null
+    },
+    {
+      "path": "server/docker/images/nginx/runtime-status/go.mod",
+      "upstreamSha256": "50490fe02d4001144a587f0ead62b9d5484232907b6061761132fd3a0b173556",
+      "purpose": "Selected native dev gateway, frontend watch/sync, availability lease, localization generator/audit or browser qualification support.",
+      "adaptation": null,
+      "sourceRevision": "bd81ab0c1",
+      "sourceFrontendRevision": null
+    },
+    {
+      "path": "server/docker/images/nginx/runtime-status/main.go",
+      "upstreamSha256": "27ca4237f873758600df97a3a56b79dc8fcf0942324111246de0da6190f38e28",
+      "purpose": "Selected native dev gateway, frontend watch/sync, availability lease, localization generator/audit or browser qualification support.",
+      "adaptation": null,
+      "sourceRevision": "bd81ab0c1",
+      "sourceFrontendRevision": null
+    },
+    {
+      "path": "server/docker/images/nginx/runtime-status/main_test.go",
+      "upstreamSha256": "70fe8bb3bc29f76c3048ea6fef6ab7e5ecf04ae964d514cdfc26fe34f7a683e9",
+      "purpose": "Selected native dev gateway, frontend watch/sync, availability lease, localization generator/audit or browser qualification support.",
+      "adaptation": null,
+      "sourceRevision": "bd81ab0c1",
+      "sourceFrontendRevision": null
+    },
+    {
+      "path": "server/docker/images/nginx/wait-for-it.sh",
+      "upstreamSha256": "fb08d6acc6b4e26082525e61d16e51b796ffabc5520ace5ba65d61b95dc93e21",
+      "purpose": "Selected native dev gateway, frontend watch/sync, availability lease, localization generator/audit or browser qualification support.",
+      "adaptation": null,
+      "sourceRevision": "bd81ab0c1",
+      "sourceFrontendRevision": null
+    },
+    {
+      "path": "server/docker/scripts/frontend_auto_watch.sh",
+      "upstreamSha256": "8edf34497e27dd8b5083cf9dd1c88424a3d1fd58d499bf4c75ea8668f94ebd42",
+      "purpose": "Selected native dev gateway, frontend watch/sync, availability lease, localization generator/audit or browser qualification support.",
+      "adaptation": null,
+      "sourceRevision": "bd81ab0c1",
+      "sourceFrontendRevision": null
+    },
+    {
+      "path": "server/docker/scripts/sync_frontend_assets.sh",
+      "upstreamSha256": "f03f144cfff66363c1185642a4d01dc01409b62efc58f979704824b20805a09b",
+      "purpose": "Selected native dev gateway, frontend watch/sync, availability lease, localization generator/audit or browser qualification support.",
+      "adaptation": null,
+      "sourceRevision": "bd81ab0c1",
+      "sourceFrontendRevision": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/common/runtime/RuntimeStatusPublisher.java",
+      "upstreamSha256": "f302ee9a4e2f3c46b8e708fabdb0c6c76e866943e6ef35bf23dd20845b5765db",
+      "purpose": "Selected native dev gateway, frontend watch/sync, availability lease, localization generator/audit or browser qualification support.",
+      "adaptation": null,
+      "sourceRevision": "bd81ab0c1",
+      "sourceFrontendRevision": null
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/common/runtime/RuntimeStatusPublisherTest.java",
+      "upstreamSha256": "9665f70319b87cc15410071a6acd33bd372b9969a45a8b6adcf536735e743436",
+      "purpose": "Selected native dev gateway, frontend watch/sync, availability lease, localization generator/audit or browser qualification support.",
+      "adaptation": null,
+      "sourceRevision": "bd81ab0c1",
+      "sourceFrontendRevision": null
+    },
+    {
+      "path": "frontend/scripts/audit-i18n-mongo-seed.js",
+      "upstreamSha256": "c088e23056ed61fccb2046c6920a9ecd283ef5ee2482776e92bb934bcbe0c441",
+      "purpose": "Selected native dev gateway, frontend watch/sync, availability lease, localization generator/audit or browser qualification support.",
+      "adaptation": null,
+      "sourceRevision": "bd81ab0c1",
+      "sourceFrontendRevision": "d64e6620"
+    },
+    {
+      "path": "frontend/scripts/generate-i18n-mongo-seed.js",
+      "upstreamSha256": "e54287e396a6b33fa697175f6b2fe068bf069921a9df07ec4a28831c90a8f8a7",
+      "purpose": "Selected native dev gateway, frontend watch/sync, availability lease, localization generator/audit or browser qualification support.",
+      "adaptation": null,
+      "sourceRevision": "bd81ab0c1",
+      "sourceFrontendRevision": "d64e6620"
+    },
+    {
+      "path": "frontend/scripts/i18n-audit-policy.json",
+      "upstreamSha256": "0ea6b303c788f99e6262225d9ecbda992c0cf36e59af8d06204b0ccbf94a21fc",
+      "purpose": "Selected native dev gateway, frontend watch/sync, availability lease, localization generator/audit or browser qualification support.",
+      "adaptation": "Template-owned service composition, retained routes, localization selection or product audit inventory.",
+      "sourceRevision": "bd81ab0c1",
+      "sourceFrontendRevision": "d64e6620"
     }
   ]
 }

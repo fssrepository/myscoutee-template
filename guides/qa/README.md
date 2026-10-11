@@ -98,3 +98,51 @@ browser, standalone E2E, KVM or load qualification.
 Use the existing isolated JUnit command for focused implementation tests. Record
 CPU and response time for coherent batches; repeat stress only for a defined
 comparison or a measured regression.
+
+## Entry browser checkpoint
+
+The versioned `functional/ui/entry/assert.mjs` case uses the native isolated
+Chrome helper. Until the complete UI collection is assembled in plan step 22,
+run this focused case from the repository root:
+
+```sh
+E2E_UI_BASE_URL=http://localhost E2E_UI_MODE=full node --input-type=module <<'JS'
+import { launchChromeBrowser } from './e2e/functional/ui/lib/chrome-cdp.mjs';
+import { assertUi } from './e2e/functional/ui/entry/assert.mjs';
+const browser = await launchChromeBrowser({
+  baseUrl: process.env.E2E_UI_BASE_URL,
+  ignoreCertificateErrors: process.env.E2E_ALLOW_SELF_SIGNED === 'true'
+});
+const page = await browser.newPage();
+try {
+  await assertUi({ page, ctx: { mode: process.env.E2E_UI_MODE } });
+  console.log('PASS entry, public documents, consent, reload and logout');
+} finally {
+  await page.close();
+  await browser.close();
+}
+JS
+```
+
+For the local frontend, use `E2E_UI_MODE=local` and the existing local serve URL.
+Stop frontend-sync before starting that compiler; restart frontend-sync only
+when the local compiler has stopped. For the development HTTPS listener only,
+`E2E_ALLOW_SELF_SIGNED=true` explicitly enables the same disposable-browser
+certificate allowance used by the native manual-QA launcher. It does not test
+production certificate trust or alter host/browser trust outside that test.
+
+The dev gateway images are built from the unchanged native Dockerfiles:
+
+```sh
+docker build -f server/docker/images/nginx/base/Dockerfile \
+  -t myscoutee-template-nginx:1.0.0-base server/docker
+docker compose --env-file server/docker-dev.env -f server/docker-compose-dev.yml \
+  build nginx frontend-sync
+docker compose --env-file server/docker-dev.env -f server/docker-compose-dev.yml up -d
+```
+
+Use `frontend/scripts/generate-i18n-mongo-seed.js` and
+`frontend/scripts/audit-i18n-mongo-seed.js` after changing selected translations.
+They preserve the native dated translation revision format, independently of
+application version `1.0.0`. The native dev Mongo watcher imports changed seed
+files; the localization change stream refreshes the API cache.

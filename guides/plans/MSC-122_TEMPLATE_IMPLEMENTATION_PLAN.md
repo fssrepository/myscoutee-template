@@ -181,7 +181,14 @@ deep-link behavior. A working `local` build alone does not close frontend work.
    in E2E/production. Include Mongo replica initialization, Redis, MinIO, nginx,
    STUN and MCP wherever required by the retained flows. Keep operational status
    and health reporting. Some native scripts and Dockerfiles are selected;
-   the complete Compose stacks are not yet assembled or qualified. Close with
+   the complete Compose stacks are not yet assembled or qualified.
+   Dev frontend-sync/nginx now run with the native availability receiver and
+   publisher. Two focused publisher tests, thirteen API cases through nginx and
+   HTTP/HTTPS consent/login/reload/logout browser checks pass. The HTTPS browser
+   uses the native QA allowance for a self-signed local certificate; production
+   trust is untested. Locale generation/audit uses unchanged native scripts with
+   template-owned inventories (1,790 messages across three physical seed sets).
+   See `MSC122_TEMPLATE_DEV_GATEWAY_20261011.json`. Close with
    reproducible starts, stops and restarts in each mode and correct data isolation.
 
 6. **Build small, coherent seeds and import/reset tooling — IN PROGRESS.**
@@ -462,11 +469,12 @@ deep-link behavior. A working `local` build alone does not close frontend work.
 
 ## Current continuation point
 
-Continue **13–14 and 18** with the HTTP entry flow, alongside the missing dev
-frontend-sync/nginx wiring in **5**. The local consent/member entry checkpoint
-is frontend `c4f3c39`, with 108 passing unit tests and the recorded browser flow.
-The member/admin/operator routes currently have only a guarded name/logout shell;
+Continue **14–19**, starting with the SmartList example in **15** and the final
+landing typography in **14**. Local and dev HTTP entry/consent/reload/logout are
+qualified at frontend `a247371`; native frontend-sync/nginx and Mongo locale sync
+now run in the template dev monolith. See `MSC122_TEMPLATE_LOCAL_ENTRY_20261011.json`
+and `MSC122_TEMPLATE_DEV_GATEWAY_20261011.json` for the exact limits.
+The member/admin/operator routes still show only a guarded name/logout shell.
 SmartList, chat, profile, guide/notification and privileged screens are unfinished.
-The requested Gothic landing typeface is also pending. Then continue **15–19**
-and the remaining runtime, qualification and release steps. Earlier backend
-steps are not all closed; follow their explicit remaining checks above.
+Then complete the remaining environment, KVM, packaging and release steps.
+Earlier backend steps are not all closed; retain their pending checks above.

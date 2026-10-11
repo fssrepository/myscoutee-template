@@ -30,6 +30,8 @@ export async function launchChromeBrowser(options = {}) {
     '--disable-extensions',
     '--disable-features=Translate,MediaRouter',
     '--allow-insecure-localhost',
+    // Explicit fixture-only opt-in, matching the managed QA browser launcher.
+    ...(options.ignoreCertificateErrors === true ? ['--ignore-certificate-errors'] : []),
     '--hide-scrollbars',
     '--mute-audio',
     '--no-sandbox',

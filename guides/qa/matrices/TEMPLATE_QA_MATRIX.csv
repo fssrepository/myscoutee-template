@@ -31,5 +31,5 @@ T-PERF-001,Performance,Matched workload records latency/throughput/errors/CPU/me
 T-INSTALL-001,Production and DEB,Version 1.0.0 images/DEB install and restart; Debian/Netcup setup and backup/restore,,N/A,NOT RUN,N/A,N/A,NOT RUN,,
 T-UPDATE-001,Signed update,Valid installation and rollback; missing or tampered signed metadata rejected,,N/A,NOT RUN,N/A,N/A,NOT RUN,,
 T-PAGES-001,Static publication,GitHub local build/base path/deep links/assets/version work from a clean submodule checkout,,N/A,N/A,NOT RUN,N/A,NOT RUN,,
-T-ENTRY-LOCAL-001,Local demo entry,Consent and selected member survive reload; logout denies protected route,,N/A,NOT RUN,PASS,NOT RUN,NOT RUN,guides/qualification/evidence/MSC122_TEMPLATE_LOCAL_ENTRY_20261011.json,
-T-DOCUMENT-LOCAL-001,Fresh public documents,Privacy and terms render before login without a pre-existing IndexedDB seed,,N/A,NOT RUN,PASS,NOT RUN,NOT RUN,guides/qualification/evidence/MSC122_TEMPLATE_LOCAL_ENTRY_20261011.json,
+T-ENTRY-LOCAL-001,Local demo entry,Consent and selected member survive reload; logout denies protected route,,N/A,NOT RUN,PASS,PASS,NOT RUN,guides/qualification/evidence/MSC122_TEMPLATE_LOCAL_ENTRY_20261011.json; guides/qualification/evidence/MSC122_TEMPLATE_DEV_GATEWAY_20261011.json,
+T-DOCUMENT-LOCAL-001,Fresh public documents,Privacy and terms render before login without a pre-existing IndexedDB seed,,N/A,NOT RUN,PASS,PASS,NOT RUN,guides/qualification/evidence/MSC122_TEMPLATE_LOCAL_ENTRY_20261011.json; guides/qualification/evidence/MSC122_TEMPLATE_DEV_GATEWAY_20261011.json,
