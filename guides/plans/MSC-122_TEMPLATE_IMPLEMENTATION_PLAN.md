@@ -48,6 +48,35 @@ Required environment coverage:
 | Installed release | Docker images, signed DEB/update metadata, host helpers, Netcup/Debian setup, backup/restore and upgrade verification |
 | GitHub Pages | Native static/local frontend build, correct base path, deep links, assets and visible version; no dependency on a private backend |
 
+### Frontend environment inventory
+
+Checked against the source frontend's `src/environments`, `angular.json` and
+`package.json`. Preserve this existing configuration matrix for retained features;
+`local`/`http` are data-source modes, not replacements for the build environments.
+
+| Angular configuration | Environment source | Data source | Build output | Service worker | Firebase login flag |
+| --- | --- | --- | --- | --- | --- |
+| `local` | `environment.ts` | `local` | `local/` | disabled | disabled |
+| `dev` | `environment.dev.ts` | `http` | `dev/` | enabled | enabled |
+| `e2e` | `environment.e2e.ts` | `http` | `e2e/` | disabled | disabled |
+| `production` | `environment.production.ts` | `http` | `prod/` | enabled | enabled |
+| `github` | `environment.github.ts` | `local` | `docs/` | enabled | disabled |
+
+These are the existing build flags; actual authenticated/deployment capability
+must still follow the native runtime configuration and REAL/DEMO session rules.
+Retain the `/api` configuration, relevant messaging/bootstrap settings and the
+native environment type contract. Omit Registry/payment settings together with
+their absent consumers rather than leaving misleading inactive configuration.
+
+Step 13 must carry the corresponding `fileReplacements`, serve targets,
+`production-serve` alias, `unit-test` build configuration, asset handling,
+optimization/source-map settings and relevant package scripts. Keep the existing
+`start`/`build` local default, `watch` dev default, mode-specific start/build/watch
+commands, component build integration and build-log helpers where required.
+Steps 20–22 verify tests against the correct environment; steps 25 and 28 verify
+the production/Pages outputs, version stamping, base paths, service worker and
+deep-link behavior. A working `local` build alone does not close frontend work.
+
 ## Status and working rules
 
 - `DONE`: implemented and checked at the stated boundary, with evidence.
@@ -185,7 +214,8 @@ Required environment coverage:
     components. Select Angular configuration, application bootstrap, routing,
     session/store infrastructure, local and HTTP adapters, IndexedDB schema,
     seed loading, translation, error/loading handling and build scripts. Preserve
-    native dev, E2E, production and GitHub build configurations where applicable.
+    all five configurations in the frontend environment inventory above and their
+    native serve/build/test wiring.
     Close with working local persistence and HTTP persistence for retained flows,
     reload recovery and no silent local fallback in HTTP mode.
 
