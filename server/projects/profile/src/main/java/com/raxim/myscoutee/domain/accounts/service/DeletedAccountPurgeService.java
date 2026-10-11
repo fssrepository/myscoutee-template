@@ -41,8 +41,6 @@ public class DeletedAccountPurgeService {
     @org.springframework.beans.factory.annotation.Autowired
     private com.raxim.myscoutee.domain.integrations.api.IntegrationPrivacy integrationPrivacy;
 
-    @org.springframework.beans.factory.annotation.Autowired
-    private com.raxim.myscoutee.domain.content.api.ContentPrivacy contentPrivacy;
 
     private static final int DELETE_GRACE_DAYS = 30;
     private static final Duration PURGE_JOB_LEASE = Duration.ofMinutes(30);
@@ -375,8 +373,6 @@ public class DeletedAccountPurgeService {
     private void purgeUserReferencedDocuments(String userId) {
         deleteDocumentsByAnyField("userFriendships", List.of("leftUserId", "rightUserId"), userId);
         integrationPrivacy.purgeParticipantData(userId);
-        contentPrivacy.purgeFeedback(userId);
-        contentPrivacy.purgeReports(userId);
         deleteDocumentsByAnyField("privacyConsents", List.of("userId"), userId);
         deleteDocumentsByAnyField("accountDeletionWarnings", List.of("userId"), userId);
         deleteDocumentsByAnyField("userSessionActions", List.of("userId", "createdUser", "updatedUser"), userId);

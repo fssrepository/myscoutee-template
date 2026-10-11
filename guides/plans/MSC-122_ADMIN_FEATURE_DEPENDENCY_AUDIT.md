@@ -1,7 +1,7 @@
 # MSC-122 omitted admin feature dependency audit
 
 Updated: 2026-10-12. Owner: implementation plan step 5.
-Status: first native source batch committed (`dc97521d4`); assembly/KVM/monolith qualification in progress; template backend removal pending.
+Status: native batch qualified at `37f5f708e`; template backend/adapters removed and unit checks passed; artifact HTTP/local and template KVM qualification pending.
 
 ## Verified starting point
 
@@ -152,3 +152,32 @@ an aggregate count of distinct tests. Native runtime CPU/latency, KVM and monoli
 checks remain pending. Evidence:
 `myscoutee-backend/guides/qualification/evidence/MSC122_ADMIN_FEATURE_SEPARATION_20261012.json`.
 No template Java owner has been removed yet.
+
+## Template selection checkpoint — 2026-10-12
+
+Native source qualification is complete: eight assemblies, focused JUnit, KVM and
+monolith checks passed, serially. The bounded KVM admin read profile measured
++3.93% throughput, -3.81% p50, -7.98% p95 and -0.84% VM CPU under load; this is
+not a claim about every flow. Evidence is committed in MyScoutee at `37f5f708e`.
+
+The template now omits the report/feedback content owner, submission and admin
+moderation routes, support mutations and their counters, ChatReview and account
+moderation commands. Local/HTTP adapters and the exclusive local seed/store are
+also omitted. Shared chat reads and stored conversation shapes remain unchanged.
+The native `ProfileStatusWork` and observer contract are reused: ordinary status
+work needs no support provider, while old undelivered support intent is retained.
+The already-curated purge service omits only the two absent content cleanup calls;
+all retained purge stages, the 30-day grace, retry and missing-product-owner guard
+remain. The native source already has `AccountPurgeActions` for that selection.
+
+Admin API keeps authentication, keys and the overview. Optional moderation fields
+are absent from JSON. The template MCP catalog offers only the retained operator
+release event; it does not advertise report/feedback events with no producer.
+Its subscription/callback/revocation tests now exercise that retained event.
+Identity's existing demo support-session context is a separate login protocol,
+not the removed support chat creator; it is preserved with the identity model.
+
+398 standard Java tests, the embedded Mongo account-purge check, 293 frontend
+tests and the production frontend build passed. Two existing stylesheet-budget
+warnings remain. Runtime absence checks, retained flows and minimal KVM
+composition are still required; step 5 is not yet closed.

@@ -114,23 +114,6 @@ ensure_collection_indexes() {
   local collection_name="$2"
 
   case "${collection_name}" in
-    userReports|userFeedback)
-      mongosh \
-        --host "${mongo_host}" \
-        --port "${mongo_port}" \
-        --username "${mongo_username}" \
-        --password "${mongo_password}" \
-        --authenticationDatabase "${target_db}" \
-        --quiet "${target_db}" \
-        --eval "
-db.userReports.createIndex({syncKey: 1}, {name: 'user_report_sync_key', unique: true, sparse: true});
-db.userReports.createIndex({userId: 1, createdDate: -1}, {name: 'user_report_user_created'});
-db.userReports.createIndex({resolvedAtIso: 1}, {name: 'user_report_resolved'});
-db.userFeedback.createIndex({syncKey: 1}, {name: 'user_feedback_sync_key', unique: true, sparse: true});
-db.userFeedback.createIndex({userId: 1, createdDate: -1}, {name: 'user_feedback_user_created'});
-db.userFeedback.createIndex({resolvedAtIso: 1}, {name: 'user_feedback_resolved'});
-" >/dev/null
-      ;;
     accountDeletionWarnings)
       mongosh \
         --host "${mongo_host}" \
@@ -360,7 +343,6 @@ ensure_runtime_indexes() {
   local target_db="$1"
   ensure_collection_indexes "${target_db}" "integrationTokens"
   ensure_collection_indexes "${target_db}" "accountDeletionWarnings"
-  ensure_collection_indexes "${target_db}" "userReports"
 }
 
 ensure_collection_indexes_before_import() {

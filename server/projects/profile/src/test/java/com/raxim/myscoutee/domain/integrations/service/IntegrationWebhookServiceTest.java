@@ -26,15 +26,16 @@ class IntegrationWebhookServiceTest {
     private void deliver(IntegrationWebhookDelivery row) { ReflectionTestUtils.invokeMethod(service, "deliver", row, null); }
     @Test void roleAttentionKeepsStableIdAndDuplicateDoesNotReplaceQueuedWork() {
         var row = pending();
-        when(events.deliveries("admin", "admin.attention", "app-admin", "node", Map.of("kind", "report-submitted"), "notification"))
+        when(events.deliveries("operator", "operator.attention", "operator", "node", Map.of("kind", "release-available"), "notification"))
                 .thenReturn(List.of(row));
         when(deliveries.insert(row)).thenThrow(new org.springframework.dao.DuplicateKeyException("existing"));
-        service.enqueueRoleAttention(new RoleAttention("notification", "app-admin", "report-submitted", List.of("admin")));
+        service.enqueueRoleAttention(new RoleAttention("notification", "operator", "release-available", List.of("operator")));
         verify(deliveries).insert(row); verify(deliveries, never()).save(any());
     }
     @Test void unrelatedNotificationsDoNotQuerySubscriptions() {
         service.enqueueRoleAttention(new RoleAttention("n", "member", "report-submitted", List.of("member")));
         service.enqueueRoleAttention(new RoleAttention("n", "operator", "report-submitted", List.of("operator")));
+        service.enqueueRoleAttention(new RoleAttention("n", "app-admin", "report-submitted", List.of("admin")));
         verifyNoInteractions(events, deliveries);
     }
     @Test void localThrottlingDoesNotSpendAttemptsAndPermanentFailuresDoNotRetry() throws Exception {

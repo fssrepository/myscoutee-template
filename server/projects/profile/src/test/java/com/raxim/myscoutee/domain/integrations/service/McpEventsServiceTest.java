@@ -39,12 +39,12 @@ class McpEventsServiceTest {
             "mcp", IntegrationAccess.Mode.FULL, "grant-a");
     final String secret = "whsec_" + Base64.getEncoder().encodeToString(new byte[32]);
     Users owner;
-    Request request(Long ttl) { return new Request("admin.attention", Map.of("resourceId", "node"),
+    Request request(Long ttl) { return new Request("operator.attention", Map.of("resourceId", "node"),
             new Delivery("webhook", "https://callback.example/chat-a", secret), ttl, null); }
 
     @BeforeEach void setup() throws Exception {
         owner = new Users(); owner.setUserId("alice");
-        when(roles.admin(owner)).thenReturn(true);
+        when(roles.operator(owner)).thenReturn(true);
         when(roles.privileged(owner)).thenReturn(true);
         owner.setIntegrationAccess(new IntegrationAccess(1, IntegrationAccess.Mode.FULL, Map.of("token-a", IntegrationAccess.Mode.FULL)));
         when(users.findByUserId("alice")).thenReturn(Optional.of(owner));
@@ -121,10 +121,10 @@ class McpEventsServiceTest {
     @Test void expiredSubscriptionAndRevokedGrantStopAlreadyQueuedData() throws Exception {
         var sub = new McpEventSubscription(); sub.id = "sub"; sub.enabled = true; sub.expiresAt = Instant.now().minusSeconds(1);
         sub.generation = "g"; sub.ownerUserId = "alice"; sub.tokenId = "token-a"; sub.clientId = "shared-chatgpt";
-        sub.grantId = "grant-a"; sub.name = "admin.attention"; sub.resourceId = "node";
+        sub.grantId = "grant-a"; sub.name = "operator.attention"; sub.resourceId = "node";
         when(subscriptions.findById("sub")).thenReturn(Optional.of(sub));
         var delivery = new IntegrationWebhookDelivery(); delivery.setSubscriptionId("sub"); delivery.setSubscriptionGeneration("g");
-        delivery.setOwnerUserId("alice"); delivery.setEventType("admin.attention"); delivery.setResourceExternalId("node");
+        delivery.setOwnerUserId("alice"); delivery.setEventType("operator.attention"); delivery.setResourceExternalId("node");
         assertThat(service.deliver(delivery)).isEqualTo(410);
         sub.expiresAt = Instant.now().plusSeconds(3600);
         when(oauth.activeSubscriptionGrant("grant-a", "alice", "token-a", "shared-chatgpt")).thenReturn(false);
@@ -138,9 +138,9 @@ class McpEventsServiceTest {
         assertThatThrownBy(() -> service.subscribe(read, request(null))).isInstanceOf(McpEventsService.ProtocolException.class);
         owner.setIntegrationAccess(new IntegrationAccess(3, IntegrationAccess.Mode.FULL, Map.of("token-a", IntegrationAccess.Mode.FULL)));
         when(roles.privileged(owner)).thenReturn(true);
-        when(roles.admin(owner)).thenReturn(true);
-        assertThat(service.catalog(client).toString()).contains("admin.attention").doesNotContain("event.changed", "operator.attention");
-        var roleRequest = new Request("admin.attention", Map.of("resourceId", "node"), request(null).delivery(), null, null);
+        when(roles.operator(owner)).thenReturn(true);
+        assertThat(service.catalog(client).toString()).contains("operator.attention").doesNotContain("event.changed", "admin.attention");
+        var roleRequest = new Request("operator.attention", Map.of("resourceId", "node"), request(null).delivery(), null, null);
         var result = service.subscribe(client, roleRequest);
         var saved = org.mockito.ArgumentCaptor.forClass(McpEventSubscription.class);
         verify(subscriptions).save(saved.capture());
@@ -148,10 +148,19 @@ class McpEventsServiceTest {
         when(subscriptions.findById(result.id())).thenReturn(Optional.of(subscription));
         var delivery = new IntegrationWebhookDelivery();
         delivery.setSubscriptionId(subscription.id); delivery.setOwnerUserId("alice");
-        delivery.setEventType("admin.attention"); delivery.setResourceExternalId("node");
+        delivery.setEventType("operator.attention"); delivery.setResourceExternalId("node");
         delivery.setSubscriptionGeneration(subscription.generation);
-        when(roles.admin(owner)).thenReturn(false);
+        when(roles.operator(owner)).thenReturn(false);
         assertThat(service.deliver(delivery)).isEqualTo(410);
     }
 
+    @Test void adminModerationEventsAreAbsentAndCannotCreateACallback() {
+        when(roles.operator(owner)).thenReturn(false);
+        when(roles.admin(owner)).thenReturn(true);
+        assertThat(service.catalog(client)).containsEntry("events", List.of());
+        var omitted = new Request("admin.attention", Map.of("resourceId", "node"), request(null).delivery(), null, null);
+        assertThatThrownBy(() -> service.subscribe(client, omitted)).isInstanceOf(McpEventsService.ProtocolException.class);
+        verifyNoInteractions(callbacks);
+        verify(subscriptions, never()).save(any());
+    }
 }

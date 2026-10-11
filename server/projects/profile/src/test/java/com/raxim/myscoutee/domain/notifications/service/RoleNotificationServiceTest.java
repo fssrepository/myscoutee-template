@@ -45,35 +45,6 @@ class RoleNotificationServiceTest {
         verifyNoMoreInteractions(outbox, accounts);
     }
 
-    @Test
-    void moderationRetainsAdminAudienceAndDoesNotExposeMemberProfileFields() {
-        when(settings.adminEmails()).thenReturn(List.of("admin@test"));
-        when(settings.isAdminEmail("admin@test")).thenReturn(true);
-        when(accounts.roleRecipients(anyCollection())).thenReturn(List.of(new RoleRecipient("admin", "admin@test", false)));
 
-        service.moderationSubmitted("report-submitted", "report-id");
 
-        var intent = ArgumentCaptor.forClass(NotificationIntent.class);
-        verify(outbox).enqueueOnce(eq("role:report-submitted:report-id:admin"), intent.capture());
-        assertThat(intent.getValue().entityType()).isEqualTo("app-admin");
-        assertThat(intent.getValue().clickUrl()).isEqualTo("/admin?notificationTarget=reports");
-        assertThat(intent.getValue().payload()).containsEntry("roleTarget", "reports")
-                .doesNotContainKeys("email", "name", "userId");
-        verify(accounts).roleRecipients(java.util.Set.of("admin@test"));
-    }
-
-    @Test void repeatedRecipientEmailsUseTwoClassificationsAndMissingEmailCannotReceiveAdminAlerts() {
-        when(settings.adminEmails()).thenReturn(List.of("admin@test"));
-        when(settings.isAdminEmail("admin@test")).thenReturn(true);
-        var recipients = new java.util.ArrayList<RoleRecipient>();
-        for (int i = 0; i < 20; i++) recipients.add(new RoleRecipient("admin-" + i, "admin@test", false));
-        recipients.add(new RoleRecipient("missing-email", null, false));
-        when(accounts.roleRecipients(anyCollection())).thenReturn(recipients);
-        service.moderationSubmitted("report-submitted", "batch-report");
-        verify(settings).adminEmailsAmong(List.of("admin@test"));
-        verify(settings).adminEmailsAmong(java.util.Arrays.asList("admin@test", null));
-        verify(settings, times(2)).isAdminEmail("admin@test");
-        verify(outbox, times(20)).enqueueOnce(org.mockito.ArgumentMatchers.anyString(), org.mockito.ArgumentMatchers.any());
-        verify(outbox, never()).enqueueOnce(eq("role:report-submitted:batch-report:missing-email"), org.mockito.ArgumentMatchers.any());
-    }
 }

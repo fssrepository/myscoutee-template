@@ -160,7 +160,6 @@ public class IntegrationWebhookService implements com.raxim.myscoutee.domain.int
     @Override
     public void enqueueRoleAttention(RoleAttention notification) {
         String name = switch (String.valueOf(notification.entityType())) {
-            case "app-admin" -> McpEventsService.ADMIN_ATTENTION;
             case "operator" -> McpEventsService.OPERATOR_ATTENTION;
             default -> null;
         };

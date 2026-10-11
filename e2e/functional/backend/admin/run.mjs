@@ -12,33 +12,24 @@ async function request(actor,path,method='GET',json,status=200){
  assert.equal(response.status,status,path);const text=await response.text();return text?JSON.parse(text):null;
 }
 try{
- assert.equal((await fetch(baseUrl+'/api/admin/dashboard')).status,401);
- await request(target,'/admin/dashboard','GET',undefined,403);
- const initial=await request(admin,'/admin/dashboard?adminUserId='+admin);assert.equal(initial.activeAdmin.id,admin);
- await request(admin,'/admin/dashboard?adminUserId='+target,'GET',undefined,403);
- const message=await request(target,`/activities/chats/${encodeURIComponent(fixture.chatId)}/messages?userId=${target}`,'POST',{text:'QA report evidence',attachments:[]});
- const report={userId:reporter,targetUserId:target,handle:'QA receiver',reason:'inappropriate',details:'QA report',chatId:fixture.chatId,messageId:message.id,sourceText:'Forged client text',eventId:'omitted-event'};
- assert.equal((await request(reporter,'/auth/me/report-user','POST',{...report,chatId:'unreadable-chat'})).submitted,false);
- assert.equal((await request(reporter,'/auth/me/report-user','POST',report)).submitted,true);
- assert.equal((await request(reporter,'/auth/me/report-user','POST',report)).submitted,true);
- // Native profile selection uses the authenticated actor, ignoring a forged body userId.
- assert.equal((await request(target,'/auth/me/report-user','POST',report)).submitted,false);
- const saved=await fixture.query(`db.userReports.find({userId:${JSON.stringify(reporter)}}).toArray()`);assert.equal(saved.length,1);assert.equal(saved[0].sourceText,'QA report evidence');assert(!saved[0].eventId);const reportId=saved[0]._id.$oid??saved[0]._id;
- const dashboard=await request(admin,'/admin/dashboard?adminUserId='+admin);const reported=dashboard.reportedUsers.find(x=>x.userId===target);assert(reported);assert.equal(reported.reports[0].chatMessages.find(x=>x.id===message.id).text,'QA report evidence');
- await request(target,`/admin/users/${target}/block`,'POST',{adminUserId:admin},403);
- await request(admin,`/admin/users/${target}/warn`,'POST',{adminUserId:admin,reportId,message:'QA warning'});
- let support=await fixture.query(`db.chats.find({id:${JSON.stringify('c-support-admin-'+target)}}).toArray()`);assert.equal(support.length,2);assert.deepEqual(new Set(support.map(x=>x.ownerUserId)),new Set([target,admin]));
- await request(admin,`/admin/users/${target}/block`,'POST',{adminUserId:admin,message:'QA block'});
- assert.equal(await fixture.query(`db.users.findOne({userId:${JSON.stringify(target)}}).profileStatus`),'blocked');
- await request(admin,`/admin/users/${target}/unblock`,'POST',{adminUserId:admin});assert.equal(await fixture.query(`db.users.findOne({userId:${JSON.stringify(target)}}).profileStatus`),'public');
- await request(admin,`/admin/reports/${reportId}/resolve`,'POST',{adminUserId:admin,resolved:true});
- assert((await fixture.query(`db.userReports.findOne({userId:${JSON.stringify(reporter)}})`)).resolvedAtIso);
- await request(admin,`/admin/reports/${reportId}/resolve`,'POST',{adminUserId:admin,resolved:false});
- assert(!(await fixture.query(`db.userReports.findOne({userId:${JSON.stringify(reporter)}})`)).resolvedAtIso);
- assert.equal((await request(reporter,'/auth/me/feedback','POST',{userId:reporter,category:'suggestion',subject:'QA feedback',details:'QA details'})).submitted,true);
- const feedback=(await fixture.query(`db.userFeedback.find({userId:${JSON.stringify(reporter)}}).toArray()`))[0];assert(feedback);
- await request(admin,`/admin/feedback/${feedback._id.$oid??feedback._id}/resolve`,'POST',{adminUserId:admin,resolved:true});
- assert((await fixture.query(`db.userFeedback.findOne({userId:${JSON.stringify(reporter)}})`)).resolvedAtIso);
- const indexes=await fixture.query(`({reports:db.userReports.getIndexes().map(x=>x.name),feedback:db.userFeedback.getIndexes().map(x=>x.name)})`);assert(indexes.reports.includes('user_report_sync_key'));assert(indexes.feedback.includes('user_feedback_sync_key'));
- console.log(JSON.stringify({result:'PASS',checks:'Admin/member/anonymous/actor isolation, chat evidence, duplicate report, warning/support chat, block/unblock, resolve/reopen, feedback resolve, required indexes',timings},null,2));
+ const settings=await request(admin,'/admin/client-api/settings');
+ assert.equal(settings.baseUrl,'/api/admin-client/v1');assert(Array.isArray(settings.tokens));assert(settings.mcp);
+ await request(target,'/admin/client-api/settings','GET',undefined,403);
+ const omitted=[
+  ['/admin/dashboard?adminUserId='+admin,'GET'],
+  ['/auth/me/report-user','POST',{userId:reporter,targetUserId:target,reason:'omitted'}],
+  ['/auth/me/feedback','POST',{userId:reporter,details:'omitted'}],
+  [`/admin/users/${target}/warn`,'POST',{adminUserId:admin}],
+  [`/admin/users/${target}/block`,'POST',{adminUserId:admin}],
+  [`/admin/users/${target}/unblock`,'POST',{adminUserId:admin}],
+  ['/admin/reports/omitted/resolve','POST',{adminUserId:admin,resolved:true}],
+  ['/admin/feedback/omitted/resolve','POST',{adminUserId:admin,resolved:true}],
+  [`/activities/chats/${fixture.chatId}/support-case?userId=${admin}`,'POST',{userId:admin,action:'pick'}]
+ ];
+ for(const [path,method,body] of omitted)await request(admin,path,method,body,404);
+ const profile=await request(target,'/auth/me');assert.equal(profile.user.id,target);assert.equal(profile.user.profileStatus,'public');
+ const message=await request(target,`/activities/chats/${encodeURIComponent(fixture.chatId)}/messages?userId=${target}`,'POST',{text:'Retained personal chat',attachments:[]});assert(message.id);
+ const messages=await request(reporter,`/activities/chats/${encodeURIComponent(fixture.chatId)}/messages?userId=${reporter}`);assert(messages.items.some(item=>item.id===message.id));
+ const collections=await fixture.query('db.getCollectionNames()');assert(!collections.includes('userReports'));assert(!collections.includes('userFeedback'));
+ console.log(JSON.stringify({result:'PASS',checks:'Admin API retained and member denied; report/feedback/support mutations absent; personal chat still persists and reads; omitted collections are not initialized',timings},null,2));
 }finally{try{await sessions.close();}finally{console.log('Owned admin fixture cleanup',await fixture.close());}}

@@ -64,7 +64,7 @@ export async function assertMcpFlow({ ctx, result, request }, dynamic = false, t
       let settings = (await ctx.http.get(`${path}/settings`, { headers })).data;
       await saveAccess(ctx, headers, settings, { mcpAccess: 'full', clients: [{ id: tokenId, accessMode: 'full' }] });
       const catalog = (await mcpRequest(ctx, grant.access_token, 'events/list')).data.result;
-      assert.deepEqual(catalog.events.map(event => event.name), transportRole === 'admin' ? ['admin.attention'] : []);
+      assert.deepEqual(catalog.events.map(event => event.name), []);
       settings = (await ctx.http.get(`${path}/settings`, { headers })).data;
       await saveAccess(ctx, headers, settings, { mcpAccess: 'blocked' });
       await mcpRequest(ctx, grant.access_token, 'tools/list', {}, 401);

@@ -35,17 +35,13 @@ class HomeUserProfileServiceTest {
     private final ProfileStatusWork statusWork = mock(ProfileStatusWork.class);
     private final NotificationJobs jobs = mock(NotificationJobs.class);
     private final NotificationInbox notifications = mock(NotificationInbox.class);
-    private final com.raxim.myscoutee.domain.content.api.UserFeedback feedback = mock(com.raxim.myscoutee.domain.content.api.UserFeedback.class);
-    private final com.raxim.myscoutee.domain.content.api.UserReports reports = mock(com.raxim.myscoutee.domain.content.api.UserReports.class);
-    private final com.raxim.myscoutee.domain.chat.api.ChatReview review = mock(com.raxim.myscoutee.domain.chat.api.ChatReview.class);
-    private final com.raxim.myscoutee.domain.notifications.api.RoleNotifications roleNotifications = mock(com.raxim.myscoutee.domain.notifications.api.RoleNotifications.class);
     private HomeUserProfileService service;
 
     @BeforeEach void setup() {
         var lifecycle = new AccountLifecycleService(users, actions, selected, statusWork, access, telemetry,
                 mock(com.raxim.myscoutee.domain.platform.api.JobAudience.class), Optional.of(jobs));
         service = new HomeUserProfileService(selected, users, access, countries, region, lifecycle,
-                telemetry, statusWork, jobs, notifications, feedback, reports, review, roleNotifications);
+                telemetry, statusWork, jobs, notifications);
     }
 
     @AfterEach void clearSecurity() { SecurityContextHolder.clearContext(); }
@@ -177,46 +173,9 @@ class HomeUserProfileServiceTest {
                 "public", "", "", admin, operator, null, new UserNotificationPreferencesDto(true));
     }
 
-    @Test void chatReportRequiresReadableEvidenceBeforeAnyWrite() {
-        when(selected.resolveSelectedUserId("member")).thenReturn("member");
-        when(users.findByUserId("member")).thenReturn(Optional.of(user("member")));
-        assertThat(service.submitReport(chatReport()).submitted()).isFalse();
-        verify(review).reportEvidence("member", "target", "chat", "message");
-        verifyNoInteractions(reports, roleNotifications);
-    }
-    @Test void validChatReportUsesStoredEvidenceWithoutEventOrForgedSourceMetadata() {
-        when(selected.resolveSelectedUserId("member")).thenReturn("member");
-        when(users.findByUserId("member")).thenReturn(Optional.of(user("member")));
-        when(review.reportEvidence("member", "target", "chat", "message")).thenReturn(
-                new com.raxim.myscoutee.domain.chat.api.ChatReview.ReportEvidence("chat", "message", "Stored text"));
-        when(reports.submit(any())).thenReturn(new com.raxim.myscoutee.domain.content.api.UserReports.Receipt("report", false));
-        assertThat(service.submitReport(chatReport()).submitted()).isTrue();
-        var draft = org.mockito.ArgumentCaptor.forClass(com.raxim.myscoutee.domain.content.api.UserReports.ReportDraft.class);
-        verify(reports).submit(draft.capture());
-        assertThat(draft.getValue().sourceText()).isEqualTo("Stored text");
-        assertThat(draft.getValue().sourceType()).isEqualTo("chat");
-        assertThat(draft.getValue().eventId()).isNull();
-        assertThat(draft.getValue().assetId()).isNull();
-        verify(roleNotifications).moderationSubmitted("report-submitted", "report");
-    }
-    @Test void repeatedChatReportDoesNotRepublishRoleNotification() {
-        when(selected.resolveSelectedUserId("member")).thenReturn("member");
-        when(users.findByUserId("member")).thenReturn(Optional.of(user("member")));
-        when(review.reportEvidence("member", "target", "chat", "message")).thenReturn(
-                new com.raxim.myscoutee.domain.chat.api.ChatReview.ReportEvidence("chat", "message", "Stored text"));
-        when(reports.exists(anyString())).thenReturn(true);
-        assertThat(service.submitReport(chatReport()).submitted()).isTrue();
-        verify(reports, never()).submit(any());verifyNoInteractions(roleNotifications);
-    }
-    @Test void feedbackUsesTheSelectedActorAndNativeRoleNotification() {
-        when(selected.resolveSelectedUserId("member")).thenReturn("member");
-        when(users.findByUserId("member")).thenReturn(Optional.of(user("member")));
-        when(feedback.submit("member", "suggestion", "Subject", "Details")).thenReturn("feedback");
-        assertThat(service.submitFeedback(new UserFeedbackSubmitRequestDto("member", " suggestion ", " Subject ", " Details ")).submitted()).isTrue();
-        verify(roleNotifications).moderationSubmitted("feedback-submitted", "feedback");
-    }
-    private UserReportUserSubmitRequestDto chatReport() {
-        return new UserReportUserSubmitRequestDto("member", "Target", "abuse", "Details", "target", null,
-                "forged-event", "Forged event", null, "asset", "forged-source", "Forged text", "chat", "message", "forged-asset", "asset");
-    }
+
+
+
+
+
 }

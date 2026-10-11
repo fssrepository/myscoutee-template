@@ -37,13 +37,6 @@ public class RoleNotificationService implements RoleNotifications {
                 Map.of("releaseVersion", version), "updates", null);
     }
 
-    public void moderationSubmitted(String kind, String submissionId) {
-        boolean report = "report-submitted".equals(kind);
-        if (!report && !"feedback-submitted".equals(kind)) throw new IllegalArgumentException("Unknown moderation event.");
-        publish(kind, submissionId, false, true, report ? "New report" : "New feedback",
-                report ? "A report is waiting for review." : "A member sent feedback.", Map.of(), null,
-                report ? "reports" : "feedback");
-    }
 
     private void publish(String kind, String eventId, boolean operators, boolean admins,
             String title, String body, Map<String, String> parameters, String operatorTarget, String adminTarget) {

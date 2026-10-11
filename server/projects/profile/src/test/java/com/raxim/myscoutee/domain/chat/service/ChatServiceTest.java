@@ -1,7 +1,6 @@
 package com.raxim.myscoutee.domain.chat.service;
 
 import com.raxim.myscoutee.domain.accounts.service.HomeUserProfileService;
-import com.raxim.myscoutee.domain.accounts.service.UserActivityCountersService;
 import com.raxim.myscoutee.domain.administration.api.AdministratorClassification;
 import com.raxim.myscoutee.domain.administration.service.AdminTelemetryService;
 
@@ -77,8 +76,6 @@ class ChatServiceTest {
     @Mock
     private com.raxim.myscoutee.domain.accounts.api.SelectedProfile selectedProfile;
     @Mock
-    private UserActivityCountersService userActivityCountersService;
-    @Mock
     private ChatStreamPublisher chatStreamPublisher;
     @Mock
     private ChatPushNotificationService chatPushNotificationService;
@@ -98,7 +95,7 @@ class ChatServiceTest {
         org.mockito.Mockito.lenient().when(accessControlService.resolveChatActorUserId(any(), any()))
                 .thenAnswer(call -> call.getArgument(1));
         service = new ChatService(chatsRepository, chatMessagesRepository, mongoTemplate,
-                profileDirectory(), homeUserProfileService, userActivityCountersService,
+                profileDirectory(), homeUserProfileService,
                 chatStreamPublisher, chatPushNotificationService, userNotificationService,
                 adminTelemetryService, adminMenuCounterService, accessControlService,
                 new ChatMapper(), new ChatMessageMapper(profileDirectory()));
@@ -450,62 +447,6 @@ class ChatServiceTest {
         verify(chatsRepository, never()).findByChatId(anyString());
     }
 
-    @Test
-    void adminSupportMessageUsesTheChatMutationSignalsAndOnlyIncrementsTheTargetUnread() {
-        String chatId = "c-support-admin-target";
-        Users target = user("target", "Target User", "TU");
-        Users admin = user("admin", "Admin User", "AU");
-        when(adminMenuCounterService.isAdminUser(admin)).thenReturn(true);
-        when(usersRepository.findByUserId("target")).thenReturn(Optional.of(target));
-        when(usersRepository.findByUserId("admin")).thenReturn(Optional.of(admin));
-        when(chatsRepository.findByChatId(chatId)).thenReturn(List.of());
-        when(chatsRepository.saveAll(anyList())).thenAnswer(invocation -> invocation.getArgument(0));
-        when(chatMessagesRepository.save(any(ChatMessage.class))).thenAnswer(invocation -> invocation.getArgument(0));
-        when(mongoTemplate.bulkOps(BulkOperations.BulkMode.UNORDERED, Chat.class))
-                .thenReturn(bulkOperations);
-        when(mongoTemplate.bulkOps(BulkOperations.BulkMode.UNORDERED, Users.class))
-                .thenReturn(userCounterBulkOperations);
-
-        var result = service.sendAdminSupportMessage(
-                "target",
-                "admin",
-                "Admin User",
-                "AU",
-                "Please review this warning.",
-                "warned");
-
-        assertThat(result.senderName()).isEqualTo("Admin User");
-        assertThat(result.text()).isEqualTo("Please review this warning.");
-        ArgumentCaptor<List<Chat>> definitionsCaptor = ArgumentCaptor.forClass(List.class);
-        verify(chatsRepository).saveAll(definitionsCaptor.capture());
-        assertThat(definitionsCaptor.getValue()).hasSize(2);
-        assertThat(definitionsCaptor.getValue()).allSatisfy(chat -> {
-            assertThat(chat.getChannelType()).isEqualTo("appSupport");
-            assertThat(chat.getSupportCase().getStatus()).isEqualTo("warned");
-        });
-        ArgumentCaptor<Update> counterUpdateCaptor = ArgumentCaptor.forClass(Update.class);
-        verify(userCounterBulkOperations).updateOne(any(Query.class), counterUpdateCaptor.capture());
-        Document increments = counterUpdateCaptor.getValue().getUpdateObject().get("$inc", Document.class);
-        assertThat(((Number) increments.get("activities.chats")).intValue()).isEqualTo(1);
-        assertThat(((Number) increments.get("activities.chat.all")).intValue()).isEqualTo(1);
-        assertThat(((Number) increments.get("activities.chat.appSupport")).intValue()).isEqualTo(1);
-        verify(chatPushNotificationService).notifyRecipients(
-                org.mockito.ArgumentMatchers.argThat(chats -> chats.stream().anyMatch(chat ->
-                        "target".equals(chat.getOwnerUserId()) && Integer.valueOf(1).equals(chat.getUnread()))
-                        && chats.stream().anyMatch(chat ->
-                        "admin".equals(chat.getOwnerUserId()) && Integer.valueOf(0).equals(chat.getUnread()))),
-                org.mockito.ArgumentMatchers.argThat(event ->
-                        event != null
-                                && "message".equals(event.type())
-                                && chatId.equals(event.chatId())
-                                && "admin".equals(event.senderId())));
-        verify(chatStreamPublisher, timeout(1000)).publish(org.mockito.ArgumentMatchers.argThat(event ->
-                event != null
-                        && "message".equals(event.type())
-                        && chatId.equals(event.chatId())
-                        && "admin".equals(event.senderId())));
-
-    }
 
     @Test
     void editMessageRejectsDeniedChatBeforeLoadingMessage() {
@@ -519,17 +460,6 @@ class ChatServiceTest {
         verify(chatMessagesRepository, never()).save(any(ChatMessage.class));
     }
 
-    @Test
-    void updateSupportCaseRejectsDeniedChatBeforeSavingState() {
-        when(selectedProfile.resolveSelectedUserId("admin")).thenReturn("admin");
-        when(accessControlService.can(AccessPolicyKeys.CHAT_SUPPORT_MANAGE, "admin", "admin", "chat-support")).thenReturn(false);
-
-        assertThatThrownBy(() -> service.updateSupportCase("chat-support", "admin", "pick"))
-                .hasMessageContaining("support chat");
-
-        verify(chatsRepository, never()).findByChatId(anyString());
-        verify(chatsRepository, never()).saveAll(anyList());
-    }
 
     @Test
     void directChatRequiresAnApprovedPairBeforeWriting() {
@@ -592,15 +522,6 @@ class ChatServiceTest {
         org.mockito.Mockito.verifyNoInteractions(chatMessagesRepository);
     }
 
-    @Test
-    void aMemberCannotCreateAnAdministratorSupportMessage() {
-        when(usersRepository.findByUserId("target")).thenReturn(Optional.of(user("target", "Target", "T")));
-        when(usersRepository.findByUserId("member")).thenReturn(Optional.of(user("member", "Member", "M")));
-        assertThatThrownBy(() -> service.sendAdminSupportMessage("target", "member", "Member", "M", "warning", "warned"))
-                .isInstanceOf(org.springframework.web.server.ResponseStatusException.class)
-                .hasMessageContaining("403");
-        org.mockito.Mockito.verifyNoInteractions(chatsRepository, chatMessagesRepository);
-    }
 
     private Chat chat(String chatId, String ownerUserId, int unread) {
         return chat(chatId, ownerUserId, unread, "2026-05-26T08:00:00Z");

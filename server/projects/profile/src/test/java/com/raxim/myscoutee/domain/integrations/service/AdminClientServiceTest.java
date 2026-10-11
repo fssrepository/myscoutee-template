@@ -25,21 +25,25 @@ class AdminClientServiceTest {
         profile.setProfileStatus("public"); profile.setHostTier("Member");
         assertThrows(org.springframework.web.server.ResponseStatusException.class, () -> access.requireAdmin("admin"));
     }
-    @Test void returnsRetainedOwnerCountsWithoutCreatingAnAnalyticsSnapshot() {
-        var access = mock(AdminClientAccessService.class); var repository = mock(AdminClientRepository.class);
+    @Test void omittedModerationOmitsOnlyItsJsonFieldsAndKeepsTheAdminRead() {
+        var repository = mock(AdminClientRepository.class);
+        var access = mock(AdminClientAccessService.class);
         when(access.requireAdmin("admin")).thenReturn(new Users());
-        when(repository.unreadVersion("admin")).thenReturn("version-1");
-        when(repository.unresolvedReports()).thenReturn(3L); when(repository.unresolvedFeedback()).thenReturn(2L);
-        var attention = new AdminClientService(access, repository).overview("admin").attention();
-        assertEquals("version-1", attention.unreadVersion()); assertEquals(3, attention.unresolvedReports());
-        assertEquals(2, attention.unresolvedFeedback()); assertEquals(0, attention.supportCases());
-        verify(repository).unreadVersion("admin"); verify(repository).unresolvedReports(); verify(repository).unresolvedFeedback();
+        when(repository.unreadVersion("admin")).thenReturn("revision");
+        var result = new AdminClientService(access, repository, java.util.Optional.empty()).overview("admin");
+        var mapper = new tools.jackson.databind.ObjectMapper();
+        assertEquals(mapper.readTree("""
+                {"unreadMessages":0,"unreadVersion":"revision","failedJobs":0}
+                """), mapper.readTree(mapper.writeValueAsString(result)).get("attention"));
+        verify(access).requireAdmin("admin");
+        verify(repository).unreadVersion("admin");
         verifyNoMoreInteractions(repository);
     }
+
     @Test void deniedOwnersDoNotReadCounts() {
         var access = mock(AdminClientAccessService.class); var repository = mock(AdminClientRepository.class);
         when(access.requireAdmin("member")).thenThrow(new org.springframework.web.server.ResponseStatusException(org.springframework.http.HttpStatus.FORBIDDEN));
-        assertThrows(org.springframework.web.server.ResponseStatusException.class, () -> new AdminClientService(access, repository).overview("member"));
+        assertThrows(org.springframework.web.server.ResponseStatusException.class, () -> new AdminClientService(access, repository, Optional.empty()).overview("member"));
         verifyNoInteractions(repository);
     }
 }

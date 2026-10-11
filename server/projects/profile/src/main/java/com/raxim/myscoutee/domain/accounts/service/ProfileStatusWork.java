@@ -1,6 +1,7 @@
 package com.raxim.myscoutee.domain.accounts.service;
 
 import java.util.UUID;
+import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -9,21 +10,23 @@ import org.springframework.data.mongodb.core.query.Update;
 import com.raxim.myscoutee.common.config.mongo.ScheduledMongoSessionRunner;
 import com.raxim.myscoutee.domain.accounts.document.Users;
 import com.raxim.myscoutee.domain.accounts.repository.UsersRepository;
+import com.raxim.myscoutee.domain.accounts.api.ProfileStatusObserver;
 import com.raxim.myscoutee.domain.platform.api.JobGroupContext;
 
-/** Status and pending work share the account document's atomic save. The existing
- * pending marker retries support delivery from the current owner state. */
+/** Status and pending work share the account document's atomic save. Installed
+ * observers complete before support messages and the guarded work-marker removal. */
 @Service
 public class ProfileStatusWork {
-    @org.springframework.beans.factory.annotation.Autowired
+    @org.springframework.beans.factory.annotation.Autowired(required = false)
     @org.springframework.context.annotation.Lazy
     private com.raxim.myscoutee.domain.chat.api.SupportMessages supportMessages;
     private final UsersRepository users;
     private final MongoTemplate mongo;
+    private final List<ProfileStatusObserver> observers;
     private final ScheduledMongoSessionRunner databases;
-    public ProfileStatusWork(UsersRepository users, MongoTemplate mongo,
+    public ProfileStatusWork(UsersRepository users, MongoTemplate mongo, List<ProfileStatusObserver> observers,
             ScheduledMongoSessionRunner databases) {
-        this.users = users; this.mongo = mongo; this.databases = databases;
+        this.users = users; this.mongo = mongo; this.observers = List.copyOf(observers); this.databases = databases;
     }
     public Users save(Users user) {
         user.setProfileStatusWork(UUID.randomUUID().toString());
@@ -58,6 +61,12 @@ public class ProfileStatusWork {
     private void deliver(Users user) {
         if (user == null || user.getProfileStatusWork() == null) return;
         try {
+            JobGroupContext.run(user.getWorkspaceGroupId(), () -> {
+                for (var observer : observers) observer.onProfileStatusChanged(user.getUserId());
+            });
+            if (!user.getProfileSupportWork().isEmpty() && supportMessages == null) {
+                throw new IllegalStateException("Support work requires its delivery owner");
+            }
             for (var message : user.getProfileSupportWork()) {
                 JobGroupContext.run(user.getWorkspaceGroupId(), () -> supportMessages.sendAdminSupportMessage(
                         user.getUserId(), message.adminUserId(), message.adminName(), message.adminInitials(),

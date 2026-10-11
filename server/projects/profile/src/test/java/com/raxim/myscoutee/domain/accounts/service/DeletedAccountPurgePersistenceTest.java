@@ -46,7 +46,7 @@ class DeletedAccountPurgePersistenceTest {
                             new Document("_id", "recent-credential").append("ownerUserId", "recent")));
                 }
                 mongo.getCollection("mcpOAuthClients").insertOne(new Document("_id", "shared-client"));
-                for (String collection : List.of("privacyConsents", "userSessionActions", "userReports", "userFeedback", "accountDeletionWarnings")) {
+                for (String collection : List.of("privacyConsents", "userSessionActions", "accountDeletionWarnings")) {
                     mongo.getCollection(collection).insertMany(List.of(
                             new Document("_id", "expired-record").append("userId", "expired"),
                             new Document("_id", "recent-record").append("userId", "recent")));
@@ -89,7 +89,7 @@ class DeletedAccountPurgePersistenceTest {
                     assertThat(mongo.getCollection(collection).countDocuments(new Document("ownerUserId", "recent"))).isEqualTo(1);
                 }
                 assertThat(mongo.getCollection("mcpOAuthClients").countDocuments()).isEqualTo(1);
-                for (String collection : List.of("privacyConsents", "userSessionActions", "userReports", "userFeedback", "accountDeletionWarnings")) {
+                for (String collection : List.of("privacyConsents", "userSessionActions", "accountDeletionWarnings")) {
                     assertThat(mongo.getCollection(collection).countDocuments(new Document("userId", "expired"))).isZero();
                     assertThat(mongo.getCollection(collection).countDocuments(new Document("userId", "recent"))).isEqualTo(1);
                 }
@@ -136,7 +136,6 @@ class DeletedAccountPurgePersistenceTest {
                 mock(ProfileDirectory.class), Optional.empty(), List.of()));
         ReflectionTestUtils.setField(worker, "notificationPrivacy", new NotificationPrivacyService(mongo));
         ReflectionTestUtils.setField(worker, "helpPrivacy", new HelpPrivacyService(mongo));
-        ReflectionTestUtils.setField(worker, "contentPrivacy", new com.raxim.myscoutee.domain.content.service.ContentPrivacyService(mongo));
         ReflectionTestUtils.setField(worker, "integrationPrivacy",
                 new com.raxim.myscoutee.domain.integrations.service.IntegrationPrivacyService(mongo));
         return worker;

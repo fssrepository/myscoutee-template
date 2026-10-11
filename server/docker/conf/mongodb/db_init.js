@@ -19,10 +19,8 @@ const requiredCollections = [
   "notificationRuleConfigs",
   "privacyConsents",
   "userFriendships",
-  "userReports",
   "integrationWebhookDeliveries",
   "mcpEventSubscriptions",
-  "userFeedback",
   "userLoginAudits",
   "userNotifications",
   "userSessionActions",
@@ -88,12 +86,6 @@ Array.from(new Set(configuredDatabases)).forEach(databaseName => {
   portalDb.mcpEventSubscriptions.createIndex({ownerUserId: 1, tokenId: 1, clientId: 1, callbackUrl: 1}, {name: 'mcp_events_callback'});
   portalDb.mcpEventSubscriptions.createIndex({deleteAfter: 1}, {name: 'deleteAfter', expireAfterSeconds: 0});
 
-  portalDb.userReports.createIndex({syncKey: 1}, {name: 'user_report_sync_key', unique: true, sparse: true});
-  portalDb.userReports.createIndex({userId: 1, createdDate: -1}, {name: 'user_report_user_created'});
-  portalDb.userReports.createIndex({resolvedAtIso: 1}, {name: 'user_report_resolved'});
-  portalDb.userFeedback.createIndex({syncKey: 1}, {name: 'user_feedback_sync_key', unique: true, sparse: true});
-  portalDb.userFeedback.createIndex({userId: 1, createdDate: -1}, {name: 'user_feedback_user_created'});
-  portalDb.userFeedback.createIndex({resolvedAtIso: 1}, {name: 'user_feedback_resolved'});
 
   portalDb.users.createIndex(
     { syncKey: 1 },

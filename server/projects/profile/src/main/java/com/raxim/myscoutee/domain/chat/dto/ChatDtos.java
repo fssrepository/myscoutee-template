@@ -172,10 +172,7 @@ public final class ChatDtos {
             String firebaseToken) {
     }
 
-    public record ChatSupportCaseMutationRequestDto(
-            String userId,
-            String action) {
-    }
+
     public record ChatDto(
             String id,
             String avatar,
