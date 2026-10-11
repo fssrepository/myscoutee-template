@@ -390,6 +390,10 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     local simulated installation/PWA reload, dev HTTP version/check and notification
     target/guide flows pass. See `MSC122_TEMPLATE_UPDATE_UI_20261011.json`.
     This is not signed DEB installation or rollback qualification.
+    Admin report/feedback/moderation and support HTTP actions now pass with native
+    chat evidence, role isolation and required MCP role-delivery ownership. See
+    `MSC122_TEMPLATE_ADMIN_BACKEND_20261011.json`. Local/HTTP admin UI, privileged
+    API controls and KVM remain pending; step 19 stays open.
 
 20. **Consolidate JUnit and frontend unit/component coverage — IN PROGRESS.**
     Preserve `tools/run-backend-junit.sh`, native standard/embedded/integration

@@ -1,6 +1,11 @@
 package com.raxim.myscoutee.domain.accounts.service;
 
 import java.time.Instant;
+import java.nio.charset.StandardCharsets;
+import com.raxim.myscoutee.domain.content.api.UserFeedback;
+import com.raxim.myscoutee.domain.content.api.UserReports;
+import com.raxim.myscoutee.domain.chat.api.ChatReview;
+import com.raxim.myscoutee.domain.notifications.api.RoleNotifications;
 import java.util.*;
 import org.bson.types.ObjectId;
 import org.springframework.stereotype.Service;
@@ -42,17 +47,24 @@ public class HomeUserProfileService implements ProfileReadState {
     private final ProfileStatusWork profileStatusWork;
     private final NotificationJobs notificationRuleRegistryService;
     private final NotificationInbox notifications;
+    private final UserFeedback userFeedback;
+    private final UserReports userReports;
+    private final ChatReview chatReview;
+    private final RoleNotifications roleNotifications;
 
     public HomeUserProfileService(SelectedProfile selectedProfile, UsersRepository usersRepository,
             AccessPermissions accessControlService, CountryDirectory countryPartitionService,
             RegionSecurityProperties regionSecurityProperties, AccountLifecycleService lifecycle,
             OperationalTelemetry adminTelemetryService, ProfileStatusWork profileStatusWork,
-            NotificationJobs notificationRuleRegistryService, NotificationInbox notifications) {
+            NotificationJobs notificationRuleRegistryService, NotificationInbox notifications,
+            UserFeedback userFeedback, UserReports userReports, ChatReview chatReview, RoleNotifications roleNotifications) {
         this.selectedProfile = selectedProfile; this.usersRepository = usersRepository;
         this.accessControlService = accessControlService; this.countryPartitionService = countryPartitionService;
         this.regionSecurityProperties = regionSecurityProperties; this.lifecycle = lifecycle;
         this.adminTelemetryService = adminTelemetryService; this.profileStatusWork = profileStatusWork;
         this.notificationRuleRegistryService = notificationRuleRegistryService; this.notifications = notifications;
+        this.userFeedback = userFeedback; this.userReports = userReports;
+        this.chatReview = chatReview; this.roleNotifications = roleNotifications;
     }
 
     public UserByIdResponseDto queryUserById(String requestedUserId) {
@@ -609,5 +621,49 @@ public class HomeUserProfileService implements ProfileReadState {
         String name = admin ? adminDisplayName(principal.getEmail()) : "Operator";
         return response(new UserDto(principal.getUserId(), name, "", adminInitials(name), "man", null, "", List.of(),
                 "public", "", "", admin, operator, buildMenuCounters(null), new UserNotificationPreferencesDto(false)), admin, operator);
+    }
+
+    public UserSubmitActionResponseDto submitFeedback(UserFeedbackSubmitRequestDto request) {
+        Users actor = resolveCurrentUser(request == null ? null : request.userId());
+        String userId = normalizeId(actor == null ? null : actor.getId());
+        if (!StringUtils.hasText(userId) || request == null)
+            return new UserSubmitActionResponseDto(false, "Unable to send feedback.");
+        String id = userFeedback.submit(userId, safeText(request.category()), safeText(request.subject()), safeText(request.details()));
+        roleNotifications.moderationSubmitted("feedback-submitted", id);
+        adminTelemetryService.record("feedback.submitted", "moderation", id, userId);
+        return new UserSubmitActionResponseDto(true, null);
+    }
+
+    public UserSubmitActionResponseDto submitReport(UserReportUserSubmitRequestDto request) {
+        Users actor = resolveCurrentUser(request == null ? null : request.userId());
+        String userId = normalizeId(actor == null ? null : actor.getId());
+        if (!StringUtils.hasText(userId) || request == null)
+            return new UserSubmitActionResponseDto(false, "Unable to submit report.");
+        String targetUserId = normalizeId(request.targetUserId());
+        if (!StringUtils.hasText(targetUserId) || userId.equals(targetUserId))
+            return new UserSubmitActionResponseDto(false, "Select a message from another participant.");
+        var evidence = chatReview.reportEvidence(userId, targetUserId, request.chatId(), request.messageId());
+        if (evidence == null)
+            return new UserSubmitActionResponseDto(false, "Reports can only include chat messages you can view.");
+        String syncKey = reportSyncKey(userId, targetUserId, null, request.reason(), request.details(),
+                "chat", evidence.messageId(), evidence.chatId(), evidence.messageId(), null);
+        if (userReports.exists(syncKey)) return new UserSubmitActionResponseDto(true, "Report already submitted.");
+        var receipt = userReports.submit(new UserReports.ReportDraft(syncKey, userId, safeText(request.handle()),
+                safeText(request.reason()), safeText(request.details()), targetUserId, null, null, null, null,
+                "chat", evidence.messageId(), evidence.text(), evidence.chatId(), evidence.messageId(), null, null));
+        if (receipt.duplicate()) return new UserSubmitActionResponseDto(true, "Report already submitted.");
+        roleNotifications.moderationSubmitted("report-submitted", receipt.id());
+        adminTelemetryService.record("report.submitted", "moderation", receipt.id(), userId);
+        return new UserSubmitActionResponseDto(true, null);
+    }
+
+    private String reportSyncKey(String reporterUserId, String targetUserId, String eventId,
+            String reason, String details, String sourceType, String sourceId, String chatId,
+            String messageId, String assetId) {
+        String identity = String.join("|", normalizeId(reporterUserId), normalizeId(targetUserId),
+                normalizeId(eventId), normalizeId(reason), normalizeId(details),
+                normalizeId(sourceType).toLowerCase(Locale.ROOT), normalizeId(sourceId), normalizeId(chatId),
+                normalizeId(messageId), normalizeId(assetId));
+        return "user-report:" + UUID.nameUUIDFromBytes(identity.getBytes(StandardCharsets.UTF_8));
     }
 }

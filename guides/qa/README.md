@@ -260,3 +260,20 @@ node e2e/functional/ui/operator/updates.mjs --local
 E2E_MONGO_CONTAINER=myscoutee-template-dev-mongodb E2E_DATABASE=demo_db \
   node e2e/functional/ui/operator/updates.mjs
 ```
+
+## Admin backend checkpoint
+
+The retained report/feedback/moderation API uses native chat evidence, admin
+authority, support messages and profile status work. The required MCP role
+notification queue retains native callback security, retries and idle-work guard.
+See [admin backend evidence](../qualification/evidence/MSC122_TEMPLATE_ADMIN_BACKEND_20261011.json).
+UI, external callback transport, KVM and installed qualification remain open.
+
+```sh
+E2E_MONGO_CONTAINER=myscoutee-template-dev-mongodb E2E_DATABASE=demo_db \
+  node e2e/functional/backend/admin/run.mjs
+```
+
+The runner creates owned actors, reports, feedback and support chats. It restores
+administrator configuration through the existing operator fixture and closes
+its native sessions before removing its data.

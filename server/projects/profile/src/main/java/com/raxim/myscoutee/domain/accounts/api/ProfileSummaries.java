@@ -9,4 +9,5 @@ public interface ProfileSummaries {
     List<? extends ProfileSummary> findByUserIdIn(Collection<String> userIds);
     long countByUserIdIn(Collection<String> ids);
     List<? extends ProfileSummary> pageByUserIdIn(Collection<String> ids, int offset, int limit);
+    List<? extends ProfileSummary> findByProfileStatus(String status);
 }

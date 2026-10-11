@@ -114,7 +114,24 @@ ensure_collection_indexes() {
   local collection_name="$2"
 
   case "${collection_name}" in
-    integrationTokens|mcpOAuthClients|mcpAuthorizations)
+    userReports|userFeedback)
+      mongosh \
+        --host "${mongo_host}" \
+        --port "${mongo_port}" \
+        --username "${mongo_username}" \
+        --password "${mongo_password}" \
+        --authenticationDatabase "${target_db}" \
+        --quiet "${target_db}" \
+        --eval "
+db.userReports.createIndex({syncKey: 1}, {name: 'user_report_sync_key', unique: true, sparse: true});
+db.userReports.createIndex({userId: 1, createdDate: -1}, {name: 'user_report_user_created'});
+db.userReports.createIndex({resolvedAtIso: 1}, {name: 'user_report_resolved'});
+db.userFeedback.createIndex({syncKey: 1}, {name: 'user_feedback_sync_key', unique: true, sparse: true});
+db.userFeedback.createIndex({userId: 1, createdDate: -1}, {name: 'user_feedback_user_created'});
+db.userFeedback.createIndex({resolvedAtIso: 1}, {name: 'user_feedback_resolved'});
+" >/dev/null
+      ;;
+    integrationTokens|mcpOAuthClients|mcpAuthorizations|integrationWebhookDeliveries|mcpEventSubscriptions)
       mongosh \
         --host "${mongo_host}" \
         --port "${mongo_port}" \
@@ -124,6 +141,13 @@ ensure_collection_indexes() {
         --quiet \
         "${target_db}" \
         --eval "
+db.integrationWebhookDeliveries.createIndex({protocol: 1, status: 1, ownerUserId: 1}, {name: 'integration_delivery_protocol_status'});
+db.integrationWebhookDeliveries.createIndex({status: 1, nextAttemptAtIso: 1, createdAtIso: 1}, {name: 'integration_webhook_delivery_due'});
+db.integrationWebhookDeliveries.createIndex({subscriptionId: 1, createdAtIso: -1}, {name: 'integration_webhook_delivery_subscription'});
+db.integrationWebhookDeliveries.createIndex({deleteAfter: 1}, {name: 'deleteAfter', expireAfterSeconds: 0});
+db.mcpEventSubscriptions.createIndex({ownerUserId: 1, name: 1, resourceId: 1, enabled: 1}, {name: 'mcp_events_owner_event'});
+db.mcpEventSubscriptions.createIndex({ownerUserId: 1, tokenId: 1, clientId: 1, callbackUrl: 1}, {name: 'mcp_events_callback'});
+db.mcpEventSubscriptions.createIndex({deleteAfter: 1}, {name: 'deleteAfter', expireAfterSeconds: 0});
 db.getCollection('integrationTokens').createIndex({ tokenHash: 1 }, { name: 'integration_token_hash', unique: true });
 db.getCollection('integrationTokens').createIndex({ ownerUserId: 1, createdAtIso: -1 }, { name: 'integration_token_owner_created' });
 db.getCollection('mcpOAuthClients').createIndex({ createdAt: 1 }, { name: 'createdAt' });
@@ -320,6 +344,7 @@ ensure_collection_versions() {
 ensure_runtime_indexes() {
   local target_db="$1"
   ensure_collection_indexes "${target_db}" "integrationTokens"
+  ensure_collection_indexes "${target_db}" "userReports"
 }
 
 ensure_collection_indexes_before_import() {

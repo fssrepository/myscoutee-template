@@ -16,6 +16,10 @@ const requiredCollections = [
   "notificationRuleConfigs",
   "privacyConsents",
   "userFriendships",
+  "userReports",
+  "integrationWebhookDeliveries",
+  "mcpEventSubscriptions",
+  "userFeedback",
   "userLoginAudits",
   "userNotifications",
   "userSessionActions",
@@ -68,6 +72,21 @@ Array.from(new Set(configuredDatabases)).forEach(databaseName => {
   portalDb.mcpAuthorizations.createIndex({ accessHash: 1 }, { name: 'accessHash' });
   portalDb.mcpAuthorizations.createIndex({ refreshHash: 1 }, { name: 'refreshHash' });
   portalDb.mcpAuthorizations.createIndex({ expiresAt: 1 }, { name: 'expiresAt', expireAfterSeconds: 0 });
+
+  portalDb.integrationWebhookDeliveries.createIndex({protocol: 1, status: 1, ownerUserId: 1}, {name: 'integration_delivery_protocol_status'});
+  portalDb.integrationWebhookDeliveries.createIndex({status: 1, nextAttemptAtIso: 1, createdAtIso: 1}, {name: 'integration_webhook_delivery_due'});
+  portalDb.integrationWebhookDeliveries.createIndex({subscriptionId: 1, createdAtIso: -1}, {name: 'integration_webhook_delivery_subscription'});
+  portalDb.integrationWebhookDeliveries.createIndex({deleteAfter: 1}, {name: 'deleteAfter', expireAfterSeconds: 0});
+  portalDb.mcpEventSubscriptions.createIndex({ownerUserId: 1, name: 1, resourceId: 1, enabled: 1}, {name: 'mcp_events_owner_event'});
+  portalDb.mcpEventSubscriptions.createIndex({ownerUserId: 1, tokenId: 1, clientId: 1, callbackUrl: 1}, {name: 'mcp_events_callback'});
+  portalDb.mcpEventSubscriptions.createIndex({deleteAfter: 1}, {name: 'deleteAfter', expireAfterSeconds: 0});
+
+  portalDb.userReports.createIndex({syncKey: 1}, {name: 'user_report_sync_key', unique: true, sparse: true});
+  portalDb.userReports.createIndex({userId: 1, createdDate: -1}, {name: 'user_report_user_created'});
+  portalDb.userReports.createIndex({resolvedAtIso: 1}, {name: 'user_report_resolved'});
+  portalDb.userFeedback.createIndex({syncKey: 1}, {name: 'user_feedback_sync_key', unique: true, sparse: true});
+  portalDb.userFeedback.createIndex({userId: 1, createdDate: -1}, {name: 'user_feedback_user_created'});
+  portalDb.userFeedback.createIndex({resolvedAtIso: 1}, {name: 'user_feedback_resolved'});
 
   portalDb.users.createIndex(
     { syncKey: 1 },

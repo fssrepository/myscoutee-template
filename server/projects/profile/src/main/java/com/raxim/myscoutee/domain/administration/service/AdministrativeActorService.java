@@ -20,12 +20,6 @@ import com.raxim.myscoutee.domain.platform.api.AuthenticationMode;
 /** Administrator account identity, independent of moderation data. */
 @Service
 public class AdministrativeActorService implements AdministrativeActors, com.raxim.myscoutee.domain.administration.api.AdministratorClassification {
-    private static final List<AdminUserDto> DEMO_ADMINS = List.of(
-            new AdminUserDto("admin-demo-ava", "Ava Moderation", "AM", "admin1@myscoutee.local",
-                    "Moderation workspace", "Reviews reports, feedback, and support chats.", List.of()),
-            new AdminUserDto("admin-demo-noel", "Noel Safety", "NS", "admin2@myscoutee.local",
-                    "Moderation workspace", "Reviews reports, feedback, and support chats.", List.of()));
-
     private final AuthenticationMode configProperties;
     private final ProfileSummaries usersRepository;
     private final AdministratorSettings appSettingsService;
@@ -50,13 +44,16 @@ public class AdministrativeActorService implements AdministrativeActors, com.rax
         if (MongoSessionModeContext.currentMode() != MongoSessionMode.DEMO) {
             throw new ResponseStatusException(HttpStatus.FORBIDDEN, "Admin demo access is restricted to demo data.");
         }
-        String normalized = normalize(adminUserId);
-        ProfileSummary requested = usersRepository.findByUserId(normalized).orElse(null);
-        String accountId = requested != null && requested.getAccountUserId() != null ? requested.getAccountUserId() : normalized;
-        AdminUserDto admin = DEMO_ADMINS.stream()
-                .filter(candidate -> candidate.id().equals(accountId))
-                .findFirst()
-                .orElse(DEMO_ADMINS.get(0));
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication == null || !authentication.isAuthenticated()
+                || authentication.getAuthorities().stream().noneMatch(role -> "A".equals(role.getAuthority()))
+                || !(authentication.getPrincipal() instanceof AuthenticatedActor actor)) {
+            throw new ResponseStatusException(HttpStatus.FORBIDDEN, "Admin access is restricted.");
+        }
+        String id = normalize(actor.getUserId());
+        if (!StringUtils.hasText(id)) throw new ResponseStatusException(HttpStatus.FORBIDDEN);
+        AdminUserDto admin = new AdminUserDto(id, id, initialsForEmail(id), normalize(actor.getEmail()),
+                "Moderation workspace", "Reviews reports, feedback, and support chats.", List.of());
         return resolveSelectedAdmin(withStoredAdminProfile(admin), adminUserId);
     }
 

@@ -105,4 +105,30 @@ public final class AuthDtos {
     }
     public record UserNotificationDeviceDto(String deviceId, boolean notificationsEnabled) {
     }
+
+    public record UserFeedbackSubmitRequestDto(
+            String userId,
+            String category,
+            String subject,
+            String details) {
+    }
+
+    public record UserReportUserSubmitRequestDto(
+            String userId,
+            String handle,
+            String reason,
+            String details,
+            String targetUserId,
+            String memberEntryId,
+            String eventId,
+            String eventTitle,
+            String eventStartAtIso,
+            String sourceType,
+            String sourceId,
+            String sourceText,
+            String chatId,
+            String messageId,
+            String assetId,
+            String assetType) {
+    }
 }

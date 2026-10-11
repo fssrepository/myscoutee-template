@@ -52,6 +52,7 @@ class DeletedAccountPurgeServiceTest {
                 mock(ProfileDirectory.class), Optional.empty(), List.of()));
         ReflectionTestUtils.setField(service, "helpPrivacy", new HelpPrivacyService(mongo));
         ReflectionTestUtils.setField(service, "notificationPrivacy", new NotificationPrivacyService(mongo));
+        ReflectionTestUtils.setField(service, "contentPrivacy", new com.raxim.myscoutee.domain.content.service.ContentPrivacyService(mongo));
         ReflectionTestUtils.setField(service, "integrationPrivacy",
                 new com.raxim.myscoutee.domain.integrations.service.IntegrationPrivacyService(mongo));
     }

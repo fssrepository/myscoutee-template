@@ -19,7 +19,10 @@ export async function stageOperatorConfigurationFixture(baseUrl){
  const restore={adminEmails:before.adminEmails,privacyContact:{dataControllerName:before.privacyContact.dataControllerName,privacyContactEmail:before.privacyContact.privacyContactEmail},socialLinks:before.socialLinks,
   branding:{productName:before.branding.productName,logoUrl:before.branding.logoUrl,logoCharacterIndex:before.branding.logoCharacterIndex},integration:before.integration,
   firebase:{projectId:before.firebase.projectId,...Object.fromEntries(['apiKey','authDomain','storageBucket','messagingSenderId','appId','measurementId','vapidKey'].map(k=>[k,publicFirebase[k]??''])),authenticationCredential:'',messagingCredential:''}};
- return {...fixture,before,readDurationMs,async assertAuthority(){
+ return {...fixture,before,readDurationMs,async setAdministratorEmails(adminEmails){
+  const response=await fetch(baseUrl+'/api/operator/configuration',{method:'PUT',headers,body:JSON.stringify({...restore,adminEmails})});
+  assert.equal(response.status,200,'Configure isolated fixture administrators through the existing owner');
+ },async assertAuthority(){
   const memberHeaders={'Content-Type':'application/json','X-App-Session-Kind':'demo','X-Demo-User-Id':fixture.ids[1]};
   Object.assign(memberHeaders,await sessions.headersForRequest('GET',baseUrl+'/api/operator/configuration',{headers:memberHeaders}));
   const member=await fetch(baseUrl+'/api/operator/configuration',{headers:memberHeaders});

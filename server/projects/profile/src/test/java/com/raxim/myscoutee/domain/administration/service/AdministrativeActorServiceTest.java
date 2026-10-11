@@ -31,7 +31,14 @@ class AdministrativeActorServiceTest {
     private final AdministrativeActorService service = new AdministrativeActorService(mode, profiles, settings);
 
     @BeforeEach
-    void demoDatabase() { MongoSessionModeContext.set(MongoSessionMode.DEMO); }
+    void demoDatabase() {
+        MongoSessionModeContext.set(MongoSessionMode.DEMO);
+        var principal = mock(com.raxim.myscoutee.domain.accounts.api.AuthenticatedActor.class);
+        when(principal.getUserId()).thenReturn("admin-demo-ava");
+        when(principal.getEmail()).thenReturn("admin@example.test");
+        SecurityContextHolder.getContext().setAuthentication(UsernamePasswordAuthenticationToken.authenticated(
+                principal, null, List.of(new org.springframework.security.core.authority.SimpleGrantedAuthority("A"))));
+    }
 
     @AfterEach
     void clearContext() {
@@ -55,7 +62,7 @@ class AdministrativeActorServiceTest {
             assertThat(actor.id()).isEqualTo("admin-demo-ava");
             assertThat(actor.name()).isEqualTo("Stored admin");
             assertThat(actor.images()).containsExactly("avatar.png");
-            verify(profiles, times(2)).findByUserId("admin-demo-ava");
+            verify(profiles, times(1)).findByUserId("admin-demo-ava");
             verifyNoMoreInteractions(profiles);
         }
     }
@@ -92,7 +99,7 @@ class AdministrativeActorServiceTest {
     @Test
     void standaloneAdminDoesNotNeedACommunityProfile() {
         assertThat(service.resolveAdminActor("admin-demo-ava").id()).isEqualTo("admin-demo-ava");
-        verify(profiles, times(2)).findByUserId("admin-demo-ava");
+        verify(profiles, times(1)).findByUserId("admin-demo-ava");
         verifyNoMoreInteractions(profiles);
     }
 
@@ -109,5 +116,18 @@ class AdministrativeActorServiceTest {
     private void forbidden(Runnable action) {
         assertThatThrownBy(action::run).isInstanceOfSatisfying(ResponseStatusException.class,
                 error -> assertThat(error.getStatusCode()).isEqualTo(HttpStatus.FORBIDDEN));
+    }
+
+    @Test void absentAuthenticationDoesNotFallBackToASampleAdmin() {
+        SecurityContextHolder.clearContext();
+        forbidden(() -> service.resolveAdminActor("admin-demo-ava"));
+        verifyNoInteractions(profiles);
+    }
+    @Test void memberAuthorityCannotResolveAnAdminActor() {
+        var principal = mock(com.raxim.myscoutee.domain.accounts.api.AuthenticatedActor.class);
+        SecurityContextHolder.getContext().setAuthentication(UsernamePasswordAuthenticationToken.authenticated(
+                principal, null, List.of(new org.springframework.security.core.authority.SimpleGrantedAuthority("U"))));
+        forbidden(() -> service.resolveAdminActor("admin-demo-ava"));
+        verifyNoInteractions(profiles);
     }
 }

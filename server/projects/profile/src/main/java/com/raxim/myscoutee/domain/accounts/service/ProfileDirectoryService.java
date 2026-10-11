@@ -23,4 +23,5 @@ public class ProfileDirectoryService implements ProfileDirectory, ProfileSummari
         return mongo.find(org.springframework.data.mongodb.core.query.Query.query(org.springframework.data.mongodb.core.query.Criteria.where("userId").in(ids))
                 .with(org.springframework.data.domain.Sort.by(org.springframework.data.domain.Sort.Direction.ASC, "userId")).limit(limit).skip(offset), Users.class);
     }
+    @Override public List<Users> findByProfileStatus(String status) { return users.findByProfileStatus(status); }
 }

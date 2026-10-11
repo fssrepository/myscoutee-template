@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.raxim.myscoutee.domain.accounts.dto.AuthDtos.UserByIdResponseDto;
+import com.raxim.myscoutee.domain.accounts.dto.AuthDtos.UserFeedbackSubmitRequestDto;
+import com.raxim.myscoutee.domain.accounts.dto.AuthDtos.UserReportUserSubmitRequestDto;
 import com.raxim.myscoutee.domain.accounts.dto.AuthDtos.UserDeleteRequestDto;
 import com.raxim.myscoutee.domain.accounts.dto.AuthDtos.DemoUserListItemDto;
 import com.raxim.myscoutee.domain.accounts.dto.AuthDtos.ProfileExtDto;
@@ -155,5 +157,14 @@ public class AuthController {
             skipWhenAuthenticationOptional = true)
     public UserSubmitActionResponseDto deleteUser(@RequestBody(required = false) UserDeleteRequestDto request) {
         return homeUserProfileService.deleteUser(request);
+    }
+
+    @PostMapping("/me/feedback")
+    public UserSubmitActionResponseDto submitFeedback(@RequestBody UserFeedbackSubmitRequestDto request) {
+        return homeUserProfileService.submitFeedback(request);
+    }
+    @PostMapping("/me/report-user")
+    public UserSubmitActionResponseDto submitReport(@RequestBody UserReportUserSubmitRequestDto request) {
+        return homeUserProfileService.submitReport(request);
     }
 }

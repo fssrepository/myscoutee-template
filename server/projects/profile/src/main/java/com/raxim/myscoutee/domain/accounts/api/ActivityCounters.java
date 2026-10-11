@@ -1,5 +1,3 @@
 package com.raxim.myscoutee.domain.accounts.api;
-public interface ActivityCounters {
-    boolean hasSupportCaseCounters(String userId);
-    void refreshSupportCaseCountersForAdmins();
-}
+/** Selected support counters; product activity counters are omitted. */
+public interface ActivityCounters extends SupportCaseCounters {}

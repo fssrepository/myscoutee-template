@@ -11,6 +11,8 @@ public class IntegrationPrivacyService implements com.raxim.myscoutee.domain.int
   if(!StringUtils.hasText(userId))return;
   remove("integrationTokens",userId,"ownerUserId");
   remove("mcpAuthorizations",userId,"ownerUserId");
+  remove("mcpEventSubscriptions",userId,"ownerUserId");
+  remove("integrationWebhookDeliveries",userId,"ownerUserId");
  }
  private void remove(String collection,String userId,String...fields) {
   if(!StringUtils.hasText(userId))return;

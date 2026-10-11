@@ -90,5 +90,42 @@
     "createdUser": "notification-registry",
     "updatedDate": "2026-05-31T00:00:00.000Z",
     "updatedUser": "notification-registry"
+  },
+  {
+    "_id": "notification-rule-integration-webhooks",
+    "syncKey": "notification-rule-integration-webhooks",
+    "ruleKey": "integration-webhooks",
+    "label": "admin.jobs.rule.integration-webhooks",
+    "category": "admin.jobs.category.scheduled",
+    "description": "admin.jobs.rule.integration-webhooks.description",
+    "actionKey": "integration-webhooks",
+    "triggerKind": "scheduled_process",
+    "enabled": true,
+    "manualRunEnabled": false,
+    "adminManageable": true,
+    "priority": 200,
+    "channels": {
+      "pushEnabled": false,
+      "emailEnabled": false,
+      "inAppEnabled": false,
+      "supportChatEnabled": false
+    },
+    "timing": {
+      "mode": "interval",
+      "intervalAmount": 1,
+      "intervalUnit": "seconds",
+      "intervalSeconds": 1,
+      "time": "00:00",
+      "timezone": "UTC"
+    },
+    "scheduleSlots": [],
+    "parameters": [],
+    "message": {},
+    "runState": {},
+    "runHistory": [],
+    "createdDate": "2026-09-20T12:00:00.000Z",
+    "createdUser": "system",
+    "updatedDate": "2026-09-20T12:00:00.000Z",
+    "updatedUser": "system"
   }
 ]

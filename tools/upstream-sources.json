@@ -957,17 +957,17 @@
     },
     {
       "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/administration/dto/AdminDtos.java",
-      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "sourceRevision": "7a1d375c87379521c890c3984f42ee6d6e0f2e71",
       "upstreamSha256": "5308b71ab7f75caf15797010d33ec198a0deeaf1c3ac73893d2d47b225af931b",
-      "purpose": "Native account/media/chat access policies, administrator identity and narrow profile/chat lookups.",
-      "adaptation": "Select native administrator identity DTO only; no product admin screens or parameter DTOs."
+      "purpose": "Minimal report, feedback, moderation and support workflow using native contracts and persistence.",
+      "adaptation": "Select only admin actor, reports, feedback, review counts and chat evidence DTOs unchanged."
     },
     {
       "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/administration/service/AdministrativeActorService.java",
-      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "sourceRevision": "7a1d375c87379521c890c3984f42ee6d6e0f2e71",
       "upstreamSha256": "359271f14db399428d973db36cbf6d109cb2228d226726df65b2496747b31977",
-      "purpose": "Native account/media/chat access policies, administrator identity and narrow profile/chat lookups.",
-      "adaptation": "Retain administrator account authorization and profile presentation; omit selection of MyScoutee base-group admin profiles. Implement the unchanged stateless classification API on this existing owner."
+      "purpose": "Minimal report, feedback, moderation and support workflow using native contracts and persistence.",
+      "adaptation": "Resolve DEMO admin from the existing authenticated actor and A authority, excluding MyScoutee demo identities. Preserve REAL configured-email and own-account selection rules."
     },
     {
       "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/chat/repository/ChatsRepository.java",
@@ -1048,7 +1048,7 @@
     },
     {
       "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/administration/service/AdministrativeActorServiceTest.java",
-      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "sourceRevision": "7a1d375c87379521c890c3984f42ee6d6e0f2e71",
       "upstreamSha256": "4dae32a09df5e6842cf7ff9b7269270292216df418e6afc91335090756c96674",
       "purpose": "Preserve existing administrator account, stored-profile and REAL/DEMO authorization tests.",
       "adaptation": "Replace the MyScoutee group-profile positive test with standalone administrator-account resolution; retain unauthorized account/profile and REAL/DEMO rejection tests."
@@ -1058,7 +1058,7 @@
       "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
       "upstreamSha256": "939c31c9f8590263a8755a9ff26341d3a0a198fdc4e83ffab9aec67274d3ffd9",
       "purpose": "Native durable notification delivery, inbox and chat transport support for the minimal application.",
-      "adaptation": "Retain native notification limits and account-purge window bounds without the product affinity catalog; configure purge days through users.account-purge-window-days (default 30, native allowed range 1\u2013365)."
+      "adaptation": "Retain native notification limits and account-purge window bounds without the product affinity catalog; configure purge days through users.account-purge-window-days (default 30, native allowed range 1–365)."
     },
     {
       "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/common/redis/RedisStreamRetentionService.java",
@@ -1391,7 +1391,7 @@
     },
     {
       "path": "server/docker/conf/mongodb/myscoutee_db/notificationRuleConfigs.json",
-      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "sourceRevision": "7a1d375c87379521c890c3984f42ee6d6e0f2e71",
       "upstreamSha256": "b45e18b70d6e5945e6d9ddb05d41ddaad2873562df0ae3d5e0a3aa67f059160d",
       "purpose": "Enable the selected native durable notification worker with its existing schedule.",
       "adaptation": "Select the one deployment-scope outbox rule. Other workers will receive their seed only when implemented; no product job records are included."
@@ -1538,24 +1538,24 @@
     },
     {
       "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/api/ProfileSummaries.java",
-      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "sourceRevision": "7a1d375c87379521c890c3984f42ee6d6e0f2e71",
       "upstreamSha256": "45291e43aa0b3eac30bed57ecdc5dac107f3a8d825847657d9a27d0c7c63d850",
-      "purpose": "Native personal/support chat, message transport and required account-owned state.",
-      "adaptation": "Select native identity summary and bounded chat-member count/page methods only."
+      "purpose": "Minimal report, feedback, moderation and support workflow using native contracts and persistence.",
+      "adaptation": "Select native blocked-profile query for moderation."
     },
     {
       "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/service/ProfileDirectoryService.java",
-      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
+      "sourceRevision": "7a1d375c87379521c890c3984f42ee6d6e0f2e71",
       "upstreamSha256": "15c0c437ec869d05a0290045ba8bb1e5be770773b89a1383d2a7830a5078a390",
-      "purpose": "Native personal/support chat, message transport and required account-owned state.",
-      "adaptation": "Select existing member lookup/list and summary queries, including findFirstByUserId for native job ownership."
+      "purpose": "Minimal report, feedback, moderation and support workflow using native contracts and persistence.",
+      "adaptation": "Expose the existing owner query through ProfileSummaries."
     },
     {
       "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/api/ActivityCounters.java",
-      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
-      "upstreamSha256": "5d1e24a10d0836ca31c55d1ff55b399207a56cad815caffdf2546ee154c78e12",
-      "purpose": "Native account-owned chat counters used by the minimal communication layer.",
-      "adaptation": "Select the two native support counter operations; omit product event, feedback, feed and asset counters."
+      "sourceRevision": "7a1d375c87379521c890c3984f42ee6d6e0f2e71",
+      "upstreamSha256": "32027bb8c3406110da57ca9221ba613fd91616d9060ef73de13d35f4c4c1f7b7",
+      "purpose": "Minimal report, feedback, moderation and support workflow using native contracts and persistence.",
+      "adaptation": "Retain only the native inherited support-counter contract."
     },
     {
       "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/service/UserActivityCountersService.java",
@@ -1755,31 +1755,31 @@
     },
     {
       "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/dto/AuthDtos.java",
-      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "sourceRevision": "7a1d375c87379521c890c3984f42ee6d6e0f2e71",
       "upstreamSha256": "902d3c24ab04f7eefcf68afdee4d1e9e6c13419c8c78202e75be471aca5423bf",
-      "purpose": "Native minimal profile, session and account lifecycle endpoints.",
-      "adaptation": "Select native session, minimal profile and chat counter JSON fields. Omit product affinity, event, asset, payment, community, experience and profile-completion inputs; retained persisted Users fields are unchanged."
+      "purpose": "Minimal report, feedback, moderation and support workflow using native contracts and persistence.",
+      "adaptation": "Add native feedback/report request shapes; template chat reports leave unrelated source context absent."
     },
     {
       "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/repository/UsersRepository.java",
-      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
+      "sourceRevision": "7a1d375c87379521c890c3984f42ee6d6e0f2e71",
       "upstreamSha256": "5180d15df42b6c92506d50056a07338a229f9aec98d8bcf5e0251980354a2f17",
-      "purpose": "Native API/MCP security wiring and owner access.",
-      "adaptation": "Selected member lookups and native atomic integrationAccess compare-and-set; no product repository queries."
+      "purpose": "Minimal report, feedback, moderation and support workflow using native contracts and persistence.",
+      "adaptation": "Select native blocked-profile query; existing profileStatus index is retained."
     },
     {
       "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/service/HomeUserProfileService.java",
-      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
+      "sourceRevision": "7a1d375c87379521c890c3984f42ee6d6e0f2e71",
       "upstreamSha256": "799b50613d3a80fa8b4be603ce85478c4f04f66969ec532521dfa2a09cac87dc",
       "purpose": "Native minimal profile, session and account lifecycle endpoints.",
-      "adaptation": "Minimal profile/read/save selection; delegate logout/deletion/pending-count changes to the selected native AccountLifecycleService. Preserve all stored fields absent from the small DTO."
+      "adaptation": "Retain the selected minimal profile surface. Select native feedback flow and user report persistence/deduplication; chat-only reporting uses the existing ChatReview evidence/participant checks without event eligibility. Ignore caller-supplied event/asset/text context. Keep authenticated SelectedProfile resolution."
     },
     {
       "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/controller/AuthController.java",
-      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "sourceRevision": "7a1d375c87379521c890c3984f42ee6d6e0f2e71",
       "upstreamSha256": "d46269d671d610cc4833b54f65a01620a99200219a9b916ff005577fb115f368",
       "purpose": "Native minimal identity, profile, eligibility and session HTTP endpoints.",
-      "adaptation": "Omit community workspace loading, product filters/feedback/report endpoints; retain login/logout/delete/profile policy annotations and native location validation."
+      "adaptation": "Select the existing authenticated feedback/report routes in addition to retained minimal profile endpoints."
     },
     {
       "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/media/api/MediaCleanup.java",
@@ -2203,7 +2203,7 @@
     },
     {
       "path": "server/docker/conf/mongodb/db_init.js",
-      "sourceRevision": "c7b2ba03254314a876a4b599a811d02e7592896f",
+      "sourceRevision": "7a1d375c87379521c890c3984f42ee6d6e0f2e71",
       "upstreamSha256": "6ea98792cf130091dbd33807b8b052da9043459a9304280c8f5cf56ea69206a4",
       "purpose": "Native minimal integration storage, lifecycle and migration ownership.",
       "adaptation": "Select retained account/chat/help/notification/platform/integration collections and indexes; omit product collections and unused host-tier index."
@@ -2261,7 +2261,7 @@
     {
       "path": "server/docker/conf/mongodb/mongo-seed-policy.inc",
       "upstreamSha256": "209a73dc1740d2a79f65bd999e40baebf9cc13d709e6e7252862a4deae7911aa",
-      "sourceRevision": "c7b2ba03254314a876a4b599a811d02e7592896f",
+      "sourceRevision": "7a1d375c87379521c890c3984f42ee6d6e0f2e71",
       "purpose": "Native minimal integration storage, lifecycle and migration ownership.",
       "adaptation": "Select minimal collection/index policy, including token/client/grant runtime indexes without seed rows; retain schema-5 insert-only configuration. Omit product versions, payment, Registry, affinity, community, subscriptions and webhook indexes."
     },
@@ -2422,7 +2422,7 @@
     {
       "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/service/DeletedAccountPurgeService.java",
       "upstreamSha256": "127171db7d7a865c7c27ff5674ba27a829f3f90f839baeea50d11975409218a3",
-      "sourceRevision": "c7b2ba03254314a876a4b599a811d02e7592896f",
+      "sourceRevision": "7a1d375c87379521c890c3984f42ee6d6e0f2e71",
       "purpose": "Native minimal integration storage, lifecycle and migration ownership.",
       "adaptation": "Select native durable account/media/chat/integration/consent/notification/help cleanup, leases, retry and stage ordering. Omit absent product actions/global identity and not-yet-installed email stage. Preserve job schema and rejection of unfinished product cleanup."
     },
@@ -2680,7 +2680,7 @@
     },
     {
       "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/service/IntegrationPrivacyService.java",
-      "sourceRevision": "c7b2ba03254314a876a4b599a811d02e7592896f",
+      "sourceRevision": "7a1d375c87379521c890c3984f42ee6d6e0f2e71",
       "upstreamSha256": "4a19b2f1419fa10629cb8af84e6979aae8c57e1a3311c9fbfe475571cf9971d9",
       "purpose": "Native minimal integration storage, lifecycle and migration ownership.",
       "adaptation": "Select API tokens and OAuth grants from the existing privacy owner; omit uninstalled product invites, external IDs, event subscriptions and webhook deliveries. Retain shared OAuth client registrations."
@@ -4907,6 +4907,285 @@
       "sourceRevision": "7a1d375c8",
       "purpose": "Retained TLS/update signing, staged host requests and role notifications.",
       "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/common/mongo/OwnerScopedQuery.java",
+      "sourceRevision": "7a1d375c87379521c890c3984f42ee6d6e0f2e71",
+      "upstreamSha256": "ec0e905ac711cf1a623d8a2d893341de043d82e86733e530937686c1fda39237",
+      "purpose": "Native durable MCP role-attention delivery required by retained admin/operator notifications.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/api/AccountJobScopes.java",
+      "sourceRevision": "7a1d375c87379521c890c3984f42ee6d6e0f2e71",
+      "upstreamSha256": "1c5a0b3213aeab618aebd796b19677fbbfd5b9a6f4741e7fc2bda645a33a41e7",
+      "purpose": "Native durable MCP role-attention delivery required by retained admin/operator notifications.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/api/ProfileModeration.java",
+      "sourceRevision": "7a1d375c87379521c890c3984f42ee6d6e0f2e71",
+      "upstreamSha256": "67f41120c99343c0d0a5b5c6e10fcd9c7793a8f8712fae3e5f66e7c16ee4ef05",
+      "purpose": "Minimal report, feedback, moderation and support workflow using native contracts and persistence.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/api/SupportCaseCounters.java",
+      "sourceRevision": "7a1d375c87379521c890c3984f42ee6d6e0f2e71",
+      "upstreamSha256": "456e76256982c579fbe36e13f2adca3681d3909c6be3bf2f1534e57a7f90db1c",
+      "purpose": "Minimal report, feedback, moderation and support workflow using native contracts and persistence.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/service/AccountJobScopeService.java",
+      "sourceRevision": "7a1d375c87379521c890c3984f42ee6d6e0f2e71",
+      "upstreamSha256": "3f5f737a2225419a803533b265e321ca3a89ddcf2506f265f5332b82790a1ef3",
+      "purpose": "Native durable MCP role-attention delivery required by retained admin/operator notifications.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/service/ProfileModerationService.java",
+      "sourceRevision": "7a1d375c87379521c890c3984f42ee6d6e0f2e71",
+      "upstreamSha256": "7d8293b15aec0d579048a0378d15c10cb1f5abae9ce2706618db1a42d9d06e13",
+      "purpose": "Minimal report, feedback, moderation and support workflow using native contracts and persistence.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/administration/controller/AdminController.java",
+      "sourceRevision": "7a1d375c87379521c890c3984f42ee6d6e0f2e71",
+      "upstreamSha256": "db48f42f0c347a999a717d6e9633ed6b3bb79ac241f3115f0139158a953b9a8c",
+      "purpose": "Minimal report, feedback, moderation and support workflow using native contracts and persistence.",
+      "adaptation": "Select moderation dashboard/actions only; retain route authority explicitly at controller boundary."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/chat/api/ChatReview.java",
+      "sourceRevision": "7a1d375c87379521c890c3984f42ee6d6e0f2e71",
+      "upstreamSha256": "d398657402a76da7fe2dbe108f394f4ad8257c2a848b62b9cccbd6945ffb560b",
+      "purpose": "Minimal report, feedback, moderation and support workflow using native contracts and persistence.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/chat/service/ChatReviewService.java",
+      "sourceRevision": "7a1d375c87379521c890c3984f42ee6d6e0f2e71",
+      "upstreamSha256": "8403dd01751dc68c08639cd0def542070a24d4fa1f73621f54008135c7f0b0b8",
+      "purpose": "Minimal report, feedback, moderation and support workflow using native contracts and persistence.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/content/api/AdministrativeAccess.java",
+      "sourceRevision": "7a1d375c87379521c890c3984f42ee6d6e0f2e71",
+      "upstreamSha256": "5e27bc85673751197e01b2a930c607e045e087e9926aa6e90242034adeb4970a",
+      "purpose": "Minimal report, feedback, moderation and support workflow using native contracts and persistence.",
+      "adaptation": "Select moderation actions; omit community-base telemetry operations."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/content/api/UserFeedback.java",
+      "sourceRevision": "7a1d375c87379521c890c3984f42ee6d6e0f2e71",
+      "upstreamSha256": "3e048847423543b22b6b25bcfee7700dd821d532e5132bd1aed252cfc8899fd7",
+      "purpose": "Minimal report, feedback, moderation and support workflow using native contracts and persistence.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/content/api/UserReports.java",
+      "sourceRevision": "7a1d375c87379521c890c3984f42ee6d6e0f2e71",
+      "upstreamSha256": "f627e7464351e13aed0f99a517bbf8e64d2cc860a73349e87f3b8a10e50a27d5",
+      "purpose": "Minimal report, feedback, moderation and support workflow using native contracts and persistence.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/content/document/UserFeedbackSubmission.java",
+      "sourceRevision": "7a1d375c87379521c890c3984f42ee6d6e0f2e71",
+      "upstreamSha256": "eeb7b9ae13d152211f3e97a931a117d68623b30d7fed97ca69858c432eff7bbb",
+      "purpose": "Minimal report, feedback, moderation and support workflow using native contracts and persistence.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/content/document/UserReportSubmission.java",
+      "sourceRevision": "7a1d375c87379521c890c3984f42ee6d6e0f2e71",
+      "upstreamSha256": "0a801a411249a8a8460ab17d6087c841b57c33e0a68980af7957961fc925b887",
+      "purpose": "Minimal report, feedback, moderation and support workflow using native contracts and persistence.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/content/repository/UserFeedbackSubmissionsRepository.java",
+      "sourceRevision": "7a1d375c87379521c890c3984f42ee6d6e0f2e71",
+      "upstreamSha256": "69f1c8c33a2469778c905a3d168c9cfcb037cc460b83335b241acc6673e63b20",
+      "purpose": "Minimal report, feedback, moderation and support workflow using native contracts and persistence.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/content/repository/UserReportSubmissionsRepository.java",
+      "sourceRevision": "7a1d375c87379521c890c3984f42ee6d6e0f2e71",
+      "upstreamSha256": "d2db56b0c4ae34ae50eb8626cc90a0a4d0a86ddb9b6882d6ebd6a65608d0d842",
+      "purpose": "Minimal report, feedback, moderation and support workflow using native contracts and persistence.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/content/service/AdminModerationService.java",
+      "sourceRevision": "7a1d375c87379521c890c3984f42ee6d6e0f2e71",
+      "upstreamSha256": "3fc00efd3b028cefdef4079b1899e367fbf83c225b594d824abc5c48e2af2972",
+      "purpose": "Minimal report, feedback, moderation and support workflow using native contracts and persistence.",
+      "adaptation": "Keep native moderation, status/support work, review counts and notification writes. Omit group-base classification/telemetry and unused affinity dependency; compare retained workspace IDs directly for the global template. Adapt product support wording and routes."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/content/service/UserFeedbackService.java",
+      "sourceRevision": "7a1d375c87379521c890c3984f42ee6d6e0f2e71",
+      "upstreamSha256": "c6e60180aabf06ae04dd127648e4561b1b22cf8553054e488a6e365556fc2e53",
+      "purpose": "Minimal report, feedback, moderation and support workflow using native contracts and persistence.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/content/service/UserReportService.java",
+      "sourceRevision": "7a1d375c87379521c890c3984f42ee6d6e0f2e71",
+      "upstreamSha256": "1cb15b8655b1f8b102315e6c1dd2d3584147a4e0c079b47259a5dfdd9eaca96c",
+      "purpose": "Minimal report, feedback, moderation and support workflow using native contracts and persistence.",
+      "adaptation": "Select native user report persistence and duplicate handling; omit group submission and rename its selected owner.",
+      "sourcePath": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/content/service/CommunityReportService.java"
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/document/IntegrationWebhookDelivery.java",
+      "sourceRevision": "7a1d375c87379521c890c3984f42ee6d6e0f2e71",
+      "upstreamSha256": "a8f87017fd6cad068b5f96f87af4ec8ca00f8993bbe84e8ead39ed9362c319c8",
+      "purpose": "Native durable MCP role-attention delivery required by retained admin/operator notifications.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/document/McpEventSubscription.java",
+      "sourceRevision": "7a1d375c87379521c890c3984f42ee6d6e0f2e71",
+      "upstreamSha256": "0779763c17d38c015dabf020977e4e8758c586e1086ec1b25c48aadf8cb152e8",
+      "purpose": "Native durable MCP role-attention delivery required by retained admin/operator notifications.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/dto/McpEventDtos.java",
+      "sourceRevision": "7a1d375c87379521c890c3984f42ee6d6e0f2e71",
+      "upstreamSha256": "710f633f24c19eccb6a1aa15bd55e319fe58ec8e8c3cf9820425c9297b9416e3",
+      "purpose": "Native durable MCP role-attention delivery required by retained admin/operator notifications.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/repository/IntegrationWebhookDeliveriesRepository.java",
+      "sourceRevision": "7a1d375c87379521c890c3984f42ee6d6e0f2e71",
+      "upstreamSha256": "32be094f7d33fc33fd0896b0cbad602696ae3da0435a7ab1681e856f691fcf95",
+      "purpose": "Native durable MCP role-attention delivery required by retained admin/operator notifications.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/repository/McpEventSubscriptionsRepository.java",
+      "sourceRevision": "7a1d375c87379521c890c3984f42ee6d6e0f2e71",
+      "upstreamSha256": "4e544f1cfa42f6b022490e60de24dc7dd690c6d748e69977c0af77da232b0c05",
+      "purpose": "Native durable MCP role-attention delivery required by retained admin/operator notifications.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/service/IntegrationWebhookService.java",
+      "sourceRevision": "7a1d375c87379521c890c3984f42ee6d6e0f2e71",
+      "upstreamSha256": "c4b418a4997f8c688a7d5c152533275af3d95e8455354eaec8423aabb92eceeb",
+      "purpose": "Native durable MCP role-attention delivery required by retained admin/operator notifications.",
+      "adaptation": "Select role attention producer and existing change-stream/lease/retry/concurrency worker. Omit event/asset producers and legacy watch subscriptions; reject unsupported persisted protocols."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/service/McpEventCallbackClient.java",
+      "sourceRevision": "7a1d375c87379521c890c3984f42ee6d6e0f2e71",
+      "upstreamSha256": "64e52aa1df2a1af5362e9481dd6a85f5dfc849b8a1476422c961cdd9e5cf301b",
+      "purpose": "Native durable MCP role-attention delivery required by retained admin/operator notifications.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/service/McpEventsService.java",
+      "sourceRevision": "7a1d375c87379521c890c3984f42ee6d6e0f2e71",
+      "upstreamSha256": "7ff7bd0ddb78dd508c1cb20a8c95e1ec8809ccf4ebf9b622437805669dfdbe63",
+      "purpose": "Native durable MCP role-attention delivery required by retained admin/operator notifications.",
+      "adaptation": "Select admin/operator attention subscriptions, security, TTL, backpressure and delivery reauthorization. Omit event/asset sources and reuse the existing optional workspace access contract."
+    },
+    {
+      "path": "server/docker/conf/mongodb/demo_db/notificationRuleConfigs.json",
+      "sourceRevision": "7a1d375c87379521c890c3984f42ee6d6e0f2e71",
+      "upstreamSha256": "b45e18b70d6e5945e6d9ddb05d41ddaad2873562df0ae3d5e0a3aa67f059160d",
+      "purpose": "Retained reports, feedback, admin support and durable MCP role delivery, including account erasure.",
+      "adaptation": "Select only template moderation/role-delivery dependencies and their configuration, indexes, erasure and focused tests; omit absent product domains."
+    },
+    {
+      "path": "server/docker/conf/mongodb/e2e_db/notificationRuleConfigs.json",
+      "sourceRevision": "7a1d375c87379521c890c3984f42ee6d6e0f2e71",
+      "upstreamSha256": "063fffdd77b112803aa0d145270d0979108560fb438a7668b2decda839ed324b",
+      "purpose": "Retained reports, feedback, admin support and durable MCP role delivery, including account erasure.",
+      "adaptation": "Select only template moderation/role-delivery dependencies and their configuration, indexes, erasure and focused tests; omit absent product domains."
+    },
+    {
+      "path": "server/projects/profile/build.gradle",
+      "sourceRevision": "7a1d375c87379521c890c3984f42ee6d6e0f2e71",
+      "upstreamSha256": "2c453a32f684a2621bcb043406db29b1135742b29ec8a9cab520e70b8d1ffe46",
+      "purpose": "Retained reports, feedback, admin support and durable MCP role delivery, including account erasure.",
+      "adaptation": "Select only template moderation/role-delivery dependencies and their configuration, indexes, erasure and focused tests; omit absent product domains."
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/accounts/service/DeletedAccountPurgeServiceTest.java",
+      "sourceRevision": "7a1d375c87379521c890c3984f42ee6d6e0f2e71",
+      "upstreamSha256": "6b02909468ae71001d774913f36063361a3c9dc43e05d74fdcf2e338b4e8c363",
+      "purpose": "Retained reports, feedback, admin support and durable MCP role delivery, including account erasure.",
+      "adaptation": "Select only template moderation/role-delivery dependencies and their configuration, indexes, erasure and focused tests; omit absent product domains."
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/accounts/service/HomeUserProfileServiceTest.java",
+      "sourceRevision": "7a1d375c87379521c890c3984f42ee6d6e0f2e71",
+      "upstreamSha256": "83de3bc8c2a94ae0298dd2c12932ecdce86393be954cc6af57d8e80bb86afb36",
+      "purpose": "Retained reports, feedback, admin support and durable MCP role delivery, including account erasure.",
+      "adaptation": "Select only template moderation/role-delivery dependencies and their configuration, indexes, erasure and focused tests; omit absent product domains."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/content/api/ContentPrivacy.java",
+      "sourceRevision": "7a1d375c87379521c890c3984f42ee6d6e0f2e71",
+      "upstreamSha256": "9b6e06773d2641e69fc65c73af17f6384f0603f40d1557857ddf06cc75c6cea9",
+      "purpose": "Retained reports, feedback, admin support and durable MCP role delivery, including account erasure.",
+      "adaptation": "Select only template moderation/role-delivery dependencies and their configuration, indexes, erasure and focused tests; omit absent product domains."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/content/service/ContentPrivacyService.java",
+      "sourceRevision": "7a1d375c87379521c890c3984f42ee6d6e0f2e71",
+      "upstreamSha256": "24967686d08fd77fa6ca924e7eb6d565244b1877649ffe63dcce5e540597f40d",
+      "purpose": "Retained reports, feedback, admin support and durable MCP role delivery, including account erasure.",
+      "adaptation": "Select only template moderation/role-delivery dependencies and their configuration, indexes, erasure and focused tests; omit absent product domains."
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/chat/service/ChatReviewServiceTest.java",
+      "sourceRevision": "7a1d375c87379521c890c3984f42ee6d6e0f2e71",
+      "upstreamSha256": "b331333088cbc1dcb472d18a99f17a940ad2f4ab9fde7e0ecb47e8d093fc3b51",
+      "purpose": "Retained reports, feedback, admin support and durable MCP role delivery, including account erasure."
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/content/service/AdminModerationServiceTest.java",
+      "sourceRevision": "7a1d375c87379521c890c3984f42ee6d6e0f2e71",
+      "upstreamSha256": "e1767eb2895aaddeb4ab10c5e5e11ba83d77ae61ef7c33302a8596741b2964e2",
+      "purpose": "Retained reports, feedback, admin support and durable MCP role delivery, including account erasure.",
+      "adaptation": "Select only template moderation/role-delivery dependencies and their configuration, indexes, erasure and focused tests; omit absent product domains."
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/integrations/service/IntegrationWebhookIdlePollingTest.java",
+      "sourceRevision": "7a1d375c87379521c890c3984f42ee6d6e0f2e71",
+      "upstreamSha256": "5e79a847d4b7e68bccee9ac2b11510bf29a91828069d6fdf380417878e7f70f4",
+      "purpose": "Retained reports, feedback, admin support and durable MCP role delivery, including account erasure.",
+      "adaptation": "Select only template moderation/role-delivery dependencies and their configuration, indexes, erasure and focused tests; omit absent product domains."
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/integrations/service/IntegrationWebhookServiceTest.java",
+      "sourceRevision": "7a1d375c87379521c890c3984f42ee6d6e0f2e71",
+      "upstreamSha256": "00c80b03ec33bcca865d9c4d503370a2edaf00bff48b2141d452175dbdad7ebe",
+      "purpose": "Retained reports, feedback, admin support and durable MCP role delivery, including account erasure.",
+      "adaptation": "Select only template moderation/role-delivery dependencies and their configuration, indexes, erasure and focused tests; omit absent product domains."
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/integrations/service/McpEventCallbackClientTest.java",
+      "sourceRevision": "7a1d375c87379521c890c3984f42ee6d6e0f2e71",
+      "upstreamSha256": "6d619678b3ed42d7db8a51a257e895cdddcd5900d39d5426f1c351adf7d941de",
+      "purpose": "Retained reports, feedback, admin support and durable MCP role delivery, including account erasure."
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/integrations/service/McpEventsServiceTest.java",
+      "sourceRevision": "7a1d375c87379521c890c3984f42ee6d6e0f2e71",
+      "upstreamSha256": "880889f5d2124f605099e29dee118ccf2fcc00d293fc21c3892fccdabf355225",
+      "purpose": "Retained reports, feedback, admin support and durable MCP role delivery, including account erasure.",
+      "adaptation": "Select only template moderation/role-delivery dependencies and their configuration, indexes, erasure and focused tests; omit absent product domains."
     }
   ],
   "templateOwnedFeatures": [
