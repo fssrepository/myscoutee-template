@@ -98,10 +98,10 @@
     ]
   },
   {
-    "id": "admin/moderation",
+    "id": "admin/minimal-shell",
     "script": "admin/run.mjs",
     "qaBranches": [
-      "T-CHAT-003"
+      "T-ADMIN-001"
     ]
   },
   {

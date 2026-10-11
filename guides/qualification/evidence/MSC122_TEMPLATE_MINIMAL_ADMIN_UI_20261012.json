@@ -1,0 +1,213 @@
+{
+  "task": "MSC-122 minimal admin UI selection",
+  "date": "2026-10-12",
+  "status": "PASS for selected local and artifact HTTP flows",
+  "frontendRevision": "87b97150f35521248deb28197fd5e0589b647e81",
+  "sourceFrontendBaseline": "defc04b",
+  "scope": "Remove Reports/Support chat/Feedback UI, member report and feedback entry points, presentation-only stores, stale notification targets and five omitted popup guide contexts. Retain backend and local contracts until the separately authorized dependency/modularization/removal batch in plan step 5.",
+  "preserved": [
+    "Normal member chat, including existing conversation visibility",
+    "Identity, consent, help and selected contextual guides",
+    "Admin API/MCP settings",
+    "Operator settings and update destinations"
+  ],
+  "unitTests": {
+    "command": "node_modules/.bin/ng test --watch=false --reporters=json --output-file=<report>",
+    "passed": 309,
+    "failed": 0,
+    "skipped": 0
+  },
+  "builds": {
+    "production": "PASS",
+    "canonicalE2eNginxAndMongo": "PASS",
+    "nginxImage": "sha256:7fcf95695d47c0f55b5e68296e0295a8e721762d15f23cf595c0ebf3fbdab66d",
+    "warnings": "Existing operator popup stylesheet size warning (22.81 kB vs 20 kB warning budget); build succeeded."
+  },
+  "ui": [
+    {
+      "mode": "local",
+      "startedAt": "2026-10-11T22:07:51.299Z",
+      "baseUrl": "http://127.0.0.1:4200",
+      "passed": 2,
+      "failed": 0,
+      "results": [
+        {
+          "id": "admin/minimal-shell",
+          "qaBranches": [
+            "T-ADMIN-001"
+          ],
+          "status": "PASS",
+          "durationMs": 67588,
+          "log": "admin/minimal-shell/run.log"
+        },
+        {
+          "id": "admin/api",
+          "qaBranches": [
+            "T-INTEGRATION-007"
+          ],
+          "status": "PASS",
+          "durationMs": 26253,
+          "log": "admin/api/run.log"
+        }
+      ]
+    },
+    {
+      "mode": "local",
+      "startedAt": "2026-10-11T22:09:47.351Z",
+      "baseUrl": "http://127.0.0.1:4200",
+      "passed": 1,
+      "failed": 0,
+      "results": [
+        {
+          "id": "chat/lifecycle",
+          "qaBranches": [
+            "T-CHAT-001",
+            "T-CHAT-002"
+          ],
+          "status": "PASS",
+          "durationMs": 73736,
+          "log": "chat/lifecycle/run.log"
+        }
+      ]
+    },
+    {
+      "mode": "local",
+      "startedAt": "2026-10-11T22:11:01.131Z",
+      "baseUrl": "http://127.0.0.1:4200",
+      "passed": 1,
+      "failed": 0,
+      "results": [
+        {
+          "id": "guide/member",
+          "qaBranches": [
+            "T-GUIDE-001"
+          ],
+          "status": "PASS",
+          "durationMs": 25496,
+          "log": "guide/member/run.log"
+        }
+      ]
+    },
+    {
+      "mode": "http",
+      "startedAt": "2026-10-11T22:13:55.886Z",
+      "baseUrl": "https://127.0.0.1",
+      "passed": 2,
+      "failed": 0,
+      "results": [
+        {
+          "id": "admin/minimal-shell",
+          "qaBranches": [
+            "T-ADMIN-001"
+          ],
+          "status": "PASS",
+          "durationMs": 28699,
+          "log": "admin/minimal-shell/run.log"
+        },
+        {
+          "id": "admin/api",
+          "qaBranches": [
+            "T-INTEGRATION-007"
+          ],
+          "status": "PASS",
+          "durationMs": 6342,
+          "log": "admin/api/run.log"
+        }
+      ]
+    },
+    {
+      "mode": "http",
+      "startedAt": "2026-10-11T22:14:54.523Z",
+      "baseUrl": "https://127.0.0.1",
+      "passed": 1,
+      "failed": 0,
+      "results": [
+        {
+          "id": "chat/lifecycle",
+          "qaBranches": [
+            "T-CHAT-001",
+            "T-CHAT-002"
+          ],
+          "status": "PASS",
+          "durationMs": 8715,
+          "log": "chat/lifecycle/run.log"
+        }
+      ]
+    },
+    {
+      "mode": "http",
+      "startedAt": "2026-10-11T22:15:03.288Z",
+      "baseUrl": "https://127.0.0.1",
+      "passed": 1,
+      "failed": 0,
+      "results": [
+        {
+          "id": "guide/member",
+          "qaBranches": [
+            "T-GUIDE-001"
+          ],
+          "status": "PASS",
+          "durationMs": 5515,
+          "log": "guide/member/run.log"
+        }
+      ]
+    }
+  ],
+  "seeds": {
+    "status": "PASS",
+    "mongoDatabases": [
+      "myscoutee_db",
+      "demo_db",
+      "e2e_db"
+    ],
+    "localAndMongoRevisionCount": 38,
+    "localAndMongoGuideFieldCount": 76,
+    "comparison": "Native local documentKind/id and Mongo documentType/_id representations compared by document kind, context, language and version; omitted contexts absent. Fresh artifact Mongo import and retained HTTP guide flow passed."
+  },
+  "performance": {
+    "productionJavaScript": {
+      "before": {
+        "files": 82,
+        "bytes": 3342628,
+        "gzipBytes": 821336
+      },
+      "after": {
+        "files": 74,
+        "bytes": 3140908,
+        "gzipBytes": 785145
+      },
+      "delta": {
+        "files": -8,
+        "bytes": -201720,
+        "gzipBytes": -36191
+      }
+    },
+    "idleRenderer": {
+      "local": {
+        "seconds": 5.003253757999999,
+        "taskSeconds": 0.006644000000000011,
+        "scriptSeconds": 0,
+        "scope": "current page renderer tasks; not total browser/host CPU or a matched benchmark"
+      },
+      "http": {
+        "seconds": 5.007120959,
+        "taskSeconds": 0.004148999999999986,
+        "scriptSeconds": 0,
+        "scope": "current page renderer tasks; not total browser/host CPU or a matched benchmark"
+      }
+    },
+    "limitations": "Bundle size and short renderer task samples are not end-to-end speed or host CPU parity. Backend code/query behavior did not change in this UI batch; no stress rerun."
+  },
+  "backendErrorLinesLast3Minutes": 0,
+  "provenance": {
+    "retainedEntries": 795,
+    "allPathsExist": true,
+    "localFrontendSourceFastForwarded": "87b97150f35521248deb28197fd5e0589b647e81"
+  },
+  "processes": "Local frontend stopped before artifact E2E. Headless browsers and owned fixtures cleaned by versioned harness. Template E2E stopped after checks; native dev and KVM remained stopped.",
+  "remaining": [
+    "Execute dependency audit/source modularization/template backend removal in new plan step 5 before further runtime composition or packaging.",
+    "New selection not yet verified on template KVM or installed artifacts. Existing dev HTTP stack was not restarted; HTTP evidence uses canonical optimized artifact E2E.",
+    "Historical moderation UI evidence describes the preceding selection and is not claimed as current acceptance."
+  ]
+}

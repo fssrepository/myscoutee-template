@@ -1,6 +1,6 @@
 # MSC-122 — Complete Minimal Template Implementation Plan
 
-Updated: 2026-10-11. Initial release version: **1.0.0**.
+Updated: 2026-10-12. Initial release version: **1.0.0**.
 
 This is the active, numbered implementation checklist for `myscoutee-template`.
 It continues the source-separation work documented in
@@ -79,12 +79,12 @@ Retain the `/api` configuration, relevant messaging/bootstrap settings and the
 native environment type contract. Omit Registry/payment settings together with
 their absent consumers rather than leaving misleading inactive configuration.
 
-Step 13 must carry the corresponding `fileReplacements`, serve targets,
+Step 14 must carry the corresponding `fileReplacements`, serve targets,
 `production-serve` alias, `unit-test` build configuration, asset handling,
 optimization/source-map settings and relevant package scripts. Keep the existing
 `start`/`build` local default, `watch` dev default, mode-specific start/build/watch
 commands, component build integration and build-log helpers where required.
-Steps 20–22 verify tests against the correct environment; steps 25 and 28 verify
+Steps 21–23 verify tests against the correct environment; steps 26 and 29 verify
 the production/Pages outputs, version stamping, base paths, service worker and
 deep-link behavior. A working `local` build alone does not close frontend work.
 
@@ -170,7 +170,40 @@ deep-link behavior. A working `local` build alone does not close frontend work.
    complete frontend, integration or deployment composition. Close with a live healthy application and retained
    routes exercised against its own databases.
 
-5. **Restore the complete dev/prod/E2E runtime structure — IN PROGRESS.**
+5. **Audit, modularize and remove omitted admin features from the template backend — IN PROGRESS (dependency audit).**
+    Added and prioritized by the user on 2026-10-12. Immediately after the current UI verification,
+    perform a dependency audit for Reports,
+    moderation/warning/blocking, admin Support chat, Feedback, and the corresponding
+    member report/feedback submission paths. This is authorized implementation
+    work, replacing the earlier open decision about whether removal is wanted.
+    This gate precedes further service composition, packaging and deployment
+    qualification, so they are built from the correct minimal dependency set.
+    Start from the existing MyScoutee owners, source history and domain boundaries;
+    identify direct and transitive dependencies in Java, local adapters, DTOs,
+    repositories, auth, notifications, jobs, seeds/indexes, API/MCP, deployment and
+    tests. Record the concrete dependency map and minimum retained contracts before
+    editing. Reuse existing ports/configuration; do not move unrelated domains or
+    add empty fallback implementations to disguise a missing required owner.
+    Make these feature owners independently selectable in **myscoutee-backend**
+    first. Preserve the full application's existing behavior, authorization and
+    query performance when enabled. Avoid new per-record database/remote calls.
+    Verify a coherent source batch with focused JUnit and serial KVM/monolith
+    runtime checks, recording CPU and latency; use matched load measurements only
+    for the coherent batch or a demonstrated performance concern. Commit the
+    verified source batch before proceeding with the template removal.
+    Then omit the feature implementations and their exclusive dependencies from
+    **myscoutee-template**, including local/HTTP bindings and no-longer-required
+    seeds, jobs, packaging and tests. Preserve ordinary member chat and existing
+    conversation visibility, identity/session behavior, required API/MCP access,
+    notifications/help/consent and account deletion/purge. Decide any affected API
+    response selection explicitly from the audited contract; do not silently break
+    callers or retain a full feature only to populate an unused UI counter.
+    Close with absence/ownership checks, retained local/HTTP flows, focused JUnit,
+    working monolith and independent KVM composition, proportional CPU/latency
+    evidence, updated provenance/QA matrix and tested commits. Complete this gate
+    before final release acceptance in step 31.
+
+6. **Restore the complete dev/prod/E2E runtime structure — IN PROGRESS.**
    Select the necessary services from the existing Compose files, Dockerfiles,
    entrypoints, environment examples and startup/status/stop tools. Preserve the
    common implementations through the source-first infrastructure rule above.
@@ -191,7 +224,7 @@ deep-link behavior. A working `local` build alone does not close frontend work.
    See `MSC122_TEMPLATE_DEV_GATEWAY_20261011.json`. Close with
    reproducible starts, stops and restarts in each mode and correct data isolation.
 
-6. **Build small, coherent seeds and import/reset tooling — IN PROGRESS.**
+7. **Build small, coherent seeds and import/reset tooling — IN PROGRESS.**
    Reuse the canonical Mongo importer, index creation, local seed builder and
    media bootstrap. Create minimal members, the required admin/operator actors,
    approved personal-chat pairs/messages, demonstration cards, consent revisions,
@@ -201,7 +234,7 @@ deep-link behavior. A working `local` build alone does not close frontend work.
    operator configuration and uploaded media on reimport. Close with fresh import,
    controlled reset/reimport, stable references/counters and no omitted-domain IDs.
 
-7. **Complete native identity and minimal profile flows — IN PROGRESS.**
+8. **Complete native identity and minimal profile flows — IN PROGRESS.**
    Reuse REAL/DEMO selection, sessions, Firebase/provider authentication,
    operator bootstrap, login/logout, session revocation and account permissions.
    Expose a small profile rather than MyScoutee's full product form. Preserve
@@ -209,7 +242,7 @@ deep-link behavior. A working `local` build alone does not close frontend work.
    already exist; close with real controller/session save/reload and rejection of
    forged identities, stale sessions and unauthorized profile writes.
 
-8. **Complete account deletion and required background work — IN PROGRESS.**
+9. **Complete account deletion and required background work — IN PROGRESS.**
    Select the qualified account lifecycle/purge owners and retained-domain cleanup
    actions. Preserve durable intent, retries, idempotency, counters and completion
    ordering. Include provider data-deletion callbacks and status when supported by
@@ -228,7 +261,10 @@ deep-link behavior. A working `local` build alone does not close frontend work.
    anonymous unsubscribe. Twenty-two standard tests, four provider HTTP tests,
    one Mongo purge test, local/HTTP operator settings and the full warning-to-
    unsubscribe/suppression flow pass. The source warning-claim purge fix is
-   `4b63e893d`; source runtime qualification is still pending. See
+   `4b63e893d`; source KVM (63 checks) and monolith (43 checks) now pass
+   serially, with index and settled CPU evidence recorded in native
+   `MSC122_ACCOUNT_WARNING_PURGE_20261011.json` at `5d71945a2`. These focused
+   runtime checks do not claim matched performance or direct runtime purge. See
    `MSC122_TEMPLATE_ACCOUNT_EMAIL_20261011.json`. Four seeded jobs are retained:
    purge, warning email, notification delivery and integration/MCP callback delivery. Provider callbacks and full HTTP/UI/REAL-DEMO/KVM deletion
    qualification remain pending; this checkpoint does not close the step.
@@ -241,22 +277,24 @@ deep-link behavior. A working `local` build alone does not close frontend work.
    | Notification delivery/retry | `NotificationOutboxWorkerService` | Selected; native Mongo change-stream wakeup and due-time scheduling, not an added constant polling loop |
    | Integration/MCP callbacks | `IntegrationWebhookService` | Selected; native durable claims/retry and bounded delivery; external public callback qualification remains open |
    | Pre-purge warning email | Native `DeletedAccountWarningWorker` | Selected; five-day warning, provider retry/deduplication, operator configuration, unsubscribe and purge cleanup pass focused tests and artifact monolith; KVM/installed delivery pending |
-   | Chat realtime, call availability, runtime status | Native chat stream consumer, STUN probe, runtime publisher | Infrastructure workers are selected separately from the four seeded job rules; call behavior still needs the step 9 audit |
+   | Chat realtime, call availability, runtime status | Native chat stream consumer, STUN probe, runtime publisher | Infrastructure workers are selected separately from the four seeded job rules; call behavior still needs the step 10 audit |
    | Events, payments, affinity, product content approval and business reports | Omitted product owners | Not required by retained template screens/models; do not import their jobs or model graphs |
 
    An admin Jobs screen is not required to run these owners. Preserve the native
    seed/configuration and audit state independently of optional management UI.
 
-9. **Complete personal and support communication — IN PROGRESS.**
+10. **Complete personal communication and its required infrastructure — IN PROGRESS.**
    Reuse chat/message storage, participant authorization, paging, mutations,
-   read receipts, counters, WebSocket/Redis delivery and the existing support
-   workflow. Carry the qualified separation of product conversation creators.
+   read receipts, counters and WebSocket/Redis delivery. Admin support workflow
+   is omitted from the UI; its backend remains until step 5 qualifies removal.
+   Carry the qualified separation of product conversation creators.
    Do not hide or block stored conversations based only on omitted domain names.
    Audit native call/signaling and email delivery dependencies for retained flows;
    retain the required infrastructure without importing event/campaign features.
-   Close with two-user message/read/reconnect flows, support actions and isolation.
+   Close with two-user message/read/reconnect flows and isolation. Step 5 owns
+   removal of admin support creation; do not change generic conversation access.
 
-10. **Complete notifications, guide/help and consent — IN PROGRESS.**
+11. **Complete notifications, guide/help and consent — IN PROGRESS.**
     Retain native durable delivery, inbox state, collapse/idempotency, retries,
     push/device settings, guide state and versioned consent acceptance/enforcement.
     Use small template-owned content with the existing schemas. Separate required
@@ -264,7 +302,7 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     unread/read transitions, guide completion, acceptance save/reload and a new
     consent revision in the appropriate REAL/DEMO database.
 
-11. **Complete media, localization and geographic location — IN PROGRESS.**
+12. **Complete media, localization and geographic location — IN PROGRESS.**
     Reuse MinIO/S3 access, avatar/image editing, variants, private-media sessions,
     locale bundles and country/location lookup. Both localization and geographic
     location are required. Any operator location switch belongs to the existing
@@ -272,7 +310,7 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     image upload/read/delete, unauthorized media denial, locale changes and valid,
     invalid and disabled-policy location cases across the applicable modes.
 
-12. **Complete API and MCP integration without affiliate functionality — IN PROGRESS.**
+13. **Complete API and MCP integration without affiliate functionality — IN PROGRESS.**
     Select the existing token/OAuth, scopes, revocation, API-settings popup,
     integration access and MCP server/transport needed for ChatGPT and retained
     member/admin actions. Reuse their current owners and errors. Include supported
@@ -294,7 +332,7 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     revocation. See `MSC122_TEMPLATE_MCP_TRANSPORT_20261011.json`. External
     provider acceptance, public callbacks and deployment gates remain distinct.
 
-13. **Build the frontend foundation and both adapter modes — IN PROGRESS.**
+14. **Build the frontend foundation and both adapter modes — IN PROGRESS.**
     Work inside the existing local frontend submodule and reuse the shared
     components. Select Angular configuration, application bootstrap, routing,
     session/store infrastructure, local and HTTP adapters, IndexedDB schema,
@@ -319,7 +357,7 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     Close with working local persistence and HTTP persistence for retained flows,
     reload recovery and no silent local fallback in HTTP mode.
 
-14. **Build the landing page and version display — IN PROGRESS.**
+15. **Build the landing page and version display — IN PROGRESS.**
     Use the existing landing/login/branding components. Show a large central
     “Templates” title in the requested Gothic/calligraphic style, with the logo
     and login entry on opposite sides and the real build version badge. Preserve
@@ -328,7 +366,7 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     The requested Gothic title now uses a bundled, unmodified OFL font; it loads
     locally without a font-provider request at frontend `9d59bf9`.
 
-15. **Build the member SmartList example — DONE (local and dev HTTP).**
+16. **Build the member SmartList example — DONE (local and dev HTTP).**
     Reuse SmartList, its supported views and native state/adapter patterns. Supply
     a few visually useful, project-neutral seeded cards rather than importing
     MyScoutee events to populate the screen. Keep the feature small but persistent
@@ -340,10 +378,10 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     frontend tests and three focused backend JUnit checks pass. Seed import,
     bounded API paging and anonymous denial pass; Mongo uses `_id_` with four
     keys/documents examined for four cards. No events/groups model is selected.
-    See `MSC122_TEMPLATE_SHOWCASE_20261011.json`. KVM remains step 24; production
+    See `MSC122_TEMPLATE_SHOWCASE_20261011.json`. KVM remains step 25; production
     intentionally has no synthetic sample-card data.
 
-16. **Build the minimal member chat screen — DONE (local and dev HTTP).**
+17. **Build the minimal member chat screen — DONE (local and dev HTTP).**
     Connect the existing chat components and adapters to the retained backend/local
     owners. Apply the requested compact chrome: avatar pill and collapse control;
     omit the extra top action and bottom add-item “+” menu. Keep the actions needed
@@ -353,8 +391,8 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     both participants, and two-browser HTTP delivery/reconnect/no-duplicate/
     persistence checks passed. The native local read-receipt repair `bf4760f9`
     passed 16 focused source tests before selection. See
-    `MSC122_TEMPLATE_CHAT_20261011.json`. Admin support UI remains step 19;
-    template KVM remains step 24.
+    `MSC122_TEMPLATE_CHAT_20261011.json`. Admin support UI is omitted under step 20; backend removal is step 5;
+    template KVM remains step 25.
 
     **Pending source/template naming follow-up:** introduce `ChatFeedFilters` in
     the chat contract for the existing chat-only filter fields currently named
@@ -368,7 +406,7 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     frontend batch; no independent deployment or stress run is needed for a
     type-only rename.
 
-17. **Build the avatar menu, profile editor and minimal settings — DONE (local/dev HTTP).**
+18. **Build the avatar menu, profile editor and minimal settings — DONE (local/dev HTTP).**
     Reuse the existing menu, FormFlow/profile and image-editor entry points. Show
     only the small editable profile and settings required by retained features.
     Preserve logout, account deletion, consent and relevant notification/device
@@ -389,7 +427,7 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     KVM qualification remain deployment/integration gates; disabled unconfigured
     push controls are not proof of delivery.
 
-18. **Connect frontend guide, consent and notification surfaces — DONE (local/dev HTTP).**
+19. **Connect frontend guide, consent and notification surfaces — DONE (local/dev HTTP).**
     Reuse the existing top-menu access, drawers/dialogs, guide engine and consent
     flow. Seed guidance only for retained screens. Preserve unread/seen state,
     document versions and local/HTTP behavior. Close with initial entry, required
@@ -400,30 +438,32 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     and successful chat regression tests. The root geometry and local content
     startup dependencies are included. See
     `MSC122_TEMPLATE_NOTIFICATIONS_GUIDE_20261011.json`, frontend `ae25d6f`.
-    Device/setup controls and guide are qualified in 17; live push delivery and
+    Device/setup controls and guide are qualified in 18; live push delivery and
     KVM/installed artifacts remain pending.
 
-19. **Complete the minimal admin and operator shells — IN PROGRESS.**
-    Keep the admin menu empty of MyScoutee product dashboards. Include support and
-    moderation actions needed by retained chat/accounts and the relevant API entry.
-    Keep operator bootstrap, deployment/Firebase configuration, installation/TLS,
-    update/status and other required operational controls. Omit virtual-company
-    Registry screens. Reuse existing components and authority checks. Close with
-    member/admin/operator access checks and the retained operations exercised.
-    Current surface inventory: the admin avatar side menu's settings menu opens
-    Reports, Feedback, Support chat and API; the default admin page is empty.
-    Members can send feedback from settings and report another participant's
-    chat message using its flag button. There is no standalone member Report
-    menu and no member control to start a new support conversation. Existing
-    admin-created support conversations can be continued by the member. The
-    qualified support evidence covers that existing-conversation path, not
-    member-initiated support creation. No report/moderation code was removed
-    during the user's clarification of these entry points.
+20. **Complete the minimal admin and operator shells — IN PROGRESS.**
+    Keep the admin function menu empty. Retain common identity/settings,
+    notifications/help/guide and API access. Keep operator bootstrap,
+    deployment/Firebase configuration, installation/TLS and update/status controls.
+    Omit virtual-company Registry screens. Reuse existing authority checks.
+    Scope decision, 2026-10-12: remove the template Reports, Support chat and
+    Feedback screens and their UI stores/bindings; remove member message-report
+    and feedback-submission entry points. Preserve normal member chat and existing
+    conversations. Remove the five guides for the omitted admin popups from local
+    and Mongo content seeds. Do not alter backend models, services or endpoints
+    as part of this UI selection. The new selection passes 309 frontend tests, production/artifact builds and
+    four local plus four artifact HTTP flows at frontend `87b9715`; see
+    `MSC122_TEMPLATE_MINIMAL_ADMIN_UI_20261012.json`.
+    The earlier moderation UI evidence below describes the previous selection.
+    **Backend follow-up authorized on 2026-10-12:** step **5** replaces the
+    earlier deferred design decision. Keep the backend intact during this UI
+    batch; audit and modularize the owners in MyScoutee first, verify them, then
+    remove the omitted feature implementations from the template backend.
     Member API/MCP settings are selected and qualified at frontend `7c9baee`: 18
     focused tests, local/HTTP create/mask/permission/revoke flows, contextual guides
     and dev HTTP browser OAuth consent/PKCE/login return pass. See
     `MSC122_TEMPLATE_API_MCP_UI_20261011.json`. Admin/operator controls and full
-    external MCP transport remain open; this does not close step 19.
+    external MCP transport remain open; this does not close step 20.
     Operator configuration now passes at frontend `6e532c1`: 20 focused tests,
     local/HTTP save/reopen/reload and guide flows, member read/write denial, and
     public/private settings separation. Branding, API URL, privacy, administrator
@@ -450,7 +490,7 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     warning and read-only evidence contexts. Live role login and KVM/installed
     host controls remain open.
 
-20. **Consolidate JUnit and frontend unit/component coverage — PASS for selected suites.**
+21. **Consolidate JUnit and frontend unit/component coverage — PASS for selected suites.**
     Preserve `tools/run-backend-junit.sh`, native standard/embedded/integration
     groups and the existing frontend test runner. Select tests for retained
     contracts and add meaningful checks for composition or adapted behavior.
@@ -475,7 +515,7 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     committed behavior fixes and validation limits. Build CPU measurements do
     not establish runtime performance parity.
 
-21. **Implement backend functional E2E — IN PROGRESS.**
+22. **Implement backend functional E2E — IN PROGRESS.**
     Reuse `e2e/shared`, `e2e/functional/backend`, fixture hooks, contract and
     concurrent runners. Select and adapt health, identity, profile, chat, media,
     guide/consent, notifications, API/MCP and operator flows. Preserve safe read
@@ -489,7 +529,7 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     images. See MSC122_TEMPLATE_E2E_RUNTIME_20261011.json. Provider callbacks and
     email-owner selection remain earlier-step gaps, not silently passed endpoints.
 
-22. **Implement frontend E2E and local/HTTP parity checks — PASS for selected flows.**
+23. **Implement frontend E2E and local/HTTP parity checks — PASS for selected flows.**
     Reuse `e2e/functional/ui` and existing browser helpers/checks for the retained
     routes and flows. Cover entry, SmartList views, chat, profile/avatar, consent,
     guide/notification/settings and privileged shells in the applicable modes.
@@ -510,7 +550,7 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     local flows also pass after stopping E2E, including the same admin guides.
     See MSC122_TEMPLATE_LOCAL_UI_SUITE_20261011.json. OAuth remains HTTP-only.
 
-23. **Restore stress/performance tooling and measure a coherent build — PENDING.**
+24. **Restore stress/performance tooling and measure a coherent build — PENDING.**
     Reuse `e2e/stress/backend`, `e2e/stress/ui`, shared measurement helpers and
     microservice runtime probes. Select the minimal API/WebSocket/UI workload and
     small deterministic fixtures. Record revisions, data, warmup, concurrency,
@@ -518,7 +558,7 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     Compare equivalent builds/workloads and investigate regressions. Close with
     repeatable commands and an honest baseline; do not repeatedly stress every edit.
 
-24. **Compose and qualify the minimal microservices/KVM deployment — PENDING.**
+25. **Compose and qualify the minimal microservices/KVM deployment — PENDING.**
     Reuse `microservices` assemblies, bindings, transport/authentication, build and
     ownership audits, image locks, manifests/charts, gateway, VM/host tools and
     monitoring, including **Prometheus and Grafana**. Retain the existing metric
@@ -537,14 +577,14 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     Close with focused KVM checks followed serially
     by monolith checks, CPU/log evidence, correct service credentials and cleanup.
 
-25. **Build and verify production Docker artifacts — PENDING.**
+26. **Build and verify production Docker artifacts — PENDING.**
     Reuse native build/stamping, nginx/media/runtime images, image manifests and
     production Compose. Build retained services with project-owned versioned tags
     and immutable identities. Include required assets, seeds and helper files;
     exclude source watchers, test fixtures and secrets. Close with startup and
     retained-flow checks using the actual built images, not a dev bind mount.
 
-26. **Complete DEB, host operations and Debian/Netcup installation — PENDING.**
+27. **Complete DEB, host operations and Debian/Netcup installation — PENDING.**
     Concrete source-reuse gap identified: the existing update worker hard-codes
     the MyScoutee package name/path, installed service and image inventory
     (including Registry/payment images and the 1.3.0 MCP transition). Separate
@@ -574,7 +614,7 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     check, reusing the available installation workflow. Record its evidence
     separately from the KVM lab; one hypervisor does not qualify the other.
 
-27. **Complete signed releases and the updater — PENDING.**
+28. **Complete signed releases and the updater — PENDING.**
     Reuse native release discovery, canonical signing, manifests, staging,
     verification, durable update jobs and rollback/recovery. A DEB must never be
     published without the required matching signed update metadata. Preserve
@@ -582,7 +622,7 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     Close with valid update installation, missing/tampered metadata rejection,
     restart/retry and rollback evidence on a disposable installed template.
 
-28. **Wire GitHub release, GHCR and GitHub Pages publication — PENDING.**
+29. **Wire GitHub release, GHCR and GitHub Pages publication — PENDING.**
     Use the established release/build commands from CI rather than duplicating
     packaging logic. Prepare `v1.0.0`, DEB/client-tools/signatures/checksums and
     versioned Docker image publication to GitHub Container Registry. Configure
@@ -592,7 +632,7 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     Close only after published artifacts and Pages behavior are verified; distinguish
     a prepared workflow from an executed publication.
 
-29. **Finish developer/operator documentation and the single PDF — PENDING.**
+30. **Finish developer/operator documentation and the single PDF — PENDING.**
     Adapt the existing guides and manual builder to this project. Document clean
     setup, local/HTTP, dev/prod/E2E, tests/stress, seeds/reset, domain extension,
     KVM, DEB/Netcup, configuration, TLS, backup/restore, updates and releases.
@@ -601,7 +641,7 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     getting-started PDF path; do not accumulate duplicate version-named PDFs in Git.
     Close with commands checked against the delivered template.
 
-30. **Run final completeness and release acceptance — PENDING.**
+31. **Run final completeness and release acceptance — PENDING.**
     Revisit the inventory from step 2 against the actual artifact tree. Confirm
     every required capability has its implementation, data, configuration, test
     and operational path, and that no omitted product domain is accidentally needed.
@@ -609,7 +649,8 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     and install paths, and verify local, HTTP, E2E, KVM, monolith, DEB/update and
     Pages outcomes at their proper boundaries. Record measured CPU/latency limits,
     tested revisions and any real external blocker. Commit tested batches and
-    mark the template complete only when required gates are satisfied.
+    mark the template complete only when required gates are satisfied, including
+    the subsequently added backend dependency/removal gate in step 5.
     The user's final manual check is limited to logging in as one member and
     opening the SmartList and chat pages on VMware, dev monolith and KVM. Complete
     detailed automatic QA and prepare the environments before that handoff; do not
@@ -617,20 +658,24 @@ deep-link behavior. A working `local` build alone does not close frontend work.
 
 ## Current continuation point
 
-The standalone E2E composition in **21** passes 17 backend cases, admin
-mutations and 15 UI flows. Step **22** also passes all 14 applicable local flows.
-The account warning/email batch in **8–9** now passes its focused JUnit and
+The standalone E2E composition in **22** passes 17 backend cases, admin
+mutations and 15 UI flows. Step **23** also passes all 14 applicable local flows.
+The account warning/email batch in **9–10** now passes its focused JUnit and
 local/artifact-monolith flows. The user-requested frontend domain-folder
 organization is complete in source and template, with 1267 native and 305
 template frontend tests, both production builds and 14 template local UI flows
-passing. See `MSC122_FRONTEND_DOMAINS_20261011.json`. The report/moderation
-selection is being clarified with the user; no removal is included in that
-qualified folder-organization revision. Continue with the source warning-cleanup
-runtime checks and remaining **8–9**, performance and KVM batches in **23–24**.
-Step **20** also retains its preceding 400 selected backend-test result.
-Step **19** has local/dev HTTP
+passing. See `MSC122_FRONTEND_DOMAINS_20261011.json`. The user selected removal of the report/feedback/support UI on 2026-10-12,
+while retaining the backend. That UI change is qualified separately at `87b9715`: 309 frontend tests,
+production/artifact builds, four local and four artifact HTTP flows pass; the completed folder-organization revision is unchanged. The
+moderation backend audit, source modularization and subsequent template removal
+are now authorized in **5**, replacing the deferred decision in **20**. Source warning-cleanup runtime qualification is complete
+at `5d71945a2`; the minimal-admin UI checks are complete; execute **5** (dependency audit, source
+modularization and template backend removal) before further implementation,
+performance and template KVM batches.
+Step **21** also retains its preceding 400 selected backend-test result.
+Step **20** has local/dev HTTP
 moderation, support and administrator API evidence at frontend `43980be` and
-parent `e1118fe`. Member steps **15–18** and operator configuration/TLS/update
+parent `e1118fe`. Member steps **16–19** and operator configuration/TLS/update
 UI have their recorded local/dev evidence. Administrator tours pass in local and artifact E2E; live Firebase,
 operator bootstrap, external provider MCP and KVM/installed host controls remain open.
 

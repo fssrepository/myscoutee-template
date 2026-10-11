@@ -1058,7 +1058,7 @@
       "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
       "upstreamSha256": "939c31c9f8590263a8755a9ff26341d3a0a198fdc4e83ffab9aec67274d3ffd9",
       "purpose": "Native durable notification delivery, inbox and chat transport support for the minimal application.",
-      "adaptation": "Retain native notification limits and account-purge window bounds without the product affinity catalog; configure purge days through users.account-purge-window-days (default 30, native allowed range 1\u2013365)."
+      "adaptation": "Retain native notification limits and account-purge window bounds without the product affinity catalog; configure purge days through users.account-purge-window-days (default 30, native allowed range 1–365)."
     },
     {
       "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/common/redis/RedisStreamRetentionService.java",
@@ -3457,7 +3457,8 @@
       "purpose": "Selected native API/MCP settings, local persistence, consent route and contextual guides for the minimal template.",
       "adaptation": "Retain native API/MCP contracts, stores and adapter behavior; omit affiliate/payment/product fields and text. Compose member entry/guide contexts with the minimal shell. Operator configuration record contains deployment settings only.",
       "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
-      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
+      "templateSelectionNote": "2026-10-12: omit admin Reports/Support chat/Feedback and member report/feedback UI, associated presentation stores, guide contexts and notification links. Retain backend/local contracts pending source-first modularization in plan step 5."
     },
     {
       "path": "frontend/src/app/shared/core/common/deployment-privacy-token.resolver.ts",
@@ -3513,7 +3514,8 @@
       "purpose": "Selected native API/MCP settings, local persistence, consent route and contextual guides for the minimal template.",
       "adaptation": "Retain native API/MCP contracts, stores and adapter behavior; omit affiliate/payment/product fields and text. Compose member entry/guide contexts with the minimal shell. Operator configuration record contains deployment settings only.",
       "sourceRevision": "f8a1b83b6",
-      "sourceFrontendRevision": "c90a5b1f"
+      "sourceFrontendRevision": "c90a5b1f",
+      "templateSelectionNote": "2026-10-12: omit admin Reports/Support chat/Feedback and member report/feedback UI, associated presentation stores, guide contexts and notification links. Retain backend/local contracts pending source-first modularization in plan step 5."
     },
     {
       "path": "frontend/src/app/shared/core/local/seed/repositories/help/help-center-seed.repository.ts",
@@ -4346,7 +4348,8 @@
       "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
       "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
       "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
-      "adaptation": "Retain native paging, delta synchronization, read/mute state, request-generation guards and persistence. Omit workspace/community projections and absent-domain navigation; route personal chat targets into the template chat page."
+      "adaptation": "Retain native paging, delta synchronization, read/mute state, request-generation guards and persistence. Omit workspace/community projections and absent-domain navigation; route personal chat targets into the template chat page.",
+      "templateSelectionNote": "2026-10-12: omit admin Reports/Support chat/Feedback and member report/feedback UI, associated presentation stores, guide contexts and notification links. Retain backend/local contracts pending source-first modularization in plan step 5."
     },
     {
       "path": "frontend/src/app/home/shared/_home-page-frame.scss",
@@ -5316,135 +5319,12 @@
       "adaptation": "Keep the native Attention DTO and read-only overview. Omit the optional statistics field and analytics model/worker from this minimal product."
     },
     {
-      "path": "frontend/src/app/admin/components/chat-review-popup/admin-chat-review-popup.component.html",
-      "sourceRevision": "c90a5b1f74c977591d99ea49a7748d211aed7d5f",
-      "upstreamSha256": "7d815e522319a8b047ce3fb4de28d9bf3ecf93418307e093740ddb619c37cc6e",
-      "purpose": "Minimal native admin moderation, support and member report/feedback UI.",
-      "adaptation": null
-    },
-    {
-      "path": "frontend/src/app/admin/components/chat-review-popup/admin-chat-review-popup.component.scss",
-      "sourceRevision": "c90a5b1f74c977591d99ea49a7748d211aed7d5f",
-      "upstreamSha256": "e4080b20bac4a6de5b0595ab09327a886c268d92ab87aa32ed71af90fa674a98",
-      "purpose": "Minimal native admin moderation, support and member report/feedback UI.",
-      "adaptation": null
-    },
-    {
-      "path": "frontend/src/app/admin/components/chat-review-popup/admin-chat-review-popup.component.ts",
-      "sourceRevision": "c90a5b1f74c977591d99ea49a7748d211aed7d5f",
-      "upstreamSha256": "860c0662645dbcfa9fb5205903411ec12f5838c02c77fa5a96d368c7ab7e489b",
-      "purpose": "Minimal native admin moderation, support and member report/feedback UI.",
-      "adaptation": "Select native report/feedback/support contracts and dependencies for the minimal account/chat shell; omit product-only branches."
-    },
-    {
-      "path": "frontend/src/app/admin/components/feedback-popup/admin-feedback-popup.component.html",
-      "sourceRevision": "c90a5b1f74c977591d99ea49a7748d211aed7d5f",
-      "upstreamSha256": "2dc839735bc0dcc34986c168de7711047a4fa1f4436775015dd800d8adc68b52",
-      "purpose": "Minimal native admin moderation, support and member report/feedback UI.",
-      "adaptation": "Select native feedback list, status filter, detail and resolve/reopen; replace product row converter with selected SingleRow data. Bind the existing template directly to avoid first-render ExpressionChanged errors."
-    },
-    {
-      "path": "frontend/src/app/admin/components/feedback-popup/admin-feedback-popup.component.scss",
-      "sourceRevision": "c90a5b1f74c977591d99ea49a7748d211aed7d5f",
-      "upstreamSha256": "b7cbcebe52255ff32df502f6955e95a98b7446a9020d26381815c54aeae3adcd",
-      "purpose": "Minimal native admin moderation, support and member report/feedback UI.",
-      "adaptation": null
-    },
-    {
-      "path": "frontend/src/app/admin/components/feedback-popup/admin-feedback-popup.component.ts",
-      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
-      "upstreamSha256": "ae7bf326d4428d3b49b0e827e94c02e6ba84be8d8671b200792f74b09ff61dbb",
-      "purpose": "Minimal native admin moderation, support and member report/feedback UI.",
-      "adaptation": "Select native feedback list, status filter, detail and resolve/reopen; replace product row converter with selected SingleRow data. Bind the existing template directly to avoid first-render ExpressionChanged errors.",
-      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
-    },
-    {
-      "path": "frontend/src/app/admin/components/reports-popup/admin-reports-popup.component.html",
-      "sourceRevision": "c90a5b1f74c977591d99ea49a7748d211aed7d5f",
-      "upstreamSha256": "86c35ef45e760314fd4c6ea59407bba16d1b2d50c7efb003b5e07deb0d912078",
-      "purpose": "Minimal native admin moderation, support and member report/feedback UI.",
-      "adaptation": "Select chat report list/detail and native moderation actions with Popup/SmartList/SingleRow; omit product previews and sharing. Reconcile canonical mutation results with SmartList syncVisibleItems without another dashboard request."
-    },
-    {
-      "path": "frontend/src/app/admin/components/reports-popup/admin-reports-popup.component.scss",
-      "sourceRevision": "c90a5b1f74c977591d99ea49a7748d211aed7d5f",
-      "upstreamSha256": "c18b8e353b485cc59276459f8b17f220fe9816b80bde3811c252fceb74b2cd4a",
-      "purpose": "Minimal native admin moderation, support and member report/feedback UI.",
-      "adaptation": "Select chat report list/detail and native moderation actions with Popup/SmartList/SingleRow; omit product previews and sharing. Reconcile canonical mutation results with SmartList syncVisibleItems without another dashboard request."
-    },
-    {
-      "path": "frontend/src/app/admin/components/reports-popup/admin-reports-popup.component.ts",
-      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
-      "upstreamSha256": "00394d156382f58ea67d34d1a9124b50ab713e674372ab2316e3d16c479fbaf1",
-      "purpose": "Minimal native admin moderation, support and member report/feedback UI.",
-      "adaptation": "Select chat report list/detail and native moderation actions with Popup/SmartList/SingleRow; omit product previews and sharing. Reconcile canonical mutation results with SmartList syncVisibleItems without another dashboard request.",
-      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
-    },
-    {
-      "path": "frontend/src/app/profile/components/feedback-popup/feedback-popup.component.html",
-      "sourceRevision": "c90a5b1f74c977591d99ea49a7748d211aed7d5f",
-      "upstreamSha256": "f4c00724b86c1fab1aba4143a8e462af055879b2151dba98af4884549eeaaa18",
-      "purpose": "Minimal native admin moderation, support and member report/feedback UI.",
-      "adaptation": null
-    },
-    {
-      "path": "frontend/src/app/profile/components/feedback-popup/feedback-popup.component.scss",
-      "sourceRevision": "c90a5b1f74c977591d99ea49a7748d211aed7d5f",
-      "upstreamSha256": "bf9bf1bc3667c2717fd6d8211a5a45c6d9e6247ed53cf51a7272996eaa33a6c4",
-      "purpose": "Minimal native admin moderation, support and member report/feedback UI.",
-      "adaptation": null
-    },
-    {
-      "path": "frontend/src/app/profile/components/feedback-popup/feedback-popup.component.ts",
-      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
-      "upstreamSha256": "72a8e24523f062befd8b6ec11367afece02ba92aebda58aa1714768bcfdeb7c3",
-      "purpose": "Minimal native admin moderation, support and member report/feedback UI.",
-      "adaptation": "Keep native feedback form and submit state; resolve the selected active account without the omitted group-workspace provider.",
-      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
-    },
-    {
-      "path": "frontend/src/app/profile/components/report-user-popup/report-user-popup.component.html",
-      "sourceRevision": "c90a5b1f74c977591d99ea49a7748d211aed7d5f",
-      "upstreamSha256": "033450a75f58f9174b78de31566c714020802898f59d909ee66fdc25706657af",
-      "purpose": "Minimal native admin moderation, support and member report/feedback UI.",
-      "adaptation": "Keep native report form and submit state; require saved chat-message context and omit event/group/asset controls."
-    },
-    {
-      "path": "frontend/src/app/profile/components/report-user-popup/report-user-popup.component.scss",
-      "sourceRevision": "c90a5b1f74c977591d99ea49a7748d211aed7d5f",
-      "upstreamSha256": "bf9bf1bc3667c2717fd6d8211a5a45c6d9e6247ed53cf51a7272996eaa33a6c4",
-      "purpose": "Minimal native admin moderation, support and member report/feedback UI.",
-      "adaptation": null
-    },
-    {
-      "path": "frontend/src/app/profile/components/report-user-popup/report-user-popup.component.ts",
-      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
-      "upstreamSha256": "e8521d8a6c6625b952950f183229a05dbbe08cc40e3de297814e23c141b79127",
-      "purpose": "Minimal native admin moderation, support and member report/feedback UI.",
-      "adaptation": "Keep native report form and submit state; require saved chat-message context and omit event/group/asset controls.",
-      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
-    },
-    {
       "path": "frontend/src/app/shared/core/local/seed/repositories/administration/admin-store-seed.repository.ts",
       "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
       "upstreamSha256": "2ed5de48feb4e91441889d137ed13a8e495bdfaffffd3b1ddc438a8f1a286275",
       "purpose": "Minimal native admin moderation, support and member report/feedback UI.",
       "adaptation": "Select native report/feedback/support contracts and dependencies for the minimal account/chat shell; omit product-only branches.",
       "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
-    },
-    {
-      "path": "frontend/src/app/shared/ui/context/stores/admin/admin-menu.store.ts",
-      "sourceRevision": "c90a5b1f74c977591d99ea49a7748d211aed7d5f",
-      "upstreamSha256": "ac63e57c0ced7feab3268e52bba47f4bccc40ed83ab6baa9f8fda085cd65eb4b",
-      "purpose": "Minimal native admin moderation, support and member report/feedback UI.",
-      "adaptation": "Select report, feedback, evidence and warning popup state only."
-    },
-    {
-      "path": "frontend/src/app/shared/ui/context/stores/admin/admin-workspace.store.ts",
-      "sourceRevision": "c90a5b1f74c977591d99ea49a7748d211aed7d5f",
-      "upstreamSha256": "995c2b2763225ef66644dec71f7fabeac16a5d07598f9677f52208ae412b4e01",
-      "purpose": "Minimal native admin moderation, support and member report/feedback UI.",
-      "adaptation": "Select dashboard normalization and canonical moderation patches; use the active profile as administrator and clear cached data when that identity changes."
     },
     {
       "path": "mcp/README.md",

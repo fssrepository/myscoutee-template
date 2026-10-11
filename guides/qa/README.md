@@ -295,6 +295,15 @@ its native sessions before removing its data.
 
 ## Minimal moderation, support and administrator API — 2026-10-11
 
+Scope update, 2026-10-12: the following evidence describes the prior UI selection.
+The template now omits Reports, Support chat and Feedback screens and member
+report/feedback controls. The backend remains selected. The replacement
+`admin/run.mjs` checks the empty shell, absent entry points/deep links and retained
+member chat; `admin/api.mjs` continues to qualify API access. The new UI selection passes 309 frontend tests and four local plus four
+artifact HTTP flows; see [current evidence](../qualification/evidence/MSC122_TEMPLATE_MINIMAL_ADMIN_UI_20261012.json). The user subsequently authorized a backend dependency audit,
+source modularization and then template removal; see new plan step 5. That work
+follows the current UI verification, before further service composition and packaging.
+
 Frontend `43980be` and the selected backend owners pass the local/dev HTTP report,
 feedback, warning, block/unblock, resolve/reopen and support-message/reload flows.
 The empty queue is valid; the seeded administrator is classified in canonical JSON.
