@@ -455,6 +455,17 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     `MSC122_TEMPLATE_CONSOLIDATED_TESTS_20261011.json`. Explicit integration and
     deployment qualification remain separate gates.
 
+    The subsequent frontend domain-folder batch passes all **1267 native** and
+    **305 template** frontend tests, both production builds and all 14 applicable
+    template local UI flows. Core services, repositories, contracts and related
+    adapter layers now use their existing backend domain folders. The resolved
+    source imports and optimized bundle dependency graphs are unchanged by the
+    moves; initial JavaScript sizes are unchanged. Active generators, parent
+    scripts and documentation links use the new paths. See
+    `MSC122_FRONTEND_DOMAINS_20261011.json` for the exact revisions, separately
+    committed behavior fixes and validation limits. Build CPU measurements do
+    not establish runtime performance parity.
+
 21. **Implement backend functional E2E — IN PROGRESS.**
     Reuse `e2e/shared`, `e2e/functional/backend`, fixture hooks, contract and
     concurrent runners. Select and adapt health, identity, profile, chat, media,
@@ -600,11 +611,15 @@ deep-link behavior. A working `local` build alone does not close frontend work.
 The standalone E2E composition in **21** passes 17 backend cases, admin
 mutations and 15 UI flows. Step **22** also passes all 14 applicable local flows.
 The account warning/email batch in **8–9** now passes its focused JUnit and
-local/artifact-monolith flows. Complete the user-requested frontend domain-folder
-organization next (source first, then template; services/repositories and related
-contracts retain their behavior), followed by the source warning-cleanup runtime
-checks and remaining **8–9**, performance and KVM batches in **23–24**. Step **20** passes all
-400 selected backend and 256 frontend tests. Step **19** has local/dev HTTP
+local/artifact-monolith flows. The user-requested frontend domain-folder
+organization is complete in source and template, with 1267 native and 305
+template frontend tests, both production builds and 14 template local UI flows
+passing. See `MSC122_FRONTEND_DOMAINS_20261011.json`. The report/moderation
+selection is being clarified with the user; no removal is included in that
+qualified folder-organization revision. Continue with the source warning-cleanup
+runtime checks and remaining **8–9**, performance and KVM batches in **23–24**.
+Step **20** also retains its preceding 400 selected backend-test result.
+Step **19** has local/dev HTTP
 moderation, support and administrator API evidence at frontend `43980be` and
 parent `e1118fe`. Member steps **15–18** and operator configuration/TLS/update
 UI have their recorded local/dev evidence. Administrator tours pass in local and artifact E2E; live Firebase,

@@ -2716,11 +2716,11 @@
     },
     {
       "path": "frontend/angular.json",
-      "upstreamSha256": "7c9a4e9dbe4a98da9cebae3d1a9b35acdd035e720fcdebd18850ae034f48f00e",
+      "upstreamSha256": "757574576e1f7e1922b40b93af4544195d9d19d023d469efd738e1ac871ef8be",
       "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
       "adaptation": "Template application composition, selected contracts or project-specific metadata/configuration; see the frontend foundation evidence.",
-      "sourceRevision": "e3eff359c",
-      "sourceFrontendRevision": "1af20e0b"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
       "path": "frontend/package-lock.json",
@@ -2796,11 +2796,11 @@
     },
     {
       "path": "frontend/src/app/app.config.ts",
-      "upstreamSha256": "4cecaed8674b3c4aa876a50f3b725452b1b595834eeff84aa48a0bdf83c736bf",
+      "upstreamSha256": "22a4269c61d46854655d602ade5f0d1f8566eac2131e5402cf48907c5b05d81d",
       "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
       "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
-      "sourceRevision": "bfc9a167c",
-      "sourceFrontendRevision": "5fbf3e62"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
       "path": "frontend/src/app/app.html",
@@ -2820,11 +2820,11 @@
     },
     {
       "path": "frontend/src/app/app.ts",
-      "upstreamSha256": "133e9d0143f4a1340e1ab3e0535bfe62152f9f2f1e9b4a221d532c79461d38b2",
+      "upstreamSha256": "aef35e779a1838855d47a026503bfdc9e3006db28be9ac87da0bb17fef162998",
       "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
       "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
-      "sourceRevision": "bfc9a167c",
-      "sourceFrontendRevision": "5fbf3e62"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
       "path": "frontend/src/app/shared/core/base/config.ts",
@@ -2835,163 +2835,163 @@
       "sourceFrontendRevision": "1af20e0b"
     },
     {
-      "path": "frontend/src/app/shared/core/base/mappers/operator-configuration.mapper.ts",
+      "path": "frontend/src/app/shared/core/base/mappers/operator/operator-configuration.mapper.ts",
       "upstreamPath": "frontend/src/app/shared/core/base/mappers/operator-configuration.mapper.ts",
-      "upstreamSha256": "36e088987d6b5e2d09ffab5f9c8c15c2ddca41541109fb66d2073a15700fc9a2",
-      "sourceRevision": "f8a1b83b6",
-      "sourceFrontendRevision": "c90a5b1f",
+      "upstreamSha256": "98f54005ec000991df3a2021c8844253a440d18660cf17ccda9c65225b5da513",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
       "purpose": "Minimal deployment configuration: branding, privacy contact, administrator email allowlist, social links, API URL and Firebase setup.",
       "adaptation": "Select configuration members and existing UI sections; no company Registry, payments, revenue or community state. Use the existing private deployment configuration repository and native HTTP authority. Template title and popup shell composition."
     },
     {
-      "path": "frontend/src/app/shared/core/base/repositories/i18n-bundle.repository.spec.ts",
+      "path": "frontend/src/app/shared/core/base/repositories/localization/i18n-bundle.repository.spec.ts",
       "upstreamSha256": "3bebe682d79b90175c65e707991984a5eaced11b418da0b718f94eb995641edb",
       "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
       "adaptation": null,
-      "sourceRevision": "e3eff359c",
-      "sourceFrontendRevision": "1af20e0b"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/base/repositories/i18n-bundle.repository.ts",
-      "upstreamSha256": "38a7bae9ce988741bc0939417b9af4da3d15607d5a594b677a89e0169ee6e88d",
+      "path": "frontend/src/app/shared/core/base/repositories/localization/i18n-bundle.repository.ts",
+      "upstreamSha256": "af069ceee14c231e188458d9f743f23ce926bf6f5ba599276992f641d57f7c87",
       "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
       "adaptation": null,
-      "sourceRevision": "e3eff359c",
-      "sourceFrontendRevision": "1af20e0b"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/base/services/base-route-mode.service.spec.ts",
-      "upstreamSha256": "4193d4de7aadcc66a8c06e4e7216bee98399e62d5343e27b8405f105b7516c73",
+      "path": "frontend/src/app/shared/core/base/services/platform/base-route-mode.service.spec.ts",
+      "upstreamSha256": "ef689d0641123352ad6bec4d0ecb02e2a2c41c1626510b9f8eaf2013d9ed0bad",
       "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
       "adaptation": null,
-      "sourceRevision": "e3eff359c",
-      "sourceFrontendRevision": "1af20e0b"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/base/services/base-route-mode.service.ts",
-      "upstreamSha256": "951347c1a193bf8f387f7aaf4caba76609ca40502c2abaa265fc81a25a90739e",
+      "path": "frontend/src/app/shared/core/base/services/platform/base-route-mode.service.ts",
+      "upstreamSha256": "4bdae7858198f882d17322dfb7c88df7dc01bc790e7458b13331a552ab9e1573",
       "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
       "adaptation": null,
-      "sourceRevision": "e3eff359c",
-      "sourceFrontendRevision": "1af20e0b"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/base/services/deployment-configuration.service.ts",
-      "upstreamSha256": "1679e77e38ff269ce4316545871c333b365141edaa642e578154d38b143a07ef",
+      "path": "frontend/src/app/shared/core/base/services/platform/deployment-configuration.service.ts",
+      "upstreamSha256": "d77dae9e36fd567ab38a48713d2992dec780cdeee43341ae32b46edc745dd2a0",
       "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
       "adaptation": "Selected native branding, privacy contact, social links and Firebase messaging state; omitted payment provider state.",
-      "sourceRevision": "e3eff359c",
-      "sourceFrontendRevision": "1af20e0b"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/base/services/device-registrations.service.ts",
-      "upstreamSha256": "e16adc30b777de56b8a8c618bc8f071b7d633d87e6897b0a9d970638df74d965",
+      "path": "frontend/src/app/shared/core/base/services/accounts/device-registrations.service.ts",
+      "upstreamSha256": "1c78c80deabc7b4832576f7ebde545b6704b9f9aafc26f4990aa19de711c371c",
       "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
       "adaptation": null,
-      "sourceRevision": "e3eff359c",
-      "sourceFrontendRevision": "1af20e0b"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/base/services/firebase-app.service.spec.ts",
+      "path": "frontend/src/app/shared/core/base/services/accounts/firebase-app.service.spec.ts",
       "upstreamSha256": "e6463f8b9722ad287e7e2cd54716384a3c751a0ac1672adfe8157fb69fdeb2bc",
       "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
       "adaptation": null,
-      "sourceRevision": "e3eff359c",
-      "sourceFrontendRevision": "1af20e0b"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/base/services/firebase-app.service.ts",
-      "upstreamSha256": "bd4dc0040020d648e41e3842a0d585b02cdd7101d7a0a42987cc0f6a4545faba",
+      "path": "frontend/src/app/shared/core/base/services/accounts/firebase-app.service.ts",
+      "upstreamSha256": "ec3e02992b9ebb58b4469c749bf7c1e82d202b67e0b5a0472bb8cb29b6389885",
       "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
       "adaptation": null,
-      "sourceRevision": "e3eff359c",
-      "sourceFrontendRevision": "1af20e0b"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/base/services/firebase-auth.service.spec.ts",
-      "upstreamSha256": "c3c7c844c8e536d8135b70ece296b5ca784bcf288255b473e9743b4d98e2c44c",
+      "path": "frontend/src/app/shared/core/base/services/accounts/firebase-auth.service.spec.ts",
+      "upstreamSha256": "43712a746bed45bcdd08e5512ead22c25a06ece63c80685f8d6b91691f6bc3d1",
       "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
       "adaptation": null,
-      "sourceRevision": "e3eff359c",
-      "sourceFrontendRevision": "1af20e0b"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/base/services/firebase-auth.service.ts",
-      "upstreamSha256": "aba24be7b5675d2ad7172cbe6b77af7a288accd11f0cca20472bc551943d240f",
+      "path": "frontend/src/app/shared/core/base/services/accounts/firebase-auth.service.ts",
+      "upstreamSha256": "bfccaaa990ba125422eb7db1d9a5650320620325a122e903aa240b106d627ff5",
       "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
       "adaptation": null,
-      "sourceRevision": "e3eff359c",
-      "sourceFrontendRevision": "1af20e0b"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/base/services/firebase-messaging.service.ts",
-      "upstreamSha256": "3326c073922cc21b3090b998c8afef189b08ff9ee6c1b9cc7c2cde0d9816a451",
+      "path": "frontend/src/app/shared/core/base/services/notifications/firebase-messaging.service.ts",
+      "upstreamSha256": "d67c3edae837092a2ad14321c553ff412568bab3d7834f8702b72444fab79d05",
       "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
       "adaptation": null,
-      "sourceRevision": "e3eff359c",
-      "sourceFrontendRevision": "1af20e0b"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/base/services/i18n.service.ts",
-      "upstreamSha256": "3338961285dd7d0b87cdeac91f60afc8e2e982206ed2c3bcdae8969c00c30fb0",
+      "path": "frontend/src/app/shared/core/base/services/localization/i18n.service.ts",
+      "upstreamSha256": "4b2f188f852503dabd933881d8c68611f8b8eba33cfdd68193ede36344f5e187",
       "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
       "adaptation": null,
-      "sourceRevision": "e3eff359c",
-      "sourceFrontendRevision": "1af20e0b"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/base/services/offline-cache.service.ts",
-      "upstreamSha256": "0e99a1e0f2095ba4a4dbe59f7d88378bfcbf622fdb459fe0683245b65f0cc519",
+      "path": "frontend/src/app/shared/core/base/services/platform/offline-cache.service.ts",
+      "upstreamSha256": "932c25590e467b13b64c603c912c6efc5fc21ec30879c9232337280e7a61376a",
       "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
       "adaptation": "Selected native user cache and revocation, removing ticket cache operations and using the template cache prefix.",
-      "sourceRevision": "e3eff359c",
-      "sourceFrontendRevision": "1af20e0b"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/base/services/pwa.service.ts",
-      "upstreamSha256": "a473a638f87d23580a0129b57819e4b5e0d94e3c6962f54cb7e86185c844e736",
+      "path": "frontend/src/app/shared/core/base/services/platform/pwa.service.ts",
+      "upstreamSha256": "ef201380bcb55c27e3b31f2b7a639bd319d492b934f5e2a98ab497a57cae5e5b",
       "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
       "adaptation": null,
-      "sourceRevision": "e3eff359c",
-      "sourceFrontendRevision": "1af20e0b"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/base/services/route-delay.service.spec.ts",
-      "upstreamSha256": "ea5fd9c012a57dc34ca5a1065d602a6a98ff3de929a30a3fa0985bcff5a5876b",
+      "path": "frontend/src/app/shared/core/base/services/platform/route-delay.service.spec.ts",
+      "upstreamSha256": "a2260e9503fd22e9b79faf4c99d2ed527194c21ab05fba4c76c123f71acf4488",
       "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
       "adaptation": "Template application composition, selected contracts or project-specific metadata/configuration; see the frontend foundation evidence.",
-      "sourceRevision": "e3eff359c",
-      "sourceFrontendRevision": "1af20e0b"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/base/services/route-delay.service.ts",
-      "upstreamSha256": "20a600db26ee36ec19727017f97a82d31c8b2657572a1b5fb39ccea36983da06",
+      "path": "frontend/src/app/shared/core/base/services/platform/route-delay.service.ts",
+      "upstreamSha256": "f476aead3cb38a40a8e4f62b6d16bccd4c52fcceed9213bad1215ac601188200",
       "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
       "adaptation": null,
-      "sourceRevision": "e3eff359c",
-      "sourceFrontendRevision": "1af20e0b"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/base/services/session.service.spec.ts",
-      "upstreamSha256": "d29c7e873d2a055105bcff14a23ba426792417b0b3bcf0f2a63d59213e3e047e",
+      "path": "frontend/src/app/shared/core/base/services/accounts/session.service.spec.ts",
+      "upstreamSha256": "da4b338945770ea3ccf74a2702d27b1e91145c5c358dbb69491d9c4b86f3e475",
       "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
       "adaptation": null,
-      "sourceRevision": "e3eff359c",
-      "sourceFrontendRevision": "1af20e0b"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/base/services/session.service.ts",
-      "upstreamSha256": "0b2be6bf7f6afdeb9875102b2bef7f3bc63efec0bd6eed9e778772d03a5364c5",
+      "path": "frontend/src/app/shared/core/base/services/accounts/session.service.ts",
+      "upstreamSha256": "2af40b948201e368d6351b75b234721402a530005d3f40d7900ccb9e70682292",
       "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
       "adaptation": null,
-      "sourceRevision": "e3eff359c",
-      "sourceFrontendRevision": "1af20e0b"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
       "path": "frontend/src/app/shared/core/common/app.db.ts",
-      "upstreamSha256": "ef57b401cc6a766913ca928b4511af3f2c7266e12c3ca6733e440edfe1765fc7",
-      "sourceRevision": "5a639775e",
-      "sourceFrontendRevision": "bf4760f9",
+      "upstreamSha256": "358522bb8705f70448ec19ac1f8d6fb90ab873c8bf26065b0ba4d624918d9522",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
       "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
       "adaptation": "Select template guide/content languages and retained memory tables. Preserve native notification persistence and the native contacts chat-access persistence rule; use template-owned content and catalogue data."
     },
@@ -3045,129 +3045,129 @@
     },
     {
       "path": "frontend/src/app/shared/core/common/user-role.ts",
-      "upstreamSha256": "ee8e0f17a0ffd82eda4ba50ade36ac657a12ae324e15b2e9f5e252acd52929fa",
+      "upstreamSha256": "bd7e8efa6ea8d6dac1473d89832eeb8fd78707eef3be6131d752e202396f9393",
       "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
       "adaptation": null,
-      "sourceRevision": "e3eff359c",
-      "sourceFrontendRevision": "1af20e0b"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/contracts/deployment-configuration.interface.ts",
+      "path": "frontend/src/app/shared/core/contracts/platform/deployment-configuration.interface.ts",
       "upstreamSha256": "42681bef23114af6c41ad4094e5d0a2201fd40bfbe5018bed84bd4463dee8298",
       "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
       "adaptation": "Template application composition, selected contracts or project-specific metadata/configuration; see the frontend foundation evidence.",
-      "sourceRevision": "e3eff359c",
-      "sourceFrontendRevision": "1af20e0b"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/contracts/device-registration.interface.ts",
+      "path": "frontend/src/app/shared/core/contracts/accounts/device-registration.interface.ts",
       "upstreamSha256": "d2234a0734708b4891980516204f20f5edf124c0742fa775dfa360eac3ee3b8f",
       "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
       "adaptation": null,
-      "sourceRevision": "e3eff359c",
-      "sourceFrontendRevision": "1af20e0b"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/http/interceptors/admin-access.interceptor.ts",
-      "upstreamSha256": "77dd97a6f471b5344ca008518c3044286223df76b255bd8cf1c3fdc412ec6f47",
+      "path": "frontend/src/app/shared/core/http/interceptors/access/admin-access.interceptor.ts",
+      "upstreamSha256": "21c9951f19ffd4a5d9c8d8dfae7733ee18f722fe7cdb11d674927b8b10dda356",
       "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
       "adaptation": null,
-      "sourceRevision": "e3eff359c",
-      "sourceFrontendRevision": "1af20e0b"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/http/interceptors/api-request.ts",
-      "upstreamSha256": "40c3ecc989ba571e4eae87ef4a54d6d96715ce01aa17df7430c5b37459528549",
+      "path": "frontend/src/app/shared/core/http/interceptors/platform/api-request.ts",
+      "upstreamSha256": "107cd029b8e4d6b6b651963f8fb637dd092b0472986c989120c677a1797bdfa2",
       "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
       "adaptation": null,
-      "sourceRevision": "e3eff359c",
-      "sourceFrontendRevision": "1af20e0b"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/http/interceptors/firebase-auth.interceptor.spec.ts",
-      "upstreamSha256": "80ac5cd1a602aa6d369fd31879c07b002b0124a2656fd5557d932f0e3b5412d2",
+      "path": "frontend/src/app/shared/core/http/interceptors/accounts/firebase-auth.interceptor.spec.ts",
+      "upstreamSha256": "5f8edafa12f63043584b9e1fddf432792fecbababfe482f4ea4c52b1a6bf9f9e",
       "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
       "adaptation": null,
-      "sourceRevision": "e3eff359c",
-      "sourceFrontendRevision": "1af20e0b"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/http/interceptors/firebase-auth.interceptor.ts",
-      "upstreamSha256": "74f74c8f421bb5fa2a438b5d9a17d1417d8109d7792d65d2a097bef10fa6bd4e",
+      "path": "frontend/src/app/shared/core/http/interceptors/accounts/firebase-auth.interceptor.ts",
+      "upstreamSha256": "bb5fc6fd6f04ef8fd3c1456fae2c132b2964eedc5eb9ab7e809537981621e10b",
       "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
       "adaptation": null,
-      "sourceRevision": "e3eff359c",
-      "sourceFrontendRevision": "1af20e0b"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/http/interceptors/operator-bootstrap-auth.interceptor.spec.ts",
-      "upstreamSha256": "acd9796462cc8ea51fe55f9fb7377ca61c6bc36e824f11f39164036ea3e1e7bc",
+      "path": "frontend/src/app/shared/core/http/interceptors/operator/operator-bootstrap-auth.interceptor.spec.ts",
+      "upstreamSha256": "655b785be2abfd3f76c4cdc038dcdcac47ca60d5775690c2b17343f0f6797a84",
       "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
       "adaptation": null,
-      "sourceRevision": "e3eff359c",
-      "sourceFrontendRevision": "1af20e0b"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/http/interceptors/operator-bootstrap-auth.interceptor.ts",
-      "upstreamSha256": "972eb848d603c86707260fd9c3a15bbb5c7ad1c5775d53e5e5a268c37c91e085",
+      "path": "frontend/src/app/shared/core/http/interceptors/operator/operator-bootstrap-auth.interceptor.ts",
+      "upstreamSha256": "1f48675451eb8ca9c6f1f0177d0480190a5f875093b875c17216cc56ee366a9e",
       "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
       "adaptation": null,
-      "sourceRevision": "e3eff359c",
-      "sourceFrontendRevision": "1af20e0b"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/http/interceptors/session-mode.interceptor.spec.ts",
-      "upstreamSha256": "ff22595495a283aab48e671c7383bd844704b503930309b0a3a251f492f30767",
+      "path": "frontend/src/app/shared/core/http/interceptors/accounts/session-mode.interceptor.spec.ts",
+      "upstreamSha256": "b0971c80fc8a9fbdf5410b9a6b93e237273b78ac4faf9dd4d499d3c49b6b9221",
       "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
       "adaptation": null,
-      "sourceRevision": "e3eff359c",
-      "sourceFrontendRevision": "1af20e0b"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/http/interceptors/session-mode.interceptor.ts",
-      "upstreamSha256": "8c1a529ab26b9aef9c8aa598f2de5e26aaa520c659560f91efa4242ea7d35022",
+      "path": "frontend/src/app/shared/core/http/interceptors/accounts/session-mode.interceptor.ts",
+      "upstreamSha256": "dc683b38003cf492d984651099296260416e31f63f9f7e91e81f97cf03874a58",
       "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
       "adaptation": null,
-      "sourceRevision": "e3eff359c",
-      "sourceFrontendRevision": "1af20e0b"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/http/services/deployment-configuration.service.ts",
-      "upstreamSha256": "a4e722b1ce5cd84e347b1fa774c8589b119242c086ff0812c9a1b3dc473ba80e",
+      "path": "frontend/src/app/shared/core/http/services/platform/deployment-configuration.service.ts",
+      "upstreamSha256": "b24adabec24cecd6086afd5479bac9a28da701229236d8cc988d8fc79c72b381",
       "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
       "adaptation": null,
-      "sourceRevision": "e3eff359c",
-      "sourceFrontendRevision": "1af20e0b"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/http/services/device-registrations.service.ts",
-      "upstreamSha256": "63c3a134dcb0071e2420fc1285eb70db84edc1a985de388d0b5c4b0a5560ee7c",
+      "path": "frontend/src/app/shared/core/http/services/accounts/device-registrations.service.ts",
+      "upstreamSha256": "ed44d377b9d10a4b542356d32b30d9e064e97b4768392a370415d558d9386872",
       "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
       "adaptation": null,
-      "sourceRevision": "e3eff359c",
-      "sourceFrontendRevision": "1af20e0b"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/http/services/firebase-session-registry.service.ts",
-      "upstreamSha256": "45ede04a17f1604f89f3cdbb46e9fa1278c5b79b43fdac7abbf44bc0821fc062",
+      "path": "frontend/src/app/shared/core/http/services/accounts/firebase-session-registry.service.ts",
+      "upstreamSha256": "44d8d163b656995a1230a78e7a08ca05a0445675b89e0491793437aa34f13c18",
       "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
       "adaptation": null,
-      "sourceRevision": "e3eff359c",
-      "sourceFrontendRevision": "1af20e0b"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/http/services/operator-bootstrap-auth.service.ts",
-      "upstreamSha256": "23fd8f9f6383011a532075f97b51e6de7695c89cf41853e73450ac33d6d56dac",
+      "path": "frontend/src/app/shared/core/http/services/operator/operator-bootstrap-auth.service.ts",
+      "upstreamSha256": "87ee1ac6a67513400608aaa29a82f72bbd88fa9fb3bb38084a7eb07a2bbf0afe",
       "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
       "adaptation": null,
-      "sourceRevision": "e3eff359c",
-      "sourceFrontendRevision": "1af20e0b"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
       "path": "frontend/src/app/shared/core/local/common/memory.schema.ts",
-      "upstreamSha256": "7af6ef975a6f3cb07cb7842f705d6f3b64c97c84ede8e8f30bab3e93311ba74c",
-      "sourceRevision": "5a639775e",
-      "sourceFrontendRevision": "bf4760f9",
+      "upstreamSha256": "fe7a597681ea728fb5e6f5e804fb7490583066893e95eaaa7653da467b695eba",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
       "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
       "adaptation": "Compose the selected template profile, chat, notification and guide owners; retain native contracts and persistence while omitting unselected product dependencies."
     },
@@ -3180,68 +3180,68 @@
       "sourceFrontendRevision": "1af20e0b"
     },
     {
-      "path": "frontend/src/app/shared/core/local/source/entity/device-registration.entity.ts",
+      "path": "frontend/src/app/shared/core/local/source/entity/accounts/device-registration.entity.ts",
       "upstreamSha256": "a082c5f5f9a0dfcd57666def67d8f1ee8d8b77c16757348a2a0543fa0d817065",
       "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
       "adaptation": null,
-      "sourceRevision": "e3eff359c",
-      "sourceFrontendRevision": "1af20e0b"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/local/source/entity/user.entity.ts",
-      "upstreamSha256": "5746020fad547e4160dec09ebd06cef5648739f649090369c5c99a267fb1e6ac",
+      "path": "frontend/src/app/shared/core/local/source/entity/accounts/user.entity.ts",
+      "upstreamSha256": "288f2b1ff41f1240f44447d6a4da21c1ebae1b7a681f0c7e3abf9a733043bba2",
       "purpose": "Selected native API/MCP settings, local persistence, consent route and contextual guides for the minimal template.",
       "adaptation": "Retain native API/MCP contracts, stores and adapter behavior; omit affiliate/payment/product fields and text. Compose member entry/guide contexts with the minimal shell. Operator configuration record contains deployment settings only.",
-      "sourceRevision": "f8a1b83b6",
-      "sourceFrontendRevision": "c90a5b1f"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/local/source/repositories/device-registrations.repository.ts",
-      "upstreamSha256": "2d025d911d38269a84a97bff314658720a7d44483fb82db8bd4b446e810a536b",
+      "path": "frontend/src/app/shared/core/local/source/repositories/accounts/device-registrations.repository.ts",
+      "upstreamSha256": "3d15a0b0dac92678f1e2c24efba2657b0d661110df920b7524ca3bcaf5f3f9e6",
       "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
       "adaptation": null,
-      "sourceRevision": "e3eff359c",
-      "sourceFrontendRevision": "1af20e0b"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/local/source/services/deployment-configuration.service.ts",
-      "upstreamSha256": "20309371725ec229eb972c15d67037f861d1ffc4869f4e98f62f79078c744f41",
+      "path": "frontend/src/app/shared/core/local/source/services/platform/deployment-configuration.service.ts",
+      "upstreamSha256": "5ad551acced3a13a548dd21305f4fb41418f43a3c84224e0ff3afc407df1f5b8",
       "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
       "adaptation": "Uses the selected native configuration repository without virtual-company Registry state.",
-      "sourceRevision": "e3eff359c",
-      "sourceFrontendRevision": "1af20e0b"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/local/source/services/device-registrations.service.ts",
-      "upstreamSha256": "0f66f7631b88ba2532cda6b7230627cebb959ab00e3ce4a56f8bec892f8f3f0d",
+      "path": "frontend/src/app/shared/core/local/source/services/accounts/device-registrations.service.ts",
+      "upstreamSha256": "85fc16bbae2e3d9ce5ac908453b707114f5cfb2e1a538a9b07e2f3bb869465cd",
       "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
       "adaptation": null,
-      "sourceRevision": "e3eff359c",
-      "sourceFrontendRevision": "1af20e0b"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/local/source/services/route-delay.service.ts",
-      "upstreamSha256": "db00955b7c97cb71ba3e0271e4b43919a63f57c5192f1b5de0221b86839a3ed1",
+      "path": "frontend/src/app/shared/core/local/source/services/platform/route-delay.service.ts",
+      "upstreamSha256": "38475e8df280101069cb2fcce66dbdcf89127dbf697fee3735461babbe2d2215",
       "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
       "adaptation": null,
-      "sourceRevision": "e3eff359c",
-      "sourceFrontendRevision": "1af20e0b"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
       "path": "frontend/src/app/shared/ui/context/stores/profile/user-profile.store.ts",
-      "upstreamSha256": "96baf2f9063c79c045814f6ad2ff16c5d4cf79f63f2d276a64015d2eca0d8a3c",
+      "upstreamSha256": "c6f1d77f9ddf205ea4cf7efabcb32dafaac96079c5bfff417db428d376c0e75a",
       "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
       "adaptation": "Compose the selected template profile, chat, notification and guide owners; retain native contracts and persistence while omitting unselected product dependencies.",
-      "sourceRevision": "5a639775e",
-      "sourceFrontendRevision": "bf4760f9"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
       "path": "frontend/src/app/shared/ui/context/ui.providers.ts",
-      "upstreamSha256": "f28fba7d6a391b63e06af020a2f7b46731350f6c66a6873426507e052ed334cc",
+      "upstreamSha256": "8de81f742bfbfe745bbad513d69392f85136e26219ac1931fc94d215eb822a2b",
       "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
       "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
-      "sourceRevision": "bfc9a167c",
-      "sourceFrontendRevision": "5fbf3e62"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
       "path": "frontend/src/assets/i18n/en.json",
@@ -3309,11 +3309,11 @@
     },
     {
       "path": "frontend/src/main.ts",
-      "upstreamSha256": "dbbd9bac49ccb881af102ee53939f9dd8ad38851a66adc7251e9319dba3b5abc",
+      "upstreamSha256": "a1374856c13d6bbdf2e616ed248e90817422d0c47e6cb5133d4b26b0af100b9e",
       "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
       "adaptation": "Template application composition, selected contracts or project-specific metadata/configuration; see the frontend foundation evidence.",
-      "sourceRevision": "e3eff359c",
-      "sourceFrontendRevision": "1af20e0b"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
       "path": "frontend/src/manifest.webmanifest",
@@ -3333,11 +3333,11 @@
     },
     {
       "path": "frontend/tsconfig.app.json",
-      "upstreamSha256": "3edde0ef69495b7d16cc9c9ce0ceaff9f5b3a689dc6c783044f36ba7a7ca1cd8",
+      "upstreamSha256": "6638a7b5254aa2c3a2d560cd72a574c9803a9cbdceaa55d47395f345bef2b209",
       "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
       "adaptation": null,
-      "sourceRevision": "e3eff359c",
-      "sourceFrontendRevision": "1af20e0b"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
       "path": "frontend/tsconfig.json",
@@ -3349,19 +3349,19 @@
     },
     {
       "path": "frontend/tsconfig.spec.json",
-      "upstreamSha256": "936c82ab0e4399ee089cf05de9888005a8fe063e85036c1148cd9508baa7dd14",
+      "upstreamSha256": "54fcb87af189b60991fa7369457888b919074ae2402e909ed5a783a3aa00f887",
       "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
       "adaptation": null,
-      "sourceRevision": "e3eff359c",
-      "sourceFrontendRevision": "1af20e0b"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
       "path": "frontend/src/app/app.routes.ts",
-      "upstreamSha256": "1322cad5960f79b629885184390cf3e54252bc1f2126dd4f21e00ab0fbd63e6a",
+      "upstreamSha256": "2bee7f354c314442c3a1d84061fd5078f8be7705b73cc90eeaaf8bab2fff1063",
       "purpose": "Selected native API/MCP settings, local persistence, consent route and contextual guides for the minimal template.",
       "adaptation": "Retain native API/MCP contracts, stores and adapter behavior; omit affiliate/payment/product fields and text. Compose member entry/guide contexts with the minimal shell. Operator configuration record contains deployment settings only.",
-      "sourceRevision": "f8a1b83b6",
-      "sourceFrontendRevision": "c90a5b1f"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
       "path": "frontend/src/app/entry/components/entry-firebase-auth-popup/entry-firebase-auth-popup.component.html",
@@ -3381,131 +3381,131 @@
     },
     {
       "path": "frontend/src/app/entry/components/entry-firebase-auth-popup/entry-firebase-auth-popup.component.ts",
-      "upstreamSha256": "4e1dac3e585753326727c3b442505dcff2cd64791507b3a20255475f977c8b6c",
+      "upstreamSha256": "b27da66e5b3947085b0a10e00155db88ccb53470046d7f2f3dc612e26a3ed019",
       "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
       "adaptation": null,
-      "sourceRevision": "bfc9a167c",
-      "sourceFrontendRevision": "5fbf3e62"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
       "path": "frontend/src/app/entry/components/entry-landing/landing-guide-surface.directive.ts",
-      "upstreamSha256": "3d8de191bda762bb77b6b70f9c920b30f9066ef755f878279fe4652fecc1c8b2",
+      "upstreamSha256": "7502d786a50bc989a2fe3ca7ff1db01d5bbc6b79105e278a2f0e4dc67950251f",
       "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
       "adaptation": null,
-      "sourceRevision": "bfc9a167c",
-      "sourceFrontendRevision": "5fbf3e62"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
       "path": "frontend/src/app/shared/core/base/app-utils.ts",
-      "upstreamSha256": "9eda907fa85df9ad389587747925ce19a883190a6cd8ad0123a0bf51779f9f38",
-      "sourceRevision": "5a639775e",
-      "sourceFrontendRevision": "bf4760f9",
+      "upstreamSha256": "e467763e7fe3d84cb499e81645dbd4e77053b04fc94f8ceaa57c2849a1bc1371",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
       "purpose": "Native personal/support chat protocol, local persistence, HTTP/WebSocket transport, shared memory table or scoped fixture transport.",
       "adaptation": "Select the personal/support chat dependency closure and minimal template composition. Omit event/group/campaign/asset navigation models, product metrics and unselected account fields; retain message IDs, ownership, paging, read receipts and reconnect behavior. Template seed IDs/data replace product actors."
     },
     {
-      "path": "frontend/src/app/shared/core/base/builders/help-center-content.builder.ts",
-      "upstreamSha256": "63e404e904d4ebfcc38f43bd39d16d7daecc6133691830ecea6de625eb060cc0",
+      "path": "frontend/src/app/shared/core/base/builders/help/help-center-content.builder.ts",
+      "upstreamSha256": "d7d13ba6dd884808bd2c41414f24ff70e718e885e5c27e758004862ceb5fc91f",
       "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
       "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
-      "sourceRevision": "bfc9a167c",
-      "sourceFrontendRevision": "5fbf3e62"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/base/services/bootstrap.service.ts",
+      "path": "frontend/src/app/shared/core/base/services/platform/bootstrap.service.ts",
       "upstreamSha256": "73f21609fea76297a28e2f750d0a5ea35d4127ef5072b0c0fc7024e768c826fe",
       "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
       "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
-      "sourceRevision": "bfc9a167c",
-      "sourceFrontendRevision": "5fbf3e62"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/base/services/help-center.service.ts",
-      "upstreamSha256": "9f30ecb1088e103843dcd976dfb928bbc5ff84d0131b27b8d4832db4f54d41d1",
+      "path": "frontend/src/app/shared/core/base/services/help/help-center.service.ts",
+      "upstreamSha256": "2a768a07d5ac9bf7704809670bba630954e94af0e4141d28275baeb45573316d",
       "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
       "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
-      "sourceRevision": "bfc9a167c",
-      "sourceFrontendRevision": "5fbf3e62"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/base/services/landing-explanation-guide.ts",
-      "upstreamSha256": "5129b40d5a278771b93cffdbfeb3e68cec0009bff50f317c4e743e48b3ec3be3",
+      "path": "frontend/src/app/shared/core/base/services/help/landing-explanation-guide.ts",
+      "upstreamSha256": "409ac2136f0e1e456218f2bb8b78235697e0b92c790ee364f61a2e40ab7ee91c",
       "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
       "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
-      "sourceRevision": "bfc9a167c",
-      "sourceFrontendRevision": "5fbf3e62"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/base/services/privacy-policy.service.ts",
-      "upstreamSha256": "57ec50d821dcfdac65ddeaf56633bc8ad16bd7e07f25c76e442f2c03947f8daa",
+      "path": "frontend/src/app/shared/core/base/services/help/privacy-policy.service.ts",
+      "upstreamSha256": "da31bf374371690d50e2a36755afeb3309f14076e69d8be79e545aa4c9486300",
       "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
       "adaptation": null,
-      "sourceRevision": "bfc9a167c",
-      "sourceFrontendRevision": "5fbf3e62"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/base/services/users.service.spec.ts",
-      "upstreamSha256": "ec5b7ad823c880163284bb029adf26e0a9d5b935cb0b10acdf33529864a88c30",
+      "path": "frontend/src/app/shared/core/base/services/accounts/users.service.spec.ts",
+      "upstreamSha256": "6bc0bd7ca11e463cfb382fc561f8c1e7e25f74f7e88128f6259afc0257216ca4",
       "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
       "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
-      "sourceRevision": "bfc9a167c",
-      "sourceFrontendRevision": "5fbf3e62"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
       "path": "frontend/src/app/shared/core/common/app-static-data.ts",
-      "upstreamSha256": "29f369e3f94786f536e4f8c4509540684d1d4f8cd48515844cb0ee5d340ed445",
+      "upstreamSha256": "07c8515a8efff58fd79ef013943b92760a1d90beb0ea603511ebe8b7dc659c05",
       "purpose": "Selected native API/MCP settings, local persistence, consent route and contextual guides for the minimal template.",
       "adaptation": "Retain native API/MCP contracts, stores and adapter behavior; omit affiliate/payment/product fields and text. Compose member entry/guide contexts with the minimal shell. Operator configuration record contains deployment settings only.",
-      "sourceRevision": "f8a1b83b6",
-      "sourceFrontendRevision": "c90a5b1f"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
       "path": "frontend/src/app/shared/core/common/deployment-privacy-token.resolver.ts",
-      "upstreamSha256": "4a3c2b63fb8adfc05842ca7a1015a34d277319b9ddfc3a4cd423f94c470d9d93",
+      "upstreamSha256": "889073e76290c2f5be533360c189235fc2d454094f8111195e3550fb8e3eda68",
       "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
       "adaptation": null,
-      "sourceRevision": "bfc9a167c",
-      "sourceFrontendRevision": "5fbf3e62"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/contracts/content.interface.ts",
-      "upstreamSha256": "6be87cccbe0dbe8ed6e2d0b34ea165a0e67b581101426e89a39ec76a0c7b1068",
+      "path": "frontend/src/app/shared/core/contracts/content/content.interface.ts",
+      "upstreamSha256": "7c94d8703d02d413c84df517422f09b9a3ee4de9137f49e623b25feae581b32b",
       "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
       "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
-      "sourceRevision": "bfc9a167c",
-      "sourceFrontendRevision": "5fbf3e62"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
       "path": "frontend/src/app/shared/core/contracts/index.ts",
-      "upstreamSha256": "65218a45649245b6e9a0491c97dc844d4950cd6c8dbfa2846724a5a6dcf1ebf0",
-      "sourceRevision": "5a639775e",
-      "sourceFrontendRevision": "bf4760f9",
+      "upstreamSha256": "7d192038415f034a1886072c776dba32a4eb0a94823ec7b0ca9284518363fa52",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
       "purpose": "Native personal/support chat protocol, local persistence, HTTP/WebSocket transport, shared memory table or scoped fixture transport.",
       "adaptation": "Select the personal/support chat dependency closure and minimal template composition. Omit event/group/campaign/asset navigation models, product metrics and unselected account fields; retain message IDs, ownership, paging, read receipts and reconnect behavior. Template seed IDs/data replace product actors."
     },
     {
-      "path": "frontend/src/app/shared/core/http/services/help-center.service.ts",
-      "upstreamSha256": "ce59894e207b005be87a408b75846e31ec7910664d031002d61923edffcc1b21",
+      "path": "frontend/src/app/shared/core/http/services/help/help-center.service.ts",
+      "upstreamSha256": "13474dc40dd8a06ea44aa192a97ad130e5ea667fcca7e38be1ed4b2e45cb34d0",
       "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
       "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
-      "sourceRevision": "bfc9a167c",
-      "sourceFrontendRevision": "5fbf3e62"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
       "path": "frontend/src/app/shared/core/index.ts",
-      "upstreamSha256": "f928627f3d757068d71301b7b7c72f617c8eafb8fa65a60c1ae977a99d5fe680",
+      "upstreamSha256": "0c2f5f2deaa9aaedfbdeccae0ae41f57f1fe00a8f6bf96d5f6ca409477b2c879",
       "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
       "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
-      "sourceRevision": "bfc9a167c",
-      "sourceFrontendRevision": "5fbf3e62"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/local/seed/builders/help-center-content-seed.builder.ts",
-      "upstreamSha256": "42ac1607f7402ec50e8bc084c68e92b349502d008a2d53ba615984485de34216",
+      "path": "frontend/src/app/shared/core/local/seed/builders/help/help-center-content-seed.builder.ts",
+      "upstreamSha256": "c199cdc6db198333afd9fb047e6914a3a7db03324bf8fcae64dd9d2a2ab607f2",
       "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
       "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
-      "sourceRevision": "bfc9a167c",
-      "sourceFrontendRevision": "5fbf3e62"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
       "path": "frontend/src/app/shared/core/local/seed/data/help-center-guide-fields.json",
@@ -3516,140 +3516,141 @@
       "sourceFrontendRevision": "c90a5b1f"
     },
     {
-      "path": "frontend/src/app/shared/core/local/seed/repositories/help-center-seed.repository.ts",
-      "upstreamSha256": "f5e21b02b4f153d2fa9c737b724358f2947c21a898ed850e6d307eca5f940013",
+      "path": "frontend/src/app/shared/core/local/seed/repositories/help/help-center-seed.repository.ts",
+      "upstreamSha256": "74e179e8f07017e93a3d97e1f7ad293cfb78fcb8a1c0ea740545daad1bedb275",
       "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
       "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
-      "sourceRevision": "bfc9a167c",
-      "sourceFrontendRevision": "5fbf3e62"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/local/seed/repositories/users-seed.repository.ts",
-      "upstreamSha256": "f618293b832558ce80da7ca4a8c946ddfcf93dd3cf02eb66f116a5b5d9a1b4a3",
+      "path": "frontend/src/app/shared/core/local/seed/repositories/accounts/users-seed.repository.ts",
+      "upstreamSha256": "c39e546998764520d607bd79c152742d91bbf3db21c267a6f53cf76e61b084fd",
       "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
       "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
-      "sourceRevision": "bfc9a167c",
-      "sourceFrontendRevision": "5fbf3e62"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/local/seed/services/demo-bootstrap.service.ts",
+      "path": "frontend/src/app/shared/core/local/seed/services/platform/demo-bootstrap.service.ts",
       "upstreamPath": "frontend/src/app/shared/core/local/seed/services/demo-bootstrap.service.ts",
-      "upstreamSha256": "6baf530529348252d55143e510e7b52cc4437809d9d8a35953ad801cff1323d7",
-      "sourceRevision": "f8a1b83b6",
-      "sourceFrontendRevision": "c90a5b1f",
+      "upstreamSha256": "4c431b0b656721a6dea4f2b95713f93e8e8273912dd08c00cb3d3dc22eeba958",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
       "purpose": "Minimal deployment configuration: branding, privacy contact, administrator email allowlist, social links, API URL and Firebase setup.",
       "adaptation": "Select configuration members and existing UI sections; no company Registry, payments, revenue or community state. Use the existing private deployment configuration repository and native HTTP authority. Template title and popup shell composition."
     },
     {
-      "path": "frontend/src/app/shared/core/local/seed/services/static-content.service.ts",
-      "upstreamSha256": "a7968da482c2431475611d6b09ebb7671bd1a613b43bfef07fe884dd98876b2c",
+      "path": "frontend/src/app/shared/core/local/seed/services/platform/static-content.service.ts",
+      "upstreamSha256": "acd8604c8cf4d1dbf449864814285230d2f86f54ebc0674c96f7c01275102953",
       "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
       "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
-      "sourceRevision": "bfc9a167c",
-      "sourceFrontendRevision": "5fbf3e62"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/local/source/entity/content.entity.ts",
-      "upstreamSha256": "19ffe56e3923cce38cf2f93296e04243e4367ee1dde950d080368eac9f28aae4",
+      "path": "frontend/src/app/shared/core/local/source/entity/content/content.entity.ts",
+      "upstreamSha256": "a1f1477efb0a586c7aa8d650cbc797a6365ab8c84324b7b09087dd71c60b02f6",
       "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
       "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
-      "sourceRevision": "bfc9a167c",
-      "sourceFrontendRevision": "5fbf3e62"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/local/source/entity/country-partition.entity.ts",
+      "path": "frontend/src/app/shared/core/local/source/entity/platform/country-partition.entity.ts",
       "upstreamSha256": "fbec9ed202cd4f30ae2d7fc85d865170f7e9059efe3b54a42c37a091435bc1bd",
       "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
       "adaptation": null,
-      "sourceRevision": "bfc9a167c",
-      "sourceFrontendRevision": "5fbf3e62"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/local/source/mappers/help-center.mapper.ts",
-      "upstreamSha256": "3ec34db9cce03aaf1adfdf7dfa42232912d7dc60a7cadbed74d11d47bef19be7",
+      "path": "frontend/src/app/shared/core/local/source/mappers/help/help-center.mapper.ts",
+      "upstreamSha256": "b08fcf58bde7e00eaba95b9e13ed923eea47d99016e31f6735373beb9eb27eb2",
       "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
       "adaptation": null,
-      "sourceRevision": "bfc9a167c",
-      "sourceFrontendRevision": "5fbf3e62"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/local/source/mappers/user.mapper.ts",
-      "upstreamSha256": "5eaa7b296e6f7335b5294bb5117dc2900a81b1858c13d29bafc07b109719e233",
+      "path": "frontend/src/app/shared/core/local/source/mappers/accounts/user.mapper.ts",
+      "upstreamSha256": "37300383dc49c749af965da923dba59749d43fa102cb864a05d2e5d58a82091a",
       "purpose": "Selected native API/MCP settings, local persistence, consent route and contextual guides for the minimal template.",
       "adaptation": "Retain native API/MCP contracts, stores and adapter behavior; omit affiliate/payment/product fields and text. Compose member entry/guide contexts with the minimal shell. Operator configuration record contains deployment settings only.",
-      "sourceRevision": "f8a1b83b6",
-      "sourceFrontendRevision": "c90a5b1f"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/local/source/repositories/country-de.generated.ts",
-      "upstreamSha256": "6f05652b59806db855690bc73b622c8fd4cd8422abf90313fd265d54a0f984c4",
+      "path": "frontend/src/app/shared/core/local/source/repositories/platform/country-de.generated.ts",
+      "upstreamSha256": "b6810f6178bcbb28045ee1df9953cd48c6e6510a7ecb6a538a3c44f517597747",
       "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
       "adaptation": null,
-      "sourceRevision": "bfc9a167c",
-      "sourceFrontendRevision": "5fbf3e62"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/local/source/repositories/country-es.generated.ts",
-      "upstreamSha256": "3be1133d861fecc0343acf15b4c2d72250906179037ef9811537884c2f266d41",
+      "path": "frontend/src/app/shared/core/local/source/repositories/platform/country-es.generated.ts",
+      "upstreamSha256": "519c2b09a14b44a152331973201511430d9325bba2a056a851e215a07b4bf025",
       "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
       "adaptation": null,
-      "sourceRevision": "bfc9a167c",
-      "sourceFrontendRevision": "5fbf3e62"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/local/source/repositories/country-gb.generated.ts",
-      "upstreamSha256": "313143b569bc59ad121faa63118a5b42a9eedc0f0dafc0282cda04c6bd8aadd9",
+      "path": "frontend/src/app/shared/core/local/source/repositories/platform/country-gb.generated.ts",
+      "upstreamSha256": "8943629db85114d8cdce553b0c0ac962c44a93942fc2e7fec3096e2ffd92fa76",
       "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
       "adaptation": null,
-      "sourceRevision": "bfc9a167c",
-      "sourceFrontendRevision": "5fbf3e62"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/local/source/repositories/country-partitions.repository.ts",
-      "upstreamSha256": "b64243358439c000eea76a75bbf89982a99b18f545ae39cc227285247220cddb",
+      "path": "frontend/src/app/shared/core/local/source/repositories/platform/country-partitions.repository.ts",
+      "upstreamSha256": "371e07d799a65db39850f916f5c5660ce2acd9fe3132e49edc18de238a1e413e",
       "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
       "adaptation": null,
-      "sourceRevision": "bfc9a167c",
-      "sourceFrontendRevision": "5fbf3e62"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/local/source/repositories/help-center.repository.ts",
-      "upstreamSha256": "e227e666005c73d60853ebf4d9fcd80e38711a4b877e75829cba36c2ceca726a",
+      "path": "frontend/src/app/shared/core/local/source/repositories/help/help-center.repository.ts",
+      "upstreamSha256": "e8c50a78870a76ce02d475bdb2b11db9fc9bc5365f7767325c8a5b22a35dbf19",
       "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
       "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
-      "sourceRevision": "bfc9a167c",
-      "sourceFrontendRevision": "5fbf3e62"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/local/source/repositories/users.repository.spec.ts",
-      "upstreamSha256": "a3303524e8a77d82de3818c34d13fbd829bceea301d1948348a3f5678991346c",
+      "path": "frontend/src/app/shared/core/local/source/repositories/accounts/users.repository.spec.ts",
+      "upstreamSha256": "fdec0f472acc56e227a45ee5139836a5c1be79b2331575e0179a5d5f5c0ec65d",
       "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
       "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
-      "sourceRevision": "bfc9a167c",
-      "sourceFrontendRevision": "5fbf3e62"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/local/source/repositories/users.repository.ts",
-      "upstreamSha256": "228e9ca47402ea65d85a9c1353d3341da16627398a47d1acf51d0b4d9d10d1fa",
+      "path": "frontend/src/app/shared/core/local/source/repositories/accounts/users.repository.ts",
+      "upstreamSha256": "ea22303a064df129d5a3a81db44c0538f3b1643198fbf3042344afe05e228e00",
       "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
       "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
-      "sourceRevision": "bfc9a167c",
-      "sourceFrontendRevision": "5fbf3e62"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/local/source/services/help-center.service.ts",
-      "upstreamSha256": "2698e163155e9260f9cbfa67576f787aad4fe56893b3ad2bacde5d4ea16564e7",
+      "path": "frontend/src/app/shared/core/local/source/services/help/help-center.service.ts",
+      "upstreamSha256": "dcb27cb1929868a84957f932fc547da2f42df92072ef32fc9f4f6bb9ba7d1b8a",
       "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
       "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
-      "sourceRevision": "bfc9a167c",
-      "sourceFrontendRevision": "5fbf3e62"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/local/source/services/users.service.ts",
-      "sourceRevision": "c90a5b1f74c977591d99ea49a7748d211aed7d5f",
-      "upstreamSha256": "e0cedc0c27d70cd5fc1c597dbef7730ef19b818d424d01b3052c6849214170ee",
+      "path": "frontend/src/app/shared/core/local/source/services/accounts/users.service.ts",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "upstreamSha256": "247c2bce27a98374826f6bfd50c7e85fb36fc0359c48fad4db16308847104349",
       "purpose": "Minimal native admin moderation, support and member report/feedback UI.",
-      "adaptation": "Add native feedback submission and saved chat-message report evidence/deduplication; ignore unselected event/asset metadata and publish through the existing role-notification owner."
+      "adaptation": "Add native feedback submission and saved chat-message report evidence/deduplication; ignore unselected event/asset metadata and publish through the existing role-notification owner.",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
       "path": "frontend/src/app/shared/ui/components/demo-bootstrap-selector/demo-bootstrap-selector.component.html",
@@ -3669,11 +3670,11 @@
     },
     {
       "path": "frontend/src/app/shared/ui/components/demo-bootstrap-selector/demo-bootstrap-selector.component.ts",
-      "upstreamSha256": "809c99622606368ea2fc92ab7f6da7b1934c55e7b3c9f662519650a0230d4251",
+      "upstreamSha256": "5dc94989a00f0ff269bd1d29544f7a788a681c8666d7f187f7616700554da676",
       "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
       "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
-      "sourceRevision": "bfc9a167c",
-      "sourceFrontendRevision": "5fbf3e62"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
       "path": "frontend/src/app/shared/ui/components/document-viewer/document-viewer.component.html",
@@ -3693,19 +3694,19 @@
     },
     {
       "path": "frontend/src/app/shared/ui/components/document-viewer/document-viewer.component.spec.ts",
-      "upstreamSha256": "8684f530ac115a5730562b2bf036882bb1b734d22bcf9b4f54a46b36424b98b6",
+      "upstreamSha256": "984c084aec10bb309800dd22ee8373b0afc4cb32e3400e86a4ca9e78e96a9f7e",
       "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
       "adaptation": null,
-      "sourceRevision": "bfc9a167c",
-      "sourceFrontendRevision": "5fbf3e62"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
       "path": "frontend/src/app/shared/ui/components/document-viewer/document-viewer.component.ts",
-      "upstreamSha256": "867c3a5eb1bbf233451b1d56d2417f146160dddb1ba6480f8ec5e679c1b337c5",
+      "upstreamSha256": "8766ab54e3630c2d6b37d983d5de616cf75b431fac952b2fa1ae23ae6408c7d8",
       "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
       "adaptation": null,
-      "sourceRevision": "bfc9a167c",
-      "sourceFrontendRevision": "5fbf3e62"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
       "path": "frontend/src/app/shared/ui/components/document-viewer/document-viewer.types.ts",
@@ -3733,11 +3734,11 @@
     },
     {
       "path": "frontend/src/app/shared/ui/context/stores/app/app-context-store.utils.ts",
-      "upstreamSha256": "710909bf9e2e5433cf5422e6f08f46d8f48ca6b6ea03b7811844cf721912a845",
+      "upstreamSha256": "fce254896ba4307ee1b2ae2c418e18b2aa09a48cc0d24b66a2ce8759ec4b3b65",
       "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
       "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
-      "sourceRevision": "bfc9a167c",
-      "sourceFrontendRevision": "5fbf3e62"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
       "path": "frontend/src/app/shared/ui/context/stores/app/app-runtime.store.ts",
@@ -3749,11 +3750,11 @@
     },
     {
       "path": "frontend/src/app/shared/ui/context/stores/app/demo-bootstrap-selector.store.ts",
-      "upstreamSha256": "812935d86c332c130cb8aef00762124671e262540771484902b90021afed9861",
+      "upstreamSha256": "610a75bb33f9374cdf35a32c659adda793b2bb3615312c82d1413709f0e308f5",
       "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
       "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
-      "sourceRevision": "bfc9a167c",
-      "sourceFrontendRevision": "5fbf3e62"
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
       "path": "frontend/src/app/shared/ui/context/stores/app/help-center.store.ts",
@@ -4044,114 +4045,114 @@
       "sourceFrontendRevision": "d64e6620"
     },
     {
-      "path": "frontend/src/app/shared/core/base/services/chats.service.ts",
-      "upstreamSha256": "63df97631d3508a8c38f5f46a45d79baf274948905aa28ece1449e47293048b5",
-      "sourceRevision": "5a639775e",
-      "sourceFrontendRevision": "bf4760f9",
+      "path": "frontend/src/app/shared/core/base/services/chat/chats.service.ts",
+      "upstreamSha256": "e98c99ca4506a7e54350d317f782340f59ce3ee190b64163d3285e5d33ee4c43",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
       "purpose": "Native personal/support chat protocol, local persistence, HTTP/WebSocket transport, shared memory table or scoped fixture transport.",
       "adaptation": "Select the personal/support chat dependency closure and minimal template composition. Omit event/group/campaign/asset navigation models, product metrics and unselected account fields; retain message IDs, ownership, paging, read receipts and reconnect behavior. Template seed IDs/data replace product actors."
     },
     {
-      "path": "frontend/src/app/shared/core/contracts/activity.interface.ts",
-      "upstreamSha256": "72ddb20f26b9119834c913804c0f18e128e657339742f81e9f4dfd2401a24e3b",
-      "sourceRevision": "5a639775e",
-      "sourceFrontendRevision": "bf4760f9",
+      "path": "frontend/src/app/shared/core/contracts/common/activity.interface.ts",
+      "upstreamSha256": "2bd34a168e50fedf0f0ed68c6a38e03e857fd38cc158ccc0ff042e04b00408eb",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
       "purpose": "Native personal/support chat protocol, local persistence, HTTP/WebSocket transport, shared memory table or scoped fixture transport.",
       "adaptation": "Select the personal/support chat dependency closure and minimal template composition. Omit event/group/campaign/asset navigation models, product metrics and unselected account fields; retain message IDs, ownership, paging, read receipts and reconnect behavior. Template seed IDs/data replace product actors."
     },
     {
-      "path": "frontend/src/app/shared/core/contracts/chat-call.interface.ts",
+      "path": "frontend/src/app/shared/core/contracts/chat/chat-call.interface.ts",
       "upstreamSha256": "287f32d1a511ed9874003ec0c1127f513fc288ffa4dfa584550fd9a3451e2584",
-      "sourceRevision": "5a639775e",
-      "sourceFrontendRevision": "bf4760f9",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
       "purpose": "Native personal/support chat protocol, local persistence, HTTP/WebSocket transport, shared memory table or scoped fixture transport.",
       "adaptation": null
     },
     {
-      "path": "frontend/src/app/shared/core/contracts/chat.interface.ts",
-      "upstreamSha256": "b8e5bc4fd1c22a7d9969f93d883a8c0a33d20b631cdf514c6337e3ffb353fb56",
-      "sourceRevision": "5a639775e",
-      "sourceFrontendRevision": "bf4760f9",
+      "path": "frontend/src/app/shared/core/contracts/chat/chat.interface.ts",
+      "upstreamSha256": "e697bc79c3bd7ca90e02c48ad77f3cc36c62ff8c4de260292b0bb1da7b9d9d3a",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
       "purpose": "Native personal/support chat protocol, local persistence, HTTP/WebSocket transport, shared memory table or scoped fixture transport.",
       "adaptation": "Select the personal/support chat dependency closure and minimal template composition. Omit event/group/campaign/asset navigation models, product metrics and unselected account fields; retain message IDs, ownership, paging, read receipts and reconnect behavior. Template seed IDs/data replace product actors."
     },
     {
-      "path": "frontend/src/app/shared/core/http/services/chats.service.ts",
-      "upstreamSha256": "4b10decceea718c7891ea4365d2c656dbafc96f2c9126c7297486e4adc6931c7",
-      "sourceRevision": "5a639775e",
-      "sourceFrontendRevision": "bf4760f9",
+      "path": "frontend/src/app/shared/core/http/services/chat/chats.service.ts",
+      "upstreamSha256": "cad9ec72a52621ef8c30f384b2e768169075139287a6f5bd94fea3b292364932",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
       "purpose": "Native personal/support chat protocol, local persistence, HTTP/WebSocket transport, shared memory table or scoped fixture transport.",
       "adaptation": "Select the personal/support chat dependency closure and minimal template composition. Omit event/group/campaign/asset navigation models, product metrics and unselected account fields; retain message IDs, ownership, paging, read receipts and reconnect behavior. Template seed IDs/data replace product actors."
     },
     {
-      "path": "frontend/src/app/shared/core/local/seed/repositories/chats-seed.repository.ts",
-      "upstreamSha256": "6089fdfe93cd6abf87fd34caa3a705212aa0d04326cc67cddbf153494c913775",
-      "sourceRevision": "5a639775e",
-      "sourceFrontendRevision": "bf4760f9",
+      "path": "frontend/src/app/shared/core/local/seed/repositories/chat/chats-seed.repository.ts",
+      "upstreamSha256": "4226d76453ccc359a86caf02ecda190d71c81c87aab6ad8c2db5f9506cb4a91c",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
       "purpose": "Native personal/support chat protocol, local persistence, HTTP/WebSocket transport, shared memory table or scoped fixture transport.",
       "adaptation": "Select the personal/support chat dependency closure and minimal template composition. Omit event/group/campaign/asset navigation models, product metrics and unselected account fields; retain message IDs, ownership, paging, read receipts and reconnect behavior. Template seed IDs/data replace product actors."
     },
     {
-      "path": "frontend/src/app/shared/core/local/source/entity/chat.entity.ts",
-      "upstreamSha256": "e9602049451a95a489d4dbac01aa3447152bb3264ee14c01b8bbf64ac36651ea",
-      "sourceRevision": "5a639775e",
-      "sourceFrontendRevision": "bf4760f9",
+      "path": "frontend/src/app/shared/core/local/source/entity/chat/chat.entity.ts",
+      "upstreamSha256": "412bd2cf46d8b1622d12caac8d9519ff06cf8624a7364d22b5a2122a1cc7b491",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
       "purpose": "Native personal/support chat protocol, local persistence, HTTP/WebSocket transport, shared memory table or scoped fixture transport.",
       "adaptation": "Select the personal/support chat dependency closure and minimal template composition. Omit event/group/campaign/asset navigation models, product metrics and unselected account fields; retain message IDs, ownership, paging, read receipts and reconnect behavior. Template seed IDs/data replace product actors."
     },
     {
-      "path": "frontend/src/app/shared/core/local/source/entity/profile.entity.ts",
-      "upstreamSha256": "f5dc192cb13c226a8a0639df21655d71d3d3bf4e005ec2312e98d3955850c274",
-      "sourceRevision": "5a639775e",
-      "sourceFrontendRevision": "bf4760f9",
+      "path": "frontend/src/app/shared/core/local/source/entity/accounts/profile.entity.ts",
+      "upstreamSha256": "714063ddc3b9145589094768f043a992764b0cd77c224b5ded24f33bdfe59e58",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
       "purpose": "Native personal/support chat protocol, local persistence, HTTP/WebSocket transport, shared memory table or scoped fixture transport.",
       "adaptation": "Select the personal/support chat dependency closure and minimal template composition. Omit event/group/campaign/asset navigation models, product metrics and unselected account fields; retain message IDs, ownership, paging, read receipts and reconnect behavior. Template seed IDs/data replace product actors."
     },
     {
-      "path": "frontend/src/app/shared/core/local/source/mappers/chat-message.mapper.ts",
-      "upstreamSha256": "9d13fb757011aab2c58920e767ba0c0d0c815dd6fca782e99b83f50f4ea1c0ad",
-      "sourceRevision": "5a639775e",
-      "sourceFrontendRevision": "bf4760f9",
+      "path": "frontend/src/app/shared/core/local/source/mappers/chat/chat-message.mapper.ts",
+      "upstreamSha256": "de03e5a5aa2310e72606fd728bffa64aaa94b5821bd67539092df34f368a676a",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
       "purpose": "Native personal/support chat protocol, local persistence, HTTP/WebSocket transport, shared memory table or scoped fixture transport.",
       "adaptation": "Select the personal/support chat dependency closure and minimal template composition. Omit event/group/campaign/asset navigation models, product metrics and unselected account fields; retain message IDs, ownership, paging, read receipts and reconnect behavior. Template seed IDs/data replace product actors."
     },
     {
-      "path": "frontend/src/app/shared/core/local/source/mappers/chat-thread.mapper.ts",
-      "upstreamSha256": "054d88c14b870c08001aaf317a27a21e5ee5e960b8a8573f8b4f230f2cb2a733",
-      "sourceRevision": "5a639775e",
-      "sourceFrontendRevision": "bf4760f9",
+      "path": "frontend/src/app/shared/core/local/source/mappers/chat/chat-thread.mapper.ts",
+      "upstreamSha256": "5c6ae1d9cef783e15d36f4c8b32e89dd7f191cd837bdb4c97244c9ecc6cfd0a0",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
       "purpose": "Native personal/support chat protocol, local persistence, HTTP/WebSocket transport, shared memory table or scoped fixture transport.",
       "adaptation": "Select the personal/support chat dependency closure and minimal template composition. Omit event/group/campaign/asset navigation models, product metrics and unselected account fields; retain message IDs, ownership, paging, read receipts and reconnect behavior. Template seed IDs/data replace product actors."
     },
     {
-      "path": "frontend/src/app/shared/core/local/source/mappers/mapper.types.ts",
+      "path": "frontend/src/app/shared/core/local/source/mappers/common/mapper.types.ts",
       "upstreamSha256": "be0e40bcb87196ea6ee22ced25d9c0fb5a9d04ea8666e3eda317ce5f26f9b7d3",
-      "sourceRevision": "5a639775e",
-      "sourceFrontendRevision": "bf4760f9",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
       "purpose": "Native personal/support chat protocol, local persistence, HTTP/WebSocket transport, shared memory table or scoped fixture transport.",
       "adaptation": null
     },
     {
-      "path": "frontend/src/app/shared/core/local/source/repositories/chats.repository.spec.ts",
-      "upstreamSha256": "a80b829d8c93c7ae03bed249c99c5dec7789462ba9703eb3c2a963f28129c284",
-      "sourceRevision": "5a639775e",
-      "sourceFrontendRevision": "bf4760f9",
+      "path": "frontend/src/app/shared/core/local/source/repositories/chat/chats.repository.spec.ts",
+      "upstreamSha256": "c29d3d1752e1fd6aba12085b1a95385f97d639e68805867bf5e1ca0b33d528a3",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
       "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
       "adaptation": "Compose the selected template profile, chat, notification and guide owners; retain native contracts and persistence while omitting unselected product dependencies."
     },
     {
-      "path": "frontend/src/app/shared/core/local/source/repositories/contacts.repository.ts",
-      "upstreamSha256": "5d83606236789a00067cfdc1a478f9ecccecc517eb69dbfb6efc1e6aef455f9f",
-      "sourceRevision": "5a639775e",
-      "sourceFrontendRevision": "bf4760f9",
+      "path": "frontend/src/app/shared/core/local/source/repositories/accounts/contacts.repository.ts",
+      "upstreamSha256": "6d0ecfb9e23fd4ef1f09fbdd02d2c7d7266b6ff4b9b7aeb3a1db5db642d5af3a",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
       "purpose": "Native personal/support chat protocol, local persistence, HTTP/WebSocket transport, shared memory table or scoped fixture transport.",
       "adaptation": "Select the personal/support chat dependency closure and minimal template composition. Omit event/group/campaign/asset navigation models, product metrics and unselected account fields; retain message IDs, ownership, paging, read receipts and reconnect behavior. Template seed IDs/data replace product actors."
     },
     {
-      "path": "frontend/src/app/shared/core/local/source/services/chats.service.ts",
-      "upstreamSha256": "acad801ef582d381dd118131e4670f2339d0c9b7d6e00634de93b46b64dab475",
-      "sourceRevision": "5a639775e",
-      "sourceFrontendRevision": "bf4760f9",
+      "path": "frontend/src/app/shared/core/local/source/services/chat/chats.service.ts",
+      "upstreamSha256": "09ea14e4060c073f41a0188e044e5225858b6b3da26baca6048e2bd96c1588b8",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
       "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
       "adaptation": "Compose the selected template profile, chat, notification and guide owners; retain native contracts and persistence while omitting unselected product dependencies."
     },
@@ -4165,17 +4166,17 @@
     },
     {
       "path": "frontend/src/app/profile/components/profile-editor/profile-editor.component.ts",
-      "upstreamSha256": "525d14b25ee482778708f937600804b635e2e6fef2cd365654640297b5f265d1",
-      "sourceRevision": "5a639775e",
-      "sourceFrontendRevision": "bf4760f9",
+      "upstreamSha256": "928d327051d1f113a474603fff07a85229dbba5dad0bb5c8d8722223d0b8df39",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
       "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
       "adaptation": "Compose the selected template profile, chat, notification and guide owners; retain native contracts and persistence while omitting unselected product dependencies."
     },
     {
-      "path": "frontend/src/app/shared/core/base/services/notifications.service.ts",
-      "upstreamSha256": "ce0fa3492225270107aa0c6eb6875d959df1488fe061c5c4a7fa4a6430f28b20",
-      "sourceRevision": "5a639775e",
-      "sourceFrontendRevision": "bf4760f9",
+      "path": "frontend/src/app/shared/core/base/services/notifications/notifications.service.ts",
+      "upstreamSha256": "916056c04afc1d9564c0ae744aa6c24c89fbe4de0cc8673a3b8cf83192273a86",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
       "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
       "adaptation": null
     },
@@ -4188,58 +4189,58 @@
       "adaptation": null
     },
     {
-      "path": "frontend/src/app/shared/core/contracts/notification.interface.ts",
+      "path": "frontend/src/app/shared/core/contracts/notifications/notification.interface.ts",
       "upstreamSha256": "6fd1e74b419b1ca9406dcadefed4e336294959d14cf9e3e443fec52b79cce4f2",
-      "sourceRevision": "5a639775e",
-      "sourceFrontendRevision": "bf4760f9",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
       "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
       "adaptation": null
     },
     {
-      "path": "frontend/src/app/shared/core/http/services/notifications.service.ts",
-      "upstreamSha256": "6fb8c28b689a3abdea61cf8d6fff20b5e4a113f73a96685874791a05cec23192",
-      "sourceRevision": "5a639775e",
-      "sourceFrontendRevision": "bf4760f9",
+      "path": "frontend/src/app/shared/core/http/services/notifications/notifications.service.ts",
+      "upstreamSha256": "afac24a85260086a715cdfe9c9bdfdbe748b6045dcaad13c6f406f22ab989e52",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
       "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
       "adaptation": null
     },
     {
-      "path": "frontend/src/app/shared/core/local/seed/repositories/notifications-seed.repository.ts",
-      "upstreamSha256": "af6e963df89090883ca3a698156c25c6a5f1840c70837159a7e8a595d770d03f",
-      "sourceRevision": "5a639775e",
-      "sourceFrontendRevision": "bf4760f9",
+      "path": "frontend/src/app/shared/core/local/seed/repositories/notifications/notifications-seed.repository.ts",
+      "upstreamSha256": "b5fbe105d133261f7f829de1d01e1ca8675109705ffe27b5f2936e12d8a0ddb2",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
       "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
       "adaptation": "Retain native paging, delta synchronization, read/mute state, request-generation guards and persistence. Omit workspace/community projections and absent-domain navigation; route personal chat targets into the template chat page."
     },
     {
-      "path": "frontend/src/app/shared/core/local/source/entity/notification.entity.ts",
-      "upstreamSha256": "8ef16b0ba946d86739a4cbc3a7430aabfad1a3fc4725be3819266f819ca5749d",
-      "sourceRevision": "5a639775e",
-      "sourceFrontendRevision": "bf4760f9",
+      "path": "frontend/src/app/shared/core/local/source/entity/notifications/notification.entity.ts",
+      "upstreamSha256": "c44852a95733a6d6c24f2c8369ea35569e7ceff17f3f3fe853c0e6ec603e350f",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
       "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
       "adaptation": null
     },
     {
-      "path": "frontend/src/app/shared/core/local/source/mappers/notification.mapper.ts",
-      "upstreamSha256": "7c9ef41ef83005b9d829479dcc299407ad3ec6409e431e34945830a2bf788aa6",
-      "sourceRevision": "5a639775e",
-      "sourceFrontendRevision": "bf4760f9",
+      "path": "frontend/src/app/shared/core/local/source/mappers/notifications/notification.mapper.ts",
+      "upstreamSha256": "9e60543b017e202df9ea08b95e6cebdbb5b3971b44efe7dc0dc0fcad0b2d53a2",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
       "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
       "adaptation": null
     },
     {
-      "path": "frontend/src/app/shared/core/local/source/repositories/notifications.repository.ts",
-      "upstreamSha256": "ef97a745393819b04a141bbe27c765f6c3380041cf747efff724aa5c0440a2de",
-      "sourceRevision": "5a639775e",
-      "sourceFrontendRevision": "bf4760f9",
+      "path": "frontend/src/app/shared/core/local/source/repositories/notifications/notifications.repository.ts",
+      "upstreamSha256": "ff8cd821c504aef92e93e4e8d031d53fa23ada0150ff2ec1208262a42c2ebff1",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
       "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
       "adaptation": "Retain native paging, delta synchronization, read/mute state, request-generation guards and persistence. Omit workspace/community projections and absent-domain navigation; route personal chat targets into the template chat page."
     },
     {
-      "path": "frontend/src/app/shared/core/local/source/services/notifications.service.ts",
-      "upstreamSha256": "3458a89c3c41d599ee6b9504f4401dceb1b5712cdfd2168a94ab640da236c2e7",
-      "sourceRevision": "5a639775e",
-      "sourceFrontendRevision": "bf4760f9",
+      "path": "frontend/src/app/shared/core/local/source/services/notifications/notifications.service.ts",
+      "upstreamSha256": "4c4eceb81aa5513434e3b6a883666cd47483d965bacf2a473da9ddb0877239c0",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
       "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
       "adaptation": "Retain native paging, delta synchronization, read/mute state, request-generation guards and persistence. Omit workspace/community projections and absent-domain navigation; route personal chat targets into the template chat page."
     },
@@ -4317,33 +4318,33 @@
     },
     {
       "path": "frontend/src/app/shared/ui/components/notification-center-popup/notification-center-popup.component.ts",
-      "upstreamSha256": "9df36a24d81940de371a1e8fad24edb10f58ecb8a215df7fedf4e3a8ab947e44",
-      "sourceRevision": "5a639775e",
-      "sourceFrontendRevision": "bf4760f9",
+      "upstreamSha256": "2d701c714c913f591e351eda06dceec4499bb37e44ea37d9c18aa054a790c390",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
       "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
       "adaptation": "Retain native paging, delta synchronization, read/mute state, request-generation guards and persistence. Omit workspace/community projections and absent-domain navigation; route personal chat targets into the template chat page."
     },
     {
       "path": "frontend/src/app/shared/ui/context/stores/notification/notification-center.store.spec.ts",
-      "upstreamSha256": "61aeb50f6a6053db3c989023df23255f5c7d0fccd058fb33ae1991a12a32f14f",
-      "sourceRevision": "5a639775e",
-      "sourceFrontendRevision": "bf4760f9",
+      "upstreamSha256": "ed11a100292d4a498437a64a832e3a00cd2b8088490e8ad2c06da6edcf21e4a2",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
       "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
       "adaptation": "Retain native paging, delta synchronization, read/mute state, request-generation guards and persistence. Omit workspace/community projections and absent-domain navigation; route personal chat targets into the template chat page."
     },
     {
       "path": "frontend/src/app/shared/ui/context/stores/notification/notification-center.store.ts",
-      "upstreamSha256": "fee39391bf6f2bba56d28abdf3e8159e5ec621a3d5f35317348389385c00ce09",
-      "sourceRevision": "5a639775e",
-      "sourceFrontendRevision": "bf4760f9",
+      "upstreamSha256": "5583bf20c1ca4f90e7509815c03187e3980ee1b3e79691480ad4abe7cfb8e8dd",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
       "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
       "adaptation": "Retain native paging, delta synchronization, read/mute state, request-generation guards and persistence. Omit workspace/community projections and absent-domain navigation; route personal chat targets into the template chat page."
     },
     {
       "path": "frontend/src/app/shared/ui/converters/notification/notification-single-row.converter.ts",
-      "upstreamSha256": "f55e2cee05e1965d08664b969f80fa72177019de9e0cd3298da20df8af25fdd1",
-      "sourceRevision": "5a639775e",
-      "sourceFrontendRevision": "bf4760f9",
+      "upstreamSha256": "afe0ee457090bde0d6e37cbdb0610624c0200d33ec78d39b44db5a5aaca75070",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
       "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
       "adaptation": "Retain native paging, delta synchronization, read/mute state, request-generation guards and persistence. Omit workspace/community projections and absent-domain navigation; route personal chat targets into the template chat page."
     },
@@ -4356,26 +4357,26 @@
       "adaptation": "Select the native geometry mixin required by full-height shared popups; omit product game-page rules."
     },
     {
-      "path": "frontend/src/app/shared/core/base/services/app-location.service.ts",
-      "upstreamSha256": "cb0b5ef6b69df775638af3c6c1486ba4576a7829a21e3af830235141095633d2",
-      "sourceRevision": "5a639775e",
-      "sourceFrontendRevision": "bf4760f9",
+      "path": "frontend/src/app/shared/core/base/services/accounts/app-location.service.ts",
+      "upstreamSha256": "e7812b078f1bff2b6c826a5dabc10108f247fd3155eac184894fba7b5154f8ca",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
       "purpose": "Native device permissions, location synchronization and optional PWA installation.",
       "adaptation": "Omit the absent group workspace lookup; retain account identity checks, permission watches, cancellation, scoped coordinate cache, serialized writes and the native 5 km write threshold. Firebase bootstrap uses only the selected UserDto fields."
     },
     {
-      "path": "frontend/src/app/shared/core/base/services/app-location.service.spec.ts",
+      "path": "frontend/src/app/shared/core/base/services/accounts/app-location.service.spec.ts",
       "upstreamSha256": "3dbc4a241d0f5d1f34ae314b416dafba6fbd7a71ca8af622000e480ccc659991",
-      "sourceRevision": "5a639775e",
-      "sourceFrontendRevision": "bf4760f9",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
       "purpose": "Native device permissions, location synchronization and optional PWA installation.",
       "adaptation": "Omit only the group-workspace-specific test and fixture dependency."
     },
     {
       "path": "frontend/src/app/shared/ui/context/stores/app/app-setup.store.ts",
-      "upstreamSha256": "2842d697dd2cc13a234c10ae3f4d3a1fcf70803b86dea45974ff72d0e9614611",
-      "sourceRevision": "5a639775e",
-      "sourceFrontendRevision": "bf4760f9",
+      "upstreamSha256": "3dbdbc8f61bbe4a6bb124946261386fc624496dd710e8ccb3ccb3978675cf045",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
       "purpose": "Native device permissions, location synchronization and optional PWA installation.",
       "adaptation": null
     },
@@ -4389,9 +4390,9 @@
     },
     {
       "path": "frontend/src/app/shared/ui/components/app-setup-popup/app-setup-popup.component.ts",
-      "upstreamSha256": "7a6a50c9736719a846af3bcde071a6c9bba757c762b233c8798352eec05490ae",
-      "sourceRevision": "5a639775e",
-      "sourceFrontendRevision": "bf4760f9",
+      "upstreamSha256": "d7fc25a8347a5d1816adee07137013150965be5568bf553211d449dfd4092636",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
       "purpose": "Native device permissions, location synchronization and optional PWA installation.",
       "adaptation": "Register the existing popup guide context through PopupComponent so the active entry/member guide owns it; keep native permission/install controls and nested help."
     },
@@ -4413,9 +4414,9 @@
     },
     {
       "path": "frontend/src/app/shared/ui/components/app-setup-popup/app-setup-popup.component.spec.ts",
-      "upstreamSha256": "9f71da4842c6c26897a09c03a1e4e125762cbad9f7277e4351026071ad3f9cc2",
-      "sourceRevision": "5a639775e",
-      "sourceFrontendRevision": "bf4760f9",
+      "upstreamSha256": "6be739652bb3568a3d020a0ee18192991f88ca9f51d4aed0a7b73964e5d522f1",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
       "purpose": "Native device permissions, location synchronization and optional PWA installation.",
       "adaptation": "Supply the existing components matchMedia mock and current-language contract in the template unit environment."
     },
@@ -4429,9 +4430,9 @@
     },
     {
       "path": "frontend/src/app/profile/components/integration-settings-popup/integration-access-button.component.ts",
-      "upstreamSha256": "0d39b1f4373f0694433dfb53ecf1e3a4b5fcf0a0582d2d80b01d64bd6bfcabb2",
-      "sourceRevision": "f8a1b83b6",
-      "sourceFrontendRevision": "c90a5b1f",
+      "upstreamSha256": "b8563b32e824ba4cc5dc13e73919585eda1c7b960c112e6c3a97c402c1b00792",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
       "purpose": "Selected native API/MCP settings, local persistence, consent route and contextual guides for the minimal template.",
       "adaptation": null
     },
@@ -4453,9 +4454,9 @@
     },
     {
       "path": "frontend/src/app/profile/components/integration-settings-popup/integration-settings-popup.component.ts",
-      "upstreamSha256": "bbdc6250f782f0c63d05453d2864b6bb98881462a42a2018e5229aa9bcb4ebc4",
-      "sourceRevision": "f8a1b83b6",
-      "sourceFrontendRevision": "c90a5b1f",
+      "upstreamSha256": "d6a9769edc258cbebffc48aa9e0dddefb0e737dcf72b9f95f3b43412d7a9c184",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
       "purpose": "Selected native API/MCP settings, local persistence, consent route and contextual guides for the minimal template.",
       "adaptation": "Retain native API/MCP contracts, stores and adapter behavior; omit affiliate/payment/product fields and text. Compose member entry/guide contexts with the minimal shell. Operator configuration record contains deployment settings only."
     },
@@ -4469,133 +4470,133 @@
     },
     {
       "path": "frontend/src/app/profile/components/integration-settings-popup/mcp-authorization.component.ts",
-      "upstreamSha256": "1e9567360c290075b0d3492ac4e00a8099f31f3e820aa182efd4fbddd0438a27",
-      "sourceRevision": "f8a1b83b6",
-      "sourceFrontendRevision": "c90a5b1f",
+      "upstreamSha256": "1786a5e1db0c3de7c641a0873ed03517587547c41b5a563e263b742b155be277",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
       "purpose": "Selected native API/MCP settings, local persistence, consent route and contextual guides for the minimal template.",
       "adaptation": "Retain native API/MCP contracts, stores and adapter behavior; omit affiliate/payment/product fields and text. Compose member entry/guide contexts with the minimal shell. Operator configuration record contains deployment settings only."
     },
     {
       "path": "frontend/src/app/profile/components/integration-settings-popup/mcp-connections.component.ts",
-      "upstreamSha256": "a2e0641ebab90e826dc2d4a919f13061506f2f6308d9e4e2a1c49c32ef64abb4",
-      "sourceRevision": "f8a1b83b6",
-      "sourceFrontendRevision": "c90a5b1f",
+      "upstreamSha256": "e3bd603a555006bd113b7177ebc087255ef9af0629d32efd6770d965cb442338",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
       "purpose": "Selected native API/MCP settings, local persistence, consent route and contextual guides for the minimal template.",
       "adaptation": null
     },
     {
-      "path": "frontend/src/app/shared/core/base/services/integration.service.ts",
-      "upstreamSha256": "07a8bc63467dccd6264b21290124c5d31755a4d3bdd867660bf4a8af87fcb327",
-      "sourceRevision": "f8a1b83b6",
-      "sourceFrontendRevision": "c90a5b1f",
+      "path": "frontend/src/app/shared/core/base/services/integrations/integration.service.ts",
+      "upstreamSha256": "5409f43ee4dcedb68e236c1d15a52ac8e95602198eab597c52bcaab079405cc3",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
       "purpose": "Selected native API/MCP settings, local persistence, consent route and contextual guides for the minimal template.",
       "adaptation": "Retain native API/MCP contracts, stores and adapter behavior; omit affiliate/payment/product fields and text. Compose member entry/guide contexts with the minimal shell. Operator configuration record contains deployment settings only."
     },
     {
-      "path": "frontend/src/app/shared/core/contracts/integration.interface.ts",
-      "upstreamSha256": "cad413d3de950b9d0ecc15fc92ea46c251195e0fb17b9bb2c5137cf5a8fc4742",
-      "sourceRevision": "f8a1b83b6",
-      "sourceFrontendRevision": "c90a5b1f",
+      "path": "frontend/src/app/shared/core/contracts/integrations/integration.interface.ts",
+      "upstreamSha256": "4a29649af4088e619b0ad8acd97400de0e8712102be53ef7a688b406e231a531",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
       "purpose": "Selected native API/MCP settings, local persistence, consent route and contextual guides for the minimal template.",
       "adaptation": "Retain native API/MCP contracts, stores and adapter behavior; omit affiliate/payment/product fields and text. Compose member entry/guide contexts with the minimal shell. Operator configuration record contains deployment settings only."
     },
     {
-      "path": "frontend/src/app/shared/core/contracts/operator.interface.ts",
+      "path": "frontend/src/app/shared/core/contracts/operator/operator.interface.ts",
       "upstreamPath": "frontend/src/app/shared/core/contracts/operator.interface.ts",
-      "upstreamSha256": "e56b1bd6232786733bd2f045a1e7f190c974ef43d664c89a7c6a9adea5f6223f",
-      "sourceRevision": "f8a1b83b6",
-      "sourceFrontendRevision": "c90a5b1f",
+      "upstreamSha256": "32f24ae7cd032c9018564f93919e29eea5e3ca62d82695a5309b9b9cdf9fdfc7",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
       "purpose": "Minimal deployment configuration: branding, privacy contact, administrator email allowlist, social links, API URL and Firebase setup.",
       "adaptation": "Select configuration members and existing UI sections; no company Registry, payments, revenue or community state. Use the existing private deployment configuration repository and native HTTP authority. Template title and popup shell composition."
     },
     {
-      "path": "frontend/src/app/shared/core/http/services/integration.service.ts",
-      "upstreamSha256": "162507d1723faec0d5be6188663c63ea2f5897e44e45903d0abc134300977f16",
-      "sourceRevision": "f8a1b83b6",
-      "sourceFrontendRevision": "c90a5b1f",
+      "path": "frontend/src/app/shared/core/http/services/integrations/integration.service.ts",
+      "upstreamSha256": "e9808f4198c543aa462b053c75a9e5cf89d14e5d8749344b9fd94e26292b3848",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
       "purpose": "Selected native API/MCP settings, local persistence, consent route and contextual guides for the minimal template.",
       "adaptation": "Retain native API/MCP contracts, stores and adapter behavior; omit affiliate/payment/product fields and text. Compose member entry/guide contexts with the minimal shell. Operator configuration record contains deployment settings only."
     },
     {
-      "path": "frontend/src/app/shared/core/local/source/entity/integration.entity.ts",
-      "upstreamSha256": "175680b7891166f9c6477871c11e8d4f42bb95914bd4e6298395b675b1d0a2e1",
-      "sourceRevision": "f8a1b83b6",
-      "sourceFrontendRevision": "c90a5b1f",
+      "path": "frontend/src/app/shared/core/local/source/entity/integrations/integration.entity.ts",
+      "upstreamSha256": "00d2481097cd9d3324e8ad0b58a27c9bc2aedeec78907666d53de53693e28a2d",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
       "purpose": "Selected native API/MCP settings, local persistence, consent route and contextual guides for the minimal template.",
       "adaptation": null
     },
     {
-      "path": "frontend/src/app/shared/core/local/source/entity/operator.entity.ts",
-      "upstreamSha256": "66a3bc36717705b56f5f4485e820f44f21487c32a1586102339d4123a94056fc",
-      "sourceRevision": "f8a1b83b6",
-      "sourceFrontendRevision": "c90a5b1f",
+      "path": "frontend/src/app/shared/core/local/source/entity/operator/operator.entity.ts",
+      "upstreamSha256": "fc5c52aa27d27e8bb90e909365acc2df77066a3de321153df9af0bbb4d20dcee",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
       "purpose": "Selected native API/MCP settings, local persistence, consent route and contextual guides for the minimal template.",
       "adaptation": "Retain native API/MCP contracts, stores and adapter behavior; omit affiliate/payment/product fields and text. Compose member entry/guide contexts with the minimal shell. Operator configuration record contains deployment settings only."
     },
     {
-      "path": "frontend/src/app/shared/core/local/source/repositories/integration.repository.spec.ts",
-      "upstreamSha256": "4b88a1a7c45b6689034b03d8abb7f0c3a0934c0d2de1b6e460b28a3cf82b3155",
-      "sourceRevision": "f8a1b83b6",
-      "sourceFrontendRevision": "c90a5b1f",
+      "path": "frontend/src/app/shared/core/local/source/repositories/integrations/integration.repository.spec.ts",
+      "upstreamSha256": "e4a941ce82a3622273a17ad5aeb3c2df0c8388115d0bc108b91856863742f4b8",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
       "purpose": "Selected native API/MCP settings, local persistence, consent route and contextual guides for the minimal template.",
       "adaptation": "Retain native API/MCP contracts, stores and adapter behavior; omit affiliate/payment/product fields and text. Compose member entry/guide contexts with the minimal shell. Operator configuration record contains deployment settings only."
     },
     {
-      "path": "frontend/src/app/shared/core/local/source/repositories/integration.repository.ts",
-      "upstreamSha256": "9f71e14ceddca2904e54b6c2aa5e81b0dad07fdfed6f1fa4cf814c13ac590b0d",
-      "sourceRevision": "f8a1b83b6",
-      "sourceFrontendRevision": "c90a5b1f",
+      "path": "frontend/src/app/shared/core/local/source/repositories/integrations/integration.repository.ts",
+      "upstreamSha256": "ee98f5ef0d1c71cadd0026d32c3e7ab9eee902977a9633965a0275459d6e8a5b",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
       "purpose": "Selected native API/MCP settings, local persistence, consent route and contextual guides for the minimal template.",
       "adaptation": "Retain native API/MCP contracts, stores and adapter behavior; omit affiliate/payment/product fields and text. Compose member entry/guide contexts with the minimal shell. Operator configuration record contains deployment settings only."
     },
     {
-      "path": "frontend/src/app/shared/core/local/source/services/integration.service.ts",
-      "upstreamSha256": "bdc895d6adcfc0e155f00b5e5ed25174a0b87a901294fbd4f141468f4cbf1dce",
-      "sourceRevision": "f8a1b83b6",
-      "sourceFrontendRevision": "c90a5b1f",
+      "path": "frontend/src/app/shared/core/local/source/services/integrations/integration.service.ts",
+      "upstreamSha256": "31d208e08925345a092594d8f4d1cf53ed056c51cfb42383e6c079a6fee0df95",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
       "purpose": "Selected native API/MCP settings, local persistence, consent route and contextual guides for the minimal template.",
       "adaptation": "Retain native API/MCP contracts, stores and adapter behavior; omit affiliate/payment/product fields and text. Compose member entry/guide contexts with the minimal shell. Operator configuration record contains deployment settings only."
     },
     {
       "path": "frontend/src/app/shared/ui/context/stores/profile/integration-settings.store.spec.ts",
-      "upstreamSha256": "7b6b6ce1f1dc7f371a9e3f22f16143411dab29681b9723154126b3aa8ef65527",
-      "sourceRevision": "f8a1b83b6",
-      "sourceFrontendRevision": "c90a5b1f",
+      "upstreamSha256": "c4a8fb46d922e06cf62f0dd676e0898b3301c50aad6571fd454ce956cc101615",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
       "purpose": "Selected native API/MCP settings, local persistence, consent route and contextual guides for the minimal template.",
       "adaptation": "Retain native API/MCP contracts, stores and adapter behavior; omit affiliate/payment/product fields and text. Compose member entry/guide contexts with the minimal shell. Operator configuration record contains deployment settings only."
     },
     {
       "path": "frontend/src/app/shared/ui/context/stores/profile/integration-settings.store.ts",
-      "upstreamSha256": "4c7507f7240d5f90f6cc308426d96dbd9705d71e9c8823ae0190c30412a94ae5",
-      "sourceRevision": "f8a1b83b6",
-      "sourceFrontendRevision": "c90a5b1f",
+      "upstreamSha256": "84a37a99f695f5be949aa81a72886c87ea8b2da84de95df52c5ecc84218cb174",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
       "purpose": "Selected native API/MCP settings, local persistence, consent route and contextual guides for the minimal template.",
       "adaptation": null
     },
     {
-      "path": "frontend/src/app/shared/core/base/mappers/operator-configuration.mapper.spec.ts",
+      "path": "frontend/src/app/shared/core/base/mappers/operator/operator-configuration.mapper.spec.ts",
       "upstreamPath": "frontend/src/app/shared/core/base/mappers/operator-configuration.mapper.spec.ts",
       "upstreamSha256": "abf6cca09dbd89e80a31c4c42b0585f8569a67eda81a2ada1b61332a60d45f18",
-      "sourceRevision": "f8a1b83b6",
-      "sourceFrontendRevision": "c90a5b1f",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
       "purpose": "Minimal deployment configuration: branding, privacy contact, administrator email allowlist, social links, API URL and Firebase setup.",
       "adaptation": "Select configuration members and existing UI sections; no company Registry, payments, revenue or community state. Use the existing private deployment configuration repository and native HTTP authority. Template title and popup shell composition."
     },
     {
       "path": "frontend/src/app/shared/ui/context/stores/operator/operator-workspace.store.ts",
       "upstreamPath": "frontend/src/app/shared/ui/context/stores/operator/operator-workspace.store.ts",
-      "upstreamSha256": "55cf2d8e5395a7a3d76027bc06bf6733cb755767cf24085ad6d8c40a56a67f06",
-      "sourceRevision": "f8a1b83b6",
-      "sourceFrontendRevision": "c90a5b1f",
+      "upstreamSha256": "18344505072ae1acfd525a76f6e7862c5daf280774c5401d3fb84df129997637",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
       "purpose": "Minimal deployment configuration: branding, privacy contact, administrator email allowlist, social links, API URL and Firebase setup.",
       "adaptation": "Select configuration members and existing UI sections; no company Registry, payments, revenue or community state. Use the existing private deployment configuration repository and native HTTP authority. Template title and popup shell composition."
     },
     {
       "path": "frontend/src/app/shared/ui/context/stores/operator/operator-workspace.store.spec.ts",
       "upstreamPath": "frontend/src/app/shared/ui/context/stores/operator/operator-workspace.store.spec.ts",
-      "upstreamSha256": "93b06d5e17d2b3627e3ba4771bbddcc4bce3f3b870ae9c92bcb1e5fe560be311",
-      "sourceRevision": "f8a1b83b6",
-      "sourceFrontendRevision": "c90a5b1f",
+      "upstreamSha256": "953c1f8e54170d31003db92107b5068d80bf2e31bed0719386ee1038e2649214",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
       "purpose": "Minimal deployment configuration: branding, privacy contact, administrator email allowlist, social links, API URL and Firebase setup.",
       "adaptation": "Select configuration members and existing UI sections; no company Registry, payments, revenue or community state. Use the existing private deployment configuration repository and native HTTP authority. Template title and popup shell composition."
     },
@@ -4609,7 +4610,7 @@
       "adaptation": null
     },
     {
-      "path": "frontend/src/app/shared/core/base/services/operator-configuration.service.ts",
+      "path": "frontend/src/app/shared/core/base/services/operator/operator-configuration.service.ts",
       "upstreamPath": "frontend/src/app/shared/core/base/services/operator-registry.service.ts",
       "upstreamSha256": "c22f0100509804c6f0d58c37eb1263af8ebad4a3d0b84ce9a04bd99a1cec98e6",
       "sourceRevision": "f8a1b83b6",
@@ -4618,7 +4619,7 @@
       "adaptation": "Select configuration members and existing UI sections; no company Registry, payments, revenue or community state. Use the existing private deployment configuration repository and native HTTP authority. Template title and popup shell composition."
     },
     {
-      "path": "frontend/src/app/shared/core/http/services/operator-configuration.service.ts",
+      "path": "frontend/src/app/shared/core/http/services/operator/operator-configuration.service.ts",
       "upstreamPath": "frontend/src/app/shared/core/http/services/operator-registry.service.ts",
       "upstreamSha256": "615dfff21bf046610a7425b309983015532008d90d54b41f1ee2a1eea8c05447",
       "sourceRevision": "f8a1b83b6",
@@ -4627,7 +4628,7 @@
       "adaptation": "Select configuration members and existing UI sections; no company Registry, payments, revenue or community state. Use the existing private deployment configuration repository and native HTTP authority. Template title and popup shell composition."
     },
     {
-      "path": "frontend/src/app/shared/core/local/source/services/operator-configuration.service.ts",
+      "path": "frontend/src/app/shared/core/local/source/services/operator/operator-configuration.service.ts",
       "upstreamPath": "frontend/src/app/shared/core/local/source/services/operator-registry.service.ts",
       "upstreamSha256": "96c015f7d1be6e860df46a9a95b35cca7ee9e84a33a54378d6c7751c65c696d8",
       "sourceRevision": "f8a1b83b6",
@@ -4663,7 +4664,7 @@
       "adaptation": "Select configuration members and existing UI sections; no company Registry, payments, revenue or community state. Use the existing private deployment configuration repository and native HTTP authority. Template title and popup shell composition."
     },
     {
-      "path": "frontend/src/app/shared/core/local/seed/builders/operator-configuration-seed.builder.ts",
+      "path": "frontend/src/app/shared/core/local/seed/builders/operator/operator-configuration-seed.builder.ts",
       "upstreamPath": "frontend/src/app/shared/core/local/seed/builders/operator-registry-seed.builder.ts",
       "upstreamSha256": "b26c7e65b210b6c4bcd78d80a52d8cd08ea677813a41de056096c745e860022c",
       "sourceRevision": "f8a1b83b6",
@@ -4861,11 +4862,12 @@
       "adaptation": null
     },
     {
-      "path": "frontend/src/app/shared/core/local/source/mappers/operator-tls.mapper.ts",
-      "upstreamSha256": "9f1c4b6e4548265164de391e615232f1af18987a702f6746bdb1409e0331d132",
-      "sourceRevision": "7a1d375c8",
+      "path": "frontend/src/app/shared/core/local/source/mappers/operator/operator-tls.mapper.ts",
+      "upstreamSha256": "987b1cde66995e8ef6ddd11df75621757a38cfdafb937f1807a13ed0a23a31b9",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
       "purpose": "Retained TLS/update signing, staged host requests and role notifications.",
-      "adaptation": null
+      "adaptation": null,
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
       "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/common/mongo/OwnerScopedQuery.java",
@@ -5147,67 +5149,76 @@
       "adaptation": "Select only template moderation/role-delivery dependencies and their configuration, indexes, erasure and focused tests; omit absent product domains."
     },
     {
-      "path": "frontend/src/app/shared/core/contracts/admin.interface.ts",
-      "sourceRevision": "c90a5b1f74c977591d99ea49a7748d211aed7d5f",
-      "upstreamSha256": "57a06c2e3c8bd8dc8f5e561285bba37db183aad0a088d1e3a20c7ae7753dfbd6",
+      "path": "frontend/src/app/shared/core/contracts/administration/admin.interface.ts",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "upstreamSha256": "db7b7c271789a705aeb9de3736d51b98d596131c728f44c6c0db9ebb7e442420",
       "purpose": "Minimal native admin moderation, support and member report/feedback UI.",
-      "adaptation": "Select unchanged moderation/dashboard/report/feedback DTOs; omit monitoring/product contracts."
+      "adaptation": "Select unchanged moderation/dashboard/report/feedback DTOs; omit monitoring/product contracts.",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/base/services/admin-moderation.service.ts",
-      "sourceRevision": "c90a5b1f74c977591d99ea49a7748d211aed7d5f",
-      "upstreamSha256": "b09672e99422b5266c1a77a8d643267451b3c293fb09753dbf6184d4de450568",
+      "path": "frontend/src/app/shared/core/base/services/content/admin-moderation.service.ts",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "upstreamSha256": "1549ebd8646df5fdfff48a46fd9622cd8db929d770305217feabab1fad965a3e",
       "purpose": "Minimal native admin moderation, support and member report/feedback UI.",
-      "adaptation": null
+      "adaptation": null,
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/http/services/admin-moderation.service.ts",
-      "sourceRevision": "c90a5b1f74c977591d99ea49a7748d211aed7d5f",
-      "upstreamSha256": "6851c58a23890c4646ffa997661c72f31909b71a9db523ef819a409775b17b03",
+      "path": "frontend/src/app/shared/core/http/services/content/admin-moderation.service.ts",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "upstreamSha256": "65f1079359792f4754c3d3332e789d618f35e2878a985661ea93018666dd6606",
       "purpose": "Minimal native admin moderation, support and member report/feedback UI.",
-      "adaptation": null
+      "adaptation": null,
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/http/services/admin-workspace.service.ts",
-      "sourceRevision": "c90a5b1f74c977591d99ea49a7748d211aed7d5f",
-      "upstreamSha256": "f9396b793dd9876899953890adb37cc24f612ffbf5cba5e8adc5fc3492c1e25e",
+      "path": "frontend/src/app/shared/core/http/services/administration/admin-workspace.service.ts",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "upstreamSha256": "17c4a4fd5eb57f397c15504e0db315ac3320aea51488615c214960ae7eb85b05",
       "purpose": "Minimal native admin moderation, support and member report/feedback UI.",
-      "adaptation": null
+      "adaptation": null,
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/local/source/repositories/admin-moderation.repository.ts",
-      "sourceRevision": "c90a5b1f74c977591d99ea49a7748d211aed7d5f",
-      "upstreamSha256": "cef432921efafa64a71e68af3d615342de8a247ac1bdab6183f71a2ca521770b",
+      "path": "frontend/src/app/shared/core/local/source/repositories/content/admin-moderation.repository.ts",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "upstreamSha256": "6893f86cb9dbaca57021e6411e75d6808eed1018687da904744730ab6a8b7dc4",
       "purpose": "Minimal native admin moderation, support and member report/feedback UI.",
-      "adaptation": null
+      "adaptation": null,
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/base/services/admin-workspace-data.service.ts",
-      "sourceRevision": "c90a5b1f74c977591d99ea49a7748d211aed7d5f",
-      "upstreamSha256": "527e2d6c5c327e7eafd5549d3905ff4f05f8b14852411f84c3f39c481b7442eb",
+      "path": "frontend/src/app/shared/core/base/services/administration/admin-workspace-data.service.ts",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "upstreamSha256": "186996079d7f79d7ba9891584d4e04b2c4378ee8e4730a461c3df69fa844fe84",
       "purpose": "Minimal native admin moderation, support and member report/feedback UI.",
-      "adaptation": "Select moderation reads/actions; omit shared links, job/metric menu counters and bootstrap progress."
+      "adaptation": "Select moderation reads/actions; omit shared links, job/metric menu counters and bootstrap progress.",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/local/source/services/admin-support-session.service.ts",
-      "sourceRevision": "c90a5b1f74c977591d99ea49a7748d211aed7d5f",
-      "upstreamSha256": "3468a2adae778bcb54b964aafee8d4de0211585a30cbca00dcf6bc630676f82a",
+      "path": "frontend/src/app/shared/core/local/source/services/accounts/admin-support-session.service.ts",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "upstreamSha256": "5b4d9021da118cd94c0f3c8f94c55b263558a8ef446273f41170794c940ed98a",
       "purpose": "Minimal native admin moderation, support and member report/feedback UI.",
-      "adaptation": "Keep native support persistence; omit shared-link dependency."
+      "adaptation": "Keep native support persistence; omit shared-link dependency.",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/local/source/services/admin-moderation.service.ts",
-      "sourceRevision": "c90a5b1f74c977591d99ea49a7748d211aed7d5f",
-      "upstreamSha256": "ace4672e3a32e1006335209f0295b20fbdc15fc09b2706dfdfd08abf9a43f3b2",
+      "path": "frontend/src/app/shared/core/local/source/services/content/admin-moderation.service.ts",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "upstreamSha256": "5910363bbe1288974a021f11e44c1ec620c40f03c9e482adddf0191ae9513302",
       "purpose": "Minimal native admin moderation, support and member report/feedback UI.",
-      "adaptation": "Retain native account status, support messages and notification writes; require stored administrator and matching optional workspace ID. Select app support only; no group registry or product branding."
+      "adaptation": "Retain native account status, support messages and notification writes; require stored administrator and matching optional workspace ID. Select app support only; no group registry or product branding.",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/local/source/services/admin-workspace.service.ts",
-      "sourceRevision": "c90a5b1f74c977591d99ea49a7748d211aed7d5f",
-      "upstreamSha256": "105d0329d444cbc63431cf6f3cf6df698e814184b685e080fea44c4a08dd92fb",
+      "path": "frontend/src/app/shared/core/local/source/services/administration/admin-workspace.service.ts",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "upstreamSha256": "5556cdcf21202d69dccd04cc5a397e5faddcad1da2d24eff9596b1abba29b58c",
       "purpose": "Minimal native admin moderation, support and member report/feedback UI.",
-      "adaptation": "Keep native moderation queue/filter/resolution with a genuinely empty seed and stored administrator; omit named native demo fallback and product profile fields."
+      "adaptation": "Keep native moderation queue/filter/resolution with a genuinely empty seed and stored administrator; omit named native demo fallback and product profile fields.",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
       "path": "frontend/src/app/shared/core/common/storage-scope.ts",
@@ -5217,32 +5228,36 @@
       "adaptation": "Add native selected moderation table key."
     },
     {
-      "path": "frontend/src/app/shared/core/local/source/repositories/chats.repository.ts",
-      "sourceRevision": "c90a5b1f74c977591d99ea49a7748d211aed7d5f",
-      "upstreamSha256": "3dcf13e1d9f7bf979bc1dfe9fc8bccea3ac535d159271585b70b90468af64278",
+      "path": "frontend/src/app/shared/core/local/source/repositories/chat/chats.repository.ts",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "upstreamSha256": "1d47b10175a185315d094fb41d001092d9b10faaecc9444ad22e14ae243b9d01",
       "purpose": "Minimal native admin moderation, support and member report/feedback UI.",
-      "adaptation": "Add native support message upsert/idempotency and selected unread counters to the existing chat owner."
+      "adaptation": "Add native support message upsert/idempotency and selected unread counters to the existing chat owner.",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/contracts/user.interface.ts",
-      "sourceRevision": "c90a5b1f74c977591d99ea49a7748d211aed7d5f",
-      "upstreamSha256": "c013ce4c69c8c5c9da70d70ac62d351cd3c2c30fdc76e2936145a5d58c272e2e",
+      "path": "frontend/src/app/shared/core/contracts/accounts/user.interface.ts",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "upstreamSha256": "1f62f1a8bdef137fbbfb979f9238f4b74d7ed86a5c24c91be977ec839ffe5997",
       "purpose": "Minimal native admin feedback, reports and support with local/HTTP parity.",
-      "adaptation": "Add unchanged native feedback/report request DTOs; unrelated optional report context is not populated."
+      "adaptation": "Add unchanged native feedback/report request DTOs; unrelated optional report context is not populated.",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/http/services/users.service.ts",
-      "sourceRevision": "c90a5b1f74c977591d99ea49a7748d211aed7d5f",
-      "upstreamSha256": "37591209ab2f252cd4ee18b67dae9d80f9a9d8ee6c5e266101a3037c81f2a0ea",
+      "path": "frontend/src/app/shared/core/http/services/accounts/users.service.ts",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "upstreamSha256": "d46ecbcf1e60a20343df16a08c60045733475f56579dca74b5dba923d8aaec26",
       "purpose": "Minimal native admin feedback, reports and support with local/HTTP parity.",
-      "adaptation": "Add native abortable/timeout-aware report and feedback requests."
+      "adaptation": "Add native abortable/timeout-aware report and feedback requests.",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/base/services/users.service.ts",
-      "sourceRevision": "c90a5b1f74c977591d99ea49a7748d211aed7d5f",
-      "upstreamSha256": "5ee4caa93f59c5e7dd406a2f46d93d83a88fe20f3f7ee40f703946ef3328fc18",
+      "path": "frontend/src/app/shared/core/base/services/accounts/users.service.ts",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "upstreamSha256": "47ea0a75530a2ec103429bc79e476724041c35614f8ca24f8084f7ff6e479069",
       "purpose": "Minimal native admin feedback, reports and support with local/HTTP parity.",
-      "adaptation": "Select native submission orchestration, abort and timeout semantics using the existing template runtime store."
+      "adaptation": "Select native submission orchestration, abort and timeout semantics using the existing template runtime store.",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
       "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/service/AdminClientAccessService.java",
@@ -5337,10 +5352,11 @@
     },
     {
       "path": "frontend/src/app/admin/components/feedback-popup/admin-feedback-popup.component.ts",
-      "sourceRevision": "c90a5b1f74c977591d99ea49a7748d211aed7d5f",
-      "upstreamSha256": "90c7bcee3e1e00ed94e47441d9539dd2ef6d12518a6c75c6ed3a0c098f9e26df",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "upstreamSha256": "ae7bf326d4428d3b49b0e827e94c02e6ba84be8d8671b200792f74b09ff61dbb",
       "purpose": "Minimal native admin moderation, support and member report/feedback UI.",
-      "adaptation": "Select native feedback list, status filter, detail and resolve/reopen; replace product row converter with selected SingleRow data. Bind the existing template directly to avoid first-render ExpressionChanged errors."
+      "adaptation": "Select native feedback list, status filter, detail and resolve/reopen; replace product row converter with selected SingleRow data. Bind the existing template directly to avoid first-render ExpressionChanged errors.",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
       "path": "frontend/src/app/admin/components/reports-popup/admin-reports-popup.component.html",
@@ -5358,10 +5374,11 @@
     },
     {
       "path": "frontend/src/app/admin/components/reports-popup/admin-reports-popup.component.ts",
-      "sourceRevision": "c90a5b1f74c977591d99ea49a7748d211aed7d5f",
-      "upstreamSha256": "02a4ff590d9421bdfba48d6e9361561c7baa35ae87b8d03ab2fb11d5c94b0e6d",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "upstreamSha256": "00394d156382f58ea67d34d1a9124b50ab713e674372ab2316e3d16c479fbaf1",
       "purpose": "Minimal native admin moderation, support and member report/feedback UI.",
-      "adaptation": "Select chat report list/detail and native moderation actions with Popup/SmartList/SingleRow; omit product previews and sharing. Reconcile canonical mutation results with SmartList syncVisibleItems without another dashboard request."
+      "adaptation": "Select chat report list/detail and native moderation actions with Popup/SmartList/SingleRow; omit product previews and sharing. Reconcile canonical mutation results with SmartList syncVisibleItems without another dashboard request.",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
       "path": "frontend/src/app/profile/components/feedback-popup/feedback-popup.component.html",
@@ -5379,10 +5396,11 @@
     },
     {
       "path": "frontend/src/app/profile/components/feedback-popup/feedback-popup.component.ts",
-      "sourceRevision": "c90a5b1f74c977591d99ea49a7748d211aed7d5f",
-      "upstreamSha256": "420a47783182f24ed6240005b37e52fbc5e1134541d4837cf1b1bc5687d431a6",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "upstreamSha256": "72a8e24523f062befd8b6ec11367afece02ba92aebda58aa1714768bcfdeb7c3",
       "purpose": "Minimal native admin moderation, support and member report/feedback UI.",
-      "adaptation": "Keep native feedback form and submit state; resolve the selected active account without the omitted group-workspace provider."
+      "adaptation": "Keep native feedback form and submit state; resolve the selected active account without the omitted group-workspace provider.",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
       "path": "frontend/src/app/profile/components/report-user-popup/report-user-popup.component.html",
@@ -5400,17 +5418,19 @@
     },
     {
       "path": "frontend/src/app/profile/components/report-user-popup/report-user-popup.component.ts",
-      "sourceRevision": "c90a5b1f74c977591d99ea49a7748d211aed7d5f",
-      "upstreamSha256": "a355aa801f4bb40db2f9bf8ecda08a5437e1fc7ae18c3df0ec5206a231d680c7",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "upstreamSha256": "e8521d8a6c6625b952950f183229a05dbbe08cc40e3de297814e23c141b79127",
       "purpose": "Minimal native admin moderation, support and member report/feedback UI.",
-      "adaptation": "Keep native report form and submit state; require saved chat-message context and omit event/group/asset controls."
+      "adaptation": "Keep native report form and submit state; require saved chat-message context and omit event/group/asset controls.",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/local/seed/repositories/admin-store-seed.repository.ts",
-      "sourceRevision": "c90a5b1f74c977591d99ea49a7748d211aed7d5f",
-      "upstreamSha256": "5123d771601949ad806e3e5912726fbdbc3f5037f595eca9ef16b1707534c1b4",
+      "path": "frontend/src/app/shared/core/local/seed/repositories/administration/admin-store-seed.repository.ts",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "upstreamSha256": "2ed5de48feb4e91441889d137ed13a8e495bdfaffffd3b1ddc438a8f1a286275",
       "purpose": "Minimal native admin moderation, support and member report/feedback UI.",
-      "adaptation": "Select native report/feedback/support contracts and dependencies for the minimal account/chat shell; omit product-only branches."
+      "adaptation": "Select native report/feedback/support contracts and dependencies for the minimal account/chat shell; omit product-only branches.",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
       "path": "frontend/src/app/shared/ui/context/stores/admin/admin-menu.store.ts",
@@ -5787,11 +5807,11 @@
     },
     {
       "path": "frontend/src/app/operator/components/operator-email-configuration/operator-email-configuration.component.ts",
-      "sourceRevision": "4b63e893d66781ed91691c3f5ec7c8e7ad5e4486",
-      "upstreamSha256": "7cd0894eb6e08132db03fae6c9b327348bff5b3bcce0d5c692502ec1004ee715",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "upstreamSha256": "4be4aa16122177567a969a4871972ca895af1407ce1162babc3b064d700e9684",
       "purpose": "Native configured email UI/adapters or non-forwarding QA provider receiver.",
       "adaptation": "Unchanged selection.",
-      "sourceFrontendRevision": "30649a62ad719895806e46c9eaa4d67ceff618d2"
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
       "path": "frontend/src/app/operator/components/operator-email-configuration/operator-email-configuration.component.scss",
@@ -5802,36 +5822,36 @@
       "sourceFrontendRevision": "30649a62ad719895806e46c9eaa4d67ceff618d2"
     },
     {
-      "path": "frontend/src/app/shared/core/contracts/operator-email.interface.ts",
-      "sourceRevision": "4b63e893d66781ed91691c3f5ec7c8e7ad5e4486",
+      "path": "frontend/src/app/shared/core/contracts/email/operator-email.interface.ts",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
       "upstreamSha256": "8034adab108cca772873f215d3ed01ef10a50f8055aa3cbdadc9698b138b0c18",
       "purpose": "Native configured email UI/adapters or non-forwarding QA provider receiver.",
       "adaptation": "Unchanged selection.",
-      "sourceFrontendRevision": "30649a62ad719895806e46c9eaa4d67ceff618d2"
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/base/services/operator-email.service.ts",
-      "sourceRevision": "4b63e893d66781ed91691c3f5ec7c8e7ad5e4486",
-      "upstreamSha256": "d32d707faf860d404d5e43bfe9941a140a68321ff944abe1cdf42dbcfdcd0ea4",
+      "path": "frontend/src/app/shared/core/base/services/email/operator-email.service.ts",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "upstreamSha256": "9a80b8fc3759b92477b16159a3833e9de9bca8b40035b72cb1162ef60afae7bb",
       "purpose": "Native configured email UI/adapters or non-forwarding QA provider receiver.",
       "adaptation": "Unchanged selection.",
-      "sourceFrontendRevision": "30649a62ad719895806e46c9eaa4d67ceff618d2"
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/http/services/operator-email.service.ts",
-      "sourceRevision": "4b63e893d66781ed91691c3f5ec7c8e7ad5e4486",
-      "upstreamSha256": "db96c2596cae16daf8286c0d8454fa74ba0d28d427fc5bbba96948ac2d231ed3",
+      "path": "frontend/src/app/shared/core/http/services/email/operator-email.service.ts",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "upstreamSha256": "9297d7a4636b98ae3225c28c4ffd6f02c9dc3e1fa8311a4b562222ae7f734a3c",
       "purpose": "Native configured email UI/adapters or non-forwarding QA provider receiver.",
       "adaptation": "Unchanged selection.",
-      "sourceFrontendRevision": "30649a62ad719895806e46c9eaa4d67ceff618d2"
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
-      "path": "frontend/src/app/shared/core/local/source/services/operator-email.service.ts",
-      "sourceRevision": "4b63e893d66781ed91691c3f5ec7c8e7ad5e4486",
-      "upstreamSha256": "0c5e47da3ffc2c0caf1471ff543b8e8e2f19a4bda070aadec26ee12edcce0f99",
+      "path": "frontend/src/app/shared/core/local/source/services/email/operator-email.service.ts",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "upstreamSha256": "8d73851967e90e500c3943f0970c2d3c2b4c57f0f6c6b4bfcc54e3b09200b847",
       "purpose": "Native configured email UI/adapters or non-forwarding QA provider receiver.",
       "adaptation": "Unchanged selection.",
-      "sourceFrontendRevision": "30649a62ad719895806e46c9eaa4d67ceff618d2"
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
       "path": "guides/qa/tools/email-provider-stub.py",
@@ -5839,6 +5859,46 @@
       "upstreamSha256": "1d8cac9bf542ea7bfc709805c1c67ac5ecaa69ae655994651aacee8ab7f07984",
       "purpose": "Native configured email UI/adapters or non-forwarding QA provider receiver.",
       "adaptation": "Unchanged selection."
+    },
+    {
+      "path": "frontend/src/test-browser.ts",
+      "upstreamSha256": "8a24c9d3ffb5f63dce1489ee6071948c8e4755af362dffeb84902138a5facccc",
+      "purpose": "Native frontend domain organization, isolated test setup and retained identity/notification regressions.",
+      "adaptation": null,
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
+    },
+    {
+      "path": "frontend/vitest.config.ts",
+      "upstreamSha256": "586aaf5d71ef634805e8718371a165a3f6d005a85e4312206e2c48c6c9618abb",
+      "purpose": "Native frontend domain organization, isolated test setup and retained identity/notification regressions.",
+      "adaptation": null,
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
+    },
+    {
+      "path": "frontend/src/app/shared/core/base/services/platform/deployment-configuration.service.spec.ts",
+      "upstreamSha256": "a31b19f6e86bbc6522260df91b023c1fe6ffca34e3188a6fe1a284ca9268c190",
+      "purpose": "Native frontend domain organization, isolated test setup and retained identity/notification regressions.",
+      "adaptation": "Selected native branding/configuration tests; omitted payment provider assertions.",
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
+    },
+    {
+      "path": "frontend/src/app/shared/core/base/services/notifications/firebase-messaging.service.spec.ts",
+      "upstreamSha256": "d5ff94b17618085c2a22074146010d7d6ab775e0a6ee531ce8f0ffa72f6638e2",
+      "purpose": "Native frontend domain organization, isolated test setup and retained identity/notification regressions.",
+      "adaptation": null,
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
+    },
+    {
+      "path": "frontend/src/app/shared/core/README.md",
+      "upstreamSha256": "a7010f98ce620ec2732c1e5c222ea3ba8d2024e1c23d4aefa97da7d22198af21",
+      "purpose": "Native frontend domain organization, isolated test setup and retained identity/notification regressions.",
+      "adaptation": null,
+      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
+      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     }
   ],
   "templateOwnedFeatures": [
@@ -5849,7 +5909,7 @@
         "frontend/components/src/lib/ui/components/core/smart-list",
         "frontend/components/src/lib/ui/components/core/smart-list/card/image-card",
         "frontend/components/src/lib/ui/components/core/smart-list/card/single-row",
-        "frontend/src/app/shared/core/base/services/base-route-mode.service.ts",
+        "frontend/src/app/shared/core/base/services/platform/base-route-mode.service.ts",
         "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/api/SelectedProfile.java"
       ],
       "implementation": "Template-owned DTO, Mongo repository/controller/service, local/HTTP adapters and four equal demo/E2E/browser seed cards. Native IndexedDB engine, SmartList and card components are reused; no new list engine.",
@@ -5891,10 +5951,10 @@
     {
       "name": "operator-configuration",
       "references": [
-        "frontend/src/app/shared/core/contracts/operator.interface.ts",
-        "frontend/src/app/shared/core/base/mappers/operator-configuration.mapper.ts",
-        "frontend/src/app/shared/core/base/mappers/operator-configuration.mapper.spec.ts",
-        "frontend/src/app/shared/core/local/seed/services/demo-bootstrap.service.ts",
+        "frontend/src/app/shared/core/contracts/operator/operator.interface.ts",
+        "frontend/src/app/shared/core/base/mappers/operator/operator-configuration.mapper.ts",
+        "frontend/src/app/shared/core/base/mappers/operator/operator-configuration.mapper.spec.ts",
+        "frontend/src/app/shared/core/local/seed/services/platform/demo-bootstrap.service.ts",
         "frontend/src/app/shared/ui/context/stores/operator/operator-workspace.store.ts",
         "frontend/src/app/shared/ui/context/stores/operator/operator-workspace.store.spec.ts",
         "frontend/src/app/operator/components/_operator-configuration.scss",
