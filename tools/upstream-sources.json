@@ -628,8 +628,8 @@
     },
     {
       "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/security/firebase/FirebaseFilter.java",
-      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
-      "upstreamSha256": "3296b9093ea30f828026baea5c3c68e2cad9504bfe50201e99012afb6e9ac4c7",
+      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
+      "upstreamSha256": "a8cd2afabfb9a864ad14c5201ac3fabb1deb818b6dfadb4fd9dc436f28776899",
       "purpose": "Native REAL/DEMO request routing, Firebase/session verification, scoped media credential and operator bootstrap authentication.",
       "adaptation": null
     },
@@ -2319,6 +2319,13 @@
       "sourceRevision": "d48270b99f6f77e930b609c1391023392a715c3c",
       "purpose": "Shared native E2E runner and owned DEMO session lifecycle.",
       "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/accounts/security/firebase/FirebaseFilterPublicDocumentsTest.java",
+      "purpose": "Native regression coverage for public document reads after member logout; protected writes remain session-checked.",
+      "upstreamSha256": "fd27ff9046c2cd8d346dea0c2be5ee9d032db2411964b64b5ba50a1ce50a35b4",
+      "adaptation": null,
+      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac"
     }
   ]
 }

@@ -6,9 +6,16 @@ It tracks the minimal product and the complete framework around it. The numbered
 implementation checklist. Repository text and test cases are in English.
 
 The user has delegated automatic template testing. Execute the applicable API and
-browser flows without asking for each step. Use the native fixture baseline and
-managed browser launcher when browser qualification becomes available. Keep only
+browser flows without asking for each step, and explicitly authorized **headless
+Chrome** for this work. Prefer the native E2E runner in headless mode with isolated,
+versioned fixtures. Retain the native fixture baseline and browser-launch
+requirements when browser qualification becomes available. Keep only
 one dev, E2E, KVM or production stack running at a time.
+
+Previously qualified MyScoutee behavior is the comparison baseline. Its four
+outstanding QA tasks remain unverified; do not silently count them as passed.
+Before repairing a failed comparison, identify whether the fixture/runner,
+template composition or upstream implementation is responsible.
 
 ## Status rules
 
@@ -36,6 +43,21 @@ and session-bearing curl commands in ignored `.e2e-artifacts/`, not in Git.
 5. Deployment and release: serial KVM/monolith checks, Prometheus targets and
    actual Grafana panel data, matched performance batch, production images,
    DEB/Netcup, backup/restore, signed update and Pages.
+
+## User handoff
+
+Detailed qualification and defect diagnosis belong to the automatic QA above.
+The user requested only the following final smoke checks in each named deployment;
+do not hand over the remaining automated checklist as manual work.
+
+| User action | VMware | Dev monolith | KVM |
+| --- | --- | --- | --- |
+| Log in as one prepared member | NOT RUN | NOT RUN | NOT RUN |
+| Open the two member pages: SmartList and chat | NOT RUN | NOT RUN | NOT RUN |
+
+Keep VMware and KVM results distinct. Prepare and verify each environment before
+handoff. Identify the available native VMware installation/launch workflow during
+the packaging inventory rather than treating a KVM result as VMware evidence.
 
 ## Initial backend collection
 

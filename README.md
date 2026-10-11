@@ -25,8 +25,12 @@ account, session, consent, access-policy, help/guide and deployment/Firebase cod
 standard tests and one embedded MongoDB test; personal/support chat adds 24
 focused tests. Minimal profile saving, location updates and localization now have
 focused checks, including preservation of account fields omitted from the small
-profile form. HTTP composition, the account purge worker, frontend, seed and
-installation are still being implemented; this is not yet a runnable release.
+profile form. The selected dev backend now starts with MongoDB, Redis and MinIO;
+ten automated HTTP cases cover the initial seed and session/access boundaries.
+The account purge worker, frontend, complete runtime composition and installation
+are still being implemented; this is not yet a complete runnable release.
+The [QA table and execution notes](guides/qa/README.md) distinguish verified
+backend contracts from pending frontend, KVM and installed-release checks.
 
 ## Target and local repository layout
 
@@ -34,7 +38,8 @@ The deliverable is a complete minimal counterpart of `myscoutee-backend`, with
 its own backend/frontend shell, development workflow, versioned releases,
 Debian/Netcup installation, KVM lab and getting started guide/PDF. Backend
 preparation has passed its source KVM and monolith gates; the standalone template
-composition is in progress and this checkout is not runnable yet.
+composition is in progress. Its selected backend is runnable; the frontend and
+complete deployment workflows are not ready yet.
 
 The template retains the backend structure and operational workflows, with smaller
 domain implementations where appropriate. Minimal screens and seed data must not
@@ -101,8 +106,9 @@ Personal/support chat retains native message storage, paging, read receipts,
 unread counters, stable message identity, WebSocket/Redis transport and durable
 push delivery. Product chat creators, metrics and event navigation are omitted.
 A personal chat requires its existing approved contact pair; reopening it does
-not overwrite the conversation. These are component checks, not live deployment
-qualification.
+not overwrite the conversation. Initial live HTTP checks now verify the seeded
+two-user conversation and messages; full message mutation/reconnect and UI
+qualification remain outstanding.
 
 Localization keeps native REAL/DEMO caches and change-stream invalidation.
 Location handling keeps native geospatial lookup and targeted coordinate writes;

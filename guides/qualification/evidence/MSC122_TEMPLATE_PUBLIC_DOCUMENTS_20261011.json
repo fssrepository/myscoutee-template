@@ -1,0 +1,100 @@
+{
+  "recordedAt": "2026-10-11T12:37:58.361080+00:00",
+  "templateBaseRevision": "2736a502ce0017b2ab18ad7aaf7d8e3c149b3ccc",
+  "nativeFixRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
+  "nativeQualification": "myscoutee-backend/guides/qualification/evidence/MSC122_PUBLIC_DOCUMENT_SESSION_20261011.json",
+  "scope": "Resolve T-CONTENT-003 with the unchanged, qualified native FirebaseFilter and regression test. Extend the existing owned-session HTTP case; anonymous and revoked-session reads of help/privacy/terms/explanation pass after logout, while profile read and consent write still return 401.",
+  "junit": {
+    "command": "tools/run-backend-junit.sh standard --tests '*FirebaseFilterPublicDocumentsTest' --tests '*FirebaseFilterOperatorTest' --tests '*WebSecurityConfigBootstrapTest' --tests '*SessionMongoRoutingFilterTest'",
+    "tests": 48,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "http": {
+    "command": "E2E_SERVER_BASE_URL=http://<dev-container-ip>:8080 E2E_API_PREFIX= node e2e/functional/backend/run.mjs --record",
+    "summary": {
+      "recordedAt": "2026-10-11T12:36:46.218Z",
+      "mode": "contract",
+      "baseUrl": "http://172.22.0.6:8080",
+      "apiPrefix": "",
+      "selection": {
+        "filter": "",
+        "group": "",
+        "qaCase": ""
+      },
+      "passed": 10,
+      "failed": 0,
+      "skipped": 0,
+      "total": 10,
+      "ownedSessionsRevoked": true,
+      "scope": "Backend contracts and owned session lifecycle; not UI, KVM, load or installed-release proof."
+    },
+    "results": [
+      "- PASS runtime/configuration public deployment branding 200 33ms",
+      "- PASS profile/demo-users three seeded demo actors without the operator 200 21ms",
+      "- PASS profile/auth-me minimal profile and extended profile refer to the same member 200 66ms",
+      "- PASS content/documents seeded help privacy terms and explanation revisions 200 29ms",
+      "- PASS chat/seeded-conversation two participants see one personal conversation and two seed messages 200 39ms",
+      "- PASS notifications/inbox notification inbox belongs to the member and has consistent pagination 200 69ms",
+      "- PASS location/eligibility valid German coordinates and invalid coordinate rejection 200 10ms",
+      "- PASS operator/member-denied member cannot read operator configuration 403 25ms",
+      "- PASS media/anonymous-denied private media requires an active media session 401 6ms",
+      "- PASS identity/session-revocation logout revokes the owned session while public documents remain readable 200 27ms",
+      "",
+      "template backend: 10 passed, 0 failed, 0 skipped, 10 selected"
+    ]
+  },
+  "resources": {
+    "kind": "Low-load observation, not a matched benchmark",
+    "startedAt": "2026-10-11T12:37:06.184790+00:00",
+    "seconds": 30.759670796000137,
+    "hostBusyPercent": 12.25621362169319,
+    "containers": {
+      "myscoutee-template-dev-profilemanagement": {
+        "cpuCores": 0.08513316079899402,
+        "memoryMiB": 1645.7109375,
+        "throttledSeconds": 0.0
+      },
+      "myscoutee-template-dev-mongodb": {
+        "cpuCores": 0.054531110268518125,
+        "memoryMiB": 247.63671875,
+        "throttledSeconds": 0.0
+      },
+      "myscoutee-template-dev-mongodb-sync": {
+        "cpuCores": 0.01367264307830917,
+        "memoryMiB": 3.56640625,
+        "throttledSeconds": 0.0
+      },
+      "myscoutee-template-dev-redis": {
+        "cpuCores": 0.005687869716172343,
+        "memoryMiB": 5.74609375,
+        "throttledSeconds": 0.0
+      },
+      "myscoutee-template-dev-minio": {
+        "cpuCores": 0.006134135870678294,
+        "memoryMiB": 83.98046875,
+        "throttledSeconds": 0.0
+      }
+    },
+    "health": {
+      "myscoutee-template-dev-profilemanagement": "running healthy",
+      "myscoutee-template-dev-mongodb": "running healthy",
+      "myscoutee-template-dev-mongodb-sync": "running",
+      "myscoutee-template-dev-redis": "running",
+      "myscoutee-template-dev-minio": "running healthy"
+    }
+  },
+  "sourceFileSha256": {
+    "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/security/firebase/FirebaseFilter.java": "a8cd2afabfb9a864ad14c5201ac3fabb1deb818b6dfadb4fd9dc436f28776899",
+    "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/accounts/security/firebase/FirebaseFilterPublicDocumentsTest.java": "fd27ff9046c2cd8d346dea0c2be5ee9d032db2411964b64b5ba50a1ce50a35b4",
+    "tools/upstream-sources.json": "459f520f7713a1f4ca41776cb64484fa9e2ccf13a5274de0741e8b6d8eef9d9d",
+    "e2e/functional/backend/identity/session-revocation/assert.mjs": "50d812ec309fc7bd158470c1a097ccd39d375a7e84023173c57898a18f555530",
+    "e2e/functional/backend/identity/session-revocation/request.json": "b084ccbee4f3186da367b69665d9ebd887d168b9f0a58b422a32efbb04f2dc30"
+  },
+  "limits": [
+    "Dev backend API checks only. Local/HTTP UI, template KVM, standalone E2E and installed release remain unverified.",
+    "Low-load resource observation is not a matched speed comparison.",
+    "MyScoutee dev and KVM were stopped before template dev started."
+  ]
+}

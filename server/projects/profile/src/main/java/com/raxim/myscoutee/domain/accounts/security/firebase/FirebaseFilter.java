@@ -213,7 +213,18 @@ public class FirebaseFilter extends OncePerRequestFilter {
 
     private boolean isPublicEntryBootstrapRequest(HttpServletRequest request) {
         String requestUri = request == null ? "" : request.getRequestURI();
-        return requestUri.matches("/(?:api/)?mcp/oauth/(?:metadata|resource|token|register)")
+        // These document reads are already public in WebSecurityConfig. Do not
+        // turn an anonymous read into the dev fallback member's expired session.
+        boolean publicDocumentRead = request != null
+                && ("GET".equals(request.getMethod()) || "HEAD".equals(request.getMethod()))
+                && switch (requestUri) {
+                    case "/help/active", "/privacy/active", "/terms/active", "/explanation/active",
+                            "/api/help/active", "/api/privacy/active", "/api/terms/active",
+                            "/api/explanation/active" -> true;
+                    default -> false;
+                };
+        return publicDocumentRead
+                || requestUri.matches("/(?:api/)?mcp/oauth/(?:metadata|resource|token|register)")
                 || requestUri.equals("/health")
                 || requestUri.equals("/api/health")
                 || requestUri.equals("/media/public")

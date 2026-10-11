@@ -161,7 +161,12 @@ deep-link behavior. A working `local` build alone does not close frontend work.
    graph without fake successful adapters or permissive substitutes. The current
    HTTP/configuration selection has 17 focused passing checks. The selected dev
    backend now starts with MongoDB, Redis and MinIO; ten automated HTTP cases
-   exercise the seed and session/security boundaries. This is not proof of the
+   exercise the seed and session/security boundaries. The public-document
+   session defect is resolved by the unchanged native fix at `2ab74dd8e`,
+   qualified first on source KVM and monolith. Template evidence is
+   `MSC122_TEMPLATE_PUBLIC_DOCUMENTS_20261011.json` (48 JUnit tests and all ten
+   HTTP cases, including anonymous/stale-session reads after logout).
+   This is not proof of the
    complete frontend, integration or deployment composition. Close with a live healthy application and retained
    routes exercised against its own databases.
 
@@ -315,6 +320,13 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     routes and flows. Cover entry, SmartList views, chat, profile/avatar, consent,
     guide/notification/settings and privileged shells in the applicable modes.
     Verify reload, responsive layouts, navigation, assets and browser errors.
+    The user explicitly authorized headless Chrome for automatic template QA;
+    prefer that mode with the native runner and isolated, versioned fixtures.
+    Use previously qualified MyScoutee behavior as the comparison baseline, keeping
+    its four outstanding QA tasks explicitly outside the proven baseline. Classify
+    a failure as fixture/runner, template composition or upstream behavior before
+    changing application code; do not redefine the established behavior to make
+    a new test pass.
     Respect the repository's browser authorization boundary; a manual-QA handoff
     does not itself authorize automated checklist actions. Close with reproducible
     isolated E2E evidence rather than screenshots of an unconnected mock UI.
@@ -365,6 +377,9 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     qualified shared helper, rather than forking its complete implementation.
     Close with a fresh isolated Debian/KVM installation and applicable Netcup setup
     verification, restart, backup/restore and data-preserving removal checks.
+    Inventory and prepare the VMware deployment requested for the final user smoke
+    check, reusing the available installation workflow. Record its evidence
+    separately from the KVM lab; one hypervisor does not qualify the other.
 
 27. **Complete signed releases and the updater — PENDING.**
     Reuse native release discovery, canonical signing, manifests, staging,
@@ -402,6 +417,10 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     Pages outcomes at their proper boundaries. Record measured CPU/latency limits,
     tested revisions and any real external blocker. Commit tested batches and
     mark the template complete only when required gates are satisfied.
+    The user's final manual check is limited to logging in as one member and
+    opening the SmartList and chat pages on VMware, dev monolith and KVM. Complete
+    detailed automatic QA and prepare the environments before that handoff; do not
+    delegate unfinished functional testing to the user.
 
 ## Current continuation point
 

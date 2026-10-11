@@ -1,5 +1,5 @@
 {
-  "name": "logout revokes only the owned test session",
+  "name": "logout revokes the owned session while public documents remain readable",
   "group": "identity",
   "order": 10,
   "method": "GET",
@@ -14,6 +14,7 @@
   "expectedStatus": 200,
   "maxMs": 5000,
   "qaBranches": [
-    "T-IDENTITY-002"
+    "T-IDENTITY-002",
+    "T-CONTENT-003"
   ]
 }
