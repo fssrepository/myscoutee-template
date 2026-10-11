@@ -14,8 +14,8 @@ This repository is the starting point for extracting MyScoutee's common
 infrastructure into a reusable project template.
 
 **Current status:** minimal backend foundations in progress. The selected native
-account, session, consent and deployment/Firebase configuration code passes
-52 focused JUnit tests. HTTP composition, communication, frontend, seed and
+account, session, consent, access-policy, help/guide and deployment/Firebase code is covered by
+102 focused JUnit tests across staged runs. HTTP composition, communication, frontend, seed and
 installation are still being implemented; this is not yet a runnable release.
 
 ## Target and local repository layout
@@ -75,6 +75,12 @@ Account selection is taken from the MyScoutee revision already checked on KVM
 and monolith. Deployment settings retain branding, privacy contacts, integration
 base URL, encrypted credentials and verified Firebase activation. REAL and DEMO
 separation, optimistic locking and credential redaction remain in place.
+
+The native policy engine keeps its cached rules and explicit denials. Only the
+12 implemented account/chat/consent/media-write policy records are selected from
+the upstream seed. Public help, terms, privacy and guide reads retain their native
+revision/consent schemas; revision administration and community scope are omitted.
+Staged test evidence is in [`guides/qualification/evidence`](guides/qualification/evidence).
 
 With Java 25 installed, run the selected tests from the repository root:
 

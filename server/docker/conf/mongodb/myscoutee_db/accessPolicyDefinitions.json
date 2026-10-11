@@ -1,0 +1,213 @@
+[
+  {
+    "_id": "access-policy-chat-message-create",
+    "syncKey": "access-policy-chat-message-create",
+    "policyKey": "chat.message.create",
+    "permission": "chat.message.create",
+    "resourceType": "chat",
+    "required": [
+      "actorMatchesSubject",
+      "noExplicitDeny",
+      "actorCanAccessChat"
+    ],
+    "anyOf": [],
+    "status": "active",
+    "description": "Chat participant may post message.",
+    "createdDate": "2026-06-02T00:00:00Z",
+    "updatedDate": "2026-06-02T00:00:00Z",
+    "updatedUser": "access-policy-seed"
+  },
+  {
+    "_id": "access-policy-chat-message-edit",
+    "syncKey": "access-policy-chat-message-edit",
+    "policyKey": "chat.message.edit",
+    "permission": "chat.message.edit",
+    "resourceType": "chat",
+    "required": [
+      "actorMatchesSubject",
+      "noExplicitDeny",
+      "actorCanAccessChat"
+    ],
+    "anyOf": [],
+    "status": "active",
+    "description": "Participant may edit own message.",
+    "createdDate": "2026-06-02T00:00:00Z",
+    "updatedDate": "2026-06-02T00:00:00Z",
+    "updatedUser": "access-policy-seed"
+  },
+  {
+    "_id": "access-policy-chat-message-delete",
+    "syncKey": "access-policy-chat-message-delete",
+    "policyKey": "chat.message.delete",
+    "permission": "chat.message.delete",
+    "resourceType": "chat",
+    "required": [
+      "actorMatchesSubject",
+      "noExplicitDeny",
+      "actorCanAccessChat"
+    ],
+    "anyOf": [],
+    "status": "active",
+    "description": "Participant may delete own message.",
+    "createdDate": "2026-06-02T00:00:00Z",
+    "updatedDate": "2026-06-02T00:00:00Z",
+    "updatedUser": "access-policy-seed"
+  },
+  {
+    "_id": "access-policy-chat-message-pin",
+    "syncKey": "access-policy-chat-message-pin",
+    "policyKey": "chat.message.pin",
+    "permission": "chat.message.pin",
+    "resourceType": "chat",
+    "required": [
+      "actorMatchesSubject",
+      "noExplicitDeny",
+      "actorCanAccessChat"
+    ],
+    "anyOf": [],
+    "status": "active",
+    "description": "Participant may pin message.",
+    "createdDate": "2026-06-02T00:00:00Z",
+    "updatedDate": "2026-06-02T00:00:00Z",
+    "updatedUser": "access-policy-seed"
+  },
+  {
+    "_id": "access-policy-chat-reaction-manage",
+    "syncKey": "access-policy-chat-reaction-manage",
+    "policyKey": "chat.reaction.manage",
+    "permission": "chat.reaction.manage",
+    "resourceType": "chat",
+    "required": [
+      "actorMatchesSubject",
+      "noExplicitDeny",
+      "actorCanAccessChat"
+    ],
+    "anyOf": [],
+    "status": "active",
+    "description": "Participant may add/remove own reaction.",
+    "createdDate": "2026-06-02T00:00:00Z",
+    "updatedDate": "2026-06-02T00:00:00Z",
+    "updatedUser": "access-policy-seed"
+  },
+  {
+    "_id": "access-policy-chat-attachment-add",
+    "syncKey": "access-policy-chat-attachment-add",
+    "policyKey": "chat.attachment.add",
+    "permission": "chat.attachment.add",
+    "resourceType": "chat",
+    "required": [
+      "actorMatchesSubject",
+      "noExplicitDeny",
+      "actorCanAccessChat"
+    ],
+    "anyOf": [],
+    "status": "active",
+    "description": "Participant may attach media.",
+    "createdDate": "2026-06-02T00:00:00Z",
+    "updatedDate": "2026-06-02T00:00:00Z",
+    "updatedUser": "access-policy-seed"
+  },
+  {
+    "_id": "access-policy-chat-support-manage",
+    "syncKey": "access-policy-chat-support-manage",
+    "policyKey": "chat.support.manage",
+    "permission": "chat.support.manage",
+    "resourceType": "chat",
+    "required": [
+      "actorMatchesSubject",
+      "noExplicitDeny",
+      "actorCanManageSupportChat"
+    ],
+    "anyOf": [],
+    "status": "active",
+    "description": "Admin/support may create or update support case.",
+    "createdDate": "2026-06-02T00:00:00Z",
+    "updatedDate": "2026-06-02T00:00:00Z",
+    "updatedUser": "access-policy-seed"
+  },
+  {
+    "_id": "access-policy-user-profile-edit",
+    "syncKey": "access-policy-user-profile-edit",
+    "policyKey": "user.profile.edit",
+    "permission": "user.profile.edit",
+    "resourceType": "user",
+    "required": [
+      "actorMatchesSubject",
+      "noExplicitDeny"
+    ],
+    "anyOf": [],
+    "status": "active",
+    "description": "User may edit own profile.",
+    "createdDate": "2026-06-02T00:00:00Z",
+    "updatedDate": "2026-06-02T00:00:00Z",
+    "updatedUser": "access-policy-seed"
+  },
+  {
+    "_id": "access-policy-user-profile-delete",
+    "syncKey": "access-policy-user-profile-delete",
+    "policyKey": "user.profile.delete",
+    "permission": "user.profile.delete",
+    "resourceType": "user",
+    "required": [
+      "actorMatchesSubject",
+      "noExplicitDeny"
+    ],
+    "anyOf": [],
+    "status": "active",
+    "description": "User may delete own account.",
+    "createdDate": "2026-06-02T00:00:00Z",
+    "updatedDate": "2026-06-02T00:00:00Z",
+    "updatedUser": "access-policy-seed"
+  },
+  {
+    "_id": "access-policy-user-media-upload",
+    "syncKey": "access-policy-user-media-upload",
+    "policyKey": "user.media.upload",
+    "permission": "user.media.upload",
+    "resourceType": "user",
+    "required": [
+      "actorMatchesSubject",
+      "noExplicitDeny"
+    ],
+    "anyOf": [],
+    "status": "active",
+    "description": "User may upload own media.",
+    "createdDate": "2026-06-02T00:00:00Z",
+    "updatedDate": "2026-06-02T00:00:00Z",
+    "updatedUser": "access-policy-seed"
+  },
+  {
+    "_id": "access-policy-user-media-import",
+    "syncKey": "access-policy-user-media-import",
+    "policyKey": "user.media.import",
+    "permission": "user.media.import",
+    "resourceType": "user",
+    "required": [
+      "actorMatchesSubject",
+      "noExplicitDeny"
+    ],
+    "anyOf": [],
+    "status": "active",
+    "description": "User may import media for own object.",
+    "createdDate": "2026-06-02T00:00:00Z",
+    "updatedDate": "2026-06-02T00:00:00Z",
+    "updatedUser": "access-policy-seed"
+  },
+  {
+    "_id": "access-policy-privacy-consent-submit",
+    "syncKey": "access-policy-privacy-consent-submit",
+    "policyKey": "privacy.consent.submit",
+    "permission": "privacy.consent.submit",
+    "resourceType": "user",
+    "required": [
+      "actorMatchesSubject",
+      "noExplicitDeny"
+    ],
+    "anyOf": [],
+    "status": "active",
+    "description": "User may submit own privacy consent.",
+    "createdDate": "2026-06-02T00:00:00Z",
+    "updatedDate": "2026-06-02T00:00:00Z",
+    "updatedUser": "access-policy-seed"
+  }
+]

@@ -602,6 +602,489 @@
       "upstreamSha256": "df8a49c5cfbd6428b4f3dd686fedc63ab00f588f701d9b77a2ed1d8c36556df3",
       "purpose": "Native account selection validated in MyScoutee KVM and monolith before reuse.",
       "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/common/config/mongo/DemoSessionRequestSupport.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "ab92698ea5d5ae255497b4dadf8937a6d2a278a1bc69bd88d305dbac002aa450",
+      "purpose": "Native REAL/DEMO request routing, Firebase/session verification, scoped media credential and operator bootstrap authentication.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/common/config/mongo/SessionMongoRoutingFilter.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "455ebcbb0c2401179a6df0d58f4a45ab0f20821c08abcaa03e2a37ed47265af0",
+      "purpose": "Native REAL/DEMO request routing, Firebase/session verification, scoped media credential and operator bootstrap authentication.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/common/security/media/MediaSessionAccessService.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "5dd064f5c52d2233c1a4899fb3e3ed8b036ef98996c4a5bc18b850661986afff",
+      "purpose": "Native REAL/DEMO request routing, Firebase/session verification, scoped media credential and operator bootstrap authentication.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/api/ProfileAuthentication.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "41c0fa3a206a3eeb896bbaaa630b23312409d4a54e5579ce15e4ce464ae93940",
+      "purpose": "Native REAL/DEMO request routing, Firebase/session verification, scoped media credential and operator bootstrap authentication.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/service/ProfileAuthenticationService.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "cdb86c84fc5c27d4f2275f20736fa7b894172b549572bd8a96761944e67c7e39",
+      "purpose": "Native REAL/DEMO request routing, Firebase/session verification, scoped media credential and operator bootstrap authentication.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/security/firebase/FirebaseFilter.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "3296b9093ea30f828026baea5c3c68e2cad9504bfe50201e99012afb6e9ac4c7",
+      "purpose": "Native REAL/DEMO request routing, Firebase/session verification, scoped media credential and operator bootstrap authentication.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/api/IntegrationClientIdentity.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "2f91af17d67cf59deb0cf6bfe1cd96149889c10bf4613146f5abf8f15707ee64",
+      "purpose": "Native REAL/DEMO request routing, Firebase/session verification, scoped media credential and operator bootstrap authentication.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/media/api/MediaSessionAccess.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "aba5228fb44ab58fa35f3eca2d1514ece915b8c88c13c47ecc32bef24e75bad7",
+      "purpose": "Native REAL/DEMO request routing, Firebase/session verification, scoped media credential and operator bootstrap authentication.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/media/config/MediaSessionConfiguration.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "7db63f0dd6cb9c37ec8f5e101090494f2407e4e9baa78e5157e8bd736f994bd9",
+      "purpose": "Native REAL/DEMO request routing, Firebase/session verification, scoped media credential and operator bootstrap authentication.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/api/OperatorBootstrapRequestSupport.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "5e292d25e39af7492f9fbc27b32e6ac97ae7ac93208bd524afdd1d054db8789e",
+      "purpose": "Native REAL/DEMO request routing, Firebase/session verification, scoped media credential and operator bootstrap authentication.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/controller/OperatorBootstrapController.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "fa9843b8533117acc43489165eb0ca777bafd584aff68c47882d4719e38e03d0",
+      "purpose": "Native REAL/DEMO request routing, Firebase/session verification, scoped media credential and operator bootstrap authentication.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/security/bootstrap/OperatorBootstrapAuthenticationFilter.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "65cb893a426eecbc6d6114d0e2fe673921b3b485b89b9180b216d8fe1a6984ee",
+      "purpose": "Native REAL/DEMO request routing, Firebase/session verification, scoped media credential and operator bootstrap authentication.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/security/bootstrap/OperatorBootstrapAuthenticationService.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "76e73a4f9b22877c0dcd21de613436e66898176aa76a255d7231713c944a021e",
+      "purpose": "Native REAL/DEMO request routing, Firebase/session verification, scoped media credential and operator bootstrap authentication.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/security/bootstrap/OperatorBootstrapTransportSecurity.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "fc29a12671c86fbf24a125d58c0a21c0ce46bf729f281c5767b9e00013f9eef6",
+      "purpose": "Native REAL/DEMO request routing, Firebase/session verification, scoped media credential and operator bootstrap authentication.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/security/bootstrap/OperatorBootstrapTokenInvalidException.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "839d9dd330866fc4caf1739b15319ab454d0ce0a66c47a33a410136ca0afc045",
+      "purpose": "Native REAL/DEMO request routing, Firebase/session verification, scoped media credential and operator bootstrap authentication.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/common/config/mongo/SessionMongoRoutingFilterTest.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "9eb2b49827859c4eb17c7feb96e377d5b6bac21482f3cecdc7d7541d1a16b908",
+      "purpose": "Native REAL/DEMO request routing, Firebase/session verification, scoped media credential and operator bootstrap authentication.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/accounts/security/firebase/FirebaseFilterOperatorTest.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "9cfd016405f8fbc7a80482002a72d43416ae240f25dff563b7313b886a1d2a03",
+      "purpose": "Native REAL/DEMO request routing, Firebase/session verification, scoped media credential and operator bootstrap authentication.",
+      "adaptation": "Mock the existing IntegrationClientIdentity contract rather than the integration service implementation; filter assertions unchanged."
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/media/service/MediaSessionAccessServiceTest.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "06ca371cad1f0e2322499dfae2d2758c291b92e11e9d9ba64cb9efa0216ba775",
+      "purpose": "Native REAL/DEMO request routing, Firebase/session verification, scoped media credential and operator bootstrap authentication.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/platform/controller/OperatorBootstrapControllerTest.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "1c3e9945be8b58e6ec64a6ddf90111d7943513f7e5c65b2af13dd130b8a3ae44",
+      "purpose": "Native REAL/DEMO request routing, Firebase/session verification, scoped media credential and operator bootstrap authentication.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/platform/security/bootstrap/OperatorBootstrapAuthenticationServiceTest.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "feecd9503175e1df20c49580861fd071b90a260115d039c703a19381e54fa3a3",
+      "purpose": "Native REAL/DEMO request routing, Firebase/session verification, scoped media credential and operator bootstrap authentication.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/platform/security/bootstrap/OperatorBootstrapAuthenticationFilterTest.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "8fcfe6d6780aa28d30f1c583e8906c8466a3d2e88efc551d368aec94f88c3bf2",
+      "purpose": "Native REAL/DEMO request routing, Firebase/session verification, scoped media credential and operator bootstrap authentication.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/access/api/AccessGrantEffect.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "f4b677ecf85ef237785a84062ee6757b88c14d7e6e87ae33bdd45e7ade3e7743",
+      "purpose": "Native account/media/chat access policies, administrator identity and narrow profile/chat lookups.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/access/api/ConsentAuthorization.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "e97f268d5531c444a8f9bf5b36f736f61a5175107342f89c57b36bf5908c513b",
+      "purpose": "Native account/media/chat access policies, administrator identity and narrow profile/chat lookups.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/access/api/RequiresPolicy.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "8504339c3176b5682b364d7cb4da1ae192adcdc0c9979eb15fcdcab57904b6ce",
+      "purpose": "Native account/media/chat access policies, administrator identity and narrow profile/chat lookups.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/access/api/RequiresPolicies.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "272f57e1b466c1562aba12c03d5c29e000aaf8644912b7116bac791349eb06b9",
+      "purpose": "Native account/media/chat access policies, administrator identity and narrow profile/chat lookups.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/access/document/AccessGrant.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "5fa02e85ac84f2dd0e199fdda3a0f01ed602a807715d6b2fcac162f53b051fde",
+      "purpose": "Native account/media/chat access policies, administrator identity and narrow profile/chat lookups.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/access/document/AccessPolicyDefinition.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "f07bc5b0c9ffebe5b13e13fe45a7370ae6eae01553c122345a895ec1d894ac46",
+      "purpose": "Native account/media/chat access policies, administrator identity and narrow profile/chat lookups.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/access/repository/AccessGrantsRepository.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "0b805298e435fb83f3cf625c9c2f41dbbbee2d1e5610d84e6c7dd481e5f174ef",
+      "purpose": "Native account/media/chat access policies, administrator identity and narrow profile/chat lookups.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/access/repository/AccessPolicyDefinitionsRepository.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "e7a762a348b425abfddcd405764086d8c0371c19a746ea4284891ff32ff362ac",
+      "purpose": "Native account/media/chat access policies, administrator identity and narrow profile/chat lookups.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/access/security/AccessPolicy.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "a6ef40fa72f0efc57f18417954e844c57258f1b6d9ac362ce947c07ecce53eda",
+      "purpose": "Native account/media/chat access policies, administrator identity and narrow profile/chat lookups.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/access/security/AccessPolicyCondition.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "505f1b14986a3e5b6f8cf43c635e7d06dfc673c5b6c0c632fb5cc71f033c7714",
+      "purpose": "Native account/media/chat access policies, administrator identity and narrow profile/chat lookups.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/access/security/AccessPolicyConditionRegistry.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "1fdba24212f17fe87c10a5cd54f28d90e524179a7423d873e40248c241160593",
+      "purpose": "Native account/media/chat access policies, administrator identity and narrow profile/chat lookups.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/access/security/AccessPolicyContext.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "624f3b7ac49ceb44464245a33a46011dee9dce3ea72ffbc2c3a6d217731c8b7f",
+      "purpose": "Native account/media/chat access policies, administrator identity and narrow profile/chat lookups.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/access/security/condition/ActorMatchesSubjectCondition.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "73d59fffc223ccf213f4489ce3a87a16a7c1bf16a0aea1dc3e1e1ab4623bddb6",
+      "purpose": "Native account/media/chat access policies, administrator identity and narrow profile/chat lookups.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/access/security/condition/ActorDiffersFromSubjectCondition.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "8e4233a8400f7c3e94fe7cfd3fe5323735eff5984ea78935d24c7ea76ec927bb",
+      "purpose": "Native account/media/chat access policies, administrator identity and narrow profile/chat lookups.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/access/security/condition/ActorCanAccessChatCondition.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "42acddb962d4257c54f2fcfb9b3ff708b4f8d10a76a867a6c089bbc07e543875",
+      "purpose": "Native account/media/chat access policies, administrator identity and narrow profile/chat lookups.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/access/security/condition/ActorCanManageSupportChatCondition.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "b659d0f914e8e0c4150d74086f8552d07a7ff117b57f13b1a1080e94b8fa73e3",
+      "purpose": "Native account/media/chat access policies, administrator identity and narrow profile/chat lookups.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/access/security/condition/ExplicitAllowCondition.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "187eb122de12fd463aae00aa69c912ac15ee776c336d479d40c2749a8f8a8b5c",
+      "purpose": "Native account/media/chat access policies, administrator identity and narrow profile/chat lookups.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/access/security/condition/NoExplicitDenyCondition.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "a766f6e17d9530c56c7fcfec1ea1f2322ff8b7f9e39662073124654e087759f7",
+      "purpose": "Native account/media/chat access policies, administrator identity and narrow profile/chat lookups.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/administration/api/AdministratorClassification.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "346e1280bf5f5233472d346a9fc3ef4f530bdb62a09579b410a4c9b9e1a3331e",
+      "purpose": "Native account/media/chat access policies, administrator identity and narrow profile/chat lookups.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/administration/api/AdministrativeActors.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "946401f03547ac44a5a69675bc88eb877e22022a5304c17add70f86dc0c9539f",
+      "purpose": "Native account/media/chat access policies, administrator identity and narrow profile/chat lookups.",
+      "adaptation": "Retain administrator account resolution; omit unused base-group selection method."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/chat/service/ChatDirectoryService.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "3af1714fc81934a8c87c14ccf9a7bf5b00f1816435d27c93ae6b08d82fff11d8",
+      "purpose": "Native account/media/chat access policies, administrator identity and narrow profile/chat lookups.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/service/AccountMediaSessionService.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "9368a76b9b65eee21bfc3f80813481a7a724c9e68ab587d8bb329de88d83d7f7",
+      "purpose": "Native account/media/chat access policies, administrator identity and narrow profile/chat lookups.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/common/security/policy/PolicyExpressionEvaluator.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "12dbdaafdd1b5388631b50ca688c648010da5f6bca2f1ec070015a545b2fb8c2",
+      "purpose": "Native account/media/chat access policies, administrator identity and narrow profile/chat lookups.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/common/security/policy/RequiresPolicySupport.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "87010c36607bc4461a17141e61611e6966e169d21e4d5c6bae163b2ca7f101c6",
+      "purpose": "Native account/media/chat access policies, administrator identity and narrow profile/chat lookups.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/common/security/policy/RequiresPolicyMethodInterceptor.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "c455dfc4f029444e8790f7e01cedacf353bfc9276a88d89ba1241e8eae32a898",
+      "purpose": "Native account/media/chat access policies, administrator identity and narrow profile/chat lookups.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/common/security/policy/RequiresPolicyAdvisor.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "cd6881a7da6632436c953500e886148f0d6a2c24132dafbf50a969086ed44e31",
+      "purpose": "Native account/media/chat access policies, administrator identity and narrow profile/chat lookups.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/access/api/AccessPolicyKeys.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "9790fa72d9956501263d5e5256a6cd1fc226dd5cf5e101a0c4a50990556feae3",
+      "purpose": "Native account/media/chat access policies, administrator identity and narrow profile/chat lookups.",
+      "adaptation": "Retain native keys for account, chat, consent and media; omit product policies."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/access/api/AccessPermissions.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "df5a1571b1cfc1242c1e320e631fdfaf57032d42385a5da2a88b94da6288b97e",
+      "purpose": "Native account/media/chat access policies, administrator identity and narrow profile/chat lookups.",
+      "adaptation": "Select native account/chat/media/consent permission methods; omit event/asset membership APIs."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/access/security/AccessPolicyData.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "3414aa894498142e1e6fda43d54847af8825c2f9c1a28fc612d6471e851c2c6d",
+      "purpose": "Native account/media/chat access policies, administrator identity and narrow profile/chat lookups.",
+      "adaptation": "Keep chat and explicit-grant facts; omit product membership facts."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/access/security/AccessControlService.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "936ed4128c72d8c63bdba70a5d5851d17b418773377ce4b0f71807f528824c1d",
+      "purpose": "Native account/media/chat access policies, administrator identity and narrow profile/chat lookups.",
+      "adaptation": "Retain native policy/grant compilation, cache invalidation, expiry and account/chat authorization; omit event/asset/member methods and their facts dependency."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/api/ProfileDirectory.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "43889738211724417481446d766470379c9c85beb208741ef7b3023b12fcd6cd",
+      "purpose": "Native account/media/chat access policies, administrator identity and narrow profile/chat lookups.",
+      "adaptation": "Select existing single-account and batched profile reads; omit product roster queries."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/api/ProfileSummaries.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "45291e43aa0b3eac30bed57ecdc5dac107f3a8d825847657d9a27d0c7c63d850",
+      "purpose": "Native account/media/chat access policies, administrator identity and narrow profile/chat lookups.",
+      "adaptation": "Select existing single-account and batched profile reads; omit product roster queries."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/service/ProfileDirectoryService.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "15c0c437ec869d05a0290045ba8bb1e5be770773b89a1383d2a7830a5078a390",
+      "purpose": "Native account/media/chat access policies, administrator identity and narrow profile/chat lookups.",
+      "adaptation": "Select existing account and batch reads only; no product queries or replacement repository."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/administration/dto/AdminDtos.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "5308b71ab7f75caf15797010d33ec198a0deeaf1c3ac73893d2d47b225af931b",
+      "purpose": "Native account/media/chat access policies, administrator identity and narrow profile/chat lookups.",
+      "adaptation": "Select native administrator identity DTO only; no product admin screens or parameter DTOs."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/administration/service/AdministrativeActorService.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "359271f14db399428d973db36cbf6d109cb2228d226726df65b2496747b31977",
+      "purpose": "Native account/media/chat access policies, administrator identity and narrow profile/chat lookups.",
+      "adaptation": "Retain administrator account authorization and profile presentation; omit selection of MyScoutee base-group admin profiles. Implement the unchanged stateless classification API on this existing owner."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/chat/repository/ChatsRepository.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "d7c21651f053b4ca0bcf8d5b131c0da48ca096780a68acf8b8346eafd7b01219",
+      "purpose": "Native account/media/chat access policies, administrator identity and narrow profile/chat lookups.",
+      "adaptation": "Omit unused event lookup; retained chat queries are unchanged."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/access/security/ChatPolicyFacts.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "7ec42c2548af7056f8ce0b511cb90c9ac55f45c393252c7a32f74008954f85e0",
+      "purpose": "Native account/media/chat access policies, administrator identity and narrow profile/chat lookups.",
+      "adaptation": "Template omits community-case authorization branch and dependency. Native personal/support chat ownership, membership and administrator rules are retained; MyScoutee code is unchanged."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/help/document/HelpCenterRevision.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "84d2790c110abc21237e3a35d37780b6f453b59e12a37aa1fe7e3d96c54b68f9",
+      "purpose": "Native public help, terms, privacy and screen guide content, with persisted consent.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/help/document/HelpCenterGuideField.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "9f5b5afe77ab881c6acb87a2027bcbad754a2701d674b4cfa1181db53a90878c",
+      "purpose": "Native public help, terms, privacy and screen guide content, with persisted consent.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/help/repository/HelpCenterRevisionsRepository.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "493395d5f1fac6a0ef4fe6a9d0d7b9dd44b3e1c079cd3cfc20fff7c06e94f55a",
+      "purpose": "Native public help, terms, privacy and screen guide content, with persisted consent.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/help/repository/HelpCenterGuideFieldsRepository.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "4592f615b7351ec23db314b8165c0856b4bde5a873af9ce5c9b94b398dc886a9",
+      "purpose": "Native public help, terms, privacy and screen guide content, with persisted consent.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/help/dto/HelpCenterDtos.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "8869c3c2a9ca76945847a5f62911c5c67900d7f0bb3ba7b65a9f264843bafca6",
+      "purpose": "Native public help, terms, privacy and screen guide content, with persisted consent.",
+      "adaptation": "Omit admin write DTOs; retain public content and consent response shapes."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/help/api/HelpCenter.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "77298f4f212d5479c3e309a92a5cbc942eb32480a7e13d4a3a2da03a43105d7e",
+      "purpose": "Native public help, terms, privacy and screen guide content, with persisted consent.",
+      "adaptation": "Keep public reads/consent only; template has no revision administration UI."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/help/api/PublicHelpContent.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "44bf7297b8d7949d40715f6af4a0b530e584ae54e80a0f9d2b30b4b8709e9d50",
+      "purpose": "Native public help, terms, privacy and screen guide content, with persisted consent.",
+      "adaptation": "Public template documents have deployment scope; no community/base-group argument."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/help/controller/HelpCenterController.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "78a6dabb692c538a21e40727ea0d38fe8ca0a06b1724fad97d183034c0de0cf3",
+      "purpose": "Native public help, terms, privacy and screen guide content, with persisted consent.",
+      "adaptation": "Omit community scope request parameter; retain native public routes and consent policy annotation."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/help/service/HelpCenterService.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "270013d8b3deabc63df2b9e528771b0801114e56b294f2a6d1a04ebe17e0ffdb",
+      "purpose": "Native public help, terms, privacy and screen guide content, with persisted consent.",
+      "adaptation": "Select native public document/guide reads and consent methods. Omit admin revision writes and community scope; retain stored revision model, language/context selection, optional-consent validation and response mapping."
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/administration/service/AdministrativeActorServiceTest.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "4dae32a09df5e6842cf7ff9b7269270292216df418e6afc91335090756c96674",
+      "purpose": "Preserve existing administrator account, stored-profile and REAL/DEMO authorization tests.",
+      "adaptation": "Replace the MyScoutee group-profile positive test with standalone administrator-account resolution; retain unauthorized account/profile and REAL/DEMO rejection tests."
+    },
+    {
+      "path": "server/docker/conf/mongodb/myscoutee_db/accessPolicyDefinitions.json",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "e697ec22c4f622878f69760cebde9a553974d3632ff4c066f803367e87951901",
+      "purpose": "Native retained account/chat/consent/media-write policy seed; rule predicates remain unchanged.",
+      "adaptation": "Select only the 12 policies implemented in this checkpoint; product policies omitted. Media-read policy is deferred with the media visibility implementation."
     }
   ]
 }
