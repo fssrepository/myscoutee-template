@@ -52,6 +52,8 @@ class DeletedAccountPurgeServiceTest {
                 mock(ProfileDirectory.class), Optional.empty(), List.of()));
         ReflectionTestUtils.setField(service, "helpPrivacy", new HelpPrivacyService(mongo));
         ReflectionTestUtils.setField(service, "notificationPrivacy", new NotificationPrivacyService(mongo));
+        ReflectionTestUtils.setField(service, "integrationPrivacy",
+                new com.raxim.myscoutee.domain.integrations.service.IntegrationPrivacyService(mongo));
     }
 
     @Test void retainedCleanupFinishesBeforeDeletingIdentityAndClearsJobIdentifiers() {
@@ -59,6 +61,8 @@ class DeletedAccountPurgeServiceTest {
         var order = inOrder(media, chat, mongo, users);
         order.verify(media).deletePublicObjectOrThrow("avatar.webp");
         order.verify(chat).purgeUserChatActivity(user.getId());
+        order.verify(mongo).remove(any(Query.class), eq("integrationTokens"));
+        order.verify(mongo).remove(any(Query.class), eq("mcpAuthorizations"));
         order.verify(mongo).remove(any(Query.class), eq("privacyConsents"));
         order.verify(mongo).remove(any(Query.class), eq("userNotifications"));
         order.verify(users).delete(user);

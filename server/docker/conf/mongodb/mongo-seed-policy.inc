@@ -114,6 +114,26 @@ ensure_collection_indexes() {
   local collection_name="$2"
 
   case "${collection_name}" in
+    integrationTokens|mcpOAuthClients|mcpAuthorizations)
+      mongosh \
+        --host "${mongo_host}" \
+        --port "${mongo_port}" \
+        --username "${mongo_username}" \
+        --password "${mongo_password}" \
+        --authenticationDatabase "${target_db}" \
+        --quiet \
+        "${target_db}" \
+        --eval "
+db.getCollection('integrationTokens').createIndex({ tokenHash: 1 }, { name: 'integration_token_hash', unique: true });
+db.getCollection('integrationTokens').createIndex({ ownerUserId: 1, createdAtIso: -1 }, { name: 'integration_token_owner_created' });
+db.getCollection('mcpOAuthClients').createIndex({ createdAt: 1 }, { name: 'createdAt' });
+db.getCollection('mcpOAuthClients').createIndex({ expiresAt: 1 }, { name: 'expiresAt', expireAfterSeconds: 0 });
+db.getCollection('mcpAuthorizations').createIndex({ clientId: 1 }, { name: 'clientId' });
+db.getCollection('mcpAuthorizations').createIndex({ accessHash: 1 }, { name: 'accessHash' });
+db.getCollection('mcpAuthorizations').createIndex({ refreshHash: 1 }, { name: 'refreshHash' });
+db.getCollection('mcpAuthorizations').createIndex({ expiresAt: 1 }, { name: 'expiresAt', expireAfterSeconds: 0 });
+" >/dev/null
+      ;;
     users)
       mongosh \
         --host "${mongo_host}" \
@@ -298,8 +318,8 @@ ensure_collection_versions() {
 }
 
 ensure_runtime_indexes() {
-  # Selected collection indexes are created by db_init.js and per-file imports.
-  :
+  local target_db="$1"
+  ensure_collection_indexes "${target_db}" "integrationTokens"
 }
 
 ensure_collection_indexes_before_import() {

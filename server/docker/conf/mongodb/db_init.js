@@ -60,6 +60,15 @@ Array.from(new Set(configuredDatabases)).forEach(databaseName => {
     { geometry: '2dsphere' },
     { name: 'country_partition_geometry' }
   );
+  portalDb.integrationTokens.createIndex({ tokenHash: 1 }, { name: 'integration_token_hash', unique: true });
+  portalDb.integrationTokens.createIndex({ ownerUserId: 1, createdAtIso: -1 }, { name: 'integration_token_owner_created' });
+  portalDb.mcpOAuthClients.createIndex({ createdAt: 1 }, { name: 'createdAt' });
+  portalDb.mcpOAuthClients.createIndex({ expiresAt: 1 }, { name: 'expiresAt', expireAfterSeconds: 0 });
+  portalDb.mcpAuthorizations.createIndex({ clientId: 1 }, { name: 'clientId' });
+  portalDb.mcpAuthorizations.createIndex({ accessHash: 1 }, { name: 'accessHash' });
+  portalDb.mcpAuthorizations.createIndex({ refreshHash: 1 }, { name: 'refreshHash' });
+  portalDb.mcpAuthorizations.createIndex({ expiresAt: 1 }, { name: 'expiresAt', expireAfterSeconds: 0 });
+
   portalDb.users.createIndex(
     { syncKey: 1 },
     { name: 'users_sync_key', unique: true, sparse: true }

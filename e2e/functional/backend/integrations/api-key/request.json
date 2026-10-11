@@ -1,0 +1,11 @@
+{
+  "name": "owned API key enforces read scope client binding and revocation without affiliate fields",
+  "group": "integrations",
+  "order": 11,
+  "method": "GET",
+  "path": "{{apiPrefix}}/integrations/settings",
+  "headers": { "X-App-Session-Kind": "demo", "X-Demo-User-Id": "{{userId}}" },
+  "expectedStatus": 200,
+  "maxMs": 5000,
+  "qaBranches": ["T-INTEGRATION-002"]
+}

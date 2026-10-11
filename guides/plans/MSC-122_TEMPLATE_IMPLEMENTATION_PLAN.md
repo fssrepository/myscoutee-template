@@ -214,8 +214,9 @@ deep-link behavior. A working `local` build alone does not close frontend work.
    schedule is seeded in all three physical seed sets. Twenty-four focused
    standard tests, one embedded MongoDB retry/persistence test and the ten dev
    HTTP contract cases pass; see `MSC122_TEMPLATE_ACCOUNT_PURGE_20261011.json`.
-   Email/integration cleanup must join this existing worker when those owners
-   are installed. Provider callbacks and full HTTP/UI/REAL-DEMO/KVM deletion
+   API/MCP credential cleanup now joins the same worker, with embedded retry
+   and retained-owner checks in `MSC122_TEMPLATE_API_MCP_20261011.json`.
+   Email cleanup must join this worker when its owner is installed. Provider callbacks and full HTTP/UI/REAL-DEMO/KVM deletion
    qualification remain pending; this checkpoint does not close the step.
 
 9. **Complete personal and support communication — IN PROGRESS.**
@@ -243,7 +244,7 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     image upload/read/delete, unauthorized media denial, locale changes and valid,
     invalid and disabled-policy location cases across the applicable modes.
 
-12. **Complete API and MCP integration without affiliate functionality — PENDING.**
+12. **Complete API and MCP integration without affiliate functionality — IN PROGRESS.**
     Select the existing token/OAuth, scopes, revocation, API-settings popup,
     integration access and MCP server/transport needed for ChatGPT and retained
     member/admin actions. Reuse their current owners and errors. Include supported
@@ -251,6 +252,13 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     and admin capabilities distinct; omit affiliate registration, attribution,
     business summaries and payment/network accounting. Close with native client
     authorization, allowed requests, denied scopes, revocation and an MCP round trip.
+    The dev backend selection passes 54 focused standard and two embedded JUnit
+    tests, eight-index Mongo checks and all thirteen HTTP collection cases, including
+    API keys and both manual/public OAuth clients. Source fix `c7b2ba032` removes
+    the entire Java index initializer; selected indexes belong to Mongo init, seed
+    policy and migration012. See `MSC122_TEMPLATE_API_MCP_20261011.json`. The API
+    settings/authorization UI, privileged operations and full MCP server/ChatGPT
+    round trip remain pending; this backend checkpoint does not close the step.
 
 13. **Build the frontend foundation and both adapter modes — PENDING.**
     Work inside the existing local frontend submodule and reuse the shared
@@ -379,6 +387,11 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     stop, systemd and privileged-helper boundaries, TLS, permissions, fresh
     credentials, data paths, service readiness, backup/restore and removal behavior.
     Keep generic operational capabilities needed by the minimal installation.
+    Before release qualification, fix the native historical help-migration input:
+    migration008 expects active help v3 while the current seed activates v5. Keep
+    released migration checksums intact; do not copy that obsolete help/product
+    migration chain into the template. Track the native failure in
+    `MSC122_INTEGRATION_MONGO_INDEXES_20261011.json`.
     Separate mixed product-specific package names, image/service inventories,
     seed selections and deployment paths at the existing MyScoutee owners first
     when their current inputs cannot already express the template. Copy the

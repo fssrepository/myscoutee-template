@@ -1762,10 +1762,10 @@
     },
     {
       "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/repository/UsersRepository.java",
-      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
       "upstreamSha256": "5180d15df42b6c92506d50056a07338a229f9aec98d8bcf5e0251980354a2f17",
-      "purpose": "Native minimal profile, session and account lifecycle endpoints.",
-      "adaptation": "Select native account/session/purge/notification/support lookups and the targeted location-field update."
+      "purpose": "Native API/MCP security wiring and owner access.",
+      "adaptation": "Selected member lookups and native atomic integrationAccess compare-and-set; no product repository queries."
     },
     {
       "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/service/HomeUserProfileService.java",
@@ -2022,16 +2022,16 @@
     {
       "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/common/config/WebSecurityConfig.java",
       "upstreamSha256": "61cf19c7cb33c7ca6162720c94eb649f8862b80364a14c5b34273477311cce55",
-      "purpose": "Compose native REAL/DEMO, Firebase, operator and private-media authentication with method policies.",
-      "adaptation": "Omit community workspace and not-yet-selected API token filters. Retain native API authority guards. Public routes cover only selected capabilities; native filter order, session checks and operator/admin authority are retained.",
-      "sourceRevision": "cfa26b923c515cc683ee329b38416d3e8f578d2a"
+      "purpose": "Native API/MCP security wiring and owner access.",
+      "adaptation": "Selected template chain; wire native integration token filter before Firebase and retain exact public OAuth metadata/register/token paths. Omit product group/admin-client filters until their retained composition is installed.",
+      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac"
     },
     {
       "path": "server/projects/profile/src/main/resources/mongo-domain-types.properties",
       "upstreamSha256": "63407d90b6b19a6eb617067bbda445d93c05c6d30d5a9d68286a57274e72c4b3",
-      "purpose": "Preserve original persisted aliases for selected types only.",
-      "adaptation": "Select aliases whose root class and nested declarations exist in the minimal backend; no product classes are copied to satisfy the alias table.",
-      "sourceRevision": "cfa26b923c515cc683ee329b38416d3e8f578d2a"
+      "purpose": "Native minimal integration storage, lifecycle and migration ownership.",
+      "adaptation": "Select native aliases whose classes are retained, including token/client/grant storage aliases; omit aliases for absent product types.",
+      "sourceRevision": "c7b2ba03254314a876a4b599a811d02e7592896f"
     },
     {
       "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/common/config/WebSecurityConfigBootstrapTest.java",
@@ -2203,10 +2203,10 @@
     },
     {
       "path": "server/docker/conf/mongodb/db_init.js",
-      "sourceRevision": "cfa26b923c515cc683ee329b38416d3e8f578d2a",
-      "upstreamSha256": "263fcdf2629fb6c7e756aec9e38f06a0b940aa8bc6dd5f7dd3719f58237d1ce5",
-      "purpose": "Native database users, selected collections and native indexes.",
-      "adaptation": "Select collections required by the retained account/chat/help/notification/platform models. Omit product collections and the unused host-tier index."
+      "sourceRevision": "c7b2ba03254314a876a4b599a811d02e7592896f",
+      "upstreamSha256": "6ea98792cf130091dbd33807b8b052da9043459a9304280c8f5cf56ea69206a4",
+      "purpose": "Native minimal integration storage, lifecycle and migration ownership.",
+      "adaptation": "Select retained account/chat/help/notification/platform/integration collections and indexes; omit product collections and unused host-tier index."
     },
     {
       "path": "server/docker/conf/mongodb/mongo_import.sh",
@@ -2259,10 +2259,10 @@
     },
     {
       "path": "server/docker/conf/mongodb/mongo-seed-policy.inc",
-      "upstreamSha256": "6220b6dd4426d2a948e851f352938109b8f38989b89ce546ce829728353640cc",
-      "sourceRevision": "0d23e240cd95695ac5621ae0a4cd18bce45f48db",
-      "purpose": "Project-owned seed policy, separated from the common import engine in the source backend.",
-      "adaptation": "Select minimal collections/indexes and schema-5 insert-only deployment configuration. Omit product versions, payment, Registry, affinity and community migrations/indexes."
+      "upstreamSha256": "209a73dc1740d2a79f65bd999e40baebf9cc13d709e6e7252862a4deae7911aa",
+      "sourceRevision": "c7b2ba03254314a876a4b599a811d02e7592896f",
+      "purpose": "Native minimal integration storage, lifecycle and migration ownership.",
+      "adaptation": "Select minimal collection/index policy, including token/client/grant runtime indexes without seed rows; retain schema-5 insert-only configuration. Omit product versions, payment, Registry, affinity, community, subscriptions and webhook indexes."
     },
     {
       "path": "server/docker/scripts/prepare_dev_runtime_directories.sh",
@@ -2421,9 +2421,9 @@
     {
       "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/service/DeletedAccountPurgeService.java",
       "upstreamSha256": "127171db7d7a865c7c27ff5674ba27a829f3f90f839baeea50d11975409218a3",
-      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
-      "purpose": "Native account lifecycle, durable purge and retained-domain cleanup dependency.",
-      "adaptation": "Select native durable account/media/chat/consent/notification/help cleanup, leases, retry and stage ordering. Omit absent product actions/global identity and not-yet-installed email/integration stages. Preserve the stored job schema and rejection of unfinished product cleanup. Add those retained owners when their capabilities are installed."
+      "sourceRevision": "c7b2ba03254314a876a4b599a811d02e7592896f",
+      "purpose": "Native minimal integration storage, lifecycle and migration ownership.",
+      "adaptation": "Select native durable account/media/chat/integration/consent/notification/help cleanup, leases, retry and stage ordering. Omit absent product actions/global identity and not-yet-installed email stage. Preserve job schema and rejection of unfinished product cleanup."
     },
     {
       "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/api/SchedulingPolicy.java",
@@ -2438,6 +2438,272 @@
       "upstreamSha256": "b3df802a5ff7b3c099a2e11e9c8fdcdb1fd58913b0a2d8fd3054de27ccd72e1f",
       "purpose": "Native no-community job scope/bootstrap and installed-owner error propagation regressions.",
       "adaptation": "Select the two generic tests; omit native event/asset/group-owner implementation tests."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/dto/McpDtos.java",
+      "upstreamSha256": "580159aa682533937e67779f100dea80b9f35319ce830dd7730b68abe1220840",
+      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
+      "purpose": "Native API key and MCP authorization for retained personal chat and notification access.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/document/IntegrationToken.java",
+      "upstreamSha256": "fdec60fb3d43cbfda06f6149f1a0f6b1dc4b961b4be7aa604a1c86abaa35d00a",
+      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
+      "purpose": "Native API key and MCP authorization for retained personal chat and notification access.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/document/McpAuthorization.java",
+      "upstreamSha256": "530bbc1571c2b487634ee176d45b350246787a8ac06f82f9be3743d463666187",
+      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
+      "purpose": "Native API key and MCP authorization for retained personal chat and notification access.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/document/McpOAuthClient.java",
+      "upstreamSha256": "b99936016ea0c33eb59cc4fe3e80bca549f0555df3c83375372964e2fd187443",
+      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
+      "purpose": "Native API key and MCP authorization for retained personal chat and notification access.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/repository/IntegrationTokensRepository.java",
+      "upstreamSha256": "887783e31356d2fca5bf841c943803475635c41bc8e8623e71895f0620708e99",
+      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
+      "purpose": "Native API key and MCP authorization for retained personal chat and notification access.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/repository/McpAuthorizationRepository.java",
+      "upstreamSha256": "88936ab34081e885dd6213b86dc74c9d332263b3faa634d9c3170a5a1336e9af",
+      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
+      "purpose": "Native API key and MCP authorization for retained personal chat and notification access.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/repository/McpOAuthClientsRepository.java",
+      "upstreamSha256": "5bb67594b3c50eb5a908861a47fc810af62a7a7598a430046a3366010ff07e15",
+      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
+      "purpose": "Native API key and MCP authorization for retained personal chat and notification access.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/service/IntegrationPublicEndpointResolver.java",
+      "upstreamSha256": "8d9d4ea049e745c68c1fd3d0eb0594fcc0a17bf34aa958c680aee400cf28cad3",
+      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
+      "purpose": "Native API key and MCP authorization for retained personal chat and notification access.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/service/IntegrationRoleAccessService.java",
+      "upstreamSha256": "1b2c7c06e466067a367fd2b7b5e7d79c91a1fb77840aa428682b7a47650b550f",
+      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
+      "purpose": "Native API key and MCP authorization for retained personal chat and notification access.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/service/McpAuthorizationService.java",
+      "upstreamSha256": "f72413c10c3c9f394cf4037c8f0ff79daad5e99d6cbed5a777ec5d1db442bd12",
+      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
+      "purpose": "Native API key and MCP authorization for retained personal chat and notification access.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/service/McpWorkspaceAccess.java",
+      "upstreamSha256": "960013665e495615152fced162c7dc0a6ac923144448de2e04a8cba5a2cf6bfc",
+      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
+      "purpose": "Native minimal integration composition and protocol regression coverage.",
+      "adaptation": "Expose the existing workspace admission interface to the integration authentication filter; no workspace implementation is installed."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/service/IntegrationProductCapabilities.java",
+      "upstreamSha256": "0c8ce41a6c8441452d52375fdee3219f06deef2e48adeb4171f3ed02548c3d8c",
+      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
+      "purpose": "Native API key and MCP authorization for retained personal chat and notification access.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/controller/IntegrationReadSupport.java",
+      "upstreamSha256": "613fc2cd16c8d6c1337ec224ba3c582866dec66f3832d3c16567e79c9380d635",
+      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
+      "purpose": "Native API key and MCP authorization for retained personal chat and notification access.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/controller/IntegrationCommunicationReadController.java",
+      "upstreamSha256": "59e1f6e2ad9a81dcd97c8a0040d78bbb70543b62b10eb2c52cb635edddd0142c",
+      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
+      "purpose": "Native API key and MCP authorization for retained personal chat and notification access.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/controller/IntegrationSettingsController.java",
+      "upstreamSha256": "ae18ca955a2e1e8cfc2c412147ae9d15542a4ddf6a3beefca8bb6c6f83e93eaa",
+      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
+      "purpose": "Native API key and MCP authorization for retained personal chat and notification access.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/controller/McpSettingsController.java",
+      "upstreamSha256": "4adf2c874b8999e3df318e4a8e47bfa845cb14b3e7b5c0e4ce8305da548ee59f",
+      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
+      "purpose": "Native API key and MCP authorization for retained personal chat and notification access.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/controller/McpOAuthController.java",
+      "upstreamSha256": "71a457d05ca7c6900d2baf55225c9149b2ccb6f1e860cb47f1ea2efc6ddedbb3",
+      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
+      "purpose": "Native API key and MCP authorization for retained personal chat and notification access.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/api/AccountIntegrationAccess.java",
+      "upstreamSha256": "2267e2cd9a36e4af57839343358da19436713de5532212d9922579c246dfea2c",
+      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
+      "purpose": "Native API key and MCP authorization for retained personal chat and notification access.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/service/AccountIntegrationAccessService.java",
+      "upstreamSha256": "b6ffcd681ce5ee4bb7da8531b4bc5201c0bb0f06b5296e4f03e8e9d3b9d24acb",
+      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
+      "purpose": "Native API key and MCP authorization for retained personal chat and notification access.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/dto/IntegrationDtos.java",
+      "upstreamSha256": "61cf31ce06579a7cfb3ff53392c1edd26afd51915cd36a11adee844a7eac6e3c",
+      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
+      "purpose": "Native API key and MCP authorization for retained personal chat and notification access.",
+      "adaptation": "Select native API token/access/connect DTOs; omit affiliate/participant summaries and product sync/watch DTOs. Retained token/model fields keep their contracts."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/service/IntegrationTokenService.java",
+      "upstreamSha256": "8443ef7ac3747da089fd55913b051f3e573b111cda19d5a74c096064cf272705",
+      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
+      "purpose": "Native API key and MCP authorization for retained personal chat and notification access.",
+      "adaptation": "Retain native hashing, one-client binding, expiration, token limits, scope and revocation. Omit absent product webhook-subscription cleanup."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/service/IntegrationSettingsService.java",
+      "upstreamSha256": "6c4873b4b34bc9def2cb4324e1d2697f559dccc59ae3d2f90ee5b3720f4af1d5",
+      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
+      "purpose": "Native API key and MCP authorization for retained personal chat and notification access.",
+      "adaptation": "Select native combined token/MCP settings and optimistic access updates; omit absent affiliate/participant summary provider and response fields."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/service/IntegrationCapabilitiesService.java",
+      "upstreamSha256": "54276e0085f357c03e56f9d8e3f3a78a5cd51ab2087ba8104ab519a85ca0c6dc",
+      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
+      "purpose": "Native API key and MCP authorization for retained personal chat and notification access.",
+      "adaptation": "Retain native personal operation discovery and role/access checks. No product operator reports or uninstalled admin overview are advertised. Generic optional capability interface remains for extensions."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/config/IntegrationTokenAuthenticationFilter.java",
+      "upstreamSha256": "2f34e03676020a2d7f552be936fcdca5e5890eff2a3682211f8bdabf404ac8b5",
+      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
+      "purpose": "Native API key and MCP authorization for retained personal chat and notification access.",
+      "adaptation": "Retain native token/MCP authentication and fixed owner identity. Omit community profile re-selection; use the existing optional MCP workspace admission contract for any stored nonpersonal owner. Personal accounts require no community bean."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/controller/IntegrationApiController.java",
+      "upstreamSha256": "5dac183af9b2a7baeddf29dc87b84613051896a99426bcd9392b6e2643239ddf",
+      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
+      "purpose": "Native API key and MCP authorization for retained personal chat and notification access.",
+      "adaptation": "Select native /connect; omit product event/asset/campaign synchronization, invites and webhooks."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/service/DeploymentSettingsService.java",
+      "upstreamSha256": "cd72ba98f2bdaf908cffdff3de89e8efa107420663b4b6c171c0d731c60e0ef5",
+      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
+      "purpose": "Native minimal integration composition and protocol regression coverage.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/integrations/service/IntegrationTokenServiceTest.java",
+      "upstreamSha256": "1525f308516708bcd9f2ac108d34fa8fc179a502cc059072b48e940fcbfab24a",
+      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
+      "purpose": "Native minimal integration composition and protocol regression coverage.",
+      "adaptation": "Use selected token owner without absent product webhook storage."
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/integrations/service/McpAuthorizationServiceTest.java",
+      "upstreamSha256": "72455a3c6c9bfb9c90e38f5c286fd32bc13c146fb47805930d39c80bcb22d08a",
+      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
+      "purpose": "Native minimal integration composition and protocol regression coverage.",
+      "adaptation": "Select personal OAuth/PKCE/refresh/revocation/realm and no-workspace regressions. Omit three community workspace implementation tests and webhook dependency."
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/integrations/service/IntegrationSettingsServiceTest.java",
+      "upstreamSha256": "71aa309ad335c77f2578b9df1209f268255854292c6b76e3331ae7766af27482",
+      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
+      "purpose": "Native minimal integration composition and protocol regression coverage.",
+      "adaptation": "Exercise native atomic access settings without affiliate summary dependency."
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/integrations/controller/McpOAuthControllerTest.java",
+      "upstreamSha256": "24d0fe7ef4bce35610f819061aa41015f687cef4711167927e68fd66523f6db6",
+      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
+      "purpose": "Native minimal integration composition and protocol regression coverage.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/integrations/config/IntegrationTokenAuthenticationFilterTest.java",
+      "upstreamSha256": "b77414577dcbb54878033f6bcdf814dc8d3bd3f33148681c415c10dca381b190",
+      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
+      "purpose": "Native API/MCP security wiring and owner access.",
+      "adaptation": "Select personal key/OAuth authentication, invalid-token and unrelated-route checks without community owners."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/api/IntegrationPrivacy.java",
+      "sourceRevision": "c7b2ba03254314a876a4b599a811d02e7592896f",
+      "upstreamSha256": "ab68c3644dbb7be0be97e135c521f2318ed07ae9ec9f2f0888704afa4ed60554",
+      "purpose": "Native minimal integration storage, lifecycle and migration ownership.",
+      "adaptation": null
+    },
+    {
+      "path": "packaging/scripts/run-data-migrations.js",
+      "sourceRevision": "c7b2ba03254314a876a4b599a811d02e7592896f",
+      "upstreamSha256": "982fc266966aeb29fef3bb5b5e713722d1a4fabb79bb21cafae39c1532298ded",
+      "purpose": "Native minimal integration storage, lifecycle and migration ownership.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/integrations/service/IntegrationStorageTest.java",
+      "sourceRevision": "c7b2ba03254314a876a4b599a811d02e7592896f",
+      "upstreamSha256": "6286c9ab23797e27eb5b3928fb0898772fad87c4c3b4d253b3410a1cfe4cc1f0",
+      "purpose": "Native minimal integration storage, lifecycle and migration ownership.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/service/IntegrationPrivacyService.java",
+      "sourceRevision": "c7b2ba03254314a876a4b599a811d02e7592896f",
+      "upstreamSha256": "4a19b2f1419fa10629cb8af84e6979aae8c57e1a3311c9fbfe475571cf9971d9",
+      "purpose": "Native minimal integration storage, lifecycle and migration ownership.",
+      "adaptation": "Select API tokens and OAuth grants from the existing privacy owner; omit uninstalled product invites, external IDs, event subscriptions and webhook deliveries. Retain shared OAuth client registrations."
+    },
+    {
+      "path": "packaging/migrations/012-integration-indexes.js",
+      "sourceRevision": "c7b2ba03254314a876a4b599a811d02e7592896f",
+      "upstreamSha256": "13d7bd096bfedc203cc88eb6207cb3d2a3233e71d58578f9eed0510f35dec9f8",
+      "purpose": "Native minimal integration storage, lifecycle and migration ownership.",
+      "adaptation": "Select the eight indexes for tokens, public OAuth clients and grants; omit product subscriptions and deliveries. Keep the native ordered migration runner and number."
+    },
+    {
+      "path": "packaging/tests/mongo_test_runtime.py",
+      "sourceRevision": "399f450abba8e90196002399df067c05b72d08e3",
+      "upstreamSha256": "cfee6b104ffac42d22478b5f94c0482be9aba0e8e960ff0a5f6dc8bc409f215b",
+      "purpose": "Native Mongo schema tests against the one already-running configured deployment.",
+      "adaptation": null
+    },
+    {
+      "path": "packaging/tests/integration-indexes-test.py",
+      "sourceRevision": "399f450abba8e90196002399df067c05b72d08e3",
+      "upstreamSha256": "63446e382a080912bdb64f031051be0c988778fc4bb53333e4cc91b04b4954e4",
+      "purpose": "Native Mongo schema tests against the one already-running configured deployment.",
+      "adaptation": "Select the eight token/client/grant indexes and assert no unselected product collection is created. Use the unchanged native existing-runtime helper with configured container name."
     }
   ]
 }

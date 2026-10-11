@@ -1,0 +1,327 @@
+{
+  "recordedAt": "2026-10-11T13:46:33.240850+00:00",
+  "templateBaseRevision": "d41b20716d19ea387895d9497f25c000e8a939a9",
+  "sourceRevisions": {
+    "protocol": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
+    "mongoAndPrivacy": "c7b2ba032",
+    "sharedMongoTestHelper": "399f450ab"
+  },
+  "scope": "Select native API keys, personal chat/notification reads, MCP OAuth manual/public clients, access settings and owner credential cleanup. No affiliate/product owners. Mongo owns all selected integration indexes; there is no Java index initializer.",
+  "verification": {
+    "standardTest": {
+      "tests": 54,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "embeddedTest": {
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "commands": [
+    "tools/run-backend-junit.sh standard --tests \"*IntegrationTokenServiceTest\" --tests \"*IntegrationSettingsServiceTest\" --tests \"*IntegrationTokenAuthenticationFilterTest\" --tests \"*McpAuthorizationServiceTest\" --tests \"*McpOAuthControllerTest\" --tests \"*WebSecurityConfigBootstrapTest\" --tests \"*DeletedAccountPurgeServiceTest\"",
+    "tools/run-backend-junit.sh embedded --tests \"*IntegrationStorageTest\" --tests \"*DeletedAccountPurgePersistenceTest\"",
+    "MYSCOUTEE_TEST_MONGO_CONTAINER=myscoutee-template-dev-mongodb python3 packaging/tests/integration-indexes-test.py",
+    "E2E_SERVER_BASE_URL=http://<owned-dev-container>:8080 E2E_API_PREFIX= node e2e/functional/backend/run.mjs --record"
+  ],
+  "http": {
+    "recordedAt": "2026-10-11T13:43:00.232Z",
+    "mode": "contract",
+    "apiPrefix": "",
+    "selection": {
+      "filter": "",
+      "group": "",
+      "qaCase": ""
+    },
+    "passed": 13,
+    "failed": 0,
+    "skipped": 0,
+    "total": 13,
+    "ownedSessionsRevoked": true,
+    "scope": "Backend contracts and owned session lifecycle; not UI, KVM, load or installed-release proof."
+  },
+  "integrationCases": {
+    "api-key": [
+      "settings omit affiliate/participants",
+      "default write key cannot read",
+      "explicit read access persists",
+      "only four retained operations advertised",
+      "personal chat and notification reads",
+      "different client binding rejected",
+      "revoked key rejected"
+    ],
+    "manual-and-public-mcp": [
+      "native manual client and public dynamic registration",
+      "public client requires no copied client secret",
+      "account-owned consent and connection",
+      "exact callback/resource/S256 PKCE",
+      "single-use authorization code",
+      "refresh rotates access token",
+      "revocation rejects both access and refresh",
+      "owned credentials revoked and prior access preferences restored"
+    ]
+  },
+  "mongo": {
+    "schemaPathsPassed": [
+      "fresh initialization block",
+      "seed policy runtime indexes",
+      "migration012"
+    ],
+    "checks": [
+      "eight identical indexes for three retained collections",
+      "no unselected product collection created",
+      "existing data retained",
+      "repeat and empty database",
+      "duplicate token hash rejects migration without deleting data",
+      "same 128-row lookup examines 128 documents before index and 1 afterward"
+    ],
+    "live": {
+      "integrationTokens": {
+        "count": 7,
+        "indexes": [
+          {
+            "v": 2,
+            "key": {
+              "_id": 1
+            },
+            "name": "_id_"
+          },
+          {
+            "v": 2,
+            "key": {
+              "tokenHash": 1
+            },
+            "name": "integration_token_hash",
+            "unique": true
+          },
+          {
+            "v": 2,
+            "key": {
+              "ownerUserId": 1,
+              "createdAtIso": -1
+            },
+            "name": "integration_token_owner_created"
+          }
+        ]
+      },
+      "mcpOAuthClients": {
+        "count": 1,
+        "indexes": [
+          {
+            "v": 2,
+            "key": {
+              "_id": 1
+            },
+            "name": "_id_"
+          },
+          {
+            "v": 2,
+            "key": {
+              "createdAt": 1
+            },
+            "name": "createdAt"
+          },
+          {
+            "v": 2,
+            "key": {
+              "expiresAt": 1
+            },
+            "name": "expiresAt",
+            "expireAfterSeconds": 0
+          }
+        ]
+      },
+      "mcpAuthorizations": {
+        "count": 4,
+        "indexes": [
+          {
+            "v": 2,
+            "key": {
+              "_id": 1
+            },
+            "name": "_id_"
+          },
+          {
+            "v": 2,
+            "key": {
+              "clientId": 1
+            },
+            "name": "clientId"
+          },
+          {
+            "v": 2,
+            "key": {
+              "accessHash": 1
+            },
+            "name": "accessHash"
+          },
+          {
+            "v": 2,
+            "key": {
+              "refreshHash": 1
+            },
+            "name": "refreshHash"
+          },
+          {
+            "v": 2,
+            "key": {
+              "expiresAt": 1
+            },
+            "name": "expiresAt",
+            "expireAfterSeconds": 0
+          }
+        ]
+      },
+      "lookup": {
+        "indexUsed": true,
+        "documentsExamined": 1
+      }
+    }
+  },
+  "privacy": [
+    "Native account worker invokes retained integration privacy owner before deleting identity.",
+    "Embedded failed media/reconstructed worker retry removes expired account credentials while preserving recent account credentials and public client registration."
+  ],
+  "resources": {
+    "kind": "Low-load observation, not a matched benchmark",
+    "startedAt": "2026-10-11T13:43:51.876368+00:00",
+    "seconds": 30.695181410999794,
+    "hostBusyPercent": 6.12340250103064,
+    "containers": {
+      "myscoutee-template-dev-profilemanagement": {
+        "cpuCores": 0.08722789300865676,
+        "memoryMiB": 1672.62109375,
+        "throttledSeconds": 0.0
+      },
+      "myscoutee-template-dev-mongodb": {
+        "cpuCores": 0.06974159791845559,
+        "memoryMiB": 267.9375,
+        "throttledSeconds": 0.0
+      },
+      "myscoutee-template-dev-mongodb-sync": {
+        "cpuCores": 0.012444559127548027,
+        "memoryMiB": 6.26953125,
+        "throttledSeconds": 0.0
+      },
+      "myscoutee-template-dev-redis": {
+        "cpuCores": 0.005669456637830365,
+        "memoryMiB": 5.984375,
+        "throttledSeconds": 0.0
+      },
+      "myscoutee-template-dev-minio": {
+        "cpuCores": 0.00917772715619289,
+        "memoryMiB": 74.80859375,
+        "throttledSeconds": 0.0
+      }
+    },
+    "health": {
+      "myscoutee-template-dev-profilemanagement": "running healthy",
+      "myscoutee-template-dev-mongodb": "running healthy",
+      "myscoutee-template-dev-mongodb-sync": "running",
+      "myscoutee-template-dev-redis": "running",
+      "myscoutee-template-dev-minio": "running healthy"
+    }
+  },
+  "limits": [
+    "Dev backend qualification only; no template KVM, VMware, browser or installed-release pass.",
+    "Full MCP server/ChatGPT round trip and authorization/settings UI are pending.",
+    "Privileged API endpoints/capabilities remain pending with minimal administration/operator composition.",
+    "Full account-deletion HTTP/UI/REAL-DEMO flow, retained email cleanup and provider callback remain pending.",
+    "Revoked key/grant history and public registration metadata follow native retention/TTL; no test database reset or manual credential deletion.",
+    "Low-load CPU samples and individual request times do not prove throughput or latency parity.",
+    "Native full release migration chain failed at the pre-existing v3/v5 help-seed mismatch; fix the historical migration input before release qualification. Template selects only migration012 and does not copy the obsolete product/help chain."
+  ],
+  "files": {
+    "e2e/functional/backend/integrations/access-fixture.mjs": "1a8626a5736b06102a8340d8d0f7a42648e5560c6304b9beefae4450cbedaaa4",
+    "e2e/functional/backend/integrations/api-key/assert.mjs": "b16f2f36509cac8e4599b49c11ea5979b54a554cfa22b704e355c7c6003e9cd8",
+    "e2e/functional/backend/integrations/api-key/request.json": "47b12f6701ee1d0306196cb85707f9e1d2becdacc187043edf756d5613564547",
+    "e2e/functional/backend/integrations/mcp-flow.mjs": "0788f42a914b61e0eb1af8ff49613d137730973f4de398fb510a4a6a2b4c19ca",
+    "e2e/functional/backend/integrations/mcp-oauth/assert.mjs": "cb35bb75b1fb87b3d9d24276b645fd0647b3251be9ab6f1b4845b53c1198de3f",
+    "e2e/functional/backend/integrations/mcp-oauth/request.json": "358dfa542b511453e4d60e4cc47d5554066b5d17fcfd39468a734bd1cb8caf8f",
+    "e2e/functional/backend/integrations/mcp-public-client/assert.mjs": "bc730119d03c3eaa9c17c0c8c65569dcfcf3c1e12de3974cf4dbff3d0b6403c7",
+    "e2e/functional/backend/integrations/mcp-public-client/request.json": "ecbd646e7f4b62ca1260f5ead5218bbb23131e1513d44f4a1005802cd0394e5e",
+    "packaging/migrations/012-integration-indexes.js": "236ef7371d21f067a76a74e10ff4320894699a58756be5310939bad9bbc903ec",
+    "packaging/scripts/run-data-migrations.js": "982fc266966aeb29fef3bb5b5e713722d1a4fabb79bb21cafae39c1532298ded",
+    "packaging/tests/integration-indexes-test.py": "c13b17d376264d12dc7633764653f3f4c1d57c6f90a5b95cfe352d4b2c6c7dfa",
+    "packaging/tests/mongo_test_runtime.py": "cfee6b104ffac42d22478b5f94c0482be9aba0e8e960ff0a5f6dc8bc409f215b",
+    "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/api/AccountIntegrationAccess.java": "2267e2cd9a36e4af57839343358da19436713de5532212d9922579c246dfea2c",
+    "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/service/AccountIntegrationAccessService.java": "b6ffcd681ce5ee4bb7da8531b4bc5201c0bb0f06b5296e4f03e8e9d3b9d24acb",
+    "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/api/IntegrationPrivacy.java": "ab68c3644dbb7be0be97e135c521f2318ed07ae9ec9f2f0888704afa4ed60554",
+    "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/config/IntegrationTokenAuthenticationFilter.java": "a38c25f8bdf300864c126b4249895e00cce7fa7e4987c75ed3dec6ff22fe7a3d",
+    "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/controller/IntegrationApiController.java": "dc1cffb8d1f3aa8fcec4d876e0c901913c72621eee035a4a5100b506eff95cc4",
+    "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/controller/IntegrationCommunicationReadController.java": "59e1f6e2ad9a81dcd97c8a0040d78bbb70543b62b10eb2c52cb635edddd0142c",
+    "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/controller/IntegrationReadSupport.java": "613fc2cd16c8d6c1337ec224ba3c582866dec66f3832d3c16567e79c9380d635",
+    "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/controller/IntegrationSettingsController.java": "ae18ca955a2e1e8cfc2c412147ae9d15542a4ddf6a3beefca8bb6c6f83e93eaa",
+    "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/controller/McpOAuthController.java": "71a457d05ca7c6900d2baf55225c9149b2ccb6f1e860cb47f1ea2efc6ddedbb3",
+    "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/controller/McpSettingsController.java": "4adf2c874b8999e3df318e4a8e47bfa845cb14b3e7b5c0e4ce8305da548ee59f",
+    "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/document/IntegrationToken.java": "fdec60fb3d43cbfda06f6149f1a0f6b1dc4b961b4be7aa604a1c86abaa35d00a",
+    "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/document/McpAuthorization.java": "530bbc1571c2b487634ee176d45b350246787a8ac06f82f9be3743d463666187",
+    "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/document/McpOAuthClient.java": "b99936016ea0c33eb59cc4fe3e80bca549f0555df3c83375372964e2fd187443",
+    "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/dto/IntegrationDtos.java": "ef1c240631d3b2c063c78b3aadfbf46db5996f850199fec9ae13342f4c89c616",
+    "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/dto/McpDtos.java": "580159aa682533937e67779f100dea80b9f35319ce830dd7730b68abe1220840",
+    "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/repository/IntegrationTokensRepository.java": "887783e31356d2fca5bf841c943803475635c41bc8e8623e71895f0620708e99",
+    "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/repository/McpAuthorizationRepository.java": "88936ab34081e885dd6213b86dc74c9d332263b3faa634d9c3170a5a1336e9af",
+    "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/repository/McpOAuthClientsRepository.java": "5bb67594b3c50eb5a908861a47fc810af62a7a7598a430046a3366010ff07e15",
+    "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/service/IntegrationCapabilitiesService.java": "7a3e21a57ad2fb6fc3b7f18a18f4fd1a0f2898a668adbf3d54ee490982b29ed5",
+    "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/service/IntegrationPrivacyService.java": "8343136a2de2d24635b6dcf6593514c33ae59f735c108c09124bc361651bfae3",
+    "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/service/IntegrationProductCapabilities.java": "0c8ce41a6c8441452d52375fdee3219f06deef2e48adeb4171f3ed02548c3d8c",
+    "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/service/IntegrationPublicEndpointResolver.java": "8d9d4ea049e745c68c1fd3d0eb0594fcc0a17bf34aa958c680aee400cf28cad3",
+    "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/service/IntegrationRoleAccessService.java": "1b2c7c06e466067a367fd2b7b5e7d79c91a1fb77840aa428682b7a47650b550f",
+    "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/service/IntegrationSettingsService.java": "80dab89fbf137c2c5838d83d7f5de1f85798eb66163e87d5ff9ee9376941fdbd",
+    "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/service/IntegrationTokenService.java": "64fff5fda89c94c79798969f445fced874cfb989553bb99ac4de651ec510ca35",
+    "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/service/McpAuthorizationService.java": "f72413c10c3c9f394cf4037c8f0ff79daad5e99d6cbed5a777ec5d1db442bd12",
+    "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/service/McpWorkspaceAccess.java": "00b9762d5a3649b24907f17ce6e48f8212db5d3c6ea1c2d13453562f95439efb",
+    "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/service/DeploymentSettingsService.java": "cd72ba98f2bdaf908cffdff3de89e8efa107420663b4b6c171c0d731c60e0ef5",
+    "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/integrations/config/IntegrationTokenAuthenticationFilterTest.java": "d489bf131ff60a859d3d34d2daa2f4fadaf9475823f7e92ab7554a2a9759c274",
+    "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/integrations/controller/McpOAuthControllerTest.java": "24d0fe7ef4bce35610f819061aa41015f687cef4711167927e68fd66523f6db6",
+    "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/integrations/service/IntegrationSettingsServiceTest.java": "79501bcb7803dffc1ccc1e40767c169d0e0dda4210e0081ade6bbd78c6c78959",
+    "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/integrations/service/IntegrationStorageTest.java": "6286c9ab23797e27eb5b3928fb0898772fad87c4c3b4d253b3410a1cfe4cc1f0",
+    "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/integrations/service/IntegrationTokenServiceTest.java": "24c00be504fecfa359232b80545ebe0eb1fa260e10e183ab48610c03059f2180",
+    "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/integrations/service/McpAuthorizationServiceTest.java": "35e70cddc9f1a9d45a4bd42605465d1559e377739114ff2c2928158de496b3a2",
+    "server/docker/conf/mongodb/db_init.js": "c23e13dcf6d55fb03b7b9533563cdd1257e61ef1f1657e7c14f6a5def28a6833",
+    "server/docker/conf/mongodb/mongo-seed-policy.inc": "bd4a1e29c2845326655735efd33137431030cf90b50fd8771e5b9744666b98d3",
+    "server/projects/profile/src/main/java/com/raxim/myscoutee/common/config/WebSecurityConfig.java": "96698dbeb75c79793902ed13cd95243b0d404acd206ec38cd7f649330b65a629",
+    "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/repository/UsersRepository.java": "e44afd6bde226fd081a5dc1af834bd4341c819eb258bacf59be446d720947847",
+    "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/service/DeletedAccountPurgeService.java": "6177a8389201f548738f5b482a2f210b52e0aa09e8e4999c595206489869a8dd",
+    "server/projects/profile/src/main/resources/mongo-domain-types.properties": "c991b487f080b958838b1c4fcac185db4a930fa012b6920ce653c7ce39921163",
+    "server/projects/profile/src/test/java/com/raxim/myscoutee/common/config/WebSecurityConfigBootstrapTest.java": "11600a407d209a752da1a17c3f45eedc4390f5e9aa017be3ee06d103f837d2b6",
+    "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/accounts/service/DeletedAccountPurgePersistenceTest.java": "d55a34a4254eb92ae98c3d977d177af3a85f7591de6db552bfa6cdb9fcc74076",
+    "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/accounts/service/DeletedAccountPurgeServiceTest.java": "5ffc353ea41161e45f96989f80afb55ec298ab128e2219e6df0af2aa72e5b2bb",
+    "tools/upstream-sources.json": "96779772f4beec86d59889d967c90115c62f8594be6f37aaef6c7e30539e0a23"
+  },
+  "resourceComparison": {
+    "baselineRevision": "d41b207",
+    "candidateBaseRevision": "d41b20716d19ea387895d9497f25c000e8a939a9",
+    "qualification": "Separate low-load windows, not a matched benchmark. Positive and negative deltas reported without a speed-parity claim.",
+    "containers": {
+      "myscoutee-template-dev-profilemanagement": {
+        "beforeCpuCores": 0.08393676185114489,
+        "afterCpuCores": 0.08722789300865676,
+        "changePercent": 3.920965122943887
+      },
+      "myscoutee-template-dev-mongodb": {
+        "beforeCpuCores": 0.0536753279582482,
+        "afterCpuCores": 0.06974159791845559,
+        "changePercent": 29.932318201585417
+      },
+      "myscoutee-template-dev-mongodb-sync": {
+        "beforeCpuCores": 0.012650964993709336,
+        "afterCpuCores": 0.012444559127548027,
+        "changePercent": -1.6315424654478439
+      },
+      "myscoutee-template-dev-redis": {
+        "beforeCpuCores": 0.00583083240203985,
+        "afterCpuCores": 0.005669456637830365,
+        "changePercent": -2.767628240404063
+      },
+      "myscoutee-template-dev-minio": {
+        "beforeCpuCores": 0.0061905482993001824,
+        "afterCpuCores": 0.00917772715619289,
+        "changePercent": 48.25386561042415
+      }
+    }
+  }
+}

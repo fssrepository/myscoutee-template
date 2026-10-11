@@ -40,6 +40,7 @@ public class WebSecurityConfig {
     private final ConfigProperties configProperties;
     private final UserLoginSessionService userLoginSessionService;
     private final MediaSessionAccessService mediaSessionAccess;
+    @Autowired private com.raxim.myscoutee.domain.integrations.config.IntegrationTokenAuthenticationFilter integrationTokenAuthenticationFilter;
     @Autowired private com.raxim.myscoutee.domain.accounts.api.ProfileAuthentication profileAuthentication;
 
     public WebSecurityConfig(FirebaseService firebaseService,
@@ -73,7 +74,8 @@ public class WebSecurityConfig {
                 .addFilterAfter(
                         operatorBootstrapAuthenticationFilter(),
                         SessionMongoRoutingFilter.class)
-                .addFilterAfter(tokenAuthorizationFilter(), OperatorBootstrapAuthenticationFilter.class)
+                .addFilterAfter(integrationTokenAuthenticationFilter, OperatorBootstrapAuthenticationFilter.class)
+                .addFilterAfter(tokenAuthorizationFilter(), com.raxim.myscoutee.domain.integrations.config.IntegrationTokenAuthenticationFilter.class)
                 .authorizeHttpRequests(authorizeRequests -> {
                     authorizeRequests.requestMatchers("/admin-client/v1/**", "/api/admin-client/v1/**").hasAuthority("ADMIN_CLIENT");
                     authorizeRequests.requestMatchers("/shutdown").denyAll();
@@ -83,6 +85,8 @@ public class WebSecurityConfig {
                     authorizeRequests.requestMatchers("/metrics").hasAuthority("A");
                     authorizeRequests.requestMatchers("/operator/**", "/api/operator/**").hasAuthority("O");
                     authorizeRequests.requestMatchers(
+                            "/mcp/oauth/metadata", "/mcp/oauth/resource", "/mcp/oauth/token", "/mcp/oauth/register",
+                            "/api/mcp/oauth/metadata", "/api/mcp/oauth/resource", "/api/mcp/oauth/token", "/api/mcp/oauth/register",
                             "/health",
                             "/error",
                             "/auth/eligibility",
