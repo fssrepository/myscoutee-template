@@ -363,7 +363,7 @@
       "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/repository/UsersRepository.java",
       "upstreamSha256": "5180d15df42b6c92506d50056a07338a229f9aec98d8bcf5e0251980354a2f17",
       "purpose": "Native Firebase identity lookups, demo member listing, profile reads and deletion admission.",
-      "adaptation": "Retain selected lookup declarations and their original predicates; omit product/workspace/payment queries."
+      "adaptation": "Retain selected lookup declarations and their original predicates; omit product/workspace/payment queries. Retain the native batch email lookup for notification recipient resolution."
     },
     {
       "path": "server/gradlew",
@@ -1085,6 +1085,356 @@
       "upstreamSha256": "e697ec22c4f622878f69760cebde9a553974d3632ff4c066f803367e87951901",
       "purpose": "Native retained account/chat/consent/media-write policy seed; rule predicates remain unchanged.",
       "adaptation": "Select only the 12 policies implemented in this checkpoint; product policies omitted. Media-read policy is deferred with the media visibility implementation."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/common/config/PlatformParametersService.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "c21347466511c71f1007739d62970dc0705b51e9fb4ca99ab3ade7959f6b67fa",
+      "purpose": "Native durable notification delivery, inbox and chat transport support for the minimal application.",
+      "adaptation": "Keep native notification ranges/defaults; read deployment configuration properties instead of the product affinity catalog. Omit other product scheduling policies."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/common/redis/RedisStreamRetentionService.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "724f84e9e9086414086526e3ef14a81b2a3c706723ae697c660da6d91cffa464",
+      "purpose": "Native durable notification delivery, inbox and chat transport support for the minimal application.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/api/AccountNotifications.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "7e9d49ca2fc00dd844a5e0b7d2b878a954c52bdd91706359ecdbbe6b95f7b488",
+      "purpose": "Native durable notification delivery, inbox and chat transport support for the minimal application.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/service/AccountNotificationService.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "519e7b328ade40c280228cd7778daba4c1d745702b07eaa21795177ab0230747",
+      "purpose": "Native durable notification delivery, inbox and chat transport support for the minimal application.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/administration/api/AdminTelemetryEvent.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "f243fc7ce61a67444758e0f4c5dff0c62ba0c43e5a68b7369825e5c151f0c6c7",
+      "purpose": "Native durable notification delivery, inbox and chat transport support for the minimal application.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/administration/api/OperationalTelemetry.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "269ee0adca9059133e3d31af49dbfcc8ad34a2b7de09805820798726b5c2ed59",
+      "purpose": "Native durable notification delivery, inbox and chat transport support for the minimal application.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/administration/config/AdminStatsProperties.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "b1e397a732202297c643815c6ec3471fd545af8e877ec6086e479635e8beeadf",
+      "purpose": "Native durable notification delivery, inbox and chat transport support for the minimal application.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/administration/service/AdminTelemetryService.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "1850dfbda32aea94f28750783c44ee545bdcfbd25606a09cb9a8aa90ba6999a2",
+      "purpose": "Native durable notification delivery, inbox and chat transport support for the minimal application.",
+      "adaptation": "Use the current deployment job scope directly; omit product group ownership lookup. Native bounded Redis telemetry is retained."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/chat/api/ChatPresence.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "ae2fa6a1b61213a808c10495929c07829f2a692946175533f1682ef5e5218210",
+      "purpose": "Native durable notification delivery, inbox and chat transport support for the minimal application.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/chat/dto/ChatDtos.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "3c915a7b077fad671f90c09410052734a6fab5cd35d3ce7ea033c56433131ef4",
+      "purpose": "Native durable notification delivery, inbox and chat transport support for the minimal application.",
+      "adaptation": "Select native message, socket, device, member and support DTOs; omit product navigation, event creation and product counters."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/chat/service/ChatStreamEvent.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "eee220a7d2caeb3be82d4e3fa4a7b4518fb8bb4368a98ce0f39f7acd2b5966f9",
+      "purpose": "Native durable notification delivery, inbox and chat transport support for the minimal application.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/chat/service/ChatWebSocketSessionRegistry.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "89551c52d4fbd819314587833d8cbfc26a5d37e9d5280473cfb04c2af9af19f2",
+      "purpose": "Native durable notification delivery, inbox and chat transport support for the minimal application.",
+      "adaptation": "Omit community-case membership lookup; retain native personal/support chat session registration, presence, send locks and cached virtual-thread broadcast."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/integrations/api/RoleAttentionEvents.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "30bfdf4ab7dda4f0ad0268f51a4116f9255e6028c7cfb96ab473397610f191b6",
+      "purpose": "Native durable notification delivery, inbox and chat transport support for the minimal application.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/notifications/api/NotificationInbox.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "b217f2d08ec18e965848fa66126e2d66b608b09ae0b36fa9c5259518ee9729dc",
+      "purpose": "Native durable notification delivery, inbox and chat transport support for the minimal application.",
+      "adaptation": "Omit the event invitation API; retain native inbox, sync, unread, mute and chat-read operations."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/notifications/api/NotificationJobs.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "f7e3f1651dd9c3f697c4563845d4c469062a183e1aa1cb96a3c24057080ceba7",
+      "purpose": "Native durable notification delivery, inbox and chat transport support for the minimal application.",
+      "adaptation": "Omit product event, affinity and payment rule constants and the event-specific scheduling helper."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/notifications/api/NotificationReads.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "dc18ac509ccaffba61b833478996f5e082691700824aa6fa2bff43c9e5d1483c",
+      "purpose": "Native durable notification delivery, inbox and chat transport support for the minimal application.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/notifications/controller/UserNotificationsController.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "2fcdb9a1ad7333bd184bba2b15151ef90c776bb92cbcbaffe26001908853fa13",
+      "purpose": "Native durable notification delivery, inbox and chat transport support for the minimal application.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/notifications/document/NotificationOutboxItem.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "540125fb01a57b288fd1119ec58f6388e03b7840e2dcb1dd533e95de78006cae",
+      "purpose": "Native durable notification delivery, inbox and chat transport support for the minimal application.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/notifications/document/NotificationRuleConfig.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "18352999bfefa2802a4fef2f6541398059f71d69e7e196857e9c81ef2856c4b6",
+      "purpose": "Native durable notification delivery, inbox and chat transport support for the minimal application.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/notifications/document/UserNotification.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "60aa9a1c5da02afff9d60f206b04e37f1e8c6f6a8e9d5d3ba91749f6fe601d8c",
+      "purpose": "Native durable notification delivery, inbox and chat transport support for the minimal application.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/notifications/dto/NotificationDtos.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "1e3dcb4f69cb4d4ff2cefa5489fa1362aa97be00bb097737da212b5a83018782",
+      "purpose": "Native durable notification delivery, inbox and chat transport support for the minimal application.",
+      "adaptation": "Omit communityActivityDelta from the read-response JSON; retain notification/inbox DTO fields."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/notifications/mapper/UserNotificationMapper.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "028dab28a1c71b378f37c9c15c334ccf5084367e9c3bb90ca9a6d27d05a20603",
+      "purpose": "Native durable notification delivery, inbox and chat transport support for the minimal application.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/notifications/repository/NotificationOutboxRepository.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "fd3d303d3b9f7f373c3dfd6c94bb6896f86155bfe6ea28f7cbf883f6ea8c4f59",
+      "purpose": "Native durable notification delivery, inbox and chat transport support for the minimal application.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/notifications/repository/NotificationRuleConfigsRepository.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "d6daa894d136686de44c311ab902a3c13ed2d3c04efbaa65040dcae979c76b71",
+      "purpose": "Native durable notification delivery, inbox and chat transport support for the minimal application.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/notifications/repository/UserNotificationPageRepository.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "6beb700ab7d7e2a148e9756762cfd1e322f5abffdf17942a4f1760b8568d8ed5",
+      "purpose": "Native durable notification delivery, inbox and chat transport support for the minimal application.",
+      "adaptation": "Omit product community counters and their event-domain dependency. Native recipient-scoped pagination, atomic reads, idempotent insert and aggregation are retained."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/notifications/repository/UserNotificationsRepository.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "2638eb6f5a07c2a1aaa8b7a3c2807f6350d6a0efc074bafd4f035360a8ea3d9a",
+      "purpose": "Native durable notification delivery, inbox and chat transport support for the minimal application.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/notifications/service/AdminNotificationSocketSessionRegistry.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "fc2665e710f78f1e01d60a21d1cf8c50478e83fe2f443d4ae37f2816d4fc1163",
+      "purpose": "Native durable notification delivery, inbox and chat transport support for the minimal application.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/notifications/service/NotificationOutboxService.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "e9d406502cc6e0d60684def6bc134ca847efb7bf357019d23a24770e79399e48",
+      "purpose": "Native durable notification delivery, inbox and chat transport support for the minimal application.",
+      "adaptation": "Enqueue in the deployment scope directly; omit product group splitting and group display-name lookup. Durable collapse, operation identity, delivery and inbox handling are retained."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/notifications/service/NotificationOutboxWorkerService.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "6d3af43b9cc31ffa0691d5c868b0a1b0330b02cd8d104fb21343c724bddad266",
+      "purpose": "Native durable notification delivery, inbox and chat transport support for the minimal application.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/notifications/service/NotificationRuleRegistryService.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "9cec90aad7b1afb9fe0100a8072e02e244bce048c5c619629d1468b1d038d470",
+      "purpose": "Native durable notification delivery, inbox and chat transport support for the minimal application.",
+      "adaptation": "Omit the event-specific enabled-rule helper and its constants; retain generic atomic run admission, leases, history, cache and change streams. Product-only admin-manageable default is omitted; explicit persisted flags remain authoritative."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/notifications/service/UserNotificationService.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "81dc1e84dd137297767ced73b51d37ead98f4f3625192542d336247225cb002d",
+      "purpose": "Native durable notification delivery, inbox and chat transport support for the minimal application.",
+      "adaptation": "Omit the event invitation resolution method and its constants. Retain native inbox pagination, synchronization, chat reads and counters. Omit the community activity delta from read responses."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/api/DeploymentBranding.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "1a0f96cc871af73aec92a0e09cb82d41ed90aa979bbf28a42b104d1ad8460d15",
+      "purpose": "Native durable notification delivery, inbox and chat transport support for the minimal application.",
+      "adaptation": "Use Templates and its logo as defaults; retain configured branding and native payload normalization."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/api/FirebasePushDelivery.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "60dc29e59531ed913165792896057602bc7456d22baf7d667e64e64267d9ec2a",
+      "purpose": "Native durable notification delivery, inbox and chat transport support for the minimal application.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/api/JobGroupContext.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "6021cbb96f678a883d6e993697fabbaf546c3f469e6eb83e6604fbbd9d8167d8",
+      "purpose": "Native durable notification delivery, inbox and chat transport support for the minimal application.",
+      "adaptation": "Document the null scope as deployment-wide; execution and memoization code are unchanged."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/api/NotificationPolicy.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "10271484413142061005c22acb16be992d2dcf2f650d1cd9fe558a51fc61bf5d",
+      "purpose": "Native durable notification delivery, inbox and chat transport support for the minimal application.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/service/DefaultFirebasePushDelivery.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "f034eaab6840111827501de6ce5e924bcaca92f0d4f7f96122d90854e7f20485",
+      "purpose": "Native durable notification delivery, inbox and chat transport support for the minimal application.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/service/DeploymentBrandingResolver.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "44fba36f35935f1b1c8be6d1216d35a5fd62cf107ecb6167cddcfcd8338beba7",
+      "purpose": "Native durable notification delivery, inbox and chat transport support for the minimal application.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/accounts/service/AccountNotificationServiceTest.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "4c5615df9dc01278b2efb02a617623a5d3c4c601e0b6635f41e1268ce4955d92",
+      "purpose": "Existing focused tests for selected notification delivery, account lookup, inbox, pagination and scheduler behavior.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/notifications/mapper/UserNotificationMapperTest.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "dc9b02c3de76af4e2cefa68d4c3b14fae0856c54aaf2ef02000e6ea417cbbc08",
+      "purpose": "Existing focused tests for selected notification delivery, account lookup, inbox, pagination and scheduler behavior.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/notifications/repository/UserNotificationPageRepositoryTest.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "0749e677ab608ec9429a7a2d29891555761eaef8895c80b1cb2bb342aa8b7ff1",
+      "purpose": "Existing focused tests for selected notification delivery, account lookup, inbox, pagination and scheduler behavior.",
+      "adaptation": "Omit the product community counter fixture/test; retain native query and atomic mutation tests."
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/notifications/controller/UserNotificationsControllerTest.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "549509f2dfcd082b341119bcc6fd77eaff34602a12a73fbba1767aad1e263d2b",
+      "purpose": "Existing focused tests for selected notification delivery, account lookup, inbox, pagination and scheduler behavior.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/notifications/service/NotificationRuleRegistryServiceTest.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "a678f49459a8ba7f12f009fecfffcdf958102137249059faae7448836163cec1",
+      "purpose": "Existing focused tests for selected notification delivery, account lookup, inbox, pagination and scheduler behavior.",
+      "adaptation": "Exercise native generic rule admission/history with retained outbox/account-purge rule constants."
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/notifications/service/NotificationOutboxServiceTest.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "440bf2264d4aa210e5747dfb08d1e233619c69eac05325d158764a30507e005b",
+      "purpose": "Existing focused tests for selected notification delivery, account lookup, inbox, pagination and scheduler behavior.",
+      "adaptation": "Omit product group fan-out and its test fixture; retain delivery, collapse, translation and branding assertions."
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/notifications/service/NotificationOutboxWorkerServiceTest.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "8a8cfb4b83170c91d6d1089cf56297d2c0d0da5ecea28b0c6866cbe0701487bb",
+      "purpose": "Existing focused tests for selected notification delivery, account lookup, inbox, pagination and scheduler behavior.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/notifications/service/NotificationIdlePollingTest.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "caa24897c32e4f85327338c42f317f44f93b2f3ac3212f31ee7e26bedaf1ea71",
+      "purpose": "Existing focused tests for selected notification delivery, account lookup, inbox, pagination and scheduler behavior.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/notifications/service/UserNotificationServiceTest.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "d97a8d9b48ddbf4edb50b27672eea6d4e9fd33e62416b5718c3a52296a6bdf2b",
+      "purpose": "Existing focused tests for selected notification delivery, account lookup, inbox, pagination and scheduler behavior.",
+      "adaptation": "Omit the event invitation resolution test because that product operation is not selected."
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/notifications/service/NotificationDeliveryDecisionTest.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "16519a15b811a223627b2b8be0e749a94b78f3b5f1eff35e5c079d529f97de29",
+      "purpose": "Existing focused tests for selected notification delivery, account lookup, inbox, pagination and scheduler behavior.",
+      "adaptation": "Omit the product group-splitting fixture; retain delivery snapshots, bounded batch lookups, revocation, location and retry tests. Integration test remains opt-in. Set the native due-work existence precheck in the worker fixture, so delivery assertions exercise the worker rather than returning at the default false mock."
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/platform/service/DeploymentBrandingResolverTest.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "1c9b10c796701bbd890415e1594de9ed4a1117d1cc28bcda955f1ab726d67103",
+      "purpose": "Existing focused tests for selected notification delivery, account lookup, inbox, pagination and scheduler behavior.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/notifications/config/NotificationIndexInitializer.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "fec2b160d1ecdf0cbf9aae02aa6d0542f8aac28dce46b896e21f994683626476",
+      "purpose": "Native uniqueness and lookup index for retained notification job rules in REAL and DEMO.",
+      "adaptation": "Omit notification-template catalog index creation because the template does not include the product notification editor/catalog. Keep rule index naming and migration order."
+    },
+    {
+      "path": "server/docker/conf/mongodb/myscoutee_db/notificationRuleConfigs.json",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "b45e18b70d6e5945e6d9ddb05d41ddaad2873562df0ae3d5e0a3aa67f059160d",
+      "purpose": "Enable the selected native durable notification worker with its existing schedule.",
+      "adaptation": "Select the one deployment-scope outbox rule. Other workers will receive their seed only when implemented; no product job records are included."
     }
   ]
 }

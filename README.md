@@ -15,7 +15,8 @@ infrastructure into a reusable project template.
 
 **Current status:** minimal backend foundations in progress. The selected native
 account, session, consent, access-policy, help/guide and deployment/Firebase code is covered by
-102 focused JUnit tests across staged runs. HTTP composition, communication, frontend, seed and
+102 focused JUnit tests across staged runs. The notification checkpoint adds 75
+standard tests and one embedded MongoDB test. HTTP composition, chat, frontend, seed and
 installation are still being implemented; this is not yet a runnable release.
 
 ## Target and local repository layout
@@ -80,6 +81,13 @@ The native policy engine keeps its cached rules and explicit denials. Only the
 12 implemented account/chat/consent/media-write policy records are selected from
 the upstream seed. Public help, terms, privacy and guide reads retain their native
 revision/consent schemas; revision administration and community scope are omitted.
+Durable notification delivery retains native collapse/idempotency, inbox pagination,
+unread counters, REAL/DEMO routing, retries, Firebase delivery snapshots and
+change-stream wakeups. The template omits product group recipient splitting,
+event invitations and community activity counters. Native delivery limits are
+configured under `myscoutee.notifications`; omitted values use existing defaults.
+The deployment-scope outbox rule is the only job seeded at this checkpoint.
+
 Staged test evidence is in [`guides/qualification/evidence`](guides/qualification/evidence).
 
 With Java 25 installed, run the selected tests from the repository root:

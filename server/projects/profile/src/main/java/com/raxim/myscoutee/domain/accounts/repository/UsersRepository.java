@@ -14,6 +14,7 @@ public interface UsersRepository extends MongoRepository<Users, String> {
     Optional<Users> findFirstByGoogleId(String googleId);
     Optional<Users> findFirstByFacebookId(String facebookId);
     List<Users> findByUserIdIn(Collection<String> userIds);
+    List<Users> findByEmailIn(Collection<String> emails);
     List<Users> findByProfileStatusAndDeletedAtIsoLessThanEqual(String profileStatus, String deletedAtIso);
 
     @Query(value = "{}", sort = "{ 'name': 1, 'userId': 1 }", collation = "{ 'locale': 'en', 'strength': 2 }")
