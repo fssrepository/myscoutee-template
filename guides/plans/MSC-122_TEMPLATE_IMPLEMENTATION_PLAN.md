@@ -640,6 +640,16 @@ mean that every earlier qualification gate is closed.
 
 ## Outstanding source QA and template impact
 
+Additional queued source defect: **CM-LOCAL-001**, reported on 2026-10-11,
+covers delayed opening of the native frontend-local content-moderation settings
+popup and missing SmartList loading feedback. The detailed reproduction and
+acceptance notes are in the source
+[frontend-local delay audit](../../../myscoutee-backend/guides/plans/FRONTEND_LOCAL_DELAY_AUDIT.md#open-user-reported-follow-up--2026-10-11).
+First confirm the current revision; the observed build may be old. This product
+screen is not selected in the template. Carry and verify a correction here only
+when its actual owner is a shared component or another retained implementation.
+The report is queued, not reproduced or passed.
+
 The four source tasks previously identified with the user remain separate
 qualification gates; scheduled testing is not a PASS:
 
