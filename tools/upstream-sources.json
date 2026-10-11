@@ -1054,13 +1054,6 @@
       "adaptation": "Replace the MyScoutee group-profile positive test with standalone administrator-account resolution; retain unauthorized account/profile and REAL/DEMO rejection tests."
     },
     {
-      "path": "server/docker/conf/mongodb/myscoutee_db/accessPolicyDefinitions.json",
-      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
-      "upstreamSha256": "e697ec22c4f622878f69760cebde9a553974d3632ff4c066f803367e87951901",
-      "purpose": "Native retained account/chat/consent/media-write policy seed; rule predicates remain unchanged.",
-      "adaptation": "Select only the 12 policies implemented in this checkpoint; product policies omitted. Media-read policy is deferred with the media visibility implementation."
-    },
-    {
       "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/common/config/PlatformParametersService.java",
       "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
       "upstreamSha256": "c21347466511c71f1007739d62970dc0705b51e9fb4ca99ab3ade7959f6b67fa",
@@ -1787,6 +1780,188 @@
       "upstreamSha256": "d46269d671d610cc4833b54f65a01620a99200219a9b916ff005577fb115f368",
       "purpose": "Native minimal identity, profile, eligibility and session HTTP endpoints.",
       "adaptation": "Omit community workspace loading, product filters/feedback/report endpoints; retain login/logout/delete/profile policy annotations and native location validation."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/media/api/MediaCleanup.java",
+      "upstreamSha256": "5bc05819a76aa22fcde03dae43981136ac0d716ab868fc9d8e0884bb75873926",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "purpose": "Native media storage, avatar visibility and retained chat attachment access.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/media/api/ImageUploads.java",
+      "upstreamSha256": "5d456f5a5a79b124ac9aacda8aa43091b20caf2c0b3bf5e763d5642b826a52c8",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "purpose": "Native media storage, avatar visibility and retained chat attachment access.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/media/api/MediaStorage.java",
+      "upstreamSha256": "4918a5c3f6dbe12d7c622643c5c1ac6565c2a49bbddb8abe4b46c1634dfaf4b7",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "purpose": "Native media storage, avatar visibility and retained chat attachment access.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/media/dto/MediaDtos.java",
+      "upstreamSha256": "b8b4d92480fa2afa97cfd381fce82f649f2ba9c380b5b8c2b4a9e4c798bb22aa",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "purpose": "Native media storage, avatar visibility and retained chat attachment access.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/media/service/MediaStorageService.java",
+      "upstreamSha256": "f3320c77b29cd5d13a4bb1a6c7c100303e586ca413917b6d179d84d8d2e12563",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "purpose": "Native media storage, avatar visibility and retained chat attachment access.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/media/service/MediaObjectStoreClient.java",
+      "upstreamSha256": "f6cdb1ee14cd4e972af99f38efd84e908bcef112703b13f0a01875d4b71cf4de",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "purpose": "Native media storage, avatar visibility and retained chat attachment access.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/media/service/S3CompatibleMediaObjectStoreClient.java",
+      "upstreamSha256": "17638b9cbd0cbbb0d56b6ff2da34c845435a3ecf4223129e39f1569b6da9b1a6",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "purpose": "Native media storage, avatar visibility and retained chat attachment access.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/media/controller/MediaController.java",
+      "upstreamSha256": "ea118f1561dd59f2dc548671c3a70c390203a6a56b4a2a42c8d6e0592932825b",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "purpose": "Native media storage, avatar visibility and retained chat attachment access.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/chat/api/ChatMediaVisibility.java",
+      "upstreamSha256": "d39e254299007c95b29a4d6886ac6d388815092b988a540608553a6f40e65668",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "purpose": "Native media storage, avatar visibility and retained chat attachment access.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/chat/dto/ChatMessageMediaVisibilityDto.java",
+      "upstreamSha256": "9e09e71695c2cc9e42cc071f33ce2d1d69ed68f4d888223d32326eb12e80106d",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "purpose": "Native media storage, avatar visibility and retained chat attachment access.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/chat/service/ChatMediaVisibilityService.java",
+      "upstreamSha256": "fcb89a6e8b52fa474111787df7e75229afe8696e00ef56c249fa35267c54b846",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "purpose": "Native media storage, avatar visibility and retained chat attachment access.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/access/security/condition/ActorCanReadMediaCondition.java",
+      "upstreamSha256": "d86b5589411fd52f1843eb977e3248d418b7b855caedd392a16875bcbfbdcc55",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "purpose": "Native media storage, avatar visibility and retained chat attachment access.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/api/FriendshipReads.java",
+      "upstreamSha256": "a5cfa33e3cf1fcc3a2479f2d38a25a11a70bc3c255d522567be3ac73e1dc4fc8",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "purpose": "Native media storage, avatar visibility and retained chat attachment access.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/document/UserFriendship.java",
+      "upstreamSha256": "028198648bcf6fefcec23050e5d6aa53bddc31532f6557c9eec18fa672c16ce3",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "purpose": "Native media storage, avatar visibility and retained chat attachment access.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/repository/UserFriendshipsRepository.java",
+      "upstreamSha256": "29a7cdf3ffbf45f1b125a9792b58d304b136ec2296ef9f92e0b21fb7f952330d",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "purpose": "Native media storage, avatar visibility and retained chat attachment access.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/media/config/MediaStorageProperties.java",
+      "upstreamSha256": "52fbe23d6f45f27bb79f6d5e0a39dea42cab8ae6e824b46114f3216dcb3a0a99",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "purpose": "Native media storage, avatar visibility and retained chat attachment access.",
+      "adaptation": "Register the existing media properties directly; the MyScoutee all-domain AppConfig is excluded."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/api/AccountMediaVisibility.java",
+      "upstreamSha256": "b6b89e0952647c0cefc231eaeb535063fcc9627030f61e577a59a892ba555e7f",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "purpose": "Native media storage, avatar visibility and retained chat attachment access.",
+      "adaptation": "Keep the native lightweight profile-visibility projection; omit product moderation candidate lookup."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/service/AccountMediaVisibilityService.java",
+      "upstreamSha256": "e36a1f4bb7d402f116191a80301f44c971556e870f8f0f8d554a69ffac009cc0",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "purpose": "Native media storage, avatar visibility and retained chat attachment access.",
+      "adaptation": "Keep native indexed account media projection; omit unused product moderation lookup."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/service/FriendshipFacts.java",
+      "upstreamSha256": "3dea960c222202bd2bd909cb49012b9080f63b84ae5441233963c4af719dbdbe",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "purpose": "Native media storage, avatar visibility and retained chat attachment access.",
+      "adaptation": "Select native indexed friendship reads required by retained friends-only profile visibility; omit event meeting projection and its writer."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/access/security/MediaPolicyFacts.java",
+      "upstreamSha256": "0e3f567ff9d93eac2d7d789d4a9a369f36119f1ecab401ce13684fa7261c8dbd",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "purpose": "Native media storage, avatar visibility and retained chat attachment access.",
+      "adaptation": "Retain owner preview, profile visibility and current chat participant checks. Omit lookups for absent community, campaign, asset, event and feed resources; no per-request product collection scans."
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/media/controller/MediaControllerTest.java",
+      "upstreamSha256": "cf02cf451bab124a6a400054432ea9b647d9873c972f1a9bd61a288a25e6e3b4",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "purpose": "Native media storage, avatar visibility and retained chat attachment access.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/media/service/S3BucketCacheTest.java",
+      "upstreamSha256": "7e3b461583ddb80bdedf0a8a346c30a9aecb643f3a65c322bb2fd25673779d6d",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "purpose": "Native media storage, avatar visibility and retained chat attachment access.",
+      "adaptation": null
+    },
+    {
+      "path": "server/docker/conf/mongodb/myscoutee_db/accessPolicyDefinitions.json",
+      "upstreamSha256": "e697ec22c4f622878f69760cebde9a553974d3632ff4c066f803367e87951901",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "purpose": "Native media storage, avatar visibility and retained chat attachment access.",
+      "adaptation": "Select native profile/chat/media/consent policies, including the unchanged protected media-read rule."
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/media/api/MediaAccessPaths.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "5241f127ae37101baaf5e12cf64e826218881f2eafe7e069fedc86d4defd6e81",
+      "purpose": "Native media storage path validation and existing image variants.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/media/api/MediaImageVariant.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "9ba228275fab198b530ccb531d9ba100639e0de2e5d03842c9ef48bea89949b4",
+      "purpose": "Native media storage path validation and existing image variants.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/media/service/MediaAccessPathsTest.java",
+      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+      "upstreamSha256": "3d276e2b805c379f3b7ebd89cc4d2ba84a72077895a3cf2eb461fa7487db995c",
+      "purpose": "Native media storage path validation and existing image variants.",
+      "adaptation": null
     }
   ]
 }

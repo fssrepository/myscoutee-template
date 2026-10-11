@@ -209,5 +209,22 @@
     "createdDate": "2026-06-02T00:00:00Z",
     "updatedDate": "2026-06-02T00:00:00Z",
     "updatedUser": "access-policy-seed"
+  },
+  {
+    "_id": "access-policy-media-read",
+    "syncKey": "access-policy-media-read",
+    "policyKey": "media.read",
+    "permission": "media.read",
+    "resourceType": "media",
+    "required": [
+      "noExplicitDeny",
+      "actorCanReadMedia"
+    ],
+    "anyOf": [],
+    "status": "active",
+    "description": "An active Firebase session may read media allowed by current resource visibility.",
+    "createdDate": "2026-09-14T00:00:00Z",
+    "updatedDate": "2026-09-14T00:00:00Z",
+    "updatedUser": "access-policy-seed"
   }
 ]

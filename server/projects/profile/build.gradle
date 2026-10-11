@@ -25,6 +25,8 @@ apply from: rootProject.file('gradle/dependency-policy.gradle')
 
 dependencies {
     implementation libs.firebase
+    implementation libs.s3
+    implementation libs.s3.http
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.boot:spring-boot-starter-security'
