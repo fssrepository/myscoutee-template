@@ -2796,34 +2796,34 @@
     {
       "path": "frontend/src/app/app.config.ts",
       "upstreamSha256": "4cecaed8674b3c4aa876a50f3b725452b1b595834eeff84aa48a0bdf83c736bf",
-      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
-      "adaptation": "Template application composition, selected contracts or project-specific metadata/configuration; see the frontend foundation evidence.",
-      "sourceRevision": "e3eff359c",
-      "sourceFrontendRevision": "1af20e0b"
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
     },
     {
       "path": "frontend/src/app/app.html",
       "upstreamSha256": "e3d682de30daec03e90b07168c394a08d24890269d52652b5a8bb19e892fa19e",
-      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
-      "adaptation": "Template application composition, selected contracts or project-specific metadata/configuration; see the frontend foundation evidence.",
-      "sourceRevision": "e3eff359c",
-      "sourceFrontendRevision": "1af20e0b"
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
     },
     {
       "path": "frontend/src/app/app.scss",
       "upstreamSha256": "21b21575991b40d41fe6b9f254046b753fbb898f9a63e081afebcf67e7a76c2c",
-      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
-      "adaptation": "Template application composition, selected contracts or project-specific metadata/configuration; see the frontend foundation evidence.",
-      "sourceRevision": "e3eff359c",
-      "sourceFrontendRevision": "1af20e0b"
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
     },
     {
       "path": "frontend/src/app/app.ts",
       "upstreamSha256": "133e9d0143f4a1340e1ab3e0535bfe62152f9f2f1e9b4a221d532c79461d38b2",
-      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
-      "adaptation": "Template application composition, selected contracts or project-specific metadata/configuration; see the frontend foundation evidence.",
-      "sourceRevision": "e3eff359c",
-      "sourceFrontendRevision": "1af20e0b"
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
     },
     {
       "path": "frontend/src/app/shared/core/base/config.ts",
@@ -2988,10 +2988,10 @@
     {
       "path": "frontend/src/app/shared/core/common/app.db.ts",
       "upstreamSha256": "ef57b401cc6a766913ca928b4511af3f2c7266e12c3ca6733e440edfe1765fc7",
-      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
-      "adaptation": "Retains the native IndexedDB hydration, flush and reset engine with only the users schema at this foundation checkpoint; omitted product projections and tables. Further retained owners will add their native tables.",
-      "sourceRevision": "e3eff359c",
-      "sourceFrontendRevision": "1af20e0b"
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
     },
     {
       "path": "frontend/src/app/shared/core/common/constants.ts",
@@ -3076,10 +3076,10 @@
     {
       "path": "frontend/src/app/shared/core/contracts/user.interface.ts",
       "upstreamSha256": "c013ce4c69c8c5c9da70d70ac62d351cd3c2c30fdc76e2936145a5d58c272e2e",
-      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
-      "adaptation": "Selected native identity, session, device, consent and minimal profile contract members matching the template backend; no affiliate, payment, activity or workspace imports.",
-      "sourceRevision": "e3eff359c",
-      "sourceFrontendRevision": "1af20e0b"
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
     },
     {
       "path": "frontend/src/app/shared/core/http/interceptors/admin-access.interceptor.ts",
@@ -3180,10 +3180,10 @@
     {
       "path": "frontend/src/app/shared/core/local/common/memory.schema.ts",
       "upstreamSha256": "7af6ef975a6f3cb07cb7842f705d6f3b64c97c84ede8e8f30bab3e93311ba74c",
-      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
-      "adaptation": "Template application composition, selected contracts or project-specific metadata/configuration; see the frontend foundation evidence.",
-      "sourceRevision": "e3eff359c",
-      "sourceFrontendRevision": "1af20e0b"
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
     },
     {
       "path": "frontend/src/app/shared/core/local/seed/data/deployment-configuration.json",
@@ -3252,26 +3252,26 @@
     {
       "path": "frontend/src/app/shared/ui/context/ui.providers.ts",
       "upstreamSha256": "f28fba7d6a391b63e06af020a2f7b46731350f6c66a6873426507e052ed334cc",
-      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
-      "adaptation": "Template application composition, selected contracts or project-specific metadata/configuration; see the frontend foundation evidence.",
-      "sourceRevision": "e3eff359c",
-      "sourceFrontendRevision": "1af20e0b"
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
     },
     {
       "path": "frontend/src/assets/i18n/en.json",
       "upstreamSha256": "e583e163ea2e74507f91cd8d2f8c3d6c412d4475d48f830a675f22ed074ec410",
-      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
-      "adaptation": "Template application composition, selected contracts or project-specific metadata/configuration; see the frontend foundation evidence.",
-      "sourceRevision": "e3eff359c",
-      "sourceFrontendRevision": "1af20e0b"
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
     },
     {
       "path": "frontend/src/assets/i18n/hu.json",
       "upstreamSha256": "cb9ab4093aa0c0b62b114efc9a774dc9d9193c28edbb1cba5bbede131320e902",
-      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
-      "adaptation": "Template application composition, selected contracts or project-specific metadata/configuration; see the frontend foundation evidence.",
-      "sourceRevision": "e3eff359c",
-      "sourceFrontendRevision": "1af20e0b"
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
     },
     {
       "path": "frontend/src/environments/environment.dev.ts",
@@ -3368,6 +3368,461 @@
       "adaptation": null,
       "sourceRevision": "e3eff359c",
       "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app/app.routes.ts",
+      "upstreamSha256": "1322cad5960f79b629885184390cf3e54252bc1f2126dd4f21e00ab0fbd63e6a",
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
+    },
+    {
+      "path": "frontend/src/app/entry/components/entry-firebase-auth-popup/entry-firebase-auth-popup.component.html",
+      "upstreamSha256": "cf8cbc324c4c1918b2e22c011283553ca1a7f3d8c849e89cfe3e59cd5efd610e",
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": null,
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
+    },
+    {
+      "path": "frontend/src/app/entry/components/entry-firebase-auth-popup/entry-firebase-auth-popup.component.scss",
+      "upstreamSha256": "2ee4ca2616900e75141bd41c529915475809d88d67f29107845a33eb52c77d6e",
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": null,
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
+    },
+    {
+      "path": "frontend/src/app/entry/components/entry-firebase-auth-popup/entry-firebase-auth-popup.component.ts",
+      "upstreamSha256": "4e1dac3e585753326727c3b442505dcff2cd64791507b3a20255475f977c8b6c",
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": null,
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
+    },
+    {
+      "path": "frontend/src/app/entry/components/entry-landing/landing-guide-surface.directive.ts",
+      "upstreamSha256": "3d8de191bda762bb77b6b70f9c920b30f9066ef755f878279fe4652fecc1c8b2",
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": null,
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
+    },
+    {
+      "path": "frontend/src/app/shared/core/base/app-utils.ts",
+      "upstreamSha256": "9eda907fa85df9ad389587747925ce19a883190a6cd8ad0123a0bf51779f9f38",
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
+    },
+    {
+      "path": "frontend/src/app/shared/core/base/builders/help-center-content.builder.ts",
+      "upstreamSha256": "63e404e904d4ebfcc38f43bd39d16d7daecc6133691830ecea6de625eb060cc0",
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
+    },
+    {
+      "path": "frontend/src/app/shared/core/base/services/bootstrap.service.ts",
+      "upstreamSha256": "73f21609fea76297a28e2f750d0a5ea35d4127ef5072b0c0fc7024e768c826fe",
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
+    },
+    {
+      "path": "frontend/src/app/shared/core/base/services/help-center.service.ts",
+      "upstreamSha256": "9f30ecb1088e103843dcd976dfb928bbc5ff84d0131b27b8d4832db4f54d41d1",
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
+    },
+    {
+      "path": "frontend/src/app/shared/core/base/services/landing-explanation-guide.ts",
+      "upstreamSha256": "5129b40d5a278771b93cffdbfeb3e68cec0009bff50f317c4e743e48b3ec3be3",
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
+    },
+    {
+      "path": "frontend/src/app/shared/core/base/services/privacy-policy.service.ts",
+      "upstreamSha256": "57ec50d821dcfdac65ddeaf56633bc8ad16bd7e07f25c76e442f2c03947f8daa",
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": null,
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
+    },
+    {
+      "path": "frontend/src/app/shared/core/base/services/users.service.spec.ts",
+      "upstreamSha256": "ec5b7ad823c880163284bb029adf26e0a9d5b935cb0b10acdf33529864a88c30",
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
+    },
+    {
+      "path": "frontend/src/app/shared/core/base/services/users.service.ts",
+      "upstreamSha256": "5ee4caa93f59c5e7dd406a2f46d93d83a88fe20f3f7ee40f703946ef3328fc18",
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
+    },
+    {
+      "path": "frontend/src/app/shared/core/common/app-static-data.ts",
+      "upstreamSha256": "29f369e3f94786f536e4f8c4509540684d1d4f8cd48515844cb0ee5d340ed445",
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
+    },
+    {
+      "path": "frontend/src/app/shared/core/common/deployment-privacy-token.resolver.ts",
+      "upstreamSha256": "4a3c2b63fb8adfc05842ca7a1015a34d277319b9ddfc3a4cd423f94c470d9d93",
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": null,
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
+    },
+    {
+      "path": "frontend/src/app/shared/core/contracts/content.interface.ts",
+      "upstreamSha256": "6be87cccbe0dbe8ed6e2d0b34ea165a0e67b581101426e89a39ec76a0c7b1068",
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
+    },
+    {
+      "path": "frontend/src/app/shared/core/contracts/index.ts",
+      "upstreamSha256": "65218a45649245b6e9a0491c97dc844d4950cd6c8dbfa2846724a5a6dcf1ebf0",
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
+    },
+    {
+      "path": "frontend/src/app/shared/core/http/services/help-center.service.ts",
+      "upstreamSha256": "ce59894e207b005be87a408b75846e31ec7910664d031002d61923edffcc1b21",
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
+    },
+    {
+      "path": "frontend/src/app/shared/core/http/services/users.service.ts",
+      "upstreamSha256": "37591209ab2f252cd4ee18b67dae9d80f9a9d8ee6c5e266101a3037c81f2a0ea",
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
+    },
+    {
+      "path": "frontend/src/app/shared/core/index.ts",
+      "upstreamSha256": "f928627f3d757068d71301b7b7c72f617c8eafb8fa65a60c1ae977a99d5fe680",
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
+    },
+    {
+      "path": "frontend/src/app/shared/core/local/seed/builders/help-center-content-seed.builder.ts",
+      "upstreamSha256": "42ac1607f7402ec50e8bc084c68e92b349502d008a2d53ba615984485de34216",
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
+    },
+    {
+      "path": "frontend/src/app/shared/core/local/seed/data/help-center-guide-fields.json",
+      "upstreamSha256": "c9c462c0617893444853ed891a1c9d9b34e6be5c820eed66fad89e1e24440ba0",
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
+    },
+    {
+      "path": "frontend/src/app/shared/core/local/seed/repositories/help-center-seed.repository.ts",
+      "upstreamSha256": "f5e21b02b4f153d2fa9c737b724358f2947c21a898ed850e6d307eca5f940013",
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
+    },
+    {
+      "path": "frontend/src/app/shared/core/local/seed/repositories/users-seed.repository.ts",
+      "upstreamSha256": "f618293b832558ce80da7ca4a8c946ddfcf93dd3cf02eb66f116a5b5d9a1b4a3",
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
+    },
+    {
+      "path": "frontend/src/app/shared/core/local/seed/services/demo-bootstrap.service.ts",
+      "upstreamSha256": "6baf530529348252d55143e510e7b52cc4437809d9d8a35953ad801cff1323d7",
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
+    },
+    {
+      "path": "frontend/src/app/shared/core/local/seed/services/static-content.service.ts",
+      "upstreamSha256": "a7968da482c2431475611d6b09ebb7671bd1a613b43bfef07fe884dd98876b2c",
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
+    },
+    {
+      "path": "frontend/src/app/shared/core/local/source/entity/content.entity.ts",
+      "upstreamSha256": "19ffe56e3923cce38cf2f93296e04243e4367ee1dde950d080368eac9f28aae4",
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
+    },
+    {
+      "path": "frontend/src/app/shared/core/local/source/entity/country-partition.entity.ts",
+      "upstreamSha256": "fbec9ed202cd4f30ae2d7fc85d865170f7e9059efe3b54a42c37a091435bc1bd",
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": null,
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
+    },
+    {
+      "path": "frontend/src/app/shared/core/local/source/mappers/help-center.mapper.ts",
+      "upstreamSha256": "3ec34db9cce03aaf1adfdf7dfa42232912d7dc60a7cadbed74d11d47bef19be7",
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": null,
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
+    },
+    {
+      "path": "frontend/src/app/shared/core/local/source/mappers/user.mapper.ts",
+      "upstreamSha256": "5eaa7b296e6f7335b5294bb5117dc2900a81b1858c13d29bafc07b109719e233",
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
+    },
+    {
+      "path": "frontend/src/app/shared/core/local/source/repositories/country-de.generated.ts",
+      "upstreamSha256": "6f05652b59806db855690bc73b622c8fd4cd8422abf90313fd265d54a0f984c4",
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": null,
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
+    },
+    {
+      "path": "frontend/src/app/shared/core/local/source/repositories/country-es.generated.ts",
+      "upstreamSha256": "3be1133d861fecc0343acf15b4c2d72250906179037ef9811537884c2f266d41",
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": null,
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
+    },
+    {
+      "path": "frontend/src/app/shared/core/local/source/repositories/country-gb.generated.ts",
+      "upstreamSha256": "313143b569bc59ad121faa63118a5b42a9eedc0f0dafc0282cda04c6bd8aadd9",
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": null,
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
+    },
+    {
+      "path": "frontend/src/app/shared/core/local/source/repositories/country-partitions.repository.ts",
+      "upstreamSha256": "b64243358439c000eea76a75bbf89982a99b18f545ae39cc227285247220cddb",
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": null,
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
+    },
+    {
+      "path": "frontend/src/app/shared/core/local/source/repositories/help-center.repository.ts",
+      "upstreamSha256": "e227e666005c73d60853ebf4d9fcd80e38711a4b877e75829cba36c2ceca726a",
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
+    },
+    {
+      "path": "frontend/src/app/shared/core/local/source/repositories/users.repository.spec.ts",
+      "upstreamSha256": "a3303524e8a77d82de3818c34d13fbd829bceea301d1948348a3f5678991346c",
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
+    },
+    {
+      "path": "frontend/src/app/shared/core/local/source/repositories/users.repository.ts",
+      "upstreamSha256": "228e9ca47402ea65d85a9c1353d3341da16627398a47d1acf51d0b4d9d10d1fa",
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
+    },
+    {
+      "path": "frontend/src/app/shared/core/local/source/services/help-center.service.ts",
+      "upstreamSha256": "2698e163155e9260f9cbfa67576f787aad4fe56893b3ad2bacde5d4ea16564e7",
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
+    },
+    {
+      "path": "frontend/src/app/shared/core/local/source/services/users.service.ts",
+      "upstreamSha256": "e0cedc0c27d70cd5fc1c597dbef7730ef19b818d424d01b3052c6849214170ee",
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
+    },
+    {
+      "path": "frontend/src/app/shared/ui/components/demo-bootstrap-selector/demo-bootstrap-selector.component.html",
+      "upstreamSha256": "b415ace0e006e34fd691ba85e861e1b926fe517b0e3e85927ccf09fb58229bd6",
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": null,
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
+    },
+    {
+      "path": "frontend/src/app/shared/ui/components/demo-bootstrap-selector/demo-bootstrap-selector.component.scss",
+      "upstreamSha256": "e5147e17c0ac824d660393485fcd25791cce1f1e829e856021b87432c35238c3",
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": null,
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
+    },
+    {
+      "path": "frontend/src/app/shared/ui/components/demo-bootstrap-selector/demo-bootstrap-selector.component.ts",
+      "upstreamSha256": "809c99622606368ea2fc92ab7f6da7b1934c55e7b3c9f662519650a0230d4251",
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
+    },
+    {
+      "path": "frontend/src/app/shared/ui/components/document-viewer/document-viewer.component.html",
+      "upstreamSha256": "d7f69ff1679655f009ae29a7154ab0272503f55fac11884e7eadbecf5e825bc7",
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": null,
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
+    },
+    {
+      "path": "frontend/src/app/shared/ui/components/document-viewer/document-viewer.component.scss",
+      "upstreamSha256": "d5d29f184bb5ab8e6058e144b9924ecbe21d47a82bfaab05667eb45ff2a46782",
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": null,
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
+    },
+    {
+      "path": "frontend/src/app/shared/ui/components/document-viewer/document-viewer.component.spec.ts",
+      "upstreamSha256": "8684f530ac115a5730562b2bf036882bb1b734d22bcf9b4f54a46b36424b98b6",
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": null,
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
+    },
+    {
+      "path": "frontend/src/app/shared/ui/components/document-viewer/document-viewer.component.ts",
+      "upstreamSha256": "867c3a5eb1bbf233451b1d56d2417f146160dddb1ba6480f8ec5e679c1b337c5",
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": null,
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
+    },
+    {
+      "path": "frontend/src/app/shared/ui/components/document-viewer/document-viewer.types.ts",
+      "upstreamSha256": "20080210ae93804c33e9798ff24043f418ac009f6680945e9ed553ba82c5e9d2",
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": null,
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
+    },
+    {
+      "path": "frontend/src/app/shared/ui/components/document-viewer/index.ts",
+      "upstreamSha256": "2b219adf37316ac1ca9fc48753586d59d32a28fdfe07bab585ae975a8da06652",
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": null,
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
+    },
+    {
+      "path": "frontend/src/app/shared/ui/components/explanation-popup/guide-options.ts",
+      "upstreamSha256": "5ebc8e4c19132016c00dc43ed599fd7ece99e24e5d7c1761768b70ffb7d10842",
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": null,
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
+    },
+    {
+      "path": "frontend/src/app/shared/ui/context/stores/app/app-context-store.utils.ts",
+      "upstreamSha256": "710909bf9e2e5433cf5422e6f08f46d8f48ca6b6ea03b7811844cf721912a845",
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
+    },
+    {
+      "path": "frontend/src/app/shared/ui/context/stores/app/app-runtime.store.ts",
+      "upstreamSha256": "27cb12ebae95ece5d8e383ea365dd0da055ae4ab69656aaa6a815639065e6e09",
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": null,
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
+    },
+    {
+      "path": "frontend/src/app/shared/ui/context/stores/app/demo-bootstrap-selector.store.ts",
+      "upstreamSha256": "812935d86c332c130cb8aef00762124671e262540771484902b90021afed9861",
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
+    },
+    {
+      "path": "frontend/src/app/shared/ui/context/stores/app/help-center.store.ts",
+      "upstreamSha256": "e4c3445f1a373b6645f8f0e65d64d509b769fd7417d7e717fd84a3c13c876ad3",
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": null,
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
+    },
+    {
+      "path": "frontend/src/app/shared/ui/converters/app/help-center-revision-document-viewer.converter.ts",
+      "upstreamSha256": "747d798bb333df0de92ca5878f5eb54ccd864f686bdf91b8f4e8acd5ec6adefa",
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": null,
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
+    },
+    {
+      "path": "frontend/src/assets/icon/android-chrome-192x192.png",
+      "upstreamSha256": "3cc39d4a9102014b28ceeda4fdc0fc16ec0b6f1c034ab5a4d473557e903a7412",
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
+    },
+    {
+      "path": "frontend/src/assets/icon/android-chrome-512x512.png",
+      "upstreamSha256": "2f5e0b7c7d8c36afaca9c6bd7e1c87fec9956c337ebd90577bc1f77bb6c665c9",
+      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
+      "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
+      "sourceRevision": "bfc9a167c",
+      "sourceFrontendRevision": "5fbf3e62"
+    },
+    {
+      "path": "e2e/functional/ui/lib/chrome-cdp.mjs",
+      "upstreamSha256": "b130c54eb37c8d04c2563547fe788e1cb3d7c67edd2d959817c8cd7ebce74b8a",
+      "purpose": "Unchanged native isolated headless Chrome lifecycle and browser assertions.",
+      "adaptation": null,
+      "sourceRevision": "bfc9a167c"
     }
   ]
 }

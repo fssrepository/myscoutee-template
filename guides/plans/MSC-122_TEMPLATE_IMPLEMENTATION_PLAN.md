@@ -275,10 +275,17 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     foundation only: consent/login screens, local seed, HTTP user adapters and
     browser persistence checks are not complete. Evidence:
     `MSC122_TEMPLATE_FRONTEND_FOUNDATION_20261011.json`.
+    Frontend `c4f3c39` additionally passes 108 unit tests and a fresh-browser local
+    public-document/consent/demo-entry/reload/logout flow. The selected profile
+    repository preserves omitted fields and private devices; stale-session results
+    are discarded and HTTP errors do not fall back to local data. Native document
+    route rendering is fixed and qualified at frontend `5fbf3e62`. See
+    `MSC122_TEMPLATE_LOCAL_ENTRY_20261011.json`. HTTP runtime wiring and the
+    full authenticated screens remain pending.
     Close with working local persistence and HTTP persistence for retained flows,
     reload recovery and no silent local fallback in HTTP mode.
 
-14. **Build the landing page and version display — PENDING.**
+14. **Build the landing page and version display — IN PROGRESS.**
     Use the existing landing/login/branding components. Show a large central
     “Templates” title in the requested Gothic/calligraphic style, with the logo
     and login entry on opposite sides and the real build version badge. Preserve
@@ -306,7 +313,7 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     controls. Remove the shared-list header and product actions from the side menu.
     Close with save/reopen, image editing and no clearing of hidden stored fields.
 
-18. **Connect frontend guide, consent and notification surfaces — PENDING.**
+18. **Connect frontend guide, consent and notification surfaces — IN PROGRESS.**
     Reuse the existing top-menu access, drawers/dialogs, guide engine and consent
     flow. Seed guidance only for retained screens. Preserve unread/seen state,
     document versions and local/HTTP behavior. Close with initial entry, required
@@ -455,9 +462,11 @@ deep-link behavior. A working `local` build alone does not close frontend work.
 
 ## Current continuation point
 
-Continue steps **4–6**: compose the selected backend using the native runtime,
-prepare its own small seed and prove startup. The latest source baseline is
-qualified; the template itself is still under construction. Its frontend contains
-repository/submodule scaffolding only. Selected runtime files are unqualified
-until the complete stack and fixtures are assembled. Steps 12–30 must not be
-silently dropped merely because the first backend or UI screen starts.
+Continue **13–14 and 18** with the HTTP entry flow, alongside the missing dev
+frontend-sync/nginx wiring in **5**. The local consent/member entry checkpoint
+is frontend `c4f3c39`, with 108 passing unit tests and the recorded browser flow.
+The member/admin/operator routes currently have only a guarded name/logout shell;
+SmartList, chat, profile, guide/notification and privileged screens are unfinished.
+The requested Gothic landing typeface is also pending. Then continue **15–19**
+and the remaining runtime, qualification and release steps. Earlier backend
+steps are not all closed; follow their explicit remaining checks above.
