@@ -14,7 +14,7 @@ if(fixture) await fixture.query(`(()=>{
  db.userNotifications.insertOne({...source,_id:'qa-welcome:'+id,syncKey:'qa-welcome:'+id,recipientUserId:id});
  db.users.updateOne({userId:id},{$set:{'activities.notifications':1}});
 })()`);
-const browser=await launchChromeBrowser({baseUrl:local?'http://127.0.0.1:4200':process.env.E2E_SERVER_BASE_URL??'http://localhost'});
+const browser=await launchChromeBrowser({baseUrl:local?(process.env.E2E_LOCAL_BASE_URL??'http://127.0.0.1:4200'):process.env.E2E_SERVER_BASE_URL??'http://localhost'});
 const page=await browser.newPage();
 const popup='app-notification-center-popup';
 async function openNotifications(){await page.clickVisible('.member-actions [data-guide-item="notifications"]');await page.waitForSelector(popup+' single-row article');}

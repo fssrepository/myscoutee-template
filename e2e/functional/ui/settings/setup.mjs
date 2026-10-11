@@ -5,7 +5,7 @@ import { launchChromeBrowser } from '../lib/chrome-cdp.mjs';
 import { assertUi } from '../entry/assert.mjs';
 import { stageChatFixture } from '../chat/fixture.mjs';
 const local=process.argv.includes('--local'), fixture=local?null:await stageChatFixture();
-const baseUrl=local?'http://127.0.0.1:4200':process.env.E2E_SERVER_BASE_URL??'http://localhost';
+const baseUrl=local?(process.env.E2E_LOCAL_BASE_URL??'http://127.0.0.1:4200'):process.env.E2E_SERVER_BASE_URL??'http://localhost';
 const browser=await launchChromeBrowser({baseUrl}),page=await browser.newPage();
 const key=`myscoutee-template.${local?'demo':'http'}.location.tracking-enabled.v1`,point={latitude:52.6,longitude:13.5};
 const actorId=fixture?.ids[0]??'100000000000000000000001';

@@ -2256,7 +2256,7 @@
       "sourceRevision": "094af314889106cd193a4058110312c40dee9ebc",
       "upstreamSha256": "8a9378ec8e05980d6db09b5315a89698e9cdd8ffa3d0c1daa4f16d5200eeb84b",
       "purpose": "Native e2e application/backing-service composition.",
-      "adaptation": "Select implemented backing services and backend; isolate container names and template image tags, omit product/runtime dependencies not yet selected. Complete edge/frontend/MCP/STUN/operator composition remains tracked in the plan."
+      "adaptation": "Retain selected Mongo, Redis, MinIO, Java, nginx, MCP and STUN services with template-owned image/container/project/volume identity. Disposable e2e_db and E2E-only credentials; built artifacts, no source mounts/watchers. Registry/payment excluded."
     },
     {
       "path": "server/docker/conf/mongodb/mongo-seed-policy.inc",
@@ -5573,6 +5573,48 @@
       "sourceRevision": "f46163d7b38c56c33b1b178419c5b74afac2273f",
       "upstreamSha256": "f92fd8d489ee12802d415b33431c805ebdad42de1f1d603d0294c27c6917d487",
       "purpose": "Native authorized MCP/admin read path or credential-safe E2E diagnostics.",
+      "adaptation": null
+    },
+    {
+      "path": "server/docker-compose-stun.yml",
+      "sourceRevision": "bc9003efc252d37568c1fc0a13deeaa8f288e142",
+      "upstreamSha256": "31c9887d769ddd48bc58f0e5c98503534c2606ffa199d8169820577e5fe88e53",
+      "purpose": "Native artifact-only E2E gateway, selected component workspace build inputs, TLS policy or retained STUN service.",
+      "adaptation": null
+    },
+    {
+      "path": "server/docker/images/nginx/e2e/Dockerfile",
+      "sourceRevision": "bc9003efc252d37568c1fc0a13deeaa8f288e142",
+      "upstreamSha256": "d70474b61f4855dd30eed5fb0095e5cc843349096a2c16d9410f50f312eb8980",
+      "purpose": "Native artifact-only E2E gateway, selected component workspace build inputs, TLS policy or retained STUN service.",
+      "adaptation": null
+    },
+    {
+      "path": "server/docker/images/nginx/e2e/entrypoint.sh",
+      "sourceRevision": "bc9003efc252d37568c1fc0a13deeaa8f288e142",
+      "upstreamSha256": "73359e02933a46a5cf784996bcb1a9332e48f2e32f1707e8bb6e421b5c737b3d",
+      "purpose": "Native artifact-only E2E gateway, selected component workspace build inputs, TLS policy or retained STUN service.",
+      "adaptation": null
+    },
+    {
+      "path": "server/docker/conf/nginx/conf/http/http-transport-policy.prod.conf",
+      "sourceRevision": "bc9003efc252d37568c1fc0a13deeaa8f288e142",
+      "upstreamSha256": "57c16be42121c09916259a0d255c3ef2daff58d13185396655d76d8a97545d35",
+      "purpose": "Native artifact-only E2E gateway, selected component workspace build inputs, TLS policy or retained STUN service.",
+      "adaptation": null
+    },
+    {
+      "path": "server/docker/conf/nginx/conf/http/https-response-policy.prod.conf",
+      "sourceRevision": "bc9003efc252d37568c1fc0a13deeaa8f288e142",
+      "upstreamSha256": "f063bef838ea0643b841f51b40f98812a7fc851a134453df7460bf9fd592d244",
+      "purpose": "Native artifact-only E2E gateway, selected component workspace build inputs, TLS policy or retained STUN service.",
+      "adaptation": null
+    },
+    {
+      "path": "server/docker/conf/nginx/conf/stream/mongodb.conf",
+      "sourceRevision": "bc9003efc252d37568c1fc0a13deeaa8f288e142",
+      "upstreamSha256": "308c05b693426d2aaae8af4629f927a96b8190edad8e1a747597cbe0e91c8e43",
+      "purpose": "Native artifact-only E2E gateway, selected component workspace build inputs, TLS policy or retained STUN service.",
       "adaptation": null
     }
   ],

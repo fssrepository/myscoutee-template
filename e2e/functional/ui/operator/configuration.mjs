@@ -4,7 +4,7 @@ import {launchChromeBrowser} from '../lib/chrome-cdp.mjs';
 import {assertGuideTour} from '../guide/assert.mjs';
 import {assertUi} from '../entry/assert.mjs';
 import {stageOperatorConfigurationFixture} from './fixture.mjs';
-const local=process.argv.includes('--local'),baseUrl=local?'http://127.0.0.1:4200':process.env.E2E_SERVER_BASE_URL??'http://localhost';
+const local=process.argv.includes('--local'),baseUrl=local?(process.env.E2E_LOCAL_BASE_URL??'http://127.0.0.1:4200'):process.env.E2E_SERVER_BASE_URL??'http://localhost';
 const fixture=local?null:await stageOperatorConfigurationFixture(baseUrl);
 const browser=await launchChromeBrowser({baseUrl}),page=await browser.newPage();
 const popup='app-operator-configuration-popup';

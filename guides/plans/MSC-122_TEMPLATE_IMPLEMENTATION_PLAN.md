@@ -223,8 +223,25 @@ deep-link behavior. A working `local` build alone does not close frontend work.
    HTTP contract cases pass; see `MSC122_TEMPLATE_ACCOUNT_PURGE_20261011.json`.
    API/MCP credential cleanup now joins the same worker, with embedded retry
    and retained-owner checks in `MSC122_TEMPLATE_API_MCP_20261011.json`.
-   Email cleanup must join this worker when its owner is installed. Provider callbacks and full HTTP/UI/REAL-DEMO/KVM deletion
+   The native deletion-warning email job (five days before the purge deadline) is
+   not yet selected; retain its delivery/retry/deduplication and email cleanup
+   together with the email owner. The already-selected background jobs are account
+   purge, notification delivery and integration/MCP callback delivery. Provider callbacks and full HTTP/UI/REAL-DEMO/KVM deletion
    qualification remain pending; this checkpoint does not close the step.
+
+   Retained background-work inventory (source audit, 2026-10-11):
+
+   | Work | Current template owner | Status / boundary |
+   | --- | --- | --- |
+   | Deleted-account purge | `DeletedAccountPurgeService` | Selected; default `users.account-purge-window-days=30`, native rule-gated scheduled scan, durable cleanup retry |
+   | Notification delivery/retry | `NotificationOutboxWorkerService` | Selected; native Mongo change-stream wakeup and due-time scheduling, not an added constant polling loop |
+   | Integration/MCP callbacks | `IntegrationWebhookService` | Selected; native durable claims/retry and bounded delivery; external public callback qualification remains open |
+   | Pre-purge warning email | Source `DeletedAccountWarningWorker` | Missing; five-day warning window. Select the native email sending/configuration/rendering/unsubscribe dependencies and required data/index/cleanup contracts together |
+   | Chat realtime, call availability, runtime status | Native chat stream consumer, STUN probe, runtime publisher | Infrastructure workers are selected separately from the three seeded job rules; call behavior still needs the step 9 audit |
+   | Events, payments, affinity, product content approval and business reports | Omitted product owners | Not required by retained template screens/models; do not import their jobs or model graphs |
+
+   An admin Jobs screen is not required to run these owners. Preserve the native
+   seed/configuration and audit state independently of optional management UI.
 
 9. **Complete personal and support communication — IN PROGRESS.**
    Reuse chat/message storage, participant authorization, paging, mutations,
@@ -404,8 +421,9 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     Twenty frontend checks and five administrator API Java checks pass; see
     `MSC122_TEMPLATE_ADMIN_UI_20261011.json`. The minimal admin API keeps the native
     Attention shape and omits the optional analytics statistics field/model/worker.
-    Complete new admin contextual tours, live role login and KVM/installed host
-    controls remain open; implementation continues with consolidated tests.
+    Five admin contextual tours now pass on artifact E2E, including warning and
+    read-only evidence contexts. Live role login and KVM/installed host controls
+    remain open; local tour consolidation is part of step 22.
 
 20. **Consolidate JUnit and frontend unit/component coverage — PASS for selected suites.**
     Preserve `tools/run-backend-junit.sh`, native standard/embedded/integration
@@ -428,11 +446,14 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     mode, explicit mutation cases, isolated fixtures, cleanup and endpoint coverage
     auditing. Close with real HTTP mutation/read/reload checks and negative
     authorization checks on the standalone template E2E stack.
-    The shared collection/HTTP/assertion/session helpers are now selected unchanged;
-    seventeen contract/session/MCP cases now pass against the dev backend. This preliminary
-    qualification does not close disposable E2E fixtures or mutation flows.
+    The native artifact-only E2E stack now starts seven healthy selected services
+    on isolated e2e_db. All 17 contract/session/MCP cases and the complete selected
+    admin mutation runner pass, with owned-session/fixture cleanup. Fifteen browser
+    flows also exercise persistence through the actual built edge/API/DB/media
+    images. See MSC122_TEMPLATE_E2E_RUNTIME_20261011.json. Provider callbacks and
+    email-owner selection remain earlier-step gaps, not silently passed endpoints.
 
-22. **Implement frontend E2E and local/HTTP parity checks — PENDING.**
+22. **Implement frontend E2E and local/HTTP parity checks — IN PROGRESS.**
     Reuse `e2e/functional/ui` and existing browser helpers/checks for the retained
     routes and flows. Cover entry, SmartList views, chat, profile/avatar, consent,
     guide/notification/settings and privileged shells in the applicable modes.
@@ -447,6 +468,10 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     Respect the repository's browser authorization boundary; a manual-QA handoff
     does not itself authorize automated checklist actions. Close with reproducible
     isolated E2E evidence rather than screenshots of an unconnected mock UI.
+    The serial suite maps existing fixture-owning runners to the QA table and
+    records JSON/CSV results. All 15 artifact HTTP flows pass, including the
+    optimized-build chat reconnect and administrator guides; local consolidation
+    is running serially after stopping the E2E stack.
 
 23. **Restore stress/performance tooling and measure a coherent build — PENDING.**
     Reuse `e2e/stress/backend`, `e2e/stress/ui`, shared measurement helpers and
@@ -555,13 +580,15 @@ deep-link behavior. A working `local` build alone does not close frontend work.
 
 ## Current continuation point
 
-Continue **21**, the standalone E2E composition and external MCP transport,
-then **22**, consolidated UI/local/HTTP qualification. Step **20** passes all
+Continue **22**, consolidated UI/local/HTTP qualification. The standalone
+E2E composition in **21** passes 17 backend cases, admin mutations and 15 UI
+flows. Then close the retained account warning/email gap in **8–9**, and proceed
+to the coherent performance and KVM batches in **23–24**. Step **20** passes all
 400 selected backend and 256 frontend tests. Step **19** has local/dev HTTP
 moderation, support and administrator API evidence at frontend `43980be` and
 parent `e1118fe`. Member steps **15–18** and operator configuration/TLS/update
-UI have their recorded local/dev evidence. New administrator tours, live Firebase,
-operator bootstrap, external MCP and KVM/installed host controls remain open.
+UI have their recorded local/dev evidence. Administrator tours pass in artifact E2E; local consolidation, live Firebase,
+operator bootstrap, external provider MCP and KVM/installed host controls remain open.
 
 Then complete KVM, packaging and release qualification. Earlier backend steps
 still have the pending checks recorded above; the current step number does not

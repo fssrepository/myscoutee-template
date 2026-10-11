@@ -3,7 +3,7 @@ import { launchChromeBrowser } from '../lib/chrome-cdp.mjs';
 import { assertUi } from '../entry/assert.mjs';
 import { stageChatFixture } from '../chat/fixture.mjs';
 const local=process.argv.includes('--local'),fixture=local?null:await stageChatFixture();
-const browser=await launchChromeBrowser({baseUrl:local?'http://127.0.0.1:4200':process.env.E2E_SERVER_BASE_URL??'http://localhost'}),page=await browser.newPage();
+const browser=await launchChromeBrowser({baseUrl:local?(process.env.E2E_LOCAL_BASE_URL??'http://127.0.0.1:4200'):process.env.E2E_SERVER_BASE_URL??'http://localhost'}),page=await browser.newPage();
 
 try{
  await page.navigate('/entry');await page.waitForText('v1.0.0');await assertGuideTour(page, ['Enter the application']);

@@ -2,12 +2,13 @@ import assert from 'node:assert/strict';
 import { launchChromeBrowser } from '../lib/chrome-cdp.mjs';
 import { assertUi } from '../entry/assert.mjs';
 import { stageChatFixture } from './fixture.mjs';
-import { openConversation, assertPairedChat } from './assert.mjs';
+import { openConversation, assertPairedChat, trackChatTransport } from './assert.mjs';
 const fixture=await stageChatFixture();
 const browsers=[],pages=[];
 try{
  for(let i=0;i<2;i++){const browser=await launchChromeBrowser({baseUrl:process.env.E2E_SERVER_BASE_URL??'http://localhost'});browsers.push(browser);pages.push(await browser.newPage());}
  const [a,b]=pages;
+ await trackChatTransport(a);
  await assertUi({page:a,local:false,actorId:fixture.ids[0],actorName:fixture.names[0],memberReady:async()=>{
   await openConversation(a,fixture.names[1]);
   await assertUi({page:b,local:false,actorId:fixture.ids[1],actorName:fixture.names[1],memberReady:async()=>{

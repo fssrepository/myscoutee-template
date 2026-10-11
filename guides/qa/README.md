@@ -59,6 +59,19 @@ Keep VMware and KVM results distinct. Prepare and verify each environment before
 handoff. Identify the available native VMware installation/launch workflow during
 the packaging inventory rather than treating a KVM result as VMware evidence.
 
+## Standalone artifact E2E checkpoint — 2026-10-11
+
+The seven-service disposable stack now passes 17 backend collection cases,
+the selected admin mutation flow and all 15 HTTP browser flows. The five admin
+guide contexts also pass, including their visible controls and mobile report
+layout. The native source and template nginx image builds include the separated
+components workspace inputs; the reconnect probe uses the actual browser
+WebSocket and works in optimized output without Angular debug helpers.
+See [E2E evidence](../qualification/evidence/MSC122_TEMPLATE_E2E_RUNTIME_20261011.json)
+and [reproducible commands](../../e2e/README.md). The QA table has distinct E2E
+API/UI columns. Local consolidation follows after stopping E2E; provider, KVM,
+installed and matched-load gates remain separate.
+
 ## Initial backend collection
 
 The template uses the unchanged native `e2e/shared` collection, HTTP, assertion,

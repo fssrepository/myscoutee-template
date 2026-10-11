@@ -5,7 +5,7 @@ import { launchChromeBrowser } from '../lib/chrome-cdp.mjs';
 import { assertUi } from '../entry/assert.mjs';
 import { stageIntegrationFixture } from './fixture.mjs';
 const local=process.argv.includes('--local'),fixture=local?null:await stageIntegrationFixture();
-const browser=await launchChromeBrowser({baseUrl:local?'http://127.0.0.1:4200':process.env.E2E_SERVER_BASE_URL??'http://localhost'}),page=await browser.newPage();
+const browser=await launchChromeBrowser({baseUrl:local?(process.env.E2E_LOCAL_BASE_URL??'http://127.0.0.1:4200'):process.env.E2E_SERVER_BASE_URL??'http://localhost'}),page=await browser.newPage();
 try{
  await assertUi({page,local,actorId:fixture?.ids[0],actorName:fixture?.names[0],memberReady:async()=>{
   await page.clickVisible('.avatar-menu [data-guide-item="navigator-avatar"]');await page.clickVisible('.settings-menu .app-menu__trigger');await page.clickVisible('[data-guide-item="api"]');await page.waitForSelector('[data-guide-field="mcp-main-access"] button');

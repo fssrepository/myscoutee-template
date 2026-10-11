@@ -1,5 +1,24 @@
 import { assert } from '../../../shared/assertions.mjs';
 
+// Track only this isolated test browser's actual chat sockets. The optimized
+// application deliberately has no Angular debug API or test-only accessors.
+export async function trackChatTransport(page) {
+ await page.addInitScript(`(() => {
+  const sockets = new Set();
+  window.__qaChatSockets = sockets;
+  window.WebSocket = new Proxy(window.WebSocket, {
+   construct(target, args, newTarget) {
+    const socket = Reflect.construct(target, args, newTarget);
+    if (new URL(args[0], location.href).pathname === '/api/activities/chats/ws') {
+     sockets.add(socket);
+     socket.addEventListener('close', () => sockets.delete(socket));
+    }
+    return socket;
+   }
+  });
+ })();`);
+}
+
 export async function openConversation(page, peerName) {
  await page.clickVisible('.avatar-menu [data-guide-item="navigator-avatar"]');
  await page.clickVisible('.member-navigation [data-guide-item="chat"]');
@@ -24,14 +43,12 @@ export async function assertPairedChat(sender, receiver) {
  assert(!await receiver.isSelectorVisible(`[data-chat-message-id="${id}"] button[aria-label="Edit"]`),'Receiver must not get sender edit controls');
  // Interrupt the real client WebSocket, then require a new OPEN connection.
  await sender.evaluate(()=>{
-  const component=window.ng.getComponent(document.querySelector('app-template-chat'));
-  const socket=component.chats.http.socket;
+  const socket=[...window.__qaChatSockets].find(socket=>socket.readyState===WebSocket.OPEN);
   if(!socket||socket.readyState!==WebSocket.OPEN)throw new Error('Live WebSocket missing before reconnect test');
   window.__qaClosedChatSocket=socket;socket.close(4001,'QA transport interruption');
  });
  await sender.waitFor('new open chat WebSocket',()=>sender.evaluate(()=>{
-  const socket=window.ng.getComponent(document.querySelector('app-template-chat')).chats.http.socket;
-  return socket&&socket!==window.__qaClosedChatSocket&&socket.readyState===WebSocket.OPEN;
+  return [...window.__qaChatSockets].some(socket=>socket!==window.__qaClosedChatSocket&&socket.readyState===WebSocket.OPEN);
  }));
  const reply='Reply after reconnect '+Date.now();
  await receiver.fillVisible('.chat-composer textarea',reply);await receiver.clickVisible('.chat-composer .send');

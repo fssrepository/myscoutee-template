@@ -2,10 +2,11 @@ import assert from 'node:assert/strict';
 import {mkdir,writeFile} from 'node:fs/promises';
 import {launchChromeBrowser} from '../lib/chrome-cdp.mjs';
 import {assertUi} from '../entry/assert.mjs';
+import {assertGuideTour} from '../guide/assert.mjs';
 import {openConversation} from '../chat/assert.mjs';
 import {stageAdminFixture} from './fixture.mjs';
 import {nativeDemoSessions} from '../../../shared/native-demo-sessions.mjs';
-const local=process.argv.includes('--local'),baseUrl=local?'http://127.0.0.1:4200':process.env.E2E_SERVER_BASE_URL??'http://localhost';
+const local=process.argv.includes('--local'),baseUrl=local?(process.env.E2E_LOCAL_BASE_URL??'http://127.0.0.1:4200'):process.env.E2E_SERVER_BASE_URL??'http://localhost';
 const fixture=local?null:await stageAdminFixture(baseUrl);
 const member=fixture?.ids[1]??'100000000000000000000001',memberName=fixture?.names[1]??'Alex Morgan';
 const target=fixture?.ids[0]??'100000000000000000000002',targetName=fixture?.names[0]??'Sam Taylor';
@@ -39,12 +40,20 @@ try{
  }});
  await assertUi({page,local,role:'admin',actorId:admin,actorName:adminName,consentExpected:false,memberReady:async()=>{
   await setting('reports');await page.waitForSelector('app-admin-reports-popup single-row');
+  await assertGuideTour(page,['Reports','Close']);
+  await page.setViewport({width:390,height:844});
+  assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'Reports fit mobile');
+  if(process.env.E2E_SCREENSHOT_DIR){await mkdir(process.env.E2E_SCREENSHOT_DIR,{recursive:true});await writeFile(process.env.E2E_SCREENSHOT_DIR+'/admin-reports-mobile.png',await page.screenshot());}
+  await page.setViewport({width:1440,height:950});
   await page.clickByText('app-admin-reports-popup single-row article',targetName);await page.waitForText('Please review this saved chat message.');
+  await assertGuideTour(page,['Review report','Close']);
   await page.clickByText('.report-detail button','Reported chat message');await page.waitForSelector('.admin-message.is-reported');
+  await assertGuideTour(page,['Chat review','Close']);
   assert((await page.evaluate(()=>document.querySelector('.admin-message.is-reported')?.innerText)).includes(local?'Try switching':'QA report evidence'));
   await close('app-admin-chat-review-popup');
   await setting('reports');await page.clickByText('app-admin-reports-popup single-row article',targetName);
   await page.clickByText('.report-detail button','Warn user');await page.waitForSelector('app-admin-chat-review-popup textarea');
+  await assertGuideTour(page,['Chat review','Warning text','Send warning','Close']);
   await page.fillVisible('app-admin-chat-review-popup textarea','QA warning: please keep the conversation respectful.');
   await page.clickVisible('[data-guide-item="send-warning"]');await page.waitForText('Warning message was sent');await close('app-admin-chat-review-popup');
   await setting('reports');await page.clickByText('app-admin-reports-popup single-row article',targetName);
@@ -62,7 +71,9 @@ try{
   if(process.env.E2E_SCREENSHOT_DIR){await mkdir(process.env.E2E_SCREENSHOT_DIR,{recursive:true});await writeFile(process.env.E2E_SCREENSHOT_DIR+'/admin-reports.png',await page.screenshot());}
   await close('app-admin-reports-popup');
   await setting('feedback-review');await page.waitForSelector('app-admin-feedback-popup single-row');
+  await assertGuideTour(page,['Feedback','Filter','Close']);
   await page.clickByText('app-admin-feedback-popup single-row article',memberName);await page.waitForText(subject);
+  await assertGuideTour(page,['Review feedback','Close']);
   await page.clickVisible('app-admin-feedback-popup app-popup:last-of-type .ui-popup__header .ui-popup__close');
   await page.clickVisible('app-admin-feedback-popup single-row .ui-single-row__menu-trigger');await page.clickVisible('[data-guide-item="markSolved"]');await confirm();
   await page.waitFor('feedback solved',()=>page.evaluate(()=>!document.querySelector('app-admin-feedback-popup single-row')));

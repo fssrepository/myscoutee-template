@@ -8,7 +8,7 @@ import { assertProfileEditor } from './assert.mjs';
 const local=process.argv.includes('--local');
 const fixture=local?null:await stageChatFixture();
 if(fixture) await fixture.query(`db.users.updateOne({userId:${JSON.stringify(fixture.ids[0])}},{$set:{gender:'woman',profileFormVersion:7}})`);
-const browser=await launchChromeBrowser({baseUrl:local?'http://127.0.0.1:4200':process.env.E2E_SERVER_BASE_URL??'http://localhost'});
+const browser=await launchChromeBrowser({baseUrl:local?(process.env.E2E_LOCAL_BASE_URL??'http://127.0.0.1:4200'):process.env.E2E_SERVER_BASE_URL??'http://localhost'});
 const page=await browser.newPage();
 try {
  const actorId=fixture?.ids[0]??'100000000000000000000001';

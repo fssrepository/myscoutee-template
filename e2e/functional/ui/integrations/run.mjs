@@ -4,7 +4,7 @@ import { launchChromeBrowser } from '../lib/chrome-cdp.mjs';
 import { assertUi } from '../entry/assert.mjs';
 import { stageIntegrationFixture } from './fixture.mjs';
 const local=process.argv.includes('--local'),fixture=local?null:await stageIntegrationFixture();
-const baseUrl=local?'http://127.0.0.1:4200':process.env.E2E_SERVER_BASE_URL??'http://localhost';
+const baseUrl=local?(process.env.E2E_LOCAL_BASE_URL??'http://127.0.0.1:4200'):process.env.E2E_SERVER_BASE_URL??'http://localhost';
 const browser=await launchChromeBrowser({baseUrl}),page=await browser.newPage();
 const api='app-integration-settings-popup';
 let key='',clientId=randomUUID();

@@ -4,7 +4,7 @@ import { assertUi } from '../entry/assert.mjs';
 import { stageChatFixture } from '../chat/fixture.mjs';
 const local=process.argv.includes('--local');
 const fixture=local?null:await stageChatFixture();
-const browser=await launchChromeBrowser({baseUrl:local?'http://127.0.0.1:4200':process.env.E2E_SERVER_BASE_URL??'http://localhost'});
+const browser=await launchChromeBrowser({baseUrl:local?(process.env.E2E_LOCAL_BASE_URL??'http://127.0.0.1:4200'):process.env.E2E_SERVER_BASE_URL??'http://localhost'});
 const page=await browser.newPage();
 const actorId=fixture?.ids[0]??'100000000000000000000001';
 async function openMenu(){await page.clickVisible('.avatar-menu [data-guide-item="navigator-avatar"]');await page.clickVisible('.settings-menu .app-menu__trigger');}
