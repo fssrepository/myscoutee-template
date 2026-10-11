@@ -410,6 +410,15 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     update/status and other required operational controls. Omit virtual-company
     Registry screens. Reuse existing components and authority checks. Close with
     member/admin/operator access checks and the retained operations exercised.
+    Current surface inventory: the admin avatar side menu's settings menu opens
+    Reports, Feedback, Support chat and API; the default admin page is empty.
+    Members can send feedback from settings and report another participant's
+    chat message using its flag button. There is no standalone member Report
+    menu and no member control to start a new support conversation. Existing
+    admin-created support conversations can be continued by the member. The
+    qualified support evidence covers that existing-conversation path, not
+    member-initiated support creation. No report/moderation code was removed
+    during the user's clarification of these entry points.
     Member API/MCP settings are selected and qualified at frontend `7c9baee`: 18
     focused tests, local/HTTP create/mask/permission/revoke flows, contextual guides
     and dev HTTP browser OAuth consent/PKCE/login return pass. See

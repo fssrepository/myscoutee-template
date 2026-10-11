@@ -160,7 +160,14 @@
         "The existing validator applies a 45-line mode-gate budget to the complete 167-line AGENTS.md.",
         "Canonical references guides/plans/PROJECT_CONTEXT.md and guides/plans/PRODUCTION_QUALIFICATION.md are absent."
       ],
-      "changedPathReferences": "Core adapter paths and existing component/store locations were corrected. No AGENTS.md instruction was shortened or changed to satisfy the validator."
+      "changedPathReferences": "Core adapter paths and existing component/store locations were corrected. No AGENTS.md instruction was shortened or changed to satisfy the validator.",
+      "followUp": {
+        "status": "PASS",
+        "requiredFiles": 63,
+        "fix": "Resolve the two unchanged roadmap documents at their current paths (moved by 3ddb6ebf5); measure the existing 45-line budget on the Trust mode gate section rather than unrelated repository instructions.",
+        "command": "bash tools/trust/validate-trust-library.sh",
+        "instructionChanges": "None: AGENTS.md and trust modes are unchanged."
+      }
     }
   },
   "templateLocalUi": {
