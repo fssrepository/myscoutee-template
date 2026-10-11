@@ -1,0 +1,22 @@
+spring:
+  data:
+    rest:
+      detection-strategy: annotated
+  profiles:
+    active: ${SPRING_DEV:dev}
+  main:
+    allow-bean-definition-overriding: true
+
+auth:
+  # -1 disables the concurrent-session cap; positive values set the maximum.
+  max-active-sessions: ${AUTH_MAX_ACTIVE_SESSIONS:-1}
+
+operator:
+  configuration:
+    master-key-path: ${OPERATOR_CONFIGURATION_MASTER_KEY_PATH:/etc/myscoutee/configuration/deployment-master-key}
+
+config:
+  chat-call-stun-urls: ${CHAT_CALL_STUN_URLS:}
+  chat-call-stun-port: ${CHAT_CALL_STUN_PORT:3478}
+  chat-call-stun-health-host: ${CHAT_CALL_STUN_HEALTH_HOST:stun}
+  chat-call-stun-health-port: 3478

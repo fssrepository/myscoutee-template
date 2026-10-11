@@ -1,0 +1,118 @@
+[
+  {
+    "_id": "template-help-en-v1",
+    "documentType": "help",
+    "contextKey": "",
+    "isSystem": true,
+    "lang": "en",
+    "languageLabel": "English",
+    "version": 1,
+    "active": true,
+    "title": "Getting started",
+    "summary": "Getting started",
+    "description": "Explore the example list, open a conversation and edit your profile from the avatar menu.",
+    "presentation": "sections",
+    "sections": [
+      {
+        "id": "help-intro",
+        "icon": "info",
+        "title": "Getting started",
+        "blurb": "",
+        "contentHtml": "<p>Explore the example list, open a conversation and edit your profile from the avatar menu.</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "createdDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "updatedUser": "template-seed"
+  },
+  {
+    "_id": "template-privacy-en-v1",
+    "documentType": "privacy",
+    "contextKey": "",
+    "isSystem": true,
+    "lang": "en",
+    "languageLabel": "English",
+    "version": 1,
+    "active": true,
+    "title": "Privacy information",
+    "summary": "Privacy information",
+    "description": "This demonstration stores profile, conversation and consent data in the selected local or server environment. A deployed project must provide its own data controller and privacy information before inviting real users.",
+    "presentation": "sections",
+    "sections": [
+      {
+        "id": "privacy-intro",
+        "icon": "info",
+        "title": "Privacy information",
+        "blurb": "",
+        "contentHtml": "<p>This demonstration stores profile, conversation and consent data in the selected local or server environment. A deployed project must provide its own data controller and privacy information before inviting real users.</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "createdDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "updatedUser": "template-seed"
+  },
+  {
+    "_id": "template-terms-en-v1",
+    "documentType": "terms",
+    "contextKey": "",
+    "isSystem": true,
+    "lang": "en",
+    "languageLabel": "English",
+    "version": 1,
+    "active": true,
+    "title": "Template demonstration terms",
+    "summary": "Template demonstration terms",
+    "description": "Use the seeded demonstration accounts to explore the application. Replace this demonstration document with the terms of your own project before inviting real users.",
+    "presentation": "sections",
+    "sections": [
+      {
+        "id": "terms-intro",
+        "icon": "info",
+        "title": "Template demonstration terms",
+        "blurb": "",
+        "contentHtml": "<p>Use the seeded demonstration accounts to explore the application. Replace this demonstration document with the terms of your own project before inviting real users.</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "createdDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "updatedUser": "template-seed"
+  },
+  {
+    "_id": "template-explanation-en-v1",
+    "documentType": "explanation",
+    "contextKey": "home",
+    "isSystem": true,
+    "lang": "en",
+    "languageLabel": "English",
+    "version": 1,
+    "active": true,
+    "title": "Welcome to Templates",
+    "summary": "Welcome to Templates",
+    "description": "Choose a list view to explore the example cards. Open Chat to try a conversation. Your avatar menu contains your profile and settings.",
+    "presentation": "sections",
+    "sections": [
+      {
+        "id": "explanation-intro",
+        "icon": "info",
+        "title": "Welcome to Templates",
+        "blurb": "",
+        "contentHtml": "<p>Choose a list view to explore the example cards. Open Chat to try a conversation. Your avatar menu contains your profile and settings.</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "createdDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "updatedUser": "template-seed"
+  }
+]

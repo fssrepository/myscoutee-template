@@ -1,0 +1,63 @@
+management:
+  health:
+    show-details: "never"
+  endpoints:
+    web:
+      base-path: "/"
+      exposure:
+        include: "health,prometheus"
+      path-mapping:
+        health: "health"
+        prometheus: "metrics"
+
+config:
+  operator-user: ${OPERATOR_USER:}
+  operator-bootstrap-email: ${OPERATOR_BOOTSTRAP_EMAIL:}
+  operator-bootstrap-password-sha256: ${OPERATOR_BOOTSTRAP_PASSWORD_SHA256:}
+  operator-bootstrap-allow-insecure: ${OPERATOR_BOOTSTRAP_ALLOW_INSECURE:false}
+  firebase-enabled: ${FIREBASE_ENABLED:true}
+  firebase-service-account-path: ${FIREBASE_SERVICE_ACCOUNT_PATH:/run/secrets/firebase-service-account.json}
+  chat-only-mode: ${CHAT_ONLY_MODE:false}
+  member-user: ${MEMBER_USER:}
+  facebook-app-secret: ${FACEBOOK_APP_SECRET:}
+  websocket-allowed-origin-patterns: ${WEBSOCKET_ALLOWED_ORIGIN_PATTERNS:https://localhost,https://127.0.0.1,http://localhost:8080,http://127.0.0.1:8080}
+
+auth:
+  region-security:
+    # Fail closed in production unless the operator deliberately opts out.
+    enabled: ${AUTH_REGION_SECURITY_ENABLED:true}
+
+media:
+  enabled: ${MEDIA_ENABLED:true}
+  endpoint: ${MEDIA_OBJECT_STORE_ENDPOINT:http://minio:9000}
+  region: ${MEDIA_OBJECT_STORE_REGION:eu-central-1}
+  access-key: ${MEDIA_OBJECT_STORE_ACCESS_KEY:${MINIO_ROOT_USER:}}
+  secret-key: ${MEDIA_OBJECT_STORE_SECRET_KEY:${MINIO_ROOT_PASSWORD:}}
+  bucket: ${MEDIA_BUCKET:myscoutee-media}
+  path-style-access: ${MEDIA_OBJECT_STORE_PATH_STYLE:true}
+
+spring:
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+  jackson:
+    serialization:
+      FAIL_ON_EMPTY_BEANS: false
+  mongodb:
+    host: ${MONGODB_HOST:mongodb}
+    port: ${MONGODB_PORT:27017}
+    username: ${MONGODB_USERNAME:${MONGO_APP_USERNAME:}}
+    password: ${MONGODB_PASSWORD:${MONGO_APP_PASSWORD:}}
+    database: ${MONGODB_DATABASE:production_db}
+  data:
+    redis:
+      host: ${SPRING_DATA_REDIS_HOST:redis}
+      port: ${SPRING_DATA_REDIS_PORT:6379}
+      repositories:
+        enabled: false
+
+logging:
+  level:
+    org.springframework.data.mongodb.core.MongoTemplate: WARN
+    org.springframework.integration: WARN

@@ -1,0 +1,72 @@
+[
+  {
+    "_id": "template-message-1",
+    "id": "template-message-1",
+    "chatId": "c-contact-MTAwMDAwMDAwMDAwMDAwMDAwMDAwMDAxCjEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMg",
+    "sender": "Alex Morgan",
+    "senderAvatar": {
+      "id": "100000000000000000000001",
+      "name": "Alex Morgan",
+      "initials": "AM"
+    },
+    "text": "Welcome to Templates. This is a saved conversation.",
+    "time": "00:00",
+    "sentAtIso": "2026-10-11T00:00:00Z",
+    "readBy": [
+      {
+        "id": "100000000000000000000001",
+        "name": "Alex Morgan",
+        "initials": "AM"
+      },
+      {
+        "id": "100000000000000000000002",
+        "name": "Sam Taylor",
+        "initials": "ST"
+      }
+    ],
+    "messageSenderUserIds": [
+      "100000000000000000000001"
+    ],
+    "messageReadByUserIds": [
+      "100000000000000000000001",
+      "100000000000000000000002"
+    ],
+    "reactions": [],
+    "attachments": []
+  },
+  {
+    "_id": "template-message-2",
+    "id": "template-message-2",
+    "chatId": "c-contact-MTAwMDAwMDAwMDAwMDAwMDAwMDAwMDAxCjEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMg",
+    "sender": "Sam Taylor",
+    "senderAvatar": {
+      "id": "100000000000000000000002",
+      "name": "Sam Taylor",
+      "initials": "ST"
+    },
+    "text": "Try switching the list view, then send a message here.",
+    "time": "00:00",
+    "sentAtIso": "2026-10-11T00:00:01Z",
+    "readBy": [
+      {
+        "id": "100000000000000000000001",
+        "name": "Alex Morgan",
+        "initials": "AM"
+      },
+      {
+        "id": "100000000000000000000002",
+        "name": "Sam Taylor",
+        "initials": "ST"
+      }
+    ],
+    "messageSenderUserIds": [
+      "100000000000000000000002"
+    ],
+    "messageReadByUserIds": [
+      "100000000000000000000001",
+      "100000000000000000000002"
+    ],
+    "reactions": [],
+    "attachments": []
+  }
+]

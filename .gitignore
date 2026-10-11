@@ -9,3 +9,7 @@
 .trust-mode.local
 *.local
 .agent/
+server/data/
+server/.gradle-docker/
+server/.env.secrets
+server/projects/profile/secrets/

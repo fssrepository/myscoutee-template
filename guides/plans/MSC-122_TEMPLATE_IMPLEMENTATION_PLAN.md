@@ -24,6 +24,17 @@ and necessary adaptations in [`tools/upstream-sources.json`](../../tools/upstrea
 If a concrete source defect blocks a retained flow, repair that owner narrowly
 and qualify the affected source batch before carrying it into the template.
 
+**Shared infrastructure before copying:** inspect `packaging/`, `tools/`, runtime
+scripts and deployment/build helpers for mixed reusable logic and MyScoutee-specific
+configuration. Where needed, separate those concerns in `myscoutee-backend` first,
+using existing configuration/manifest/extension points. Verify that MyScoutee keeps
+its behavior and performance, then copy the common implementation unchanged into
+the template with only its own required configuration/data. Prefer this over
+maintaining a large independently edited script variant. This applies to already
+staged template adaptations as well: review them before finalizing the batch.
+Do not introduce a general framework or refactor unrelated helpers merely for
+uniformity; each extraction must remove a concrete obstacle to direct reuse.
+
 Retain the required native model and storage contracts. Omit unneeded model
 types rather than importing events, groups, payments or affiliate registration
 to satisfy a type reference. A small profile DTO/form may expose fewer fields;
@@ -117,7 +128,10 @@ deep-link behavior. A working `local` build alone does not close frontend work.
    retained flow, trace models, indexes, seed, API, adapters, UI, background jobs,
    supporting services, tests and installation. Record a concrete reason for
    each omitted product dependency. Verify that imports and runtime wiring do
-   not require omitted owners. Close when the remaining steps cover the entire
+   not require omitted owners. Classify each required infrastructure helper as
+   directly reusable, configured through an existing input, or requiring a narrow
+   source-side separation before copying. Record its configuration owner and
+   source/template verification. Close when the remaining steps cover the entire
    required dependency closure, including capabilities not individually named by
    the user; do not treat a list of examples as the scope boundary.
 
@@ -142,6 +156,9 @@ deep-link behavior. A working `local` build alone does not close frontend work.
 5. **Restore the complete dev/prod/E2E runtime structure — IN PROGRESS.**
    Select the necessary services from the existing Compose files, Dockerfiles,
    entrypoints, environment examples and startup/status/stop tools. Preserve the
+   common implementations through the source-first infrastructure rule above.
+   Supply template-specific service/image/seed settings through their existing
+   configuration owners. Preserve the
    original hot-reload and seed-sync behavior in dev and artifact-only execution
    in E2E/production. Include Mongo replica initialization, Redis, MinIO, nginx,
    STUN and MCP wherever required by the retained flows. Keep operational status
@@ -315,6 +332,10 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     stop, systemd and privileged-helper boundaries, TLS, permissions, fresh
     credentials, data paths, service readiness, backup/restore and removal behavior.
     Keep generic operational capabilities needed by the minimal installation.
+    Separate mixed product-specific package names, image/service inventories,
+    seed selections and deployment paths at the existing MyScoutee owners first
+    when their current inputs cannot already express the template. Copy the
+    qualified shared helper, rather than forking its complete implementation.
     Close with a fresh isolated Debian/KVM installation and applicable Netcup setup
     verification, restart, backup/restore and data-preserving removal checks.
 

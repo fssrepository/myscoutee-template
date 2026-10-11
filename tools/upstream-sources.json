@@ -1962,6 +1962,300 @@
       "upstreamSha256": "3d276e2b805c379f3b7ebd89cc4d2ba84a72077895a3cf2eb461fa7487db995c",
       "purpose": "Native media storage path validation and existing image variants.",
       "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/common/config/AppConfig.java",
+      "upstreamSha256": "d258cb84ee9b2bde501889aff8e39be7da9bf6af2100e82c2135e89e34b49047",
+      "purpose": "Register selected application configuration, validation, locale and scheduling.",
+      "adaptation": "Register only configuration classes implemented by the minimal backend; omit product domains and not-yet-selected TLS/update settings.",
+      "sourceRevision": "cfa26b923c515cc683ee329b38416d3e8f578d2a"
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/common/config/CachingConfig.java",
+      "upstreamSha256": "d109ea2d827504f90454792da881ff93e7057cef08bcd54d235b61ec83e3cdf7",
+      "purpose": "Native session, localization and deployment caches.",
+      "adaptation": "Omit the exchange-rate cache because payments are not included.",
+      "sourceRevision": "cfa26b923c515cc683ee329b38416d3e8f578d2a"
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/common/config/caching/MessageKeyGenerator.java",
+      "upstreamSha256": "731432bd13e9db37ca1a3dc1e9bfc935b4f487d64ec3443be610d701d143f9e1",
+      "purpose": "Native localization cache keys.",
+      "adaptation": null,
+      "sourceRevision": "cfa26b923c515cc683ee329b38416d3e8f578d2a"
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/common/config/MongoConverterConfig.java",
+      "upstreamSha256": "8db4bdd7696864381b363c37c7c8b46dfa2aa554780f08b5789cc6271859aa0d",
+      "purpose": "Preserve dotted MongoDB keys and native persisted model type identities.",
+      "adaptation": null,
+      "sourceRevision": "cfa26b923c515cc683ee329b38416d3e8f578d2a"
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/common/security/http/HttpSecurityContribution.java",
+      "upstreamSha256": "aebf5ad628eea63037eec5ce3a8217973ff44481e834d6fabc385aeda3f0b3ba",
+      "purpose": "Retain the existing optional deployment security contribution point.",
+      "adaptation": null,
+      "sourceRevision": "cfa26b923c515cc683ee329b38416d3e8f578d2a"
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/localization/service/DBMessageSource.java",
+      "upstreamSha256": "f0905da73ce005b32f1fc5249b6f1b04d850a1f95ab3b69207996d1c140c8525",
+      "purpose": "Native REAL/DEMO-aware server messages and change-stream cache invalidation.",
+      "adaptation": null,
+      "sourceRevision": "cfa26b923c515cc683ee329b38416d3e8f578d2a"
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/controller/OperatorConfigurationController.java",
+      "upstreamSha256": "8275065620064057849019369ab6ce52a1e3abd777bf3fe9c58ad513de1f8033",
+      "purpose": "Expose selected operator configuration using native authority and validation.",
+      "adaptation": null,
+      "sourceRevision": "cfa26b923c515cc683ee329b38416d3e8f578d2a"
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/controller/DeploymentConfigurationController.java",
+      "upstreamSha256": "ba94ddd3ddfb41499f5f9c47d23e89c428c551a9c49baa6fd09f7bc0539fd41b",
+      "purpose": "Public branding and verified Firebase client configuration.",
+      "adaptation": "Omit the payment simulator branch; both REAL and DEMO expose the selected native payment-free configuration DTO.",
+      "sourceRevision": "cfa26b923c515cc683ee329b38416d3e8f578d2a"
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/common/config/WebSecurityConfig.java",
+      "upstreamSha256": "61cf19c7cb33c7ca6162720c94eb649f8862b80364a14c5b34273477311cce55",
+      "purpose": "Compose native REAL/DEMO, Firebase, operator and private-media authentication with method policies.",
+      "adaptation": "Omit community workspace and not-yet-selected API token filters. Retain native API authority guards. Public routes cover only selected capabilities; native filter order, session checks and operator/admin authority are retained.",
+      "sourceRevision": "cfa26b923c515cc683ee329b38416d3e8f578d2a"
+    },
+    {
+      "path": "server/projects/profile/src/main/resources/mongo-domain-types.properties",
+      "upstreamSha256": "63407d90b6b19a6eb617067bbda445d93c05c6d30d5a9d68286a57274e72c4b3",
+      "purpose": "Preserve original persisted aliases for selected types only.",
+      "adaptation": "Select aliases whose root class and nested declarations exist in the minimal backend; no product classes are copied to satisfy the alias table.",
+      "sourceRevision": "cfa26b923c515cc683ee329b38416d3e8f578d2a"
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/common/config/WebSecurityConfigBootstrapTest.java",
+      "upstreamSha256": "0eb46066a7cdb4d772dd4f02c8759de41144f24a25aa6e75d90308b6851ea95e",
+      "purpose": "Native operator bootstrap, demo routing and no-Firebase identity-spoof regression checks.",
+      "adaptation": "Remove only mocks for absent API/group owners; run the in-memory Spring/MockMvc checks in the standard group.",
+      "sourceRevision": "cfa26b923c515cc683ee329b38416d3e8f578d2a"
+    },
+    {
+      "path": "server/projects/profile/src/main/resources/application.yaml",
+      "upstreamSha256": "8e13e8890f4346effb697f7f41bad3bfd8c894b6f509fe614cc0e312eeb56665",
+      "purpose": "Use the native application profile selection, authentication session limit and STUN/configuration settings.",
+      "adaptation": "Select implemented generic settings; API and update configuration will accompany their selected owners. Registry and payment configuration are omitted.",
+      "sourceRevision": "cfa26b923c515cc683ee329b38416d3e8f578d2a"
+    },
+    {
+      "path": "server/projects/profile/src/main/resources/application-dev.yaml",
+      "upstreamSha256": "ce39ac4357ad3e04136a09662c130058c8e25bd01f75a4bd81d57d6416d59cb5",
+      "purpose": "Preserve the native dev profile for authentication, MongoDB, Redis, media, multipart, health and logging.",
+      "adaptation": "Select the existing sections needed by the minimal backend; no separate runtime profile or deployment mechanism is introduced.",
+      "sourceRevision": "cfa26b923c515cc683ee329b38416d3e8f578d2a"
+    },
+    {
+      "path": "server/projects/profile/src/main/resources/application-prod.yaml",
+      "upstreamSha256": "b22802f4eb02aab8ce2830a2ba3477cbc5fa3495e07d5056d4834d55daf4b046",
+      "purpose": "Preserve the native prod profile for authentication, MongoDB, Redis, media, multipart, health and logging.",
+      "adaptation": "Select the existing sections needed by the minimal backend; no separate runtime profile or deployment mechanism is introduced.",
+      "sourceRevision": "cfa26b923c515cc683ee329b38416d3e8f578d2a"
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/common/config/MongoConverterConfigTest.java",
+      "upstreamSha256": "1e56faf8c3426229836a3fde9f180e5ba34a80fa68bf10ec333667bc60bd438c",
+      "purpose": "Verify native stored model aliases, dotted keys and retained account/media integration values.",
+      "adaptation": "Select checks for existing template models; use a test-only counter record for dotted-key checks instead of an absent statistics document. Omit product and absent attachment DTO tests. In-memory context checks run in the standard group.",
+      "sourceRevision": "cfa26b923c515cc683ee329b38416d3e8f578d2a"
+    },
+    {
+      "path": "server/docker/conf/mongodb/replica-entrypoint",
+      "sourceRevision": "cfa26b923c515cc683ee329b38416d3e8f578d2a",
+      "upstreamSha256": "2ab86776d69f46824dc9c87afef3f9cfecc1e2747c19da27fbd6c8b357a67926",
+      "purpose": "Reuse the existing development, isolated E2E, Mongo replica, media seed or configuration-key workflow unchanged.",
+      "adaptation": null
+    },
+    {
+      "path": "server/docker/conf/mongodb/replica-health",
+      "sourceRevision": "cfa26b923c515cc683ee329b38416d3e8f578d2a",
+      "upstreamSha256": "ac3b26d885fdc135af903b5ab5f42605b408a737f111ae89cae2f08a8df076f9",
+      "purpose": "Reuse the existing development, isolated E2E, Mongo replica, media seed or configuration-key workflow unchanged.",
+      "adaptation": null
+    },
+    {
+      "path": "server/docker/conf/mongodb/00_replica_set.js",
+      "sourceRevision": "cfa26b923c515cc683ee329b38416d3e8f578d2a",
+      "upstreamSha256": "a502bbb6bae052edd5f888775e98ad0f9f488d934619ced580232fd595aa270d",
+      "purpose": "Reuse the existing development, isolated E2E, Mongo replica, media seed or configuration-key workflow unchanged.",
+      "adaptation": null
+    },
+    {
+      "path": "server/docker/scripts/ensure_operator_configuration_master_key.sh",
+      "sourceRevision": "cfa26b923c515cc683ee329b38416d3e8f578d2a",
+      "upstreamSha256": "73737ffec872bfa280432f45beb8de63a6585bedfea5e049c1a09c7a91558401",
+      "purpose": "Reuse the existing development, isolated E2E, Mongo replica, media seed or configuration-key workflow unchanged.",
+      "adaptation": null
+    },
+    {
+      "path": "server/docker/scripts/start_profilemanagement_dev.sh",
+      "sourceRevision": "cfa26b923c515cc683ee329b38416d3e8f578d2a",
+      "upstreamSha256": "f7d7a88bb0fb66c0fa2267ca3ef6a3aca74306d86f547ff9b73bdfd2a6655cf3",
+      "purpose": "Reuse the existing development, isolated E2E, Mongo replica, media seed or configuration-key workflow unchanged.",
+      "adaptation": null
+    },
+    {
+      "path": "server/docker/scripts/bootstrap_minio_seed.sh",
+      "sourceRevision": "cfa26b923c515cc683ee329b38416d3e8f578d2a",
+      "upstreamSha256": "0ff5792a51c627ca7f91f5d0f3471884630dd78c47499fd1b3f92ad32e645fad",
+      "purpose": "Reuse the existing development, isolated E2E, Mongo replica, media seed or configuration-key workflow unchanged.",
+      "adaptation": null
+    },
+    {
+      "path": "server/docker/scripts/start_minio_with_seed.sh",
+      "sourceRevision": "cfa26b923c515cc683ee329b38416d3e8f578d2a",
+      "upstreamSha256": "2ee3eae0118ce55a24fe923f2bb0464a0107485555e57f94ec51add5daa4df7c",
+      "purpose": "Reuse the existing development, isolated E2E, Mongo replica, media seed or configuration-key workflow unchanged.",
+      "adaptation": null
+    },
+    {
+      "path": "server/docker/images/profilemanagement/dev/Dockerfile",
+      "sourceRevision": "cfa26b923c515cc683ee329b38416d3e8f578d2a",
+      "upstreamSha256": "91b69abdaa083661bd59cb2c4d1e7c978fb2998d69ec1c7ecd0e4f2ce397e77d",
+      "purpose": "Reuse the existing development, isolated E2E, Mongo replica, media seed or configuration-key workflow unchanged.",
+      "adaptation": null
+    },
+    {
+      "path": "server/docker/images/profilemanagement/e2e/entrypoint.sh",
+      "sourceRevision": "cfa26b923c515cc683ee329b38416d3e8f578d2a",
+      "upstreamSha256": "527abaf4b3b86b89ddbad3efb98baca053aea7a08ab06b04dd9d7b3351622992",
+      "purpose": "Reuse the existing development, isolated E2E, Mongo replica, media seed or configuration-key workflow unchanged.",
+      "adaptation": null
+    },
+    {
+      "path": "server/docker/images/minio/Dockerfile",
+      "sourceRevision": "cfa26b923c515cc683ee329b38416d3e8f578d2a",
+      "upstreamSha256": "8b61d2486e8dcebe5e983b4ac4893b092ac272e43a28bf2150204936918e7cbc",
+      "purpose": "Reuse the existing development, isolated E2E, Mongo replica, media seed or configuration-key workflow unchanged.",
+      "adaptation": null
+    },
+    {
+      "path": "server/docker/images/mongodb/e2e/Dockerfile",
+      "sourceRevision": "cfa26b923c515cc683ee329b38416d3e8f578d2a",
+      "upstreamSha256": "d9aeafb64c99aa1b98b1e61f1dd634f5d870bd4dcb74443d7693ebf667ab2d6f",
+      "purpose": "Reuse the existing development, isolated E2E, Mongo replica, media seed or configuration-key workflow unchanged.",
+      "adaptation": null
+    },
+    {
+      "path": "server/docker/images/mongodb-sync/dev/Dockerfile",
+      "sourceRevision": "cfa26b923c515cc683ee329b38416d3e8f578d2a",
+      "upstreamSha256": "70162ce462f11d337c9c013c4a1c1596bd712d5e51f8843155750e57e4e666c7",
+      "purpose": "Reuse the existing development, isolated E2E, Mongo replica, media seed or configuration-key workflow unchanged.",
+      "adaptation": null
+    },
+    {
+      "path": "server/docker/images/mongodb-sync/dev/mongodb-seed-sync.sh",
+      "sourceRevision": "cfa26b923c515cc683ee329b38416d3e8f578d2a",
+      "upstreamSha256": "591e6c25ca997f788db6bd250e8882e34dc41fc6718909594736387ea6190614",
+      "purpose": "Reuse the existing development, isolated E2E, Mongo replica, media seed or configuration-key workflow unchanged.",
+      "adaptation": null
+    },
+    {
+      "path": "server/docker/images/mongodb-sync/dev/mongodb-seed-sync-test.sh",
+      "sourceRevision": "cfa26b923c515cc683ee329b38416d3e8f578d2a",
+      "upstreamSha256": "e0f84130e532e52206343101f74b79d45bac693542dff07a0c14264774431813",
+      "purpose": "Reuse the existing development, isolated E2E, Mongo replica, media seed or configuration-key workflow unchanged.",
+      "adaptation": null
+    },
+    {
+      "path": "server/docker-compose.yml",
+      "sourceRevision": "cfa26b923c515cc683ee329b38416d3e8f578d2a",
+      "upstreamSha256": "053e304f8faa0aca1ac97c66890400fde963fbf79f7382dfcfb3e51a53f1c97d",
+      "purpose": "Reuse the existing development, isolated E2E, Mongo replica, media seed or configuration-key workflow unchanged.",
+      "adaptation": null
+    },
+    {
+      "path": "server/docker-compose.replicaset.yml",
+      "sourceRevision": "cfa26b923c515cc683ee329b38416d3e8f578d2a",
+      "upstreamSha256": "e6cb8f4337c764828f65d7cfb5c0405bf91dc572f658265167685e0b31d08392",
+      "purpose": "Native shared replica-set composition.",
+      "adaptation": "Omit affinity worker settings; preserve Mongo replica configuration and application connection."
+    },
+    {
+      "path": "server/docker/images/profilemanagement/prod/Dockerfile",
+      "sourceRevision": "cfa26b923c515cc683ee329b38416d3e8f578d2a",
+      "upstreamSha256": "719c8bc0175cfefe042f94aad96d6dc05a156072f70a5b24b8d4b8415eca8488",
+      "purpose": "Native non-root production/media runtime and update directories.",
+      "adaptation": "Omit Registry state directories."
+    },
+    {
+      "path": "server/docker/images/profilemanagement/e2e/Dockerfile",
+      "sourceRevision": "cfa26b923c515cc683ee329b38416d3e8f578d2a",
+      "upstreamSha256": "c08532eb41da92aa0ce8ec9e1e6771acfe113a78edfd981ab9db0cc86bd88292",
+      "purpose": "Native production-style E2E build and runtime.",
+      "adaptation": "Supply the template version as a build argument and isolate its Docker build cache; omit Registry directories."
+    },
+    {
+      "path": "server/docker/images/profilemanagement/e2e/Dockerfile.dockerignore",
+      "sourceRevision": "cfa26b923c515cc683ee329b38416d3e8f578d2a",
+      "upstreamSha256": "1719e69b40b0c2472a389f990b264cda92974d3991e5db99f480bc51e62ba6dd",
+      "purpose": "Native E2E build-context allowlist.",
+      "adaptation": null
+    },
+    {
+      "path": "server/docker/conf/mongodb/db_init.js",
+      "sourceRevision": "cfa26b923c515cc683ee329b38416d3e8f578d2a",
+      "upstreamSha256": "263fcdf2629fb6c7e756aec9e38f06a0b940aa8bc6dd5f7dd3719f58237d1ce5",
+      "purpose": "Native database users, selected collections and native indexes.",
+      "adaptation": "Select collections required by the retained account/chat/help/notification/platform models. Omit product collections and the unused host-tier index."
+    },
+    {
+      "path": "server/docker/conf/mongodb/mongo_import.sh",
+      "sourceRevision": "cfa26b923c515cc683ee329b38416d3e8f578d2a",
+      "upstreamSha256": "78fc766a787382a27a385ac45ff1ef871f2f02669c9781ef72f733801382fe5a",
+      "purpose": "Native allowlisted JSON seed import with preserved mutable operator configuration.",
+      "adaptation": "Select retained collection indexes and production-safe seed allowlist. Omit MyScoutee product collections, payment import and pre-template deployment history; template starts at the retained schema 5."
+    },
+    {
+      "path": "server/docker/conf/mongodb/myscoutee_db/countryPartitions.json",
+      "sourceRevision": "094af314889106cd193a4058110312c40dee9ebc",
+      "upstreamSha256": "e11a3e851a3e81c2bbd22e849ac2bef18115f1eda4413e1a91c975c226846a72",
+      "purpose": "Native production-safe foundational seed for the retained configuration or geographic schema.",
+      "adaptation": null
+    },
+    {
+      "path": "server/docker/conf/mongodb/myscoutee_db/appSettings.json",
+      "sourceRevision": "094af314889106cd193a4058110312c40dee9ebc",
+      "upstreamSha256": "2dd7af2db5d61b650956f2ee27c991974f155db9315c94ada99265dd28d05f22",
+      "purpose": "Native production-safe foundational seed for the retained configuration or geographic schema.",
+      "adaptation": null
+    },
+    {
+      "path": "server/docker/conf/mongodb/myscoutee_db/deploymentConfigurations.json",
+      "sourceRevision": "094af314889106cd193a4058110312c40dee9ebc",
+      "upstreamSha256": "d52b7bfe8b751b37a188161b9e459f63753f5c66fc398d2ec7f9dccfd0a14ff2",
+      "purpose": "Native production-safe foundational seed for the retained configuration or geographic schema.",
+      "adaptation": "Omit payment configuration and MyScoutee social branding; seed Templates branding while retaining the native schema and Firebase/configuration state."
+    },
+    {
+      "path": "server/docker-compose-dev.yml",
+      "sourceRevision": "094af314889106cd193a4058110312c40dee9ebc",
+      "upstreamSha256": "ac992d8a54debf94be3533667ecfa075af9f36d1db4ea7dfbbec2e0d31355a75",
+      "purpose": "Native dev application/backing-service composition.",
+      "adaptation": "Select implemented backing services and backend; isolate container names and template image tags, omit product/runtime dependencies not yet selected. Complete edge/frontend/MCP/STUN/operator composition remains tracked in the plan."
+    },
+    {
+      "path": "server/docker-compose-prod.yml",
+      "sourceRevision": "094af314889106cd193a4058110312c40dee9ebc",
+      "upstreamSha256": "11a8066baaa120353b3052419bc32570fa3fd7f0ee595663ec46b1c4828e185a",
+      "purpose": "Native prod application/backing-service composition.",
+      "adaptation": "Select implemented backing services and backend; isolate container names and template image tags, omit product/runtime dependencies not yet selected. Complete edge/frontend/MCP/STUN/operator composition remains tracked in the plan."
+    },
+    {
+      "path": "server/docker-compose.e2e.yml",
+      "sourceRevision": "094af314889106cd193a4058110312c40dee9ebc",
+      "upstreamSha256": "8a9378ec8e05980d6db09b5315a89698e9cdd8ffa3d0c1daa4f16d5200eeb84b",
+      "purpose": "Native e2e application/backing-service composition.",
+      "adaptation": "Select implemented backing services and backend; isolate container names and template image tags, omit product/runtime dependencies not yet selected. Complete edge/frontend/MCP/STUN/operator composition remains tracked in the plan."
     }
   ]
 }
