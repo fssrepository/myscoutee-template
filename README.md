@@ -13,6 +13,12 @@
 This repository is the starting point for extracting MyScoutee's common
 infrastructure into a reusable project template.
 
+The active, numbered work plan is
+[`MSC-122 Template Implementation Plan`](guides/plans/MSC-122_TEMPLATE_IMPLEMENTATION_PLAN.md).
+It tracks the complete minimal framework, including frontend local/HTTP,
+dev/prod/E2E, functional and stress tests, KVM, installation, signed updates and
+GitHub release/image/Pages publication. The initial release version is **1.0.0**.
+
 **Current status:** minimal backend foundations in progress. The selected native
 account, session, consent, access-policy, help/guide and deployment/Firebase code is covered by
 102 focused JUnit tests across staged runs. The notification checkpoint adds 75
@@ -27,8 +33,8 @@ installation are still being implemented; this is not yet a runnable release.
 The deliverable is a complete minimal counterpart of `myscoutee-backend`, with
 its own backend/frontend shell, development workflow, versioned releases,
 Debian/Netcup installation, KVM lab and getting started guide/PDF. Backend
-separation is being verified in MyScoutee first; this checkout is not runnable
-yet.
+preparation has passed its source KVM and monolith gates; the standalone template
+composition is in progress and this checkout is not runnable yet.
 
 The template retains the backend structure and operational workflows, with smaller
 domain implementations where appropriate. Minimal screens and seed data must not
