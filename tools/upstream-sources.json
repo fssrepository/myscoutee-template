@@ -4229,6 +4229,19 @@
         "e2e/functional/ui/chat/run.mjs"
       ],
       "sourceRepair": "Native frontend bf4760f9 persists read receipts on existing participant copies; carried unchanged into the selected local repository."
+    },
+    {
+      "name": "minimal-profile-settings",
+      "purpose": "Name/avatar editor and minimal account settings without importing the full product profile.",
+      "references": [
+        "native ProfileFormFlowConverter and ProfileEditorComponent",
+        "components FormFlowComponent, ImageCarouselComponent, HeaderCardComponent, AppMenuComponent and DialogStore",
+        "native ProfileSettingsPopupsComponent and selected ProfileStore state",
+        "native MediaService local/HTTP adapters",
+        "native side-menu ensureActivePrivacyConsent account-first rule"
+      ],
+      "implementation": "The template form edits name and images, merges the current profile on save, clears drafts on actor change and uses the native profile endpoint. Image upload/import retains native implementations; document/audio methods are omitted until selected consumers need them. The avatar opens the selected native side-panel shell, with two member pages and a small gear menu.",
+      "remaining": "Notification/device preferences and account-reactivation entry UI remain open."
     }
   ]
 }

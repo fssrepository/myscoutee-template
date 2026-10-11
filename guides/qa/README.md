@@ -146,3 +146,30 @@ Use `frontend/scripts/generate-i18n-mongo-seed.js` and
 They preserve the native dated translation revision format, independently of
 application version `1.0.0`. The native dev Mongo watcher imports changed seed
 files; the localization change stream refreshes the API cache.
+
+## Selected member flows
+
+The standalone focused runners reuse the native disposable Chrome helper.
+Use the existing frontend configuration and only one frontend compiler:
+
+```sh
+node e2e/functional/ui/chat/run-local.mjs
+node e2e/functional/ui/profile-editor/run.mjs --local
+node e2e/functional/ui/settings/run.mjs --local
+```
+
+With the dev HTTP gateway, each following runner creates UUID-owned actors and
+cleans its own state. Select the template Mongo container explicitly:
+
+```sh
+E2E_MONGO_CONTAINER=myscoutee-template-dev-mongodb E2E_DATABASE=demo_db node e2e/functional/ui/chat/run.mjs
+E2E_MONGO_CONTAINER=myscoutee-template-dev-mongodb E2E_DATABASE=demo_db node e2e/functional/ui/profile-editor/run.mjs
+E2E_MONGO_CONTAINER=myscoutee-template-dev-mongodb E2E_DATABASE=demo_db node e2e/functional/ui/settings/run.mjs
+```
+
+The image runner derives the matching MinIO container from the Mongo name;
+`E2E_MINIO_CONTAINER` may explicitly select another template container. It uses
+the seed bootstrap's configured `mc` alias and removes only its unique actor's
+image prefix. `E2E_SCREENSHOT_DIR` optionally captures desktop/mobile profile
+images outside the repository. The functional image fixtures are selected native
+E2E images, not template product branding.

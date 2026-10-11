@@ -329,12 +329,18 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     `MSC122_TEMPLATE_CHAT_20261011.json`. Admin support UI remains step 19;
     template KVM remains step 24.
 
-17. **Build the avatar menu, profile editor and minimal settings — PENDING.**
+17. **Build the avatar menu, profile editor and minimal settings — IN PROGRESS.**
     Reuse the existing menu, FormFlow/profile and image-editor entry points. Show
     only the small editable profile and settings required by retained features.
     Preserve logout, account deletion, consent and relevant notification/device
     controls. Remove the shared-list header and product actions from the side menu.
     Close with save/reopen, image editing and no clearing of hidden stored fields.
+    The native avatar/menu/HeaderCard, FormFlow, ImageCarousel and selected media
+    adapters now compose the name/avatar editor. Local and HTTP browser checks
+    cover upload/replace/remove, save/reload, cancellation and preservation of
+    stored fields outside the form. Privacy/terms and confirmed account deletion
+    work in both modes. Notification/device controls remain coupled to step 18;
+    account reactivation still needs its retained entry UI.
 
 18. **Connect frontend guide, consent and notification surfaces — IN PROGRESS.**
     Reuse the existing top-menu access, drawers/dialogs, guide engine and consent
@@ -485,14 +491,13 @@ deep-link behavior. A working `local` build alone does not close frontend work.
 
 ## Current continuation point
 
-Continue **17–19**, starting with the minimal profile/avatar in **17**. Chat **16**
-is qualified in local/dev HTTP; SmartList **15**
-is qualified locally and through the dev gateway; landing typography is in place. Local and dev HTTP entry/consent/reload/logout are
-qualified at frontend `a247371`; native frontend-sync/nginx and Mongo locale sync
-now run in the template dev monolith. See `MSC122_TEMPLATE_LOCAL_ENTRY_20261011.json`
-and `MSC122_TEMPLATE_DEV_GATEWAY_20261011.json` for the exact limits.
-The member route now displays the SmartList example; admin/operator still have
-a guarded name/logout shell. Chat, profile, guide/notification and privileged
-screens are unfinished. Production/Pages landing verification remains pending.
+Continue **17–19**. Chat **16** and SmartList **15** are qualified in local/dev
+HTTP. Step **17** has a tested name/avatar editor and settings documents/account
+deletion; its notification/device controls remain to be connected with **18**.
+The source frontend and backend are unchanged by this profile/settings batch.
+The template now uses native FormFlow, ImageCarousel, menu/HeaderCard, consent
+viewer, DialogStore and selected media adapters. Keep the remaining identity
+entry/reactivation checks explicit; the admin/operator operational screens are
+still unfinished. Production/Pages landing verification remains pending.
 Then complete the remaining environment, KVM, packaging and release steps.
 Earlier backend steps are not all closed; retain their pending checks above.

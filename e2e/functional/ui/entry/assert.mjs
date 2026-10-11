@@ -1,6 +1,6 @@
 import { assert } from '../../../shared/assertions.mjs';
 
-export async function assertUi({ page, ctx, local = ctx?.mode !== 'full', memberReady, actorId = '100000000000000000000001', actorName = 'Alex Morgan', consentExpected = true }) {
+export async function assertUi({ page, ctx, local = ctx?.mode !== 'full', memberReady, actorId = '100000000000000000000001', actorName = 'Alex Morgan', consentExpected = true, endsSession = false }) {
   await page.navigate('/privacy-policy');
   await page.waitForSelector('.document-viewer-section-body');
   await page.waitForText('Privacy information');
@@ -47,7 +47,11 @@ export async function assertUi({ page, ctx, local = ctx?.mode !== 'full', member
     }
   }
   if (memberReady) await memberReady({ page, local });
-  await page.clickByText('app-member-page button', 'Logout');
+  if (!endsSession) {
+    await page.clickVisible('.avatar-menu [data-guide-item="navigator-avatar"]');
+    await page.clickVisible('.settings-menu .app-menu__trigger');
+    await page.clickVisible('[data-guide-item="logout"]');
+  }
   await page.waitForUrlPath('/entry');
   await page.navigate('/home');
   await page.waitForUrlPath('/entry');

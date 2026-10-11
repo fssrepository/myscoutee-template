@@ -10990,5 +10990,173 @@
     "key": "navigation",
     "lang": "hu",
     "value": "Navigáció"
+  },
+  {
+    "_id": "i18n-message-en-profile-edit",
+    "key": "profile.edit",
+    "lang": "en",
+    "value": "Edit profile"
+  },
+  {
+    "_id": "i18n-message-en-profile-open-menu",
+    "key": "profile.open.menu",
+    "lang": "en",
+    "value": "Open user menu"
+  },
+  {
+    "_id": "i18n-message-en-profile-save-failed",
+    "key": "profile.save.failed",
+    "lang": "en",
+    "value": "Unable to save the profile. Please try again."
+  },
+  {
+    "_id": "i18n-message-hu-profile-edit",
+    "key": "profile.edit",
+    "lang": "hu",
+    "value": "Profil szerkesztése"
+  },
+  {
+    "_id": "i18n-message-hu-profile-open-menu",
+    "key": "profile.open.menu",
+    "lang": "hu",
+    "value": "Felhasználói menü megnyitása"
+  },
+  {
+    "_id": "i18n-message-hu-profile-save-failed",
+    "key": "profile.save.failed",
+    "lang": "hu",
+    "value": "A profil mentése nem sikerült. Próbáld újra."
+  },
+  {
+    "_id": "i18n-message-en-approve-privacy",
+    "key": "Approve privacy",
+    "lang": "en",
+    "value": "Approve privacy"
+  },
+  {
+    "_id": "i18n-message-en-delete-account",
+    "key": "Delete account",
+    "lang": "en",
+    "value": "Delete account"
+  },
+  {
+    "_id": "i18n-message-en-delete-account-1sn8d2y",
+    "key": "Delete account?",
+    "lang": "en",
+    "value": "Delete account?"
+  },
+  {
+    "_id": "i18n-message-en-document-load-failed",
+    "key": "document.load.failed",
+    "lang": "en",
+    "value": "Content could not be loaded. Please try again."
+  },
+  {
+    "_id": "i18n-message-en-privacy-1th4hrb",
+    "key": "Privacy",
+    "lang": "en",
+    "value": "Privacy"
+  },
+  {
+    "_id": "i18n-message-en-privacy-choices-could-not-be-loaded",
+    "key": "Privacy choices could not be loaded.",
+    "lang": "en",
+    "value": "Privacy choices could not be loaded."
+  },
+  {
+    "_id": "i18n-message-en-privacy-choices-saved",
+    "key": "Privacy choices saved.",
+    "lang": "en",
+    "value": "Privacy choices saved."
+  },
+  {
+    "_id": "i18n-message-en-save-choices",
+    "key": "Save choices",
+    "lang": "en",
+    "value": "Save choices"
+  },
+  {
+    "_id": "i18n-message-en-terms-154fb2k",
+    "key": "Terms",
+    "lang": "en",
+    "value": "Terms"
+  },
+  {
+    "_id": "i18n-message-en-unable-to-load-content",
+    "key": "Unable to load content",
+    "lang": "en",
+    "value": "Unable to load content"
+  },
+  {
+    "_id": "i18n-message-en-you-can-reactivate-within-30-days-after-that-the-account-is-permanently-",
+    "key": "You can reactivate within 30 days. After that, the account is permanently purged.",
+    "lang": "en",
+    "value": "You can reactivate within 30 days. After that, the account is permanently purged."
+  },
+  {
+    "_id": "i18n-message-hu-approve-privacy",
+    "key": "Approve privacy",
+    "lang": "hu",
+    "value": "Adatvédelem elfogadása"
+  },
+  {
+    "_id": "i18n-message-hu-delete-account",
+    "key": "Delete account",
+    "lang": "hu",
+    "value": "Fiók törlése"
+  },
+  {
+    "_id": "i18n-message-hu-delete-account-1sn8d2y",
+    "key": "Delete account?",
+    "lang": "hu",
+    "value": "Törlöd a fiókodat?"
+  },
+  {
+    "_id": "i18n-message-hu-document-load-failed",
+    "key": "document.load.failed",
+    "lang": "hu",
+    "value": "A tartalom betöltése nem sikerült. Próbáld újra."
+  },
+  {
+    "_id": "i18n-message-hu-privacy-1th4hrb",
+    "key": "Privacy",
+    "lang": "hu",
+    "value": "Adatvédelem"
+  },
+  {
+    "_id": "i18n-message-hu-privacy-choices-could-not-be-loaded",
+    "key": "Privacy choices could not be loaded.",
+    "lang": "hu",
+    "value": "Az adatvédelmi beállítások nem tölthetők be."
+  },
+  {
+    "_id": "i18n-message-hu-privacy-choices-saved",
+    "key": "Privacy choices saved.",
+    "lang": "hu",
+    "value": "Az adatvédelmi beállítások mentve."
+  },
+  {
+    "_id": "i18n-message-hu-save-choices",
+    "key": "Save choices",
+    "lang": "hu",
+    "value": "Választások mentése"
+  },
+  {
+    "_id": "i18n-message-hu-terms-154fb2k",
+    "key": "Terms",
+    "lang": "hu",
+    "value": "Feltételek"
+  },
+  {
+    "_id": "i18n-message-hu-unable-to-load-content",
+    "key": "Unable to load content",
+    "lang": "hu",
+    "value": "A tartalom nem tölthető be"
+  },
+  {
+    "_id": "i18n-message-hu-you-can-reactivate-within-30-days-after-that-the-account-is-permanently-",
+    "key": "You can reactivate within 30 days. After that, the account is permanently purged.",
+    "lang": "hu",
+    "value": "A fiók 30 napon belül újraaktiválható. Ezután véglegesen törlődik."
   }
 ]

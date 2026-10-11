@@ -1,0 +1,131 @@
+{
+  "date": "2026-10-11",
+  "templateFrontendRevision": "52abf468a6904486b18ce33e4ed0671634256443",
+  "templateParentBaseRevision": "4eccbe7",
+  "sourceBackendRevision": "5a639775e",
+  "sourceFrontendRevision": "bf4760f9",
+  "scope": "Minimal avatar/navigation shell, name/image editing, privacy/terms settings and account deletion. Source repositories unchanged by this batch.",
+  "checks": [
+    {
+      "name": "Frontend unit suite",
+      "tests": 121,
+      "files": 17,
+      "result": "PASS",
+      "command": "npm test -- --watch=false"
+    },
+    {
+      "name": "Final actor-change draft cleanup",
+      "tests": 4,
+      "result": "PASS",
+      "command": "npm test -- --watch=false --include='**/profile-editor.store.spec.ts'"
+    },
+    {
+      "name": "Profile browser lifecycle",
+      "modes": [
+        "local",
+        "dev HTTP"
+      ],
+      "result": "PASS",
+      "commands": [
+        "node e2e/functional/ui/profile-editor/run.mjs --local",
+        "E2E_MONGO_CONTAINER=myscoutee-template-dev-mongodb E2E_DATABASE=demo_db node e2e/functional/ui/profile-editor/run.mjs"
+      ],
+      "assertions": [
+        "name save/reopen",
+        "native image upload/replace/remove and reload",
+        "cancel does not save draft",
+        "hidden populated gender, profile version, email, city, location, partition, status and operator values preserved by HTTP saves",
+        "local stored profile values preserved",
+        "no Java API requests in local mode; real image/profile endpoints in HTTP",
+        "no browser errors or failed resources",
+        "owned Mongo fixture and MinIO media cleanup"
+      ]
+    },
+    {
+      "name": "Settings browser lifecycle",
+      "modes": [
+        "local",
+        "dev HTTP"
+      ],
+      "result": "PASS",
+      "commands": [
+        "node e2e/functional/ui/settings/run.mjs --local",
+        "E2E_MONGO_CONTAINER=myscoutee-template-dev-mongodb E2E_DATABASE=demo_db node e2e/functional/ui/settings/run.mjs"
+      ],
+      "assertions": [
+        "privacy and terms documents from gear menu",
+        "cancel deletion leaves account active",
+        "confirm deletion stores deleted/previous status and timestamp",
+        "HTTP stores D status and tracks pending purge",
+        "logout/guard prevent continued member access",
+        "test fixture removes only its tracked purge-count contribution"
+      ]
+    },
+    {
+      "name": "Saved consent precedence",
+      "result": "PASS",
+      "boundary": "Three entry unit regressions reuse the native account-first consent rule; existing account choices are not overwritten at login."
+    },
+    {
+      "name": "Desktop/mobile image editor visual review",
+      "result": "PASS",
+      "viewports": [
+        "1440x950",
+        "390x844"
+      ],
+      "artifacts": "Ephemeral /tmp/msc122-template-profile-ui/profile-desktop.png and profile-mobile.png; no duplicate versioned screenshot/PDF artifact."
+    },
+    {
+      "name": "Localization audit",
+      "result": "PASS",
+      "messages": 1860,
+      "physicalSeedSets": 3
+    }
+  ],
+  "performance": {
+    "snapshotContext": "Dev watcher resumed after serial local/UI/unit qualification; not a matched benchmark.",
+    "samples": [
+      {
+        "BlockIO": "81.7MB / 40.9MB",
+        "CPUPerc": "15.51%",
+        "Container": "myscoutee-template-dev-frontend-sync",
+        "ID": "9d20c789b6af",
+        "MemPerc": "9.67%",
+        "MemUsage": "1.477GiB / 15.27GiB",
+        "Name": "myscoutee-template-dev-frontend-sync",
+        "NetIO": "4.92kB / 126B",
+        "PIDs": "96"
+      },
+      {
+        "BlockIO": "76.1MB / 29.5MB",
+        "CPUPerc": "9.24%",
+        "Container": "myscoutee-template-dev-profilemanagement",
+        "ID": "3ce9145b14e6",
+        "MemPerc": "10.91%",
+        "MemUsage": "1.665GiB / 15.27GiB",
+        "Name": "myscoutee-template-dev-profilemanagement",
+        "NetIO": "27MB / 11.4MB",
+        "PIDs": "285"
+      },
+      {
+        "BlockIO": "106MB / 277MB",
+        "CPUPerc": "1.62%",
+        "Container": "myscoutee-template-dev-mongodb",
+        "ID": "b89f29672d41",
+        "MemPerc": "1.66%",
+        "MemUsage": "259.7MiB / 15.27GiB",
+        "Name": "myscoutee-template-dev-mongodb",
+        "NetIO": "7.74MB / 26.7MB",
+        "PIDs": "90"
+      }
+    ],
+    "io": "Profile uses one native save request. Image conversion/storage remains the original backend media flow. Returning login reads existing consent instead of overwriting it; a first consent requires one additional read before its initial save, matching the native consent precedence. Local artificial route delays are retained.",
+    "limit": "No throughput or latency parity claim from single CPU samples. No backend code change or repeated stress test in this batch."
+  },
+  "qualificationLimits": [
+    "Step 17 remains in progress: notification/device controls are implemented with step 18; account reactivation entry UI remains open.",
+    "Optional consent updates and revision-transition browser cases remain step 18; the current minimal seed has only required privacy sections.",
+    "Native nullable blank-string DTO normalization is unchanged; populated hidden values were exercised.",
+    "Template KVM, installed DEB, production and Pages are pending."
+  ]
+}

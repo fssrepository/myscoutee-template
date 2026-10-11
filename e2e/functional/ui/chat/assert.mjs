@@ -1,6 +1,7 @@
 import { assert } from '../../../shared/assertions.mjs';
 
 export async function openConversation(page, peerName) {
+ await page.clickVisible('.avatar-menu [data-guide-item="navigator-avatar"]');
  await page.clickVisible('.member-navigation [data-guide-item="chat"]');
  await page.waitForText(peerName);
  await page.clickByText('single-row article',peerName);

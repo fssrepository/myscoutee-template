@@ -30,6 +30,8 @@ export async function stageChatFixture() {
   return {ids,names,chatId,query,async close(){
     return query(`(()=>{
       const ids=${JSON.stringify(ids)}, chatId=${JSON.stringify(chatId)}, run=${JSON.stringify(run)};
+      const tracked=db.users.countDocuments({userId:{$in:ids},accountPurgePendingCounterTracked:true});
+      if(tracked) db.notificationRuleConfigs.updateOne({ruleKey:'account-purge',baseGroupId:null},[{$set:{'runState.pendingCount':{$max:[0,{$subtract:[{$ifNull:['$runState.pendingCount',0]},tracked]}]}}}]);
       db.chatMessages.deleteMany({chatId});
       db.chats.deleteMany({id:chatId,ownerUserId:{$in:ids}});
       db.contactChatAccess.deleteMany({qaFixture:run});
