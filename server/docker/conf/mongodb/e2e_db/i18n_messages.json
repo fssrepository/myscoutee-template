@@ -11662,5 +11662,449 @@
     "key": "guide.template.entry.login.label",
     "lang": "hu",
     "value": "Belépés az alkalmazásba"
+  },
+  {
+    "_id": "i18n-message-en-account-reactivation-message",
+    "key": "account.reactivation.message",
+    "lang": "en",
+    "value": "This account is scheduled for deletion. You can reactivate it within 30 days and continue using {productName} normally."
+  },
+  {
+    "_id": "i18n-message-en-app-setup-allow",
+    "key": "app.setup.allow",
+    "lang": "en",
+    "value": "Allow"
+  },
+  {
+    "_id": "i18n-message-en-app-setup-description",
+    "key": "app.setup.description",
+    "lang": "en",
+    "value": "Quick access in its own app window."
+  },
+  {
+    "_id": "i18n-message-en-app-setup-help-android-text",
+    "key": "app.setup.help.android.text",
+    "lang": "en",
+    "value": "Chrome → Settings → Site settings → Location / Notifications: allow this site. Also check Android Settings → Apps → your browser or installed app → Permissions / Notifications. Then return to MyScoutee."
+  },
+  {
+    "_id": "i18n-message-en-app-setup-help-android-title",
+    "key": "app.setup.help.android.title",
+    "lang": "en",
+    "value": "Android settings"
+  },
+  {
+    "_id": "i18n-message-en-app-setup-help-blocked-text",
+    "key": "app.setup.help.blocked.text",
+    "lang": "en",
+    "value": "MyScoutee cannot override a browser or system block. Change the permission in settings, return here and retry. Menu names vary by device and version."
+  },
+  {
+    "_id": "i18n-message-en-app-setup-help-blocked-title",
+    "key": "app.setup.help.blocked.title",
+    "lang": "en",
+    "value": "Previously blocked?"
+  },
+  {
+    "_id": "i18n-message-en-app-setup-help-install-text",
+    "key": "app.setup.help.install.text",
+    "lang": "en",
+    "value": "Android: use Install app here or in your browser menu. iPhone / iPad: in Safari, choose Share → Add to Home Screen. Open that icon to enable notifications (iOS / iPadOS 16.4 or later)."
+  },
+  {
+    "_id": "i18n-message-en-app-setup-help-install-title",
+    "key": "app.setup.help.install.title",
+    "lang": "en",
+    "value": "Install the app"
+  },
+  {
+    "_id": "i18n-message-en-app-setup-help-ios-text",
+    "key": "app.setup.help.ios.text",
+    "lang": "en",
+    "value": "Location: Settings → Privacy & Security → Location Services; also check Location in Safari’s settings for this website. Alerts: Settings → Notifications → MyScoutee → Allow Notifications. Open MyScoutee from the Home Screen and retry."
+  },
+  {
+    "_id": "i18n-message-en-app-setup-help-ios-title",
+    "key": "app.setup.help.ios.title",
+    "lang": "en",
+    "value": "iPhone / iPad settings"
+  },
+  {
+    "_id": "i18n-message-en-app-setup-help-location-text",
+    "key": "app.setup.help.location.text",
+    "lang": "en",
+    "value": "Save your current location to your profile. Select it here, then allow access when your browser asks. Your device’s location services must also be enabled. You can turn automatic updates off here."
+  },
+  {
+    "_id": "i18n-message-en-app-setup-help-notifications-text",
+    "key": "app.setup.help.notifications.text",
+    "lang": "en",
+    "value": "Select notifications to receive alerts on this device. Both the browser and your system must allow them. Installing the app does not grant notification permission."
+  },
+  {
+    "_id": "i18n-message-en-app-setup-help-title",
+    "key": "app.setup.help.title",
+    "lang": "en",
+    "value": "Installation and permissions"
+  },
+  {
+    "_id": "i18n-message-en-app-setup-permission-help",
+    "key": "app.setup.permission.help",
+    "lang": "en",
+    "value": "Choose the permissions this device may use."
+  },
+  {
+    "_id": "i18n-message-en-app-setup-permissions",
+    "key": "app.setup.permissions",
+    "lang": "en",
+    "value": "Permissions"
+  },
+  {
+    "_id": "i18n-message-en-app-setup-title",
+    "key": "app.setup.title",
+    "lang": "en",
+    "value": "Permissions and installation"
+  },
+  {
+    "_id": "i18n-message-en-entry-permissions-checking",
+    "key": "entry.permissions.checking",
+    "lang": "en",
+    "value": "Saving…"
+  },
+  {
+    "_id": "i18n-message-en-entry-permissions-description",
+    "key": "entry.permissions.description",
+    "lang": "en",
+    "value": "Location is required to check availability in your region. Notifications alert you to new messages and events. After confirmation, the browser asks for notifications, then location, one at a time. A blocked permission can be changed in site settings."
+  },
+  {
+    "_id": "i18n-message-en-entry-permissions-location-blocked",
+    "key": "entry.permissions.location.blocked",
+    "lang": "en",
+    "value": "Location access is blocked. Enable location access, then try again."
+  },
+  {
+    "_id": "i18n-message-en-entry-permissions-location-required",
+    "key": "entry.permissions.location.required",
+    "lang": "en",
+    "value": "Select location access to continue."
+  },
+  {
+    "_id": "i18n-message-en-entry-permissions-location-unavailable",
+    "key": "entry.permissions.location.unavailable",
+    "lang": "en",
+    "value": "Your location could not be determined. Please try again."
+  },
+  {
+    "_id": "i18n-message-en-entry-permissions-notifications-blocked",
+    "key": "entry.permissions.notifications.blocked",
+    "lang": "en",
+    "value": "The system did not grant notification permission. If no permission prompt appeared, you can enable notifications in the notification settings for MyScoutee. Then try again, or turn notifications off to continue."
+  },
+  {
+    "_id": "i18n-message-en-entry-permissions-title",
+    "key": "entry.permissions.title",
+    "lang": "en",
+    "value": "Permissions before sign-in"
+  },
+  {
+    "_id": "i18n-message-en-guide-landing-setup-help-description",
+    "key": "guide.landing.setup.help.description",
+    "lang": "en",
+    "value": "The question mark explains browser and phone differences, including blocked permissions. Open it if your device does not offer the expected permission or install prompt."
+  },
+  {
+    "_id": "i18n-message-en-guide-landing-setup-help-label",
+    "key": "guide.landing.setup.help.label",
+    "lang": "en",
+    "value": "Device-specific instructions"
+  },
+  {
+    "_id": "i18n-message-en-guide-landing-setup-install-description",
+    "key": "guide.landing.setup.install.description",
+    "lang": "en",
+    "value": "Installation opens this app in its own window and adds an icon. It does not create an account or grant permissions. This action appears only when the device supports it."
+  },
+  {
+    "_id": "i18n-message-en-guide-landing-setup-install-label",
+    "key": "guide.landing.setup.install.label",
+    "lang": "en",
+    "value": "Install a home-screen shortcut"
+  },
+  {
+    "_id": "i18n-message-en-guide-landing-setup-location-description",
+    "key": "guide.landing.setup.location.description",
+    "lang": "en",
+    "value": "Save your current location or turn off automatic updates. The browser requests permission only when you apply the selected setting."
+  },
+  {
+    "_id": "i18n-message-en-guide-landing-setup-location-label",
+    "key": "guide.landing.setup.location.label",
+    "lang": "en",
+    "value": "Location"
+  },
+  {
+    "_id": "i18n-message-en-guide-landing-setup-notifications-description",
+    "key": "guide.landing.setup.notifications.description",
+    "lang": "en",
+    "value": "Enable notifications to receive updates outside the open app. Availability depends on this device, browser and deployment; a disabled control cannot request permission."
+  },
+  {
+    "_id": "i18n-message-en-guide-landing-setup-notifications-label",
+    "key": "guide.landing.setup.notifications.label",
+    "lang": "en",
+    "value": "Notifications on this device"
+  },
+  {
+    "_id": "i18n-message-en-guide-landing-setup-permissions-save-description",
+    "key": "guide.landing.setup.permissions-save.description",
+    "lang": "en",
+    "value": "Apply sends the selected permission requests to the browser. A blocked permission must be changed in site settings; pressing again cannot override a browser denial."
+  },
+  {
+    "_id": "i18n-message-en-guide-landing-setup-permissions-save-label",
+    "key": "guide.landing.setup.permissions-save.label",
+    "lang": "en",
+    "value": "Apply the selected permissions"
+  },
+  {
+    "_id": "i18n-message-en-profile-setup",
+    "key": "profile.setup",
+    "lang": "en",
+    "value": "Profile setup"
+  },
+  {
+    "_id": "i18n-message-en-this-account-can-no-longer-be-reactivated",
+    "key": "This account can no longer be reactivated.",
+    "lang": "en",
+    "value": "This account can no longer be reactivated."
+  },
+  {
+    "_id": "i18n-message-en-this-account-is-not-active",
+    "key": "This account is not active.",
+    "lang": "en",
+    "value": "This account is not active."
+  },
+  {
+    "_id": "i18n-message-hu-account-reactivation-message",
+    "key": "account.reactivation.message",
+    "lang": "hu",
+    "value": "Ez a fiók törlésre van ütemezve. 30 napon belül újraaktiválhatod, majd a {productName} alkalmazást a megszokott módon használhatod tovább."
+  },
+  {
+    "_id": "i18n-message-hu-app-setup-allow",
+    "key": "app.setup.allow",
+    "lang": "hu",
+    "value": "Engedélyezés"
+  },
+  {
+    "_id": "i18n-message-hu-app-setup-description",
+    "key": "app.setup.description",
+    "lang": "hu",
+    "value": "Gyors elérés, saját alkalmazásablak."
+  },
+  {
+    "_id": "i18n-message-hu-app-setup-help-android-text",
+    "key": "app.setup.help.android.text",
+    "lang": "hu",
+    "value": "Chrome → Beállítások → Webhelybeállítások → Hely / Értesítések: engedélyezd ezt a webhelyet. Az Android Beállítások → Alkalmazások → böngésző vagy telepített app → Engedélyek / Értesítések pontját is ellenőrizd. Ezután térj vissza a MyScoutee-hoz."
+  },
+  {
+    "_id": "i18n-message-hu-app-setup-help-android-title",
+    "key": "app.setup.help.android.title",
+    "lang": "hu",
+    "value": "Android-beállítások"
+  },
+  {
+    "_id": "i18n-message-hu-app-setup-help-blocked-text",
+    "key": "app.setup.help.blocked.text",
+    "lang": "hu",
+    "value": "A MyScoutee nem írhatja felül a böngésző vagy a rendszer tiltását. Módosítsd az engedélyt a beállításokban, majd térj vissza ide és próbáld újra. A menüpontok neve készülékenként és verziónként eltérhet."
+  },
+  {
+    "_id": "i18n-message-hu-app-setup-help-blocked-title",
+    "key": "app.setup.help.blocked.title",
+    "lang": "hu",
+    "value": "Korábban letiltottad?"
+  },
+  {
+    "_id": "i18n-message-hu-app-setup-help-install-text",
+    "key": "app.setup.help.install.text",
+    "lang": "hu",
+    "value": "Android: az itteni vagy a böngészőmenü Telepítés gombját használd. iPhone / iPad: Safari → Megosztás → Főképernyőhöz adás. Az értesítéseket erről az ikonról megnyitva engedélyezheted (iOS / iPadOS 16.4-től)."
+  },
+  {
+    "_id": "i18n-message-hu-app-setup-help-install-title",
+    "key": "app.setup.help.install.title",
+    "lang": "hu",
+    "value": "Alkalmazás telepítése"
+  },
+  {
+    "_id": "i18n-message-hu-app-setup-help-ios-text",
+    "key": "app.setup.help.ios.text",
+    "lang": "hu",
+    "value": "Hely: Beállítások → Adatvédelem és biztonság → Helymeghatározás; a Safari adott webhelyhez tartozó Hely beállítását is ellenőrizd. Jelzések: Beállítások → Értesítések → MyScoutee → Értesítések engedélyezése. A főképernyőről nyisd meg a MyScoutee-t, majd próbáld újra."
+  },
+  {
+    "_id": "i18n-message-hu-app-setup-help-ios-title",
+    "key": "app.setup.help.ios.title",
+    "lang": "hu",
+    "value": "iPhone / iPad beállítások"
+  },
+  {
+    "_id": "i18n-message-hu-app-setup-help-location-text",
+    "key": "app.setup.help.location.text",
+    "lang": "hu",
+    "value": "Mentsd el a jelenlegi helyedet a profilodba. Jelöld ki itt, majd engedélyezd a hozzáférést a böngésző kérdésére. Az eszköz helymeghatározását is be kell kapcsolni. Az automatikus frissítést itt kikapcsolhatod."
+  },
+  {
+    "_id": "i18n-message-hu-app-setup-help-notifications-text",
+    "key": "app.setup.help.notifications.text",
+    "lang": "hu",
+    "value": "Jelöld be az értesítéseket, ha ezen az eszközön szeretnél jelzéseket kapni. A böngészőnek és a rendszernek is engedélyeznie kell őket. A telepítés önmagában nem ad értesítési engedélyt."
+  },
+  {
+    "_id": "i18n-message-hu-app-setup-help-title",
+    "key": "app.setup.help.title",
+    "lang": "hu",
+    "value": "Telepítés és engedélyek"
+  },
+  {
+    "_id": "i18n-message-hu-app-setup-permission-help",
+    "key": "app.setup.permission.help",
+    "lang": "hu",
+    "value": "Válaszd ki, milyen engedélyeket használhat ez az eszköz."
+  },
+  {
+    "_id": "i18n-message-hu-app-setup-permissions",
+    "key": "app.setup.permissions",
+    "lang": "hu",
+    "value": "Engedélyek"
+  },
+  {
+    "_id": "i18n-message-hu-app-setup-title",
+    "key": "app.setup.title",
+    "lang": "hu",
+    "value": "Engedélyek és telepítés"
+  },
+  {
+    "_id": "i18n-message-hu-entry-permissions-checking",
+    "key": "entry.permissions.checking",
+    "lang": "hu",
+    "value": "Mentés…"
+  },
+  {
+    "_id": "i18n-message-hu-entry-permissions-description",
+    "key": "entry.permissions.description",
+    "lang": "hu",
+    "value": "A helyadat szükséges a régiós elérhetőség ellenőrzéséhez. Az értesítések az új üzenetekről és eseményekről jeleznek. Jóváhagyás után a böngésző először az értesítéseket, majd a helyadatot kéri, egymás után. A letiltott engedélyt a webhely beállításainál módosíthatod."
+  },
+  {
+    "_id": "i18n-message-hu-entry-permissions-location-blocked",
+    "key": "entry.permissions.location.blocked",
+    "lang": "hu",
+    "value": "A helyhozzáférés tiltva van. Engedélyezd, majd próbáld újra."
+  },
+  {
+    "_id": "i18n-message-hu-entry-permissions-location-required",
+    "key": "entry.permissions.location.required",
+    "lang": "hu",
+    "value": "A folytatáshoz kapcsold be a helyhozzáférést."
+  },
+  {
+    "_id": "i18n-message-hu-entry-permissions-location-unavailable",
+    "key": "entry.permissions.location.unavailable",
+    "lang": "hu",
+    "value": "Nem sikerült meghatározni a helyzetedet. Próbáld újra."
+  },
+  {
+    "_id": "i18n-message-hu-entry-permissions-notifications-blocked",
+    "key": "entry.permissions.notifications.blocked",
+    "lang": "hu",
+    "value": "A rendszer nem adta meg az értesítési engedélyt. Ha nem jelent meg az engedélykérő ablak, a MyScoutee értesítési beállításaiban tudod engedélyezni. Ezután próbáld újra, vagy kapcsold ki az értesítéseket a folytatáshoz."
+  },
+  {
+    "_id": "i18n-message-hu-entry-permissions-title",
+    "key": "entry.permissions.title",
+    "lang": "hu",
+    "value": "Engedélyek a belépéshez"
+  },
+  {
+    "_id": "i18n-message-hu-guide-landing-setup-help-description",
+    "key": "guide.landing.setup.help.description",
+    "lang": "hu",
+    "value": "A kérdőjel a böngészők és telefonok eltéréseit, valamint a blokkolt engedélyeket magyarázza el. Nyisd meg, ha nem jelenik meg a várt engedélykérés vagy telepítés."
+  },
+  {
+    "_id": "i18n-message-hu-guide-landing-setup-help-label",
+    "key": "guide.landing.setup.help.label",
+    "lang": "hu",
+    "value": "Útmutató az eszközödhöz"
+  },
+  {
+    "_id": "i18n-message-hu-guide-landing-setup-install-description",
+    "key": "guide.landing.setup.install.description",
+    "lang": "hu",
+    "value": "Telepítés után saját ablakból, külön ikonról nyithatod meg az appot. Ez nem hoz létre fiókot és nem ad engedélyeket. A művelet csak támogatott eszközön jelenik meg."
+  },
+  {
+    "_id": "i18n-message-hu-guide-landing-setup-install-label",
+    "key": "guide.landing.setup.install.label",
+    "lang": "hu",
+    "value": "Ikon a kezdőképernyőre"
+  },
+  {
+    "_id": "i18n-message-hu-guide-landing-setup-location-description",
+    "key": "guide.landing.setup.location.description",
+    "lang": "hu",
+    "value": "Mentsd el a jelenlegi helyedet, vagy kapcsold ki az automatikus frissítést. A böngésző csak a kiválasztott beállítás alkalmazásakor kér engedélyt."
+  },
+  {
+    "_id": "i18n-message-hu-guide-landing-setup-location-label",
+    "key": "guide.landing.setup.location.label",
+    "lang": "hu",
+    "value": "Helyadat"
+  },
+  {
+    "_id": "i18n-message-hu-guide-landing-setup-notifications-description",
+    "key": "guide.landing.setup.notifications.description",
+    "lang": "hu",
+    "value": "Engedélyezve a megnyitott appon kívül is értesülhetsz a változásokról. Az elérhetőség az eszköztől, böngészőtől és telepítéstől függ; tiltott vezérlővel nem kérhető engedély."
+  },
+  {
+    "_id": "i18n-message-hu-guide-landing-setup-notifications-label",
+    "key": "guide.landing.setup.notifications.label",
+    "lang": "hu",
+    "value": "Értesítések ezen az eszközön"
+  },
+  {
+    "_id": "i18n-message-hu-guide-landing-setup-permissions-save-description",
+    "key": "guide.landing.setup.permissions-save.description",
+    "lang": "hu",
+    "value": "Az alkalmazás elküldi a kijelölt engedélykéréseket a böngészőnek. A blokkolt engedélyt a webhely beállításaiban módosítsd; az ismételt kattintás nem írja felül a tiltást."
+  },
+  {
+    "_id": "i18n-message-hu-guide-landing-setup-permissions-save-label",
+    "key": "guide.landing.setup.permissions-save.label",
+    "lang": "hu",
+    "value": "Kijelölt engedélyek alkalmazása"
+  },
+  {
+    "_id": "i18n-message-hu-profile-setup",
+    "key": "profile.setup",
+    "lang": "hu",
+    "value": "Profilbeállítás"
+  },
+  {
+    "_id": "i18n-message-hu-this-account-can-no-longer-be-reactivated",
+    "key": "This account can no longer be reactivated.",
+    "lang": "hu",
+    "value": "Ez a fiók már nem állítható vissza."
+  },
+  {
+    "_id": "i18n-message-hu-this-account-is-not-active",
+    "key": "This account is not active.",
+    "lang": "hu",
+    "value": "Ez a fiók nem aktív."
   }
 ]

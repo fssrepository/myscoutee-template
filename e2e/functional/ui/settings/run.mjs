@@ -26,6 +26,22 @@ try {
  });
  assert.equal(stored.profileStatus,'deleted');assert.equal(stored.previousProfileStatus,'public');assert.ok(Date.parse(stored.deletedAtIso));
  if(!local){assert.equal(stored.status,'D');assert.equal(stored.accountPurgePendingCounterTracked,true);}
- console.log('PASS '+(local?'local':'HTTP')+' privacy/terms access, deletion cancellation, confirmed deletion persistence and logout guard');
+ // Re-enter the same retained account: neither selecting it nor cancelling restores it.
+ async function selectDeleted(){
+  await page.navigate('/entry');
+  if(local)await page.clickVisible('.entry-actions .primary');else await page.clickByText('.entry-actions button','Explore');
+  await page.clickVisible(`.demo-user-item[data-user-id="${actorId}"]`);await page.waitForText('Reactivate account?');
+ }
+ await selectDeleted();await page.clickVisible('app-dialog [data-guide-item="cancel"]');await page.waitForSelectorHidden('.dialog');
+ assert.equal(new URL(await page.evaluate(()=>location.href)).pathname,'/entry');
+ await selectDeleted();await page.clickVisible('app-dialog [data-guide-item="confirm"]');await page.waitForUrlPath('/home',30000);
+ await page.navigate('/home');await page.waitForText(fixture?.names[0]??'Alex Morgan');
+ if(fixture){
+  const restored=await fixture.query(`db.users.findOne({userId:${JSON.stringify(actorId)}},{profileStatus:1,status:1,deletedAtIso:1,accountPurgePendingCounterTracked:1})`);
+  assert.equal(restored.profileStatus,'public');assert.equal(restored.status,'A');assert(!restored.deletedAtIso);assert.equal(restored.accountPurgePendingCounterTracked,false);
+ }
+ await openMenu();await page.clickVisible('[data-guide-item="logout"]');await page.waitForUrlPath('/entry');
+ assert.deepEqual(page.pageErrors,[]);assert(!page.network.some(request=>request.status>=400));
+ console.log('PASS '+(local?'local':'HTTP')+' privacy/terms, delete cancel/confirm, reactivation cancel/confirm, restored reload and purge tracking');
 }catch(error){console.error(error.stack);console.error(JSON.stringify({errors:page.consoleMessages.filter(message=>message.type==='error'),text:await page.evaluate(()=>document.body.innerText.slice(0,2500))}));process.exitCode=1;}
 finally{await page.close();await browser.close();if(fixture)console.log('Owned fixture cleanup',await fixture.close());}

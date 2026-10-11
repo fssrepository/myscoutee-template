@@ -329,7 +329,7 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     `MSC122_TEMPLATE_CHAT_20261011.json`. Admin support UI remains step 19;
     template KVM remains step 24.
 
-17. **Build the avatar menu, profile editor and minimal settings — IN PROGRESS.**
+17. **Build the avatar menu, profile editor and minimal settings — DONE (local/dev HTTP).**
     Reuse the existing menu, FormFlow/profile and image-editor entry points. Show
     only the small editable profile and settings required by retained features.
     Preserve logout, account deletion, consent and relevant notification/device
@@ -340,8 +340,15 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     cover upload/replace/remove, save/reload, cancellation and preservation of
     stored fields outside the form. Privacy/terms and confirmed account deletion
     work in both modes. Notification inbox and guide integration are qualified in
-    18. Browser push/device and location setup controls remain open; account
-    reactivation still needs its retained entry UI.
+    18. Native device setup, permission cancellation, location save/disable,
+    nested help and contextual setup guide now pass in both modes. The same
+    minimal editor handles onboarding and resumes after reload. Native account
+    reactivation confirmation/cancellation restores the prior state and clears
+    HTTP purge tracking. The combined frontend checks cover 182 tests in 23 files;
+    see `MSC122_TEMPLATE_SETUP_LIFECYCLE_20261011.json`, frontend `3244e2e`.
+    Configured Firebase/provider login, actual push delivery, installed PWA and
+    KVM qualification remain deployment/integration gates; disabled unconfigured
+    push controls are not proof of delivery.
 
 18. **Connect frontend guide, consent and notification surfaces — DONE (local/dev HTTP).**
     Reuse the existing top-menu access, drawers/dialogs, guide engine and consent
@@ -354,9 +361,10 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     and successful chat regression tests. The root geometry and local content
     startup dependencies are included. See
     `MSC122_TEMPLATE_NOTIFICATIONS_GUIDE_20261011.json`, frontend `ae25d6f`.
-    Device push/setup controls remain in 17; KVM/installed artifacts remain pending.
+    Device/setup controls and guide are qualified in 17; live push delivery and
+    KVM/installed artifacts remain pending.
 
-19. **Complete the minimal admin and operator shells — PENDING.**
+19. **Complete the minimal admin and operator shells — IN PROGRESS.**
     Keep the admin menu empty of MyScoutee product dashboards. Include support and
     moderation actions needed by retained chat/accounts and the relevant API entry.
     Keep operator bootstrap, deployment/Firebase configuration, installation/TLS,

@@ -186,3 +186,22 @@ the retained landing/menu/profile/chat tours. The native guide persists its
 enabled preference, not the currently selected step; no additional progress
 storage is introduced. Desktop/mobile notification screenshots can be captured
 with `E2E_SCREENSHOT_DIR`.
+
+
+## Device setup and retained account entry — 2026-10-11
+
+Frontend `3244e2e` adds the native permission/setup/location owner. The 182
+frontend tests and local/HTTP browser runs cover nested help, the setup guide,
+location save/reload and disabling tracking, delete/reactivate cancellation and
+confirmation, and minimal onboarding/save/reload. The HTTP reactivation and
+onboarding probes verify cleared purge tracking. The native location API case
+passes at 9 ms. See [the evidence](../qualification/evidence/MSC122_TEMPLATE_SETUP_LIFECYCLE_20261011.json).
+
+Run `e2e/functional/ui/settings/setup.mjs`, `settings/run.mjs` and
+`settings/onboarding.mjs` with the same explicit template Mongo fixture inputs
+as chat. Use `--local` for the sole local frontend runtime. Setup screenshots
+are optional through `E2E_SCREENSHOT_DIR`. The HTTP onboarding fixture retains
+an owned authenticated session because the native demo selector intentionally
+omits onboarding profiles. It does not impersonate a real Firebase sign-up.
+Actual provider/push delivery, installed PWA, KVM and matched load comparison
+remain open. Only one frontend compiler and one application stack ran at a time.

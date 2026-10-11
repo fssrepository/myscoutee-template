@@ -4393,6 +4393,70 @@
       "sourceFrontendRevision": "bf4760f9",
       "purpose": "Native guide, document bootstrap and shared popup geometry dependency.",
       "adaptation": "Select the native geometry mixin required by full-height shared popups; omit product game-page rules."
+    },
+    {
+      "path": "frontend/src/app/shared/core/base/services/app-location.service.ts",
+      "upstreamSha256": "cb0b5ef6b69df775638af3c6c1486ba4576a7829a21e3af830235141095633d2",
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9",
+      "purpose": "Native device permissions, location synchronization and optional PWA installation.",
+      "adaptation": "Omit the absent group workspace lookup; retain account identity checks, permission watches, cancellation, scoped coordinate cache, serialized writes and the native 5 km write threshold. Firebase bootstrap uses only the selected UserDto fields."
+    },
+    {
+      "path": "frontend/src/app/shared/core/base/services/app-location.service.spec.ts",
+      "upstreamSha256": "3dbc4a241d0f5d1f34ae314b416dafba6fbd7a71ca8af622000e480ccc659991",
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9",
+      "purpose": "Native device permissions, location synchronization and optional PWA installation.",
+      "adaptation": "Omit only the group-workspace-specific test and fixture dependency."
+    },
+    {
+      "path": "frontend/src/app/shared/ui/context/stores/app/app-setup.store.ts",
+      "upstreamSha256": "2842d697dd2cc13a234c10ae3f4d3a1fcf70803b86dea45974ff72d0e9614611",
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9",
+      "purpose": "Native device permissions, location synchronization and optional PWA installation.",
+      "adaptation": null
+    },
+    {
+      "path": "frontend/src/app/shared/ui/context/stores/app/app-setup.store.spec.ts",
+      "upstreamSha256": "57af5b6fbbffaa3ed19a1c330d69559ccab77a7a490745a35325a4091fd8379a",
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9",
+      "purpose": "Native device permissions, location synchronization and optional PWA installation.",
+      "adaptation": null
+    },
+    {
+      "path": "frontend/src/app/shared/ui/components/app-setup-popup/app-setup-popup.component.ts",
+      "upstreamSha256": "7a6a50c9736719a846af3bcde071a6c9bba757c762b233c8798352eec05490ae",
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9",
+      "purpose": "Native device permissions, location synchronization and optional PWA installation.",
+      "adaptation": "Register the existing popup guide context through PopupComponent so the active entry/member guide owns it; keep native permission/install controls and nested help."
+    },
+    {
+      "path": "frontend/src/app/shared/ui/components/app-setup-popup/app-setup-popup.component.html",
+      "upstreamSha256": "7cdc8683804abb7fe80ff506d2e88ffbe61a29a78be9656085047c5f2bbbcca7",
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9",
+      "purpose": "Native device permissions, location synchronization and optional PWA installation.",
+      "adaptation": "Use the existing PopupComponent guideContext input instead of a separate landing-only guide service."
+    },
+    {
+      "path": "frontend/src/app/shared/ui/components/app-setup-popup/app-setup-popup.component.scss",
+      "upstreamSha256": "ab0baf9627d77a13c7821b9de754aff77872e1b466eed7e484344ca22f5ad344",
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9",
+      "purpose": "Native device permissions, location synchronization and optional PWA installation.",
+      "adaptation": null
+    },
+    {
+      "path": "frontend/src/app/shared/ui/components/app-setup-popup/app-setup-popup.component.spec.ts",
+      "upstreamSha256": "9f71da4842c6c26897a09c03a1e4e125762cbad9f7277e4351026071ad3f9cc2",
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9",
+      "purpose": "Native device permissions, location synchronization and optional PWA installation.",
+      "adaptation": "Supply the existing components matchMedia mock and current-language contract in the template unit environment."
     }
   ],
   "templateOwnedFeatures": [

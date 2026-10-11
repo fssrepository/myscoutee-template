@@ -118,5 +118,45 @@
     "group": "controls",
     "i18nKey": "guide.template.entry.login",
     "order": 0
+  },
+  {
+    "_id": "landing.setup--help",
+    "id": "help",
+    "screenKey": "landing.setup",
+    "group": "fields",
+    "i18nKey": "guide.landing.setup.help",
+    "order": 0
+  },
+  {
+    "_id": "landing.setup--location",
+    "id": "location",
+    "screenKey": "landing.setup",
+    "group": "fields",
+    "i18nKey": "guide.landing.setup.location",
+    "order": 1
+  },
+  {
+    "_id": "landing.setup--notifications",
+    "id": "notifications",
+    "screenKey": "landing.setup",
+    "group": "fields",
+    "i18nKey": "guide.landing.setup.notifications",
+    "order": 2
+  },
+  {
+    "_id": "landing.setup--permissions-save",
+    "id": "permissions-save",
+    "screenKey": "landing.setup",
+    "group": "fields",
+    "i18nKey": "guide.landing.setup.permissions-save",
+    "order": 3
+  },
+  {
+    "_id": "landing.setup--install",
+    "id": "install",
+    "screenKey": "landing.setup",
+    "group": "fields",
+    "i18nKey": "guide.landing.setup.install",
+    "order": 4
   }
 ]

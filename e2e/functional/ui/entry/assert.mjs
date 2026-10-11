@@ -1,6 +1,6 @@
 import { assert } from '../../../shared/assertions.mjs';
 
-export async function assertUi({ page, ctx, local = ctx?.mode !== 'full', memberReady, actorId = '100000000000000000000001', actorName = 'Alex Morgan', consentExpected = true, endsSession = false }) {
+export async function assertUi({ page, ctx, local = ctx?.mode !== 'full', memberReady, profileSelected, actorId = '100000000000000000000001', actorName = 'Alex Morgan', consentExpected = true, endsSession = false }) {
   await page.navigate('/privacy-policy');
   await page.waitForSelector('.document-viewer-section-body');
   await page.waitForText('Privacy information');
@@ -18,6 +18,7 @@ export async function assertUi({ page, ctx, local = ctx?.mode !== 'full', member
   await page.waitForSelector(`.demo-user-item[data-user-id="${actorId}"]`);
   assert(!await page.isSelectorVisible('app-document-viewer [role="dialog"]'), 'Accepted browser consent must allow profile selection');
   await page.clickVisible(`.demo-user-item[data-user-id="${actorId}"]`);
+  if (profileSelected) await profileSelected({ page, local });
   await page.waitForUrlPath('/home', 30000);
   await page.waitForText(actorName);
   await page.navigate('/home');

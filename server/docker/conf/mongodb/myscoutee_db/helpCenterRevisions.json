@@ -578,5 +578,127 @@
     "updatedDate": "2026-10-11T00:00:00Z",
     "createdUser": "template-seed",
     "updatedUser": "template-seed"
+  },
+  {
+    "_id": "template-guide-setup-en-v1",
+    "documentType": "explanation",
+    "contextKey": "landing.setup",
+    "lang": "en",
+    "languageLabel": "English",
+    "version": 1,
+    "active": true,
+    "presentation": "tour",
+    "title": "Device setup",
+    "summary": "Device setup",
+    "description": "Device setup",
+    "headerColor": "violet",
+    "createdDate": "2026-09-30T00:00:00.000Z",
+    "createdUser": "system",
+    "updatedDate": "2026-09-30T00:00:00.000Z",
+    "updatedUser": "system",
+    "sections": [
+      {
+        "id": "guide-help",
+        "guideStepId": "help",
+        "icon": "help_outline",
+        "title": "Device-specific instructions",
+        "blurb": "",
+        "contentHtml": "<p>The question mark explains browser and phone differences, including blocked permissions. Open it if your device does not offer the expected permission or install prompt.</p>"
+      },
+      {
+        "id": "guide-location",
+        "guideStepId": "location",
+        "icon": "help_outline",
+        "title": "Location",
+        "blurb": "",
+        "contentHtml": "<p>Save your current location or turn off automatic updates. The browser requests permission only when you apply the selected setting.</p>"
+      },
+      {
+        "id": "guide-notifications",
+        "guideStepId": "notifications",
+        "icon": "help_outline",
+        "title": "Notifications on this device",
+        "blurb": "",
+        "contentHtml": "<p>Enable notifications to receive updates outside the open app. Availability depends on this device, browser and deployment; a disabled control cannot request permission.</p>"
+      },
+      {
+        "id": "guide-permissions-save",
+        "guideStepId": "permissions-save",
+        "icon": "help_outline",
+        "title": "Apply the selected permissions",
+        "blurb": "",
+        "contentHtml": "<p>Apply sends the selected permission requests to the browser. A blocked permission must be changed in site settings; pressing again cannot override a browser denial.</p>"
+      },
+      {
+        "id": "guide-install",
+        "guideStepId": "install",
+        "icon": "help_outline",
+        "title": "Install a home-screen shortcut",
+        "blurb": "",
+        "contentHtml": "<p>Installation opens this app in its own window and adds an icon. It does not create an account or grant permissions. This action appears only when the device supports it.</p>"
+      }
+    ],
+    "isSystem": true
+  },
+  {
+    "_id": "template-guide-setup-hu-v1",
+    "documentType": "explanation",
+    "contextKey": "landing.setup",
+    "lang": "hu",
+    "languageLabel": "Magyar",
+    "version": 1,
+    "active": true,
+    "presentation": "tour",
+    "title": "Eszközbeállítás",
+    "summary": "Eszközbeállítás",
+    "description": "Eszközbeállítás",
+    "headerColor": "violet",
+    "createdDate": "2026-09-30T00:00:00.000Z",
+    "createdUser": "system",
+    "updatedDate": "2026-09-30T00:00:00.000Z",
+    "updatedUser": "system",
+    "sections": [
+      {
+        "id": "guide-help",
+        "guideStepId": "help",
+        "icon": "help_outline",
+        "title": "Útmutató az eszközödhöz",
+        "blurb": "",
+        "contentHtml": "<p>A kérdőjel a böngészők és telefonok eltéréseit, valamint a blokkolt engedélyeket magyarázza el. Nyisd meg, ha nem jelenik meg a várt engedélykérés vagy telepítés.</p>"
+      },
+      {
+        "id": "guide-location",
+        "guideStepId": "location",
+        "icon": "help_outline",
+        "title": "Helyadat",
+        "blurb": "",
+        "contentHtml": "<p>Mentsd el a jelenlegi helyedet, vagy kapcsold ki az automatikus frissítést. A böngésző csak a kiválasztott beállítás alkalmazásakor kér engedélyt.</p>"
+      },
+      {
+        "id": "guide-notifications",
+        "guideStepId": "notifications",
+        "icon": "help_outline",
+        "title": "Értesítések ezen az eszközön",
+        "blurb": "",
+        "contentHtml": "<p>Engedélyezve a megnyitott appon kívül is értesülhetsz a változásokról. Az elérhetőség az eszköztől, böngészőtől és telepítéstől függ; tiltott vezérlővel nem kérhető engedély.</p>"
+      },
+      {
+        "id": "guide-permissions-save",
+        "guideStepId": "permissions-save",
+        "icon": "help_outline",
+        "title": "Kijelölt engedélyek alkalmazása",
+        "blurb": "",
+        "contentHtml": "<p>Az alkalmazás elküldi a kijelölt engedélykéréseket a böngészőnek. A blokkolt engedélyt a webhely beállításaiban módosítsd; az ismételt kattintás nem írja felül a tiltást.</p>"
+      },
+      {
+        "id": "guide-install",
+        "guideStepId": "install",
+        "icon": "help_outline",
+        "title": "Ikon a kezdőképernyőre",
+        "blurb": "",
+        "contentHtml": "<p>Telepítés után saját ablakból, külön ikonról nyithatod meg az appot. Ez nem hoz létre fiókot és nem ad engedélyeket. A művelet csak támogatott eszközön jelenik meg.</p>"
+      }
+    ],
+    "isSystem": true
   }
 ]

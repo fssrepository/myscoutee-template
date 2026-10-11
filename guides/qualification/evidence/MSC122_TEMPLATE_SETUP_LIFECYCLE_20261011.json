@@ -1,0 +1,143 @@
+{
+  "date": "2026-10-11",
+  "templateFrontendBaseRevision": "ae25d6f",
+  "templateParentBaseRevision": "7bbeae0",
+  "sourceBackendRevision": "5a639775e",
+  "sourceFrontendRevision": "bf4760f9",
+  "status": "PASS for local and dev HTTP; deployment/provider gates remain pending.",
+  "scope": "Selected native device setup/location owner plus minimal entry onboarding and native account-reactivation dialog. No source repository or Java change.",
+  "checks": [
+    {
+      "name": "Frontend unit suite",
+      "result": "PASS",
+      "tests": 182,
+      "files": 23,
+      "logs": [
+        "/tmp/msc122-template-setup-unit.log",
+        "/tmp/msc122-template-setup-popup-unit.log"
+      ],
+      "note": "181 passed initially; one native popup test needed the template test environment matchMedia/currentLanguage mocks. Focused rerun: all five popup tests passed. No production workaround."
+    },
+    {
+      "name": "Device setup, guide and location persistence",
+      "result": "PASS",
+      "modes": [
+        "local",
+        "dev HTTP"
+      ],
+      "logs": [
+        "/tmp/msc122-template-setup-local.log",
+        "/tmp/msc122-template-setup-http.log"
+      ],
+      "assertions": [
+        "Unconfigured push cannot request permission",
+        "Native nested help has six sections and closes independently",
+        "Contextual guide includes only visible device controls",
+        "Permission-controlled location save/reload",
+        "Tracking disabled persists and retains last saved coordinates",
+        "No Java API calls in local mode",
+        "HTTP owned fixture cleanup leaves zero users/chats/messages"
+      ]
+    },
+    {
+      "name": "Deletion and account reactivation",
+      "result": "PASS",
+      "modes": [
+        "local",
+        "dev HTTP"
+      ],
+      "logs": [
+        "/tmp/msc122-template-reactivation-local.log",
+        "/tmp/msc122-template-reactivation-http.log"
+      ],
+      "assertions": [
+        "Privacy and terms access",
+        "Delete cancellation is inert",
+        "Confirmed deletion logs out and persists",
+        "Reactivation cancellation leaves account deleted",
+        "Explicit confirmation restores same account; reload works",
+        "HTTP restored status A/public and accountPurgePendingCounterTracked false"
+      ]
+    },
+    {
+      "name": "Minimal onboarding",
+      "result": "PASS",
+      "modes": [
+        "local",
+        "dev HTTP"
+      ],
+      "logs": [
+        "/tmp/msc122-template-onboarding-local.log",
+        "/tmp/msc122-template-onboarding-http.log"
+      ],
+      "assertions": [
+        "Same minimal name/avatar form",
+        "Empty name blocks saving",
+        "Pending onboarding survives reload",
+        "Explicit save enters member page; reload and logout work",
+        "HTTP saved public status and cleared purge timestamp/tracking"
+      ],
+      "note": "Native HTTP demo selection omits onboarding records. An owned live demo session stages the same persisted onboarding state before entry reload. This proves the retained UI/save path, not a live Firebase provider sign-up."
+    },
+    {
+      "name": "Location API",
+      "result": "PASS",
+      "log": "/tmp/msc122-template-setup-location-api.log",
+      "case": "location/eligibility",
+      "reportedMainRequestMs": 9,
+      "assertions": [
+        "valid German coordinates",
+        "invalid coordinate rejection"
+      ]
+    },
+    {
+      "name": "Localization seed audit",
+      "result": "PASS",
+      "version": "2026.10.11.7",
+      "messages": 2018,
+      "bundles": 2,
+      "physicalMongoSeedSets": 3
+    }
+  ],
+  "performance": {
+    "implementation": "Retain native 5 km background location write threshold, serialized writes, permission listeners and abort handling. Entry performs the existing location eligibility check once; no additional polling loop.",
+    "unitEvidence": "26 selected location tests cover cancellation, saved coordinate baseline, small-movement write suppression, retry and actor identity. Native setup timeout starts after permission grant.",
+    "cpuSamples": [
+      {
+        "context": "dev after source composition",
+        "backendPercent": 9.04,
+        "frontendSyncPercent": 1.13,
+        "mongodbPercent": 3.17
+      },
+      {
+        "context": "dev HTTP fixture/browser checks",
+        "backendPercent": 16.07,
+        "frontendSyncPercent": 3.11,
+        "mongodbPercent": 34.64
+      }
+    ],
+    "limitation": "Samples are not matched workloads and do not prove a regression or performance parity. Final matched measurement remains step 23."
+  },
+  "visualInspection": {
+    "result": "PASS",
+    "desktop": [
+      1440,
+      950
+    ],
+    "mobile": [
+      390,
+      844
+    ],
+    "paths": [
+      "/tmp/msc122-template-setup-http-ui/setup-desktop.png",
+      "/tmp/msc122-template-setup-http-ui/setup-mobile.png"
+    ]
+  },
+  "notProven": [
+    "Live Firebase/provider login and push delivery with configured credentials",
+    "OS-level installed PWA behavior",
+    "Template KVM and installed artifacts",
+    "Final matched load/CPU comparison"
+  ],
+  "templateFrontendRevision": "3244e2eda09ef25f541ad9ef3d6508883d0954b3"
+}
