@@ -1,0 +1,38 @@
+[
+  {
+    "_id": "template-welcome-1",
+    "syncKey": "template-welcome-1",
+    "recipientUserId": "100000000000000000000001",
+    "kind": "template-welcome",
+    "category": "user",
+    "title": "Welcome to Templates",
+    "message": "Open your avatar menu to explore the example pages and profile settings.",
+    "sourceType": "user",
+    "sourceId": "100000000000000000000001",
+    "payload": {},
+    "readAtIso": null,
+    "revision": 1,
+    "createdDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "updatedUser": "template-seed"
+  },
+  {
+    "_id": "template-welcome-2",
+    "syncKey": "template-welcome-2",
+    "recipientUserId": "100000000000000000000002",
+    "kind": "template-welcome",
+    "category": "user",
+    "title": "Welcome to Templates",
+    "message": "Open your avatar menu to explore the example pages and profile settings.",
+    "sourceType": "user",
+    "sourceId": "100000000000000000000002",
+    "payload": {},
+    "readAtIso": null,
+    "revision": 1,
+    "createdDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "updatedUser": "template-seed"
+  }
+]

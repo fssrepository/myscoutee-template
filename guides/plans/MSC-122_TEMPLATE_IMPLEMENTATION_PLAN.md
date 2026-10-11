@@ -339,14 +339,22 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     adapters now compose the name/avatar editor. Local and HTTP browser checks
     cover upload/replace/remove, save/reload, cancellation and preservation of
     stored fields outside the form. Privacy/terms and confirmed account deletion
-    work in both modes. Notification/device controls remain coupled to step 18;
-    account reactivation still needs its retained entry UI.
+    work in both modes. Notification inbox and guide integration are qualified in
+    18. Browser push/device and location setup controls remain open; account
+    reactivation still needs its retained entry UI.
 
-18. **Connect frontend guide, consent and notification surfaces — IN PROGRESS.**
+18. **Connect frontend guide, consent and notification surfaces — DONE (local/dev HTTP).**
     Reuse the existing top-menu access, drawers/dialogs, guide engine and consent
     flow. Seed guidance only for retained screens. Preserve unread/seen state,
     document versions and local/HTTP behavior. Close with initial entry, required
     consent, guide completion, notification navigation and persistence after reload.
+    Native notification paging/read/mute state, the 30-second HTTP realtime badge,
+    chat navigation and contextual guides now pass in both modes. The retained
+    public entry/menu/profile/chat tours are covered, with 131 passing unit tests
+    and successful chat regression tests. The root geometry and local content
+    startup dependencies are included. See
+    `MSC122_TEMPLATE_NOTIFICATIONS_GUIDE_20261011.json`, frontend `ae25d6f`.
+    Device push/setup controls remain in 17; KVM/installed artifacts remain pending.
 
 19. **Complete the minimal admin and operator shells — PENDING.**
     Keep the admin menu empty of MyScoutee product dashboards. Include support and
@@ -491,13 +499,13 @@ deep-link behavior. A working `local` build alone does not close frontend work.
 
 ## Current continuation point
 
-Continue **17–19**. Chat **16** and SmartList **15** are qualified in local/dev
-HTTP. Step **17** has a tested name/avatar editor and settings documents/account
-deletion; its notification/device controls remain to be connected with **18**.
-The source frontend and backend are unchanged by this profile/settings batch.
-The template now uses native FormFlow, ImageCarousel, menu/HeaderCard, consent
-viewer, DialogStore and selected media adapters. Keep the remaining identity
-entry/reactivation checks explicit; the admin/operator operational screens are
-still unfinished. Production/Pages landing verification remains pending.
-Then complete the remaining environment, KVM, packaging and release steps.
-Earlier backend steps are not all closed; retain their pending checks above.
+Complete the remaining **17** device/location setup and account reactivation
+entry, then continue **19** admin/operator. Notification/guide **18**, chat **16**
+and SmartList **15** are qualified in local/dev HTTP. Source repositories are
+unchanged by the profile/settings and notification/guide batches. Frontend
+`ae25d6f` preserves the latest tested notification/guide checkpoint. Reuse the
+native app-setup, location and account lifecycle owners for the remaining entry
+and settings work. Keep Firebase REAL/onboarding and operator bootstrap checks
+explicit; do not count an Explore/DEMO pass as proof of those paths.
+Then finish environment, KVM, packaging and release qualification. Earlier
+backend steps still have the pending checks recorded above.

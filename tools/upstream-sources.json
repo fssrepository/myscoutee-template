@@ -2813,10 +2813,10 @@
     {
       "path": "frontend/src/app/app.scss",
       "upstreamSha256": "21b21575991b40d41fe6b9f254046b753fbb898f9a63e081afebcf67e7a76c2c",
-      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
-      "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
-      "sourceRevision": "bfc9a167c",
-      "sourceFrontendRevision": "5fbf3e62"
+      "purpose": "Native guide, document bootstrap and shared popup geometry dependency.",
+      "adaptation": "Include the native home-page-frame geometry on the root; keep the template root layout.",
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9"
     },
     {
       "path": "frontend/src/app/app.ts",
@@ -2991,8 +2991,8 @@
       "upstreamSha256": "ef57b401cc6a766913ca928b4511af3f2c7266e12c3ca6733e440edfe1765fc7",
       "sourceRevision": "5a639775e",
       "sourceFrontendRevision": "bf4760f9",
-      "purpose": "Native personal/support chat protocol, local persistence, HTTP/WebSocket transport, shared memory table or scoped fixture transport.",
-      "adaptation": "Select the personal/support chat dependency closure and minimal template composition. Omit event/group/campaign/asset navigation models, product metrics and unselected account fields; retain message IDs, ownership, paging, read receipts and reconnect behavior. Template seed IDs/data replace product actors."
+      "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
+      "adaptation": "Select template guide/content languages and retained memory tables. Preserve native notification persistence and the native contacts chat-access persistence rule; use template-owned content and catalogue data."
     },
     {
       "path": "frontend/src/app/shared/core/common/constants.ts",
@@ -3077,10 +3077,10 @@
     {
       "path": "frontend/src/app/shared/core/contracts/user.interface.ts",
       "upstreamSha256": "c013ce4c69c8c5c9da70d70ac62d351cd3c2c30fdc76e2936145a5d58c272e2e",
-      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
-      "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
-      "sourceRevision": "bfc9a167c",
-      "sourceFrontendRevision": "5fbf3e62"
+      "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
+      "adaptation": "Retain the selected native user API and the notification/device fields of the realtime snapshot. Omit product counters and simulated affinity/impression changes. Reuse native route timing and abortable HTTP transport.",
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9"
     },
     {
       "path": "frontend/src/app/shared/core/http/interceptors/admin-access.interceptor.ts",
@@ -3183,8 +3183,8 @@
       "upstreamSha256": "7af6ef975a6f3cb07cb7842f705d6f3b64c97c84ede8e8f30bab3e93311ba74c",
       "sourceRevision": "5a639775e",
       "sourceFrontendRevision": "bf4760f9",
-      "purpose": "Native personal/support chat protocol, local persistence, HTTP/WebSocket transport, shared memory table or scoped fixture transport.",
-      "adaptation": "Select the personal/support chat dependency closure and minimal template composition. Omit event/group/campaign/asset navigation models, product metrics and unselected account fields; retain message IDs, ownership, paging, read receipts and reconnect behavior. Template seed IDs/data replace product actors."
+      "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
+      "adaptation": "Compose the selected template profile, chat, notification and guide owners; retain native contracts and persistence while omitting unselected product dependencies."
     },
     {
       "path": "frontend/src/app/shared/core/local/seed/data/deployment-configuration.json",
@@ -3245,10 +3245,10 @@
     {
       "path": "frontend/src/app/shared/ui/context/stores/profile/user-profile.store.ts",
       "upstreamSha256": "96baf2f9063c79c045814f6ad2ff16c5d4cf79f63f2d276a64015d2eca0d8a3c",
-      "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
-      "adaptation": "Selected native user/profile/device state and location checks; omitted impressions, workspace, payment and event counters.",
-      "sourceRevision": "e3eff359c",
-      "sourceFrontendRevision": "1af20e0b"
+      "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
+      "adaptation": "Compose the selected template profile, chat, notification and guide owners; retain native contracts and persistence while omitting unselected product dependencies.",
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9"
     },
     {
       "path": "frontend/src/app/shared/ui/context/ui.providers.ts",
@@ -3373,10 +3373,10 @@
     {
       "path": "frontend/src/app/app.routes.ts",
       "upstreamSha256": "1322cad5960f79b629885184390cf3e54252bc1f2126dd4f21e00ab0fbd63e6a",
-      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
-      "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
-      "sourceRevision": "bfc9a167c",
-      "sourceFrontendRevision": "5fbf3e62"
+      "purpose": "Native guide, document bootstrap and shared popup geometry dependency.",
+      "adaptation": "Reuse the existing public-content resolver for entry guides, privacy and terms in local mode; select retained template routes and role/session guards.",
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9"
     },
     {
       "path": "frontend/src/app/entry/components/entry-firebase-auth-popup/entry-firebase-auth-popup.component.html",
@@ -3469,18 +3469,18 @@
     {
       "path": "frontend/src/app/shared/core/base/services/users.service.ts",
       "upstreamSha256": "5ee4caa93f59c5e7dd406a2f46d93d83a88fe20f3f7ee40f703946ef3328fc18",
-      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
-      "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
-      "sourceRevision": "bfc9a167c",
-      "sourceFrontendRevision": "5fbf3e62"
+      "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
+      "adaptation": "Retain the selected native user API and the notification/device fields of the realtime snapshot. Omit product counters and simulated affinity/impression changes. Reuse native route timing and abortable HTTP transport.",
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9"
     },
     {
       "path": "frontend/src/app/shared/core/common/app-static-data.ts",
       "upstreamSha256": "29f369e3f94786f536e4f8c4509540684d1d4f8cd48515844cb0ee5d340ed445",
-      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
-      "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
-      "sourceRevision": "bfc9a167c",
-      "sourceFrontendRevision": "5fbf3e62"
+      "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
+      "adaptation": "Select template guide/content languages and retained memory tables. Preserve native notification persistence and the native contacts chat-access persistence rule; use template-owned content and catalogue data.",
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9"
     },
     {
       "path": "frontend/src/app/shared/core/common/deployment-privacy-token.resolver.ts",
@@ -3517,10 +3517,10 @@
     {
       "path": "frontend/src/app/shared/core/http/services/users.service.ts",
       "upstreamSha256": "37591209ab2f252cd4ee18b67dae9d80f9a9d8ee6c5e266101a3037c81f2a0ea",
-      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
-      "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
-      "sourceRevision": "bfc9a167c",
-      "sourceFrontendRevision": "5fbf3e62"
+      "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
+      "adaptation": "Retain the selected native user API and the notification/device fields of the realtime snapshot. Omit product counters and simulated affinity/impression changes. Reuse native route timing and abortable HTTP transport.",
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9"
     },
     {
       "path": "frontend/src/app/shared/core/index.ts",
@@ -3567,8 +3567,8 @@
       "upstreamSha256": "6baf530529348252d55143e510e7b52cc4437809d9d8a35953ad801cff1323d7",
       "sourceRevision": "5a639775e",
       "sourceFrontendRevision": "bf4760f9",
-      "purpose": "Native personal/support chat protocol, local persistence, HTTP/WebSocket transport, shared memory table or scoped fixture transport.",
-      "adaptation": "Select the personal/support chat dependency closure and minimal template composition. Omit event/group/campaign/asset navigation models, product metrics and unselected account fields; retain message IDs, ownership, paging, read receipts and reconnect behavior. Template seed IDs/data replace product actors."
+      "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
+      "adaptation": "Compose the selected template profile, chat, notification and guide owners; retain native contracts and persistence while omitting unselected product dependencies."
     },
     {
       "path": "frontend/src/app/shared/core/local/seed/services/static-content.service.ts",
@@ -3677,10 +3677,10 @@
     {
       "path": "frontend/src/app/shared/core/local/source/services/users.service.ts",
       "upstreamSha256": "e0cedc0c27d70cd5fc1c597dbef7730ef19b818d424d01b3052c6849214170ee",
-      "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
-      "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
-      "sourceRevision": "bfc9a167c",
-      "sourceFrontendRevision": "5fbf3e62"
+      "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
+      "adaptation": "Retain the selected native user API and the notification/device fields of the realtime snapshot. Omit product counters and simulated affinity/impression changes. Reuse native route timing and abortable HTTP transport.",
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9"
     },
     {
       "path": "frontend/src/app/shared/ui/components/demo-bootstrap-selector/demo-bootstrap-selector.component.html",
@@ -4167,8 +4167,8 @@
       "upstreamSha256": "a80b829d8c93c7ae03bed249c99c5dec7789462ba9703eb3c2a963f28129c284",
       "sourceRevision": "5a639775e",
       "sourceFrontendRevision": "bf4760f9",
-      "purpose": "Native personal/support chat protocol, local persistence, HTTP/WebSocket transport, shared memory table or scoped fixture transport.",
-      "adaptation": "Select the personal/support chat dependency closure and minimal template composition. Omit event/group/campaign/asset navigation models, product metrics and unselected account fields; retain message IDs, ownership, paging, read receipts and reconnect behavior. Template seed IDs/data replace product actors."
+      "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
+      "adaptation": "Compose the selected template profile, chat, notification and guide owners; retain native contracts and persistence while omitting unselected product dependencies."
     },
     {
       "path": "frontend/src/app/shared/core/local/source/repositories/chats.repository.ts",
@@ -4191,8 +4191,8 @@
       "upstreamSha256": "acad801ef582d381dd118131e4670f2339d0c9b7d6e00634de93b46b64dab475",
       "sourceRevision": "5a639775e",
       "sourceFrontendRevision": "bf4760f9",
-      "purpose": "Native personal/support chat protocol, local persistence, HTTP/WebSocket transport, shared memory table or scoped fixture transport.",
-      "adaptation": "Select the personal/support chat dependency closure and minimal template composition. Omit event/group/campaign/asset navigation models, product metrics and unselected account fields; retain message IDs, ownership, paging, read receipts and reconnect behavior. Template seed IDs/data replace product actors."
+      "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
+      "adaptation": "Compose the selected template profile, chat, notification and guide owners; retain native contracts and persistence while omitting unselected product dependencies."
     },
     {
       "path": "e2e/shared/mongo-fixture.mjs",
@@ -4201,6 +4201,198 @@
       "sourceFrontendRevision": null,
       "purpose": "Native personal/support chat protocol, local persistence, HTTP/WebSocket transport, shared memory table or scoped fixture transport.",
       "adaptation": null
+    },
+    {
+      "path": "frontend/src/app/profile/components/profile-editor/profile-editor.component.ts",
+      "upstreamSha256": "525d14b25ee482778708f937600804b635e2e6fef2cd365654640297b5f265d1",
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9",
+      "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
+      "adaptation": "Compose the selected template profile, chat, notification and guide owners; retain native contracts and persistence while omitting unselected product dependencies."
+    },
+    {
+      "path": "frontend/src/app/shared/core/base/services/notifications.service.ts",
+      "upstreamSha256": "ce0fa3492225270107aa0c6eb6875d959df1488fe061c5c4a7fa4a6430f28b20",
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9",
+      "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
+      "adaptation": null
+    },
+    {
+      "path": "frontend/src/app/shared/core/common/backend-connectivity.ts",
+      "upstreamSha256": "ea7c646ad9bfc558c21c8d06dc7255fc28f26999c6f6313d12fad57b38ab3fb5",
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9",
+      "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
+      "adaptation": null
+    },
+    {
+      "path": "frontend/src/app/shared/core/contracts/notification.interface.ts",
+      "upstreamSha256": "6fd1e74b419b1ca9406dcadefed4e336294959d14cf9e3e443fec52b79cce4f2",
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9",
+      "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
+      "adaptation": null
+    },
+    {
+      "path": "frontend/src/app/shared/core/http/services/notifications.service.ts",
+      "upstreamSha256": "6fb8c28b689a3abdea61cf8d6fff20b5e4a113f73a96685874791a05cec23192",
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9",
+      "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
+      "adaptation": null
+    },
+    {
+      "path": "frontend/src/app/shared/core/local/seed/repositories/notifications-seed.repository.ts",
+      "upstreamSha256": "af6e963df89090883ca3a698156c25c6a5f1840c70837159a7e8a595d770d03f",
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9",
+      "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
+      "adaptation": "Retain native paging, delta synchronization, read/mute state, request-generation guards and persistence. Omit workspace/community projections and absent-domain navigation; route personal chat targets into the template chat page."
+    },
+    {
+      "path": "frontend/src/app/shared/core/local/source/entity/notification.entity.ts",
+      "upstreamSha256": "8ef16b0ba946d86739a4cbc3a7430aabfad1a3fc4725be3819266f819ca5749d",
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9",
+      "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
+      "adaptation": null
+    },
+    {
+      "path": "frontend/src/app/shared/core/local/source/mappers/notification.mapper.ts",
+      "upstreamSha256": "7c9ef41ef83005b9d829479dcc299407ad3ec6409e431e34945830a2bf788aa6",
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9",
+      "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
+      "adaptation": null
+    },
+    {
+      "path": "frontend/src/app/shared/core/local/source/repositories/notifications.repository.ts",
+      "upstreamSha256": "ef97a745393819b04a141bbe27c765f6c3380041cf747efff724aa5c0440a2de",
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9",
+      "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
+      "adaptation": "Retain native paging, delta synchronization, read/mute state, request-generation guards and persistence. Omit workspace/community projections and absent-domain navigation; route personal chat targets into the template chat page."
+    },
+    {
+      "path": "frontend/src/app/shared/core/local/source/services/notifications.service.ts",
+      "upstreamSha256": "3458a89c3c41d599ee6b9504f4401dceb1b5712cdfd2168a94ab640da236c2e7",
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9",
+      "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
+      "adaptation": "Retain native paging, delta synchronization, read/mute state, request-generation guards and persistence. Omit workspace/community projections and absent-domain navigation; route personal chat targets into the template chat page."
+    },
+    {
+      "path": "frontend/src/app/shared/ui/components/explanation-popup/explanation-guide-overlay.component.html",
+      "upstreamSha256": "7f13b8642c959b24f008ff40eea21c75895696e5e229e2672aafd3297b242e3d",
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9",
+      "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
+      "adaptation": null
+    },
+    {
+      "path": "frontend/src/app/shared/ui/components/explanation-popup/explanation-guide-overlay.component.scss",
+      "upstreamSha256": "1855d3dd0614ecc4e146429f1ec4c2ccad1e54af2f2fc7e5076a1ba3c7e497e6",
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9",
+      "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
+      "adaptation": null
+    },
+    {
+      "path": "frontend/src/app/shared/ui/components/explanation-popup/explanation-guide-overlay.component.ts",
+      "upstreamSha256": "fbe09b0b5d5bb6285ad566cf0f4d4cc340056e07e61b81accf5b9d590bdac07b",
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9",
+      "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
+      "adaptation": "Keep the native guide launcher, overlay, language/context lifecycle and generic document renderer. Omit MyScoutee-specific illustrated affinity/event/asset examples; retained controls are described by template-owned guide seeds."
+    },
+    {
+      "path": "frontend/src/app/shared/ui/components/explanation-popup/explanation-launcher.component.ts",
+      "upstreamSha256": "2d896538b33f3dc690514100bca3fb8d790fe2544cfde8043a9d41291a4aef5d",
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9",
+      "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
+      "adaptation": null
+    },
+    {
+      "path": "frontend/src/app/shared/ui/components/explanation-popup/explanation-popup.component.html",
+      "upstreamSha256": "e7faa00753921c46cf4e8687459816b1c91b392391d23d51a1f0025e9c17537d",
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9",
+      "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
+      "adaptation": "Keep the native guide launcher, overlay, language/context lifecycle and generic document renderer. Omit MyScoutee-specific illustrated affinity/event/asset examples; retained controls are described by template-owned guide seeds."
+    },
+    {
+      "path": "frontend/src/app/shared/ui/components/explanation-popup/explanation-popup.component.scss",
+      "upstreamSha256": "f2e7ef73396c93f62d66638044c8755b70d08b28a415396b78d6a527f58a5d5f",
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9",
+      "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
+      "adaptation": "Keep the native guide launcher, overlay, language/context lifecycle and generic document renderer. Omit MyScoutee-specific illustrated affinity/event/asset examples; retained controls are described by template-owned guide seeds."
+    },
+    {
+      "path": "frontend/src/app/shared/ui/components/explanation-popup/explanation-popup.component.ts",
+      "upstreamSha256": "420f6ec3bb1f5c2e44a773858626e1990b7737ec316db30139f54ee6fe62aa93",
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9",
+      "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
+      "adaptation": "Keep the native guide launcher, overlay, language/context lifecycle and generic document renderer. Omit MyScoutee-specific illustrated affinity/event/asset examples; retained controls are described by template-owned guide seeds."
+    },
+    {
+      "path": "frontend/src/app/shared/ui/components/notification-center-popup/notification-center-popup.component.html",
+      "upstreamSha256": "2fa41c9175a41b34eeb581c1341241aa6ac289814577a2c15c1d3dfa30e81620",
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9",
+      "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
+      "adaptation": null
+    },
+    {
+      "path": "frontend/src/app/shared/ui/components/notification-center-popup/notification-center-popup.component.scss",
+      "upstreamSha256": "7a1365bf6decad0fffde92a583410a6e182bf359bd7ee92664efb55c482e629c",
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9",
+      "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
+      "adaptation": null
+    },
+    {
+      "path": "frontend/src/app/shared/ui/components/notification-center-popup/notification-center-popup.component.ts",
+      "upstreamSha256": "9df36a24d81940de371a1e8fad24edb10f58ecb8a215df7fedf4e3a8ab947e44",
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9",
+      "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
+      "adaptation": "Retain native paging, delta synchronization, read/mute state, request-generation guards and persistence. Omit workspace/community projections and absent-domain navigation; route personal chat targets into the template chat page."
+    },
+    {
+      "path": "frontend/src/app/shared/ui/context/stores/notification/notification-center.store.spec.ts",
+      "upstreamSha256": "61aeb50f6a6053db3c989023df23255f5c7d0fccd058fb33ae1991a12a32f14f",
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9",
+      "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
+      "adaptation": "Retain native paging, delta synchronization, read/mute state, request-generation guards and persistence. Omit workspace/community projections and absent-domain navigation; route personal chat targets into the template chat page."
+    },
+    {
+      "path": "frontend/src/app/shared/ui/context/stores/notification/notification-center.store.ts",
+      "upstreamSha256": "fee39391bf6f2bba56d28abdf3e8159e5ec621a3d5f35317348389385c00ce09",
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9",
+      "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
+      "adaptation": "Retain native paging, delta synchronization, read/mute state, request-generation guards and persistence. Omit workspace/community projections and absent-domain navigation; route personal chat targets into the template chat page."
+    },
+    {
+      "path": "frontend/src/app/shared/ui/converters/notification/notification-single-row.converter.ts",
+      "upstreamSha256": "f55e2cee05e1965d08664b969f80fa72177019de9e0cd3298da20df8af25fdd1",
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9",
+      "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
+      "adaptation": "Retain native paging, delta synchronization, read/mute state, request-generation guards and persistence. Omit workspace/community projections and absent-domain navigation; route personal chat targets into the template chat page."
+    },
+    {
+      "path": "frontend/src/app/home/shared/_home-page-frame.scss",
+      "upstreamSha256": "8416bdf49a8c51af598a7aa309ac4eda0596c28f5f3ec7385385e8cff72e5a8a",
+      "sourceRevision": "5a639775e",
+      "sourceFrontendRevision": "bf4760f9",
+      "purpose": "Native guide, document bootstrap and shared popup geometry dependency.",
+      "adaptation": "Select the native geometry mixin required by full-height shared popups; omit product game-page rules."
     }
   ],
   "templateOwnedFeatures": [
@@ -4242,6 +4434,13 @@
       ],
       "implementation": "The template form edits name and images, merges the current profile on save, clears drafts on actor change and uses the native profile endpoint. Image upload/import retains native implementations; document/audio methods are omitted until selected consumers need them. The avatar opens the selected native side-panel shell, with two member pages and a small gear menu.",
       "remaining": "Notification/device preferences and account-reactivation entry UI remain open."
+    },
+    {
+      "name": "notifications-and-guide",
+      "composition": "Native notification services/store/SmartList/converter and guide engine/launcher/overlay. Template-owned welcome notifications, retained-screen guide catalogue and member header composition. Personal chat targets use the existing page and native read receipt operation.",
+      "scope": "Local and HTTP inbox, read/mute persistence, contextual guides, same-user stale response guards and native 30-second HTTP user realtime scheduler. Production seed includes only guidance/localization, never synthetic notification rows.",
+      "qualification": "MSC122_TEMPLATE_NOTIFICATIONS_GUIDE_20261011.json",
+      "remaining": "Browser push/device setup and installed/KVM environment qualification remain separate open steps."
     }
   ]
 }

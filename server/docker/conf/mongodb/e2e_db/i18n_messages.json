@@ -11158,5 +11158,509 @@
     "key": "You can reactivate within 30 days. After that, the account is permanently purged.",
     "lang": "hu",
     "value": "A fiók 30 napon belül újraaktiválható. Ezután véglegesen törlődik."
+  },
+  {
+    "_id": "i18n-message-en-chat-unavailable",
+    "key": "chat.unavailable",
+    "lang": "en",
+    "value": "Conversation is unavailable."
+  },
+  {
+    "_id": "i18n-message-en-guide-template-chat-chat-collapse-description",
+    "key": "guide.template.chat.chat-collapse.description",
+    "lang": "en",
+    "value": "Close this conversation to return to the list."
+  },
+  {
+    "_id": "i18n-message-en-guide-template-chat-chat-collapse-label",
+    "key": "guide.template.chat.chat-collapse.label",
+    "lang": "en",
+    "value": "Back to conversations"
+  },
+  {
+    "_id": "i18n-message-en-guide-template-chat-chat-composer-description",
+    "key": "guide.template.chat.chat-composer.description",
+    "lang": "en",
+    "value": "Send a message or edit your own message from its actions."
+  },
+  {
+    "_id": "i18n-message-en-guide-template-chat-chat-composer-label",
+    "key": "guide.template.chat.chat-composer.label",
+    "lang": "en",
+    "value": "Write a message"
+  },
+  {
+    "_id": "i18n-message-en-guide-template-chat-chat-list-description",
+    "key": "guide.template.chat.chat-list.description",
+    "lang": "en",
+    "value": "Select a conversation to read and send messages."
+  },
+  {
+    "_id": "i18n-message-en-guide-template-chat-chat-list-label",
+    "key": "guide.template.chat.chat-list.label",
+    "lang": "en",
+    "value": "Conversations"
+  },
+  {
+    "_id": "i18n-message-en-guide-template-home-member-actions-description",
+    "key": "guide.template.home.member-actions.description",
+    "lang": "en",
+    "value": "Open notifications, toggle the guide or read the help document."
+  },
+  {
+    "_id": "i18n-message-en-guide-template-home-member-actions-label",
+    "key": "guide.template.home.member-actions.label",
+    "lang": "en",
+    "value": "Help and notifications"
+  },
+  {
+    "_id": "i18n-message-en-guide-template-home-member-avatar-description",
+    "key": "guide.template.home.member-avatar.description",
+    "lang": "en",
+    "value": "Open your profile and switch between Cards and Chat here."
+  },
+  {
+    "_id": "i18n-message-en-guide-template-home-member-avatar-label",
+    "key": "guide.template.home.member-avatar.label",
+    "lang": "en",
+    "value": "Your menu"
+  },
+  {
+    "_id": "i18n-message-en-guide-template-landing-guide-guide-launcher-description",
+    "key": "guide.template.landing.guide.guide-launcher.description",
+    "lang": "en",
+    "value": "This button opens the guide for the current screen. You can move or dismiss it."
+  },
+  {
+    "_id": "i18n-message-en-guide-template-landing-guide-guide-launcher-label",
+    "key": "guide.template.landing.guide.guide-launcher.label",
+    "lang": "en",
+    "value": "Guide"
+  },
+  {
+    "_id": "i18n-message-en-guide-template-navigation-chat-description",
+    "key": "guide.template.navigation.chat.description",
+    "lang": "en",
+    "value": "Open your conversations."
+  },
+  {
+    "_id": "i18n-message-en-guide-template-navigation-chat-label",
+    "key": "guide.template.navigation.chat.label",
+    "lang": "en",
+    "value": "Chat"
+  },
+  {
+    "_id": "i18n-message-en-guide-template-navigation-navigation-profile-description",
+    "key": "guide.template.navigation.navigation-profile.description",
+    "lang": "en",
+    "value": "Change your display name or profile picture."
+  },
+  {
+    "_id": "i18n-message-en-guide-template-navigation-navigation-profile-label",
+    "key": "guide.template.navigation.navigation-profile.label",
+    "lang": "en",
+    "value": "Edit profile"
+  },
+  {
+    "_id": "i18n-message-en-guide-template-navigation-showcase-description",
+    "key": "guide.template.navigation.showcase.description",
+    "lang": "en",
+    "value": "Explore the same example cards in different list views."
+  },
+  {
+    "_id": "i18n-message-en-guide-template-navigation-showcase-label",
+    "key": "guide.template.navigation.showcase.label",
+    "lang": "en",
+    "value": "Example cards"
+  },
+  {
+    "_id": "i18n-message-en-guide-template-notifications-notification-attention-toggle-description",
+    "key": "guide.template.notifications.notification-attention-toggle.description",
+    "lang": "en",
+    "value": "Mute or unmute the floating notification alert. Your notifications stay in the list."
+  },
+  {
+    "_id": "i18n-message-en-guide-template-notifications-notification-attention-toggle-label",
+    "key": "guide.template.notifications.notification-attention-toggle.label",
+    "lang": "en",
+    "value": "Notification alerts"
+  },
+  {
+    "_id": "i18n-message-en-guide-template-notifications-notification-list-description",
+    "key": "guide.template.notifications.notification-list.description",
+    "lang": "en",
+    "value": "Switch between new and all notifications. Each row has its own actions."
+  },
+  {
+    "_id": "i18n-message-en-guide-template-notifications-notification-list-label",
+    "key": "guide.template.notifications.notification-list.label",
+    "lang": "en",
+    "value": "Your notifications"
+  },
+  {
+    "_id": "i18n-message-en-guide-template-profile-name-description",
+    "key": "guide.template.profile.name.description",
+    "lang": "en",
+    "value": "Choose the name shown in conversations."
+  },
+  {
+    "_id": "i18n-message-en-guide-template-profile-name-label",
+    "key": "guide.template.profile.name.label",
+    "lang": "en",
+    "value": "Display name"
+  },
+  {
+    "_id": "i18n-message-en-guide-template-profile-profile-picture-description",
+    "key": "guide.template.profile.profile-picture.description",
+    "lang": "en",
+    "value": "Upload, replace or remove your profile picture. Save to apply the change."
+  },
+  {
+    "_id": "i18n-message-en-guide-template-profile-profile-picture-label",
+    "key": "guide.template.profile.profile-picture.label",
+    "lang": "en",
+    "value": "Profile picture"
+  },
+  {
+    "_id": "i18n-message-en-guide-template-profile-profile-save-description",
+    "key": "guide.template.profile.profile-save.description",
+    "lang": "en",
+    "value": "Save your changes or close the editor to cancel."
+  },
+  {
+    "_id": "i18n-message-en-guide-template-profile-profile-save-label",
+    "key": "guide.template.profile.profile-save.label",
+    "lang": "en",
+    "value": "Save profile"
+  },
+  {
+    "_id": "i18n-message-en-notification-matches-count",
+    "key": "notification.matches.count",
+    "lang": "en",
+    "value": "{count} matching notifications"
+  },
+  {
+    "_id": "i18n-message-en-notification-source-event-admin",
+    "key": "notification.source.event.admin",
+    "lang": "en",
+    "value": "Event admin"
+  },
+  {
+    "_id": "i18n-message-hu-chat-unavailable",
+    "key": "chat.unavailable",
+    "lang": "hu",
+    "value": "A beszélgetés nem érhető el."
+  },
+  {
+    "_id": "i18n-message-hu-guide-template-chat-chat-collapse-description",
+    "key": "guide.template.chat.chat-collapse.description",
+    "lang": "hu",
+    "value": "Csukd össze a beszélgetést a lista megnyitásához."
+  },
+  {
+    "_id": "i18n-message-hu-guide-template-chat-chat-collapse-label",
+    "key": "guide.template.chat.chat-collapse.label",
+    "lang": "hu",
+    "value": "Vissza a beszélgetésekhez"
+  },
+  {
+    "_id": "i18n-message-hu-guide-template-chat-chat-composer-description",
+    "key": "guide.template.chat.chat-composer.description",
+    "lang": "hu",
+    "value": "Küldj üzenetet, vagy szerkeszd a saját üzenetedet a mellette lévő gombbal."
+  },
+  {
+    "_id": "i18n-message-hu-guide-template-chat-chat-composer-label",
+    "key": "guide.template.chat.chat-composer.label",
+    "lang": "hu",
+    "value": "Üzenet írása"
+  },
+  {
+    "_id": "i18n-message-hu-guide-template-chat-chat-list-description",
+    "key": "guide.template.chat.chat-list.description",
+    "lang": "hu",
+    "value": "Válassz egy beszélgetést az üzenetek olvasásához és küldéséhez."
+  },
+  {
+    "_id": "i18n-message-hu-guide-template-chat-chat-list-label",
+    "key": "guide.template.chat.chat-list.label",
+    "lang": "hu",
+    "value": "Beszélgetések"
+  },
+  {
+    "_id": "i18n-message-hu-guide-template-home-member-actions-description",
+    "key": "guide.template.home.member-actions.description",
+    "lang": "hu",
+    "value": "Nyisd meg az értesítéseket, kapcsold be az útmutatót vagy olvasd el a súgót."
+  },
+  {
+    "_id": "i18n-message-hu-guide-template-home-member-actions-label",
+    "key": "guide.template.home.member-actions.label",
+    "lang": "hu",
+    "value": "Súgó és értesítések"
+  },
+  {
+    "_id": "i18n-message-hu-guide-template-home-member-avatar-description",
+    "key": "guide.template.home.member-avatar.description",
+    "lang": "hu",
+    "value": "Itt nyithatod meg a profilodat, a kártyákat és a chatet."
+  },
+  {
+    "_id": "i18n-message-hu-guide-template-home-member-avatar-label",
+    "key": "guide.template.home.member-avatar.label",
+    "lang": "hu",
+    "value": "Saját menü"
+  },
+  {
+    "_id": "i18n-message-hu-guide-template-landing-guide-guide-launcher-description",
+    "key": "guide.template.landing.guide.guide-launcher.description",
+    "lang": "hu",
+    "value": "Ez a gomb az aktuális képernyő útmutatóját nyitja meg. Áthelyezheted vagy elrejtheted."
+  },
+  {
+    "_id": "i18n-message-hu-guide-template-landing-guide-guide-launcher-label",
+    "key": "guide.template.landing.guide.guide-launcher.label",
+    "lang": "hu",
+    "value": "Útmutató"
+  },
+  {
+    "_id": "i18n-message-hu-guide-template-navigation-chat-description",
+    "key": "guide.template.navigation.chat.description",
+    "lang": "hu",
+    "value": "Nyisd meg a beszélgetéseidet."
+  },
+  {
+    "_id": "i18n-message-hu-guide-template-navigation-chat-label",
+    "key": "guide.template.navigation.chat.label",
+    "lang": "hu",
+    "value": "Chat"
+  },
+  {
+    "_id": "i18n-message-hu-guide-template-navigation-navigation-profile-description",
+    "key": "guide.template.navigation.navigation-profile.description",
+    "lang": "hu",
+    "value": "Módosítsd a megjelenő nevedet vagy a profilképedet."
+  },
+  {
+    "_id": "i18n-message-hu-guide-template-navigation-navigation-profile-label",
+    "key": "guide.template.navigation.navigation-profile.label",
+    "lang": "hu",
+    "value": "Profil szerkesztése"
+  },
+  {
+    "_id": "i18n-message-hu-guide-template-navigation-showcase-description",
+    "key": "guide.template.navigation.showcase.description",
+    "lang": "hu",
+    "value": "Nézd meg ugyanazokat a mintakártyákat különböző nézetekben."
+  },
+  {
+    "_id": "i18n-message-hu-guide-template-navigation-showcase-label",
+    "key": "guide.template.navigation.showcase.label",
+    "lang": "hu",
+    "value": "Mintakártyák"
+  },
+  {
+    "_id": "i18n-message-hu-guide-template-notifications-notification-attention-toggle-description",
+    "key": "guide.template.notifications.notification-attention-toggle.description",
+    "lang": "hu",
+    "value": "Némítsd le vagy kapcsold vissza a lebegő értesítési jelzést. Az értesítések a listában maradnak."
+  },
+  {
+    "_id": "i18n-message-hu-guide-template-notifications-notification-attention-toggle-label",
+    "key": "guide.template.notifications.notification-attention-toggle.label",
+    "lang": "hu",
+    "value": "Értesítési jelzések"
+  },
+  {
+    "_id": "i18n-message-hu-guide-template-notifications-notification-list-description",
+    "key": "guide.template.notifications.notification-list.description",
+    "lang": "hu",
+    "value": "Válts az új és az összes értesítés között. Minden sornak saját műveletei vannak."
+  },
+  {
+    "_id": "i18n-message-hu-guide-template-notifications-notification-list-label",
+    "key": "guide.template.notifications.notification-list.label",
+    "lang": "hu",
+    "value": "Értesítéseid"
+  },
+  {
+    "_id": "i18n-message-hu-guide-template-profile-name-description",
+    "key": "guide.template.profile.name.description",
+    "lang": "hu",
+    "value": "Add meg a beszélgetésekben megjelenő nevedet."
+  },
+  {
+    "_id": "i18n-message-hu-guide-template-profile-name-label",
+    "key": "guide.template.profile.name.label",
+    "lang": "hu",
+    "value": "Megjelenő név"
+  },
+  {
+    "_id": "i18n-message-hu-guide-template-profile-profile-picture-description",
+    "key": "guide.template.profile.profile-picture.description",
+    "lang": "hu",
+    "value": "Tölts fel, cserélj vagy törölj profilképet. A változtatáshoz mentsd el a profilt."
+  },
+  {
+    "_id": "i18n-message-hu-guide-template-profile-profile-picture-label",
+    "key": "guide.template.profile.profile-picture.label",
+    "lang": "hu",
+    "value": "Profilkép"
+  },
+  {
+    "_id": "i18n-message-hu-guide-template-profile-profile-save-description",
+    "key": "guide.template.profile.profile-save.description",
+    "lang": "hu",
+    "value": "Mentsd el a módosításokat, vagy zárd be a szerkesztőt az elvetéshez."
+  },
+  {
+    "_id": "i18n-message-hu-guide-template-profile-profile-save-label",
+    "key": "guide.template.profile.profile-save.label",
+    "lang": "hu",
+    "value": "Profil mentése"
+  },
+  {
+    "_id": "i18n-message-hu-notification-matches-count",
+    "key": "notification.matches.count",
+    "lang": "hu",
+    "value": "{count} egyező értesítés"
+  },
+  {
+    "_id": "i18n-message-hu-notification-source-event-admin",
+    "key": "notification.source.event.admin",
+    "lang": "hu",
+    "value": "Eseményadmin"
+  },
+  {
+    "_id": "i18n-message-en-explanations",
+    "key": "explanations",
+    "lang": "en",
+    "value": "Explanations"
+  },
+  {
+    "_id": "i18n-message-en-guide-empty-body",
+    "key": "guide.empty.body",
+    "lang": "en",
+    "value": "There is no guide for this screen."
+  },
+  {
+    "_id": "i18n-message-en-guide-load-error-body",
+    "key": "guide.load.error.body",
+    "lang": "en",
+    "value": "The guide could not be loaded. Close this message and try again."
+  },
+  {
+    "_id": "i18n-message-en-guide-load-error-title",
+    "key": "guide.load.error.title",
+    "lang": "en",
+    "value": "Guide unavailable"
+  },
+  {
+    "_id": "i18n-message-en-loading-explanation-content",
+    "key": "loading.explanation.content",
+    "lang": "en",
+    "value": "Loading explanation content"
+  },
+  {
+    "_id": "i18n-message-en-menus",
+    "key": "Menus",
+    "lang": "en",
+    "value": "Menus"
+  },
+  {
+    "_id": "i18n-message-en-notification-kind-template-welcome-message",
+    "key": "notification.kind.template-welcome.message",
+    "lang": "en",
+    "value": "Open your avatar menu to explore the example pages and profile settings."
+  },
+  {
+    "_id": "i18n-message-en-notification-kind-template-welcome-title",
+    "key": "notification.kind.template-welcome.title",
+    "lang": "en",
+    "value": "Welcome to Templates"
+  },
+  {
+    "_id": "i18n-message-en-order",
+    "key": "Order",
+    "lang": "en",
+    "value": "Order"
+  },
+  {
+    "_id": "i18n-message-hu-explanations",
+    "key": "explanations",
+    "lang": "hu",
+    "value": "Magyarázatok"
+  },
+  {
+    "_id": "i18n-message-hu-guide-empty-body",
+    "key": "guide.empty.body",
+    "lang": "hu",
+    "value": "Ehhez a felülethez nincs útmutató."
+  },
+  {
+    "_id": "i18n-message-hu-guide-load-error-body",
+    "key": "guide.load.error.body",
+    "lang": "hu",
+    "value": "A kalauzt nem sikerült betölteni. Zárd be ezt az üzenetet, és próbáld újra."
+  },
+  {
+    "_id": "i18n-message-hu-guide-load-error-title",
+    "key": "guide.load.error.title",
+    "lang": "hu",
+    "value": "A kalauz nem érhető el"
+  },
+  {
+    "_id": "i18n-message-hu-loading-explanation-content",
+    "key": "loading.explanation.content",
+    "lang": "hu",
+    "value": "Magyarázat tartalmának betöltése"
+  },
+  {
+    "_id": "i18n-message-hu-menus",
+    "key": "Menus",
+    "lang": "hu",
+    "value": "Menük"
+  },
+  {
+    "_id": "i18n-message-hu-notification-kind-template-welcome-message",
+    "key": "notification.kind.template-welcome.message",
+    "lang": "hu",
+    "value": "Nyisd meg az avatármenüt a mintaoldalak és a profilbeállítások felfedezéséhez."
+  },
+  {
+    "_id": "i18n-message-hu-notification-kind-template-welcome-title",
+    "key": "notification.kind.template-welcome.title",
+    "lang": "hu",
+    "value": "Üdvözöl a Templates"
+  },
+  {
+    "_id": "i18n-message-hu-order",
+    "key": "Order",
+    "lang": "hu",
+    "value": "Sorrend"
+  },
+  {
+    "_id": "i18n-message-en-guide-template-entry-login-description",
+    "key": "guide.template.entry.login.description",
+    "lang": "en",
+    "value": "Use Login for your account, or Explore to try the seeded demonstration accounts."
+  },
+  {
+    "_id": "i18n-message-en-guide-template-entry-login-label",
+    "key": "guide.template.entry.login.label",
+    "lang": "en",
+    "value": "Enter the application"
+  },
+  {
+    "_id": "i18n-message-hu-guide-template-entry-login-description",
+    "key": "guide.template.entry.login.description",
+    "lang": "hu",
+    "value": "A Belépés gombbal a saját fiókodat, a Kipróbálás gombbal a bemutatófiókokat használhatod."
+  },
+  {
+    "_id": "i18n-message-hu-guide-template-entry-login-label",
+    "key": "guide.template.entry.login.label",
+    "lang": "hu",
+    "value": "Belépés az alkalmazásba"
   }
 ]

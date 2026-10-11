@@ -156,6 +156,8 @@ Use the existing frontend configuration and only one frontend compiler:
 node e2e/functional/ui/chat/run-local.mjs
 node e2e/functional/ui/profile-editor/run.mjs --local
 node e2e/functional/ui/settings/run.mjs --local
+node e2e/functional/ui/notifications/run.mjs --local
+node e2e/functional/ui/guide/run.mjs --local
 ```
 
 With the dev HTTP gateway, each following runner creates UUID-owned actors and
@@ -165,6 +167,8 @@ cleans its own state. Select the template Mongo container explicitly:
 E2E_MONGO_CONTAINER=myscoutee-template-dev-mongodb E2E_DATABASE=demo_db node e2e/functional/ui/chat/run.mjs
 E2E_MONGO_CONTAINER=myscoutee-template-dev-mongodb E2E_DATABASE=demo_db node e2e/functional/ui/profile-editor/run.mjs
 E2E_MONGO_CONTAINER=myscoutee-template-dev-mongodb E2E_DATABASE=demo_db node e2e/functional/ui/settings/run.mjs
+E2E_MONGO_CONTAINER=myscoutee-template-dev-mongodb E2E_DATABASE=demo_db node e2e/functional/ui/notifications/run.mjs
+E2E_MONGO_CONTAINER=myscoutee-template-dev-mongodb E2E_DATABASE=demo_db node e2e/functional/ui/guide/run.mjs
 ```
 
 The image runner derives the matching MinIO container from the Mongo name;
@@ -173,3 +177,12 @@ the seed bootstrap's configured `mc` alias and removes only its unique actor's
 image prefix. `E2E_SCREENSHOT_DIR` optionally captures desktop/mobile profile
 images outside the repository. The functional image fixtures are selected native
 E2E images, not template product branding.
+
+The notification runner covers read/new/all state, mute/unmute and reload. HTTP
+also checks a notification arriving while the inbox is closed at the native
+30-second interval, then opens its personal chat and verifies the notification
+read in MongoDB. The guide runner starts from a fresh public entry and completes
+the retained landing/menu/profile/chat tours. The native guide persists its
+enabled preference, not the currently selected step; no additional progress
+storage is introduced. Desktop/mobile notification screenshots can be captured
+with `E2E_SCREENSHOT_DIR`.

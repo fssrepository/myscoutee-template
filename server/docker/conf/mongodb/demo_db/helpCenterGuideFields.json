@@ -1,1 +1,122 @@
-[]
+[
+  {
+    "_id": "home--member-avatar",
+    "id": "member-avatar",
+    "screenKey": "home",
+    "group": "controls",
+    "i18nKey": "guide.template.home.member-avatar",
+    "order": 0
+  },
+  {
+    "_id": "home--member-actions",
+    "id": "member-actions",
+    "screenKey": "home",
+    "group": "controls",
+    "i18nKey": "guide.template.home.member-actions",
+    "order": 1
+  },
+  {
+    "_id": "navigation--navigation-profile",
+    "id": "navigation-profile",
+    "screenKey": "navigation",
+    "group": "controls",
+    "i18nKey": "guide.template.navigation.navigation-profile",
+    "order": 0
+  },
+  {
+    "_id": "navigation--showcase",
+    "id": "showcase",
+    "screenKey": "navigation",
+    "group": "controls",
+    "i18nKey": "guide.template.navigation.showcase",
+    "order": 1
+  },
+  {
+    "_id": "navigation--chat",
+    "id": "chat",
+    "screenKey": "navigation",
+    "group": "controls",
+    "i18nKey": "guide.template.navigation.chat",
+    "order": 2
+  },
+  {
+    "_id": "chat--chat-list",
+    "id": "chat-list",
+    "screenKey": "chat",
+    "group": "controls",
+    "i18nKey": "guide.template.chat.chat-list",
+    "order": 0
+  },
+  {
+    "_id": "chat--chat-composer",
+    "id": "chat-composer",
+    "screenKey": "chat",
+    "group": "controls",
+    "i18nKey": "guide.template.chat.chat-composer",
+    "order": 1
+  },
+  {
+    "_id": "chat--chat-collapse",
+    "id": "chat-collapse",
+    "screenKey": "chat",
+    "group": "controls",
+    "i18nKey": "guide.template.chat.chat-collapse",
+    "order": 2
+  },
+  {
+    "_id": "profile--profile-picture",
+    "id": "profile-picture",
+    "screenKey": "profile",
+    "group": "controls",
+    "i18nKey": "guide.template.profile.profile-picture",
+    "order": 0
+  },
+  {
+    "_id": "profile--name",
+    "id": "name",
+    "screenKey": "profile",
+    "group": "controls",
+    "i18nKey": "guide.template.profile.name",
+    "order": 1
+  },
+  {
+    "_id": "profile--profile-save",
+    "id": "profile-save",
+    "screenKey": "profile",
+    "group": "controls",
+    "i18nKey": "guide.template.profile.profile-save",
+    "order": 2
+  },
+  {
+    "_id": "notifications--notification-list",
+    "id": "notification-list",
+    "screenKey": "notifications",
+    "group": "controls",
+    "i18nKey": "guide.template.notifications.notification-list",
+    "order": 0
+  },
+  {
+    "_id": "notifications--notification-attention-toggle",
+    "id": "notification-attention-toggle",
+    "screenKey": "notifications",
+    "group": "controls",
+    "i18nKey": "guide.template.notifications.notification-attention-toggle",
+    "order": 1
+  },
+  {
+    "_id": "landing.guide--guide-launcher",
+    "id": "guide-launcher",
+    "screenKey": "landing.guide",
+    "group": "controls",
+    "i18nKey": "guide.template.landing.guide.guide-launcher",
+    "order": 0
+  },
+  {
+    "_id": "landing.entry--entry-login",
+    "id": "entry-login",
+    "screenKey": "landing.entry",
+    "group": "controls",
+    "i18nKey": "guide.template.entry.login",
+    "order": 0
+  }
+]

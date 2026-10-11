@@ -18,7 +18,7 @@
     "images": [],
     "activities": {
       "chats": 1,
-      "notifications": 0,
+      "notifications": 1,
       "chat": {
         "all": 1,
         "contacts": 1,
@@ -45,7 +45,7 @@
     "images": [],
     "activities": {
       "chats": 1,
-      "notifications": 0,
+      "notifications": 1,
       "chat": {
         "all": 1,
         "contacts": 1,
