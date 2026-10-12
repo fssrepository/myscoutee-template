@@ -682,8 +682,12 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     ownership package-owned; template selects 10002. Host helpers, API image
     and sysusers are checked together, including another retained account and
     repeated configuration. All focused host/worker and four-environment checks
-    pass. Retry the installer from the qualified native snapshot, then perform
-    the visible browser flows. Shared ports still require serial execution.
+    pass. The subsequent actual install identified an older shared migration
+    runner that did not select migration-owned JSON inputs. Select the unchanged
+    current native runner and exercise the complete selected chain, including
+    input receipts, interruption and retry. All 73 deployment files declared
+    unchanged now match the current source owner. The actual installer replay
+    and visible browser flows remain required. Shared ports require serial execution.
 
     **VMware order (user correction, 2026-10-12): first build and deploy the
     current modified MyScoutee backend to the existing local guest, then validate

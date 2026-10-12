@@ -4584,8 +4584,8 @@
     },
     {
       "path": "packaging/scripts/run-data-migrations.js",
-      "sourceRevision": "c7b2ba03254314a876a4b599a811d02e7592896f",
-      "upstreamSha256": "982fc266966aeb29fef3bb5b5e713722d1a4fabb79bb21cafae39c1532298ded",
+      "sourceRevision": "fcce8cfa1b6682da587d5460b5516cc94156ddb7",
+      "upstreamSha256": "4135f85bd0c13b36a7b53e43cdb5e47fdb49a7257a7cc5fb0ab93f583b53f408",
       "purpose": "Native minimal integration storage, lifecycle and migration ownership.",
       "adaptation": null
     },
@@ -4720,7 +4720,7 @@
       "sourceRevision": "8ceb635bc2860029699faef48210c503e9826b99",
       "upstreamSha256": "1088942b0e6aaf341523df41d525408ea5102fa357b57b5a0694b68a9b737cd6",
       "purpose": "Shared package lifecycle, artifact audit, selected host operations or their focused regression checks.",
-      "adaptation": null
+      "adaptation": "Check only selected template catalogs and isolated template DEMO records; omit absent product seed requirements."
     },
     {
       "path": "packaging/tests/release-signing-test.sh",
