@@ -1,0 +1,98 @@
+{
+  "task": "31.1",
+  "status": "DONE",
+  "date": "2026-10-12",
+  "cleanCheckout": {
+    "path": "/tmp/msc122-final-source-qls_be0t/template",
+    "repositories": [
+      {
+        "path": "template",
+        "revision": "c15c0cc523309daea861908219f90e397a5f65ae"
+      },
+      {
+        "path": "template/frontend",
+        "revision": "193c3a95cd62310643cd88ac81ef28141170923d"
+      },
+      {
+        "path": "template/frontend/components",
+        "revision": "75a6a5363d119ee62fdcb015578481d26f8233d5"
+      }
+    ],
+    "worktreesClean": true
+  },
+  "dependencies": {
+    "lockfileVersion": 3,
+    "registryPackagesWithIntegrity": 751,
+    "rootManifestsMatchLock": true,
+    "componentsWorkspaceVersion": "0.1.1"
+  },
+  "buildSourceToPagesCommitNonDocsDiff": [],
+  "existingPublicationAudits": [
+    {
+      "repository": "myscoutee-backend",
+      "artifactSha256": "sha256:606c358974f6b3ff7d65e513ff3bbef1779470f3c31a84665415bbbc49d68f03",
+      "signatureVerified": true,
+      "publicAssetsVerified": 9,
+      "packagingAuditLogSha256": "f44d1c3461a36b1da16f3528bd47f6f202fd16399f169a6b6a508cf178a0bad3",
+      "debAuditLogSha256": "b55e3d2e3d209ad13301d87ff2599fedf03837b8ef03d981d8c8dd153f8b6bda",
+      "completedChecks": [
+        "all 49 dev/prod/e2e seed baselines classified and project parity verified.",
+        "all 49 dev/prod/e2e seed baselines classified and project parity verified.",
+        "all 199 fresh/runtime/upgrade index definitions agree.",
+        "pinned catalog upgrade inputs match every selected current production seed.",
+        "all 49 dev/prod/e2e seed baselines classified and project parity verified.",
+        "packaging/scripts: 33 files",
+        "packaging/migrations: 20 files",
+        "packaging/templates: 4 files",
+        "selected host runtime scripts: 17 files",
+        "systemd units: 9 files",
+        "system users: 1 files",
+        "installed Compose, replica set, STUN, secret provisioning instructions and package lifecycle scripts",
+        "bundled image identity and input check: nginx-base",
+        "production frontend assets and unchanged base error page: 470 files",
+        "Nginx shared routes, production transport policy and entrypoint",
+        "bundled image identity and input check: nginx",
+        "exact built JAR and all source classpath resources (including DEV/PROD configuration)",
+        "bundled image identity and input check: profilemanagement",
+        "DEV media seed \u2192 production image: 879 files",
+        "MinIO bootstrap scripts",
+        "bundled image identity and input check: minio",
+        "bundled image identity and input check: registry-demo",
+        "bundled image identity and input check: payment-simulator",
+        "bundled image identity and input check: mcp"
+      ]
+    },
+    {
+      "repository": "myscoutee-template",
+      "artifactSha256": "sha256:bfe24260441717ed947ac4f55dfff183d5a24b9ad22d0e33f57c997ddb7b20c2",
+      "signatureVerified": true,
+      "publicAssetsVerified": 9,
+      "packagingAuditLogSha256": "61ed59e261af1bee5faa9f245ba23ecb8a25bf0186dd04efe085ab9d80de9f4d",
+      "debAuditLogSha256": "c5de27252f4bf98c8fe269a18d1fb1427cb791025fe7538cf6f6148604552a51",
+      "completedChecks": [
+        "all 15 dev/prod/e2e seed baselines classified and project parity verified.",
+        "all 15 dev/prod/e2e seed baselines classified and project parity verified.",
+        "all 67 fresh/runtime/upgrade index definitions agree.",
+        "pinned catalog upgrade inputs match every selected current production seed.",
+        "all 15 dev/prod/e2e seed baselines classified and project parity verified.",
+        "packaging/scripts: 28 files",
+        "packaging/migrations: 10 files",
+        "packaging/templates: 4 files",
+        "selected host runtime scripts: 0 files",
+        "systemd units: 9 files",
+        "system users: 1 files",
+        "installed Compose, replica set, STUN, secret provisioning instructions and package lifecycle scripts",
+        "bundled image identity and input check: nginx-base",
+        "production frontend assets and unchanged base error page: 193 files",
+        "Nginx shared routes, production transport policy and entrypoint",
+        "bundled image identity and input check: nginx",
+        "exact built JAR and all source classpath resources (including DEV/PROD configuration)",
+        "bundled image identity and input check: profilemanagement",
+        "DEV media seed \u2192 production image: 19 files",
+        "MinIO bootstrap scripts",
+        "bundled image identity and input check: minio",
+        "bundled image identity and input check: mcp"
+      ]
+    }
+  ]
+}

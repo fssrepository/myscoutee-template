@@ -1,0 +1,1168 @@
+[
+  {
+    "contextKey": "",
+    "isSystem": true,
+    "lang": "en",
+    "languageLabel": "English",
+    "version": 1,
+    "active": true,
+    "title": "Getting started",
+    "summary": "Getting started",
+    "description": "Explore the example list, open a conversation and edit your profile from the avatar menu.",
+    "presentation": "sections",
+    "sections": [
+      {
+        "id": "help-intro",
+        "icon": "info",
+        "title": "Getting started",
+        "blurb": "",
+        "contentHtml": "<p>Explore the example list, open a conversation and edit your profile from the avatar menu.</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "_id": "template-help-en-v1",
+    "documentType": "help",
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed"
+  },
+  {
+    "contextKey": "",
+    "isSystem": true,
+    "lang": "en",
+    "languageLabel": "English",
+    "version": 1,
+    "active": true,
+    "title": "Privacy information",
+    "summary": "Privacy information",
+    "description": "This demonstration stores profile, conversation and consent data in the selected local or server environment. A deployed project must provide its own data controller and privacy information before inviting real users.",
+    "presentation": "sections",
+    "sections": [
+      {
+        "id": "privacy-intro",
+        "icon": "info",
+        "title": "Privacy information",
+        "blurb": "",
+        "contentHtml": "<p>This demonstration stores profile, conversation and consent data in the selected local or server environment. A deployed project must provide its own data controller and privacy information before inviting real users.</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "_id": "template-privacy-en-v1",
+    "documentType": "privacy",
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed"
+  },
+  {
+    "contextKey": "",
+    "isSystem": true,
+    "lang": "en",
+    "languageLabel": "English",
+    "version": 1,
+    "active": true,
+    "title": "Template demonstration terms",
+    "summary": "Template demonstration terms",
+    "description": "Use the seeded demonstration accounts to explore the application. Replace this demonstration document with the terms of your own project before inviting real users.",
+    "presentation": "sections",
+    "sections": [
+      {
+        "id": "terms-intro",
+        "icon": "info",
+        "title": "Template demonstration terms",
+        "blurb": "",
+        "contentHtml": "<p>Use the seeded demonstration accounts to explore the application. Replace this demonstration document with the terms of your own project before inviting real users.</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "_id": "template-terms-en-v1",
+    "documentType": "terms",
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed"
+  },
+  {
+    "contextKey": "home",
+    "isSystem": true,
+    "lang": "en",
+    "languageLabel": "English",
+    "version": 1,
+    "active": true,
+    "title": "Example cards",
+    "summary": "Example cards",
+    "description": "Example cards",
+    "presentation": "tour",
+    "sections": [
+      {
+        "id": "overview",
+        "icon": "dashboard",
+        "title": "Example cards",
+        "blurb": "",
+        "contentHtml": "<p>Example cards</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "_id": "template-guide-home-en-v1",
+    "documentType": "explanation",
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed"
+  },
+  {
+    "contextKey": "home",
+    "isSystem": true,
+    "lang": "hu",
+    "languageLabel": "Magyar",
+    "version": 1,
+    "active": true,
+    "title": "Mintakártyák",
+    "summary": "Mintakártyák",
+    "description": "Mintakártyák",
+    "presentation": "tour",
+    "sections": [
+      {
+        "id": "overview",
+        "icon": "dashboard",
+        "title": "Mintakártyák",
+        "blurb": "",
+        "contentHtml": "<p>Mintakártyák</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "_id": "template-guide-home-hu-v1",
+    "documentType": "explanation",
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed"
+  },
+  {
+    "contextKey": "navigation",
+    "isSystem": true,
+    "lang": "en",
+    "languageLabel": "English",
+    "version": 1,
+    "active": true,
+    "title": "Your menu",
+    "summary": "Your menu",
+    "description": "Your menu",
+    "presentation": "tour",
+    "sections": [
+      {
+        "id": "overview",
+        "icon": "account_circle",
+        "title": "Your menu",
+        "blurb": "",
+        "contentHtml": "<p>Your menu</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "_id": "template-guide-navigation-en-v1",
+    "documentType": "explanation",
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed"
+  },
+  {
+    "contextKey": "navigation",
+    "isSystem": true,
+    "lang": "hu",
+    "languageLabel": "Magyar",
+    "version": 1,
+    "active": true,
+    "title": "Saját menü",
+    "summary": "Saját menü",
+    "description": "Saját menü",
+    "presentation": "tour",
+    "sections": [
+      {
+        "id": "overview",
+        "icon": "account_circle",
+        "title": "Saját menü",
+        "blurb": "",
+        "contentHtml": "<p>Saját menü</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "_id": "template-guide-navigation-hu-v1",
+    "documentType": "explanation",
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed"
+  },
+  {
+    "contextKey": "chat",
+    "isSystem": true,
+    "lang": "en",
+    "languageLabel": "English",
+    "version": 1,
+    "active": true,
+    "title": "Chat",
+    "summary": "Chat",
+    "description": "Chat",
+    "presentation": "tour",
+    "sections": [
+      {
+        "id": "overview",
+        "icon": "chat",
+        "title": "Chat",
+        "blurb": "",
+        "contentHtml": "<p>Chat</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "_id": "template-guide-chat-en-v1",
+    "documentType": "explanation",
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed"
+  },
+  {
+    "contextKey": "chat",
+    "isSystem": true,
+    "lang": "hu",
+    "languageLabel": "Magyar",
+    "version": 1,
+    "active": true,
+    "title": "Chat",
+    "summary": "Chat",
+    "description": "Chat",
+    "presentation": "tour",
+    "sections": [
+      {
+        "id": "overview",
+        "icon": "chat",
+        "title": "Chat",
+        "blurb": "",
+        "contentHtml": "<p>Chat</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "_id": "template-guide-chat-hu-v1",
+    "documentType": "explanation",
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed"
+  },
+  {
+    "contextKey": "profile",
+    "isSystem": true,
+    "lang": "en",
+    "languageLabel": "English",
+    "version": 1,
+    "active": true,
+    "title": "Your profile",
+    "summary": "Your profile",
+    "description": "Your profile",
+    "presentation": "tour",
+    "sections": [
+      {
+        "id": "overview",
+        "icon": "person",
+        "title": "Your profile",
+        "blurb": "",
+        "contentHtml": "<p>Your profile</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "_id": "template-guide-profile-en-v1",
+    "documentType": "explanation",
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed"
+  },
+  {
+    "contextKey": "profile",
+    "isSystem": true,
+    "lang": "hu",
+    "languageLabel": "Magyar",
+    "version": 1,
+    "active": true,
+    "title": "Saját profil",
+    "summary": "Saját profil",
+    "description": "Saját profil",
+    "presentation": "tour",
+    "sections": [
+      {
+        "id": "overview",
+        "icon": "person",
+        "title": "Saját profil",
+        "blurb": "",
+        "contentHtml": "<p>Saját profil</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "_id": "template-guide-profile-hu-v1",
+    "documentType": "explanation",
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed"
+  },
+  {
+    "contextKey": "notifications",
+    "isSystem": true,
+    "lang": "en",
+    "languageLabel": "English",
+    "version": 1,
+    "active": true,
+    "title": "Notifications",
+    "summary": "Notifications",
+    "description": "Notifications",
+    "presentation": "tour",
+    "sections": [
+      {
+        "id": "overview",
+        "icon": "notifications",
+        "title": "Notifications",
+        "blurb": "",
+        "contentHtml": "<p>Notifications</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "_id": "template-guide-notifications-en-v1",
+    "documentType": "explanation",
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed"
+  },
+  {
+    "contextKey": "notifications",
+    "isSystem": true,
+    "lang": "hu",
+    "languageLabel": "Magyar",
+    "version": 1,
+    "active": true,
+    "title": "Értesítések",
+    "summary": "Értesítések",
+    "description": "Értesítések",
+    "presentation": "tour",
+    "sections": [
+      {
+        "id": "overview",
+        "icon": "notifications",
+        "title": "Értesítések",
+        "blurb": "",
+        "contentHtml": "<p>Értesítések</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "_id": "template-guide-notifications-hu-v1",
+    "documentType": "explanation",
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed"
+  },
+  {
+    "contextKey": "landing.guide",
+    "isSystem": true,
+    "lang": "en",
+    "languageLabel": "English",
+    "version": 1,
+    "active": true,
+    "title": "Your guide button",
+    "summary": "Help for the screen you are viewing.",
+    "description": "Learn how to use and move the floating buttons.",
+    "presentation": "tour",
+    "sections": [
+      {
+        "id": "guide-guide-launcher",
+        "guideStepId": "guide-launcher",
+        "icon": "touch_app",
+        "title": "Help when you need it",
+        "blurb": "",
+        "contentHtml": "<p>Help: Next, Back, Done. Drag the lightbulb or notification bell; drop on the red X to hide. Turn help off or back on permanently: side menu → Explanations.</p>"
+      }
+    ],
+    "_id": "template-guide-landing.guide-en-v1",
+    "documentType": "explanation",
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed",
+    "headerColor": "violet"
+  },
+  {
+    "contextKey": "landing.guide",
+    "isSystem": true,
+    "lang": "hu",
+    "languageLabel": "Magyar",
+    "version": 1,
+    "active": true,
+    "title": "A magyarázó gomb",
+    "summary": "Segítség az éppen megnyitott képernyőhöz.",
+    "description": "Ismerd meg a lebegő gombok használatát és mozgatását.",
+    "presentation": "tour",
+    "sections": [
+      {
+        "id": "guide-guide-launcher",
+        "guideStepId": "guide-launcher",
+        "icon": "touch_app",
+        "title": "Segítség, amikor kell",
+        "blurb": "",
+        "contentHtml": "<p>Súgó: Előre, Vissza, Kész. A villanykörte és az értesítési csengő húzható; piros X-re ejtve elrejthető. Tartós ki-/bekapcsolás: oldalsó menü → Magyarázatok.</p>"
+      }
+    ],
+    "_id": "template-guide-landing.guide-hu-v1",
+    "documentType": "explanation",
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed",
+    "headerColor": "violet"
+  },
+  {
+    "contextKey": "",
+    "isSystem": true,
+    "lang": "hu",
+    "languageLabel": "Magyar",
+    "version": 1,
+    "active": true,
+    "title": "Első lépések",
+    "summary": "Első lépések",
+    "description": "Fedezd fel a mintakártyákat, nyiss meg egy beszélgetést, és szerkeszd a profilodat az avatármenüből.",
+    "presentation": "sections",
+    "sections": [
+      {
+        "id": "help-intro",
+        "icon": "info",
+        "title": "Első lépések",
+        "blurb": "",
+        "contentHtml": "<p>Fedezd fel a mintakártyákat, nyiss meg egy beszélgetést, és szerkeszd a profilodat az avatármenüből.</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "_id": "template-help-hu-v1",
+    "documentType": "help",
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed"
+  },
+  {
+    "contextKey": "",
+    "isSystem": true,
+    "lang": "hu",
+    "languageLabel": "Magyar",
+    "version": 1,
+    "active": true,
+    "title": "Adatvédelmi tájékoztató",
+    "summary": "Adatvédelmi tájékoztató",
+    "description": "Ez a bemutató profil-, beszélgetés- és hozzájárulási adatokat tárol a kiválasztott helyi vagy szerverkörnyezetben. Valódi felhasználók meghívása előtt a saját projekt adatkezelőjét és adatvédelmi tájékoztatóját kell megadni.",
+    "presentation": "sections",
+    "sections": [
+      {
+        "id": "privacy-intro",
+        "icon": "info",
+        "title": "Adatvédelmi tájékoztató",
+        "blurb": "",
+        "contentHtml": "<p>Ez a bemutató profil-, beszélgetés- és hozzájárulási adatokat tárol a kiválasztott helyi vagy szerverkörnyezetben. Valódi felhasználók meghívása előtt a saját projekt adatkezelőjét és adatvédelmi tájékoztatóját kell megadni.</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "_id": "template-privacy-hu-v1",
+    "documentType": "privacy",
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed"
+  },
+  {
+    "contextKey": "",
+    "isSystem": true,
+    "lang": "hu",
+    "languageLabel": "Magyar",
+    "version": 1,
+    "active": true,
+    "title": "A bemutató használati feltételei",
+    "summary": "A bemutató használati feltételei",
+    "description": "Az előre létrehozott bemutatófiókokkal kipróbálhatod az alkalmazást. Valódi felhasználók meghívása előtt ezt a bemutatódokumentumot a saját projekted feltételeire kell cserélni.",
+    "presentation": "sections",
+    "sections": [
+      {
+        "id": "terms-intro",
+        "icon": "info",
+        "title": "A bemutató használati feltételei",
+        "blurb": "",
+        "contentHtml": "<p>Az előre létrehozott bemutatófiókokkal kipróbálhatod az alkalmazást. Valódi felhasználók meghívása előtt ezt a bemutatódokumentumot a saját projekted feltételeire kell cserélni.</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "_id": "template-terms-hu-v1",
+    "documentType": "terms",
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed"
+  },
+  {
+    "contextKey": "landing.entry",
+    "isSystem": true,
+    "lang": "en",
+    "languageLabel": "English",
+    "version": 1,
+    "active": true,
+    "title": "Getting started",
+    "summary": "Example cards",
+    "description": "Example cards",
+    "presentation": "tour",
+    "sections": [
+      {
+        "id": "overview",
+        "icon": "dashboard",
+        "title": "Example cards",
+        "blurb": "",
+        "contentHtml": "<p>Example cards</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "_id": "template-guide-entry-en-v1",
+    "documentType": "explanation",
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed"
+  },
+  {
+    "contextKey": "landing.entry",
+    "isSystem": true,
+    "lang": "hu",
+    "languageLabel": "Magyar",
+    "version": 1,
+    "active": true,
+    "title": "Első lépések",
+    "summary": "Mintakártyák",
+    "description": "Mintakártyák",
+    "presentation": "tour",
+    "sections": [
+      {
+        "id": "overview",
+        "icon": "dashboard",
+        "title": "Mintakártyák",
+        "blurb": "",
+        "contentHtml": "<p>Mintakártyák</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "_id": "template-guide-entry-hu-v1",
+    "documentType": "explanation",
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed"
+  },
+  {
+    "_id": "template-guide-setup-en-v1",
+    "documentType": "explanation",
+    "contextKey": "landing.setup",
+    "lang": "en",
+    "languageLabel": "English",
+    "version": 1,
+    "active": true,
+    "presentation": "tour",
+    "title": "Device setup",
+    "summary": "Device setup",
+    "description": "Device setup",
+    "headerColor": "violet",
+    "createdDate": "2026-09-30T00:00:00.000Z",
+    "createdUser": "system",
+    "updatedDate": "2026-09-30T00:00:00.000Z",
+    "updatedUser": "system",
+    "sections": [
+      {
+        "id": "guide-help",
+        "guideStepId": "help",
+        "icon": "help_outline",
+        "title": "Device-specific instructions",
+        "blurb": "",
+        "contentHtml": "<p>The question mark explains browser and phone differences, including blocked permissions. Open it if your device does not offer the expected permission or install prompt.</p>"
+      },
+      {
+        "id": "guide-location",
+        "guideStepId": "location",
+        "icon": "help_outline",
+        "title": "Location",
+        "blurb": "",
+        "contentHtml": "<p>Save your current location or turn off automatic updates. The browser requests permission only when you apply the selected setting.</p>"
+      },
+      {
+        "id": "guide-notifications",
+        "guideStepId": "notifications",
+        "icon": "help_outline",
+        "title": "Notifications on this device",
+        "blurb": "",
+        "contentHtml": "<p>Enable notifications to receive updates outside the open app. Availability depends on this device, browser and deployment; a disabled control cannot request permission.</p>"
+      },
+      {
+        "id": "guide-permissions-save",
+        "guideStepId": "permissions-save",
+        "icon": "help_outline",
+        "title": "Apply the selected permissions",
+        "blurb": "",
+        "contentHtml": "<p>Apply sends the selected permission requests to the browser. A blocked permission must be changed in site settings; pressing again cannot override a browser denial.</p>"
+      },
+      {
+        "id": "guide-install",
+        "guideStepId": "install",
+        "icon": "help_outline",
+        "title": "Install a home-screen shortcut",
+        "blurb": "",
+        "contentHtml": "<p>Installation opens this app in its own window and adds an icon. It does not create an account or grant permissions. This action appears only when the device supports it.</p>"
+      }
+    ],
+    "isSystem": true
+  },
+  {
+    "_id": "template-guide-setup-hu-v1",
+    "documentType": "explanation",
+    "contextKey": "landing.setup",
+    "lang": "hu",
+    "languageLabel": "Magyar",
+    "version": 1,
+    "active": true,
+    "presentation": "tour",
+    "title": "Eszközbeállítás",
+    "summary": "Eszközbeállítás",
+    "description": "Eszközbeállítás",
+    "headerColor": "violet",
+    "createdDate": "2026-09-30T00:00:00.000Z",
+    "createdUser": "system",
+    "updatedDate": "2026-09-30T00:00:00.000Z",
+    "updatedUser": "system",
+    "sections": [
+      {
+        "id": "guide-help",
+        "guideStepId": "help",
+        "icon": "help_outline",
+        "title": "Útmutató az eszközödhöz",
+        "blurb": "",
+        "contentHtml": "<p>A kérdőjel a böngészők és telefonok eltéréseit, valamint a blokkolt engedélyeket magyarázza el. Nyisd meg, ha nem jelenik meg a várt engedélykérés vagy telepítés.</p>"
+      },
+      {
+        "id": "guide-location",
+        "guideStepId": "location",
+        "icon": "help_outline",
+        "title": "Helyadat",
+        "blurb": "",
+        "contentHtml": "<p>Mentsd el a jelenlegi helyedet, vagy kapcsold ki az automatikus frissítést. A böngésző csak a kiválasztott beállítás alkalmazásakor kér engedélyt.</p>"
+      },
+      {
+        "id": "guide-notifications",
+        "guideStepId": "notifications",
+        "icon": "help_outline",
+        "title": "Értesítések ezen az eszközön",
+        "blurb": "",
+        "contentHtml": "<p>Engedélyezve a megnyitott appon kívül is értesülhetsz a változásokról. Az elérhetőség az eszköztől, böngészőtől és telepítéstől függ; tiltott vezérlővel nem kérhető engedély.</p>"
+      },
+      {
+        "id": "guide-permissions-save",
+        "guideStepId": "permissions-save",
+        "icon": "help_outline",
+        "title": "Kijelölt engedélyek alkalmazása",
+        "blurb": "",
+        "contentHtml": "<p>Az alkalmazás elküldi a kijelölt engedélykéréseket a böngészőnek. A blokkolt engedélyt a webhely beállításaiban módosítsd; az ismételt kattintás nem írja felül a tiltást.</p>"
+      },
+      {
+        "id": "guide-install",
+        "guideStepId": "install",
+        "icon": "help_outline",
+        "title": "Ikon a kezdőképernyőre",
+        "blurb": "",
+        "contentHtml": "<p>Telepítés után saját ablakból, külön ikonról nyithatod meg az appot. Ez nem hoz létre fiókot és nem ad engedélyeket. A művelet csak támogatott eszközön jelenik meg.</p>"
+      }
+    ],
+    "isSystem": true
+  },
+  {
+    "_id": "template-guide-profile.integrations-en-v1",
+    "contextKey": "profile.integrations",
+    "isSystem": true,
+    "lang": "en",
+    "languageLabel": "English",
+    "version": 1,
+    "active": true,
+    "title": "API / MCP connections",
+    "summary": "API / MCP connections",
+    "description": "API / MCP connections",
+    "documentType": "explanation",
+    "presentation": "tour",
+    "sections": [
+      {
+        "id": "overview",
+        "icon": "api",
+        "title": "API / MCP connections",
+        "blurb": "",
+        "contentHtml": "<p>API / MCP connections</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed"
+  },
+  {
+    "_id": "template-guide-profile.integration-access-en-v1",
+    "contextKey": "profile.integration-access",
+    "isSystem": true,
+    "lang": "en",
+    "languageLabel": "English",
+    "version": 1,
+    "active": true,
+    "title": "Connection permissions",
+    "summary": "Connection permissions",
+    "description": "Connection permissions",
+    "documentType": "explanation",
+    "presentation": "tour",
+    "sections": [
+      {
+        "id": "overview",
+        "icon": "api",
+        "title": "Connection permissions",
+        "blurb": "",
+        "contentHtml": "<p>Connection permissions</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed"
+  },
+  {
+    "_id": "template-guide-profile.integration-help-en-v1",
+    "contextKey": "profile.integration-help",
+    "isSystem": true,
+    "lang": "en",
+    "languageLabel": "English",
+    "version": 1,
+    "active": true,
+    "title": "API / MCP help",
+    "summary": "API / MCP help",
+    "description": "API / MCP help",
+    "documentType": "explanation",
+    "presentation": "tour",
+    "sections": [
+      {
+        "id": "overview",
+        "icon": "api",
+        "title": "API / MCP help",
+        "blurb": "",
+        "contentHtml": "<p>API / MCP help</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed"
+  },
+  {
+    "_id": "template-guide-profile.mcp-authorization-en-v1",
+    "contextKey": "profile.mcp-authorization",
+    "isSystem": true,
+    "lang": "en",
+    "languageLabel": "English",
+    "version": 1,
+    "active": true,
+    "title": "Connect an AI client",
+    "summary": "Connect an AI client",
+    "description": "Connect an AI client",
+    "documentType": "explanation",
+    "presentation": "tour",
+    "sections": [
+      {
+        "id": "overview",
+        "icon": "api",
+        "title": "Connect an AI client",
+        "blurb": "",
+        "contentHtml": "<p>Connect an AI client</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed"
+  },
+  {
+    "_id": "template-guide-profile.mcp-advanced-en-v1",
+    "contextKey": "profile.mcp-advanced",
+    "isSystem": true,
+    "lang": "en",
+    "languageLabel": "English",
+    "version": 1,
+    "active": true,
+    "title": "Manual MCP clients",
+    "summary": "Manual MCP clients",
+    "description": "Manual MCP clients",
+    "documentType": "explanation",
+    "presentation": "tour",
+    "sections": [
+      {
+        "id": "overview",
+        "icon": "api",
+        "title": "Manual MCP clients",
+        "blurb": "",
+        "contentHtml": "<p>Manual MCP clients</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed"
+  },
+  {
+    "_id": "template-guide-profile.mcp-details-en-v1",
+    "contextKey": "profile.mcp-details",
+    "isSystem": true,
+    "lang": "en",
+    "languageLabel": "English",
+    "version": 1,
+    "active": true,
+    "title": "MCP connection details",
+    "summary": "MCP connection details",
+    "description": "MCP connection details",
+    "documentType": "explanation",
+    "presentation": "tour",
+    "sections": [
+      {
+        "id": "overview",
+        "icon": "api",
+        "title": "MCP connection details",
+        "blurb": "",
+        "contentHtml": "<p>MCP connection details</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed"
+  },
+  {
+    "_id": "template-guide-profile.integrations-hu-v1",
+    "contextKey": "profile.integrations",
+    "isSystem": true,
+    "lang": "hu",
+    "languageLabel": "Magyar",
+    "version": 1,
+    "active": true,
+    "title": "API- és MCP-kapcsolatok",
+    "summary": "API- és MCP-kapcsolatok",
+    "description": "API- és MCP-kapcsolatok",
+    "documentType": "explanation",
+    "presentation": "tour",
+    "sections": [
+      {
+        "id": "overview",
+        "icon": "api",
+        "title": "API- és MCP-kapcsolatok",
+        "blurb": "",
+        "contentHtml": "<p>API- és MCP-kapcsolatok</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed"
+  },
+  {
+    "_id": "template-guide-profile.integration-access-hu-v1",
+    "contextKey": "profile.integration-access",
+    "isSystem": true,
+    "lang": "hu",
+    "languageLabel": "Magyar",
+    "version": 1,
+    "active": true,
+    "title": "Kapcsolati jogosultságok",
+    "summary": "Kapcsolati jogosultságok",
+    "description": "Kapcsolati jogosultságok",
+    "documentType": "explanation",
+    "presentation": "tour",
+    "sections": [
+      {
+        "id": "overview",
+        "icon": "api",
+        "title": "Kapcsolati jogosultságok",
+        "blurb": "",
+        "contentHtml": "<p>Kapcsolati jogosultságok</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed"
+  },
+  {
+    "_id": "template-guide-profile.integration-help-hu-v1",
+    "contextKey": "profile.integration-help",
+    "isSystem": true,
+    "lang": "hu",
+    "languageLabel": "Magyar",
+    "version": 1,
+    "active": true,
+    "title": "API- és MCP-súgó",
+    "summary": "API- és MCP-súgó",
+    "description": "API- és MCP-súgó",
+    "documentType": "explanation",
+    "presentation": "tour",
+    "sections": [
+      {
+        "id": "overview",
+        "icon": "api",
+        "title": "API- és MCP-súgó",
+        "blurb": "",
+        "contentHtml": "<p>API- és MCP-súgó</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed"
+  },
+  {
+    "_id": "template-guide-profile.mcp-authorization-hu-v1",
+    "contextKey": "profile.mcp-authorization",
+    "isSystem": true,
+    "lang": "hu",
+    "languageLabel": "Magyar",
+    "version": 1,
+    "active": true,
+    "title": "AI-kliens csatlakoztatása",
+    "summary": "AI-kliens csatlakoztatása",
+    "description": "AI-kliens csatlakoztatása",
+    "documentType": "explanation",
+    "presentation": "tour",
+    "sections": [
+      {
+        "id": "overview",
+        "icon": "api",
+        "title": "AI-kliens csatlakoztatása",
+        "blurb": "",
+        "contentHtml": "<p>AI-kliens csatlakoztatása</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed"
+  },
+  {
+    "_id": "template-guide-profile.mcp-advanced-hu-v1",
+    "contextKey": "profile.mcp-advanced",
+    "isSystem": true,
+    "lang": "hu",
+    "languageLabel": "Magyar",
+    "version": 1,
+    "active": true,
+    "title": "Kézi MCP-kliensek",
+    "summary": "Kézi MCP-kliensek",
+    "description": "Kézi MCP-kliensek",
+    "documentType": "explanation",
+    "presentation": "tour",
+    "sections": [
+      {
+        "id": "overview",
+        "icon": "api",
+        "title": "Kézi MCP-kliensek",
+        "blurb": "",
+        "contentHtml": "<p>Kézi MCP-kliensek</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed"
+  },
+  {
+    "_id": "template-guide-profile.mcp-details-hu-v1",
+    "contextKey": "profile.mcp-details",
+    "isSystem": true,
+    "lang": "hu",
+    "languageLabel": "Magyar",
+    "version": 1,
+    "active": true,
+    "title": "MCP-kapcsolat részletei",
+    "summary": "MCP-kapcsolat részletei",
+    "description": "MCP-kapcsolat részletei",
+    "documentType": "explanation",
+    "presentation": "tour",
+    "sections": [
+      {
+        "id": "overview",
+        "icon": "api",
+        "title": "MCP-kapcsolat részletei",
+        "blurb": "",
+        "contentHtml": "<p>MCP-kapcsolat részletei</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed"
+  },
+  {
+    "_id": "template-guide-operator.configuration-en-v1",
+    "contextKey": "operator.configuration",
+    "isSystem": true,
+    "lang": "en",
+    "languageLabel": "English",
+    "version": 1,
+    "active": true,
+    "title": "Deployment configuration",
+    "summary": "Deployment configuration",
+    "description": "Deployment configuration",
+    "documentType": "explanation",
+    "presentation": "tour",
+    "sections": [
+      {
+        "id": "overview",
+        "icon": "api",
+        "title": "Deployment configuration",
+        "blurb": "",
+        "contentHtml": "<p>Deployment configuration</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed"
+  },
+  {
+    "_id": "template-guide-operator.configuration-hu-v1",
+    "contextKey": "operator.configuration",
+    "isSystem": true,
+    "lang": "hu",
+    "languageLabel": "Magyar",
+    "version": 1,
+    "active": true,
+    "title": "Telepítési beállítások",
+    "summary": "Telepítési beállítások",
+    "description": "Telepítési beállítások",
+    "documentType": "explanation",
+    "presentation": "tour",
+    "sections": [
+      {
+        "id": "overview",
+        "icon": "api",
+        "title": "Telepítési beállítások",
+        "blurb": "",
+        "contentHtml": "<p>Telepítési beállítások</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed"
+  },
+  {
+    "_id": "template-guide-operator.updates-en-v1",
+    "contextKey": "operator.updates",
+    "isSystem": true,
+    "lang": "en",
+    "languageLabel": "English",
+    "version": 1,
+    "active": true,
+    "title": "Updates",
+    "summary": "Updates",
+    "description": "Updates",
+    "documentType": "explanation",
+    "presentation": "tour",
+    "sections": [
+      {
+        "id": "overview",
+        "icon": "api",
+        "title": "Updates",
+        "blurb": "",
+        "contentHtml": "<p>Updates</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed"
+  },
+  {
+    "_id": "template-guide-operator.updates-hu-v1",
+    "contextKey": "operator.updates",
+    "isSystem": true,
+    "lang": "hu",
+    "languageLabel": "Magyar",
+    "version": 1,
+    "active": true,
+    "title": "Frissítések",
+    "summary": "Frissítések",
+    "description": "Frissítések",
+    "documentType": "explanation",
+    "presentation": "tour",
+    "sections": [
+      {
+        "id": "overview",
+        "icon": "api",
+        "title": "Frissítések",
+        "blurb": "",
+        "contentHtml": "<p>Frissítések</p>",
+        "imageUrls": [],
+        "optional": false
+      }
+    ],
+    "createdDate": "2026-10-11T00:00:00Z",
+    "updatedDate": "2026-10-11T00:00:00Z",
+    "createdUser": "template-seed",
+    "updatedUser": "template-seed"
+  }
+]

@@ -1,0 +1,557 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Account profile read state",
+    "version": "1.0.0",
+    "description": "Account-owned menu counters evaluated under the signed actor, and bounded invalidation of existing account read caches. Cache eviction grants no profile mutation authority. No automatic retries."
+  },
+  "paths": {
+    "/_internal/v1/accounts/profile-read-state/counters": {
+      "post": {
+        "security": [
+          {
+            "serviceCapability": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-MyScoutee-Session-Mode",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-MyScoutee-Actor-Delegation",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "maxLength": 8192
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CounterQuery"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserMenuCountersDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "serviceCapability": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    },
+    "schemas": {
+      "Error": {
+        "type": "object",
+        "required": [
+          "code"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "type": "string"
+          }
+        }
+      },
+      "CounterQuery": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "userId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 512
+          }
+        }
+      },
+      "UserMenuCountersDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "game": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "chats": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "invitations": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "events": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "hosting": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "cars": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "accommodation": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "supplies": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "tickets": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "contacts": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "feedback": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "chat": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/UserChatCountersDto"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "event": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/UserEventCountersDto"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "asset": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/UserAssetCountersDto"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "eventFeedback": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/UserEventFeedbackCountersDto"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "adminJobs": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "adminMetrics": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "paymentRefundsPending": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "contactRequestsPending": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "notifications": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "cases": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        }
+      },
+      "UserChatCountersDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "all": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "event": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "subEvent": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "group": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "service": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "appSupport": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "supportCases": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/UserSupportCaseCountersDto"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "groupSupport": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "contacts": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "campaign": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "cases": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        }
+      },
+      "UserSupportCaseCountersDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "pending": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "warned": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "picked": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "solved": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "blocked": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "all": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        }
+      },
+      "UserEventCountersDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "all": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "active": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "pending": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "invitations": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "hosting": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "drafts": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "trash": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "watchlist": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        }
+      },
+      "UserAssetCountersDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "cars": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "accommodation": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "supplies": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "tickets": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "carsPending": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "accommodationPending": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "suppliesPending": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        }
+      },
+      "UserEventFeedbackCountersDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "ownEvents": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "pending": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "feedbacked": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "removed": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "sample cards use stable bounded pages without community models",
+  "group": "showcase",
+  "order": 14,
+  "method": "GET",
+  "path": "{{apiPrefix}}/showcase/cards",
+  "params": {
+    "page": 0,
+    "pageSize": 2
+  },
+  "headers": {
+    "X-App-Session-Kind": "demo",
+    "X-Demo-User-Id": "{{userId}}"
+  },
+  "expectedStatus": 200,
+  "maxMs": 5000,
+  "qaBranches": [
+    "T-SMARTLIST-001"
+  ]
+}

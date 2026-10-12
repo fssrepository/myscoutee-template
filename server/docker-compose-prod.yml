@@ -1,0 +1,275 @@
+# Selected native production services; no source watchers or product domains.
+name: myscoutee-template-prod
+networks:
+  myscoutee:
+    driver: bridge
+secrets:
+  firebase-service-account:
+    file: ./projects/profile/secrets/firebase-service-account.json
+services:
+  stun:
+    extends:
+      file: docker-compose-stun.yml
+      service: stun
+    restart: unless-stopped
+    networks:
+    - myscoutee
+    container_name: myscoutee-template-prod-stun
+  mcp:
+    image: ${MCP_IMAGE:-myscoutee-template-mcp:1.4.0-prod}
+    build:
+      context: ../mcp
+      dockerfile: Dockerfile
+    container_name: myscoutee-template-prod-mcp
+    hostname: mcp
+    restart: unless-stopped
+    environment:
+      MYSCOUTEE_MCP_TRANSPORT: http
+      MYSCOUTEE_MCP_LISTEN: 0.0.0.0:8080
+      MYSCOUTEE_API_BASE_URL: http://profilemanagement:8080
+      MYSCOUTEE_PUBLIC_API_BASE_URL: https://${DOMAIN:-localhost}/api
+    networks:
+    - myscoutee
+    read_only: true
+    cap_drop:
+    - ALL
+    security_opt:
+    - no-new-privileges:true
+    mem_limit: 128m
+    healthcheck:
+      test:
+      - CMD
+      - /myscoutee-mcp
+      - healthcheck
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 5s
+  nginx:
+    container_name: myscoutee-template-prod-nginx
+    hostname: nginx
+    image: ${NGINX_PRODUCTION_IMAGE:-myscoutee-template-nginx:1.4.0-prod}
+    pull_policy: build
+    restart: unless-stopped
+    build:
+      context: docker
+      dockerfile: images/nginx/prod/Dockerfile
+      additional_contexts:
+        frontend-prod: ../frontend/prod
+      args:
+        NGINX_BASE_IMAGE: ${NGINX_BASE_IMAGE:-myscoutee-template-nginx:1.4.0-base}
+        TZ: ${CONTAINER_TIMEZONE:-Europe/Brussels}
+    environment:
+      MYSCOUTEE_RUNTIME_STATUS_TOKEN_FILE: /run/myscoutee-runtime-status/token
+      TZ: ${CONTAINER_TIMEZONE:-Europe/Brussels}
+      LETSENCRYPT_ENABLED: ${LETSENCRYPT_ENABLED:-false}
+      DOMAIN: ${DOMAIN:-localhost}
+      NGINX_TLS_CERTIFICATE_PATH: ${NGINX_TLS_CERTIFICATE_PATH:-/etc/nginx/keys/nginx.crt}
+      NGINX_TLS_CERTIFICATE_KEY_PATH: ${NGINX_TLS_CERTIFICATE_KEY_PATH:-/etc/nginx/keys/nginx-nopass.key}
+    ports:
+    - 80:80
+    - 443:443
+    - 127.0.0.1:27017:27017
+    volumes:
+    - runtime-status-credentials:/run/myscoutee-runtime-status
+    - ./docker/conf/nginx/keys:/etc/nginx/keys
+    - ./data/certbot/conf:/etc/letsencrypt
+    - ./data/certbot/www:/var/www/certbot
+    - /etc/localtime:/etc/localtime:ro
+    networks:
+    - myscoutee
+    depends_on:
+    - mcp
+    - mongodb
+    - redis
+    - profilemanagement
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - wget -qO- http://127.0.0.1/nginx-health >/dev/null 2>&1 || exit 1
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_interval: 2s
+      start_period: 20s
+  mongodb:
+    extends:
+      file: docker-compose.replicaset.yml
+      service: mongodb
+    image: ${MONGO_IMAGE:-mongo:8.0.4}
+    container_name: myscoutee-template-prod-mongodb
+    hostname: mongodb
+    restart: unless-stopped
+    env_file:
+    - .env.secrets
+    environment:
+      MONGO_INITDB_DATABASE: ${MONGO_REAL_DATABASE}
+      MONGO_APP_DATABASE: ${MONGO_REAL_DATABASE}
+      MONGO_SEED_DIRECTORY: myscoutee_db
+      MONGO_IMPORT_ALL_SEED_DATABASES: 'true'
+      MONGO_IMPORT_ALLOWED_COLLECTIONS_BY_DB: ${MONGO_IMPORT_ALLOWED_COLLECTIONS_BY_DB}
+      TZ: ${CONTAINER_TIMEZONE:-Europe/Brussels}
+    volumes:
+    - ./docker/conf/mongodb/:/docker-entrypoint-initdb.d
+    - ./data/mongodb/data-v8-0:/data/db
+    - /etc/localtime:/etc/localtime:ro
+    networks:
+    - myscoutee
+    healthcheck:
+      test:
+      - CMD
+      - bash
+      - /docker-entrypoint-initdb.d/replica-health
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_interval: 2s
+      start_period: 30s
+  redis:
+    image: ${REDIS_IMAGE:-redis:8.6.1-alpine}
+    container_name: myscoutee-template-prod-redis
+    hostname: redis
+    restart: unless-stopped
+    environment:
+      TZ: ${CONTAINER_TIMEZONE:-Europe/Brussels}
+    volumes:
+    - /etc/localtime:/etc/localtime:ro
+    networks:
+    - myscoutee
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - redis-cli ping | grep -q PONG
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_interval: 2s
+      start_period: 10s
+  minio:
+    image: ${MINIO_PRODUCTION_IMAGE:-myscoutee-template-minio:1.4.0-prod}
+    pull_policy: build
+    build:
+      context: .
+      dockerfile: docker/images/minio/Dockerfile
+      args:
+        MINIO_BASE_IMAGE: ${MINIO_BASE_IMAGE:-minio/minio:RELEASE.2025-09-07T16-13-09Z}
+    container_name: myscoutee-template-prod-minio
+    hostname: minio
+    restart: unless-stopped
+    env_file:
+    - .env.secrets
+    command: server /data --console-address ":9001"
+    environment:
+      MEDIA_BUCKET: ${MEDIA_BUCKET}
+      MINIO_ENDPOINT: http://127.0.0.1:9000
+      TZ: ${CONTAINER_TIMEZONE:-Europe/Brussels}
+    volumes:
+    - ./data/minio:/data
+    - /etc/localtime:/etc/localtime:ro
+    networks:
+    - myscoutee
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - test -f /tmp/myscoutee-minio-seeded && curl -fsS http://localhost:9000/minio/health/live >/dev/null || exit 1
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_interval: 2s
+      start_period: 20s
+  profilemanagement:
+    extends:
+      file: docker-compose.replicaset.yml
+      service: profilemanagement
+    image: ${MYSCOUTEE_PRODUCTION_IMAGE:-myscoutee-template-api:1.4.0-prod}
+    pull_policy: build
+    restart: unless-stopped
+    build:
+      context: projects/profile/build/libs
+      dockerfile: ../../../../docker/images/profilemanagement/prod/Dockerfile
+      args:
+        MYSCOUTEE_VERSION: ${MYSCOUTEE_VERSION:-1.4.0}
+        MYSCOUTEE_API_UID: ${MYSCOUTEE_API_UID:-10002}
+        MYSCOUTEE_API_GID: ${MYSCOUTEE_API_GID:-10002}
+        TZ: ${CONTAINER_TIMEZONE:-Europe/Brussels}
+    container_name: myscoutee-template-prod-profilemanagement
+    hostname: myscoutee
+    env_file:
+    - .env.secrets
+    environment:
+      MYSCOUTEE_RUNTIME_STATUS_ENABLED: 'true'
+      MYSCOUTEE_RUNTIME_STATUS_URL: http://nginx:9081/internal/runtime-status
+      MYSCOUTEE_RUNTIME_STATUS_TOKEN_FILE: /run/myscoutee-runtime-status/token
+      CHAT_CALL_STUN_URLS: ${CHAT_CALL_STUN_URLS:-}
+      CHAT_CALL_STUN_PORT: ${CHAT_CALL_STUN_PORT:-3478}
+      SPRING_PROFILES_ACTIVE: prod
+      MYSCOUTEE_VERSION: ${MYSCOUTEE_VERSION:-1.4.0}
+      MONGODB_HOST: mongodb
+      MONGODB_DATABASE: ${MONGO_REAL_DATABASE}
+      MONGODB_DEMO_DATABASE: ${MONGO_DEMO_DATABASE}
+      SPRING_DATA_REDIS_HOST: redis
+      SPRING_DATA_REDIS_PORT: '6379'
+      FIREBASE_ENABLED: ${FIREBASE_ENABLED:-false}
+      AUTH_MAX_ACTIVE_SESSIONS: ${AUTH_MAX_ACTIVE_SESSIONS:--1}
+      INTEGRATION_PUBLIC_BASE_URL: ${INTEGRATION_PUBLIC_BASE_URL:-https://localhost/api/integrations/v1}
+      FACEBOOK_APP_SECRET: ${FACEBOOK_APP_SECRET:-}
+      MEMBER_USER: ''
+      OPERATOR_USER: ${OPERATOR_USER:-}
+      OPERATOR_CONFIGURATION_MASTER_KEY_PATH: /etc/myscoutee/configuration/deployment-master-key
+      WEBSOCKET_ALLOWED_ORIGIN_PATTERNS: ${WEBSOCKET_ALLOWED_ORIGIN_PATTERNS:-https://localhost,https://127.0.0.1,http://localhost:8080,http://127.0.0.1:8080}
+      EMAIL_BASE_URL: ${EMAIL_BASE_URL:-https://localhost}
+      MEDIA_ENABLED: 'true'
+      MEDIA_OBJECT_STORE_ENDPOINT: http://minio:9000
+      MEDIA_OBJECT_STORE_REGION: eu-central-1
+      MEDIA_BUCKET: ${MEDIA_BUCKET}
+      MEDIA_OBJECT_STORE_PATH_STYLE: 'true'
+      OPERATOR_UPDATE_ENABLED: ${MYSCOUTEE_UPDATE_ENABLED:-false}
+      OPERATOR_UPDATE_STATE_DIR: /var/lib/myscoutee/update
+      OPERATOR_UPDATE_RELEASE_PUBLIC_KEY_PATH: /etc/myscoutee/update/release-public-key.pem
+      OPERATOR_UPDATE_MAX_ARTIFACT_BYTES: ${MYSCOUTEE_UPDATE_MAX_ARTIFACT_BYTES:-4294967296}
+      OPERATOR_UPDATE_STAGING_SAFETY_RESERVE_BYTES: ${MYSCOUTEE_UPDATE_STAGING_SAFETY_RESERVE_BYTES:-536870912}
+      TZ: ${CONTAINER_TIMEZONE:-Europe/Brussels}
+      JAVA_TOOL_OPTIONS: --enable-native-access=ALL-UNNAMED -XX:+ExitOnOutOfMemoryError
+      OPERATOR_UPDATE_GITHUB_REPOSITORY: ${MYSCOUTEE_UPDATE_GITHUB_REPOSITORY:-fssrepository/myscoutee-template}
+      OPERATOR_UPDATE_TLS_CA_CERTIFICATE: ${MYSCOUTEE_UPDATE_TLS_CA_CERTIFICATE:-}
+      OPERATOR_UPDATE_RELEASE_API_ORIGIN: ${MYSCOUTEE_UPDATE_RELEASE_API_ORIGIN:-https://api.github.com}
+      OPERATOR_UPDATE_RELEASE_DOWNLOAD_ORIGIN: ${MYSCOUTEE_UPDATE_RELEASE_DOWNLOAD_ORIGIN:-https://github.com}
+      OPERATOR_UPDATE_INCLUDE_PRERELEASES: ${MYSCOUTEE_UPDATE_INCLUDE_PRERELEASES:-false}
+    secrets:
+    - source: firebase-service-account
+      target: firebase-service-account.json
+    volumes:
+    - runtime-status-credentials:/run/myscoutee-runtime-status:ro
+    - ${OPERATOR_CONFIGURATION_KEY_DIR_HOST:-./data/configuration}:/etc/myscoutee/configuration:ro
+    - ${MYSCOUTEE_UPDATE_STATE_DIR_HOST:-./data/update}/inbox/staging:/var/lib/myscoutee/update/staging:rw
+    - ${MYSCOUTEE_UPDATE_STATE_DIR_HOST:-./data/update}/inbox/requests:/var/lib/myscoutee/update/requests:rw
+    - ${MYSCOUTEE_UPDATE_STATE_DIR_HOST:-./data/update}/runtime/jobs:/var/lib/myscoutee/update/jobs:ro
+    - ${MYSCOUTEE_UPDATE_CONFIG_DIR_HOST:-./data/update-config}:/etc/myscoutee/update:ro
+    - /etc/localtime:/etc/localtime:ro
+    networks:
+    - myscoutee
+    depends_on:
+      mongodb:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      minio:
+        condition: service_healthy
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - wget -qO- http://localhost:8080/health | grep -q UP
+      interval: 30s
+      timeout: 5s
+      retries: 8
+      start_interval: 2s
+      start_period: 60s
+    read_only: true
+    tmpfs:
+    - /tmp:size=256m,mode=1777
+    cap_drop:
+    - ALL
+    security_opt:
+    - no-new-privileges:true
+volumes:
+  runtime-status-credentials: {}

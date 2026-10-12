@@ -1,0 +1,28 @@
+**/.gradle/
+**/build/
+**/node_modules/
+**/__pycache__/
+*.pyc
+.e2e-artifacts/
+.env
+.env.*
+!.env.example
+.trust-mode.local
+*.local
+.agent/
+server/data/
+server/.gradle-docker/
+server/.env.secrets
+server/projects/profile/secrets/*
+!server/projects/profile/secrets/README.md
+!server/projects/profile/secrets/firebase-service-account.json.example
+server/docker/conf/nginx/app/
+server/docker/conf/nginx/keys/*
+!server/docker/conf/nginx/keys/README.md
+
+# Independent service artifacts and Gradle state
+/microservices/build/
+/microservices/.gradle/
+
+# Build and publication artifacts; only qualification summaries are versioned.
+/packaging/dist/

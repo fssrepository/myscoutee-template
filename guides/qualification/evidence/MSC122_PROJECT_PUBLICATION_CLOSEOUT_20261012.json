@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-12",
+  "version": "1.4.0",
+  "checklist": {
+    "mainTasksDone": 33,
+    "mainTasksTotal": 33,
+    "subtasksDone": 118,
+    "subtasksTotal": 118
+  },
+  "project": "https://github.com/users/fssrepository/projects/6",
+  "task": "https://github.com/fssrepository/myscoutee-roadmap/issues/160",
+  "roadmap": "https://github.com/fssrepository/myscoutee-roadmap",
+  "componentsRelease": "https://github.com/fssrepository/myscoutee-components/releases/tag/v1.4.0",
+  "accountReportedLifetimeTokens": 41101926589,
+  "combinedHeatmapTokens": 43348498790,
+  "usageCutoff": "2026-10-12T18:56:15.981Z",
+  "taskTokens": 1134112133,
+  "linkedInDraft": {
+    "repository": "private myscoutee-backend",
+    "path": "guides/publication/myscoutee-template",
+    "commit": "6a639e4f3bc417e0289c599475cf2635eb591304",
+    "articleWords": 221,
+    "postWords": 39,
+    "coverPixels": [
+      1200,
+      627
+    ],
+    "published": false
+  },
+  "applicationChangesDuringAdministrativeCloseout": false
+}

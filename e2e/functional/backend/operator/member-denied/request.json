@@ -1,0 +1,17 @@
+{
+  "name": "member cannot read operator configuration",
+  "group": "operator",
+  "order": 8,
+  "method": "GET",
+  "path": "{{apiPrefix}}/operator/configuration",
+  "params": {},
+  "headers": {
+    "X-App-Session-Kind": "demo",
+    "X-Demo-User-Id": "{{userId}}"
+  },
+  "expectedStatus": 403,
+  "maxMs": 5000,
+  "qaBranches": [
+    "T-AUTHORITY-001"
+  ]
+}

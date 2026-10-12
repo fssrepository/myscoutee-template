@@ -1,0 +1,41 @@
+spring:
+  data:
+    rest:
+      detection-strategy: annotated
+  profiles:
+    active: ${SPRING_DEV:dev}
+  main:
+    allow-bean-definition-overriding: true
+
+auth:
+  # -1 disables the concurrent-session cap; positive values set the maximum.
+  max-active-sessions: ${AUTH_MAX_ACTIVE_SESSIONS:-1}
+
+operator:
+  configuration:
+    master-key-path: ${OPERATOR_CONFIGURATION_MASTER_KEY_PATH:/etc/myscoutee-template/configuration/deployment-master-key}
+
+  update:
+    software-version: ${MYSCOUTEE_VERSION:unknown}
+    monitor-enabled: ${OPERATOR_UPDATE_MONITOR_ENABLED:false}
+    tls-ca-certificate: ${OPERATOR_UPDATE_TLS_CA_CERTIFICATE:}
+    release-api-origin: ${OPERATOR_UPDATE_RELEASE_API_ORIGIN:https://api.github.com}
+    release-download-origin: ${OPERATOR_UPDATE_RELEASE_DOWNLOAD_ORIGIN:https://github.com}
+    github-repository: ${OPERATOR_UPDATE_GITHUB_REPOSITORY:fssrepository/myscoutee-template}
+    include-prereleases: ${OPERATOR_UPDATE_INCLUDE_PRERELEASES:false}
+    enabled: ${OPERATOR_UPDATE_ENABLED:false}
+    state-dir: ${OPERATOR_UPDATE_STATE_DIR:/var/lib/myscoutee-template/update}
+    release-public-key-path: ${OPERATOR_UPDATE_RELEASE_PUBLIC_KEY_PATH:/etc/myscoutee-template/update/release-public-key.pem}
+    max-artifact-bytes: ${OPERATOR_UPDATE_MAX_ARTIFACT_BYTES:4294967296}
+    staging-safety-reserve-bytes: ${OPERATOR_UPDATE_STAGING_SAFETY_RESERVE_BYTES:536870912}
+    download-connect-timeout: ${OPERATOR_UPDATE_DOWNLOAD_CONNECT_TIMEOUT:10s}
+    download-timeout: ${OPERATOR_UPDATE_DOWNLOAD_TIMEOUT:30m}
+  tls:
+    enabled: ${OPERATOR_TLS_ENABLED:false}
+    state-dir: ${OPERATOR_TLS_STATE_DIR:/var/lib/myscoutee-template/tls}
+
+config:
+  chat-call-stun-urls: ${CHAT_CALL_STUN_URLS:}
+  chat-call-stun-port: ${CHAT_CALL_STUN_PORT:3478}
+  chat-call-stun-health-host: ${CHAT_CALL_STUN_HEALTH_HOST:stun}
+  chat-call-stun-health-port: 3478

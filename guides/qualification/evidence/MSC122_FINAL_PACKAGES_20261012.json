@@ -1,0 +1,132 @@
+{
+  "task": "27.3",
+  "status": "DONE",
+  "date": "2026-10-12",
+  "version": "1.4.0",
+  "artifacts": [
+    {
+      "project": "myscoutee-backend",
+      "deb": "packaging/dist/msc122-final-140/myscoutee_1.4.0_amd64.deb",
+      "sha256": "b5590edbfde080e1ed29988596a3cc60b0e8fbb82000ff5288a3e106a6ee8728",
+      "bytes": 366860124,
+      "clientToolsSha256": "46c07bbefc0188adbf114d0a774b1a0ccfa3918f84f082763c0195a26a20aaa0",
+      "backendBaseRevision": "547adac05779809fcc01c1f2832f574da0acf629",
+      "frontendBaseRevision": "e14c6b52cfe17ae71c1844d7f76f7c296429bf54",
+      "qualifiedWorktree": true,
+      "images": {
+        "schemaVersion": 1,
+        "releaseVersion": "1.4.0",
+        "bundled": true,
+        "images": [
+          {
+            "service": "nginx-base",
+            "container": null,
+            "reference": "myscoutee-nginx:1.4.0-base",
+            "imageId": "sha256:45c0bb9de7a903d626100397a6826a728464a8c1d6a91e4cb643db1a4f9202c7",
+            "contentFingerprint": "sha256:51fbf64fef4f92c8b3c117399d2be5f769f22c9abb97fc9e30de8e7eedf42c17"
+          },
+          {
+            "service": "nginx",
+            "container": "nginx",
+            "reference": "myscoutee-nginx:1.4.0-prod",
+            "imageId": "sha256:7c1d84983cf510cb0b9fa0af4a8547d928104be1e9441d29fff32f4d3551e6f0",
+            "contentFingerprint": "sha256:1bdb67f219d23ecfc402c634815d37759971853337df8ceba6321b9f1160bebf"
+          },
+          {
+            "service": "profilemanagement",
+            "container": "myscoutee",
+            "reference": "myscoutee-api:1.4.0-prod",
+            "imageId": "sha256:c4e4340537e8f0e8c448c82f1798a4a69691d84dc508de999546447aa0a43419",
+            "contentFingerprint": "sha256:729ebcd0225cd61deb703a2fe9cf33eb2deea24715afd066b14896b166b38405"
+          },
+          {
+            "service": "minio",
+            "container": "minio",
+            "reference": "myscoutee-minio:1.4.0-prod",
+            "imageId": "sha256:413444dd4c45cc2fe6db5644a39717a88baaa2e51c0fc4ceb30966002571686f",
+            "contentFingerprint": "sha256:6f9d65d9ae7db38bd9b98b85e4e006d37b77922a076dacb23e8f660f37584a85"
+          },
+          {
+            "service": "registry-demo",
+            "container": "registry-demo",
+            "reference": "myscoutee-registry:1.4.0-prod",
+            "imageId": "sha256:aa7b6779f4a88d622959dce67e07b2169fc11163ac3d9b733c15244c75a60a01",
+            "contentFingerprint": "sha256:7c6bf15526191d0e5bec6cb8727d084d51b395883850d79778264aff3797a4c8"
+          },
+          {
+            "service": "payment-simulator",
+            "container": "payment-simulator",
+            "reference": "myscoutee-payment-simulator:1.4.0-prod",
+            "imageId": "sha256:6e12179bd46b195193c9211c313854880f43be3e88da7002ecf0d2fc6ae0b116",
+            "contentFingerprint": "sha256:e748939fe7cdd6cd2889aac5ca4efc72613e2e68da1a7750463385fc91304723"
+          },
+          {
+            "service": "mcp",
+            "container": "mcp",
+            "reference": "myscoutee-mcp:1.4.0-prod",
+            "imageId": "sha256:838f106d6b86bcc332b01cc9d8cedc63a3cb15f3a34642fc118c2ecd2f067a76",
+            "contentFingerprint": "sha256:ca3b99df47e5b7977ff670e654261ab23cd629a9f1f364939f10ea77587f3072"
+          }
+        ]
+      },
+      "inputAndImageAudit": true,
+      "completeActualDebBytesModesAndOwners": true
+    },
+    {
+      "project": "myscoutee-template",
+      "deb": "packaging/dist/msc122-final-140/myscoutee-template_1.4.0_amd64.deb",
+      "sha256": "fc0c399a20379b55c5d76f0acac85579e943edb04109dc0706c1317964743947",
+      "bytes": 266006286,
+      "clientToolsSha256": "14c9a1bcdf083fe50d7ffadb4b3cee3b402088b9360e62d2c7d2a64193aa5eae",
+      "backendBaseRevision": "a068b1eb4fc0557094fab6368e75be0fb0cf1bb6",
+      "frontendBaseRevision": "e025f084cd8d248d59799bc9cd5d39c6bcfca8d7",
+      "qualifiedWorktree": true,
+      "images": {
+        "schemaVersion": 1,
+        "releaseVersion": "1.4.0",
+        "bundled": true,
+        "images": [
+          {
+            "service": "nginx-base",
+            "container": null,
+            "reference": "myscoutee-template-nginx:1.4.0-base",
+            "imageId": "sha256:45c0bb9de7a903d626100397a6826a728464a8c1d6a91e4cb643db1a4f9202c7",
+            "contentFingerprint": "sha256:51fbf64fef4f92c8b3c117399d2be5f769f22c9abb97fc9e30de8e7eedf42c17"
+          },
+          {
+            "service": "nginx",
+            "container": "nginx",
+            "reference": "myscoutee-template-nginx:1.4.0-prod",
+            "imageId": "sha256:f5b2477d3d2427c2fac1fc87e28d9a125376c23e331c900dfd02a72fb47c2cdd",
+            "contentFingerprint": "sha256:772279e2e4542d131a9a634613a8d7dadd1766733c4c2c3cd3cf759e66cff876"
+          },
+          {
+            "service": "profilemanagement",
+            "container": "myscoutee-template",
+            "reference": "myscoutee-template-api:1.4.0-prod",
+            "imageId": "sha256:1ec05da2327ab042174230498d0543dfb5b378a18c9d803086101f66d9debb80",
+            "contentFingerprint": "sha256:e4091099ae0fcd8d7d5328334422d5c44d0c22a8b9bc472e2d41084cb1ed6a0f"
+          },
+          {
+            "service": "minio",
+            "container": "minio",
+            "reference": "myscoutee-template-minio:1.4.0-prod",
+            "imageId": "sha256:3edf30950d7f2548f2eb72ba0b00522cf7d30e75ed01b3ca5bc5859871efde2d",
+            "contentFingerprint": "sha256:e1d7e0f483fab204dbcf5e064621162d51e125f9aecf82ec13068000f94729d7"
+          },
+          {
+            "service": "mcp",
+            "container": "mcp",
+            "reference": "myscoutee-template-mcp:1.4.0-prod",
+            "imageId": "sha256:4a29d6a23ffdecefcfc7df145566be3de991feefadfba475f001335e241b97a1",
+            "contentFingerprint": "sha256:4fb6689f2a7b6947be8e559b65a6fc0da00c61fdeb18be58462d84fee25c1871"
+          }
+        ]
+      },
+      "inputAndImageAudit": true,
+      "completeActualDebBytesModesAndOwners": true,
+      "correction": "Restored the native operator bootstrap entry before Firebase setup; four focused routing regressions passed. Rebuilt frontend/nginx and DEB; complete actual DEB audit passed again."
+    }
+  ],
+  "isolationFix": "The template installed Compose file declares name: myscoutee-template. Its status credential volume is myscoutee-template_runtime-status-credentials, separate from the native server project. Application data remains in package-specific bind directories."
+}

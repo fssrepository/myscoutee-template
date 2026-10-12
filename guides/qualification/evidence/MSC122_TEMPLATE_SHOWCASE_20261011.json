@@ -1,0 +1,133 @@
+{
+  "date": "2026-10-11",
+  "templateFrontendRevision": "9d59bf9",
+  "templateParentBaseRevision": "675e59b",
+  "nativeSourceRevision": "bd81ab0c1201ca4ab3ad7b62b8c8593e7925489f",
+  "scope": "Template-owned neutral SmartList example and bundled Gothic landing typography. Native MyScoutee code unchanged by this batch.",
+  "checks": [
+    {
+      "name": "Frontend unit suite",
+      "result": "PASS",
+      "tests": 110,
+      "files": 14,
+      "command": "npm test -- --watch=false"
+    },
+    {
+      "name": "SampleCardTest",
+      "result": "PASS",
+      "tests": 3,
+      "command": "tools/run-backend-junit.sh standard --tests '*SampleCardTest'"
+    },
+    {
+      "name": "API bounded paging and anonymous denial",
+      "result": "PASS",
+      "cases": 2,
+      "initialPageMs": 20,
+      "anonymousDenialMs": 12,
+      "command": "E2E_SERVER_BASE_URL=http://localhost E2E_API_PREFIX=/api node e2e/functional/backend/run.mjs --group showcase --record"
+    },
+    {
+      "name": "Fresh-browser local and HTTP entry + SmartList",
+      "result": "PASS",
+      "assertions": [
+        "public documents",
+        "consent",
+        "Alex demo login",
+        "four neutral cards",
+        "cards/rows/gallery",
+        "view persisted in URL on reload",
+        "session/consent retained on reload",
+        "logout guard",
+        "no handled Angular errors, browser exceptions or failed resources",
+        "local does not call backend; HTTP reads actual API"
+      ],
+      "modules": [
+        "e2e/functional/ui/entry/assert.mjs",
+        "e2e/functional/ui/showcase/assert.mjs"
+      ]
+    },
+    {
+      "name": "Visual inspection",
+      "result": "PASS",
+      "surfaces": [
+        "1440x950 desktop landing and cards",
+        "390x844 mobile cards"
+      ],
+      "font": "UnifrakturMaguntia loaded from local bundled asset; original OFL license included"
+    },
+    {
+      "name": "Mongo query plan",
+      "result": "PASS",
+      "collection": "demo_db.sampleCards",
+      "sort": {
+        "_id": 1
+      },
+      "limit": 12,
+      "returned": 4,
+      "keysExamined": 4,
+      "documentsExamined": 4,
+      "index": "_id_",
+      "stages": [
+        "LIMIT",
+        "FETCH",
+        "IXSCAN"
+      ]
+    },
+    {
+      "name": "Translation audit",
+      "result": "PASS",
+      "languages": [
+        "en",
+        "hu"
+      ],
+      "messages": 1804,
+      "physicalSeedSets": 3
+    }
+  ],
+  "performance": {
+    "cpuSample": [
+      {
+        "name": "myscoutee-template-dev-frontend-sync",
+        "cpu": "5.21%",
+        "memory": "1.36GiB / 15.27GiB"
+      },
+      {
+        "name": "myscoutee-template-dev-profilemanagement",
+        "cpu": "6.14%",
+        "memory": "1.643GiB / 15.27GiB"
+      },
+      {
+        "name": "myscoutee-template-dev-nginx",
+        "cpu": "0.00%",
+        "memory": "34.78MiB / 15.27GiB"
+      },
+      {
+        "name": "myscoutee-template-dev-minio",
+        "cpu": "0.04%",
+        "memory": "86.91MiB / 15.27GiB"
+      },
+      {
+        "name": "myscoutee-template-dev-mongodb-sync",
+        "cpu": "2.59%",
+        "memory": "3.621MiB / 15.27GiB"
+      },
+      {
+        "name": "myscoutee-template-dev-redis",
+        "cpu": "0.51%",
+        "memory": "6.496MiB / 15.27GiB"
+      },
+      {
+        "name": "myscoutee-template-dev-mongodb",
+        "cpu": "1.73%",
+        "memory": "245.1MiB / 15.27GiB"
+      }
+    ],
+    "limit": "Single post-validation dev sample, not a matched stress comparison or proof of performance parity. Java and frontend compilers ran serially under existing watcher ownership; backend JUnit used the authorized isolated runner."
+  },
+  "qualificationLimits": [
+    "Template KVM remains unassembled (step 24).",
+    "Production, installed DEB, Pages and published artifacts are not qualified by these checks.",
+    "The member header remains provisional until the avatar/chat shell steps; admin/operator remain empty guarded shells."
+  ],
+  "reproducingBrowserCheck": "Use the native Chrome helper and entry assert with memberReady: assertShowcase; local:true at http://127.0.0.1:4200, local:false at http://localhost. Stop frontend-sync before starting the local frontend; stop the local owner before restarting frontend-sync."
+}

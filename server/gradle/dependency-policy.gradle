@@ -1,0 +1,6 @@
+// Security fixes not yet included in the Spring Boot 4.0.8 dependency BOM.
+ext['httpclient5.version'] = '5.6.3'
+ext['httpcore5.version'] = '5.4.3'
+ext['tomcat.version'] = '11.0.25'
+ext['opentelemetry.version'] = '1.62.0'
+

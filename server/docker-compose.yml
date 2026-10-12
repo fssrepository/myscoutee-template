@@ -1,0 +1,4 @@
+# Compatibility entrypoint; the complete local dev stack lives in
+# docker-compose-dev.yml.
+include:
+  - docker-compose-dev.yml

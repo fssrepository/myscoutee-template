@@ -1,0 +1,14 @@
+{
+  "name": "public deployment branding",
+  "group": "runtime",
+  "order": 1,
+  "method": "GET",
+  "path": "{{apiPrefix}}/deployment/configuration",
+  "params": {},
+  "headers": {},
+  "expectedStatus": 200,
+  "maxMs": 5000,
+  "qaBranches": [
+    "T-RUNTIME-001"
+  ]
+}

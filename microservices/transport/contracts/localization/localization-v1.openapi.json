@@ -1,0 +1,177 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "MyScoutee internal localization bundle read",
+    "version": "1.0.0",
+    "description": "MSC-121 read-only boundary for the canonical TranslationBundles interface. Global language bundles have REAL/DEMO scope, not actor/workspace authority. The credential grants this read only. Never forward browser-supplied execution context directly. No automatic retries or redirects. HTTPS is required outside an explicitly isolated HTTP lab."
+  },
+  "paths": {
+    "/_internal/v1/localization/bundle": {
+      "get": {
+        "operationId": "getTranslationBundle",
+        "security": [
+          {
+            "localizationRead": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "X-MyScoutee-Session-Mode",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          },
+          {
+            "name": "lang",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "maxLength": 32
+            }
+          },
+          {
+            "name": "acceptLanguage",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "maxLength": 512
+            }
+          },
+          {
+            "name": "version",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "maxLength": 128
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Canonical I18nBundleResponseDto. data is null when version is current or no bundle is available; this is not an empty map. Maximum accepted response is 2 MiB.",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TranslationBundle"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "INVALID_SESSION_MODE or INVALID_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "UNAUTHORIZED: absent, duplicate or wrong read credential",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN: credential does not authorize another path or method",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "LOCALIZATION_UNAVAILABLE: owner failed; no persistence details are exposed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "localizationRead": {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "Dedicated randomly generated localization-read secret (at least 256 bits); store in private deployment secrets, not source or URL. Rotate reader and owner together. This is not a user login token."
+      }
+    },
+    "schemas": {
+      "TranslationBundle": {
+        "type": "object",
+        "required": [
+          "lang",
+          "version",
+          "data"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "lang": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          },
+          "data": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "additionalProperties": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "required": [
+          "code"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "type": "string",
+            "enum": [
+              "INVALID_SESSION_MODE",
+              "INVALID_REQUEST",
+              "UNAUTHORIZED",
+              "FORBIDDEN",
+              "LOCALIZATION_UNAVAILABLE"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

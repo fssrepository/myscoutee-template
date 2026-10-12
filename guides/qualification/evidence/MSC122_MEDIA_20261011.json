@@ -1,0 +1,47 @@
+{
+  "checkpoint": "Template media component selection",
+  "date": "2026-10-11",
+  "parentRevision": "2730d0c506168b920d96e2d8e15dd68208e63a0b",
+  "upstreamRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
+  "tests": {
+    "com.raxim.myscoutee.domain.access.security.MediaPolicyFactsTest": {
+      "tests": "4",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "0.628"
+    },
+    "com.raxim.myscoutee.domain.media.controller.MediaControllerTest": {
+      "tests": "4",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "0.111"
+    },
+    "com.raxim.myscoutee.domain.media.service.MediaAccessPathsTest": {
+      "tests": "4",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "0.003"
+    },
+    "com.raxim.myscoutee.domain.media.service.S3BucketCacheTest": {
+      "tests": "1",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "0.229"
+    }
+  },
+  "performanceEvidence": [
+    "Own draft and public seed reads need no profile/chat database lookup.",
+    "Profile image visibility retains the lightweight account projection and native indexed friendship rule.",
+    "S3 bucket existence is cached between uploads; a removed bucket is revalidated once."
+  ],
+  "limitations": [
+    "Template development is held at this component checkpoint while remaining MyScoutee source separation is completed.",
+    "HTTP security composition, seed, live MinIO, frontend and deployment tests remain pending.",
+    "No template runtime CPU/latency measurement or runtime performance parity is claimed."
+  ],
+  "logSha256": "56d24a1ffcfad45e18162d0b7d98a33435f1e512a3f1dc7bbc0bc42c51fdc812"
+}

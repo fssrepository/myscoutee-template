@@ -1,0 +1,16 @@
+{
+  "name": "public MCP registration uses account consent PKCE refresh and revocation without a client secret",
+  "group": "integrations",
+  "order": 13,
+  "method": "GET",
+  "path": "{{apiPrefix}}/integrations/settings",
+  "headers": {
+    "X-App-Session-Kind": "demo",
+    "X-Demo-User-Id": "{{userId}}"
+  },
+  "expectedStatus": 200,
+  "maxMs": 5000,
+  "qaBranches": [
+    "T-INTEGRATION-004"
+  ]
+}

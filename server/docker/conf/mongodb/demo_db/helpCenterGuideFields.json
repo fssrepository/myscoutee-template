@@ -1,0 +1,922 @@
+[
+  {
+    "_id": "home--member-avatar",
+    "id": "member-avatar",
+    "screenKey": "home",
+    "group": "controls",
+    "i18nKey": "guide.template.home.member-avatar",
+    "order": 0
+  },
+  {
+    "_id": "navigation--navigation-profile",
+    "id": "navigation-profile",
+    "screenKey": "navigation",
+    "group": "controls",
+    "i18nKey": "guide.template.navigation.navigation-profile",
+    "order": 0
+  },
+  {
+    "_id": "navigation--showcase",
+    "id": "showcase",
+    "screenKey": "navigation",
+    "group": "controls",
+    "i18nKey": "guide.template.navigation.showcase",
+    "order": 1
+  },
+  {
+    "_id": "navigation--chat",
+    "id": "chat",
+    "screenKey": "navigation",
+    "group": "controls",
+    "i18nKey": "guide.template.navigation.chat",
+    "order": 2
+  },
+  {
+    "_id": "notifications--notification-list",
+    "id": "notification-list",
+    "screenKey": "notifications",
+    "group": "controls",
+    "i18nKey": "guide.template.notifications.notification-list",
+    "order": 0
+  },
+  {
+    "_id": "notifications--notification-attention-toggle",
+    "id": "notification-attention-toggle",
+    "screenKey": "notifications",
+    "group": "controls",
+    "i18nKey": "guide.template.notifications.notification-attention-toggle",
+    "order": 1
+  },
+  {
+    "_id": "landing.guide--guide-launcher",
+    "id": "guide-launcher",
+    "screenKey": "landing.guide",
+    "group": "card",
+    "i18nKey": "guide.landing.guide.guide-launcher",
+    "order": 1
+  },
+  {
+    "_id": "landing.entry--entry-login",
+    "id": "entry-login",
+    "screenKey": "landing.entry",
+    "group": "controls",
+    "i18nKey": "guide.template.entry.login",
+    "order": 0
+  },
+  {
+    "_id": "landing.setup--help",
+    "id": "help",
+    "screenKey": "landing.setup",
+    "group": "fields",
+    "i18nKey": "guide.landing.setup.help",
+    "order": 0
+  },
+  {
+    "_id": "landing.setup--location",
+    "id": "location",
+    "screenKey": "landing.setup",
+    "group": "fields",
+    "i18nKey": "guide.landing.setup.location",
+    "order": 1
+  },
+  {
+    "_id": "landing.setup--notifications",
+    "id": "notifications",
+    "screenKey": "landing.setup",
+    "group": "fields",
+    "i18nKey": "guide.landing.setup.notifications",
+    "order": 2
+  },
+  {
+    "_id": "landing.setup--permissions-save",
+    "id": "permissions-save",
+    "screenKey": "landing.setup",
+    "group": "fields",
+    "i18nKey": "guide.landing.setup.permissions-save",
+    "order": 3
+  },
+  {
+    "_id": "landing.setup--install",
+    "id": "install",
+    "screenKey": "landing.setup",
+    "group": "fields",
+    "i18nKey": "guide.landing.setup.install",
+    "order": 4
+  },
+  {
+    "_id": "profile.integrations--integration-base-url",
+    "id": "integration-base-url",
+    "screenKey": "profile.integrations",
+    "group": "card",
+    "i18nKey": "guide.profile.integrations.integration-base-url",
+    "order": 1
+  },
+  {
+    "_id": "profile.integrations--integration-tokens",
+    "id": "integration-tokens",
+    "screenKey": "profile.integrations",
+    "group": "card",
+    "i18nKey": "guide.profile.integrations.integration-tokens",
+    "order": 2
+  },
+  {
+    "_id": "profile.integrations--generate-integration-token",
+    "id": "generate-integration-token",
+    "screenKey": "profile.integrations",
+    "group": "menus",
+    "i18nKey": "guide.profile.integrations.generate-integration-token",
+    "order": 3
+  },
+  {
+    "_id": "profile.integrations--integration-token-row",
+    "id": "integration-token-row",
+    "screenKey": "profile.integrations",
+    "group": "card",
+    "i18nKey": "guide.profile.integrations.integration-token-row",
+    "order": 4
+  },
+  {
+    "_id": "profile.integrations--integration-token-actions",
+    "id": "integration-token-actions",
+    "screenKey": "profile.integrations",
+    "group": "menus",
+    "i18nKey": "guide.profile.integrations.integration-token-actions",
+    "order": 5
+  },
+  {
+    "_id": "profile.integrations--mcp-purpose",
+    "id": "mcp-purpose",
+    "screenKey": "profile.integrations",
+    "group": "fields",
+    "i18nKey": "guide.profile.integrations.mcp-purpose",
+    "order": 6
+  },
+  {
+    "_id": "profile.integrations--mcp-url",
+    "id": "mcp-url",
+    "screenKey": "profile.integrations",
+    "group": "fields",
+    "i18nKey": "guide.profile.integrations.mcp-url",
+    "order": 7
+  },
+  {
+    "_id": "profile.integrations--mcp-permissions",
+    "id": "mcp-permissions",
+    "screenKey": "profile.integrations",
+    "group": "fields",
+    "i18nKey": "guide.profile.integrations.mcp-permissions",
+    "order": 8
+  },
+  {
+    "_id": "profile.integrations--mcp-connection",
+    "id": "mcp-connection",
+    "screenKey": "profile.integrations",
+    "group": "fields",
+    "i18nKey": "guide.profile.integrations.mcp-connection",
+    "order": 9
+  },
+  {
+    "_id": "profile.integrations--mcp-connection-actions",
+    "id": "mcp-connection-actions",
+    "screenKey": "profile.integrations",
+    "group": "fields",
+    "i18nKey": "guide.profile.integrations.mcp-connection-actions",
+    "order": 10
+  },
+  {
+    "_id": "profile.integrations--mcp-advanced",
+    "id": "mcp-advanced",
+    "screenKey": "profile.integrations",
+    "group": "fields",
+    "i18nKey": "guide.profile.integrations.mcp-advanced",
+    "order": 11
+  },
+  {
+    "_id": "profile.integrations--integration-help",
+    "id": "integration-help",
+    "screenKey": "profile.integrations",
+    "group": "menus",
+    "i18nKey": "guide.profile.integrations.integration-help",
+    "order": 14
+  },
+  {
+    "_id": "profile.integrations--close",
+    "id": "close",
+    "screenKey": "profile.integrations",
+    "group": "popup",
+    "i18nKey": "guide.profile.integrations.close",
+    "order": 15
+  },
+  {
+    "_id": "profile.integrations--integration-token-access",
+    "id": "integration-token-access",
+    "screenKey": "profile.integrations",
+    "group": "menus",
+    "i18nKey": "guide.profile.integrations.integration-token-access",
+    "order": 23
+  },
+  {
+    "_id": "profile.integrations--mcp-main-access",
+    "id": "mcp-main-access",
+    "screenKey": "profile.integrations",
+    "group": "menus",
+    "i18nKey": "guide.profile.integrations.mcp-main-access",
+    "order": 24
+  },
+  {
+    "_id": "profile.integrations--mcp-client-access",
+    "id": "mcp-client-access",
+    "screenKey": "profile.integrations",
+    "group": "menus",
+    "i18nKey": "guide.profile.integrations.mcp-client-access",
+    "order": 25
+  },
+  {
+    "_id": "profile.integrations--integration-access-save",
+    "id": "integration-access-save",
+    "screenKey": "profile.integrations",
+    "group": "menus",
+    "i18nKey": "guide.profile.integrations.integration-access-save",
+    "order": 26
+  },
+  {
+    "_id": "profile.integration-access--integration-access-level",
+    "id": "integration-access-level",
+    "screenKey": "profile.integration-access",
+    "group": "fields",
+    "i18nKey": "guide.profile.integration-access.integration-access-level",
+    "order": 0
+  },
+  {
+    "_id": "profile.integration-access--integration-access-description",
+    "id": "integration-access-description",
+    "screenKey": "profile.integration-access",
+    "group": "fields",
+    "i18nKey": "guide.profile.integration-access.integration-access-description",
+    "order": 1
+  },
+  {
+    "_id": "profile.integration-access--integration-access-apply",
+    "id": "integration-access-apply",
+    "screenKey": "profile.integration-access",
+    "group": "menus",
+    "i18nKey": "guide.profile.integration-access.integration-access-apply",
+    "order": 2
+  },
+  {
+    "_id": "profile.integration-access--close",
+    "id": "close",
+    "screenKey": "profile.integration-access",
+    "group": "popup",
+    "i18nKey": "guide.profile.integration-access.close",
+    "order": 3
+  },
+  {
+    "_id": "profile.integration-help--integration-help-setup",
+    "id": "integration-help-setup",
+    "screenKey": "profile.integration-help",
+    "group": "card",
+    "i18nKey": "guide.profile.integration-help.integration-help-setup",
+    "order": 0
+  },
+  {
+    "_id": "profile.integration-help--integration-help-levels",
+    "id": "integration-help-levels",
+    "screenKey": "profile.integration-help",
+    "group": "card",
+    "i18nKey": "guide.profile.integration-help.integration-help-levels",
+    "order": 1
+  },
+  {
+    "_id": "profile.integration-help--integration-help-roles",
+    "id": "integration-help-roles",
+    "screenKey": "profile.integration-help",
+    "group": "card",
+    "i18nKey": "guide.profile.integration-help.integration-help-roles",
+    "order": 3
+  },
+  {
+    "_id": "profile.integration-help--integration-help-manual",
+    "id": "integration-help-manual",
+    "screenKey": "profile.integration-help",
+    "group": "card",
+    "i18nKey": "guide.profile.integration-help.integration-help-manual",
+    "order": 4
+  },
+  {
+    "_id": "profile.integration-help--close",
+    "id": "close",
+    "screenKey": "profile.integration-help",
+    "group": "popup",
+    "i18nKey": "guide.profile.integration-help.close",
+    "order": 5
+  },
+  {
+    "_id": "profile.mcp-authorization--mcp-authorize-client",
+    "id": "mcp-authorize-client",
+    "screenKey": "profile.mcp-authorization",
+    "order": 1,
+    "i18nKey": "guide.profile.mcp-authorization.mcp-authorize-client",
+    "group": "form"
+  },
+  {
+    "_id": "profile.mcp-authorization--mcp-authorize-profile",
+    "id": "mcp-authorize-profile",
+    "screenKey": "profile.mcp-authorization",
+    "order": 2,
+    "i18nKey": "guide.profile.mcp-authorization.mcp-authorize-profile",
+    "group": "form"
+  },
+  {
+    "_id": "profile.mcp-authorization--mcp-authorize-access",
+    "id": "mcp-authorize-access",
+    "screenKey": "profile.mcp-authorization",
+    "order": 3,
+    "i18nKey": "guide.profile.mcp-authorization.mcp-authorize-access",
+    "group": "form"
+  },
+  {
+    "_id": "profile.mcp-authorization--mcp-authorize-actions",
+    "id": "mcp-authorize-actions",
+    "screenKey": "profile.mcp-authorization",
+    "order": 4,
+    "i18nKey": "guide.profile.mcp-authorization.mcp-authorize-actions",
+    "group": "form"
+  },
+  {
+    "_id": "profile.mcp-authorization--close",
+    "id": "close",
+    "screenKey": "profile.mcp-authorization",
+    "order": 5,
+    "i18nKey": "guide.profile.mcp-authorization.close",
+    "group": "popup"
+  },
+  {
+    "_id": "profile.mcp-advanced--mcp-client-id",
+    "id": "mcp-client-id",
+    "screenKey": "profile.mcp-advanced",
+    "order": 1,
+    "i18nKey": "guide.profile.mcp-advanced.mcp-client-id",
+    "group": "form"
+  },
+  {
+    "_id": "profile.mcp-advanced--mcp-client-access",
+    "id": "mcp-client-access",
+    "screenKey": "profile.mcp-advanced",
+    "order": 2,
+    "i18nKey": "guide.profile.mcp-advanced.mcp-client-access",
+    "group": "form"
+  },
+  {
+    "_id": "profile.mcp-advanced--mcp-client-secret",
+    "id": "mcp-client-secret",
+    "screenKey": "profile.mcp-advanced",
+    "order": 3,
+    "i18nKey": "guide.profile.mcp-advanced.mcp-client-secret",
+    "group": "form"
+  },
+  {
+    "_id": "profile.mcp-advanced--mcp-manual-keys",
+    "id": "mcp-manual-keys",
+    "screenKey": "profile.mcp-advanced",
+    "order": 4,
+    "i18nKey": "guide.profile.mcp-advanced.mcp-manual-keys",
+    "group": "form"
+  },
+  {
+    "_id": "profile.mcp-advanced--mcp-generate",
+    "id": "mcp-generate",
+    "screenKey": "profile.mcp-advanced",
+    "order": 5,
+    "i18nKey": "guide.profile.mcp-advanced.mcp-generate",
+    "group": "form"
+  },
+  {
+    "_id": "profile.mcp-advanced--mcp-client-revoke",
+    "id": "mcp-client-revoke",
+    "screenKey": "profile.mcp-advanced",
+    "order": 6,
+    "i18nKey": "guide.profile.mcp-advanced.mcp-client-revoke",
+    "group": "form"
+  },
+  {
+    "_id": "profile.mcp-advanced--close",
+    "id": "close",
+    "screenKey": "profile.mcp-advanced",
+    "order": 7,
+    "i18nKey": "guide.profile.mcp-advanced.close",
+    "group": "popup"
+  },
+  {
+    "_id": "profile.mcp-details--mcp-client-id",
+    "id": "mcp-client-id",
+    "screenKey": "profile.mcp-details",
+    "order": 1,
+    "i18nKey": "guide.profile.mcp-details.mcp-client-id",
+    "group": "form"
+  },
+  {
+    "_id": "profile.mcp-details--mcp-client-access",
+    "id": "mcp-client-access",
+    "screenKey": "profile.mcp-details",
+    "order": 2,
+    "i18nKey": "guide.profile.mcp-details.mcp-client-access",
+    "group": "form"
+  },
+  {
+    "_id": "profile.mcp-details--mcp-client-secret",
+    "id": "mcp-client-secret",
+    "screenKey": "profile.mcp-details",
+    "order": 3,
+    "i18nKey": "guide.profile.mcp-details.mcp-client-secret",
+    "group": "form"
+  },
+  {
+    "_id": "profile.mcp-details--mcp-client-callback",
+    "id": "mcp-client-callback",
+    "screenKey": "profile.mcp-details",
+    "order": 4,
+    "i18nKey": "guide.profile.mcp-details.mcp-client-callback",
+    "group": "form"
+  },
+  {
+    "_id": "profile.mcp-details--close",
+    "id": "close",
+    "screenKey": "profile.mcp-details",
+    "order": 5,
+    "i18nKey": "guide.profile.mcp-details.close",
+    "group": "popup"
+  },
+  {
+    "_id": "operator.configuration--operator-save-branding",
+    "id": "operator-save-branding",
+    "screenKey": "operator.configuration",
+    "group": "menus",
+    "i18nKey": "guide.operator.configuration.operator-save-branding",
+    "order": 0
+  },
+  {
+    "_id": "operator.configuration--operator-save-admin-emails",
+    "id": "operator-save-admin-emails",
+    "screenKey": "operator.configuration",
+    "group": "menus",
+    "i18nKey": "guide.operator.configuration.operator-save-admin-emails",
+    "order": 1
+  },
+  {
+    "_id": "operator.configuration--operator-save-privacy-contact",
+    "id": "operator-save-privacy-contact",
+    "screenKey": "operator.configuration",
+    "group": "menus",
+    "i18nKey": "guide.operator.configuration.operator-save-privacy-contact",
+    "order": 2
+  },
+  {
+    "_id": "operator.configuration--operator-save-firebase",
+    "id": "operator-save-firebase",
+    "screenKey": "operator.configuration",
+    "group": "menus",
+    "i18nKey": "guide.operator.configuration.operator-save-firebase",
+    "order": 3
+  },
+  {
+    "_id": "operator.configuration--operator-save-integration",
+    "id": "operator-save-integration",
+    "screenKey": "operator.configuration",
+    "group": "menus",
+    "i18nKey": "guide.operator.configuration.operator-save-integration",
+    "order": 4
+  },
+  {
+    "_id": "operator.configuration--operator-save-social-links",
+    "id": "operator-save-social-links",
+    "screenKey": "operator.configuration",
+    "group": "menus",
+    "i18nKey": "guide.operator.configuration.operator-save-social-links",
+    "order": 5
+  },
+  {
+    "_id": "operator.configuration--close",
+    "id": "close",
+    "screenKey": "operator.configuration",
+    "group": "popup",
+    "i18nKey": "guide.operator.configuration.close",
+    "order": 6
+  },
+  {
+    "_id": "operator.configuration--operator-save-tls",
+    "id": "operator-save-tls",
+    "screenKey": "operator.configuration",
+    "group": "menus",
+    "i18nKey": "guide.operator.configuration.operator-save-tls",
+    "order": 7
+  },
+  {
+    "_id": "operator.updates--overview",
+    "id": "overview",
+    "screenKey": "operator.updates",
+    "group": "menus",
+    "i18nKey": "guide.operator.updates.overview",
+    "order": 0
+  },
+  {
+    "_id": "operator.updates--operator-refresh-update",
+    "id": "operator-refresh-update",
+    "screenKey": "operator.updates",
+    "group": "menus",
+    "i18nKey": "guide.operator.updates.operator-refresh-update",
+    "order": 1
+  },
+  {
+    "_id": "operator.updates--operator-apply-update",
+    "id": "operator-apply-update",
+    "screenKey": "operator.updates",
+    "group": "menus",
+    "i18nKey": "guide.operator.updates.operator-apply-update",
+    "order": 2
+  },
+  {
+    "_id": "operator.updates--operator-rollback-update",
+    "id": "operator-rollback-update",
+    "screenKey": "operator.updates",
+    "group": "menus",
+    "i18nKey": "guide.operator.updates.operator-rollback-update",
+    "order": 3
+  },
+  {
+    "_id": "operator.updates--close",
+    "id": "close",
+    "screenKey": "operator.updates",
+    "group": "popup",
+    "i18nKey": "guide.operator.updates.close",
+    "order": 4
+  },
+  {
+    "_id": "chat.call--call-participants",
+    "id": "call-participants",
+    "screenKey": "chat.call",
+    "group": "card",
+    "i18nKey": "guide.chat.call.call-participants",
+    "order": 0
+  },
+  {
+    "_id": "chat.call--call-follow-speakers",
+    "id": "call-follow-speakers",
+    "screenKey": "chat.call",
+    "group": "menus",
+    "i18nKey": "guide.chat.call.call-follow-speakers",
+    "order": 1
+  },
+  {
+    "_id": "chat.call--call-self-mute",
+    "id": "call-self-mute",
+    "screenKey": "chat.call",
+    "group": "card",
+    "i18nKey": "guide.chat.call.call-self-mute",
+    "order": 2
+  },
+  {
+    "_id": "chat.call--call-self-camera",
+    "id": "call-self-camera",
+    "screenKey": "chat.call",
+    "group": "card",
+    "i18nKey": "guide.chat.call.call-self-camera",
+    "order": 3
+  },
+  {
+    "_id": "chat.call--call-peer-mute",
+    "id": "call-peer-mute",
+    "screenKey": "chat.call",
+    "group": "card",
+    "i18nKey": "guide.chat.call.call-peer-mute",
+    "order": 4
+  },
+  {
+    "_id": "chat.call--call-peer-video",
+    "id": "call-peer-video",
+    "screenKey": "chat.call",
+    "group": "card",
+    "i18nKey": "guide.chat.call.call-peer-video",
+    "order": 5
+  },
+  {
+    "_id": "chat.call--call-admin-mute",
+    "id": "call-admin-mute",
+    "screenKey": "chat.call",
+    "group": "card",
+    "i18nKey": "guide.chat.call.call-admin-mute",
+    "order": 6
+  },
+  {
+    "_id": "chat.call--call-zoom",
+    "id": "call-zoom",
+    "screenKey": "chat.call",
+    "group": "card",
+    "i18nKey": "guide.chat.call.call-zoom",
+    "order": 7
+  },
+  {
+    "_id": "chat.call--call-spectrum",
+    "id": "call-spectrum",
+    "screenKey": "chat.call",
+    "group": "card",
+    "i18nKey": "guide.chat.call.call-spectrum",
+    "order": 8
+  },
+  {
+    "_id": "chat.call--call-accept",
+    "id": "call-accept",
+    "screenKey": "chat.call",
+    "group": "card",
+    "i18nKey": "guide.chat.call.call-accept",
+    "order": 9
+  },
+  {
+    "_id": "chat.call--call-decline",
+    "id": "call-decline",
+    "screenKey": "chat.call",
+    "group": "card",
+    "i18nKey": "guide.chat.call.call-decline",
+    "order": 10
+  },
+  {
+    "_id": "chat.call--call-microphone",
+    "id": "call-microphone",
+    "screenKey": "chat.call",
+    "group": "card",
+    "i18nKey": "guide.chat.call.call-microphone",
+    "order": 11
+  },
+  {
+    "_id": "chat.call--call-camera",
+    "id": "call-camera",
+    "screenKey": "chat.call",
+    "group": "card",
+    "i18nKey": "guide.chat.call.call-camera",
+    "order": 12
+  },
+  {
+    "_id": "chat.call--call-volume",
+    "id": "call-volume",
+    "screenKey": "chat.call",
+    "group": "card",
+    "i18nKey": "guide.chat.call.call-volume",
+    "order": 13
+  },
+  {
+    "_id": "chat.call--call-play-audio",
+    "id": "call-play-audio",
+    "screenKey": "chat.call",
+    "group": "card",
+    "i18nKey": "guide.chat.call.call-play-audio",
+    "order": 14
+  },
+  {
+    "_id": "chat.call--call-hangup",
+    "id": "call-hangup",
+    "screenKey": "chat.call",
+    "group": "card",
+    "i18nKey": "guide.chat.call.call-hangup",
+    "order": 15
+  },
+  {
+    "_id": "chat.call--close",
+    "id": "close",
+    "screenKey": "chat.call",
+    "group": "popup",
+    "i18nKey": "guide.chat.call.close",
+    "order": 16
+  },
+  {
+    "_id": "chat.call.volume--master-volume",
+    "id": "master-volume",
+    "screenKey": "chat.call.volume",
+    "group": "card",
+    "i18nKey": "guide.chat.call.volume.master-volume",
+    "order": 0
+  },
+  {
+    "_id": "chat.call.volume--master-mute",
+    "id": "master-mute",
+    "screenKey": "chat.call.volume",
+    "group": "card",
+    "i18nKey": "guide.chat.call.volume.master-mute",
+    "order": 1
+  },
+  {
+    "_id": "chat.call.volume--self-camera",
+    "id": "self-camera",
+    "screenKey": "chat.call.volume",
+    "group": "card",
+    "i18nKey": "guide.chat.call.volume.self-camera",
+    "order": 2
+  },
+  {
+    "_id": "chat.call.volume--peer-volume",
+    "id": "peer-volume",
+    "screenKey": "chat.call.volume",
+    "group": "card",
+    "i18nKey": "guide.chat.call.volume.peer-volume",
+    "order": 3
+  },
+  {
+    "_id": "chat.call.volume--peer-mute",
+    "id": "peer-mute",
+    "screenKey": "chat.call.volume",
+    "group": "card",
+    "i18nKey": "guide.chat.call.volume.peer-mute",
+    "order": 4
+  },
+  {
+    "_id": "chat.call.volume--peer-video",
+    "id": "peer-video",
+    "screenKey": "chat.call.volume",
+    "group": "card",
+    "i18nKey": "guide.chat.call.volume.peer-video",
+    "order": 5
+  },
+  {
+    "_id": "chat.call.volume--close",
+    "id": "close",
+    "screenKey": "chat.call.volume",
+    "group": "popup",
+    "i18nKey": "guide.chat.call.volume.close",
+    "order": 6
+  },
+  {
+    "_id": "profile--profile-photo",
+    "id": "profile-photo",
+    "screenKey": "profile",
+    "group": "card",
+    "i18nKey": "guide.profile.editor.profile.photo",
+    "order": 0
+  },
+  {
+    "_id": "profile--profile-api-integration",
+    "id": "profile-api-integration",
+    "screenKey": "profile",
+    "group": "menus",
+    "i18nKey": "guide.profile.editor.api-integration",
+    "order": 1
+  },
+  {
+    "_id": "profile--full-name",
+    "id": "full-name",
+    "screenKey": "profile",
+    "group": "card",
+    "i18nKey": "guide.profile.editor.profile-name",
+    "order": 2
+  },
+  {
+    "_id": "profile--name",
+    "id": "name",
+    "screenKey": "profile",
+    "group": "card",
+    "i18nKey": "guide.template.profile.name",
+    "order": 3
+  },
+  {
+    "_id": "profile--about",
+    "id": "about",
+    "screenKey": "profile",
+    "group": "fields",
+    "i18nKey": "guide.profile.editor.about",
+    "order": 4
+  },
+  {
+    "_id": "profile--profile-status:trigger",
+    "id": "profile-status:trigger",
+    "screenKey": "profile",
+    "group": "menus",
+    "i18nKey": "guide.profile.editor.profile-status.trigger",
+    "order": 5
+  },
+  {
+    "_id": "profile--profile-save",
+    "id": "profile-save",
+    "screenKey": "profile",
+    "group": "card",
+    "i18nKey": "guide.profile.editor.profile-save",
+    "order": 6
+  },
+  {
+    "_id": "profile--close",
+    "id": "close",
+    "screenKey": "profile",
+    "group": "popup",
+    "i18nKey": "guide.common.close",
+    "order": 7
+  },
+  {
+    "_id": "profile--image-preview",
+    "id": "image-preview",
+    "screenKey": "profile",
+    "group": "fields",
+    "i18nKey": "guide.profile.editor.image-preview",
+    "order": 8
+  },
+  {
+    "_id": "profile--image-upload",
+    "id": "image-upload",
+    "screenKey": "profile",
+    "group": "fields",
+    "i18nKey": "guide.profile.editor.image-upload",
+    "order": 9
+  },
+  {
+    "_id": "profile--image-replace",
+    "id": "image-replace",
+    "screenKey": "profile",
+    "group": "fields",
+    "i18nKey": "guide.profile.editor.image-replace",
+    "order": 10
+  },
+  {
+    "_id": "profile--image-copy",
+    "id": "image-copy",
+    "screenKey": "profile",
+    "group": "fields",
+    "i18nKey": "guide.profile.editor.image-copy",
+    "order": 11
+  },
+  {
+    "_id": "profile--image-remove",
+    "id": "image-remove",
+    "screenKey": "profile",
+    "group": "fields",
+    "i18nKey": "guide.profile.editor.image-remove",
+    "order": 12
+  },
+  {
+    "_id": "profile--image-pages",
+    "id": "image-pages",
+    "screenKey": "profile",
+    "group": "fields",
+    "i18nKey": "guide.profile.editor.image-pages",
+    "order": 13
+  },
+  {
+    "_id": "chat--chat-list",
+    "id": "chat-list",
+    "screenKey": "chat",
+    "group": "controls",
+    "i18nKey": "guide.template.chat.chat-list",
+    "order": 0
+  },
+  {
+    "_id": "chat--chat-compose",
+    "id": "chat-compose",
+    "screenKey": "chat",
+    "group": "card",
+    "i18nKey": "guide.chats.chat-compose",
+    "order": 1
+  },
+  {
+    "_id": "chat--chat-send",
+    "id": "chat-send",
+    "screenKey": "chat",
+    "group": "card",
+    "i18nKey": "guide.chats.chat-send",
+    "order": 2
+  },
+  {
+    "_id": "chat--chat-message-actions",
+    "id": "chat-message-actions",
+    "screenKey": "chat",
+    "group": "card",
+    "i18nKey": "guide.chats.chat-actions",
+    "order": 3
+  },
+  {
+    "_id": "chat--chat-call",
+    "id": "chat-call",
+    "screenKey": "chat",
+    "group": "menus",
+    "i18nKey": "guide.chats.chat-call",
+    "order": 4
+  },
+  {
+    "_id": "chat--chat-header-members",
+    "id": "chat-header-members",
+    "screenKey": "chat",
+    "group": "menus",
+    "i18nKey": "guide.event.chat.chat-members",
+    "order": 5
+  },
+  {
+    "_id": "chat--chat-header-pins",
+    "id": "chat-header-pins",
+    "screenKey": "chat",
+    "group": "controls",
+    "i18nKey": "guide.template.chat.chat-pins",
+    "order": 6
+  },
+  {
+    "_id": "chat--close",
+    "id": "close",
+    "screenKey": "chat",
+    "group": "popup",
+    "i18nKey": "guide.common.close",
+    "order": 7
+  }
+]

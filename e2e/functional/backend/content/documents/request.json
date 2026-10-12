@@ -1,0 +1,19 @@
+{
+  "name": "seeded help privacy terms and explanation revisions",
+  "group": "content",
+  "order": 4,
+  "method": "GET",
+  "path": "{{apiPrefix}}/help/active",
+  "params": {
+    "lang": "en"
+  },
+  "headers": {
+    "X-App-Session-Kind": "demo",
+    "X-Demo-User-Id": "{{userId}}"
+  },
+  "expectedStatus": 200,
+  "maxMs": 5000,
+  "qaBranches": [
+    "T-CONTENT-001"
+  ]
+}

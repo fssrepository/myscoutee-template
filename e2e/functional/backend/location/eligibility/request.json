@@ -1,0 +1,17 @@
+{
+  "name": "valid German coordinates and invalid coordinate rejection",
+  "group": "location",
+  "order": 7,
+  "method": "GET",
+  "path": "{{apiPrefix}}/auth/eligibility",
+  "params": {
+    "latitude": 52.52,
+    "longitude": 13.405
+  },
+  "headers": {},
+  "expectedStatus": 200,
+  "maxMs": 5000,
+  "qaBranches": [
+    "T-LOCATION-001"
+  ]
+}

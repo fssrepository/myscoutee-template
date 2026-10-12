@@ -1,0 +1,44 @@
+[
+  {
+    "_id": "deployment-configuration",
+    "version": 0,
+    "schemaVersion": 5,
+    "branding": {
+      "productName": "MyScoutee",
+      "logoCharacterIndex": 0,
+      "homeLabel": "Your preferences come first",
+      "logoUrl": "assets/logo/heart.webp",
+      "revision": 0
+    },
+    "socialLinks": [],
+    "privacyContact": {
+      "dataControllerName": "",
+      "privacyContactEmail": ""
+    },
+    "integration": {
+      "publicBaseUrl": null
+    },
+    "firebase": {
+      "projectId": "",
+      "revision": 0,
+      "active": false,
+      "authenticationTestedRevision": null,
+      "authenticationTestedAt": null,
+      "messagingTestedRevision": null,
+      "messagingTestedAt": null,
+      "activatedAt": null,
+      "publicClient": {
+        "apiKey": "",
+        "authDomain": "",
+        "storageBucket": "",
+        "messagingSenderId": "",
+        "appId": "",
+        "measurementId": "",
+        "vapidKey": ""
+      },
+      "authenticationCredentialEnvelope": null,
+      "messagingCredentialEnvelope": null
+    },
+    "updatedAt": null
+  }
+]

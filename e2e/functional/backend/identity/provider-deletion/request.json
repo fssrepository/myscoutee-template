@@ -1,0 +1,16 @@
+{
+  "name": "public provider-deletion status and unconfigured callback rejection",
+  "group": "identity",
+  "order": 18,
+  "method": "GET",
+  "path": "{{apiPrefix}}/auth/facebook/data-deletion/status",
+  "params": {
+    "code": "<script>qa</script>"
+  },
+  "headers": {},
+  "expectedStatus": 200,
+  "maxMs": 5000,
+  "qaBranches": [
+    "T-IDENTITY-004"
+  ]
+}

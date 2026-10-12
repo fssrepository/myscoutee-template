@@ -1,0 +1,51 @@
+{
+  "task": "30",
+  "status": "DONE",
+  "date": "2026-10-12",
+  "scope": "Documentation only; existing renderer reused, no application build or runtime restart.",
+  "pdfs": [
+    {
+      "repository": "myscoutee-template",
+      "file": "guides/manuals/MyScoutee_Template_Getting_Started_EN.pdf",
+      "pages": 9,
+      "bytes": 312901,
+      "sha256": "2f67179fd0a90156f64b34af2f9cc1dc44efe94036d9acbd69f5ca4a6605a083"
+    },
+    {
+      "repository": "myscoutee-components",
+      "file": "guides/manuals/MyScoutee_Components_Guide_EN.pdf",
+      "pages": 10,
+      "bytes": 424759,
+      "sha256": "d1c08e8ee3bb3b414c31c24eddd3e3a4c38a12ccea7a072d0ccc2cc838b3a012"
+    }
+  ],
+  "verification": {
+    "htmlMetadataAndInternalLinks": "checked by existing renderer",
+    "guideLinks": 78,
+    "missingLocalTargets": 0,
+    "catalogueComponentsPreserved": 33,
+    "pdfWordsOutsidePages": 0,
+    "visualReview": "All pages reviewed as rendered contact sheets; revised control/contents and component example/list pages reviewed separately.",
+    "coverLogo": "Original MyScoutee logo copied unchanged into both manuals; regenerated PDF covers visually checked."
+  },
+  "readmes": {
+    "templateLines": 47,
+    "componentsLines": 47,
+    "sameComponentsPdfLinked": true
+  },
+  "documentedCommands": "Matched to existing setup, Compose, seed, JUnit, KVM and packaging entry points; not executed as runtime operations.",
+  "publishedDocuments": [
+    {
+      "repository": "myscoutee-template",
+      "revision": "241128a",
+      "sha256": "2f67179fd0a90156f64b34af2f9cc1dc44efe94036d9acbd69f5ca4a6605a083",
+      "remoteMatchesLocal": true
+    },
+    {
+      "repository": "myscoutee-components",
+      "revision": "0840a36",
+      "sha256": "d1c08e8ee3bb3b414c31c24eddd3e3a4c38a12ccea7a072d0ccc2cc838b3a012",
+      "remoteMatchesLocal": true
+    }
+  ]
+}

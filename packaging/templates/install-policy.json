@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "ownedDirectories": [],
+  "migrateOwnership": [],
+  "environmentDefaults": {
+    "OPERATOR_CONFIGURATION_MASTER_KEY_PATH": "/etc/myscoutee/configuration/deployment-master-key",
+    "OPERATOR_CONFIGURATION_KEY_DIR_HOST": "/etc/myscoutee-template/configuration",
+    "MYSCOUTEE_UPDATE_ENABLED": "false",
+    "MYSCOUTEE_UPDATE_CACHE_DIR": "/var/cache/myscoutee-template-update",
+    "MYSCOUTEE_UPDATE_AUDIT_DIR": "/var/log/myscoutee-template/update",
+    "MYSCOUTEE_UPDATE_RELEASE_PUBLIC_KEY": "/etc/myscoutee-template/update/release-public-key.pem",
+    "MYSCOUTEE_UPDATE_MAX_ARTIFACT_BYTES": "4294967296",
+    "MYSCOUTEE_UPDATE_STAGING_SAFETY_RESERVE_BYTES": "536870912",
+    "MYSCOUTEE_UPDATE_MIN_FREE_BYTES": "536870912",
+    "MYSCOUTEE_UPDATE_HEALTH_TIMEOUT_SECONDS": "300",
+    "MYSCOUTEE_UPDATE_CACHE_RETENTION_JOBS": "2",
+    "FIREBASE_ENABLED": "false"
+  },
+  "freshSecrets": [
+    {
+      "key": "MONGO_INITDB_ROOT_PASSWORD",
+      "encoding": "hex",
+      "prefix": ""
+    },
+    {
+      "key": "MONGO_APP_PASSWORD",
+      "encoding": "hex",
+      "prefix": ""
+    },
+    {
+      "key": "MINIO_ROOT_PASSWORD",
+      "encoding": "hex",
+      "prefix": ""
+    }
+  ],
+  "ensureSecrets": [],
+  "requiredMongoCollections": [
+    "notificationRuleConfigs",
+    "countryPartitions",
+    "i18n_messages",
+    "i18n_bundles",
+    "helpCenterRevisions",
+    "helpCenterGuideFields",
+    "accessPolicyDefinitions",
+    "deploymentConfigurations",
+    "appSettings"
+  ],
+  "mongoSeedFallback": "demo_db:*;production_db:accessPolicyDefinitions,appSettings,countryPartitions,deploymentConfigurations,helpCenterGuideFields,helpCenterRevisions,i18n_bundles,i18n_messages,notificationRuleConfigs",
+  "replicaSetDefaults": "\n# Replica set support\nMONGO_REPLICA_SET_ENABLED=true\nMONGO_REPLICA_SET_NAME=rs0\nMONGO_REPLICA_SET_HOST=mongodb:27017\nMONGO_REPLICA_SET_INIT_RETRIES=60\nMONGO_REPLICA_SET_INIT_DELAY_SECONDS=2\n",
+  "installationMessage": "Template deployment files are ready.\nSet the deployment environment under /etc/myscoutee-template, configure TLS and install your Firebase credentials if enabled.\nStart the application with: systemctl start myscoutee-template.service\nThe shown-once deployment-local Operator credential remains valid for subsequent Operator logins. The password itself is not single-use.\n",
+  "runtimeIdentityMigrations": [
+    {
+      "maximumVersion": "1.0.0",
+      "uid": 10001,
+      "gid": 10001
+    }
+  ]
+}

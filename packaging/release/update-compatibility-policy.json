@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "requirements": [
+    {
+      "releaseAtLeast": "1.4.0-qa.1",
+      "installedAtLeast": "1.4.0-qa.1",
+      "reason": "The 1.0.0 runtime identity changes from 10001 to 10002. Upgrade it once with the signed client installer, which stops the old stack and migrates the account and scoped file ownership. Subsequent in-app updates use the current runtime identity."
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+[
+  {
+    "id": "entry/showcase",
+    "script": "showcase/run.mjs",
+    "qaBranches": [
+      "T-IDENTITY-001",
+      "T-SMARTLIST-001"
+    ]
+  },
+  {
+    "id": "chat/lifecycle",
+    "script": "chat/run.mjs",
+    "qaBranches": [
+      "T-CHAT-001",
+      "T-CHAT-002"
+    ],
+    "localScript": "chat/run-local.mjs"
+  },
+  {
+    "id": "profile/avatar",
+    "script": "profile-editor/run.mjs",
+    "qaBranches": [
+      "T-PROFILE-001",
+      "T-PROFILE-002"
+    ]
+  },
+  {
+    "id": "settings/lifecycle",
+    "script": "settings/run.mjs",
+    "qaBranches": [
+      "T-SETTINGS-001"
+    ]
+  },
+  {
+    "id": "settings/setup",
+    "script": "settings/setup.mjs",
+    "qaBranches": [
+      "T-DEVICE-001"
+    ]
+  },
+  {
+    "id": "settings/onboarding",
+    "script": "settings/onboarding.mjs",
+    "qaBranches": [
+      "T-ONBOARDING-001"
+    ]
+  },
+  {
+    "id": "notifications/inbox",
+    "script": "notifications/run.mjs",
+    "qaBranches": [
+      "T-NOTIFICATION-001"
+    ]
+  },
+  {
+    "id": "guide/member",
+    "script": "guide/run.mjs",
+    "qaBranches": [
+      "T-GUIDE-001"
+    ]
+  },
+  {
+    "id": "integrations/settings",
+    "script": "integrations/run.mjs",
+    "qaBranches": [
+      "T-INTEGRATION-006"
+    ]
+  },
+  {
+    "id": "integrations/guides",
+    "script": "integrations/guide.mjs",
+    "qaBranches": [
+      "T-INTEGRATION-006"
+    ]
+  },
+  {
+    "id": "integrations/authorization",
+    "script": "integrations/authorization.mjs",
+    "local": false,
+    "qaBranches": [
+      "T-INTEGRATION-004",
+      "T-INTEGRATION-006"
+    ]
+  },
+  {
+    "id": "operator/configuration",
+    "script": "operator/configuration.mjs",
+    "qaBranches": [
+      "T-OPERATOR-001",
+      "T-OPERATOR-002"
+    ]
+  },
+  {
+    "id": "operator/updates",
+    "script": "operator/updates.mjs",
+    "qaBranches": [
+      "T-OPERATOR-003"
+    ]
+  },
+  {
+    "id": "admin/minimal-shell",
+    "script": "admin/run.mjs",
+    "qaBranches": [
+      "T-ADMIN-001"
+    ]
+  },
+  {
+    "id": "admin/api",
+    "script": "admin/api.mjs",
+    "qaBranches": [
+      "T-INTEGRATION-007"
+    ]
+  }
+]

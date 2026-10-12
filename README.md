@@ -1,68 +1,48 @@
-<h1 align="center">MyScoutee Template</h1>
+# MyScoutee Template
 
-<p align="center">Common infrastructure from MyScoutee, intended for reuse in new projects.</p>
+A full-stack foundation for substantial applications, extracted from MyScoutee.
+It includes member, administrator and operator interfaces, identity and consent,
+profiles, SmartList, chat and calls, notifications, guides and API/MCP integration.
 
-<p align="center">
-  <a href="LICENSE">CC BY 4.0 License</a> ·
-  <a href="BRANDING.md">Logo &amp; attribution</a> ·
-  <a href="CONTRIBUTING.md">Contributing</a>
-</p>
+[Live demo](https://fssrepository.github.io/myscoutee-template-frontend/) ·
+[Download 1.4.0](https://github.com/fssrepository/myscoutee-template/releases/tag/v1.4.0) ·
+[Frontend](https://github.com/fssrepository/myscoutee-template-frontend)
 
-## About
+Angular supports browser-local and HTTP modes. The Java backend runs as a
+monolith or four services in the KVM lab. Debian installation, signed updates,
+backup and recovery use the same operational foundations as MyScoutee.
+The template omits its matchmaking, events, payments and Registry business domains.
 
-This repository is the starting point for extracting MyScoutee's common
-infrastructure into a reusable project template.
+## Start locally
 
-**Current status:** repository groundwork. The template implementation, setup
-instructions and runnable examples have not been published here yet.
+Requires Node.js 24 and npm 11. HTTP development also requires Java 25 and Docker Compose.
 
-## License — free to reuse with required credit
+```sh
+git clone https://github.com/fssrepository/myscoutee-template.git
+cd myscoutee-template
+tools/bootstrap-submodules.sh
+npm ci --prefix frontend
+npm --prefix frontend run start:local
+```
 
-The repository's original code and documentation are licensed under
-[Creative Commons Attribution 4.0 International (CC BY 4.0)](LICENSE).
-Anyone may copy, modify and redistribute them, including commercially.
+Open `http://localhost:4200`. Local mode uses seeded browser data; live messaging
+and calls require an HTTP backend. Use one compiler/stack at a time.
 
-**Attribution is a condition of the license, not an optional request.**
-When sharing the material, including modified versions, follow **Section 3(a)**
-of [LICENSE](LICENSE): credit **MyScoutee (fssrepository)**, retain the required
-notices, link to the source and license, and indicate changes.
+## Documentation
 
-Place the credit somewhere readers or users can access it, as appropriate to
-what you share: a README, documentation, an About/Credits page or a website
-footer. The full, unmodified standard license text is in [LICENSE](LICENSE).
-The attribution information for this repository is supplied in the credit
-below. This requirement applies when you share the licensed material; private
-use alone does not require publishing a credit.
+| Document | Link |
+| --- | --- |
+| Architecture, setup, extension, testing, deployment and recovery | [Guide PDF](guides/manuals/MyScoutee_Template_Getting_Started_EN.pdf) |
+| Editable guide and regeneration | [HTML](guides/manuals/template-getting-started-en.html) · [Instructions](guides/manuals/README.md) |
+| Shared frontend components, catalogue and integration | [Components PDF](https://github.com/fssrepository/myscoutee-components/blob/master/guides/manuals/MyScoutee_Components_Guide_EN.pdf) |
+| Release tooling | [Build and signing](packaging/release/README.md) |
+| Project and roadmap | [GitHub Project](https://github.com/users/fssrepository/projects/6) · [Roadmap](https://github.com/fssrepository/myscoutee-roadmap) |
+| Delivery progress | [Numbered checklist](guides/plans/MSC-122_TEMPLATE_IMPLEMENTATION_PLAN.md) |
 
-Example credit (also describe changes if you made any):
+## License and credit
 
-> Based on [MyScoutee Template](https://github.com/fssrepository/myscoutee-template)
-> by MyScoutee (fssrepository). Copyright © 2026, fssrepository.
-> Licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
-> Provided without warranties; see [LICENSE](LICENSE), Section 5.
-
-MyScoutee logos and brand artwork are excluded from CC BY 4.0 and follow
-[BRANDING.md](BRANDING.md). Separately identified third-party material retains
-its own license and notices.
-
-## Make it your own
-
-Use your own project name and logo. Any MyScoutee logo in template source,
-examples or UI is demonstration branding: remove or replace it wherever it
-identifies your product, including an adapted README header.
-
-You may display the MyScoutee logo in a clearly labeled source-credit section
-or when demonstrating the original MyScoutee project. It must not suggest that
-your project is MyScoutee, an official MyScoutee service, or endorsed by its
-maintainers. A text credit satisfies attribution; displaying the logo is not
-required. See [BRANDING.md](BRANDING.md).
-
-## Contributing
-
-Bug reports, documentation improvements and focused pull requests are welcome.
-Read [CONTRIBUTING.md](CONTRIBUTING.md) to get started.
-
-## Related project
-
-[MyScoutee Components](https://github.com/fssrepository/myscoutee-components)
-is the companion repository for reusable UI components.
+Original code and documentation: [CC BY 4.0](LICENSE). When sharing, credit
+**MyScoutee (fssrepository)**, link to the source and license, retain notices
+and indicate changes. Copyright © 2026, fssrepository.
+Use your own product name and logo; MyScoutee artwork follows [BRANDING.md](BRANDING.md).
+See [Contributing](CONTRIBUTING.md) for contributions.

@@ -1,0 +1,18 @@
+{
+    "java.server.launchMode": "LightWeight",
+    "java.configuration.updateBuildConfiguration": "disabled",
+    "java.compile.nullAnalysis.mode": "automatic",
+    "java.configuration.runtimes": [
+        {
+            "name": "JavaSE-17",
+            "path": "/usr/lib/jvm/java-17-openjdk-amd64",
+            "default": true
+        }
+    ],
+    "java.import.gradle.enabled": false,
+    "java.import.gradle.wrapper.enabled": false,
+    "java.import.gradle.java.home": "/usr/lib/jvm/java-17-openjdk-amd64",
+    "java.gradle.buildServer.enabled": "off",
+    "java.autobuild.enabled": false,
+    "workbench.editor.enablePreview": false
+}

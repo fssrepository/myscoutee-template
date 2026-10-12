@@ -1,0 +1,7 @@
+apiVersion: v2
+name: myscoutee-template-microservices
+description: Minimal production-style assemblies for the explicitly started template
+  lab.
+type: application
+version: 1.4.0
+appVersion: 1.4.0

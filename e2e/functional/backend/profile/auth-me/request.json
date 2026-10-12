@@ -1,0 +1,19 @@
+{
+  "name": "minimal profile and extended profile refer to the same member",
+  "group": "profile",
+  "order": 3,
+  "method": "GET",
+  "path": "{{apiPrefix}}/auth/me",
+  "params": {
+    "userId": "{{userId}}"
+  },
+  "headers": {
+    "X-App-Session-Kind": "demo",
+    "X-Demo-User-Id": "{{userId}}"
+  },
+  "expectedStatus": 200,
+  "maxMs": 5000,
+  "qaBranches": [
+    "T-PROFILE-001"
+  ]
+}

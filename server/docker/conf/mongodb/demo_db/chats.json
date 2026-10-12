@@ -1,0 +1,36 @@
+[
+  {
+    "_id": "chat-owner-copy:bd912e1d-5705-3822-b9f9-587cea6cfe69",
+    "id": "c-contact-MTAwMDAwMDAwMDAwMDAwMDAwMDAwMDAxCjEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMg",
+    "ownerUserId": "100000000000000000000001",
+    "channelType": "contact",
+    "memberIds": [
+      "100000000000000000000001",
+      "100000000000000000000002"
+    ],
+    "title": "Sam Taylor",
+    "avatar": "ST",
+    "lastMessage": "Try switching the list view, then send a message here.",
+    "lastSenderId": "100000000000000000000002",
+    "unread": 1,
+    "revision": 1,
+    "dateIso": "2026-10-11T00:00:01Z"
+  },
+  {
+    "_id": "chat-owner-copy:1e8284a3-d465-38c9-a68e-f188989c1774",
+    "id": "c-contact-MTAwMDAwMDAwMDAwMDAwMDAwMDAwMDAxCjEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMg",
+    "ownerUserId": "100000000000000000000002",
+    "channelType": "contact",
+    "memberIds": [
+      "100000000000000000000001",
+      "100000000000000000000002"
+    ],
+    "title": "Alex Morgan",
+    "avatar": "AM",
+    "lastMessage": "Try switching the list view, then send a message here.",
+    "lastSenderId": "100000000000000000000002",
+    "unread": 1,
+    "revision": 1,
+    "dateIso": "2026-10-11T00:00:01Z"
+  }
+]

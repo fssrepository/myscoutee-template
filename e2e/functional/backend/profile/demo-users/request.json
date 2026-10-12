@@ -1,0 +1,14 @@
+{
+  "name": "seeded members and admin are listed under their own role without the operator",
+  "group": "identity",
+  "order": 2,
+  "method": "GET",
+  "path": "{{apiPrefix}}/auth/demo-users",
+  "params": {},
+  "headers": {},
+  "expectedStatus": 200,
+  "maxMs": 5000,
+  "qaBranches": [
+    "T-IDENTITY-001"
+  ]
+}

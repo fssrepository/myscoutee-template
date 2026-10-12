@@ -1,0 +1,9 @@
+{
+  "name": "Retained entry and SmartList",
+  "route": "/entry",
+  "geolocation": {
+    "latitude": 52.52,
+    "longitude": 13.405,
+    "accuracy": 10
+  }
+}

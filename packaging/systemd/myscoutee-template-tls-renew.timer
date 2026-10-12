@@ -1,0 +1,11 @@
+[Unit]
+Description=Daily Template certificate renewal check
+
+[Timer]
+OnCalendar=daily
+RandomizedDelaySec=2h
+Persistent=true
+Unit=myscoutee-template-tls-renew.service
+
+[Install]
+WantedBy=timers.target

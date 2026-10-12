@@ -1,0 +1,19 @@
+{
+  "name": "two participants see one personal conversation and two seed messages",
+  "group": "chat",
+  "order": 5,
+  "method": "GET",
+  "path": "{{apiPrefix}}/activities/chats",
+  "params": {
+    "userId": "{{userId}}"
+  },
+  "headers": {
+    "X-App-Session-Kind": "demo",
+    "X-Demo-User-Id": "{{userId}}"
+  },
+  "expectedStatus": 200,
+  "maxMs": 5000,
+  "qaBranches": [
+    "T-CHAT-001"
+  ]
+}

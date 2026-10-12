@@ -1,0 +1,26 @@
+[Unit]
+Description=Install one verified operator-approved Template update
+After=network-online.target docker.service
+Wants=network-online.target
+Requires=docker.service
+
+[Service]
+Type=oneshot
+EnvironmentFile=-/etc/myscoutee-template/myscoutee-template.env
+# The companion .path unit watches this exact host location. Keep the
+# request/state path fixed so Java and the privileged worker cannot silently
+# diverge through environment interpolation.
+Environment=MYSCOUTEE_UPDATE_STATE_DIR=/var/lib/myscoutee-template/update
+ExecStart=/usr/bin/flock --nonblock /run/myscoutee-template-update-worker.lock /opt/myscoutee-template/packaging/scripts/myscoutee-update-worker.sh
+UMask=0077
+Nice=10
+IOSchedulingClass=best-effort
+IOSchedulingPriority=6
+TimeoutStartSec=0
+PrivateTmp=true
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+LockPersonality=true
+RestrictRealtime=true

@@ -1,0 +1,120 @@
+{
+  "task": "27.4",
+  "status": "DONE",
+  "date": "2026-10-12",
+  "version": "1.4.0",
+  "packageSha256": "b5590edbfde080e1ed29988596a3cc60b0e8fbb82000ff5288a3e106a6ee8728",
+  "target": "VMware 192.168.153.129; native installed first",
+  "backup": "/var/backups/myscoutee/myscoutee-backup-20261012-141125.tar.gz",
+  "backupComplete": true,
+  "supportedSameVersionInstaller": true,
+  "hostQualification": true,
+  "healthyServices": 9,
+  "retainedProductionControls": [
+    {
+      "collection": "users",
+      "count": 3,
+      "sha256": "df29300041acb8c6a8758114123e12161219d77e973bce3408f71139a6d0176b"
+    },
+    {
+      "collection": "privacyConsents",
+      "count": 3,
+      "sha256": "8a7003791f2ac106c745a8fdffb2baf8040d9d5318d4bf62dfc0773e0a3c6290"
+    },
+    {
+      "collection": "deploymentConfigurations",
+      "count": 1,
+      "sha256": "dbf280a74487d92624af239e9983753cd316160414dc08f7b57391c635d1353c"
+    },
+    {
+      "collection": "appSettings",
+      "count": 1,
+      "sha256": "6f05b0c8404c8f581055cbd1454a18f731d06819825ad13fb31edd14b0da4301"
+    },
+    {
+      "collection": "assets",
+      "count": 1,
+      "sha256": "37c379e2242b5c46dc2b56e252de555891a2ff58bc98b3a0dad2465dab40dce9"
+    },
+    {
+      "collection": "assetRequests",
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "collection": "events",
+      "count": 1,
+      "sha256": "ee4bc55a5ae8fb58f719670fd415d7da8ee8a172e29feee2076e89a5e8ca4e99"
+    },
+    {
+      "collection": "eventTickets",
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "collection": "payments",
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "collection": "savedPaymentMethods",
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "collection": "chats",
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "collection": "chatMessages",
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "collection": "operatorRegistryEndpoints",
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "collection": "integrationTokens",
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "collection": "mcpOAuthClients",
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "collection": "mcpAuthorizations",
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "collection": "userReports",
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "collection": "userFeedback",
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "retainedProductionControlsUnchanged": true,
+  "external": {
+    "tlsVerified": true,
+    "shellRoutingPwaPrecache": true,
+    "publicConfigurationI18nLanding": true,
+    "anonymousOperatorDenied": true,
+    "health": "UP",
+    "httpRedirect": "https://localhost/entry",
+    "forgedHostRedirect": "https://localhost/entry",
+    "note": "The verifier passed 10 checks through the alternate-port SSH forward. Its origin assertions were inapplicable to the forward, and the first health probe preceded completion of startup. After host qualification, direct curl probes with --resolve to the guest verified canonical-origin redirects, forged-Host isolation and health with certificate validation enabled."
+  },
+  "logs": [
+    "/tmp/msc122-native-final-install.log",
+    "/tmp/msc122-native-final-external.log"
+  ]
+}

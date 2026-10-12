@@ -1,0 +1,3086 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "MyScoutee chat-queries",
+    "version": "1.0.0",
+    "description": "Typed calls to existing ChatQueries operations from integrations only. Native permissions and business behavior retained. Profile inputs are owner-reloaded by ID; no detached persistence documents. REAL/DEMO and job scope, 2 MiB requests / 8 MiB responses, bounded timeout and no automatic retries. Distributed lost-reply recovery remains milestone 16."
+  },
+  "paths": {
+    "/_internal/v1/chat/chat-queries/querychatbyid_1": {
+      "post": {
+        "operationId": "chat_queries_querychatbyid_1",
+        "security": [
+          {
+            "serviceCapability": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "X-MyScoutee-Session-Mode",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          },
+          {
+            "name": "X-MyScoutee-Actor-Delegation",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Operation/body/mode-bound RSA proof. Native selected actor, workspace, permissions and validation are retained."
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/microservices_transport_chat_ChatQueriesProtocol_QueryChatById1"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Canonical owner result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/microservices_transport_chat_ChatQueriesProtocol_QueryChatById1Result"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input or session mode",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or wrong service capability",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Request exceeds byte limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "JSON content type required",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Canonical owner unavailable; operation outcome is not assumed successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Native owner rejection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Native owner rejection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Native owner rejection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/_internal/v1/chat/chat-queries/querychatpage_1": {
+      "post": {
+        "operationId": "chat_queries_querychatpage_1",
+        "security": [
+          {
+            "serviceCapability": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "X-MyScoutee-Session-Mode",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          },
+          {
+            "name": "X-MyScoutee-Actor-Delegation",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Operation/body/mode-bound RSA proof. Native selected actor, workspace, permissions and validation are retained."
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/microservices_transport_chat_ChatQueriesProtocol_QueryChatPage1"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Canonical owner result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/microservices_transport_chat_ChatQueriesProtocol_QueryChatPage1Result"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input or session mode",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or wrong service capability",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Request exceeds byte limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "JSON content type required",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Canonical owner unavailable; operation outcome is not assumed successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Native owner rejection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Native owner rejection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Native owner rejection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/_internal/v1/chat/chat-queries/querymessagespage_1": {
+      "post": {
+        "operationId": "chat_queries_querymessagespage_1",
+        "security": [
+          {
+            "serviceCapability": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "X-MyScoutee-Session-Mode",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          },
+          {
+            "name": "X-MyScoutee-Actor-Delegation",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Operation/body/mode-bound RSA proof. Native selected actor, workspace, permissions and validation are retained."
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/microservices_transport_chat_ChatQueriesProtocol_QueryMessagesPage1"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Canonical owner result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/microservices_transport_chat_ChatQueriesProtocol_QueryMessagesPage1Result"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input or session mode",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or wrong service capability",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Request exceeds byte limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "JSON content type required",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Canonical owner unavailable; operation outcome is not assumed successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Native owner rejection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Native owner rejection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Native owner rejection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/_internal/v1/chat/chat-queries/querymessagespage_2": {
+      "post": {
+        "operationId": "chat_queries_querymessagespage_2",
+        "security": [
+          {
+            "serviceCapability": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "X-MyScoutee-Session-Mode",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          },
+          {
+            "name": "X-MyScoutee-Actor-Delegation",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Operation/body/mode-bound RSA proof. Native selected actor, workspace, permissions and validation are retained."
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/microservices_transport_chat_ChatQueriesProtocol_QueryMessagesPage2"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Canonical owner result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/microservices_transport_chat_ChatQueriesProtocol_QueryMessagesPage2Result"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input or session mode",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or wrong service capability",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Request exceeds byte limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "JSON content type required",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Canonical owner unavailable; operation outcome is not assumed successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Native owner rejection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Native owner rejection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Native owner rejection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/_internal/v1/chat/chat-queries/querymessagespage_3": {
+      "post": {
+        "operationId": "chat_queries_querymessagespage_3",
+        "security": [
+          {
+            "serviceCapability": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "X-MyScoutee-Session-Mode",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          },
+          {
+            "name": "X-MyScoutee-Actor-Delegation",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Operation/body/mode-bound RSA proof. Native selected actor, workspace, permissions and validation are retained."
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/microservices_transport_chat_ChatQueriesProtocol_QueryMessagesPage3"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Canonical owner result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/microservices_transport_chat_ChatQueriesProtocol_QueryMessagesPage3Result"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input or session mode",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or wrong service capability",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Request exceeds byte limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "JSON content type required",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Canonical owner unavailable; operation outcome is not assumed successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Native owner rejection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Native owner rejection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Native owner rejection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "serviceCapability": {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "Dedicated chat-queries capability for integrations."
+      }
+    },
+    "schemas": {
+      "microservices_transport_chat_ChatQueriesProtocol_QueryChatById1": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "scope": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/microservices_transport_chat_ChatQueriesProtocol_Scope"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "chatId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "requestedUserId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "scope"
+        ]
+      },
+      "microservices_transport_chat_ChatQueriesProtocol_Scope": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "active": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "groupId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "active"
+        ]
+      },
+      "microservices_transport_chat_ChatQueriesProtocol_QueryChatById1Result": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "resolved": {
+            "const": true
+          },
+          "value": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/domain_chat_dto_ChatDtos_ChatDto"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "resolved"
+        ]
+      },
+      "domain_chat_dto_ChatDtos_ChatDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "avatar": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "title": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "lastMessage": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "lastSenderId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "memberIds": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "members": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/domain_chat_dto_ChatDtos_ChatMemberDto"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "unread": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "dateIso": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "contextStartAtIso": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "contextEndAtIso": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "channelType": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "ownerId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "distanceKm": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "distanceMetersExact": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "metrics": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/domain_chat_dto_ChatDtos_ChatMetricsDto"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "supportCase": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/domain_chat_dto_ChatDtos_ChatSupportCaseDto"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "eventId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "subEventId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "groupId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "ownerStatus": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "revision": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "navigationContext": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/domain_chat_dto_ChatDtos_ChatNavigationContextDto"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "caseOfferId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": []
+      },
+      "domain_chat_dto_ChatDtos_ChatMemberDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "name": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "initials": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "gender": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "imageUrl": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "status": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": []
+      },
+      "domain_chat_dto_ChatDtos_ChatMetricsDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "members": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/domain_chat_dto_ChatDtos_ChatMetricBucketDto"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "transport": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/domain_chat_dto_ChatDtos_ChatMetricBucketDto"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "accommodation": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/domain_chat_dto_ChatDtos_ChatMetricBucketDto"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "supplies": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/domain_chat_dto_ChatDtos_ChatMetricBucketDto"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "groupsCount": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "pendingTotal": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "required": []
+      },
+      "domain_chat_dto_ChatDtos_ChatMetricBucketDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "accepted": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "pending": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "capacityMin": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "capacityMax": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "required": []
+      },
+      "domain_chat_dto_ChatDtos_ChatSupportCaseDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "status": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "assignee": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/domain_chat_dto_ChatDtos_ChatSupportCaseAssigneeDto"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "updatedAtIso": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": []
+      },
+      "domain_chat_dto_ChatDtos_ChatSupportCaseAssigneeDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "userId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "name": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "initials": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": []
+      },
+      "domain_chat_dto_ChatDtos_ChatNavigationContextDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "eventId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "eventTitle": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "eventTarget": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "eventPendingMembers": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "subEvent": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/common_dto_SharedDtos_SubEventItemDto"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "group": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/domain_chat_dto_ChatDtos_ChatGroupContextDto"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": []
+      },
+      "common_dto_SharedDtos_SubEventItemDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "name": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "startAt": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "endAt": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "location": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "createdByUserId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "tournamentGroupCapacityMin": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "tournamentGroupCapacityMax": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "tournamentLeaderboardType": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "tournamentAdvancePerGroup": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "optional": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "pricing": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/common_dto_SharedDtos_PricingConfigDto"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "capacityMin": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "capacityMax": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "membersAccepted": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "membersPending": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "carsPending": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "accommodationPending": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "suppliesPending": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "carsAccepted": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "accommodationAccepted": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "suppliesAccepted": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "carsCapacityMin": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "carsCapacityMax": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "accommodationCapacityMin": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "accommodationCapacityMax": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "suppliesCapacityMin": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "suppliesCapacityMax": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "slotStartOffsetMinutes": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "slotDurationMinutes": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "groupsCount": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "groupsPending": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "stageStatus": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "stageStatusReason": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "stageStatusUpdatedAt": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "stageFinalizedAt": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "stageFinalizedByUserId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "stageResultRevision": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "groups": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/common_dto_SharedDtos_SubEventGroupItemDto"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "runtimeKind": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "eventId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": []
+      },
+      "common_dto_SharedDtos_PricingConfigDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "mode": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "basePrice": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "currency": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "taxMode": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "chargeType": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "quantityRulesEnabled": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "quantityRules": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/common_dto_SharedDtos_PricingQuantityRuleDto"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "minPrice": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "maxPrice": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "rounding": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "demandRulesEnabled": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "demandRules": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/common_dto_SharedDtos_PricingDemandRuleDto"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "timeRulesEnabled": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "timeRules": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/common_dto_SharedDtos_PricingTimeRuleDto"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "cancellationPolicy": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/common_dto_SharedDtos_PricingCancellationPolicyDto"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "slotPricingEnabled": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "slotOverrides": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/common_dto_SharedDtos_PricingSlotOverrideDto"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "audience": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/common_dto_SharedDtos_PricingAudienceSettingsDto"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "enabled": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          }
+        },
+        "required": []
+      },
+      "common_dto_SharedDtos_PricingQuantityRuleDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "minQuantity": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "action": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/common_dto_SharedDtos_PricingActionDto"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": []
+      },
+      "common_dto_SharedDtos_PricingActionDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "value": {
+            "type": [
+              "number",
+              "null"
+            ]
+          }
+        },
+        "required": []
+      },
+      "common_dto_SharedDtos_PricingDemandRuleDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "operator": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "capacityFilledPercent": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "action": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/common_dto_SharedDtos_PricingActionDto"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "appliesTo": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "slotIds": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        },
+        "required": []
+      },
+      "common_dto_SharedDtos_PricingTimeRuleDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "trigger": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "offsetValue": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "specificDateStart": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "specificDateEnd": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "action": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/common_dto_SharedDtos_PricingActionDto"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "appliesTo": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "slotIds": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        },
+        "required": []
+      },
+      "common_dto_SharedDtos_PricingCancellationPolicyDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "enabled": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "rules": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/common_dto_SharedDtos_PricingCancellationRuleDto"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          }
+        },
+        "required": []
+      },
+      "common_dto_SharedDtos_PricingCancellationRuleDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "offsetUnit": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "offsetValue": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "refundKind": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "refundValue": {
+            "type": [
+              "number",
+              "null"
+            ]
+          }
+        },
+        "required": []
+      },
+      "common_dto_SharedDtos_PricingSlotOverrideDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "slotId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "label": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "startAt": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "endAt": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "price": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "currency": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": []
+      },
+      "common_dto_SharedDtos_PricingAudienceSettingsDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "enabled": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "memberPrice": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "vipPrice": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "inviteOnlyDiscountPercent": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "promoCodes": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/common_dto_SharedDtos_PricingPromoCodeDto"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "soldOutLabel": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": []
+      },
+      "common_dto_SharedDtos_PricingPromoCodeDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "code": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "action": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/common_dto_SharedDtos_PricingActionDto"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": []
+      },
+      "common_dto_SharedDtos_SubEventGroupItemDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "name": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "capacityMin": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "capacityMax": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "source": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": []
+      },
+      "domain_chat_dto_ChatDtos_ChatGroupContextDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "name": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "source": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "accepted": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "pending": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "capacityMin": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "capacityMax": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "required": []
+      },
+      "microservices_transport_chat_ChatQueriesProtocol_QueryChatPage1": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "scope": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/microservices_transport_chat_ChatQueriesProtocol_Scope"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "requestedUserId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "contextFilterValue": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "sortValue": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "sortDirectionValue": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "secondaryFilterValue": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "cursor": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "limitValue": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "rangeStartIso": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "rangeEndIso": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "adminServiceOnly": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "supportCaseFilterValue": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "scope"
+        ]
+      },
+      "microservices_transport_chat_ChatQueriesProtocol_QueryChatPage1Result": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "resolved": {
+            "const": true
+          },
+          "value": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/domain_chat_dto_ChatDtos_ChatPageResponseDto"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "resolved"
+        ]
+      },
+      "domain_chat_dto_ChatDtos_ChatPageResponseDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "items": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/domain_chat_dto_ChatDtos_ChatDto"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "total": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "nextCursor": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "chats": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "chatCounters": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/domain_accounts_dto_AuthDtos_UserChatCountersDto"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": []
+      },
+      "domain_accounts_dto_AuthDtos_UserChatCountersDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "all": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "event": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "subEvent": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "group": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "service": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "appSupport": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "supportCases": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/domain_accounts_dto_AuthDtos_UserSupportCaseCountersDto"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "groupSupport": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "contacts": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "campaign": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "cases": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "required": []
+      },
+      "domain_accounts_dto_AuthDtos_UserSupportCaseCountersDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "pending": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "warned": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "picked": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "solved": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "blocked": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "all": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "required": []
+      },
+      "microservices_transport_chat_ChatQueriesProtocol_QueryMessagesPage1": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "scope": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/microservices_transport_chat_ChatQueriesProtocol_Scope"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "chatId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "requestedUserId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "cursor": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "scope"
+        ]
+      },
+      "microservices_transport_chat_ChatQueriesProtocol_QueryMessagesPage1Result": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "resolved": {
+            "const": true
+          },
+          "value": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/domain_chat_dto_ChatDtos_ChatMessagesPageResponseDto"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "resolved"
+        ]
+      },
+      "domain_chat_dto_ChatDtos_ChatMessagesPageResponseDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "items": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/domain_chat_dto_ChatDtos_ChatMessageDto"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "total": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "nextCursor": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "read": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/domain_chat_dto_ChatDtos_ChatReadReceiptDto"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "notificationUnread": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "required": []
+      },
+      "domain_chat_dto_ChatDtos_ChatMessageDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "clientId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "senderId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "senderName": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "senderInitials": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "senderGender": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "senderImageUrl": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "text": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "sentAtIso": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "mine": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "readBy": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/domain_chat_dto_ChatDtos_ChatReadAvatarDto"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "deletedAtIso": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "deletedByUserId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "deletedByName": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "editedAtIso": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "pinnedAtIso": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "pinnedByUserId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "replyTo": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/domain_chat_dto_ChatDtos_ChatMessageReplyDto"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "reactions": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/domain_chat_dto_ChatDtos_ChatMessageReactionDto"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "attachments": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/domain_chat_dto_ChatDtos_ChatMessageAttachmentDto"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          }
+        },
+        "required": []
+      },
+      "domain_chat_dto_ChatDtos_ChatReadAvatarDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "initials": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "gender": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "imageUrl": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": []
+      },
+      "domain_chat_dto_ChatDtos_ChatMessageReplyDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "sender": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "text": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": []
+      },
+      "domain_chat_dto_ChatDtos_ChatMessageReactionDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "emoji": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "userId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "userName": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "userInitials": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "userGender": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "reactedAtIso": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": []
+      },
+      "domain_chat_dto_ChatDtos_ChatMessageAttachmentDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "type": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "title": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "entityId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "assetType": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "ownerUserId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "status": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "unavailableReason": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "subtitle": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "url": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "previewUrl": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "mimeType": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "sizeBytes": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "required": []
+      },
+      "domain_chat_dto_ChatDtos_ChatReadReceiptDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "userId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "userInitials": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "userGender": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "userImageUrl": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "messageIds": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "readAtIso": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "unread": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "required": []
+      },
+      "microservices_transport_chat_ChatQueriesProtocol_QueryMessagesPage2": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "scope": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/microservices_transport_chat_ChatQueriesProtocol_Scope"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "chatId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "requestedUserId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "cursor": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "targetMessageId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "scope"
+        ]
+      },
+      "microservices_transport_chat_ChatQueriesProtocol_QueryMessagesPage2Result": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "resolved": {
+            "const": true
+          },
+          "value": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/domain_chat_dto_ChatDtos_ChatMessagesPageResponseDto"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "resolved"
+        ]
+      },
+      "microservices_transport_chat_ChatQueriesProtocol_QueryMessagesPage3": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "scope": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/microservices_transport_chat_ChatQueriesProtocol_Scope"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "chatId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "requestedUserId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "cursor": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "targetMessageId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "markViewed": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "scope",
+          "markViewed"
+        ]
+      },
+      "microservices_transport_chat_ChatQueriesProtocol_QueryMessagesPage3Result": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "resolved": {
+            "const": true
+          },
+          "value": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/domain_chat_dto_ChatDtos_ChatMessagesPageResponseDto"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "resolved"
+        ]
+      },
+      "Error": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "code"
+        ]
+      }
+    }
+  }
+}

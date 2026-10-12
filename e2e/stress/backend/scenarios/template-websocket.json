@@ -1,0 +1,22 @@
+{
+  "name": "Minimal authenticated chat socket connection workload",
+  "mode": "prod",
+  "resetE2E": false,
+  "reuseContext": true,
+  "users": 6,
+  "durationMs": 15000,
+  "rampUpMs": 0,
+  "thinkTimeMs": 25,
+  "thinkTimeJitterMs": 0,
+  "thresholds": {
+    "errorRate": 0,
+    "p95Ms": 1000,
+    "p99Ms": 2000
+  },
+  "steps": [
+    {
+      "name": "chat socket",
+      "collectionCase": "websocket/chat-connect"
+    }
+  ]
+}

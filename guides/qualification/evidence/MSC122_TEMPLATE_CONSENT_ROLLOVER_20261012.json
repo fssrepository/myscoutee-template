@@ -1,0 +1,31 @@
+{
+  "task": "11.3",
+  "status": "DONE",
+  "date": "2026-10-12",
+  "templateRevision": "b183b83ce4cc102853dd9687e11abf09b501d4fd",
+  "backend": {
+    "test": "ConsentRevisionRolloverPersistenceTest",
+    "tests": 1,
+    "result": "DONE",
+    "coverage": [
+      "Real MongoDB persistence using the application SessionRoutingMongoDatabaseFactory with separate REAL and DEMO databases",
+      "v4 to v5 active revision rollover leaves old acceptance stale until explicit acceptance",
+      "Same user and revision IDs do not leak choices across REAL and DEMO",
+      "Server revision version and optional section IDs override untrusted request values",
+      "Owner/repository reconstruction preserves acceptance timestamps, historical choices and idempotent record IDs",
+      "Another user cannot submit consent"
+    ]
+  },
+  "frontend": {
+    "test": "entry-page-consent.spec.ts",
+    "tests": 8,
+    "result": "DONE",
+    "coverage": [
+      "Both demo and firebase session paths",
+      "Old revision ID/version blocks entry without current acceptance",
+      "Explicit current acceptance enables entry",
+      "Reload preserves saved account choices"
+    ]
+  },
+  "runtimeScope": "Embedded MongoDB plus focused component tests; no live Firebase provider authentication claimed. Existing initial-consent deployed UI evidence is retained."
+}

@@ -1,0 +1,16 @@
+{
+  "name": "admin MCP HTTP transport uses native OAuth and retained capabilities",
+  "group": "integrations",
+  "order": 15,
+  "method": "GET",
+  "path": "{{apiPrefix}}/integrations/settings",
+  "headers": {
+    "X-App-Session-Kind": "demo",
+    "X-Demo-User-Id": "{{adminUserId}}"
+  },
+  "expectedStatus": 200,
+  "maxMs": 5000,
+  "qaBranches": [
+    "T-INTEGRATION-008"
+  ]
+}

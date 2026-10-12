@@ -1,0 +1,20 @@
+[versions]
+spring-boot = "4.0.8"
+dependency-management = "1.1.7"
+sonar = "4.2.1.3168"
+java = "25"
+
+[plugins]
+spring-boot = { id = "org.springframework.boot", version.ref = "spring-boot" }
+dependency-management = { id = "io.spring.dependency-management", version.ref = "dependency-management" }
+sonar = { id = "org.sonarqube", version.ref = "sonar" }
+
+[libraries]
+firebase = "com.google.firebase:firebase-admin:9.10.0"
+bouncycastle = "org.bouncycastle:bcprov-jdk18on:1.84"
+jsoup = "org.jsoup:jsoup:1.23.1"
+s3 = "software.amazon.awssdk:s3:2.32.20"
+s3-http = "software.amazon.awssdk:url-connection-client:2.32.20"
+stripe = "com.stripe:stripe-java:24.0.0"
+itext = "com.itextpdf:itextpdf:5.5.13.3"
+embedded-mongo = "de.flapdoodle.embed:de.flapdoodle.embed.mongo:4.7.0"

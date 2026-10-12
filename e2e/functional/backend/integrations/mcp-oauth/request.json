@@ -1,0 +1,11 @@
+{
+  "name": "owned MCP client uses PKCE single-use codes refresh rotation and revocation",
+  "group": "integrations",
+  "order": 12,
+  "method": "GET",
+  "path": "{{apiPrefix}}/integrations/settings",
+  "headers": { "X-App-Session-Kind": "demo", "X-Demo-User-Id": "{{userId}}" },
+  "expectedStatus": 200,
+  "maxMs": 5000,
+  "qaBranches": ["T-INTEGRATION-003"]
+}

@@ -1,0 +1,307 @@
+# Template development services; start only on explicit request.
+networks:
+  myscoutee:
+    driver: bridge
+services:
+  stun:
+    extends:
+      file: docker-compose-stun.yml
+      service: stun
+    container_name: myscoutee-template-dev-stun
+    networks:
+      - myscoutee
+
+  mcp:
+    image: ${MCP_DEV_IMAGE:-myscoutee-template-mcp:1.4.0-dev}
+    build:
+      context: ../mcp
+      dockerfile: Dockerfile
+    container_name: myscoutee-template-dev-mcp
+    hostname: mcp
+    restart: "no"
+    environment:
+      MYSCOUTEE_MCP_TRANSPORT: http
+      MYSCOUTEE_MCP_LISTEN: 0.0.0.0:8080
+      MYSCOUTEE_API_BASE_URL: http://profilemanagement:8080
+      MYSCOUTEE_PUBLIC_API_BASE_URL: ${MYSCOUTEE_PUBLIC_API_BASE_URL:-http://localhost/api}
+    networks:
+      - myscoutee
+    read_only: true
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    mem_limit: 128m
+    healthcheck:
+      test: ["CMD", "/myscoutee-mcp", "healthcheck"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 5s
+
+  mongodb:
+    extends:
+      file: docker-compose.replicaset.yml
+      service: mongodb
+    image: ${MONGO_IMAGE:-mongo:8.0.4}
+    container_name: myscoutee-template-dev-mongodb
+    hostname: mongodb
+    env_file:
+    - docker-dev.env
+    environment:
+      MONGO_INITDB_DATABASE: ${MONGO_DEMO_DATABASE}
+      MONGO_APP_DATABASE: ${MONGO_DEMO_DATABASE}
+      MONGO_SEED_DIRECTORY: demo_db
+      TZ: ${CONTAINER_TIMEZONE:-Europe/Brussels}
+    volumes:
+    - ./docker/conf/mongodb/:/docker-entrypoint-initdb.d
+    - ./data/mongodb/demo-data-v8-0:/data/db
+    - ./docker/scripts:/scripts
+    - /etc/localtime:/etc/localtime:ro
+    networks:
+    - myscoutee
+  mongodb-sync:
+    image: ${MONGODB_SYNC_IMAGE:-myscoutee-template-mongodb-sync:1.4.0-dev}
+    pull_policy: build
+    build:
+      context: .
+      dockerfile: docker/images/mongodb-sync/dev/Dockerfile
+      args:
+        TZ: ${CONTAINER_TIMEZONE:-Europe/Brussels}
+    container_name: myscoutee-template-dev-mongodb-sync
+    hostname: mongodb-sync
+    env_file:
+    - docker-dev.env
+    command:
+    - /usr/local/bin/mongodb-seed-sync
+    environment:
+      MONGO_APP_DATABASE: ${MONGO_DEMO_DATABASE}
+      MONGO_DEMO_DATABASE: ${MONGO_DEMO_DATABASE}
+      MONGO_SEED_DIRECTORY: demo_db
+      MONGODB_SEED_SYNC_DEBOUNCE_SECONDS: ${MONGODB_SEED_SYNC_DEBOUNCE_SECONDS:-1}
+      MONGODB_SEED_SYNC_RECONCILE_SECONDS: ${MONGODB_SEED_SYNC_RECONCILE_SECONDS:-2}
+      TZ: ${CONTAINER_TIMEZONE:-Europe/Brussels}
+    volumes:
+    - ./docker/conf/mongodb:/docker-entrypoint-initdb.d:ro
+    - /etc/localtime:/etc/localtime:ro
+    networks:
+    - myscoutee
+    depends_on:
+    - mongodb
+  redis:
+    image: ${REDIS_IMAGE:-redis:8.6.1-alpine}
+    container_name: myscoutee-template-dev-redis
+    hostname: redis
+    environment:
+      TZ: ${CONTAINER_TIMEZONE:-Europe/Brussels}
+    volumes:
+    - /etc/localtime:/etc/localtime:ro
+    networks:
+    - myscoutee
+  minio:
+    image: ${MINIO_DEV_IMAGE:-myscoutee-template-minio:1.4.0-dev}
+    pull_policy: build
+    build:
+      context: .
+      dockerfile: docker/images/minio/Dockerfile
+      args:
+        MINIO_BASE_IMAGE: ${MINIO_BASE_IMAGE:-minio/minio:RELEASE.2025-09-07T16-13-09Z}
+    container_name: myscoutee-template-dev-minio
+    hostname: minio
+    env_file:
+    - docker-dev.env
+    command: server /data --console-address ":9001"
+    environment:
+      MEDIA_BUCKET: ${MEDIA_BUCKET}
+      MINIO_ENDPOINT: http://127.0.0.1:9000
+      TZ: ${CONTAINER_TIMEZONE:-Europe/Brussels}
+    volumes:
+    - ./data/minio:/data
+    - ./docker/conf/minio:/seed:ro
+    - /etc/localtime:/etc/localtime:ro
+    networks:
+    - myscoutee
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - test -f /tmp/myscoutee-minio-seeded && curl -fsS http://localhost:9000/minio/health/live >/dev/null || exit 1
+      interval: 10s
+      timeout: 5s
+      retries: 30
+      start_period: 20s
+  profilemanagement:
+    extends:
+      file: docker-compose.replicaset.yml
+      service: profilemanagement
+    image: ${MYSCOUTEE_DEV_IMAGE:-myscoutee-template-api:1.4.0-dev}
+    pull_policy: build
+    build:
+      context: .
+      dockerfile: docker/images/profilemanagement/dev/Dockerfile
+      args:
+        TZ: ${CONTAINER_TIMEZONE:-Europe/Brussels}
+    container_name: myscoutee-template-dev-profilemanagement
+    hostname: myscoutee
+    env_file:
+    - docker-dev.env
+    working_dir: /workspace
+    user: ${UID:-1000}:${GID:-1000}
+    command:
+    - bash
+    - -lc
+    - /bin/sh /workspace/docker/scripts/ensure_operator_configuration_master_key.sh && exec bash /workspace/docker/scripts/start_profilemanagement_dev.sh
+    environment:
+      EMAIL_BASE_URL: ${EMAIL_BASE_URL:-http://localhost}
+      EMAIL_SENDGRID_ENDPOINT: ${EMAIL_SENDGRID_ENDPOINT:-https://api.sendgrid.com/v3/mail/send}
+      MYSCOUTEE_RUNTIME_STATUS_ENABLED: 'true'
+      MYSCOUTEE_RUNTIME_STATUS_URL: http://nginx:9081/internal/runtime-status
+      MYSCOUTEE_RUNTIME_STATUS_TOKEN_FILE: /run/myscoutee-runtime-status/token
+      GRADLE_USER_HOME: /workspace/.gradle-docker
+      PROFILEMANAGEMENT_HOT_RELOAD: ${PROFILEMANAGEMENT_HOT_RELOAD:-true}
+      PROFILEMANAGEMENT_DEBUG_PORT: ${PROFILEMANAGEMENT_DEBUG_PORT:-5005}
+      SPRING_PROFILES_ACTIVE: dev
+      SPRING_DEVTOOLS_RESTART_ENABLED: ${PROFILEMANAGEMENT_HOT_RELOAD:-true}
+      MONGODB_HOST: mongodb
+      MONGODB_DATABASE: ${MONGO_DEMO_DATABASE}
+      MONGODB_DEMO_DATABASE: ${MONGO_DEMO_DATABASE}
+      SPRING_DATA_REDIS_HOST: redis
+      SPRING_DATA_REDIS_PORT: '6379'
+      CHAT_STREAM_BLOCK_MS: ${CHAT_STREAM_BLOCK_MS:-10000}
+      CHAT_CALL_STUN_URLS: ${CHAT_CALL_STUN_URLS:-}
+      CHAT_CALL_STUN_PORT: ${CHAT_CALL_STUN_PORT:-3478}
+      USERS_DELETED_ACCOUNT_PURGE_DELAY_MS: ${USERS_DELETED_ACCOUNT_PURGE_DELAY_MS:-60000}
+      FIREBASE_ENABLED: 'false'
+      AUTH_MAX_ACTIVE_SESSIONS: ${AUTH_MAX_ACTIVE_SESSIONS:--1}
+      MEMBER_USER: ${MEMBER_USER:-member1@template.local}
+      OPERATOR_USER: ${OPERATOR_USER:-operator@template.local}
+      OPERATOR_CONFIGURATION_MASTER_KEY_PATH: /workspace/data/configuration/deployment-master-key
+      MEDIA_ENABLED: 'true'
+      MEDIA_OBJECT_STORE_ENDPOINT: http://minio:9000
+      MEDIA_OBJECT_STORE_REGION: eu-central-1
+      MEDIA_BUCKET: ${MEDIA_BUCKET}
+      MEDIA_OBJECT_STORE_PATH_STYLE: 'true'
+      TZ: ${CONTAINER_TIMEZONE:-Europe/Brussels}
+      JAVA_TOOL_OPTIONS: --enable-native-access=ALL-UNNAMED
+      MYSCOUTEE_VERSION: ${MYSCOUTEE_VERSION:-1.4.0}
+    ports:
+    - 127.0.0.1:${PROFILEMANAGEMENT_DEBUG_PORT:-5005}:${PROFILEMANAGEMENT_DEBUG_PORT:-5005}
+    volumes:
+    - runtime-status-credentials:/run/myscoutee-runtime-status:ro
+    - ./:/workspace
+    - /etc/localtime:/etc/localtime:ro
+    networks:
+    - myscoutee
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - bash -c '>/dev/tcp/127.0.0.1/8080'
+      interval: 2s
+      timeout: 2s
+      retries: 120
+      start_period: 20s
+    depends_on:
+      mongodb:
+        condition: service_started
+      redis:
+        condition: service_started
+      minio:
+        condition: service_healthy
+      runtime-directories:
+        condition: service_completed_successfully
+  frontend-sync:
+    image: ${FRONTEND_SYNC_IMAGE:-myscoutee-template-frontend-sync:1.4.0-dev}
+    pull_policy: build
+    build:
+      context: .
+      dockerfile: docker/images/frontend-sync/dev/Dockerfile
+      args:
+        TZ: ${CONTAINER_TIMEZONE:-Europe/Brussels}
+    container_name: myscoutee-template-dev-frontend-sync
+    hostname: frontend-sync
+    user: ${UID:-1000}:${GID:-1000}
+    restart: 'no'
+    command: >
+      bash -c "rm -f /workspace/nginx-html/.frontend-ready;
+      exec bash /scripts/frontend_auto_watch.sh"
+    environment:
+      MYSCOUTEE_VERSION: ${MYSCOUTEE_VERSION:-1.4.0}
+      FRONTEND_ROOT: /workspace/frontend
+      FRONTEND_SOURCE_DIR: /workspace/frontend/dev
+      FRONTEND_BUILD_CONFIGURATION: dev
+      NGINX_HTML_DIR: /workspace/nginx-html
+      NG_BUILD_MAX_WORKERS: '12'
+      WATCHPACK_POLLING: ${WATCHPACK_POLLING:-true}
+      WATCHPACK_POLLING_INTERVAL: ${WATCHPACK_POLLING_INTERVAL:-1000}
+      CHOKIDAR_USEPOLLING: ${CHOKIDAR_USEPOLLING:-true}
+      CHOKIDAR_INTERVAL: ${CHOKIDAR_INTERVAL:-1000}
+      SYNC_DEBOUNCE_SECONDS: '2'
+      TZ: ${CONTAINER_TIMEZONE:-Europe/Brussels}
+    volumes:
+    - ../frontend:/workspace/frontend
+    - ./docker/conf/nginx/app/myscoutee:/workspace/nginx-html
+    - ./docker/scripts/sync_frontend_assets.sh:/scripts/sync_frontend_assets.sh:ro
+    - ./docker/scripts/frontend_auto_watch.sh:/scripts/frontend_auto_watch.sh:ro
+    - /etc/localtime:/etc/localtime:ro
+    networks:
+    - myscoutee
+    healthcheck:
+      test: [CMD-SHELL, 'test -f /workspace/nginx-html/.frontend-ready']
+      interval: 2s
+      timeout: 2s
+      retries: 90
+  nginx:
+    container_name: myscoutee-template-dev-nginx
+    hostname: nginx
+    image: ${NGINX_IMAGE:-myscoutee-template-nginx:1.4.0-dev}
+    pull_policy: build
+    build:
+      context: docker
+      dockerfile: images/nginx/dev/Dockerfile
+      args:
+        NGINX_BASE_IMAGE: ${NGINX_BASE_IMAGE:-myscoutee-template-nginx:1.4.0-base}
+        TZ: ${CONTAINER_TIMEZONE:-Europe/Brussels}
+    environment:
+      MYSCOUTEE_RUNTIME_STATUS_TOKEN_FILE: /run/myscoutee-runtime-status/token
+      TZ: ${CONTAINER_TIMEZONE:-Europe/Brussels}
+    ports:
+    - 127.0.0.1:${HTTP_PORT:-80}:80
+    - 127.0.0.1:${HTTPS_PORT:-443}:443
+    volumes:
+    - runtime-status-credentials:/run/myscoutee-runtime-status
+    - ./docker/conf/nginx/conf/http:/etc/nginx/dev-templates:ro
+    - ./docker/images/nginx/dev/nginx-entrypoint.sh:/scripts/nginx-entrypoint.sh:ro
+    - ./docker/conf/nginx/conf/stream:/etc/nginx/stream_conf.d
+    - ./docker/conf/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    - ./docker/conf/nginx/app/myscoutee:/usr/share/nginx/html:ro
+    - ./docker/conf/nginx/keys:/etc/nginx/keys
+    - ./data/certbot/conf:/etc/letsencrypt
+    - ./data/certbot/www:/var/www/certbot
+    - /etc/localtime:/etc/localtime:ro
+    networks:
+    - myscoutee
+    depends_on:
+      mcp:
+        condition: service_healthy
+      profilemanagement:
+        condition: service_healthy
+      frontend-sync:
+        condition: service_started
+  runtime-directories:
+    image: ${MYSCOUTEE_DEV_IMAGE:-myscoutee-template-api:1.4.0-dev}
+    user: 0:0
+    network_mode: none
+    restart: 'no'
+    entrypoint:
+    - /bin/sh
+    - /prepare-runtime-directories.sh
+    environment:
+      MYSCOUTEE_RUNTIME_UID: ${UID:-1000}
+      MYSCOUTEE_RUNTIME_GID: ${GID:-1000}
+      MYSCOUTEE_RUNTIME_DIRECTORIES: configuration
+    volumes:
+    - ./data:/workspace/data
+    - ./docker/scripts/prepare_dev_runtime_directories.sh:/prepare-runtime-directories.sh:ro
+    container_name: myscoutee-template-dev-runtime-directories
+volumes:
+  runtime-status-credentials: {}
+name: myscoutee-template-dev

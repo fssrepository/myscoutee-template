@@ -1,0 +1,27 @@
+# Shared replica-set defaults, automatically inherited by normal deployments.
+# Retained as an explicit override/customization surface.
+
+services:
+  mongodb:
+    # Do not inherit a host's low Docker default: each collection/index needs
+    # file descriptors. MongoDB recommends at least 64000 open files.
+    ulimits:
+      nofile:
+        soft: 64000
+        hard: 64000
+    entrypoint: ["bash", "/docker-entrypoint-initdb.d/replica-entrypoint"]
+    command: ["mongod", "--bind_ip_all", "--replSet", "${MONGO_REPLICA_SET_NAME:-rs0}"]
+    environment:
+      MONGO_REPLICA_SET_NAME: ${MONGO_REPLICA_SET_NAME:-rs0}
+      MONGO_REPLICA_SET_HOST: ${MONGO_REPLICA_SET_HOST:-mongodb:27017}
+
+    healthcheck:
+      test: ["CMD", "bash", "/docker-entrypoint-initdb.d/replica-health"]
+      interval: 10s
+      timeout: 10s
+      retries: 30
+      start_period: 180s
+
+  profilemanagement:
+    environment:
+      MONGODB_REPLICA_SET: ${MONGO_REPLICA_SET_NAME:-rs0}

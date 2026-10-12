@@ -1,0 +1,126 @@
+[
+  {
+    "_id": {
+      "$oid": "100000000000000000000001"
+    },
+    "userId": "100000000000000000000001",
+    "syncKey": "template-user-1",
+    "name": "Alex Morgan",
+    "initials": "AM",
+    "email": "member1@template.local",
+    "profileStatus": "public",
+    "city": "Berlin",
+    "locationCoordinates": {
+      "latitude": 52.52,
+      "longitude": 13.405
+    },
+    "partitionKey": "country:de",
+    "images": [
+      "/media/public?key=images/demo-profiles/b29df68956f3fe15e04558de/photo-01/large.webp"
+    ],
+    "activities": {
+      "chats": 1,
+      "notifications": 1,
+      "chat": {
+        "all": 1,
+        "contacts": 1,
+        "appSupport": 0
+      }
+    },
+    "gender": "man"
+  },
+  {
+    "_id": {
+      "$oid": "100000000000000000000002"
+    },
+    "userId": "100000000000000000000002",
+    "syncKey": "template-user-2",
+    "name": "Sam Taylor",
+    "initials": "ST",
+    "email": "member2@template.local",
+    "profileStatus": "public",
+    "city": "Berlin",
+    "locationCoordinates": {
+      "latitude": 52.52,
+      "longitude": 13.405
+    },
+    "partitionKey": "country:de",
+    "images": [
+      "/media/public?key=images/demo-profiles/cdd937e0adcbd1a5e38f3ceb/photo-01/large.webp"
+    ],
+    "activities": {
+      "chats": 1,
+      "notifications": 1,
+      "chat": {
+        "all": 1,
+        "contacts": 1,
+        "appSupport": 0
+      }
+    },
+    "gender": "man"
+  },
+  {
+    "_id": {
+      "$oid": "100000000000000000000003"
+    },
+    "userId": "100000000000000000000003",
+    "syncKey": "template-user-3",
+    "name": "Template Admin",
+    "initials": "TA",
+    "email": "admin@template.local",
+    "profileStatus": "public",
+    "city": "Berlin",
+    "locationCoordinates": {
+      "latitude": 52.52,
+      "longitude": 13.405
+    },
+    "partitionKey": "country:de",
+    "images": [
+      "/media/public?key=images/demo-profiles/1d7d3545ba5e0f1d63918589/photo-01/large.webp",
+      "/media/public?key=images/demo-profiles/1d7d3545ba5e0f1d63918589/photo-02/large.webp"
+    ],
+    "activities": {
+      "chats": 0,
+      "notifications": 0,
+      "chat": {
+        "all": 0,
+        "contacts": 0,
+        "appSupport": 0
+      }
+    },
+    "hostTier": "Admin",
+    "gender": "man"
+  },
+  {
+    "_id": {
+      "$oid": "100000000000000000000004"
+    },
+    "userId": "100000000000000000000004",
+    "syncKey": "template-user-4",
+    "name": "Template Operator",
+    "initials": "TO",
+    "email": "operator@template.local",
+    "profileStatus": "public",
+    "city": "Berlin",
+    "locationCoordinates": {
+      "latitude": 52.52,
+      "longitude": 13.405
+    },
+    "partitionKey": "country:de",
+    "images": [
+      "/media/public?key=images/demo-profiles/7822c5f99eff99d63abe8933/photo-01/large.webp",
+      "/media/public?key=images/demo-profiles/7822c5f99eff99d63abe8933/photo-02/large.webp"
+    ],
+    "activities": {
+      "chats": 0,
+      "notifications": 0,
+      "chat": {
+        "all": 0,
+        "contacts": 0,
+        "appSupport": 0
+      }
+    },
+    "operator": true,
+    "gender": "man"
+  }
+]

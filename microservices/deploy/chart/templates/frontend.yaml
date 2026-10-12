@@ -1,0 +1,115 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app.kubernetes.io/part-of: {{ $.Release.Namespace }}
+    app.kubernetes.io/name: frontend
+    app.kubernetes.io/managed-by: Helm
+spec:
+  replicas: {{ .Values.frontend.replicas }}
+  revisionHistoryLimit: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: frontend
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/part-of: {{ $.Release.Namespace }}
+        app.kubernetes.io/name: frontend
+      annotations:
+        checksum/runtime-status: {{ .Values.services | keys | sortAlpha | toJson | sha256sum }}
+        checksum/config: {{ include (print $.Template.BasePath "/configuration.yaml") $ | sha256sum }}
+    spec:
+      serviceAccountName: runtime-status
+      automountServiceAccountToken: true
+      enableServiceLinks: false
+      securityContext:
+        seccompProfile:
+          type: RuntimeDefault
+      containers:
+      - name: frontend
+        image: {{ .Values.images.frontend.reference | quote }}
+        imagePullPolicy: {{ $.Values.imagePullPolicy }}
+        resources:
+          requests:
+            cpu: 50m
+            memory: 16Mi
+          limits:
+            cpu: 500m
+            memory: 64Mi
+        securityContext:
+          runAsUser: 101
+          runAsGroup: 101
+          runAsNonRoot: true
+          readOnlyRootFilesystem: true
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+            - ALL
+        env:
+        - name: MYSCOUTEE_RUNTIME_SERVICES
+          value: {{ .Values.services | keys | sortAlpha | join "," | quote }}
+        - name: POD_NAMESPACE
+          valueFrom:
+            fieldRef: {fieldPath: metadata.namespace}
+        command: ["/bin/sh", "-c"]
+        args: ["/scripts/runtime-status.sh & exec nginx -c /etc/myscoutee/nginx.conf -g 'daemon off;'"]
+        volumeMounts:
+        - name: configuration
+          mountPath: /etc/myscoutee
+          readOnly: true
+        - name: tmp
+          mountPath: /tmp
+        readinessProbe:
+          httpGet:
+            path: /index.html
+            port: 8080
+          periodSeconds: 3
+      volumes:
+      - name: configuration
+        configMap:
+          name: frontend
+      - name: tmp
+        emptyDir:
+          sizeLimit: 32Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app.kubernetes.io/part-of: {{ $.Release.Namespace }}
+    app.kubernetes.io/name: frontend
+    app.kubernetes.io/managed-by: Helm
+spec:
+  selector:
+    app.kubernetes.io/name: frontend
+  type: NodePort
+  ports:
+  - name: http
+    port: 8080
+    targetPort: 8080
+    nodePort: {{ .Values.frontend.nodePort }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: metrics-gateway
+  labels: {app.kubernetes.io/part-of: {{ $.Release.Namespace }}}
+spec:
+  selector: {app.kubernetes.io/name: frontend}
+  type: NodePort
+  ports:
+  - name: metrics
+    port: 8082
+    targetPort: 8082
+    nodePort: {{ .Values.metricsNodePort }}

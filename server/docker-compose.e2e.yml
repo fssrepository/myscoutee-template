@@ -1,0 +1,258 @@
+# Standalone disposable template E2E. Stop dev/KVM first. Built images only; no source/watch services.
+name: myscoutee-template-e2e
+networks:
+  e2e:
+    driver: bridge
+volumes:
+  mongodb-data: null
+  minio-data: null
+  operator-configuration: null
+  runtime-status-credentials: {}
+services:
+  mongodb:
+    extends:
+      file: docker-compose.replicaset.yml
+      service: mongodb
+    image: ${MONGODB_E2E_IMAGE:-myscoutee-template-mongodb:1.4.0-e2e}
+    build:
+      context: docker/images/mongodb/e2e
+      dockerfile: Dockerfile
+      additional_contexts:
+        mongo-seed: ./docker/conf/mongodb
+      args:
+        MONGO_BASE_IMAGE: ${MONGO_IMAGE:-mongo:8.0.4}
+    container_name: myscoutee-template-e2e-mongodb
+    hostname: mongodb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: e2e-root-only
+      MONGO_APP_USERNAME: guest
+      MONGO_APP_PASSWORD: guest
+      MONGO_INITDB_DATABASE: ${MONGO_E2E_DATABASE:-e2e_db}
+      MONGO_APP_DATABASE: ${MONGO_E2E_DATABASE:-e2e_db}
+      MONGO_DEMO_DATABASE: ${MONGO_E2E_DATABASE:-e2e_db}
+      MONGO_REAL_DATABASE: ${MONGO_E2E_DATABASE:-e2e_db}
+      MONGO_E2E_DATABASE: ${MONGO_E2E_DATABASE:-e2e_db}
+      MONGO_SEED_DIRECTORY: e2e_db
+      MONGO_IMPORT_ALLOWED_COLLECTIONS_BY_DB: ${MONGO_E2E_DATABASE:-e2e_db}:*
+      TZ: ${CONTAINER_TIMEZONE:-Europe/Brussels}
+    volumes:
+    - mongodb-data:/data/db
+    networks:
+    - e2e
+    healthcheck:
+      test:
+      - CMD
+      - bash
+      - /docker-entrypoint-initdb.d/replica-health
+      interval: 2s
+      timeout: 10s
+      retries: 60
+      start_period: 30s
+  redis:
+    image: ${REDIS_IMAGE:-redis:8.6.1-alpine}
+    container_name: myscoutee-template-e2e-redis
+    hostname: redis
+    environment:
+      TZ: ${CONTAINER_TIMEZONE:-Europe/Brussels}
+    networks:
+    - e2e
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - redis-cli ping | grep -q PONG
+      interval: 2s
+      timeout: 3s
+      retries: 30
+      start_period: 2s
+  minio:
+    image: ${MINIO_E2E_IMAGE:-myscoutee-template-minio:1.4.0-e2e}
+    build:
+      context: .
+      dockerfile: docker/images/minio/Dockerfile
+      args:
+        MINIO_BASE_IMAGE: ${MINIO_BASE_IMAGE:-minio/minio:RELEASE.2025-09-07T16-13-09Z}
+    container_name: myscoutee-template-e2e-minio
+    hostname: minio
+    command:
+    - server
+    - /data
+    - --console-address
+    - :9001
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minioadmin
+      MEDIA_BUCKET: ${MEDIA_BUCKET:-myscoutee-media}
+      MINIO_ENDPOINT: http://127.0.0.1:9000
+      TZ: ${CONTAINER_TIMEZONE:-Europe/Brussels}
+    volumes:
+    - minio-data:/data
+    networks:
+    - e2e
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - test -f /tmp/myscoutee-minio-seeded && curl -fsS http://127.0.0.1:9000/minio/health/live
+        >/dev/null
+      interval: 2s
+      timeout: 5s
+      retries: 60
+      start_period: 10s
+  profilemanagement:
+    extends:
+      file: docker-compose.replicaset.yml
+      service: profilemanagement
+    image: ${MYSCOUTEE_E2E_IMAGE:-myscoutee-template-api:1.4.0-e2e}
+    build:
+      context: .
+      dockerfile: docker/images/profilemanagement/e2e/Dockerfile
+      args:
+        MYSCOUTEE_VERSION: ${MYSCOUTEE_VERSION:-1.4.0}
+    container_name: myscoutee-template-e2e-profilemanagement
+    hostname: profilemanagement
+    environment:
+      EMAIL_BASE_URL: ${EMAIL_BASE_URL:-https://127.0.0.1}
+      EMAIL_ACCOUNT_WARNING_CHECK_DELAY_MS: ${EMAIL_ACCOUNT_WARNING_CHECK_DELAY_MS:-60000}
+      EMAIL_SENDGRID_ENDPOINT: ${EMAIL_SENDGRID_ENDPOINT:-https://api.sendgrid.com/v3/mail/send}
+      SPRING_PROFILES_ACTIVE: prod
+      SPRING_DEVTOOLS_RESTART_ENABLED: 'false'
+      SPRING_DEVTOOLS_ADD_PROPERTIES: 'false'
+      E2E_MODE: 'true'
+      MYSCOUTEE_VERSION: ${MYSCOUTEE_VERSION:-1.4.0}
+      MONGO_APP_USERNAME: guest
+      MONGO_APP_PASSWORD: guest
+      MONGODB_HOST: mongodb
+      MONGODB_DATABASE: ${MONGO_E2E_DATABASE:-e2e_db}
+      MONGODB_DEMO_DATABASE: ${MONGO_E2E_DATABASE:-e2e_db}
+      SPRING_DATA_REDIS_HOST: redis
+      SPRING_DATA_REDIS_PORT: '6379'
+      CHAT_STREAM_BLOCK_MS: '10000'
+      CHAT_CALL_STUN_PORT: ${CHAT_CALL_E2E_STUN_PORT:-13478}
+      FIREBASE_ENABLED: 'false'
+      AUTH_MAX_ACTIVE_SESSIONS: ${AUTH_MAX_ACTIVE_SESSIONS:--1}
+      MEMBER_USER: member1@template.local
+      OPERATOR_USER: operator@template.local
+      OPERATOR_BOOTSTRAP_EMAIL: ''
+      OPERATOR_BOOTSTRAP_PASSWORD_SHA256: ''
+      OPERATOR_BOOTSTRAP_ALLOW_INSECURE: 'false'
+      OPERATOR_CONFIGURATION_MASTER_KEY_PATH: /etc/myscoutee/configuration/deployment-master-key
+      WEBSOCKET_ALLOWED_ORIGIN_PATTERNS: http://localhost,http://127.0.0.1,http://localhost:80,http://127.0.0.1:80,https://localhost,https://127.0.0.1,https://localhost:443,https://127.0.0.1:443
+      ADMIN_STATS_ENABLED: 'false'
+      MEDIA_ENABLED: 'true'
+      MEDIA_OBJECT_STORE_ENDPOINT: http://minio:9000
+      MEDIA_OBJECT_STORE_REGION: eu-central-1
+      MEDIA_OBJECT_STORE_ACCESS_KEY: minioadmin
+      MEDIA_OBJECT_STORE_SECRET_KEY: minioadmin
+      MEDIA_BUCKET: ${MEDIA_BUCKET:-myscoutee-media}
+      MEDIA_OBJECT_STORE_PATH_STYLE: 'true'
+      LOGGING_LEVEL_ORG_SPRINGFRAMEWORK_DATA_MONGODB_CORE_MONGOTEMPLATE: WARN
+      JAVA_TOOL_OPTIONS: --enable-native-access=ALL-UNNAMED -XX:+ExitOnOutOfMemoryError
+        -Xms512m -Xmx2g
+      TZ: ${CONTAINER_TIMEZONE:-Europe/Brussels}
+      CONFIG_MCP_DEMO_ENABLED: 'true'
+      INTEGRATION_PUBLIC_BASE_URL: ${INTEGRATION_PUBLIC_BASE_URL:-https://127.0.0.1/api/integrations/v1}
+      MYSCOUTEE_RUNTIME_STATUS_ENABLED: 'true'
+      MYSCOUTEE_RUNTIME_STATUS_URL: http://nginx:9081/internal/runtime-status
+      MYSCOUTEE_RUNTIME_STATUS_TOKEN_FILE: /run/myscoutee-runtime-status/token
+    volumes:
+    - operator-configuration:/etc/myscoutee/configuration
+    - runtime-status-credentials:/run/myscoutee-runtime-status:ro
+    networks:
+    - e2e
+    read_only: true
+    tmpfs:
+    - /tmp:size=256m,mode=1777
+    cap_drop:
+    - ALL
+    security_opt:
+    - no-new-privileges:true
+    depends_on:
+      mongodb:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      minio:
+        condition: service_healthy
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - wget -qO- http://127.0.0.1:8080/health | grep -Fq '"status":"UP"'
+      interval: 2s
+      timeout: 5s
+      retries: 60
+      start_period: 20s
+    stop_grace_period: 30s
+  nginx:
+    image: ${NGINX_E2E_IMAGE:-myscoutee-template-nginx:1.4.0-e2e}
+    build:
+      context: docker/images/nginx/e2e
+      dockerfile: Dockerfile
+      additional_contexts:
+        frontend-source: ../frontend
+        nginx-config: ./docker/conf/nginx
+        nginx-runtime: ./docker/images/nginx/runtime-status
+    container_name: myscoutee-template-e2e-nginx
+    hostname: nginx
+    environment:
+      MYSCOUTEE_RUNTIME_STATUS_TOKEN_FILE: /run/myscoutee-runtime-status/token
+    volumes:
+    - runtime-status-credentials:/run/myscoutee-runtime-status
+    ports:
+    - ${E2E_BIND_ADDRESS:-127.0.0.1}:${E2E_HTTP_PORT:-80}:80
+    - ${E2E_BIND_ADDRESS:-127.0.0.1}:443:443
+    networks:
+    - e2e
+    depends_on:
+      mcp:
+        condition: service_healthy
+      profilemanagement:
+        condition: service_healthy
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - wget -qO- http://127.0.0.1/nginx-health >/dev/null
+      interval: 2s
+      timeout: 5s
+      retries: 30
+      start_period: 5s
+  mcp:
+    image: ${MCP_E2E_IMAGE:-myscoutee-template-mcp:1.4.0-e2e}
+    build:
+      context: ../mcp
+      dockerfile: Dockerfile
+    container_name: myscoutee-template-e2e-mcp
+    hostname: mcp
+    restart: 'no'
+    environment:
+      MYSCOUTEE_MCP_TRANSPORT: http
+      MYSCOUTEE_MCP_LISTEN: 0.0.0.0:8080
+      MYSCOUTEE_API_BASE_URL: http://profilemanagement:8080
+      MYSCOUTEE_PUBLIC_API_BASE_URL: ${MYSCOUTEE_PUBLIC_API_BASE_URL:-https://127.0.0.1/api}
+    networks:
+    - e2e
+    read_only: true
+    cap_drop:
+    - ALL
+    security_opt:
+    - no-new-privileges:true
+    mem_limit: 128m
+    healthcheck:
+      test:
+      - CMD
+      - /myscoutee-mcp
+      - healthcheck
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 5s
+  stun:
+    extends:
+      file: docker-compose-stun.yml
+      service: stun
+    container_name: myscoutee-template-e2e-stun
+    hostname: stun
+    networks:
+    - e2e
+    ports: !override
+    - ${CHAT_CALL_E2E_STUN_PORT:-13478}:3478/udp
+    - ${CHAT_CALL_E2E_STUN_PORT:-13478}:3478/tcp
