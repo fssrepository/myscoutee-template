@@ -150,9 +150,10 @@ deep-link behavior. A working `local` build alone does not close frontend work.
    `1.0.0`; propagate that version through the native build stamping, frontend
    badge, JAR, DEB, image tags, release metadata and Git tag `v1.0.0`. Retain
    attribution and licensing. Verify a clean checkout/submodule initialization.
-   Before remote CI publication, resolve the local frontend URL: a GitHub runner
-   cannot fetch `/home/raxim/workspace/myscoutee-template-frontend`. Keep this as
-   an explicit publication dependency rather than a silently broken checkout.
+   Portable frontend initialization now uses `tools/bootstrap-submodules.sh`
+   and one stable Git bundle at the exact gitlink. Its components still use the
+   existing remote repository. The clean independent checkout passed; later
+   release/build qualification remains separate.
 
 4. **Compose the minimal backend application — IN PROGRESS.**
    Reuse `Main`, Gradle, the native Spring configuration, security filters,
@@ -682,7 +683,12 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     Close with valid update installation, missing/tampered metadata rejection,
     restart/retry and rollback evidence on a disposable installed template.
 
-29. **Wire GitHub release, GHCR and GitHub Pages publication — PENDING.**
+29. **Wire GitHub release, GHCR and GitHub Pages publication — IN PROGRESS.**
+    Portable frontend checkout now uses the local submodule's exact Git bundle
+    and the existing remote components repository. A clean independent checkout
+    passed. The Pages workflow builds the existing `github` configuration and
+    checks frontend tests, version and required static assets before publication.
+    DEB/GHCR publication remains a separate artifact gate.
     Use the established release/build commands from CI rather than duplicating
     packaging logic. Prepare `v1.0.0`, DEB/client-tools/signatures/checksums and
     versioned Docker image publication to GitHub Container Registry. Configure

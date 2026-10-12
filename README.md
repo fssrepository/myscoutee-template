@@ -19,20 +19,27 @@ It tracks the complete minimal framework, including frontend local/HTTP,
 dev/prod/E2E, functional and stress tests, KVM, installation, signed updates and
 GitHub release/image/Pages publication. The initial release version is **1.0.0**.
 
-**Current status:** minimal backend foundations in progress. The selected native
-account, session, consent, access-policy, help/guide and deployment/Firebase code is covered by
-102 focused JUnit tests across staged runs. The notification checkpoint adds 75
-standard tests and one embedded MongoDB test; personal/support chat adds 24
-focused tests. Minimal profile saving, location updates and localization now have
-focused checks, including preservation of account fields omitted from the small
-profile form. The selected dev backend now starts with MongoDB, Redis and MinIO;
-ten automated HTTP cases cover the initial seed and session/access boundaries.
-The account purge worker now has focused retry/cleanup and embedded MongoDB
-coverage for the installed domains. Its email/integration cleanup and provider
-callback are still pending. The frontend, complete runtime composition and installation
-are still being implemented; this is not yet a complete runnable release.
-The [QA table and execution notes](guides/qa/README.md) distinguish verified
-backend contracts from pending frontend, KVM and installed-release checks.
+**Current status:** the minimal local/HTTP frontend, monolith and four-service KVM
+application are implemented. Automated checks cover identity/consent, visual
+SmartList, profile/avatar, ordinary chat and video calls, guides, notifications,
+API/MCP and the selected operator controls. Report/feedback/support and other
+MyScoutee product implementations are omitted. KVM evidence is in
+[`MSC122_TEMPLATE_KVM_20261012.json`](guides/qualification/evidence/MSC122_TEMPLATE_KVM_20261012.json).
+Packaging, installed updates, final performance comparison and publication remain
+in progress; VMware installation is explicitly deferred. The
+[QA table and execution notes](guides/qa/README.md) keep these gates separate.
+
+Clone the parent repository, then run:
+
+```sh
+tools/bootstrap-submodules.sh
+npm ci --prefix frontend
+npm --prefix frontend run start:local
+```
+
+The [developer/operator guide](guides/manuals/template-getting-started-en.html)
+and its [single PDF](guides/manuals/MyScoutee_Template_Getting_Started_EN.pdf)
+cover the selected workflows and current qualification limits.
 
 ## Target and local repository layout
 
@@ -40,8 +47,8 @@ The deliverable is a complete minimal counterpart of `myscoutee-backend`, with
 its own backend/frontend shell, development workflow, versioned releases,
 local VMware Debian installation, KVM lab and getting started guide/PDF. Backend
 preparation has passed its source KVM and monolith gates; the standalone template
-composition is in progress. Its selected backend is runnable; the frontend and
-complete deployment workflows are not ready yet.
+composition is in progress. Its selected backend and frontend are runnable; installed deployment and release
+qualification are still in progress.
 
 The template retains the backend structure and operational workflows, with smaller
 domain implementations where appropriate. Minimal screens and seed data must not
@@ -72,13 +79,13 @@ storage can be retained without its management UI. The operator installation
 and configuration surface is part of the foundation. Omitting a screen must not
 silently remove the background behavior required by the remaining application.
 
-`frontend` is a Git submodule backed for now by the local repository
-`/home/raxim/workspace/myscoutee-template-frontend`. Its `components` submodule
-uses the existing remote `https://github.com/fssrepository/myscoutee-components.git`.
-The local frontend may receive its own remote later; update its origin and the
-parent's `git submodule set-url frontend <repository-url>` together at that point.
-The current absolute local URL is groundwork for this workspace, not a portable
-published template release.
+`frontend` remains a local Git submodule. The portable
+[`tools/sources/frontend.bundle`](tools/sources/README.md) carries its exact
+committed source; `tools/bootstrap-submodules.sh` initializes that checkout.
+Its `components` submodule uses the existing remote repository. Commit frontend
+changes first, then run `tools/sync-local-frontend.sh` and commit the gitlink and
+bundle together. Redirect `.gitmodules` to a real frontend repository when the
+new project has one; do not flatten the submodule into the parent.
 
 ## Selected backend foundations
 

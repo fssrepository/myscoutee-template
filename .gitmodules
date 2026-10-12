@@ -1,5 +1,5 @@
 [submodule "frontend"]
 	path = frontend
-	url = /home/raxim/workspace/myscoutee-template-frontend
+	url = ./tools/sources/frontend.bundle
 	branch = master
-	update = merge
+	update = checkout

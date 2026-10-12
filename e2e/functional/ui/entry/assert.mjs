@@ -2,6 +2,7 @@ import { assert } from '../../../shared/assertions.mjs';
 
 export async function assertUi({ page, ctx, local = ctx?.mode !== 'full', memberReady, profileSelected, role = 'member', actorId = '100000000000000000000001', actorName = 'Alex Morgan', consentExpected = true, endsSession = false }) {
   const workspacePath = role === 'member' ? '/home' : '/' + role;
+  const basePath = new URL(page.browser.baseUrl).pathname.replace(/\/$/, '');
   await page.navigate('/privacy-policy');
   await page.waitForSelector('.document-viewer-section-body');
   await page.waitForText('Privacy information');
@@ -28,7 +29,7 @@ export async function assertUi({ page, ctx, local = ctx?.mode !== 'full', member
   await page.waitForText(actorName);
   await page.navigate(workspacePath);
   await page.waitForText(actorName);
-  assert(new URL(await page.evaluate(() => location.href)).pathname === workspacePath, 'Session and consent must survive reload');
+  assert(new URL(await page.evaluate(() => location.href)).pathname === basePath + workspacePath, 'Session and consent must survive reload');
   const snapshot = await page.evaluate(async () => {
     const databases = await indexedDB.databases();
     const name = databases.find(db => db.name === 'myscoutee-template_demo_db')?.name;
@@ -63,5 +64,10 @@ export async function assertUi({ page, ctx, local = ctx?.mode !== 'full', member
   await page.waitForUrlPath('/entry');
   assert(page.pageErrors.length === 0, 'No browser runtime exceptions', { errors: page.pageErrors });
   assert(!page.consoleMessages.some(message => message.type === 'error'), 'No handled Angular errors', { errors: page.consoleMessages.filter(message => message.type === 'error') });
-  assert(!page.network.some(request => request.status >= 400), 'No failed HTTP resources', { failures: page.network.filter(request => request.status >= 400) });
+  const expectedPagesRedirect = request => process.env.E2E_PAGES_REDIRECT === 'true'
+    && local && request.status === 404 && request.type === 'Document'
+    && ['/entry','/privacy-policy','/terms',workspacePath].some(route =>
+      request.url === page.browser.baseUrl + route);
+  const failures = page.network.filter(request => request.status >= 400 && !expectedPagesRedirect(request));
+  assert(!failures.length, 'No failed HTTP resources beyond the explicit Pages document redirect', { failures });
 }

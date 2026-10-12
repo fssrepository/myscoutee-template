@@ -32,7 +32,6 @@ export async function launchChromeBrowser(options = {}) {
     '--allow-insecure-localhost',
     // Explicit fixture-only opt-in, matching the managed QA browser launcher.
     ...(options.ignoreCertificateErrors === true ? ['--ignore-certificate-errors'] : []),
-    ...(options.fakeMediaStream === true ? ['--use-fake-device-for-media-stream', '--use-fake-ui-for-media-stream'] : []),
     '--hide-scrollbars',
     '--mute-audio',
     '--no-sandbox',
@@ -642,8 +641,9 @@ export class ChromePage {
   }
 
   async waitForUrlPath(pathname, timeoutMs = 15000) {
+    const routePath = new URL(absoluteUrl(this.browser.baseUrl, pathname)).pathname;
     return this.waitFor(`url path ${pathname}`, async () => {
-      return this.evaluate(expectedPath => window.location.pathname === expectedPath, pathname);
+      return this.evaluate(expectedPath => window.location.pathname === expectedPath, routePath);
     }, timeoutMs);
   }
 
