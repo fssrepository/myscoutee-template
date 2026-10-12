@@ -58,6 +58,8 @@ sed \
 [[ "$(sed -n 's/^Package: //p' "${STAGING_DIR}/DEBIAN/control")" == "$RELEASE_PROJECT_NAME" ]] || {
   echo 'Debian control identity does not match the release project.' >&2; exit 1;
 }
+sed -e "s/@RUNTIME_UID@/${RELEASE_PROJECT_UID}/g" -e "s/@RUNTIME_GID@/${RELEASE_PROJECT_GID}/g" \
+  "${REPO_ROOT}/packaging/debian/preinst" > "${STAGING_DIR}/DEBIAN/preinst"
 install -m 0755 "${REPO_ROOT}/packaging/debian/postinst" "${STAGING_DIR}/DEBIAN/postinst"
 install -m 0755 "${REPO_ROOT}/packaging/debian/prerm" "${STAGING_DIR}/DEBIAN/prerm"
 python3 "${SCRIPT_DIR}/render-postrm.py" "${REPO_ROOT}/packaging" "${STAGING_DIR}/DEBIAN/postrm"
@@ -317,6 +319,7 @@ fi
 find "${STAGING_DIR}" -type d -exec chmod 0755 {} +
 find "${STAGING_DIR}" -type f -exec chmod 0644 {} +
 chmod 0755 \
+  "${STAGING_DIR}/DEBIAN/preinst" \
   "${STAGING_DIR}/DEBIAN/postinst" \
   "${STAGING_DIR}/DEBIAN/prerm" \
   "${STAGING_DIR}/DEBIAN/postrm"

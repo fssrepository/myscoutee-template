@@ -1,0 +1,17 @@
+{
+  "name": "chat websocket opens for demo chat",
+  "group": "websocket",
+  "order": 760,
+  "transport": "websocket",
+  "path": "/api/activities/chats/ws",
+  "params": {
+    "chatId": "{{chatId}}",
+    "userId": "{{userId}}",
+    "sessionKind": "demo",
+    "sessionId": "{{socketSessionId}}"
+  },
+  "holdOpenMs": 100,
+  "expectedStatus": 101,
+  "script": "assert.mjs",
+  "maxMs": 5000
+}

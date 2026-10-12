@@ -1,4 +1,5 @@
 # Installed template composition: managed images are supplied by the DEB.
+name: myscoutee-template
 networks:
   myscoutee:
     driver: bridge

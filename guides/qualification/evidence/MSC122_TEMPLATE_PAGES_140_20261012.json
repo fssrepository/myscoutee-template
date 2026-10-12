@@ -1,0 +1,36 @@
+{
+  "task": "15.3",
+  "status": "DONE",
+  "date": "2026-10-12",
+  "scope": "Built Pages artifact served under its deployment prefix with the actual 404 redirect document. Publication is task 29.3.",
+  "pagesVersion": {
+    "version": "1.4.0",
+    "buildId": "e025f084cd8d-20261012133155",
+    "builtAt": "2026-10-12T13:31:55.322Z",
+    "gitSha": "e025f084cd8d"
+  },
+  "productionVersion": {
+    "version": "1.4.0",
+    "buildId": "9c38cd99c733-20261012112721",
+    "builtAt": "2026-10-12T11:27:21.999Z",
+    "gitSha": "9c38cd99c733"
+  },
+  "devVersion": "1.4.0",
+  "mobileLayout": {
+    "titleBottom": 434.390625,
+    "exploreTop": 450.390625,
+    "exploreBottom": 494.390625,
+    "brandBottom": 49,
+    "width": 393,
+    "scrollWidth": 393,
+    "tabTitle": "MyScoutee"
+  },
+  "checks": [
+    "Mobile Explore below title, loaded logo, no horizontal overflow",
+    "Operator-seeded browser title",
+    "Native entry consent/profile selection, local persistence and logout",
+    "Privacy/terms/home deep links through the Pages redirect",
+    "No unexpected failed assets, Java API calls or browser errors",
+    "DEV/production/Pages application version agreement"
+  ]
+}

@@ -1,0 +1,415 @@
+{
+  "task": "29.3",
+  "status": "DONE",
+  "date": "2026-10-12",
+  "pages": {
+    "url": "https://fssrepository.github.io/myscoutee-template-frontend/",
+    "repository": "fssrepository/myscoutee-template-frontend",
+    "branch": "master",
+    "path": "/docs",
+    "commit": "94ae4947893b842536671885ddd9a6669911106b",
+    "sourceTree": "4d8450783e97e14f8d5315d7e9a4c850ee3ee86d",
+    "version": {
+      "version": "1.4.0",
+      "buildId": "msc122-source-4d8450783e97",
+      "builtAt": "2026-10-12T16:24:12.749Z",
+      "gitSha": null
+    },
+    "verifiedAt": "2026-10-12T16:25:59.258175+00:00",
+    "files": [
+      {
+        "path": "index.html",
+        "status": 200,
+        "sha256": "03923004bb3478bdfbe47feacff1b2a2ed3ea2b827203dcc3e8d34c5949d31e4"
+      },
+      {
+        "path": "app-version.json",
+        "status": 200,
+        "sha256": "f5ca78a74b283fcec228dff8bdafb14cba05aa8cb10b694a1c1279918dd9c863"
+      },
+      {
+        "path": "app-sw.js",
+        "status": 200,
+        "sha256": "faef8fd893a7704c26b1336113ec0db396f62583d61f14eae5a8bbc4c94662d0"
+      },
+      {
+        "path": "main-LCGEUASN.js",
+        "status": 200,
+        "sha256": "2a4299a596d46862f446be59ed760632b992af83c18c449afa7925b68971e324"
+      },
+      {
+        "path": "chunk-INOLRL27.js",
+        "status": 200,
+        "sha256": "1ff3d673476fb6f98f8a3ce6cc9bbeabf941f57cf8e03fcfc0a32002c4867d49"
+      },
+      {
+        "path": "assets/logo/heart.webp",
+        "status": 200,
+        "sha256": "6d6b9aace538fec07e2461cbecd8d765df989f71905537b7c77bb2560a4204a4"
+      }
+    ],
+    "frontendWorktreeClean": true,
+    "workflow": {
+      "path": ".github/workflows/pages.yml",
+      "source": "docs",
+      "triggers": [
+        "push:master",
+        "workflow_dispatch"
+      ],
+      "id": 38277208807,
+      "head_sha": "94ae4947893b842536671885ddd9a6669911106b",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/fssrepository/myscoutee-template-frontend/actions/runs/38277208807"
+    },
+    "correction": {
+      "extraLandingOperatorButtonRemoved": true,
+      "entryLogicUnchanged": true,
+      "existingDemoRoleSelectorUnchanged": true,
+      "startupBrandingInitializedBeforeRootCreation": true,
+      "focusedTemplateTests": 5,
+      "focusedNativeTests": 1,
+      "templateBuild": "DONE",
+      "nativeStartupFix": "source and focused test only; not packaged or deployed",
+      "installedPackages": "unchanged by this Pages publication"
+    }
+  },
+  "images": {
+    "myscoutee-backend": {
+      "version": "1.4.0",
+      "images": [
+        {
+          "service": "nginx-base",
+          "reference": "ghcr.io/fssrepository/myscoutee-nginx:1.4.0-base",
+          "imageId": "sha256:45c0bb9de7a903d626100397a6826a728464a8c1d6a91e4cb643db1a4f9202c7",
+          "digest": "ghcr.io/fssrepository/myscoutee-nginx@sha256:fb6a0855e824b2f33a35a7b97f4b70b49da2e34972abf3dd9e14dc9346b5bd3f"
+        },
+        {
+          "service": "nginx",
+          "reference": "ghcr.io/fssrepository/myscoutee-nginx:1.4.0-prod",
+          "imageId": "sha256:7c1d84983cf510cb0b9fa0af4a8547d928104be1e9441d29fff32f4d3551e6f0",
+          "digest": "ghcr.io/fssrepository/myscoutee-nginx@sha256:d9615f6f87da121b9e4f5797d97b6f1eacd6d170cfc5eb536617e53c3a0a8309"
+        },
+        {
+          "service": "profilemanagement",
+          "reference": "ghcr.io/fssrepository/myscoutee-api:1.4.0-prod",
+          "imageId": "sha256:c4e4340537e8f0e8c448c82f1798a4a69691d84dc508de999546447aa0a43419",
+          "digest": "ghcr.io/fssrepository/myscoutee-api@sha256:2a4155eba17c88d7b9932f20b8ad80ac5da29067a2c67a1d458a3cf1253d2467"
+        },
+        {
+          "service": "minio",
+          "reference": "ghcr.io/fssrepository/myscoutee-minio:1.4.0-prod",
+          "imageId": "sha256:413444dd4c45cc2fe6db5644a39717a88baaa2e51c0fc4ceb30966002571686f",
+          "digest": "ghcr.io/fssrepository/myscoutee-minio@sha256:45ac5d7e2109a91f8cf908d3aa5dfaa4ac953d740f52a3e923da5e13d580e4a8"
+        },
+        {
+          "service": "registry-demo",
+          "reference": "ghcr.io/fssrepository/myscoutee-registry:1.4.0-prod",
+          "imageId": "sha256:aa7b6779f4a88d622959dce67e07b2169fc11163ac3d9b733c15244c75a60a01",
+          "digest": "ghcr.io/fssrepository/myscoutee-registry@sha256:287415ce025fc8498ea398cd09b7377d431b6e7e99e7908dec333235f6717a09"
+        },
+        {
+          "service": "payment-simulator",
+          "reference": "ghcr.io/fssrepository/myscoutee-payment-simulator:1.4.0-prod",
+          "imageId": "sha256:6e12179bd46b195193c9211c313854880f43be3e88da7002ecf0d2fc6ae0b116",
+          "digest": "ghcr.io/fssrepository/myscoutee-payment-simulator@sha256:faa659cee684510e26037c9443a15688721620f9bc2884d0182725eb7d4406b1"
+        },
+        {
+          "service": "mcp",
+          "reference": "ghcr.io/fssrepository/myscoutee-mcp:1.4.0-prod",
+          "imageId": "sha256:838f106d6b86bcc332b01cc9d8cedc63a3cb15f3a34642fc118c2ecd2f067a76",
+          "digest": "ghcr.io/fssrepository/myscoutee-mcp@sha256:383a4cc9f7e18cadf4cead4ea5db963ff1a750ea82d3b3c24216bcfb5c2d6a05"
+        }
+      ],
+      "pulledAndMatchedPackagedImageIds": true
+    },
+    "myscoutee-template": {
+      "version": "1.4.0",
+      "images": [
+        {
+          "service": "nginx-base",
+          "reference": "ghcr.io/fssrepository/myscoutee-template-nginx:1.4.0-base",
+          "imageId": "sha256:45c0bb9de7a903d626100397a6826a728464a8c1d6a91e4cb643db1a4f9202c7",
+          "digest": "ghcr.io/fssrepository/myscoutee-template-nginx@sha256:fb6a0855e824b2f33a35a7b97f4b70b49da2e34972abf3dd9e14dc9346b5bd3f"
+        },
+        {
+          "service": "nginx",
+          "reference": "ghcr.io/fssrepository/myscoutee-template-nginx:1.4.0-prod",
+          "imageId": "sha256:f5b2477d3d2427c2fac1fc87e28d9a125376c23e331c900dfd02a72fb47c2cdd",
+          "digest": "ghcr.io/fssrepository/myscoutee-template-nginx@sha256:a060624b926f6daca28aad45ee582213197db36ba2cd875090faf08855a0352b"
+        },
+        {
+          "service": "profilemanagement",
+          "reference": "ghcr.io/fssrepository/myscoutee-template-api:1.4.0-prod",
+          "imageId": "sha256:1ec05da2327ab042174230498d0543dfb5b378a18c9d803086101f66d9debb80",
+          "digest": "ghcr.io/fssrepository/myscoutee-template-api@sha256:0150a39af304f3a547e9a560a35a7767ef41f5e114b7955d5058a8630d15db60"
+        },
+        {
+          "service": "minio",
+          "reference": "ghcr.io/fssrepository/myscoutee-template-minio:1.4.0-prod",
+          "imageId": "sha256:3edf30950d7f2548f2eb72ba0b00522cf7d30e75ed01b3ca5bc5859871efde2d",
+          "digest": "ghcr.io/fssrepository/myscoutee-template-minio@sha256:43c9a6169408b8ffe1219ecfec6a7d65b9cf52d87e71df8c613bbafd6da8537a"
+        },
+        {
+          "service": "mcp",
+          "reference": "ghcr.io/fssrepository/myscoutee-template-mcp:1.4.0-prod",
+          "imageId": "sha256:4a29d6a23ffdecefcfc7df145566be3de991feefadfba475f001335e241b97a1",
+          "digest": "ghcr.io/fssrepository/myscoutee-template-mcp@sha256:7cef2dc38a988d9a1f767716f6bbb24525a0b87913822ad8d3d4b27592114268"
+        }
+      ],
+      "pulledAndMatchedPackagedImageIds": true
+    }
+  },
+  "previousPagesPublications": [
+    {
+      "url": "https://fssrepository.github.io/myscoutee-template/",
+      "build": {
+        "version": "1.4.0",
+        "buildId": "e025f084cd8d-20261012153812",
+        "builtAt": "2026-10-12T15:38:12.350Z",
+        "gitSha": "e025f084cd8d"
+      },
+      "files": [
+        {
+          "path": "404.html",
+          "status": 200,
+          "sha256": "3ae3b55a84c8bf3587b40f12542c970482a1e8563f5c18fff5b0f64d17e2ba8b"
+        },
+        {
+          "path": "app-sw.js",
+          "status": 200,
+          "sha256": "f2e61f7cda3286c3c8af3d4afeb7c8d2a5a1fd168f1875e6b5a018e8d630d9ee"
+        },
+        {
+          "path": "app-version.json",
+          "status": 200,
+          "sha256": "8cea67f4c7aecb1bdf901ab39bc316f6af8f72259a6d1925d51049fe1bc39975"
+        },
+        {
+          "path": "assets/icon/apple-touch-icon.png",
+          "status": 200,
+          "sha256": "eb85895b2ba1a19bce44c972acb17add4659e72ce36185d043bb42518b25f8f6"
+        },
+        {
+          "path": "assets/icon/favicon.ico",
+          "status": 200,
+          "sha256": "6f5876e1a51a4d7be60122e1db5da550d4b51165f75e35de5cdcb14e0a43ab44"
+        },
+        {
+          "path": "assets/logo/heart.webp",
+          "status": 200,
+          "sha256": "6d6b9aace538fec07e2461cbecd8d765df989f71905537b7c77bb2560a4204a4"
+        },
+        {
+          "path": "chunk-536VYR36.js",
+          "status": 200,
+          "sha256": "d0a6ab359e4ce40f4a49811bc2d639d730a6462f04236cf515c71ef5a90a7a8a"
+        },
+        {
+          "path": "chunk-AVEFQODZ.js",
+          "status": 200,
+          "sha256": "45a431aa3505f3539eb6002ba1d8894437db4a6bbd2a32da0bf2345ca1447159"
+        },
+        {
+          "path": "chunk-LSIHGRHO.js",
+          "status": 200,
+          "sha256": "bd7590b5504f8d3a781640d12352b20f720b1ae2453e52bbc6cac41e2efd0d88"
+        },
+        {
+          "path": "chunk-PLSLNY3W.js",
+          "status": 200,
+          "sha256": "ee7ce37eb50e51c7489c9c8f47b3fa67a64892e83de295249d669583587a8bbc"
+        },
+        {
+          "path": "chunk-T7UTZCVG.js",
+          "status": 200,
+          "sha256": "055d511cd58d5bce646b401b733a9a58b9a478d53fbdfe9a34d64b4275ea1505"
+        },
+        {
+          "path": "chunk-TU2LSO22.js",
+          "status": 200,
+          "sha256": "61e5bbf1fe604cebb953de763e7a607ab1f1ce4c745f2f87593b5b40c5b44aee"
+        },
+        {
+          "path": "chunk-TUYZLXXR.js",
+          "status": 200,
+          "sha256": "d60c82e5f4e8964e47b71eab831a6c646f042657468c2e06cc246434a010607a"
+        },
+        {
+          "path": "index.html",
+          "status": 200,
+          "sha256": "583cdd6218c4ccb20789b8a88c49148ac274d281fabde8d12b5a32e9e69733b2"
+        },
+        {
+          "path": "main-YPSTZXFW.js",
+          "status": 200,
+          "sha256": "9fe3d80067cfb0fa74b294add9dc7d5777f07bb4c93d855a8d18f874930be8e5"
+        },
+        {
+          "path": "manifest.webmanifest",
+          "status": 200,
+          "sha256": "0939efc1a467496e25516adbd77f0eb0dc6e5d73ffd27abfe5c85a9e89e79cf7"
+        },
+        {
+          "path": "styles-BOT27C4F.css",
+          "status": 200,
+          "sha256": "895ef7854e7b6d7373d3e81f04cff6fad48541f7c3608e2860679f9794b59f49"
+        }
+      ],
+      "deepLinkServesExactRedirectDocument": true,
+      "branch": "gh-pages",
+      "commit": "849340d98ca42a8069dcbf1cf8333e11f0a1ab04",
+      "frontendRepository": "Local repository retained; remote unchanged. Built files published from the parent repository gh-pages branch."
+    },
+    {
+      "url": "https://fssrepository.github.io/myscoutee-template-frontend/",
+      "repository": "fssrepository/myscoutee-template-frontend",
+      "branch": "master",
+      "path": "/docs",
+      "commit": "683ce1d428caeeed7b29cb2fb76c035e2bdad8ca",
+      "sourceTree": "0f80ac41877b1a73cb775a66cd750c49123261eb",
+      "version": {
+        "version": "1.4.0",
+        "buildId": "msc122-source-0f80ac41877b",
+        "builtAt": "2026-10-12T16:01:02.233Z",
+        "gitSha": null
+      },
+      "verifiedAt": "2026-10-12",
+      "files": [
+        {
+          "path": "404.html",
+          "status": 200,
+          "sha256": "7cb4c744e1605ff7b0c4750d4d85b00ba31f28003314a64b07efaadc173334a8"
+        },
+        {
+          "path": "app-sw.js",
+          "status": 200,
+          "sha256": "406a4331cf0793165abf1908fe71613010bb45de4dd4b279ece95f248dcab6c3"
+        },
+        {
+          "path": "app-version.json",
+          "status": 200,
+          "sha256": "d79098db292eec61ccf84958be0c3f689be73e3dedaa864dfbd7c4e88322156b"
+        },
+        {
+          "path": "assets/icon/apple-touch-icon.png",
+          "status": 200,
+          "sha256": "eb85895b2ba1a19bce44c972acb17add4659e72ce36185d043bb42518b25f8f6"
+        },
+        {
+          "path": "assets/icon/favicon.ico",
+          "status": 200,
+          "sha256": "6f5876e1a51a4d7be60122e1db5da550d4b51165f75e35de5cdcb14e0a43ab44"
+        },
+        {
+          "path": "assets/logo/heart.webp",
+          "status": 200,
+          "sha256": "6d6b9aace538fec07e2461cbecd8d765df989f71905537b7c77bb2560a4204a4"
+        },
+        {
+          "path": "chunk-2EYQI5VI.js",
+          "status": 200,
+          "sha256": "0a65c699e3b9c03c9259892d69fe8f872d6c8de34c1aa99d54761b5ead30b3e1"
+        },
+        {
+          "path": "chunk-536VYR36.js",
+          "status": 200,
+          "sha256": "d0a6ab359e4ce40f4a49811bc2d639d730a6462f04236cf515c71ef5a90a7a8a"
+        },
+        {
+          "path": "chunk-5BVV5XHF.js",
+          "status": 200,
+          "sha256": "e8200003dbf6b9de5bf3e6141dcd18cc8fb19750b7679fa19cd8b1f6d8446ebe"
+        },
+        {
+          "path": "chunk-5TRQ4BW2.js",
+          "status": 200,
+          "sha256": "54cadeba0a4e8b64389730ef080f116db6927cbc1d42d6524f5497fc3888842c"
+        },
+        {
+          "path": "chunk-654AA5FL.js",
+          "status": 200,
+          "sha256": "9885415bccdac4e73b48cdc38afe9a76e890736632623b3ac70c2f9e66ecd209"
+        },
+        {
+          "path": "chunk-67PMOHSI.js",
+          "status": 200,
+          "sha256": "37ec4ed0baed8fd6ccb05767977b2e1576c33ebceff6b73d1494b53db8e94707"
+        },
+        {
+          "path": "chunk-6XN7WLUO.js",
+          "status": 200,
+          "sha256": "5786a0157ef467f1d49beb5265421d332ed176881601ca94aa4607a80b330584"
+        },
+        {
+          "path": "chunk-7ANNGRLT.js",
+          "status": 200,
+          "sha256": "f7075402e06205cb7137a752ac1be1993293caf78fea3981dd934ad9fe94a27e"
+        },
+        {
+          "path": "chunk-AVEFQODZ.js",
+          "status": 200,
+          "sha256": "45a431aa3505f3539eb6002ba1d8894437db4a6bbd2a32da0bf2345ca1447159"
+        },
+        {
+          "path": "chunk-LSIHGRHO.js",
+          "status": 200,
+          "sha256": "bd7590b5504f8d3a781640d12352b20f720b1ae2453e52bbc6cac41e2efd0d88"
+        },
+        {
+          "path": "chunk-PLSLNY3W.js",
+          "status": 200,
+          "sha256": "ee7ce37eb50e51c7489c9c8f47b3fa67a64892e83de295249d669583587a8bbc"
+        },
+        {
+          "path": "chunk-T7UTZCVG.js",
+          "status": 200,
+          "sha256": "055d511cd58d5bce646b401b733a9a58b9a478d53fbdfe9a34d64b4275ea1505"
+        },
+        {
+          "path": "chunk-TU2LSO22.js",
+          "status": 200,
+          "sha256": "61e5bbf1fe604cebb953de763e7a607ab1f1ce4c745f2f87593b5b40c5b44aee"
+        },
+        {
+          "path": "chunk-TUYZLXXR.js",
+          "status": 200,
+          "sha256": "d60c82e5f4e8964e47b71eab831a6c646f042657468c2e06cc246434a010607a"
+        },
+        {
+          "path": "index.html",
+          "status": 200,
+          "sha256": "eaa242523c1145a0b6b309ddfc5f523f99320c3a8c66541494102a83d6f2b3fd"
+        },
+        {
+          "path": "main-YPSTZXFW.js",
+          "status": 200,
+          "sha256": "9fe3d80067cfb0fa74b294add9dc7d5777f07bb4c93d855a8d18f874930be8e5"
+        },
+        {
+          "path": "manifest.webmanifest",
+          "status": 200,
+          "sha256": "0939efc1a467496e25516adbd77f0eb0dc6e5d73ffd27abfe5c85a9e89e79cf7"
+        },
+        {
+          "path": "styles-BOT27C4F.css",
+          "status": 200,
+          "sha256": "895ef7854e7b6d7373d3e81f04cff6fad48541f7c3608e2860679f9794b59f49"
+        }
+      ],
+      "deepLinkServesExactRedirectDocument": true,
+      "freshRemoteCloneWithComponents": "DONE",
+      "frontendWorktreeClean": true,
+      "buildSourceCommit": "38bb3c263e90a7a377c6c2374867bbff3695f8d1",
+      "workflow": {
+        "path": ".github/workflows/pages.yml",
+        "source": "docs",
+        "triggers": [
+          "push:master",
+          "workflow_dispatch"
+        ],
+        "applicationBuildUnchanged": true
+      }
+    }
+  ]
+}

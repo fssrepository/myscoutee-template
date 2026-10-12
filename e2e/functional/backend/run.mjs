@@ -15,6 +15,7 @@ const apiPrefix = process.env.E2E_API_PREFIX ?? '/api';
 const artifactsDir = path.resolve(rootDir, '../../../.e2e-artifacts/functional/backend');
 const sessions = nativeDemoSessions(baseUrl, { apiPrefix });
 const ctx = {
+  nativeSessions: sessions,
   http: createHttpClient({ baseUrl, headersForRequest: sessions.headersForRequest }),
   mode: process.env.E2E_SERVER_MODE ?? 'contract',
   vars: { ...fixtures, apiPrefix },

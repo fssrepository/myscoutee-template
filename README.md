@@ -79,13 +79,12 @@ storage can be retained without its management UI. The operator installation
 and configuration surface is part of the foundation. Omitting a screen must not
 silently remove the background behavior required by the remaining application.
 
-`frontend` remains a local Git submodule. The portable
-[`tools/sources/frontend.bundle`](tools/sources/README.md) carries its exact
-committed source; `tools/bootstrap-submodules.sh` initializes that checkout.
-Its `components` submodule uses the existing remote repository. Commit frontend
-changes first, then run `tools/sync-local-frontend.sh` and commit the gitlink and
-bundle together. Redirect `.gitmodules` to a real frontend repository when the
-new project has one; do not flatten the submodule into the parent.
+[`frontend`](https://github.com/fssrepository/myscoutee-template-frontend)
+is a separate Git repository, pinned here as a submodule. Run
+`tools/bootstrap-submodules.sh` to initialize it and its shared `components`
+submodule. Commit and push frontend changes there first, then commit its updated
+gitlink here. The [live demo](https://fssrepository.github.io/myscoutee-template-frontend/)
+is published from the frontend repository's `master` branch and `docs/` directory.
 
 ## Selected backend foundations
 

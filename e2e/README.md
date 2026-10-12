@@ -103,6 +103,12 @@ call sessions require the configured fake media device. Teardown closes test
 tabs but leaves the launcher-owned windows and profiles intact.
 For local VMware qualification use the existing SSH fixture transport only on
 `demo_db`; preserve the native and template installations' separate data.
+For the freshly installed REAL operator, run `e2e/functional/ui/operator/installed.mjs`
+with `E2E_SERVER_BASE_URL` and `E2E_INSTALL_LOG` pointing to the private (0600)
+installer log. It uses the generated credential through the normal UI, checks
+configuration/TLS controls, version, mobile layout and confirmed logout, and
+never prints the credential.
+
 Shut down the VMware VM before starting the E2E stack. The same memory boundary
 applies to DEV and KVM: only one application deployment runs at a time.
 
@@ -119,3 +125,11 @@ collapse, operation IDs and failure/restart/retry in REAL and DEMO, then restore
 the worker environment and rules. It refuses unowned pending outbox work and
 never sends to Firebase. Its private recovery snapshot remains under
 `.e2e-artifacts/fixtures` until cleanup completes.
+
+`E2E_EVIDENCE_FILE=/tmp/media-location.json python3 packaging/tests/media-location-runtime-test.py`
+qualifies owned private media, its chat visibility and session revocation, live
+EN/HU bundles and the existing disabled region-security flag on KVM. It restores
+the identity environment and removes its actors, records and object. The HTTP
+case `e2e/functional/backend/media/private-authorization/run.mjs` also runs on the
+selected production Docker containers; set `E2E_EXPECT_REGION_SECURITY=false`
+only when that existing flag is intentionally disabled for the test.

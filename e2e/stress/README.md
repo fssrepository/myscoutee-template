@@ -34,6 +34,14 @@ node e2e/stress/backend/ramp.mjs --scenario template-read --users 2,4,6 --durati
 
 An initial baseline or repeatability run is not evidence of improvement over
 MyScoutee or an older template. Never compare different seed populations or
-deployment limits as if they were matched revisions. Browser/WebSocket stress
-selection remains a separate pending part of step 24; existing functional call
-and UI passes are not stress measurements.
+deployment limits as if they were matched revisions. The selected browser workload reuses `e2e/stress/ui/run.mjs` with
+`--scenario template-shell --record`. Prepare the existing MONOLITH checkpoint
+with the versioned browser launcher, supply its `E2E_MANAGED_BROWSER_MANIFEST`,
+and keep `E2E_SKIP_E2E_RESET=true`. It uses three serial mobile entry/SmartList flows.
+
+For socket connection stress use `node e2e/stress/backend/run-template-websocket.mjs`
+with the selected template Mongo container/database and the same TLS CA as the
+HTTP tests. The wrapper owns and removes its two actors and conversation, uses
+six clients, warms for three seconds and records fifteen seconds. It does not
+send messages or replay video. Results include connection latency and CPU/memory;
+these runs do not claim native/template performance parity.

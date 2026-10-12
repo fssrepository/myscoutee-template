@@ -8,7 +8,7 @@ The archive excludes local credentials and product-specific target files.
 Build the client archive without starting an application or building images:
 
 ```bash
-MYSCOUTEE_VERSION=1.0.0 bash packaging/release/package-client-tools.sh
+MYSCOUTEE_VERSION=1.4.0 bash packaging/release/package-client-tools.sh
 ```
 
 For an extracted, independently verified release bundle:
@@ -17,12 +17,10 @@ For an extracted, independently verified release bundle:
 cp install.env.example install.env
 chmod 0600 install.env
 # Set the local VMware Debian target and independently trusted release inputs.
-./install.sh ./myscoutee-template_1.0.0_amd64.deb
+./install.sh ./myscoutee-template_1.4.0_amd64.deb
 ```
 
-The host package and VMware installation are still being qualified. Do not
-interpret a built client archive as an installable DEB release. VMware execution
-is deferred until the user's morning session. Never target Netcup for this work.
+Use the matching signed package and client bundle from the same qualified release.
 
 `prepare-debian13-minimal.sh` is an explicit host preparation command. It checks
 Debian 13/amd64 and preserves an existing runtime instead of removing conflicts.
@@ -39,3 +37,11 @@ The archive includes the read-only `verify-deployment` commands. They require an
 explicit target URL and do not perform SSH, install, seed or reset operations.
 Temporary partial-image patch helpers are not selected for the first minimal
 release; the signed package updater is the supported upgrade path.
+
+## Upgrading the initial 1.0.0 template
+
+Use the signed client installer for the one-time move to 1.4.0. It stops the old
+stack before replacing its files, migrates the template runtime account from
+10001 to 10002, and preserves file contents, modes, secrets and data. A conflicting
+foreign account is rejected. After this host migration, use the normal in-app
+updater. The old worker cannot safely change its own running numeric identity.

@@ -2,8 +2,8 @@
 
 Updated: 2026-10-12 · Version: **1.4.0**
 
-**Current task: 12.4.** Tasks 1–11 are DONE.
-**20/31 main tasks DONE · 85/106 subtasks DONE.**
+**Current task: 29.4 (signed draft assets are ready; awaiting the matching user-uploaded DEBs).** Tasks 1–28 are DONE.
+**28/33 main tasks DONE · 99/116 subtasks DONE.**
 
 ### 1. Source baseline — **DONE**
 
@@ -96,22 +96,22 @@ Updated: 2026-10-12 · Version: **1.4.0**
 | 11.3 | Required-consent revision rollover in REAL/DEMO | **DONE** |
 | 11.4 | deployed push retry/collapse/idempotency with the local test provider | **DONE** |
 
-### 12. Media, locales and location — **NOT DONE**
+### 12. Media, locales and location — **DONE**
 
 | Subtask | Task | Status |
 | --- | --- | --- |
 | 12.1 | Avatar upload/replace/remove/reload | **DONE** |
 | 12.2 | media policy and anonymous denial | **DONE** |
 | 12.3 | EN/HU, coordinates and device settings | **DONE** |
-| 12.4 | Remaining live private-media authorization, locale switching and disabled location-policy cases | **NOT DONE** |
+| 12.4 | Remaining live private-media authorization, locale switching and disabled location-policy cases | **DONE** |
 
-### 13. API/MCP — **NOT DONE**
+### 13. API/MCP — **DONE**
 
 | Subtask | Task | Status |
 | --- | --- | --- |
 | 13.1 | Native transport/scopes/role catalog/revocation | **DONE** |
 | 13.2 | local/HTTP credentials, consent and PKCE/login return | **DONE** |
-| 13.3 | callback delivery and durable retry through the local test receiver | **NOT DONE** |
+| 13.3 | callback delivery and durable retry through the local test receiver | **DONE** |
 
 ### 14. Frontend foundation — **DONE**
 
@@ -122,13 +122,13 @@ Updated: 2026-10-12 · Version: **1.4.0**
 | 14.3 | backend-off failover, role reload and native loading | **DONE** |
 | 14.4 | domain folders/popup startup | **DONE** |
 
-### 15. Landing and version — **NOT DONE**
+### 15. Landing and version — **DONE**
 
 | Subtask | Task | Status |
 | --- | --- | --- |
 | 15.1 | Native branding/login/guide, Gothic title and responsive Explore | **DONE** |
 | 15.2 | current production stamp and historical Pages verification | **DONE** |
-| 15.3 | Corrected 1.4.0 Pages landing/assets/deep links and final DEV/production/Pages version agreement | **NOT DONE** |
+| 15.3 | Corrected 1.4.0 Pages landing/assets/deep links and final DEV/production/Pages version agreement | **DONE** |
 
 ### 16. SmartList example — **DONE**
 
@@ -137,12 +137,12 @@ Updated: 2026-10-12 · Version: **1.4.0**
 | 16.1 | Native components, neutral data and bounded paging | **DONE** |
 | 16.2 | popup/views/grouping/reload in local and HTTP deployments | **DONE** |
 
-### 17. Chat UI — **NOT DONE**
+### 17. Chat UI — **DONE**
 
 | Subtask | Task | Status |
 | --- | --- | --- |
 | 17.1 | Native channel/list/header/message actions/calls/loading and persistence | **DONE** |
-| 17.2 | Rename chat-only ActivitiesFeedFilters to ChatFeedFilters in source/template; preserve non-chat consumers and serialized queries; focused type/filter verification only | **NOT DONE** |
+| 17.2 | Rename chat-only ActivitiesFeedFilters to ChatFeedFilters in source/template; preserve non-chat consumers and serialized queries; focused type/filter verification only | **DONE** |
 
 ### 18. Menu, profile and settings — **DONE**
 
@@ -177,12 +177,12 @@ Updated: 2026-10-12 · Version: **1.4.0**
 | 21.2 | domain/removal suites | **DONE** |
 | 21.3 | focused correction checks with recorded revisions/counts | **DONE** |
 
-### 22. Backend E2E — **NOT DONE**
+### 22. Backend E2E — **DONE**
 
 | Subtask | Task | Status |
 | --- | --- | --- |
 | 22.1 | Seventeen HTTP contracts, owned fixtures and retained mutation checks | **DONE** |
-| 22.2 | Reconcile all retained endpoints with tests, including missing consent/private-media/provider-deletion/callback cases | **NOT DONE** |
+| 22.2 | Reconcile all retained endpoints with tests, including missing consent/private-media/provider-deletion/callback cases | **DONE** |
 
 ### 23. Frontend E2E — **DONE**
 
@@ -192,13 +192,13 @@ Updated: 2026-10-12 · Version: **1.4.0**
 | 23.2 | incremental corrected-production checks | **DONE** |
 | 23.3 | offline/loading/responsive parity | **DONE** |
 
-### 24. Stress/performance — **NOT DONE**
+### 24. Stress/performance — **DONE**
 
 | Subtask | Task | Status |
 | --- | --- | --- |
 | 24.1 | Native read-stress tools | **DONE** |
 | 24.2 | matched repeatability runs with latency/CPU/error evidence | **DONE** |
-| 24.3 | Minimal browser/WebSocket stress using the existing engine and deterministic fixtures | **NOT DONE** |
+| 24.3 | Minimal browser/WebSocket stress using the existing engine and deterministic fixtures | **DONE** |
 
 ### 25. KVM — **DONE**
 
@@ -219,25 +219,25 @@ Updated: 2026-10-12 · Version: **1.4.0**
 | 26.3 | builds/catalog/migration checks | **DONE** |
 | 26.4 | serial stop/restore with retained state | **DONE** |
 
-### 27. DEB and VMware — **NOT DONE**
+### 27. DEB and VMware — **DONE**
 
 | Subtask | Task | Status |
 | --- | --- | --- |
 | 27.1 | Host helper selection/separate UID/data | **DONE** |
 | 27.2 | package/input/environment checks | **DONE** |
-| 27.3 | Final corrected packages | **NOT DONE** |
-| 27.4 | current native install first | **NOT DONE** |
-| 27.5 | separate fresh template install, operator first login, host controls/TLS/PWA/browser checks | **NOT DONE** |
-| 27.6 | backup/restore/data-preserving removal | **NOT DONE** |
+| 27.3 | Final corrected packages | **DONE** |
+| 27.4 | current native install first | **DONE** |
+| 27.5 | separate fresh template install, operator first login, host controls/TLS/PWA/browser checks | **DONE** |
+| 27.6 | backup/restore/data-preserving removal | **DONE** |
 
-### 28. Signed release and updater — **NOT DONE**
+### 28. Signed release and updater — **DONE**
 
 | Subtask | Task | Status |
 | --- | --- | --- |
 | 28.1 | Shared signer/updater and tamper checks | **DONE** |
 | 28.2 | private signing authority outside Git | **DONE** |
-| 28.3 | Final matching 1.4.0 signed package/client/update set | **NOT DONE** |
-| 28.4 | installed update, rejection, restart/retry and rollback/recovery | **NOT DONE** |
+| 28.3 | Final matching 1.4.0 signed package/client/update set | **DONE** |
+| 28.4 | installed update, rejection, restart/retry and rollback/recovery | **DONE** |
 
 ### 29. Publication — **NOT DONE**
 
@@ -245,16 +245,16 @@ Updated: 2026-10-12 · Version: **1.4.0**
 | --- | --- | --- |
 | 29.1 | Historical Pages/image publication | **DONE** |
 | 29.2 | registry/MinIO source and removal of unrequested Actions | **DONE** |
-| 29.3 | Publish/verify current 1.4.0 images/Pages | **NOT DONE** |
+| 29.3 | Publish/verify current 1.4.0 images and a freshly rebuilt template GitHub Pages site from frontend master/docs | **DONE** |
 | 29.4 | native/template draft assets and user-uploaded DEB verification | **NOT DONE** |
-| 29.5 | qualified [MSC-122] squash, exact gitlinks/bundle, force-with-lease and v1.4.0 tags | **NOT DONE** |
+| 29.5 | Qualified source snapshot and artifact revision mapping; final history/tag publication is task 32.1 | **NOT DONE** |
 
 ### 30. Documentation/PDF — **NOT DONE**
 
 | Subtask | Task | Status |
 | --- | --- | --- |
 | 30.1 | One English manual source and stable PDF | **DONE** |
-| 30.2 | Final delivered commands for setup/modes/seeds/tests/extension/deployment/recovery/release | **NOT DONE** |
+| 30.2 | Final delivered commands for setup/modes/seeds/tests/extension/deployment/recovery/release; concise template README with the published GitHub Pages link and the usual documentation table; minimal counterpart of the native architecture documentation, including a diagram and important operating/design decisions rather than code-level details; move the detailed shared-components documentation into a PDF, shorten the myscoutee-components README and link that same PDF from both the components and template READMEs | **NOT DONE** |
 | 30.3 | regenerate and inspect the same PDF | **NOT DONE** |
 
 ### 31. Final acceptance — **NOT DONE**
@@ -266,4 +266,26 @@ Updated: 2026-10-12 · Version: **1.4.0**
 | 31.3 | final release/resource/blocker reconciliation | **NOT DONE** |
 | 31.4 | prepare member login/SmartList/chat smoke checks on serial VMware/DEV/KVM | **NOT DONE** |
 
-Rules: reuse native MyScoutee owners and behavior; no custom replacement UI or branding fallback. Preserve separate local/HTTP, REAL/DEMO/E2E data. One stack/compiler at a time; visible managed QA browsers. Do not repeat unchanged completed tests or video checks. VMware starts only by the user after earlier executable work; native installation first, then separate template data. No Netcup or GitHub Actions. The user uploads DEBs.
+
+### 32. Git history, project and usage closeout — **NOT DONE**
+
+| Subtask | Task | Status |
+| --- | --- | --- |
+| 32.1 | Consolidate MSC-122 backup commits, preserve unrelated work, keep a separate MSC-122 commit in myscoutee-template-frontend, verify exact remote gitlinks and publish with force-with-lease and qualified version tags; version and publish changed myscoutee-components as a new npm release to GitHub Packages using its existing release workflow | **NOT DONE** |
+| 32.1a | Separate template frontend repository: one MSC-122 commit (`94ae494`), concise README, CC BY 4.0, remote components and master/docs Pages with automatic publication | **DONE** |
+| 32.2 | Close the verified template task and update its GitHub Project status | **NOT DONE** |
+| 32.3 | Update roadmap progress and measured token-usage records | **NOT DONE** |
+| 32.4 | Check the current ChatGPT account usage shown by the available account interface | **NOT DONE** |
+| 32.5 | Refresh the README heatmap from the completed project evidence | **NOT DONE** |
+
+
+### 33. LinkedIn article and image — **NOT DONE**
+
+| Subtask | Task | Status |
+| --- | --- | --- |
+| 33.1 | Write a short promotional article positioning MyScoutee-template as a substantial foundation for demanding projects, using verified capabilities | **NOT DONE** |
+| 33.2 | Write a very short LinkedIn post introducing and sharing the article | **NOT DONE** |
+| 33.3 | Create one accompanying image | **NOT DONE** |
+| 33.4 | Save and commit the article, sharing post and image under the private myscoutee-backend/guides tree | **NOT DONE** |
+
+Rules: reuse native MyScoutee owners and behavior; no custom replacement UI or branding fallback. Preserve separate local/HTTP, REAL/DEMO/E2E data. One stack/compiler at a time; visible managed QA browsers. Do not repeat unchanged completed tests or video checks. Codex may start VMware when its numbered task is reached (user authorized on 2026-10-12); native installation first, then separate template data. No Netcup. GitHub Actions is authorized for the frontend master/docs Pages publication only. The user uploads DEBs.

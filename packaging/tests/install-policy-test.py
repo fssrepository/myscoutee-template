@@ -29,7 +29,9 @@ assert validate(minimal)
 for path, value in [('unknown', True), ('ownedDirectories', [{'path': '/tmp/foreign', 'mode': '0700', 'uid': 10001, 'gid': 10001}]),
                     ('environmentDefaults', {'BAD;COMMAND': 'x'}),
                     ('environmentDefaults', {'BAD_VALUE': 'x\nOTHER=changed'}),
-                    ('freshSecrets', [{'key': 'KEY', 'encoding': 'shell', 'prefix': ''}])]:
+                    ('freshSecrets', [{'key': 'KEY', 'encoding': 'shell', 'prefix': ''}]),
+                    ('runtimeIdentityMigrations', [{'maximumVersion': '1.0.0', 'uid': 0, 'gid': 10001}]),
+                    ('runtimeIdentityMigrations', [{'maximumVersion': '../foreign', 'uid': 10001, 'gid': 10001}])]:
     invalid = copy.deepcopy(policy)
     invalid[path] = value
     assert not validate(invalid), path

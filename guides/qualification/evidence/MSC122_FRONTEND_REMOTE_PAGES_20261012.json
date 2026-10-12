@@ -1,0 +1,72 @@
+{
+  "url": "https://fssrepository.github.io/myscoutee-template-frontend/",
+  "repository": "fssrepository/myscoutee-template-frontend",
+  "branch": "master",
+  "path": "/docs",
+  "commit": "94ae4947893b842536671885ddd9a6669911106b",
+  "sourceTree": "4d8450783e97e14f8d5315d7e9a4c850ee3ee86d",
+  "version": {
+    "version": "1.4.0",
+    "buildId": "msc122-source-4d8450783e97",
+    "builtAt": "2026-10-12T16:24:12.749Z",
+    "gitSha": null
+  },
+  "verifiedAt": "2026-10-12T16:25:59.258175+00:00",
+  "files": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "sha256": "03923004bb3478bdfbe47feacff1b2a2ed3ea2b827203dcc3e8d34c5949d31e4"
+    },
+    {
+      "path": "app-version.json",
+      "status": 200,
+      "sha256": "f5ca78a74b283fcec228dff8bdafb14cba05aa8cb10b694a1c1279918dd9c863"
+    },
+    {
+      "path": "app-sw.js",
+      "status": 200,
+      "sha256": "faef8fd893a7704c26b1336113ec0db396f62583d61f14eae5a8bbc4c94662d0"
+    },
+    {
+      "path": "main-LCGEUASN.js",
+      "status": 200,
+      "sha256": "2a4299a596d46862f446be59ed760632b992af83c18c449afa7925b68971e324"
+    },
+    {
+      "path": "chunk-INOLRL27.js",
+      "status": 200,
+      "sha256": "1ff3d673476fb6f98f8a3ce6cc9bbeabf941f57cf8e03fcfc0a32002c4867d49"
+    },
+    {
+      "path": "assets/logo/heart.webp",
+      "status": 200,
+      "sha256": "6d6b9aace538fec07e2461cbecd8d765df989f71905537b7c77bb2560a4204a4"
+    }
+  ],
+  "frontendWorktreeClean": true,
+  "workflow": {
+    "path": ".github/workflows/pages.yml",
+    "source": "docs",
+    "triggers": [
+      "push:master",
+      "workflow_dispatch"
+    ],
+    "id": 38277208807,
+    "head_sha": "94ae4947893b842536671885ddd9a6669911106b",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/fssrepository/myscoutee-template-frontend/actions/runs/38277208807"
+  },
+  "correction": {
+    "extraLandingOperatorButtonRemoved": true,
+    "entryLogicUnchanged": true,
+    "existingDemoRoleSelectorUnchanged": true,
+    "startupBrandingInitializedBeforeRootCreation": true,
+    "focusedTemplateTests": 5,
+    "focusedNativeTests": 1,
+    "templateBuild": "DONE",
+    "nativeStartupFix": "source and focused test only; not packaged or deployed",
+    "installedPackages": "unchanged by this Pages publication"
+  }
+}

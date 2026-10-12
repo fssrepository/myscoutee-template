@@ -319,30 +319,33 @@
     },
     {
       "path": "frontend/src/app/entry/components/entry-page.component.html",
-      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
-      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
+      "sourceRevision": "547adac05779809fcc01c1f2832f574da0acf629",
+      "sourceFrontendRevision": "e14c6b52cfe17ae71c1844d7f76f7c296429bf54",
       "upstreamSha256": "c795876283d0ae0ddab7bc47d329c7ed43df3c4caf24ec19f410d57608ce4700",
       "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
-      "adaptation": "Retained template selection of this native owner: minimal profile/role controls, image-only media surface, or product-independent shell/entry. No new alternate service or component engine. See templateOwnedFeatures for the selected consumers.",
-      "upstreamPath": "frontend/src/app/entry/components/entry-page/entry-page.component.html"
+      "adaptation": "Minimal landing shell retains the native consent/authentication/selector owners. Operator access follows native openEntryOperator: HTTP opens bootstrap-capable email authentication even before Firebase is configured; frontend-local opens the operator-only selector. The existing AppMenu exposes this retained action without the omitted partner-content popup.",
+      "upstreamPath": "frontend/src/app/entry/components/entry-page/entry-page.component.html",
+      "sourceWorktreeQualified": true
     },
     {
       "path": "frontend/src/app/entry/components/entry-page.component.scss",
-      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
-      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
+      "sourceRevision": "547adac05779809fcc01c1f2832f574da0acf629",
+      "sourceFrontendRevision": "e14c6b52cfe17ae71c1844d7f76f7c296429bf54",
       "upstreamSha256": "2e4a8e0cb30f211f7d97f4ad84f0cce7926f2cd0361a4b9cacb77e7e848c4e76",
       "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
-      "adaptation": "Retained template selection of this native owner: minimal profile/role controls, image-only media surface, or product-independent shell/entry. No new alternate service or component engine. See templateOwnedFeatures for the selected consumers.",
-      "upstreamPath": "frontend/src/app/entry/components/entry-page/entry-page.component.scss"
+      "adaptation": "Minimal landing shell retains the native consent/authentication/selector owners. Operator access follows native openEntryOperator: HTTP opens bootstrap-capable email authentication even before Firebase is configured; frontend-local opens the operator-only selector. The existing AppMenu exposes this retained action without the omitted partner-content popup.",
+      "upstreamPath": "frontend/src/app/entry/components/entry-page/entry-page.component.scss",
+      "sourceWorktreeQualified": true
     },
     {
       "path": "frontend/src/app/entry/components/entry-page.component.ts",
-      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
-      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
+      "sourceRevision": "547adac05779809fcc01c1f2832f574da0acf629",
+      "sourceFrontendRevision": "e14c6b52cfe17ae71c1844d7f76f7c296429bf54",
       "upstreamSha256": "ac11645d55949fab2971e7cd7fe3a6a3a07759689554c4ce2138705bac06e55b",
       "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
-      "adaptation": "Retained template selection of this native owner: minimal profile/role controls, image-only media surface, or product-independent shell/entry. No new alternate service or component engine. See templateOwnedFeatures for the selected consumers.",
-      "upstreamPath": "frontend/src/app/entry/components/entry-page/entry-page.component.ts"
+      "adaptation": "Minimal landing shell retains the native consent/authentication/selector owners. Operator access follows native openEntryOperator: HTTP opens bootstrap-capable email authentication even before Firebase is configured; frontend-local opens the operator-only selector. The existing AppMenu exposes this retained action without the omitted partner-content popup.",
+      "upstreamPath": "frontend/src/app/entry/components/entry-page/entry-page.component.ts",
+      "sourceWorktreeQualified": true
     },
     {
       "path": "frontend/src/app/home/components/home-header/home-header.component.scss",
@@ -744,11 +747,12 @@
     },
     {
       "path": "frontend/src/app/shared/core/base/services/chat/chats.service.ts",
-      "upstreamSha256": "e98c99ca4506a7e54350d317f782340f59ce3ee190b64163d3285e5d33ee4c43",
-      "sourceRevision": "37f5f708e",
-      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
+      "upstreamSha256": "a2b4e1532c26b44f28c42b374f6c5fe92ae59c97df8ab9eef8010b190dfb630f",
+      "sourceRevision": "547adac05779809fcc01c1f2832f574da0acf629",
+      "sourceFrontendRevision": "e14c6b52cfe17ae71c1844d7f76f7c296429bf54",
       "purpose": "Native personal/support chat protocol, local persistence, HTTP/WebSocket transport, shared memory table or scoped fixture transport.",
-      "adaptation": "Select the personal/support chat dependency closure and minimal template composition. Omit event/group/campaign/asset navigation models, product metrics and unselected account fields; retain message IDs, ownership, paging, read receipts and reconnect behavior. Template seed IDs/data replace product actors. Selected the qualified core without Reports, Feedback or Support mutations; shared identity/chat models and required lifecycle remain."
+      "adaptation": "Select the personal/support chat dependency closure and minimal template composition. Omit event/group/campaign/asset navigation models, product metrics and unselected account fields; retain message IDs, ownership, paging, read receipts and reconnect behavior. Template seed IDs/data replace product actors. Selected the qualified core without Reports, Feedback or Support mutations; shared identity/chat models and required lifecycle remain.",
+      "sourceWorktreeQualified": true
     },
     {
       "path": "frontend/src/app/shared/core/base/services/email/operator-email.service.ts",
@@ -1065,19 +1069,21 @@
     },
     {
       "path": "frontend/src/app/shared/core/contracts/chat/chat.interface.ts",
-      "upstreamSha256": "e697bc79c3bd7ca90e02c48ad77f3cc36c62ff8c4de260292b0bb1da7b9d9d3a",
-      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
-      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
+      "upstreamSha256": "6428524cacd8ec37745576a9f903b4ba42387763616681a0e423414a968f88c3",
+      "sourceRevision": "547adac05779809fcc01c1f2832f574da0acf629",
+      "sourceFrontendRevision": "e14c6b52cfe17ae71c1844d7f76f7c296429bf54",
       "purpose": "Native personal/support chat protocol, local persistence, HTTP/WebSocket transport, shared memory table or scoped fixture transport.",
-      "adaptation": "Select the personal/support chat dependency closure and minimal template composition. Omit event/group/campaign/asset navigation models, product metrics and unselected account fields; retain message IDs, ownership, paging, read receipts and reconnect behavior. Template seed IDs/data replace product actors."
+      "adaptation": "Select the personal/support chat dependency closure and minimal template composition. Omit event/group/campaign/asset navigation models, product metrics and unselected account fields; retain message IDs, ownership, paging, read receipts and reconnect behavior. Template seed IDs/data replace product actors.",
+      "sourceWorktreeQualified": true
     },
     {
       "path": "frontend/src/app/shared/core/contracts/common/activity.interface.ts",
-      "upstreamSha256": "2bd34a168e50fedf0f0ed68c6a38e03e857fd38cc158ccc0ff042e04b00408eb",
-      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
-      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
+      "upstreamSha256": "d530fb4e311ffa54427d7c119eec6abacdbfc0d8547bccfac944c98dd1b75cde",
+      "sourceRevision": "547adac05779809fcc01c1f2832f574da0acf629",
+      "sourceFrontendRevision": "e14c6b52cfe17ae71c1844d7f76f7c296429bf54",
       "purpose": "Native personal/support chat protocol, local persistence, HTTP/WebSocket transport, shared memory table or scoped fixture transport.",
-      "adaptation": "Select the personal/support chat dependency closure and minimal template composition. Omit event/group/campaign/asset navigation models, product metrics and unselected account fields; retain message IDs, ownership, paging, read receipts and reconnect behavior. Template seed IDs/data replace product actors."
+      "adaptation": "Select the personal/support chat dependency closure and minimal template composition. Omit event/group/campaign/asset navigation models, product metrics and unselected account fields; retain message IDs, ownership, paging, read receipts and reconnect behavior. Template seed IDs/data replace product actors.",
+      "sourceWorktreeQualified": true
     },
     {
       "path": "frontend/src/app/shared/core/contracts/content/content.interface.ts",
@@ -1234,11 +1240,12 @@
     },
     {
       "path": "frontend/src/app/shared/core/http/services/chat/chats.service.ts",
-      "upstreamSha256": "cad9ec72a52621ef8c30f384b2e768169075139287a6f5bd94fea3b292364932",
-      "sourceRevision": "37f5f708e",
-      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
+      "upstreamSha256": "03ecf6cb49929c6b38e913c739572ee8c64f5249e3907c52b3f48ba19629ede0",
+      "sourceRevision": "547adac05779809fcc01c1f2832f574da0acf629",
+      "sourceFrontendRevision": "e14c6b52cfe17ae71c1844d7f76f7c296429bf54",
       "purpose": "Native personal/support chat protocol, local persistence, HTTP/WebSocket transport, shared memory table or scoped fixture transport.",
-      "adaptation": "Select the personal/support chat dependency closure and minimal template composition. Omit event/group/campaign/asset navigation models, product metrics and unselected account fields; retain message IDs, ownership, paging, read receipts and reconnect behavior. Template seed IDs/data replace product actors. Selected the qualified core without Reports, Feedback or Support mutations; shared identity/chat models and required lifecycle remain."
+      "adaptation": "Select the personal/support chat dependency closure and minimal template composition. Omit event/group/campaign/asset navigation models, product metrics and unselected account fields; retain message IDs, ownership, paging, read receipts and reconnect behavior. Template seed IDs/data replace product actors. Selected the qualified core without Reports, Feedback or Support mutations; shared identity/chat models and required lifecycle remain.",
+      "sourceWorktreeQualified": true
     },
     {
       "path": "frontend/src/app/shared/core/http/services/email/operator-email.service.ts",
@@ -1566,19 +1573,21 @@
     },
     {
       "path": "frontend/src/app/shared/core/local/source/repositories/chat/chats.repository.spec.ts",
-      "upstreamSha256": "c29d3d1752e1fd6aba12085b1a95385f97d639e68805867bf5e1ca0b33d528a3",
-      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
-      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
+      "upstreamSha256": "ad2640c8936dcfab8b3c9c9a92024da01aafb92e43be3d86c6440f7f65c568df",
+      "sourceRevision": "547adac05779809fcc01c1f2832f574da0acf629",
+      "sourceFrontendRevision": "e14c6b52cfe17ae71c1844d7f76f7c296429bf54",
       "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
-      "adaptation": "Compose the selected template profile, chat, notification and guide owners; retain native contracts and persistence while omitting unselected product dependencies."
+      "adaptation": "Compose the selected template profile, chat, notification and guide owners; retain native contracts and persistence while omitting unselected product dependencies.",
+      "sourceWorktreeQualified": true
     },
     {
       "path": "frontend/src/app/shared/core/local/source/repositories/chat/chats.repository.ts",
-      "sourceRevision": "37f5f708e",
-      "upstreamSha256": "1d47b10175a185315d094fb41d001092d9b10faaecc9444ad22e14ae243b9d01",
+      "sourceRevision": "547adac05779809fcc01c1f2832f574da0acf629",
+      "upstreamSha256": "77b16066d5875b64b5a8136c9f3efc81090d4df16d769d4d33cf5db34a897266",
       "purpose": "Minimal native admin moderation, support and member report/feedback UI.",
       "adaptation": "Add native support message upsert/idempotency and selected unread counters to the existing chat owner. Selected the qualified core without Reports, Feedback or Support mutations; shared identity/chat models and required lifecycle remain.",
-      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
+      "sourceFrontendRevision": "e14c6b52cfe17ae71c1844d7f76f7c296429bf54",
+      "sourceWorktreeQualified": true
     },
     {
       "path": "frontend/src/app/shared/core/local/source/repositories/help/help-center.repository.ts",
@@ -1670,11 +1679,12 @@
     },
     {
       "path": "frontend/src/app/shared/core/local/source/services/chat/chats.service.ts",
-      "upstreamSha256": "09ea14e4060c073f41a0188e044e5225858b6b3da26baca6048e2bd96c1588b8",
-      "sourceRevision": "37f5f708e",
-      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
+      "upstreamSha256": "3513596a51ca3671214d11e929ee843dd80c5cc7b003411c656c1b21fd7f5f84",
+      "sourceRevision": "547adac05779809fcc01c1f2832f574da0acf629",
+      "sourceFrontendRevision": "e14c6b52cfe17ae71c1844d7f76f7c296429bf54",
       "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
-      "adaptation": "Compose the selected template profile, chat, notification and guide owners; retain native contracts and persistence while omitting unselected product dependencies. Selected the qualified core without Reports, Feedback or Support mutations; shared identity/chat models and required lifecycle remain."
+      "adaptation": "Compose the selected template profile, chat, notification and guide owners; retain native contracts and persistence while omitting unselected product dependencies. Selected the qualified core without Reports, Feedback or Support mutations; shared identity/chat models and required lifecycle remain.",
+      "sourceWorktreeQualified": true
     },
     {
       "path": "frontend/src/app/shared/core/local/source/services/email/operator-email.service.ts",
@@ -4630,10 +4640,11 @@
     },
     {
       "path": "packaging/debian/postinst",
-      "sourceRevision": "f5d612bcedb08d3706cf1aae1f7fe077ddceddc5",
-      "upstreamSha256": "e88ab1816f1b01017d70f4004fa5193827bbb439d9575c2cf49b83a76c3f8571",
-      "purpose": "Shared release input/environment verification, exact artifact selection and existing Mongo index upgrade; project data stays selected separately.",
-      "adaptation": null
+      "sourceRevision": "547adac05779809fcc01c1f2832f574da0acf629",
+      "upstreamSha256": "fce2af8b5f6f3f9af86b3f250f7c427c7b96fdf88185232aca3c9056f999741a",
+      "purpose": "Shared package-owned runtime identity migration and scoped ownership preservation; project-specific migration history stays in the install policy.",
+      "adaptation": null,
+      "sourceWorktreeQualified": true
     },
     {
       "path": "packaging/debian/postrm",
@@ -4721,10 +4732,11 @@
     },
     {
       "path": "packaging/release/package-production.sh",
-      "sourceRevision": "aa2371c94bca3ba351e50e77821888fcb4e076d0",
-      "upstreamSha256": "a36a5a492c319a08722ced7ed4679080047ab228963b8e1084e8da903fbb159b",
-      "purpose": "Shared release input/environment verification, exact artifact selection and existing Mongo index upgrade; project data stays selected separately.",
-      "adaptation": null
+      "sourceRevision": "547adac05779809fcc01c1f2832f574da0acf629",
+      "upstreamSha256": "4b9750c4d65c5ab5fba63f7bc27131554e776460d502df410db0135fee2766d8",
+      "purpose": "Shared package-owned runtime identity migration and scoped ownership preservation; project-specific migration history stays in the install policy.",
+      "adaptation": null,
+      "sourceWorktreeQualified": true
     },
     {
       "path": "packaging/release/prepare-release.py",
@@ -4812,10 +4824,11 @@
     },
     {
       "path": "packaging/scripts/myscoutee-compose.sh",
-      "sourceRevision": "8ceb635bc2860029699faef48210c503e9826b99",
-      "upstreamSha256": "ff653bbe4ffdb246047b39c61174e805eeb29d69f3adfcd2a41ff6109d47eadc",
-      "purpose": "Shared package lifecycle, artifact audit, selected host operations or their focused regression checks.",
-      "adaptation": null
+      "sourceRevision": "547adac05779809fcc01c1f2832f574da0acf629",
+      "upstreamSha256": "82a390a38c2b156a9acee83b3e59d5a27a5f803e5ae9ac4e5b109167f1aa7566",
+      "purpose": "Shared identity and owned Compose project migration; no foreign account, container or volume mutation.",
+      "adaptation": null,
+      "sourceWorktreeQualified": true
     },
     {
       "path": "packaging/scripts/myscoutee-safe-copy.py",
@@ -4966,17 +4979,19 @@
     },
     {
       "path": "packaging/tests/deployment-input-parity-test.py",
-      "sourceRevision": "f5d612bcedb08d3706cf1aae1f7fe077ddceddc5",
-      "upstreamSha256": "85fd0025afcd8bcbcdd62809848470bf0c76580e893b29e7e0704df7a3d1b3dc",
-      "purpose": "Retained catalog delivery and consistent DEV/E2E/installed environment configuration.",
-      "adaptation": null
+      "sourceRevision": "547adac05779809fcc01c1f2832f574da0acf629",
+      "upstreamSha256": "7672d76d9309cc2db596b9d0e45571fe6ee4a00aec9c05d2d461efe5e8541042",
+      "purpose": "Shared package-owned runtime identity migration and scoped ownership preservation; project-specific migration history stays in the install policy.",
+      "adaptation": null,
+      "sourceWorktreeQualified": true
     },
     {
       "path": "packaging/tests/install-policy-test.py",
-      "sourceRevision": "f5d612bcedb08d3706cf1aae1f7fe077ddceddc5",
-      "upstreamSha256": "9d7887bbec1da3f5fc15480b9685664607e9b698addedd2381dc374c2c0d35c7",
-      "purpose": "Shared release input/environment verification, exact artifact selection and existing Mongo index upgrade; project data stays selected separately.",
-      "adaptation": null
+      "sourceRevision": "547adac05779809fcc01c1f2832f574da0acf629",
+      "upstreamSha256": "75b79baf452767fb5846c51a53a98eaf960b265a8f809cb312eb8b9e505ce3b2",
+      "purpose": "Shared identity and owned Compose project migration; no foreign account, container or volume mutation.",
+      "adaptation": null,
+      "sourceWorktreeQualified": true
     },
     {
       "path": "packaging/tests/integration-indexes-test.py",
@@ -8684,6 +8699,58 @@
       "upstreamSha256": "4a513c43fc48a7ea877be3ee7052e0ec33cd01551125df83230aa1a2389d0a02",
       "purpose": "Shared release input/environment verification, exact artifact selection and existing Mongo index upgrade; project data stays selected separately.",
       "adaptation": null
+    },
+    {
+      "path": "e2e/stress/ui/run.mjs",
+      "upstreamSha256": "ffe4b16fcf69196095ad4d799e458637afc6423c52203bcc8a92fe3e710ffd65",
+      "sourceRevision": "547adac05779809fcc01c1f2832f574da0acf629",
+      "purpose": "Native browser/WebSocket workload engine and transport checks for task 24.3.",
+      "adaptation": "Template owned-fixture boundary: no native database reset; socket session parameter and metric redaction."
+    },
+    {
+      "path": "e2e/functional/ui/lib/ui-contracts.mjs",
+      "upstreamSha256": "c9a75696e16a28b432235493819c52fe0327bb30bf8b796997d3e9d68908ca29",
+      "sourceRevision": "547adac05779809fcc01c1f2832f574da0acf629",
+      "purpose": "Native browser/WebSocket workload engine and transport checks for task 24.3.",
+      "adaptation": null
+    },
+    {
+      "path": "e2e/functional/backend/websocket/chat-connect/request.json",
+      "upstreamSha256": "c00f42e3a6f6b1763206359bb8b48450566166a1b035bc0532b249d9de05142e",
+      "sourceRevision": "547adac05779809fcc01c1f2832f574da0acf629",
+      "purpose": "Native browser/WebSocket workload engine and transport checks for task 24.3.",
+      "adaptation": "Template owned-fixture boundary: no native database reset; socket session parameter and metric redaction."
+    },
+    {
+      "path": "e2e/functional/backend/websocket/chat-connect/assert.mjs",
+      "upstreamSha256": "56b40aa6f0d8e0356edf56ddc07df69dfc4aec4b7c921f144799d4aa0f1a90e8",
+      "sourceRevision": "547adac05779809fcc01c1f2832f574da0acf629",
+      "purpose": "Native browser/WebSocket workload engine and transport checks for task 24.3.",
+      "adaptation": "Template owned-fixture boundary: no native database reset; socket session parameter and metric redaction."
+    },
+    {
+      "path": "packaging/debian/preinst",
+      "adaptation": null,
+      "sourceRevision": "547adac05779809fcc01c1f2832f574da0acf629",
+      "upstreamSha256": "454a1562d6478610581d9d16a6e46c7072dbe7fb3859c6b4d430d3d04ca59c78",
+      "sourceWorktreeQualified": true,
+      "purpose": "Shared identity and owned Compose project migration; no foreign account, container or volume mutation."
+    },
+    {
+      "path": "packaging/tests/runtime-identity-migration-test.py",
+      "adaptation": null,
+      "sourceRevision": "547adac05779809fcc01c1f2832f574da0acf629",
+      "upstreamSha256": "4329dbf3add6c0adc5f11fab0fe12326eeeb239c70c63eb83c35a3857fe6b76a",
+      "sourceWorktreeQualified": true,
+      "purpose": "Shared identity and owned Compose project migration; no foreign account, container or volume mutation."
+    },
+    {
+      "path": "packaging/tests/compose-project-migration-test.py",
+      "adaptation": null,
+      "sourceRevision": "547adac05779809fcc01c1f2832f574da0acf629",
+      "upstreamSha256": "935e9a2f91183ebfed408bdefadc15f1264f2d97e6f998605bad4e848296e3d5",
+      "sourceWorktreeQualified": true,
+      "purpose": "Shared identity and owned Compose project migration; no foreign account, container or volume mutation."
     }
   ],
   "templateOwnedFeatures": [

@@ -334,6 +334,9 @@ def main():
         assert (ROOT / source).read_bytes() == (installed / target).read_bytes(), target
     compose = (ROOT / 'packaging/compose/docker-compose.production.yml').read_text().replace('docker-compose.production-replicaset.yml', 'docker-compose.replicaset.yml')
     assert (installed / 'server/docker-compose-prod.yml').read_text() == compose
+    identity = json.loads((ROOT / 'packaging/scripts/release-project.json').read_text())['runtimeIdentity']
+    preinst = (ROOT / 'packaging/debian/preinst').read_text().replace('@RUNTIME_UID@', str(identity['uid'])).replace('@RUNTIME_GID@', str(identity['gid']))
+    assert (args.stage / 'DEBIAN/preinst').read_text() == preinst
     for name in ['postinst', 'prerm']:
         assert (args.stage / 'DEBIAN' / name).read_bytes() == (ROOT / 'packaging/debian' / name).read_bytes(), name
     with tempfile.TemporaryDirectory() as directory:

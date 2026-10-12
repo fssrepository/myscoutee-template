@@ -1,0 +1,113 @@
+{
+  "task": "12.4",
+  "status": "DONE",
+  "date": "2026-10-12",
+  "defect": {
+    "before": "The split media assembly did not import the policy advisor/client when its only dependency was @RequiresPolicy. A valid media cookie could read another owner private object.",
+    "fix": "Both repositories select the existing AccessPermissions transport for RequiresPolicy/RequiresPolicies consumers. Media-only credentials perform the existing explicit-identity media read decision without acquiring account authority.",
+    "sharedFiles": [
+      "microservices/tools/transport_usage.py",
+      "microservices/transport/bindings.json",
+      "microservices/transport/src/main/java/com/raxim/myscoutee/microservices/transport/access/RemoteAccessPermissions.java"
+    ]
+  },
+  "focusedTests": {
+    "templateTransport": 5,
+    "nativeTransport": 5,
+    "templateSelection": 3,
+    "nativeSelection": 3
+  },
+  "deployments": [
+    {
+      "task": "12.4",
+      "target": "template-kvm",
+      "checks": {
+        "ownerAllowedUnrelatedViewerAndAnonymousDenied": true,
+        "legacyPublicRouteCannotBypassAuthorization": true,
+        "currentChatAttachmentVisibilityAndDeletion": true,
+        "realDemoEnglishHungarianEnglishNoCacheLeak": true,
+        "disabledLocationPolicyAndInvalidCoordinates": true,
+        "logoutRevokesMediaCredential": true
+      },
+      "cleanup": true
+    },
+    {
+      "task": "12.4",
+      "target": "template-monolith",
+      "checks": {
+        "ownerAllowedUnrelatedViewerAndAnonymousDenied": true,
+        "legacyPublicRouteCannotBypassAuthorization": true,
+        "currentChatAttachmentVisibilityAndDeletion": true,
+        "realDemoEnglishHungarianEnglishNoCacheLeak": true,
+        "disabledLocationPolicyAndInvalidCoordinates": true,
+        "logoutRevokesMediaCredential": true
+      },
+      "cleanup": true
+    }
+  ],
+  "resources": {
+    "kvm": {
+      "pods": [
+        {
+          "name": "media",
+          "cpu": {
+            "value": "1798355"
+          },
+          "memory": {
+            "value": "224964608"
+          }
+        },
+        {
+          "name": "help",
+          "cpu": {
+            "value": "1905675"
+          },
+          "memory": {
+            "value": "199286784"
+          }
+        },
+        {
+          "name": "identity",
+          "cpu": {
+            "value": "2553605"
+          },
+          "memory": {
+            "value": "289394688"
+          }
+        },
+        {
+          "name": "communication",
+          "cpu": {
+            "value": "8154285"
+          },
+          "memory": {
+            "value": "281812992"
+          }
+        }
+      ],
+      "healthHttpStatus": 200,
+      "readMs": 26.39,
+      "comparison": "Diagnostic snapshot only; not a matched benchmark."
+    },
+    "monolith": {
+      "BlockIO": "0B / 0B",
+      "CPUPerc": "0.52%",
+      "Container": "myscoutee-template-prod-qa-profilemanagement",
+      "ID": "3162aee10e93",
+      "MemPerc": "2.60%",
+      "MemUsage": "406.3MiB / 15.27GiB",
+      "Name": "myscoutee-template-prod-qa-profilemanagement",
+      "NetIO": "2.29MB / 70.2kB",
+      "PIDs": "81"
+    },
+    "note": "Diagnostic resource snapshots, not matched stress measurements."
+  },
+  "restoredRegionSecurity": {
+    "eligible": false,
+    "partitionKey": null,
+    "message": null,
+    "securityGateEnabled": true,
+    "locationRequired": true
+  },
+  "runtime": "KVM stopped gracefully; production Docker running with original region policy; owned records, sessions and objects removed."
+}

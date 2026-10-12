@@ -1,0 +1,22 @@
+{
+  "name": "Minimal browser entry and SmartList workload",
+  "flow": "functionalCase",
+  "functionalCase": "stress-shell",
+  "users": 1,
+  "iterations": 3,
+  "rampUpMs": 0,
+  "timeoutMs": 45000,
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "cpuThrottleRate": 1,
+  "network": "none",
+  "cacheDisabled": false,
+  "clearCache": false,
+  "thresholds": {
+    "errorRate": 0,
+    "p95Ms": 45000,
+    "maxLongTaskMs": 2500
+  }
+}

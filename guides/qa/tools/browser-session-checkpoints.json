@@ -107,6 +107,29 @@
         "longitude": 13.405,
         "accuracy": 10
       }
+    },
+    "MSC122-TEMPLATE-PAGES-ARTIFACT": {
+      "entryUrl": "http://127.0.0.1:18888/myscoutee-template/entry",
+      "targetUrl": "http://127.0.0.1:18888/myscoutee-template/entry",
+      "storageScope": "demo",
+      "bootstrapEntryConsent": false,
+      "preserveOtherSessions": true,
+      "geolocationPermission": "granted",
+      "geolocation": {
+        "latitude": 52.52,
+        "longitude": 13.405,
+        "accuracy": 10
+      },
+      "layout": {
+        "columns": 1
+      },
+      "sessions": [
+        {
+          "actor": "template-pages-artifact",
+          "expectedName": "Template Pages artifact",
+          "sessionKind": "anonymous"
+        }
+      ]
     }
   }
 }

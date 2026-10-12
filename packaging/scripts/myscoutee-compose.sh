@@ -174,8 +174,31 @@ ensure_firebase_service_account() {
   fi
 }
 
+# Installed releases may rename their Compose project. Reuse the existing
+# Compose owner to retire only containers proven to belong to this installation.
+# Volumes and bind-mounted deployment data are retained.
+ensure_installed_compose_project() {
+  [[ "$SERVER_DIR" == "$RELEASE_PROJECT_ROOT/server" ]] || return 0
+  local expected project id owner
+  expected="$(run_compose config --no-env-resolution --format json | jq -er '.name')"
+  while IFS= read -r project; do
+    [[ -n "$project" && "$project" != "$expected" ]] || continue
+    [[ "$project" =~ ^[a-zA-Z0-9_.-]+$ ]] || return 1
+    while IFS= read -r id; do
+      owner="$(docker inspect --format '{{index .Config.Labels "com.docker.compose.project.working_dir"}}' "$id")"
+      [[ "$owner" == "$SERVER_DIR" ]] || {
+        echo "Compose project $project includes a different installation; refusing to stop it." >&2
+        return 1
+      }
+    done < <(docker ps -aq --filter "label=com.docker.compose.project=$project")
+    run_compose --project-name "$project" down
+  done < <(docker ps -a --filter "label=com.docker.compose.project.working_dir=$SERVER_DIR" \
+    --format '{{.Label "com.docker.compose.project"}}' | sort -u)
+}
+
 case "${1:-}" in
   up|start|restart)
+    ensure_installed_compose_project
     ensure_firebase_service_account
     ;;
 esac

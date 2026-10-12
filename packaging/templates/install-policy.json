@@ -47,5 +47,12 @@
   ],
   "mongoSeedFallback": "demo_db:*;production_db:accessPolicyDefinitions,appSettings,countryPartitions,deploymentConfigurations,helpCenterGuideFields,helpCenterRevisions,i18n_bundles,i18n_messages,notificationRuleConfigs",
   "replicaSetDefaults": "\n# Replica set support\nMONGO_REPLICA_SET_ENABLED=true\nMONGO_REPLICA_SET_NAME=rs0\nMONGO_REPLICA_SET_HOST=mongodb:27017\nMONGO_REPLICA_SET_INIT_RETRIES=60\nMONGO_REPLICA_SET_INIT_DELAY_SECONDS=2\n",
-  "installationMessage": "Template deployment files are ready.\nSet the deployment environment under /etc/myscoutee-template, configure TLS and install your Firebase credentials if enabled.\nStart the application with: systemctl start myscoutee-template.service\nThe shown-once deployment-local Operator credential remains valid for subsequent Operator logins. The password itself is not single-use.\n"
+  "installationMessage": "Template deployment files are ready.\nSet the deployment environment under /etc/myscoutee-template, configure TLS and install your Firebase credentials if enabled.\nStart the application with: systemctl start myscoutee-template.service\nThe shown-once deployment-local Operator credential remains valid for subsequent Operator logins. The password itself is not single-use.\n",
+  "runtimeIdentityMigrations": [
+    {
+      "maximumVersion": "1.0.0",
+      "uid": 10001,
+      "gid": 10001
+    }
+  ]
 }

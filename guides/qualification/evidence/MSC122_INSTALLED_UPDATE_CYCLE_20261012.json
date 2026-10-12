@@ -1,0 +1,118 @@
+{
+  "task": "28.4",
+  "selection": "Installed signed updater API and privileged worker on isolated VMware clone",
+  "status": "DONE",
+  "date": "2026-10-12",
+  "baseline": "1.4.0-qa.1",
+  "target": "1.4.0",
+  "artifactSha256": "sha256:7dac75460c907bd12f5474fa670587322d73d42e36b201186549dbe1ed3dfe68",
+  "wrongAuthority": {
+    "httpStatus": 502,
+    "jobAllocated": false,
+    "observedServerMessage": "Could not verify the published release."
+  },
+  "interruptedDownload": {
+    "code": 200,
+    "result": {
+      "schemaVersion": 1,
+      "jobId": "upd_684475391c3f791df895e653fa08980f",
+      "phase": "FAILED",
+      "percent": 100,
+      "message": "The verified update could not be staged.",
+      "updatedAt": "2026-10-12T15:27:23Z",
+      "requestedAt": "2026-10-12T15:27:23Z",
+      "requestedBy": "7af22a90-e47d-3f23-8239-d316fcd1089d",
+      "manifestHash": "sha256:412d11f0f874c81b6c3a595754a4dc1bcaa0e8fa34c847687d3300a7b3ec8ed6",
+      "currentVersion": "1.4.0-qa.1",
+      "targetVersion": "1.4.0",
+      "channel": "stable",
+      "artifactSha256": "sha256:7dac75460c907bd12f5474fa670587322d73d42e36b201186549dbe1ed3dfe68",
+      "backupPath": null
+    }
+  },
+  "durableFailureAfterApplicationRestart": {
+    "code": 200,
+    "result": {
+      "schemaVersion": 1,
+      "jobId": "upd_684475391c3f791df895e653fa08980f",
+      "phase": "FAILED",
+      "percent": 100,
+      "message": "The verified update could not be staged.",
+      "updatedAt": "2026-10-12T15:27:23Z",
+      "requestedAt": "2026-10-12T15:27:23Z",
+      "requestedBy": "7af22a90-e47d-3f23-8239-d316fcd1089d",
+      "manifestHash": "sha256:412d11f0f874c81b6c3a595754a4dc1bcaa0e8fa34c847687d3300a7b3ec8ed6",
+      "currentVersion": "1.4.0-qa.1",
+      "targetVersion": "1.4.0",
+      "channel": "stable",
+      "artifactSha256": "sha256:7dac75460c907bd12f5474fa670587322d73d42e36b201186549dbe1ed3dfe68",
+      "backupPath": null
+    }
+  },
+  "retry": {
+    "code": 200,
+    "result": {
+      "schemaVersion": 1,
+      "jobId": "upd_515e3de66a8df81a0d7e6ab1406e9cc2",
+      "phase": "COMPLETED",
+      "percent": 100,
+      "message": "The verified package and exact bundled images are installed and healthy.",
+      "updatedAt": "2026-10-12T15:29:05Z",
+      "requestedAt": "2026-10-12T15:27:56Z",
+      "requestedBy": "7af22a90-e47d-3f23-8239-d316fcd1089d",
+      "manifestHash": "sha256:412d11f0f874c81b6c3a595754a4dc1bcaa0e8fa34c847687d3300a7b3ec8ed6",
+      "currentVersion": "1.4.0",
+      "targetVersion": "1.4.0",
+      "channel": "stable",
+      "artifactSha256": "sha256:7dac75460c907bd12f5474fa670587322d73d42e36b201186549dbe1ed3dfe68",
+      "backupPath": null
+    }
+  },
+  "rollback": {
+    "code": 200,
+    "result": {
+      "schemaVersion": 1,
+      "jobId": "upd_a32a28ad289fa0b7cddb1a8322db3f29",
+      "phase": "COMPLETED",
+      "percent": 100,
+      "message": "The verified package and exact bundled images are installed and healthy.",
+      "updatedAt": "2026-10-12T15:30:41Z",
+      "requestedAt": "2026-10-12T15:29:31Z",
+      "requestedBy": "7af22a90-e47d-3f23-8239-d316fcd1089d",
+      "manifestHash": "sha256:1c86056f6b2a338aa6bb092794a621642b624f62aff996cd9a2733a226642cbe",
+      "currentVersion": "1.4.0-qa.1",
+      "targetVersion": "1.4.0-qa.1",
+      "channel": "qa",
+      "artifactSha256": "sha256:9a0acf85942d7e0f07cbfbb625b8de9fb913b2b81925c37382a9f61e5d68e8c4",
+      "backupPath": null
+    }
+  },
+  "retainedState": {
+    "collectionsUnchanged": 17,
+    "userCollectionChange": "First original bootstrap login creates the configured operator; the retained user ID is the update actor. Other control collections unchanged.",
+    "secretValuesUnchanged": true,
+    "masterKeyUnchanged": true,
+    "mediaControlSha256": "9f2d7ab47f4148015c4509442ede8063f947e77a1aa85b001bbaa44cd5e4d827",
+    "installedVersionAfterRollback": "1.4.0~qa.1",
+    "healthyContainers": 7
+  },
+  "transport": "Local HTTPS release fixture with scoped CA; real artifact bytes, signatures and installed worker. No GitHub release publication or provider credentials used.",
+  "recoveryBoundary": "Rollback reinstalls the retained prior signed package; application state remains in the existing directories. Full backup/restore qualified separately in 27.6; this updater job does not create a database backup.",
+  "finalOriginalGuestInstallation": {
+    "target": "VMware 192.168.153.129",
+    "order": [
+      "myscoutee",
+      "myscoutee-template"
+    ],
+    "bothSignedInstallAndHostQualification": true,
+    "nativeArtifactSha256": "sha256:7dc45a465b096ff095fef32d872cd4f9762409c37857f2feb4c59cb16864a34c",
+    "templateArtifactSha256": "sha256:7dac75460c907bd12f5474fa670587322d73d42e36b201186549dbe1ed3dfe68",
+    "localReleaseSourceReset": true,
+    "temporaryUpdateFlagsRestored": true,
+    "simultaneousApplicationStacks": 1,
+    "logs": [
+      "/tmp/msc122-native-migration-install.log",
+      "/tmp/msc122-template-migration-install.log"
+    ]
+  }
+}

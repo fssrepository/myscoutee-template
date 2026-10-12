@@ -14,9 +14,11 @@ export function createContext({ baseUrl, mode, runId, vu, nativeSessions }) {
   if (!nativeSessions) throw new Error('Template load tests require E2E_NATIVE_DEMO_SESSIONS=true.');
   return {
     mode,
+    nativeSessions,
     http: createHttpClient({ baseUrl, headersForRequest: nativeSessions.headersForRequest,
       timeoutMs: Number(process.env.E2E_STRESS_HTTP_TIMEOUT_MS ?? 15000) }),
     vars: { ...fixtures, userId: sessionActors()[1], adminUserId: sessionActors()[0],
+      chatId: process.env.E2E_CHAT_ID ?? fixtures.chatId,
       apiPrefix: process.env.E2E_API_PREFIX ?? '/api', runId, vu: String(vu) },
     defaultMaxMs: Number(process.env.E2E_STRESS_DEFAULT_MAX_MS ?? 5000)
   };

@@ -50,11 +50,15 @@ jq -e --arg package "$PACKAGE_NAME" --argjson uid "$MYSCOUTEE_API_UID" --argjson
     and (.prefix|type=="string" and test("^[a-zA-Z0-9_]*$"));
   type == "object" and .schemaVersion == 1
   and (keys|sort) == ["ensureSecrets","environmentDefaults","freshSecrets","installationMessage",
-    "migrateOwnership","mongoSeedFallback","ownedDirectories","replicaSetDefaults","requiredMongoCollections","schemaVersion"]
+    "migrateOwnership","mongoSeedFallback","ownedDirectories","replicaSetDefaults","requiredMongoCollections","runtimeIdentityMigrations","schemaVersion"]
   and (.ownedDirectories|type=="array" and all(.[];
     (keys|sort)==["gid","mode","path","uid"] and (.path|directory)
     and (.mode|type=="string" and test("^0[0-7]{3}$")) and .uid==$uid and .gid==$gid))
   and (.migrateOwnership|type=="array" and all(.[];directory))
+  and (.runtimeIdentityMigrations|type=="array" and length <= 8 and all(.[];
+    (keys|sort)==["gid","maximumVersion","uid"]
+    and (.maximumVersion|type=="string" and test("^[0-9]+\\.[0-9]+\\.[0-9]+$"))
+    and ([.uid,.gid]|all(.[];type=="number" and floor==. and .>=10000 and .<=60000))))
   and (.environmentDefaults|type=="object" and all(to_entries[];(.key|key) and (.value|text)))
   and (.freshSecrets|type=="array" and all(.[];secret))
   and (.ensureSecrets|type=="array" and all(.[];secret))
@@ -76,6 +80,40 @@ for entry in "passwd:${MYSCOUTEE_API_UID}" "group:${MYSCOUTEE_API_GID}"; do
     exit 1
   fi
 done
+migrate_runtime_identity() {
+  local previous_version="$1" account="${PACKAGE_NAME}-runtime" row old_uid old_gid maximum current_uid current_gid root
+  [[ -n "$previous_version" ]] || return 0
+  getent passwd "$account" >/dev/null || return 0
+  while IFS= read -r row; do
+    maximum="$(jq -r '.maximumVersion' <<< "$row")"
+    dpkg --compare-versions "$previous_version" le "${maximum/-/\~}" || continue
+    old_uid="$(jq -r '.uid' <<< "$row")"; old_gid="$(jq -r '.gid' <<< "$row")"
+    current_uid="$(id -u "$account")"; current_gid="$(id -g "$account")"
+    [[ "$current_uid" == "$old_uid" || "$current_uid" == "$MYSCOUTEE_API_UID" ]] || continue
+    [[ "$current_gid" == "$old_gid" || "$current_gid" == "$MYSCOUTEE_API_GID" ]] || continue
+    # Never migrate another product's account or a shared numeric identity.
+    [[ "$(getent passwd "$current_uid" | cut -d: -f1)" == "$account" ]] || return 1
+    [[ "$(getent group "$current_gid" | cut -d: -f1)" == "$account" ]] || return 1
+    for root in "$PACKAGE_ETC" "$PACKAGE_STATE" "$PACKAGE_CACHE" "$PACKAGE_LOG" "$PACKAGE_ROOT"; do
+      [[ ! -L "$root" ]] || { echo "Unsafe runtime migration root: $root" >&2; return 1; }
+    done
+    if [[ "$current_gid" != "$MYSCOUTEE_API_GID" ]]; then groupmod --gid "$MYSCOUTEE_API_GID" "$account"; fi
+    if [[ "$current_uid" != "$MYSCOUTEE_API_UID" || "$current_gid" != "$MYSCOUTEE_API_GID" ]]; then
+      usermod --uid "$MYSCOUTEE_API_UID" --gid "$MYSCOUTEE_API_GID" "$account"
+    fi
+    # Rerunning after interruption also finishes file ownership migration.
+    # Preserve every mode, root-owned secret, Mongo UID and unrelated account.
+    for root in "$PACKAGE_ETC" "$PACKAGE_STATE" "$PACKAGE_CACHE" "$PACKAGE_LOG" "$PACKAGE_ROOT"; do
+      [[ -d "$root" ]] || continue
+      find "$root" -xdev -uid "$old_uid" -exec chown -h "+$MYSCOUTEE_API_UID" -- {} +
+      find "$root" -xdev -gid "$old_gid" -exec chgrp -h "+$MYSCOUTEE_API_GID" -- {} +
+    done
+    return 0
+  done < <(jq -c '.runtimeIdentityMigrations[]' "$INSTALL_POLICY")
+}
+
+migrate_runtime_identity "${2:-}"
+
 systemd-sysusers /usr/lib/sysusers.d/${PACKAGE_NAME}.conf
 if [[ "$(id -u ${PACKAGE_NAME}-runtime)" != "${MYSCOUTEE_API_UID}" \
    || "$(id -g ${PACKAGE_NAME}-runtime)" != "${MYSCOUTEE_API_GID}" ]]; then
