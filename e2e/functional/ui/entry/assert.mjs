@@ -1,4 +1,6 @@
+import { readFileSync } from 'node:fs';
 import { assert } from '../../../shared/assertions.mjs';
+const expectedVersion = JSON.parse(readFileSync(new URL('../../../../frontend/package.json', import.meta.url), 'utf8')).version;
 
 export async function assertUi({ page, ctx, local = ctx?.mode !== 'full', memberReady, profileSelected, role = 'member', actorId = '100000000000000000000001', actorName = 'Alex Morgan', consentExpected = true, endsSession = false }) {
   const networkStart = page.network.length;
@@ -11,7 +13,7 @@ export async function assertUi({ page, ctx, local = ctx?.mode !== 'full', member
   await page.waitForSelector('.document-viewer-section-body');
   await page.navigate('/entry');
   await page.waitForText('Templates');
-  await page.waitForText('v1.0.0');
+  await page.waitForText('v' + expectedVersion);
   if (local) await page.clickVisible('.entry-actions .primary');
   else await page.clickByText('.entry-actions button', 'Explore');
   if (consentExpected) {

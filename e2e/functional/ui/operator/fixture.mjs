@@ -1,8 +1,10 @@
+import { readFileSync } from 'node:fs';
 import assert from 'node:assert/strict';
 import {mkdir,writeFile,rm} from 'node:fs/promises';
 import {randomUUID} from 'node:crypto';
 import {stageChatFixture} from '../chat/fixture.mjs';
 import {nativeDemoSessions} from '../../../shared/native-demo-sessions.mjs';
+const expectedVersion = JSON.parse(readFileSync(new URL('../../../../frontend/package.json', import.meta.url), 'utf8')).version;
 export async function stageOperatorConfigurationFixture(baseUrl){
  const fixture=await stageChatFixture();
  await fixture.query(`db.users.updateOne({userId:${JSON.stringify(fixture.ids[0])}},{$set:{operator:true}})`);
@@ -45,7 +47,7 @@ export async function stageOperatorConfigurationFixture(baseUrl){
   const tls=await fetch(baseUrl+'/api/operator/configuration/tls',{headers});assert.equal(tls.status,200);
   assert.equal((await tls.json()).capability,'BACKEND_UNAVAILABLE','Demo cannot change host TLS');
   const updateStatus=await fetch(baseUrl+'/api/operator/updates',{headers});assert.equal(updateStatus.status,200);
-  const overview=await updateStatus.json();assert.equal(overview.enabled,false);assert.equal(overview.currentVersion,'1.0.0');
+  const overview=await updateStatus.json();assert.equal(overview.enabled,false);assert.equal(overview.currentVersion,expectedVersion);
   for(const route of ['/api/operator/configuration/tls','/api/operator/updates','/api/operator/email-configuration']){
    const denied=await fetch(baseUrl+route,{headers:memberHeaders});assert.equal(denied.status,403,'Operator-only host status');
   }

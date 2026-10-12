@@ -1,9 +1,11 @@
+import { readFileSync } from 'node:fs';
 import assert from 'node:assert/strict';
 import {mkdir,writeFile} from 'node:fs/promises';
 import {launchChromeBrowser} from '../lib/chrome-cdp.mjs';
 import {assertGuideTour} from '../guide/assert.mjs';
 import {assertUi} from '../entry/assert.mjs';
 import {stageOperatorConfigurationFixture} from './fixture.mjs';
+const expectedVersion = JSON.parse(readFileSync(new URL('../../../../frontend/package.json', import.meta.url), 'utf8')).version;
 const local=process.argv.includes('--local'),baseUrl=local?(process.env.E2E_LOCAL_BASE_URL??'http://127.0.0.1:4200'):process.env.E2E_SERVER_BASE_URL??'http://localhost';
 const fixture=local?null:await stageOperatorConfigurationFixture(baseUrl);
 const browser=await launchChromeBrowser({baseUrl}),page=await browser.newPage();
@@ -22,7 +24,7 @@ try{
  if(fixture)await fixture.assertAuthority();
  await assertUi({page,local,role:'operator',actorId:fixture?.ids[0]??'100000000000000000000004',actorName:fixture?.names[0]??'Template Operator',memberReady:async()=>{
   await open();
-  assert.equal(await page.evaluate(()=>document.querySelector('.operator-action-popup__version--current')?.textContent.trim()),'1.0.0');
+  assert.equal(await page.evaluate(()=>document.querySelector('.operator-action-popup__version--current')?.textContent.trim()),expectedVersion);
   assert.equal(await page.isSelectorVisible('[data-guide-item="operator-apply-update"]'),false,'No invented release or install action');
   await assertGuideTour(page,['Updates','Check','Close']);
   if(process.env.E2E_SCREENSHOT_DIR){await mkdir(process.env.E2E_SCREENSHOT_DIR,{recursive:true});await writeFile(process.env.E2E_SCREENSHOT_DIR+'/updates-desktop.png',await page.screenshot());await page.setViewport({width:390,height:844});assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));await writeFile(process.env.E2E_SCREENSHOT_DIR+'/updates-mobile.png',await page.screenshot());await page.setViewport({width:1440,height:950});}
