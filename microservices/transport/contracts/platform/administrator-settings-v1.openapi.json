@@ -1,0 +1,266 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "MyScoutee internal administrator settings",
+    "version": "1.0.0",
+    "description": "Reads canonical AdministratorSettings. Batch classification executes the same AppSettingsService enabled gate and email normalization for every input and returns original accepted input values. REAL/DEMO caches remain owned by AppSettingsService. Notification audiences use batches, not per-recipient network calls. Email candidates travel in a bounded POST body. 4096 candidates, 320 characters per email, 2 MiB request, 1 MiB response. Read failures are propagated; no client-side privilege fallback."
+  },
+  "paths": {
+    "/_internal/v1/platform/administrators/emails": {
+      "get": {
+        "operationId": "readAdministratorEmails",
+        "security": [
+          {
+            "chatDirectoryRead": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "X-MyScoutee-Session-Mode",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Canonical configured emails",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "INVALID_SESSION_MODE or INVALID_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "UNAUTHORIZED: absent, duplicate or wrong read credential",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN: credential does not authorize another path or method",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Administrator settings owner unavailable; never assume authorization",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/_internal/v1/platform/administrators/classify": {
+      "post": {
+        "operationId": "classifyAdministratorEmails",
+        "security": [
+          {
+            "chatDirectoryRead": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "X-MyScoutee-Session-Mode",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Original input emails classified as enabled administrators",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "INVALID_SESSION_MODE or INVALID_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "UNAUTHORIZED: absent, duplicate or wrong read credential",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN: credential does not authorize another path or method",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Administrator settings owner unavailable; never assume authorization",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Batch exceeds request limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "JSON request body required",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Emails"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "chatDirectoryRead": {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "Dedicated internal group-media read credential of at least 256 random bits. Never distribute to browsers or put in URLs."
+      }
+    },
+    "schemas": {
+      "Emails": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "emails"
+        ],
+        "properties": {
+          "emails": {
+            "type": "array",
+            "maxItems": 4096,
+            "items": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "maxLength": 320
+            }
+          }
+        }
+      },
+      "Result": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "Error": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "code"
+        ],
+        "properties": {
+          "code": {
+            "type": "string",
+            "enum": [
+              "INVALID_REQUEST",
+              "INVALID_SESSION_MODE",
+              "UNAUTHORIZED",
+              "FORBIDDEN",
+              "QUERY_TOO_LARGE",
+              "INVALID_CONTENT_TYPE",
+              "ADMINISTRATOR_SETTINGS_UNAVAILABLE"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

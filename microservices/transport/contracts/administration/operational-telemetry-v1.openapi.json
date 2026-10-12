@@ -1,0 +1,231 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Operational telemetry",
+    "version": "1.0.0",
+    "description": "Invokes native administration telemetry, preserving native enabled flag, normalization, timestamps, Redis retention and REAL/DEMO/group scope. Receipt means owner invocation completed, not durable delivery: native Redis errors remain best effort, logged; transport failures are logged with no retry. Request 64 KiB, response 2 MiB; 128 tags maximum."
+  },
+  "paths": {
+    "/_internal/v1/administration/operational-telemetry": {
+      "post": {
+        "operationId": "operational_telemetry",
+        "security": [
+          {
+            "serviceCapability": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "X-MyScoutee-Session-Mode",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Command"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Canonical owner result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input or session mode",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or wrong service capability",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Request exceeds byte limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "JSON content type required",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Owner unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "serviceCapability": {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "Dedicated server-only operational-telemetry command capability; at least 256 random bits."
+      }
+    },
+    "schemas": {
+      "Error": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "code"
+        ],
+        "properties": {
+          "code": {
+            "type": "string"
+          }
+        }
+      },
+      "Scope": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "active"
+        ],
+        "properties": {
+          "active": {
+            "type": "boolean"
+          },
+          "groupId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 512
+          }
+        }
+      },
+      "Command": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "scope",
+          "amount"
+        ],
+        "properties": {
+          "scope": {
+            "$ref": "#/components/schemas/Scope"
+          },
+          "eventKey": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 512
+          },
+          "domain": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 512
+          },
+          "entityId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 512
+          },
+          "actorUserId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 512
+          },
+          "amount": {
+            "type": "integer"
+          },
+          "tags": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "maxProperties": 128,
+            "propertyNames": {
+              "maxLength": 512
+            },
+            "additionalProperties": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "maxLength": 8192
+            }
+          }
+        }
+      },
+      "Result": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "handled"
+        ],
+        "properties": {
+          "handled": {
+            "const": true
+          }
+        }
+      }
+    }
+  }
+}

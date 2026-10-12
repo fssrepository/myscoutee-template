@@ -1,0 +1,1462 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Notification-owned job state",
+    "version": "1.0.0",
+    "description": "Callbacks execute locally via the canonical NotificationJobs default orchestration. The owner enumerates seeded groups and retains atomic Mongo run claims, scheduling decisions, pending counters, history and socket broadcasts. Every state call carries active/inactive JobGroupContext, including null Dating group, plus mandatory REAL/DEMO and service capability. Only enabled/parameter fields cross the response boundary. Requests: 512 KiB; rule/groups replies: 2 MiB; scalar receipts: 16 KiB. No automatic retries. Lost acknowledgments for pending-count claim/adjust/restore and run completion require recovery qualification; this transport does not claim exactly-once job coordination."
+  },
+  "paths": {
+    "/_internal/v1/notifications/jobs/groups": {
+      "post": {
+        "operationId": "groups",
+        "security": [
+          {
+            "serviceCapability": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "X-MyScoutee-Session-Mode",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GroupsQuery"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Canonical owner result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GroupIds"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input or session mode",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or wrong service capability",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Request exceeds byte limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "JSON content type required",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Owner unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/_internal/v1/notifications/jobs/rule": {
+      "post": {
+        "operationId": "rule",
+        "security": [
+          {
+            "serviceCapability": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "X-MyScoutee-Session-Mode",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RuleQuery"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Canonical owner result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RuleResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input or session mode",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or wrong service capability",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Request exceeds byte limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "JSON content type required",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Owner unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/_internal/v1/notifications/jobs/due": {
+      "post": {
+        "operationId": "due",
+        "security": [
+          {
+            "serviceCapability": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "X-MyScoutee-Session-Mode",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DueQuery"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Canonical owner result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Decision"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input or session mode",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or wrong service capability",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Request exceeds byte limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "JSON content type required",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Owner unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/_internal/v1/notifications/jobs/begin": {
+      "post": {
+        "operationId": "begin",
+        "security": [
+          {
+            "serviceCapability": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "X-MyScoutee-Session-Mode",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BeginCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Canonical owner result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RuleResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input or session mode",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or wrong service capability",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Request exceeds byte limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "JSON content type required",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Owner unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/_internal/v1/notifications/jobs/begin-scheduled": {
+      "post": {
+        "operationId": "begin_scheduled",
+        "security": [
+          {
+            "serviceCapability": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "X-MyScoutee-Session-Mode",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BeginCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Canonical owner result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RuleResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input or session mode",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or wrong service capability",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Request exceeds byte limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "JSON content type required",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Owner unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/_internal/v1/notifications/jobs/begin-queued": {
+      "post": {
+        "operationId": "begin_queued",
+        "security": [
+          {
+            "serviceCapability": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "X-MyScoutee-Session-Mode",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BeginCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Canonical owner result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RuleResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input or session mode",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or wrong service capability",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Request exceeds byte limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "JSON content type required",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Owner unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/_internal/v1/notifications/jobs/record": {
+      "post": {
+        "operationId": "record",
+        "security": [
+          {
+            "serviceCapability": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "X-MyScoutee-Session-Mode",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RecordCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Canonical owner result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RuleResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input or session mode",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or wrong service capability",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Request exceeds byte limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "JSON content type required",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Owner unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/_internal/v1/notifications/jobs/adjust-pending": {
+      "post": {
+        "operationId": "adjust_pending",
+        "security": [
+          {
+            "serviceCapability": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "X-MyScoutee-Session-Mode",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PendingCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Canonical owner result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RuleResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input or session mode",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or wrong service capability",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Request exceeds byte limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "JSON content type required",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Owner unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/_internal/v1/notifications/jobs/claim-pending": {
+      "post": {
+        "operationId": "claim_pending",
+        "security": [
+          {
+            "serviceCapability": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "X-MyScoutee-Session-Mode",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Claim"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Canonical owner result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Count"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input or session mode",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or wrong service capability",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Request exceeds byte limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "JSON content type required",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Owner unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "description": "Bound to the acquired run startedAt. Repeating a claim returns the durable count receipt. Restore uses the stored receipt even if the caller lost its claim reply; repeating restore adds zero. Stale runs cannot change a newer run."
+      }
+    },
+    "/_internal/v1/notifications/jobs/restore-pending": {
+      "post": {
+        "operationId": "restore_pending",
+        "security": [
+          {
+            "serviceCapability": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "X-MyScoutee-Session-Mode",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Restore"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Canonical owner result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Receipt"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input or session mode",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or wrong service capability",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Request exceeds byte limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "JSON content type required",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Owner unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "description": "Bound to the acquired run startedAt. Repeating a claim returns the durable count receipt. Restore uses the stored receipt even if the caller lost its claim reply; repeating restore adds zero. Stale runs cannot change a newer run."
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "serviceCapability": {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "Dedicated profile-summary read credential; server-only, at least 256 random bits."
+      }
+    },
+    "schemas": {
+      "Scope": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "active"
+        ],
+        "properties": {
+          "active": {
+            "type": "boolean"
+          },
+          "groupId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 512
+          }
+        }
+      },
+      "GroupsQuery": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "ruleKeys"
+        ],
+        "properties": {
+          "ruleKeys": {
+            "type": "array",
+            "uniqueItems": true,
+            "maxItems": 128,
+            "items": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "maxLength": 512
+            }
+          }
+        }
+      },
+      "RuleQuery": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "scope"
+        ],
+        "properties": {
+          "scope": {
+            "$ref": "#/components/schemas/Scope"
+          },
+          "ruleKey": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 512
+          }
+        }
+      },
+      "DueQuery": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "scope"
+        ],
+        "properties": {
+          "scope": {
+            "$ref": "#/components/schemas/Scope"
+          },
+          "ruleKey": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 512
+          },
+          "now": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          }
+        }
+      },
+      "BeginCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "scope"
+        ],
+        "properties": {
+          "scope": {
+            "$ref": "#/components/schemas/Scope"
+          },
+          "ruleKey": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 512
+          },
+          "detail": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 8192
+          },
+          "actorUserId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 512
+          },
+          "startedAt": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          }
+        }
+      },
+      "RecordCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "scope",
+          "count"
+        ],
+        "properties": {
+          "scope": {
+            "$ref": "#/components/schemas/Scope"
+          },
+          "ruleKey": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 512
+          },
+          "count": {
+            "type": "integer"
+          },
+          "status": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 512
+          },
+          "detail": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 8192
+          },
+          "actorUserId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 512
+          },
+          "startedAt": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          }
+        }
+      },
+      "PendingCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "scope",
+          "count"
+        ],
+        "properties": {
+          "scope": {
+            "$ref": "#/components/schemas/Scope"
+          },
+          "ruleKey": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 512
+          },
+          "count": {
+            "type": "integer"
+          },
+          "unit": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 512
+          }
+        }
+      },
+      "GroupIds": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 512
+        }
+      },
+      "Decision": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "value"
+        ],
+        "properties": {
+          "value": {
+            "type": "boolean"
+          }
+        }
+      },
+      "Count": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "value"
+        ],
+        "properties": {
+          "value": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      },
+      "Receipt": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "completed"
+        ],
+        "properties": {
+          "completed": {
+            "const": true
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "code"
+        ],
+        "properties": {
+          "code": {
+            "type": "string"
+          }
+        }
+      },
+      "RuleResult": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "resolved"
+        ],
+        "properties": {
+          "resolved": {
+            "const": true
+          },
+          "value": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "enabled": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "parameters": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": false,
+                  "properties": {
+                    "key": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "textValue": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "Claim": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "scope",
+          "startedAt"
+        ],
+        "properties": {
+          "scope": {
+            "$ref": "#/components/schemas/Scope"
+          },
+          "ruleKey": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 512
+          },
+          "startedAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "Restore": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "scope",
+          "count",
+          "startedAt"
+        ],
+        "properties": {
+          "scope": {
+            "$ref": "#/components/schemas/Scope"
+          },
+          "ruleKey": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 512
+          },
+          "count": {
+            "type": "integer"
+          },
+          "unit": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 512
+          },
+          "startedAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      }
+    }
+  }
+}

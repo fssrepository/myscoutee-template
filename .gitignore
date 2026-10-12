@@ -17,3 +17,7 @@ server/projects/profile/secrets/
 server/docker/conf/nginx/app/
 server/docker/conf/nginx/keys/*
 !server/docker/conf/nginx/keys/README.md
+
+# Independent service artifacts and Gradle state
+/microservices/build/
+/microservices/.gradle/

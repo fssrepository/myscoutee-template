@@ -1,0 +1,457 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "MyScoutee internal notification outbox",
+    "version": "1.0.0",
+    "description": "Producer-only bridge to the existing NotificationDelivery API. Canonical NotificationOutboxService retains recipient grouping, account/device policy, collapse keys, enqueueOnce durable identity, wakeups and delivery. REAL/DEMO and active/null/inactive job scopes are preserved. Request limit 1 MiB; receipt limit 16 KiB. Commands are never automatically retried. A timeout or 5xx has an unknown outcome: enqueueOnce reconciliation retains the caller operation ID; plain enqueue must not be blindly repeated. A completed response without a receipt is the native empty result, not an unavailable owner."
+  },
+  "paths": {
+    "/_internal/v1/notifications/outbox/enqueue": {
+      "post": {
+        "operationId": "enqueueNotification",
+        "security": [
+          {
+            "serviceCapability": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "X-MyScoutee-Session-Mode",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Command"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Canonical outbox operation completed; receipt omitted for native empty result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request or session mode",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing/wrong service capability",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Unsupported method",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Body exceeds 4 KiB",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "JSON content type required",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Owner operation failed; result may already be persisted; no automatic retry",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/_internal/v1/notifications/outbox/enqueue-once": {
+      "post": {
+        "operationId": "enqueueNotificationOnce",
+        "security": [
+          {
+            "serviceCapability": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "X-MyScoutee-Session-Mode",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Command"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Canonical outbox operation completed; receipt omitted for native empty result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request or session mode",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing/wrong service capability",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Unsupported method",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Body exceeds 4 KiB",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "JSON content type required",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Owner operation failed; result may already be persisted; no automatic retry",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "serviceCapability": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    },
+    "schemas": {
+      "Command": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "context"
+        ],
+        "properties": {
+          "context": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "active"
+            ],
+            "properties": {
+              "active": {
+                "type": "boolean"
+              },
+              "groupId": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 512
+              }
+            },
+            "allOf": [
+              {
+                "if": {
+                  "properties": {
+                    "active": {
+                      "const": false
+                    }
+                  }
+                },
+                "then": {
+                  "properties": {
+                    "groupId": {
+                      "type": "null"
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          "operationId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 4096
+          },
+          "intent": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "type": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 512
+              },
+              "entityType": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 512
+              },
+              "entityId": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 512
+              },
+              "recipientScope": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 512
+              },
+              "title": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 16384
+              },
+              "body": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 65536
+              },
+              "clickUrl": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 4096
+              },
+              "iconUrl": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 4096
+              },
+              "badgeUrl": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 4096
+              },
+              "tag": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 4096
+              },
+              "createdUser": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 512
+              },
+              "recipientUserIds": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "maxItems": 4096,
+                "items": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "maxLength": 512
+                }
+              },
+              "payload": {
+                "type": [
+                  "object",
+                  "null"
+                ],
+                "maxProperties": 256,
+                "propertyNames": {
+                  "maxLength": 512
+                },
+                "additionalProperties": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "maxLength": 16384
+                }
+              }
+            }
+          }
+        }
+      },
+      "Result": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "completed"
+        ],
+        "properties": {
+          "completed": {
+            "const": true
+          },
+          "receipt": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "additionalProperties": false,
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "syncKey": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "code"
+        ],
+        "properties": {
+          "code": {
+            "type": "string",
+            "enum": [
+              "INVALID_REQUEST",
+              "INVALID_SESSION_MODE",
+              "UNAUTHORIZED",
+              "FORBIDDEN",
+              "QUERY_TOO_LARGE",
+              "INVALID_CONTENT_TYPE",
+              "ENQUEUE_OUTCOME_UNKNOWN"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

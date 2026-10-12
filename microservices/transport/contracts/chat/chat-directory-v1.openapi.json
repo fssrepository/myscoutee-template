@@ -1,0 +1,640 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "MyScoutee internal chat directory reads",
+    "version": "1.0.0",
+    "description": "Canonical ChatDirectory read operations. Explicit DTOs expose only directory-view fields, never chat documents or messages. Authenticated service read with mandatory REAL/DEMO; no delegated user authority. HTTPS except explicit isolated lab opt-in."
+  },
+  "paths": {
+    "/_internal/v1/chat/directory/entry": {
+      "get": {
+        "operationId": "getChatDirectoryEntry",
+        "security": [
+          {
+            "chatDirectoryRead": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "X-MyScoutee-Session-Mode",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          },
+          {
+            "name": "ownerId",
+            "in": "query",
+            "required": false,
+            "description": "Omitted retains canonical null; an empty string stays distinct.",
+            "schema": {
+              "type": "string",
+              "maxLength": 512
+            }
+          },
+          {
+            "name": "chatId",
+            "in": "query",
+            "required": false,
+            "description": "Omitted retains canonical null; an empty string stays distinct.",
+            "schema": {
+              "type": "string",
+              "maxLength": 512
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Canonical directory read; maximum 2 MiB.",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChatDirectoryEntryDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "INVALID_SESSION_MODE or INVALID_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "UNAUTHORIZED: absent, duplicate or wrong read credential",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN: credential does not authorize another path or method",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "CHAT_DIRECTORY_UNAVAILABLE: owner failed; persistence details are not exposed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "NOT_FOUND: the canonical directory has no group for this ID in the selected session mode.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/_internal/v1/chat/directory/entries": {
+      "get": {
+        "operationId": "getChatDirectoryEntries",
+        "security": [
+          {
+            "chatDirectoryRead": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "X-MyScoutee-Session-Mode",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          },
+          {
+            "name": "chatId",
+            "in": "query",
+            "required": false,
+            "description": "Omitted retains canonical null; an empty string stays distinct.",
+            "schema": {
+              "type": "string",
+              "maxLength": 512
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Canonical directory read; maximum 2 MiB.",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChatDirectoryEntries"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "INVALID_SESSION_MODE or INVALID_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "UNAUTHORIZED: absent, duplicate or wrong read credential",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN: credential does not authorize another path or method",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "CHAT_DIRECTORY_UNAVAILABLE: owner failed; persistence details are not exposed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/_internal/v1/chat/directory/unread-version": {
+      "get": {
+        "operationId": "getChatUnreadVersion",
+        "security": [
+          {
+            "chatDirectoryRead": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "X-MyScoutee-Session-Mode",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          },
+          {
+            "name": "ownerId",
+            "in": "query",
+            "required": false,
+            "description": "Omitted retains canonical null; an empty string stays distinct.",
+            "schema": {
+              "type": "string",
+              "maxLength": 512
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Canonical directory read; maximum 4 KiB.",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChatUnreadVersionDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "INVALID_SESSION_MODE or INVALID_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "UNAUTHORIZED: absent, duplicate or wrong read credential",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN: credential does not authorize another path or method",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "CHAT_DIRECTORY_UNAVAILABLE: owner failed; persistence details are not exposed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/_internal/v1/chat/directory/support-counts": {
+      "get": {
+        "operationId": "getChatSupportCounts",
+        "security": [
+          {
+            "chatDirectoryRead": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "X-MyScoutee-Session-Mode",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          },
+          {
+            "name": "baseGroupId",
+            "in": "query",
+            "required": false,
+            "description": "Omitted retains canonical null; an empty string stays distinct.",
+            "schema": {
+              "type": "string",
+              "maxLength": 512
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Canonical directory read; maximum 64 KiB.",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChatSupportCounts"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "INVALID_SESSION_MODE or INVALID_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "UNAUTHORIZED: absent, duplicate or wrong read credential",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN: credential does not authorize another path or method",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "CHAT_DIRECTORY_UNAVAILABLE: owner failed; persistence details are not exposed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "chatDirectoryRead": {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "Dedicated internal group-media read credential of at least 256 random bits. Never distribute to browsers or put in URLs."
+      }
+    },
+    "schemas": {
+      "Error": {
+        "type": "object",
+        "required": [
+          "code"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "type": "string",
+            "enum": [
+              "INVALID_SESSION_MODE",
+              "INVALID_REQUEST",
+              "UNAUTHORIZED",
+              "FORBIDDEN",
+              "NOT_FOUND",
+              "CHAT_DIRECTORY_UNAVAILABLE"
+            ]
+          }
+        }
+      },
+      "ChatDirectoryEntryDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "unread",
+          "title",
+          "chatId",
+          "ownerId",
+          "ownerUserId",
+          "channelType",
+          "supportBaseGroupId",
+          "memberIds",
+          "supportCase"
+        ],
+        "properties": {
+          "unread": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "title": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "chatId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "ownerId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "ownerUserId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "channelType": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "supportBaseGroupId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "memberIds": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "supportCase": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "additionalProperties": false,
+            "required": [
+              "status"
+            ],
+            "properties": {
+              "status": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "ChatDirectoryEntries": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "unread",
+            "title",
+            "chatId",
+            "ownerId",
+            "ownerUserId",
+            "channelType",
+            "supportBaseGroupId",
+            "memberIds",
+            "supportCase"
+          ],
+          "properties": {
+            "unread": {
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "title": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "chatId": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "ownerId": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "ownerUserId": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "channelType": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "supportBaseGroupId": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "memberIds": {
+              "type": [
+                "array",
+                "null"
+              ],
+              "items": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "supportCase": {
+              "type": [
+                "object",
+                "null"
+              ],
+              "additionalProperties": false,
+              "required": [
+                "status"
+              ],
+              "properties": {
+                "status": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "ChatUnreadVersionDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "version"
+        ],
+        "properties": {
+          "version": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      },
+      "ChatSupportCounts": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    }
+  }
+}

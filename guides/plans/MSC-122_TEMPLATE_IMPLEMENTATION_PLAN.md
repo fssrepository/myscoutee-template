@@ -578,7 +578,7 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     Compare equivalent builds/workloads and investigate regressions. Close with
     repeatable commands and an honest baseline; do not repeatedly stress every edit.
 
-25. **Compose and qualify the minimal microservices/KVM deployment — PENDING.**
+25. **Compose and qualify the minimal microservices/KVM deployment — IN PROGRESS.**
     Reuse `microservices` assemblies, bindings, transport/authentication, build and
     ownership audits, image locks, manifests/charts, gateway, VM/host tools and
     monitoring, including **Prometheus and Grafana**. Retain the existing metric
@@ -594,6 +594,22 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     and live VM/Kubernetes/container status terminal. Separate its project name,
     state directory, lock and terminal title at the source owner before reuse.
     Open the live status terminal when starting KVM, as requested by the user.
+    Current composition selects four owners: identity (accounts/access/admin/
+    platform/integrations/showcase), communication (chat/notifications/email/
+    localization), media and help. It reuses the native bootstrap and selected
+    typed transport, with no community/payment/Registry/moderation service owner.
+    Four service JARs and ownership audits pass, together with 51 transport tests
+    in 11 suites and 23 focused canonical Java tests. Eight selected wire
+    contracts validate 182 actual HTTP responses. See
+    `MSC122_TEMPLATE_ASSEMBLY_SELECTION_20261012.json`. The VM, gateway,
+    monitoring and lifecycle configuration remain in progress.
+    Source `65c091364` moves build identity and optional shared imports to the
+    existing assembly manifest. The next coherent batch also configures the
+    existing repository factory and extra shared sources without changing native
+    values. A required template realtime unread count uses the existing
+    notification-read transport: same owner count query, signed actor/body/mode
+    validation and no page fetch/retry. Native HTTP tests and contract validation
+    pass; runtime qualification of this new operation remains open.
     Close with focused KVM checks followed serially
     by monolith checks, CPU/log evidence, correct service credentials and cleanup.
 

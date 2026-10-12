@@ -1,0 +1,183 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Derive an operation-bound actor delegation",
+    "version": "1.0.0",
+    "description": "Identity-owned, bounded internal operation. Service authentication does not grant actor authority. Responses are not cached."
+  },
+  "paths": {
+    "/_internal/v1/accounts/actor-delegation": {
+      "post": {
+        "security": [
+          {
+            "serviceCapability": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-MyScoutee-Session-Mode",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Request"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "serviceCapability": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    },
+    "schemas": {
+      "Request": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "parent",
+          "operation",
+          "bodyDigest"
+        ],
+        "properties": {
+          "parent": {
+            "type": "string",
+            "maxLength": 8192
+          },
+          "operation": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "audience",
+              "method",
+              "path"
+            ],
+            "properties": {
+              "audience": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 256
+              },
+              "method": {
+                "const": "POST"
+              },
+              "path": {
+                "type": "string",
+                "pattern": "^/_internal/v1/[a-z0-9/_-]{1,256}$"
+              }
+            }
+          },
+          "bodyDigest": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        }
+      },
+      "Result": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "token"
+        ],
+        "properties": {
+          "token": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 8192
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "required": [
+          "code"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

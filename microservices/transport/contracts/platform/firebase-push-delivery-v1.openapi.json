@@ -1,0 +1,607 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Firebase push delivery",
+    "version": "1.0.0",
+    "description": "Existing notification worker prepares token/topic/data and WebPush presentation; platform owns SDK construction and the existing activated Firebase runtime. Single, direct-batch and multicast sends retain token ordering, counts and per-token error codes. 8 MiB/500 messages request bound, 512 KiB response, 30-second request window. REAL/DEMO preserved; canonical runtime rejects live Firebase sends in DEMO. No transport retry; the existing notification outbox owns retry policy. Unknown provider acknowledgment remains a workflow concern, not exactly-once delivery."
+  },
+  "paths": {
+    "/_internal/v1/platform/firebase-push/single": {
+      "post": {
+        "operationId": "firebasePushSingle",
+        "security": [
+          {
+            "serviceCapability": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "X-MyScoutee-Session-Mode",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Single"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Canonical owner result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Receipt"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input or session mode",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or wrong service capability",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Request exceeds byte limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "JSON content type required",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Provider failed, unavailable, or send outcome unknown; transport never retries",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/_internal/v1/platform/firebase-push/batch": {
+      "post": {
+        "operationId": "firebasePushBatch",
+        "security": [
+          {
+            "serviceCapability": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "X-MyScoutee-Session-Mode",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Batch"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Canonical owner result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BatchResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input or session mode",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or wrong service capability",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Request exceeds byte limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "JSON content type required",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Provider failed, unavailable, or send outcome unknown; transport never retries",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/_internal/v1/platform/firebase-push/multicast": {
+      "post": {
+        "operationId": "firebasePushMulticast",
+        "security": [
+          {
+            "serviceCapability": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "X-MyScoutee-Session-Mode",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Multicast"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Canonical owner result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BatchResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input or session mode",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or wrong service capability",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Request exceeds byte limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "JSON content type required",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Provider failed, unavailable, or send outcome unknown; transport never retries",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "serviceCapability": {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "Notifications-only push-delivery capability; no Firebase credentials or runtime SDK object is exported."
+      }
+    },
+    "schemas": {
+      "WebPush": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "title": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 8192
+          },
+          "body": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 8192
+          },
+          "icon": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 8192
+          },
+          "badge": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 8192
+          },
+          "tag": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 8192
+          },
+          "timestampMillis": {
+            "type": "integer"
+          },
+          "urgency": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 128
+          },
+          "link": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 8192
+          }
+        },
+        "required": [
+          "timestampMillis"
+        ]
+      },
+      "PushMessage": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "token": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 8192
+          },
+          "topic": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 8192
+          },
+          "data": {
+            "type": "object",
+            "maxProperties": 128,
+            "propertyNames": {
+              "maxLength": 256
+            },
+            "additionalProperties": {
+              "type": "string",
+              "maxLength": 8192
+            }
+          },
+          "webPush": {
+            "$ref": "#/components/schemas/WebPush"
+          }
+        },
+        "required": [
+          "data",
+          "webPush"
+        ]
+      },
+      "PushMulticast": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "tokens": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 500,
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 8192
+            }
+          },
+          "data": {
+            "type": "object",
+            "maxProperties": 128,
+            "propertyNames": {
+              "maxLength": 256
+            },
+            "additionalProperties": {
+              "type": "string",
+              "maxLength": 8192
+            }
+          },
+          "webPush": {
+            "$ref": "#/components/schemas/WebPush"
+          }
+        },
+        "required": [
+          "tokens",
+          "data",
+          "webPush"
+        ]
+      },
+      "Single": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "message": {
+            "$ref": "#/components/schemas/PushMessage"
+          }
+        },
+        "required": [
+          "message"
+        ]
+      },
+      "Batch": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "messages": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 500,
+            "items": {
+              "$ref": "#/components/schemas/PushMessage"
+            }
+          },
+          "tokens": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 500,
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 8192
+            }
+          }
+        },
+        "required": [
+          "messages",
+          "tokens"
+        ]
+      },
+      "Multicast": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "message": {
+            "$ref": "#/components/schemas/PushMulticast"
+          },
+          "tokens": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 500,
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 8192
+            }
+          }
+        },
+        "required": [
+          "message",
+          "tokens"
+        ]
+      },
+      "Receipt": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "completed": {
+            "const": true
+          }
+        },
+        "required": [
+          "completed"
+        ]
+      },
+      "Error": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "code"
+        ]
+      },
+      "TokenResult": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "successful": {
+            "type": "boolean"
+          },
+          "errorCode": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 128
+          }
+        },
+        "required": [
+          "successful"
+        ]
+      },
+      "BatchResult": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "successCount": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 500
+          },
+          "failureCount": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 500
+          },
+          "responses": {
+            "type": "array",
+            "maxItems": 500,
+            "items": {
+              "$ref": "#/components/schemas/TokenResult"
+            }
+          }
+        },
+        "required": [
+          "successCount",
+          "failureCount",
+          "responses"
+        ]
+      }
+    }
+  }
+}

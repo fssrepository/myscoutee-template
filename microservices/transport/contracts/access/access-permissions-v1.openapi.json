@@ -1,0 +1,2493 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "MyScoutee access permissions",
+    "version": "1.0.0",
+    "description": "Explicit bounded calls to the native AccessControlService. These return policy decisions and never perform protected mutations. Service capability and REAL/DEMO context are mandatory. If an end-user actor is present, an operation/body-bound identity-issued proof is mandatory and installed around the owner call. Absence is evaluated with an empty user security context, preserving the native member-fallback / DEMO decision; the service credential is never treated as a user. Invalid proof is rejected, never downgraded to absence. Authentication extraction and resource-state scope conversion reuse canonical API defaults; full Spring Authentication or asset/resource documents are never serialized. 64 KiB requests / 16 KiB replies, no retries."
+  },
+  "paths": {
+    "/_internal/v1/access/permissions/can": {
+      "post": {
+        "security": [
+          {
+            "serviceCapability": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-MyScoutee-Session-Mode",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-MyScoutee-Actor-Delegation",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "maxLength": 8192
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CanQuery"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Decision"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "can"
+      }
+    },
+    "/_internal/v1/access/permissions/resolve-chat-actor-user-id": {
+      "post": {
+        "security": [
+          {
+            "serviceCapability": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-MyScoutee-Session-Mode",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-MyScoutee-Actor-Delegation",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "maxLength": 8192
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResolveChatActorUserIdQuery"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActorResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "resolveChatActorUserId"
+      }
+    },
+    "/_internal/v1/access/permissions/can-current-actor-create-chat-message": {
+      "post": {
+        "security": [
+          {
+            "serviceCapability": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-MyScoutee-Session-Mode",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-MyScoutee-Actor-Delegation",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "maxLength": 8192
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CanCurrentActorCreateChatMessageQuery"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Decision"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "canCurrentActorCreateChatMessage"
+      }
+    },
+    "/_internal/v1/access/permissions/can-current-actor-edit-chat-message": {
+      "post": {
+        "security": [
+          {
+            "serviceCapability": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-MyScoutee-Session-Mode",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-MyScoutee-Actor-Delegation",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "maxLength": 8192
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CanCurrentActorEditChatMessageQuery"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Decision"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "canCurrentActorEditChatMessage"
+      }
+    },
+    "/_internal/v1/access/permissions/can-current-actor-delete-chat-message": {
+      "post": {
+        "security": [
+          {
+            "serviceCapability": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-MyScoutee-Session-Mode",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-MyScoutee-Actor-Delegation",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "maxLength": 8192
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CanCurrentActorDeleteChatMessageQuery"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Decision"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "canCurrentActorDeleteChatMessage"
+      }
+    },
+    "/_internal/v1/access/permissions/can-current-actor-pin-chat-message": {
+      "post": {
+        "security": [
+          {
+            "serviceCapability": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-MyScoutee-Session-Mode",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-MyScoutee-Actor-Delegation",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "maxLength": 8192
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CanCurrentActorPinChatMessageQuery"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Decision"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "canCurrentActorPinChatMessage"
+      }
+    },
+    "/_internal/v1/access/permissions/can-current-actor-manage-chat-reaction": {
+      "post": {
+        "security": [
+          {
+            "serviceCapability": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-MyScoutee-Session-Mode",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-MyScoutee-Actor-Delegation",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "maxLength": 8192
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CanCurrentActorManageChatReactionQuery"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Decision"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "canCurrentActorManageChatReaction"
+      }
+    },
+    "/_internal/v1/access/permissions/can-current-actor-add-chat-attachment": {
+      "post": {
+        "security": [
+          {
+            "serviceCapability": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-MyScoutee-Session-Mode",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-MyScoutee-Actor-Delegation",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "maxLength": 8192
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CanCurrentActorAddChatAttachmentQuery"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Decision"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "canCurrentActorAddChatAttachment"
+      }
+    },
+    "/_internal/v1/access/permissions/can-current-actor-manage-support-chat": {
+      "post": {
+        "security": [
+          {
+            "serviceCapability": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-MyScoutee-Session-Mode",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-MyScoutee-Actor-Delegation",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "maxLength": 8192
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CanCurrentActorManageSupportChatQuery"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Decision"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "canCurrentActorManageSupportChat"
+      }
+    },
+    "/_internal/v1/access/permissions/can-current-actor-edit-profile": {
+      "post": {
+        "security": [
+          {
+            "serviceCapability": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-MyScoutee-Session-Mode",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-MyScoutee-Actor-Delegation",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "maxLength": 8192
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CanCurrentActorEditProfileQuery"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Decision"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "canCurrentActorEditProfile"
+      }
+    },
+    "/_internal/v1/access/permissions/can-current-actor-delete-profile": {
+      "post": {
+        "security": [
+          {
+            "serviceCapability": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-MyScoutee-Session-Mode",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-MyScoutee-Actor-Delegation",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "maxLength": 8192
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CanCurrentActorDeleteProfileQuery"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Decision"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "canCurrentActorDeleteProfile"
+      }
+    },
+    "/_internal/v1/access/permissions/can-current-actor-upload-media": {
+      "post": {
+        "security": [
+          {
+            "serviceCapability": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-MyScoutee-Session-Mode",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-MyScoutee-Actor-Delegation",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "maxLength": 8192
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CanCurrentActorUploadMediaQuery"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Decision"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "canCurrentActorUploadMedia"
+      }
+    },
+    "/_internal/v1/access/permissions/can-current-actor-import-media": {
+      "post": {
+        "security": [
+          {
+            "serviceCapability": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-MyScoutee-Session-Mode",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-MyScoutee-Actor-Delegation",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "maxLength": 8192
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CanCurrentActorImportMediaQuery"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Decision"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "canCurrentActorImportMedia"
+      }
+    },
+    "/_internal/v1/access/permissions/can-current-actor-submit-privacy-consent": {
+      "post": {
+        "security": [
+          {
+            "serviceCapability": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-MyScoutee-Session-Mode",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-MyScoutee-Actor-Delegation",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "maxLength": 8192
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CanCurrentActorSubmitPrivacyConsentQuery"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Decision"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "canCurrentActorSubmitPrivacyConsent"
+      }
+    },
+    "/_internal/v1/access/permissions/can-access-chat": {
+      "post": {
+        "security": [
+          {
+            "serviceCapability": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-MyScoutee-Session-Mode",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-MyScoutee-Actor-Delegation",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "maxLength": 8192
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CanAccessChatQuery"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Decision"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "canAccessChat"
+      }
+    },
+    "/_internal/v1/access/permissions/can-manage-support-chat": {
+      "post": {
+        "security": [
+          {
+            "serviceCapability": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-MyScoutee-Session-Mode",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-MyScoutee-Actor-Delegation",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "maxLength": 8192
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CanManageSupportChatQuery"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Decision"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "canManageSupportChat"
+      }
+    },
+    "/_internal/v1/access/permissions/has-explicit-grant": {
+      "post": {
+        "security": [
+          {
+            "serviceCapability": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-MyScoutee-Session-Mode",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-MyScoutee-Actor-Delegation",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "maxLength": 8192
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HasExplicitGrantQuery"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Decision"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "hasExplicitGrant"
+      }
+    },
+    "/_internal/v1/access/permissions/requires-authenticated-actor": {
+      "post": {
+        "security": [
+          {
+            "serviceCapability": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-MyScoutee-Session-Mode",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-MyScoutee-Actor-Delegation",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "maxLength": 8192
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequiresAuthenticatedActorQuery"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Decision"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "requiresAuthenticatedActor"
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "serviceCapability": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    },
+    "schemas": {
+      "Decision": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "allowed"
+        ],
+        "properties": {
+          "allowed": {
+            "type": "boolean"
+          }
+        }
+      },
+      "ActorResult": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "resolved"
+        ],
+        "properties": {
+          "resolved": {
+            "const": true
+          },
+          "userId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 512
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "code"
+        ],
+        "properties": {
+          "code": {
+            "type": "string",
+            "enum": [
+              "INVALID_REQUEST",
+              "INVALID_SESSION_MODE",
+              "UNAUTHORIZED",
+              "FORBIDDEN",
+              "QUERY_TOO_LARGE",
+              "INVALID_CONTENT_TYPE",
+              "INVALID_DELEGATION",
+              "OWNER_REJECTED",
+              "ACCESS_PERMISSIONS_UNAVAILABLE"
+            ]
+          }
+        }
+      },
+      "CanQuery": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "policyKey": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 512
+          },
+          "actorUserId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 512
+          },
+          "subjectUserId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 512
+          },
+          "resourceId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 512
+          }
+        }
+      },
+      "ResolveChatActorUserIdQuery": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "chatId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 512
+          },
+          "profileId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 512
+          }
+        }
+      },
+      "CanCurrentActorCreateChatMessageQuery": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "userId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 512
+          },
+          "chatId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 512
+          }
+        }
+      },
+      "CanCurrentActorEditChatMessageQuery": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "userId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 512
+          },
+          "chatId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 512
+          }
+        }
+      },
+      "CanCurrentActorDeleteChatMessageQuery": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "userId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 512
+          },
+          "chatId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 512
+          }
+        }
+      },
+      "CanCurrentActorPinChatMessageQuery": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "userId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 512
+          },
+          "chatId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 512
+          }
+        }
+      },
+      "CanCurrentActorManageChatReactionQuery": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "userId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 512
+          },
+          "chatId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 512
+          }
+        }
+      },
+      "CanCurrentActorAddChatAttachmentQuery": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "userId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 512
+          },
+          "chatId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 512
+          }
+        }
+      },
+      "CanCurrentActorManageSupportChatQuery": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "userId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 512
+          },
+          "chatId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 512
+          }
+        }
+      },
+      "CanCurrentActorEditProfileQuery": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "userId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 512
+          }
+        }
+      },
+      "CanCurrentActorDeleteProfileQuery": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "userId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 512
+          }
+        }
+      },
+      "CanCurrentActorUploadMediaQuery": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "ownerUserId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 512
+          }
+        }
+      },
+      "CanCurrentActorImportMediaQuery": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "ownerUserId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 512
+          }
+        }
+      },
+      "CanCurrentActorSubmitPrivacyConsentQuery": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "userId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 512
+          }
+        }
+      },
+      "CanAccessChatQuery": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "chatId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 512
+          },
+          "actorUserId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 512
+          }
+        }
+      },
+      "CanManageSupportChatQuery": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "chatId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 512
+          },
+          "actorUserId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 512
+          }
+        }
+      },
+      "HasExplicitGrantQuery": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "subjectUserId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 512
+          },
+          "permission": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 512
+          },
+          "resourceType": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 512
+          },
+          "resourceId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 512
+          },
+          "expectedEffect": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "enum": [
+              "ALLOW",
+              "DENY",
+              null
+            ]
+          }
+        }
+      },
+      "RequiresAuthenticatedActorQuery": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {}
+      }
+    }
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "MyScoutee authentication-mode",
+    "version": "1.0.0",
+    "description": "Live deployment authentication flag. The native combined startup/activated Firebase flag remains authoritative. A transport failure is an error, never a false flag or fallback to unauthenticated mode. Mandatory REAL/DEMO request context, dedicated server-only read capability, 16 KiB reply bound, no retries."
+  },
+  "paths": {
+    "/_internal/v1/platform/authentication-mode/firebase-enabled": {
+      "get": {
+        "operationId": "isFirebaseEnabled",
+        "security": [
+          {
+            "serviceCapability": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "X-MyScoutee-Session-Mode",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Canonical owner result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input or session mode",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or wrong service capability",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Owner unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "serviceCapability": {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "Dedicated authentication-mode read credential; never expose to browsers."
+      }
+    },
+    "schemas": {
+      "Result": {
+        "type": "boolean"
+      },
+      "Error": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "code"
+        ],
+        "properties": {
+          "code": {
+            "type": "string",
+            "enum": [
+              "INVALID_SESSION_MODE",
+              "UNAUTHORIZED",
+              "FORBIDDEN",
+              "AUTHENTICATION_MODE_UNAVAILABLE"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

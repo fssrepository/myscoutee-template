@@ -1,0 +1,470 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Account media sessions",
+    "version": "1.0.0",
+    "description": "Native account session hash check, current hash and replacement. Media service capability and explicit REAL/DEMO required. Current/replace additionally require signed, native-revalidated selected-profile authority bound to the exact request body/path/mode. No raw cookie or Firebase credential is serialized. Token rotation is single-attempt; the existing browser profile read can request a new cookie if an acknowledgment is lost. 16 KiB request/response limit. Integration and public ingress not yet verified."
+  },
+  "paths": {
+    "/_internal/v1/accounts/media-sessions/accepts": {
+      "post": {
+        "security": [
+          {
+            "serviceCapability": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-MyScoutee-Session-Mode",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Check"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Decision"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "mediaSessionsAccepts"
+      }
+    },
+    "/_internal/v1/accounts/media-sessions/current": {
+      "post": {
+        "security": [
+          {
+            "serviceCapability": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-MyScoutee-Session-Mode",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-MyScoutee-Actor-Delegation",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "maxLength": 8192
+            },
+            "description": "Signed selected-profile authority for accounts:media-sessions, exact path/body and REAL/DEMO mode."
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Session"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Token"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "mediaSessionsCurrent"
+      }
+    },
+    "/_internal/v1/accounts/media-sessions/replace": {
+      "post": {
+        "security": [
+          {
+            "serviceCapability": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-MyScoutee-Session-Mode",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-MyScoutee-Actor-Delegation",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "maxLength": 8192
+            },
+            "description": "Signed selected-profile authority for accounts:media-sessions, exact path/body and REAL/DEMO mode."
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Replacement"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Decision"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Rejected or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "mediaSessionsReplace"
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "serviceCapability": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    },
+    "schemas": {
+      "Check": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "userId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 512,
+            "pattern": "\\S"
+          },
+          "tokenHash": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        },
+        "required": [
+          "userId",
+          "tokenHash"
+        ]
+      },
+      "Session": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "userId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 512,
+            "pattern": "\\S"
+          },
+          "sessionId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 512,
+            "pattern": "\\S"
+          }
+        },
+        "required": [
+          "userId",
+          "sessionId"
+        ]
+      },
+      "Replacement": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "userId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 512,
+            "pattern": "\\S"
+          },
+          "sessionId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 512,
+            "pattern": "\\S"
+          },
+          "tokenHash": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        },
+        "required": [
+          "userId",
+          "sessionId",
+          "tokenHash"
+        ]
+      },
+      "Decision": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "value": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "value"
+        ]
+      },
+      "Token": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "found": {
+            "type": "boolean"
+          },
+          "hash": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        },
+        "required": [
+          "found"
+        ]
+      },
+      "Error": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "code"
+        ]
+      }
+    }
+  }
+}

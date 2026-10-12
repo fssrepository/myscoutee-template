@@ -1,0 +1,900 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "MyScoutee profile-summaries",
+    "version": "1.0.0",
+    "description": "Account-owned identity, lifecycle and display facts for chat, community, events and affinity. Existing directory queries, ordering, duplicates, workspace selection and saved-contact semantics are retained. No financial, device-token or integration configuration fields. Account owner and explicitly listed consumer domains only; mandatory REAL/DEMO context. Requests bounded to 4096 identifiers / 2 MiB; replies capped at 8 MiB without truncation. Count replies capped at 16 KiB. No retries."
+  },
+  "paths": {
+    "/_internal/v1/accounts/profile-summaries/single": {
+      "post": {
+        "operationId": "findByUserId",
+        "security": [
+          {
+            "serviceCapability": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "X-MyScoutee-Session-Mode",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SingleQuery"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Canonical owner result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SingleResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input or session mode",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or wrong service capability",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Request exceeds byte limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "JSON content type required",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Owner unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/_internal/v1/accounts/profile-summaries/batch": {
+      "post": {
+        "operationId": "findByUserIdIn",
+        "security": [
+          {
+            "serviceCapability": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "X-MyScoutee-Session-Mode",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BatchQuery"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Canonical owner result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BatchResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input or session mode",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or wrong service capability",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Request exceeds byte limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "JSON content type required",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Owner unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/_internal/v1/accounts/profile-summaries/count": {
+      "post": {
+        "operationId": "countByUserIdIn",
+        "security": [
+          {
+            "serviceCapability": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "X-MyScoutee-Session-Mode",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BatchQuery"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Canonical owner result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CountResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input or session mode",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or wrong service capability",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Request exceeds byte limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "JSON content type required",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Owner unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/_internal/v1/accounts/profile-summaries/page": {
+      "post": {
+        "operationId": "pageByUserIdIn",
+        "security": [
+          {
+            "serviceCapability": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "X-MyScoutee-Session-Mode",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PageQuery"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Canonical owner result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BatchResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input or session mode",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or wrong service capability",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Request exceeds byte limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "JSON content type required",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Owner unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/_internal/v1/accounts/profile-summaries/status": {
+      "post": {
+        "operationId": "profile_status",
+        "security": [
+          {
+            "serviceCapability": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "X-MyScoutee-Session-Mode",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "status": {
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "maxLength": 512
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Canonical owner result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BatchResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input or session mode",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or wrong service capability",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Request exceeds byte limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "JSON content type required",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Owner unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "serviceCapability": {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "Dedicated profile-summary read credential; server-only, at least 256 random bits."
+      }
+    },
+    "schemas": {
+      "SingleQuery": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "userId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 512
+          }
+        }
+      },
+      "BatchQuery": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "ids"
+        ],
+        "properties": {
+          "ids": {
+            "type": "array",
+            "maxItems": 4096,
+            "items": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "maxLength": 512
+            }
+          }
+        }
+      },
+      "PageQuery": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "ids",
+          "offset",
+          "limit"
+        ],
+        "properties": {
+          "ids": {
+            "type": "array",
+            "maxItems": 4096,
+            "items": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "maxLength": 512
+            }
+          },
+          "offset": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 2147483647
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 4096
+          }
+        }
+      },
+      "SingleResult": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "resolved"
+        ],
+        "properties": {
+          "resolved": {
+            "const": true
+          },
+          "value": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "userId": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "accountUserId": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "workspaceGroupId": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "deletedAtIso": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "profileStatus": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "status": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "hostTier": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "statusText": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "name": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "initials": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "gender": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "images": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              },
+              "age": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "city": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "headline": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "traitLabel": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "about": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "BatchResult": {
+        "type": "array",
+        "items": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "userId": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "accountUserId": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "workspaceGroupId": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "deletedAtIso": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "profileStatus": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "status": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "hostTier": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "statusText": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "name": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "initials": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "gender": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "images": {
+              "type": [
+                "array",
+                "null"
+              ],
+              "items": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "age": {
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "city": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "headline": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "traitLabel": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "about": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        }
+      },
+      "CountResult": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "Error": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "code"
+        ],
+        "properties": {
+          "code": {
+            "type": "string",
+            "enum": [
+              "INVALID_REQUEST",
+              "INVALID_SESSION_MODE",
+              "UNAUTHORIZED",
+              "FORBIDDEN",
+              "QUERY_TOO_LARGE",
+              "INVALID_CONTENT_TYPE",
+              "PROFILE_SUMMARIES_UNAVAILABLE"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

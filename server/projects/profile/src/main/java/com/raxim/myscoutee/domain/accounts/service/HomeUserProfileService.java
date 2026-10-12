@@ -24,7 +24,7 @@ import com.raxim.myscoutee.domain.platform.api.CountryDirectory;
 import com.raxim.myscoutee.domain.platform.api.JobGroupContext;
 import com.raxim.myscoutee.domain.administration.api.OperationalTelemetry;
 import com.raxim.myscoutee.domain.notifications.api.NotificationJobs;
-import com.raxim.myscoutee.domain.notifications.api.NotificationInbox;
+import com.raxim.myscoutee.domain.notifications.api.NotificationReads;
 import com.raxim.myscoutee.common.dto.SharedDtos.LocationCoordinatesDto;
 
 @Service
@@ -41,13 +41,13 @@ public class HomeUserProfileService implements ProfileReadState {
     private final OperationalTelemetry adminTelemetryService;
     private final ProfileStatusWork profileStatusWork;
     private final NotificationJobs notificationRuleRegistryService;
-    private final NotificationInbox notifications;
+    private final NotificationReads notifications;
 
     public HomeUserProfileService(SelectedProfile selectedProfile, UsersRepository usersRepository,
             AccessPermissions accessControlService, CountryDirectory countryPartitionService,
             RegionSecurityProperties regionSecurityProperties, AccountLifecycleService lifecycle,
             OperationalTelemetry adminTelemetryService, ProfileStatusWork profileStatusWork,
-            NotificationJobs notificationRuleRegistryService, NotificationInbox notifications) {
+            NotificationJobs notificationRuleRegistryService, NotificationReads notifications) {
         this.selectedProfile = selectedProfile; this.usersRepository = usersRepository;
         this.accessControlService = accessControlService; this.countryPartitionService = countryPartitionService;
         this.regionSecurityProperties = regionSecurityProperties; this.lifecycle = lifecycle;

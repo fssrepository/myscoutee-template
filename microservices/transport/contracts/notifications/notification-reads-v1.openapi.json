@@ -1,0 +1,589 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "MyScoutee notification-reads",
+    "version": "1.0.0",
+    "description": "Typed calls to the existing NotificationReads owner. Native validation, queries, state transitions and scheduler behavior retained. REAL/DEMO and explicit job scope; no-store. 2 MiB request / 8 MiB response bounds; no automatic retries."
+  },
+  "paths": {
+    "/_internal/v1/notifications/notification-reads/page": {
+      "post": {
+        "operationId": "notification_reads_page",
+        "security": [
+          {
+            "serviceCapability": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "X-MyScoutee-Session-Mode",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          },
+          {
+            "name": "X-MyScoutee-Actor-Delegation",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Operation/body/mode-bound RSA proof; request user must equal verified actor."
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Query"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Canonical owner result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserNotificationsPageResponseDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input or session mode",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or wrong service capability",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Request exceeds byte limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "JSON content type required",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Canonical owner unavailable; operation outcome is not assumed successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Native owner rejection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Native owner rejection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Native owner rejection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/_internal/v1/notifications/notification-reads/unread": {
+      "post": {
+        "operationId": "notification_reads_unread",
+        "security": [
+          {
+            "serviceCapability": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "X-MyScoutee-Session-Mode",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          },
+          {
+            "name": "X-MyScoutee-Actor-Delegation",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Operation/body/mode-bound RSA proof; request user must equal verified actor."
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnreadQuery"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Canonical owner result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input or session mode",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or wrong service capability",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Request exceeds byte limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "JSON content type required",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Canonical owner unavailable; operation outcome is not assumed successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Native owner rejection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Native owner rejection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Native owner rejection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "serviceCapability": {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "Dedicated notification-reads capability for integrations."
+      }
+    },
+    "schemas": {
+      "Query": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "scope": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Scope"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "userId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "bucket": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "cursor": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "workspace": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "scope"
+        ]
+      },
+      "Scope": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "active": {
+            "type": "boolean"
+          },
+          "groupId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "active"
+        ]
+      },
+      "UserNotificationsPageResponseDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "records": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/UserNotificationDto"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "total": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "nextCursor": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "unreadCount": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "muted": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          }
+        },
+        "required": []
+      },
+      "UserNotificationDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "recipientUserId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "kind": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "category": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "title": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "message": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "createdAtIso": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "readAtIso": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "senderUserId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "senderName": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "senderAvatarUrl": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "actionPath": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "sourceType": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "sourceId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "payload": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "additionalProperties": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "occurrenceCount": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "revision": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "required": []
+      },
+      "Error": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "enum": [
+              "INVALID_REQUEST",
+              "INVALID_SESSION_MODE",
+              "UNAUTHORIZED",
+              "FORBIDDEN",
+              "QUERY_TOO_LARGE",
+              "INVALID_CONTENT_TYPE",
+              "OWNER_REJECTED",
+              "NOTIFICATION_READS_UNAVAILABLE",
+              "INVALID_DELEGATION"
+            ]
+          }
+        },
+        "required": [
+          "code"
+        ]
+      },
+      "UnreadQuery": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "scope": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Scope"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "userId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "scope",
+          "userId"
+        ]
+      }
+    }
+  }
+}

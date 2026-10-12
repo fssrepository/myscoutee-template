@@ -1,0 +1,351 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "chat-counters",
+    "version": "1.0.0",
+    "description": "Chat-only counter commands retain native single-update versus unordered-bulk behavior. All changes are validated before any owner mutation. Only existing named chat context fields may be incremented. REAL/DEMO and job scope preserved. Deltas are not automatically retried; acknowledgment recovery is still milestone 16. Requests bounded to 2 MiB/4096 identifiers, responses to 16 MiB. Implementation and contracts are not yet tested."
+  },
+  "paths": {
+    "/_internal/v1/accounts/chat-counters/single": {
+      "post": {
+        "operationId": "chat_counters_single",
+        "security": [
+          {
+            "serviceCapability": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "X-MyScoutee-Session-Mode",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Single"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Canonical owner result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Receipt"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input or session mode",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or wrong service capability",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Request exceeds byte limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "JSON content type required",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Owner unavailable or command outcome unknown; never automatically retried",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/_internal/v1/accounts/chat-counters/batch": {
+      "post": {
+        "operationId": "chat_counters_batch",
+        "security": [
+          {
+            "serviceCapability": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "X-MyScoutee-Session-Mode",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Batch"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Canonical owner result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Receipt"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input or session mode",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or wrong service capability",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Request exceeds byte limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "JSON content type required",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Owner unavailable or command outcome unknown; never automatically retried",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "serviceCapability": {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "Scoped chat-counters service capability."
+      }
+    },
+    "schemas": {
+      "Scope": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "active": {
+            "type": "boolean"
+          },
+          "groupId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 512
+          }
+        },
+        "required": [
+          "active"
+        ]
+      },
+      "Error": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "code"
+        ]
+      },
+      "Receipt": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "completed": {
+            "const": true
+          }
+        },
+        "required": [
+          "completed"
+        ]
+      },
+      "Delta": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "ownerUserId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 512
+          },
+          "context": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "enum": [
+              null,
+              "",
+              "event",
+              "subEvent",
+              "group",
+              "service",
+              "contacts",
+              "campaign",
+              "cases",
+              "groupSupport",
+              "appSupport"
+            ]
+          },
+          "delta": {
+            "type": "integer",
+            "minimum": -2147483648,
+            "maximum": 2147483647
+          }
+        },
+        "required": [
+          "ownerUserId",
+          "delta"
+        ]
+      },
+      "Single": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "scope": {
+            "$ref": "#/components/schemas/Scope"
+          },
+          "change": {
+            "$ref": "#/components/schemas/Delta"
+          }
+        },
+        "required": [
+          "scope",
+          "change"
+        ]
+      },
+      "Batch": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "scope": {
+            "$ref": "#/components/schemas/Scope"
+          },
+          "changes": {
+            "type": "array",
+            "maxItems": 4096,
+            "items": {
+              "$ref": "#/components/schemas/Delta"
+            }
+          }
+        },
+        "required": [
+          "scope",
+          "changes"
+        ]
+      }
+    }
+  }
+}
