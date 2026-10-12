@@ -3,45 +3,45 @@
   "repository": "fssrepository/myscoutee-template-frontend",
   "branch": "master",
   "path": "/docs",
-  "commit": "94ae4947893b842536671885ddd9a6669911106b",
-  "sourceTree": "4d8450783e97e14f8d5315d7e9a4c850ee3ee86d",
+  "commit": "781bc5afb8a55a505a16217d8a8e19e7a87e087a",
+  "sourceTree": "dc6342bfd2f5e3ddc348e708500f9b01e18fa5b7",
   "version": {
     "version": "1.4.0",
-    "buildId": "msc122-source-4d8450783e97",
-    "builtAt": "2026-10-12T16:24:12.749Z",
+    "buildId": "msc122-source-dc6342bfd2f5",
+    "builtAt": "2026-10-12T16:50:40.409Z",
     "gitSha": null
   },
-  "verifiedAt": "2026-10-12T16:25:59.258175+00:00",
+  "verifiedAt": "2026-10-12T16:52:47.951835+00:00",
   "files": [
     {
       "path": "index.html",
       "status": 200,
-      "sha256": "03923004bb3478bdfbe47feacff1b2a2ed3ea2b827203dcc3e8d34c5949d31e4"
+      "sha256": "c748b307580d188c2227ade48aa90a968a634970799e715dc2bfffffe3ae5fba"
     },
     {
       "path": "app-version.json",
       "status": 200,
-      "sha256": "f5ca78a74b283fcec228dff8bdafb14cba05aa8cb10b694a1c1279918dd9c863"
+      "sha256": "91a4b2ecf428f5521e3eb6f147785cb6db0d167b9a864891b869a7c00ef63247"
     },
     {
       "path": "app-sw.js",
       "status": 200,
-      "sha256": "faef8fd893a7704c26b1336113ec0db396f62583d61f14eae5a8bbc4c94662d0"
-    },
-    {
-      "path": "main-LCGEUASN.js",
-      "status": 200,
-      "sha256": "2a4299a596d46862f446be59ed760632b992af83c18c449afa7925b68971e324"
-    },
-    {
-      "path": "chunk-INOLRL27.js",
-      "status": 200,
-      "sha256": "1ff3d673476fb6f98f8a3ce6cc9bbeabf941f57cf8e03fcfc0a32002c4867d49"
+      "sha256": "405237bec38317e643c6426dac675f4275d62a895c4289e1cd2b09ffd4213d17"
     },
     {
       "path": "assets/logo/heart.webp",
       "status": 200,
       "sha256": "6d6b9aace538fec07e2461cbecd8d765df989f71905537b7c77bb2560a4204a4"
+    },
+    {
+      "path": "main-SGVNBTZW.js",
+      "status": 200,
+      "sha256": "269481cc17c635b09948e02fcd8ca99b7fe14a698dd3d8f2d10f9957bfc12632"
+    },
+    {
+      "path": "chunk-OTBGSYZ3.js",
+      "status": 200,
+      "sha256": "1918d87fa9ac7dabaa4b25327b9d82acfb1716e2d76df72f56589a62ba4d144e"
     }
   ],
   "frontendWorktreeClean": true,
@@ -52,21 +52,41 @@
       "push:master",
       "workflow_dispatch"
     ],
-    "id": 38277208807,
-    "head_sha": "94ae4947893b842536671885ddd9a6669911106b",
+    "id": 38280272948,
+    "head_sha": "781bc5afb8a55a505a16217d8a8e19e7a87e087a",
     "status": "completed",
     "conclusion": "success",
-    "html_url": "https://github.com/fssrepository/myscoutee-template-frontend/actions/runs/38277208807"
+    "html_url": "https://github.com/fssrepository/myscoutee-template-frontend/actions/runs/38280272948"
   },
   "correction": {
     "extraLandingOperatorButtonRemoved": true,
-    "entryLogicUnchanged": true,
+    "authenticationDecisionsUnchanged": true,
     "existingDemoRoleSelectorUnchanged": true,
-    "startupBrandingInitializedBeforeRootCreation": true,
-    "focusedTemplateTests": 5,
-    "focusedNativeTests": 1,
-    "templateBuild": "DONE",
-    "nativeStartupFix": "source and focused test only; not packaged or deployed",
-    "installedPackages": "unchanged by this Pages publication"
+    "blockingBrandingInitializerRemoved": true,
+    "startupAndRouteTimingUnchanged": true,
+    "warmupLogo": "Restored shared MyScoutee defaults in the existing configuration owner; removed the separate initial-HTML branding injection. Configured values replace defaults asynchronously; explicitly cleared values remain cleared.",
+    "entryLoading": "Template preloads privacy using the existing service on landing; consent popup opens before pending content completes. Full demo seeding remains exclusively inside the existing selector after its first paint.",
+    "originalEntryHistory": "Native entry methods match 0bad56e43993b1f40c16a6ad571f7630f5a09c5f (Oct 9); subsequent diff is import relocation and whitespace. Selector loader has been called on open since 14cb41ad; no separate landing popup prewarm found in the inspected source/history.",
+    "configuredEmptyLogoRespected": true,
+    "focusedTemplateTests": {
+      "completed": 34,
+      "failed": 0,
+      "files": 5,
+      "log": "/tmp/msc122-entry-loading-template-tests.log"
+    },
+    "focusedNativeTests": {
+      "completed": 10,
+      "failed": 0,
+      "filteredOut": 18,
+      "log": "/tmp/msc122-entry-loading-native-tests.log"
+    },
+    "efficiency": "Removed the entry page full demo bootstrap before privacy loading. The popup keeps the existing single seed owner and progress; no route-delay constant changed.",
+    "performanceLimits": "Unit/component tests prove sequencing, visibility state, consent gates and nonblocking route activation. No browser wall-clock latency benchmark or full QA campaign rerun.",
+    "originalAppStartupCode": "app.ts, app.html, main.ts and app.config.ts are unchanged from native HEAD c3e53fd3 after removing the added branding injection.",
+    "buildLog": "/tmp/msc122-entry-loading-pages-build.log",
+    "nativeLogoFix": "working tree and focused tests; not packaged or deployed",
+    "installedPackages": "unchanged by this Pages publication",
+    "nextTask": "29.4: native and template release drafts still have no user-uploaded DEB asset as of 2026-10-12T16:51:59.082704+00:00",
+    "task28Repeated": false
   }
 }

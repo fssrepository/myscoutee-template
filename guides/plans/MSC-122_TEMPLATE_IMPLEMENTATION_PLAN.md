@@ -272,7 +272,7 @@ Updated: 2026-10-12 · Version: **1.4.0**
 | Subtask | Task | Status |
 | --- | --- | --- |
 | 32.1 | Consolidate MSC-122 backup commits, preserve unrelated work, keep a separate MSC-122 commit in myscoutee-template-frontend, verify exact remote gitlinks and publish with force-with-lease and qualified version tags; version and publish changed myscoutee-components as a new npm release to GitHub Packages using its existing release workflow | **NOT DONE** |
-| 32.1a | Separate template frontend repository: one MSC-122 commit (`94ae494`), concise README, CC BY 4.0, remote components and master/docs Pages with automatic publication | **DONE** |
+| 32.1a | Separate template frontend repository: one `[MSC-122]` commit (`9e3f7a3`), concise README, CC BY 4.0, remote components and master/docs Pages with automatic publication | **DONE** |
 | 32.2 | Close the verified template task and update its GitHub Project status | **NOT DONE** |
 | 32.3 | Update roadmap progress and measured token-usage records | **NOT DONE** |
 | 32.4 | Check the current ChatGPT account usage shown by the available account interface | **NOT DONE** |
