@@ -3,96 +3,24 @@
   "status": "DONE",
   "date": "2026-10-12",
   "pages": {
+    "status": "DONE",
     "url": "https://fssrepository.github.io/myscoutee-template-frontend/",
-    "repository": "fssrepository/myscoutee-template-frontend",
-    "branch": "master",
-    "path": "/docs",
-    "commit": "781bc5afb8a55a505a16217d8a8e19e7a87e087a",
-    "sourceTree": "dc6342bfd2f5e3ddc348e708500f9b01e18fa5b7",
+    "commit": "193c3a95cd62310643cd88ac81ef28141170923d",
     "version": {
       "version": "1.4.0",
-      "buildId": "msc122-source-dc6342bfd2f5",
-      "builtAt": "2026-10-12T16:50:40.409Z",
-      "gitSha": null
+      "buildId": "ca5095886679-20261012180036",
+      "builtAt": "2026-10-12T18:00:36.594Z",
+      "gitSha": "ca5095886679"
     },
-    "verifiedAt": "2026-10-12T16:52:47.951835+00:00",
-    "files": [
-      {
-        "path": "index.html",
-        "status": 200,
-        "sha256": "c748b307580d188c2227ade48aa90a968a634970799e715dc2bfffffe3ae5fba"
-      },
-      {
-        "path": "app-version.json",
-        "status": 200,
-        "sha256": "91a4b2ecf428f5521e3eb6f147785cb6db0d167b9a864891b869a7c00ef63247"
-      },
-      {
-        "path": "app-sw.js",
-        "status": 200,
-        "sha256": "405237bec38317e643c6426dac675f4275d62a895c4289e1cd2b09ffd4213d17"
-      },
-      {
-        "path": "assets/logo/heart.webp",
-        "status": 200,
-        "sha256": "6d6b9aace538fec07e2461cbecd8d765df989f71905537b7c77bb2560a4204a4"
-      },
-      {
-        "path": "main-SGVNBTZW.js",
-        "status": 200,
-        "sha256": "269481cc17c635b09948e02fcd8ca99b7fe14a698dd3d8f2d10f9957bfc12632"
-      },
-      {
-        "path": "chunk-OTBGSYZ3.js",
-        "status": 200,
-        "sha256": "1918d87fa9ac7dabaa4b25327b9d82acfb1716e2d76df72f56589a62ba4d144e"
-      }
-    ],
-    "frontendWorktreeClean": true,
     "workflow": {
-      "path": ".github/workflows/pages.yml",
-      "source": "docs",
-      "triggers": [
-        "push:master",
-        "workflow_dispatch"
-      ],
-      "id": 38280272948,
-      "head_sha": "781bc5afb8a55a505a16217d8a8e19e7a87e087a",
-      "status": "completed",
-      "conclusion": "success",
-      "html_url": "https://github.com/fssrepository/myscoutee-template-frontend/actions/runs/38280272948"
+      "id": 38288035628,
+      "conclusion": "success"
     },
-    "correction": {
-      "extraLandingOperatorButtonRemoved": true,
-      "authenticationDecisionsUnchanged": true,
-      "existingDemoRoleSelectorUnchanged": true,
-      "blockingBrandingInitializerRemoved": true,
-      "startupAndRouteTimingUnchanged": true,
-      "warmupLogo": "Restored shared MyScoutee defaults in the existing configuration owner; removed the separate initial-HTML branding injection. Configured values replace defaults asynchronously; explicitly cleared values remain cleared.",
-      "entryLoading": "Template preloads privacy using the existing service on landing; consent popup opens before pending content completes. Full demo seeding remains exclusively inside the existing selector after its first paint.",
-      "originalEntryHistory": "Native entry methods match 0bad56e43993b1f40c16a6ad571f7630f5a09c5f (Oct 9); subsequent diff is import relocation and whitespace. Selector loader has been called on open since 14cb41ad; no separate landing popup prewarm found in the inspected source/history.",
-      "configuredEmptyLogoRespected": true,
-      "focusedTemplateTests": {
-        "completed": 34,
-        "failed": 0,
-        "files": 5,
-        "log": "/tmp/msc122-entry-loading-template-tests.log"
-      },
-      "focusedNativeTests": {
-        "completed": 10,
-        "failed": 0,
-        "filteredOut": 18,
-        "log": "/tmp/msc122-entry-loading-native-tests.log"
-      },
-      "efficiency": "Removed the entry page full demo bootstrap before privacy loading. The popup keeps the existing single seed owner and progress; no route-delay constant changed.",
-      "performanceLimits": "Unit/component tests prove sequencing, visibility state, consent gates and nonblocking route activation. No browser wall-clock latency benchmark or full QA campaign rerun.",
-      "originalAppStartupCode": "app.ts, app.html, main.ts and app.config.ts are unchanged from native HEAD c3e53fd3 after removing the added branding injection.",
-      "buildLog": "/tmp/msc122-entry-loading-pages-build.log",
-      "nativeLogoFix": "working tree and focused tests; not packaged or deployed",
-      "installedPackages": "unchanged by this Pages publication",
-      "nextTask": "29.4: native and template release drafts still have no user-uploaded DEB asset as of 2026-10-12T16:51:59.082704+00:00",
-      "task28Repeated": false
-    }
+    "downloadedFilesMatchBuild": [
+      "index.html",
+      "app-version.json",
+      "main-BYITUEAX.js"
+    ]
   },
   "images": {
     "myscoutee-backend": {
@@ -107,8 +35,8 @@
         {
           "service": "nginx",
           "reference": "ghcr.io/fssrepository/myscoutee-nginx:1.4.0-prod",
-          "imageId": "sha256:7c1d84983cf510cb0b9fa0af4a8547d928104be1e9441d29fff32f4d3551e6f0",
-          "digest": "ghcr.io/fssrepository/myscoutee-nginx@sha256:d9615f6f87da121b9e4f5797d97b6f1eacd6d170cfc5eb536617e53c3a0a8309"
+          "imageId": "sha256:42083d9adc9a7ed4f533ef73e7186b5791afac3fd4f3372b1d9daacd6bb6a8db",
+          "digest": "ghcr.io/fssrepository/myscoutee-nginx@sha256:c04ca327aefbb833e29fbe8a4a44c51e6db9c8d71ffceeba72bd128ab94eb5d0"
         },
         {
           "service": "profilemanagement",
@@ -140,8 +68,7 @@
           "imageId": "sha256:838f106d6b86bcc332b01cc9d8cedc63a3cb15f3a34642fc118c2ecd2f067a76",
           "digest": "ghcr.io/fssrepository/myscoutee-mcp@sha256:383a4cc9f7e18cadf4cead4ea5db963ff1a750ea82d3b3c24216bcfb5c2d6a05"
         }
-      ],
-      "pulledAndMatchedPackagedImageIds": true
+      ]
     },
     "myscoutee-template": {
       "version": "1.4.0",
@@ -155,8 +82,8 @@
         {
           "service": "nginx",
           "reference": "ghcr.io/fssrepository/myscoutee-template-nginx:1.4.0-prod",
-          "imageId": "sha256:f5b2477d3d2427c2fac1fc87e28d9a125376c23e331c900dfd02a72fb47c2cdd",
-          "digest": "ghcr.io/fssrepository/myscoutee-template-nginx@sha256:a060624b926f6daca28aad45ee582213197db36ba2cd875090faf08855a0352b"
+          "imageId": "sha256:86df5d7dba74b0b755eda9bcd8870d30de8c1c82eefdf4c50cce0cec5d472e27",
+          "digest": "ghcr.io/fssrepository/myscoutee-template-nginx@sha256:43702c30ce4360ac487f834e0c484137f63427e7b22917e95e7f14af3aa95dc3"
         },
         {
           "service": "profilemanagement",
@@ -176,8 +103,7 @@
           "imageId": "sha256:4a29d6a23ffdecefcfc7df145566be3de991feefadfba475f001335e241b97a1",
           "digest": "ghcr.io/fssrepository/myscoutee-template-mcp@sha256:7cef2dc38a988d9a1f767716f6bbb24525a0b87913822ad8d3d4b27592114268"
         }
-      ],
-      "pulledAndMatchedPackagedImageIds": true
+      ]
     }
   },
   "previousPagesPublications": [
@@ -592,5 +518,6 @@
         "task28Repeated": false
       }
     }
-  ]
+  ],
+  "verifiedAt": "2026-10-12T18:10:30.167924+00:00"
 }

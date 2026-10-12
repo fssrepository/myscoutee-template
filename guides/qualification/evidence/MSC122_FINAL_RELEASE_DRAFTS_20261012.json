@@ -6,112 +6,122 @@
     {
       "repository": "fssrepository/myscoutee",
       "releaseId": 410771256,
-      "draftUrl": "https://github.com/fssrepository/myscoutee/releases/edit/410771256",
       "draft": true,
       "assets": [
         {
+          "id": 634216526,
           "name": "myscoutee-client-tools_1.4.0.tar.gz",
           "size": 43577,
-          "sha256": "sha256:46c07bbefc0188adbf114d0a774b1a0ccfa3918f84f082763c0195a26a20aaa0",
-          "assetId": 634216526
+          "digest": "sha256:46c07bbefc0188adbf114d0a774b1a0ccfa3918f84f082763c0195a26a20aaa0"
         },
         {
+          "id": 634569318,
           "name": "myscoutee-release_1.4.0.json",
           "size": 806,
-          "sha256": "sha256:fe1632194db1dcd0c09ae1ab7410dd49693353e89414b3d41365e53ac6569a8b",
-          "assetId": 634216587
+          "digest": "sha256:7cf0daffd2a8d7793765805093663a68b3aa802c5534cebf24d68f997e5f673e"
         },
         {
+          "id": 634569446,
           "name": "myscoutee-update.json",
           "size": 1360,
-          "sha256": "sha256:52935d55504d1f7777c866ccf87c3f5e59c01240ca5aa98b90f1b7f13491c05b",
-          "assetId": 634216634
+          "digest": "sha256:e325bfdcb1fa3c68e849bec57245f5e7628801bf36e0ccc9e2595389c717799d"
         },
         {
+          "id": 634216669,
           "name": "release-public.pem",
           "size": 113,
-          "sha256": "sha256:0dffcce4fb62d893165c167af9348bed56742a6f7176b817243143cd03c242e8",
-          "assetId": 634216669
+          "digest": "sha256:0dffcce4fb62d893165c167af9348bed56742a6f7176b817243143cd03c242e8"
         },
         {
+          "id": 634569640,
           "name": "myscoutee_1.4.0_amd64.deb.sha256",
           "size": 92,
-          "sha256": "sha256:3509c1c736f542c29ef0caa01ecd9bb4ea7dc0a4d35087aaca30d1fa69d3efec",
-          "assetId": 634216757
+          "digest": "sha256:2e4c4f377e0e7b54f67a41ad8a911aa45b375a4268c99c0636f053f96eaeec6b"
         },
         {
+          "id": 634216825,
           "name": "myscoutee-client-tools_1.4.0.tar.gz.sha256",
           "size": 102,
-          "sha256": "sha256:04ba183888cd306d5abec3fb19d4e9d35055248793c8c1ff1e618b078ccaebdf",
-          "assetId": 634216825
+          "digest": "sha256:04ba183888cd306d5abec3fb19d4e9d35055248793c8c1ff1e618b078ccaebdf"
         },
         {
+          "id": 634569778,
           "name": "container-images.json",
-          "size": 2410,
-          "sha256": "sha256:60c08ee33a202a5f7b28a945fcabc32bef7a7a2517bcc5241f82381c5570d225",
-          "assetId": 634216868
+          "size": 2326,
+          "digest": "sha256:85d65f10947890cbbecfc68cd0e8a12ed30e222b87a925d9dbfcf46728091677"
+        },
+        {
+          "id": 634569845,
+          "name": "source-artifacts.json",
+          "size": 586,
+          "digest": "sha256:0e9467caaaca66179033dc84db1bd970b0bc4163b55f934fb56b29be43e4f5e3"
         }
       ],
       "expectedDeb": {
-        "path": "packaging/dist/msc122-final-140-migration/myscoutee_1.4.0_amd64.deb",
-        "sha256": "sha256:7dc45a465b096ff095fef32d872cd4f9762409c37857f2feb4c59cb16864a34c",
-        "bytes": 366862254
+        "path": "/home/raxim/workspace/myscoutee-backend/packaging/dist/msc122-publication-ui-20261012/myscoutee_1.4.0_amd64.deb",
+        "sha256": "sha256:606c358974f6b3ff7d65e513ff3bbef1779470f3c31a84665415bbbc49d68f03",
+        "bytes": 366700748
       },
       "matchingDebPresent": false
     },
     {
       "repository": "fssrepository/myscoutee-template",
       "releaseId": 410771457,
-      "draftUrl": "https://github.com/fssrepository/myscoutee-template/releases/edit/410771457",
       "draft": true,
       "assets": [
         {
+          "id": 634217090,
           "name": "myscoutee-template-client-tools_1.4.0.tar.gz",
           "size": 33439,
-          "sha256": "sha256:4e829fef14ebb6dfa86730bb0638cbe7cb0539fbafa1c198de5039d337eb52ce",
-          "assetId": 634217090
+          "digest": "sha256:4e829fef14ebb6dfa86730bb0638cbe7cb0539fbafa1c198de5039d337eb52ce"
         },
         {
+          "id": 634558520,
           "name": "myscoutee-template-release_1.4.0.json",
           "size": 824,
-          "sha256": "sha256:409af648c8cf1e1eb7b03c9e3e8a838ed09d6d8cb60381e3ecbad7ec26a9f685",
-          "assetId": 634217147
+          "digest": "sha256:f0b7ea67e7029419a3441d4773cf44a49e00b34f4c888e97a573d68a9de439a9"
         },
         {
+          "id": 634558622,
           "name": "myscoutee-update.json",
           "size": 1404,
-          "sha256": "sha256:a71714fc1516edeb13a80dd8b610acf2b4c9f4902110ba3e4caac5463ea44310",
-          "assetId": 634217186
+          "digest": "sha256:df5297461759491f2b3c98be36f6b5dbfb3fcc5844e0e2652cb1e37064c53347"
         },
         {
+          "id": 634217227,
           "name": "release-public.pem",
           "size": 113,
-          "sha256": "sha256:8d184110f5fdec1a0b79cb02bfa59c8389088dd041955e3a04c18a90ec5e55c3",
-          "assetId": 634217227
+          "digest": "sha256:8d184110f5fdec1a0b79cb02bfa59c8389088dd041955e3a04c18a90ec5e55c3"
         },
         {
+          "id": 634558764,
           "name": "myscoutee-template_1.4.0_amd64.deb.sha256",
           "size": 101,
-          "sha256": "sha256:a9312eb62434bbd97dba3c7331a8783532d1202ce773516c9ae92dce904cee39",
-          "assetId": 634217270
+          "digest": "sha256:b595372758374cad48b8844ba1ed1ca75feddf778ed0cd9f325e5ec0c724365b"
         },
         {
+          "id": 634217307,
           "name": "myscoutee-template-client-tools_1.4.0.tar.gz.sha256",
           "size": 111,
-          "sha256": "sha256:9e1d0de9752c6b4bc1ede08b1f18d6411351cb33bc4503a1fbae1b4e159f1392",
-          "assetId": 634217307
+          "digest": "sha256:9e1d0de9752c6b4bc1ede08b1f18d6411351cb33bc4503a1fbae1b4e159f1392"
         },
         {
+          "id": 634558985,
           "name": "container-images.json",
-          "size": 1790,
-          "sha256": "sha256:e6479a58aa32e925a3555bfe649313319a87270f3f30ea8a5f1694c39b544475",
-          "assetId": 634217374
+          "size": 1705,
+          "digest": "sha256:1c70e0099a0f69da1f02b3110c710b917639f713cc0ff6145ddbfe95d9b50fe9"
+        },
+        {
+          "id": 634559029,
+          "name": "source-artifacts.json",
+          "size": 587,
+          "digest": "sha256:cb9ef442b761e6fb95260ab6398d2e528407abc92fe3774063d2cb29b6bbb6fc"
         }
       ],
       "expectedDeb": {
-        "path": "packaging/dist/msc122-final-140-migration/myscoutee-template_1.4.0_amd64.deb",
-        "sha256": "sha256:7dac75460c907bd12f5474fa670587322d73d42e36b201186549dbe1ed3dfe68",
-        "bytes": 266007646
+        "path": "/home/raxim/workspace/myscoutee-template/packaging/dist/msc122-publication-ui-20261012/myscoutee-template_1.4.0_amd64.deb",
+        "sha256": "sha256:bfe24260441717ed947ac4f55dfff183d5a24b9ad22d0e33f57c997ddb7b20c2",
+        "bytes": 266022588
       },
       "matchingDebPresent": false
     }

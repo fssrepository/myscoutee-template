@@ -2,8 +2,8 @@
 
 Updated: 2026-10-12 · Version: **1.4.0**
 
-**Current task: 29.4 (signed draft assets are ready; awaiting the matching user-uploaded DEBs).** Tasks 1–28 are DONE.
-**28/33 main tasks DONE · 99/116 subtasks DONE.**
+**Current task: 29.4b (fresh UI builds, images and signed draft assets are ready; awaiting the two matching user-uploaded DEBs).** Tasks 1–28 are DONE.
+**28/33 main tasks DONE · 100/117 subtasks DONE.**
 
 ### 1. Source baseline — **DONE**
 
@@ -246,7 +246,8 @@ Updated: 2026-10-12 · Version: **1.4.0**
 | 29.1 | Historical Pages/image publication | **DONE** |
 | 29.2 | registry/MinIO source and removal of unrequested Actions | **DONE** |
 | 29.3 | Publish/verify current 1.4.0 images and a freshly rebuilt template GitHub Pages site from frontend master/docs | **DONE** |
-| 29.4 | native/template draft assets and user-uploaded DEB verification | **NOT DONE** |
+| 29.4a | Fresh native/template packages, signatures and draft assets | **DONE** |
+| 29.4b | Matching user-uploaded DEB verification | **NOT DONE** |
 | 29.5 | Qualified source snapshot and artifact revision mapping; final history/tag publication is task 32.1 | **NOT DONE** |
 
 ### 30. Documentation/PDF — **NOT DONE**
