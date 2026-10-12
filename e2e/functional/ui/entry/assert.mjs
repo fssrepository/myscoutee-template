@@ -18,8 +18,11 @@ export async function assertUi({ page, ctx, local = ctx?.mode !== 'full', member
     const logo = document.querySelector('.brand img');
     return Boolean(logo?.currentSrc && logo.complete && logo.naturalWidth > 0);
   }));
-  if (local) await page.clickVisible('.entry-actions .primary');
-  else await page.clickByText('.entry-actions button', 'Explore');
+  if (await page.isSelectorVisible('.explanation-guide-overlay__next button')) {
+    await page.clickVisible('.explanation-guide-overlay__next button');
+    await page.waitForSelectorHidden('.explanation-guide-overlay');
+  }
+  await page.clickVisible('[data-guide-item="explore"]:not([disabled])');
   if (consentExpected) {
     await page.waitForSelector('app-document-viewer [role="dialog"]');
     await page.clickByText('app-document-viewer button', 'Accept and continue');
@@ -32,7 +35,15 @@ export async function assertUi({ page, ctx, local = ctx?.mode !== 'full', member
   assert(!await page.isSelectorVisible('app-document-viewer [role="dialog"]'), 'Accepted browser consent must allow profile selection');
   await page.clickVisible(`.demo-user-item[data-user-id="${actorId}"]`);
   if (profileSelected) await profileSelected({ page, local });
-  await page.waitForUrlPath(workspacePath, 30000);
+  try { await page.waitForUrlPath(workspacePath, 30000); }
+  catch (error) {
+    console.error('Entry navigation diagnostic', JSON.stringify({
+      page: await page.evaluate(()=>({path:location.pathname,queryKeys:[...new URL(location.href).searchParams.keys()],text:document.body.innerText.slice(0,2000)})),
+      routes:page.network.slice(networkStart).filter(request=>/\/(auth|privacy)\//.test(new URL(request.url).pathname)).map(request=>({path:new URL(request.url).pathname,status:request.status})),
+      errors:page.pageErrors
+    }));
+    throw error;
+  }
   await page.waitForText(actorName);
   await page.navigate(workspacePath);
   await page.waitForText(actorName);
@@ -62,9 +73,11 @@ export async function assertUi({ page, ctx, local = ctx?.mode !== 'full', member
   }
   if (memberReady) await memberReady({ page, local });
   if (!endsSession) {
-    await page.clickVisible('.avatar-menu [data-guide-item="navigator-avatar"]');
-    await page.clickVisible('.settings-menu .app-menu__trigger');
+    await page.clickVisible('.user-selector-menu [data-guide-item="navigator-avatar"]');
+    await page.clickVisible('[data-guide-item="settings"]');
     await page.clickVisible('[data-guide-item="logout"]');
+    await page.waitForSelector('.dialog-panel');
+    await page.clickVisible('.dialog-panel [data-guide-item="confirm"]');
   }
   await page.waitForUrlPath('/entry');
   await page.navigate(workspacePath);

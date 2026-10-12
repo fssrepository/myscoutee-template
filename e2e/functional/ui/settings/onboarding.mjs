@@ -7,7 +7,7 @@ const browser=await launchChromeBrowser({baseUrl:local?(process.env.E2E_LOCAL_BA
 const actorId=fixture?.ids[0]??'100000000000000000000001',name='New Template Member';
 try{
  if(local){
-  await page.navigate('/entry');await page.clickVisible('.entry-actions .primary');await page.clickByText('app-document-viewer button','Accept and continue');
+  await page.navigate('/entry');await page.clickVisible('[data-guide-item="explore"]:not([disabled])');await page.clickByText('app-document-viewer button','Accept and continue');
   await page.waitForSelector(`.demo-user-item[data-user-id="${actorId}"]`);
   await page.evaluate(async id=>{
    const db=await new Promise((resolve,reject)=>{const req=indexedDB.open('myscoutee-template_demo_db');req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error);});
@@ -18,11 +18,11 @@ try{
   await page.waitForSelector('app-profile-editor [data-control-id="name"] input');
   await page.waitForUrlPath('/entry');
   await page.fill('app-profile-editor [data-control-id="name"] input','');
-  assert.equal(await page.evaluate(()=>document.querySelector('app-profile-editor [data-guide-field="profile-save"]').disabled),true,'Empty profile cannot finish onboarding');
+  assert.equal(await page.evaluate(()=>document.querySelector('app-profile-editor [data-guide-item="profile-save"]').disabled),true,'Empty profile cannot finish onboarding');
   // Reload before completing: the retained session must reopen the same minimal form.
   await page.navigate('/entry');await page.waitForSelector('app-profile-editor [data-control-id="name"] input');
   await page.fill('app-profile-editor [data-control-id="name"] input',name);
-  await page.clickVisible('app-profile-editor [data-guide-field="profile-save"]');
+  await page.clickVisible('app-profile-editor [data-guide-item="profile-save"]');
   await page.waitForUrlPath('/home',30000);await page.waitForText(name);
  }
  await assertUi({page,local,actorId,actorName:local?name:fixture.names[0],consentExpected:!local,

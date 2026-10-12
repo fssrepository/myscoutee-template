@@ -231,17 +231,61 @@ print(JSON.stringify({updated:true}));
     print('PASS: canonical ' + catalog + ' catalog verified in REAL/DEMO; existing business data preserved.')
 
 
+def reset_lab(fingerprint, namespace_uid, previous):
+    """Explicit disposable-lab reset using the existing verified Mongo backup.
+
+    The caller already holds the VM lock and verifies stopped backend writers,
+    namespace ownership and Mongo image identity. Ordinary startup never calls it.
+    Keep a reset marker before dropping anything so the same command can resume.
+    """
+    guard = """
+if(process.env.MONGO_REAL_DATABASE!==%s || process.env.MONGO_DEMO_DATABASE!==%s)
+  throw new Error('Unexpected lab database configuration');
+const state=db.getSiblingDB(%s).seed.findOne({_id:'canonical'});
+if(!state || state.namespaceUid!==%s)throw new Error('Lab seed ownership mismatch');
+const complete=state.fingerprint===%s && state.status==='complete';
+const original=state.fingerprint===%s && state.status==='complete';
+const resuming=state.fingerprint===%s && state.resetFrom===%s && ['resetting','started'].includes(state.status);
+if(!complete && !original && !resuming)throw new Error('Lab reset baseline mismatch');
+""" % (json.dumps(REAL_DB), json.dumps(DEMO_DB), json.dumps(STATE_DB),
+       json.dumps(namespace_uid), json.dumps(fingerprint), json.dumps(previous),
+       json.dumps(fingerprint), json.dumps(previous))
+    current = mongo(guard + "print(JSON.stringify({complete,original,resuming}));")
+    if current['complete']:
+        return
+    receipt = w.vm.VM / ('seed-reset-' + previous + '-' + fingerprint + '.json')
+    if current['resuming'] and not receipt.exists():
+        raise RuntimeError('Interrupted lab reset lost its backup receipt; refusing another reset.')
+    saved = mongo_replica.backup(receipt, 'seed-reset', {'seedFrom': previous, 'seedTo': fingerprint})
+    if saved.get('seedFrom') != previous or saved.get('seedTo') != fingerprint:
+        raise RuntimeError('Lab reset backup belongs to a different seed transition.')
+    print('Verified pre-reset Mongo backup: ' + str(w.vm.VM / saved['backup']), flush=True)
+    mongo(guard + """
+if(complete)throw new Error('Seed changed after reset preparation');
+const marker=db.getSiblingDB(%s).seed;
+marker.updateOne({_id:'canonical'},{$set:{fingerprint:%s,resetFrom:%s,status:'resetting'}});
+for(const name of %s) {
+  if(db.getSiblingDB(name).dropDatabase().ok!==1)throw new Error('Failed lab reset: '+name);
+}
+marker.updateOne({_id:'canonical'},{$set:{status:'started'}});
+print(JSON.stringify({reset:true}));
+""" % (json.dumps(STATE_DB), json.dumps(fingerprint), json.dumps(previous), json.dumps(list(DATABASES))))
+
+
 def main(argv=None):
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--verify',action='store_true',help='Read completed bootstrap, content hashes and indexes without importing')
     parser.add_argument('--restart',action='store_true',help='Verify identical data/indexes after replacing only the Mongo pod; implies --verify')
     parser.add_argument('--add-catalog', choices=['landingSlides'], help='Explicitly add the omitted production landing catalog')
-    parser.add_argument('--from-fingerprint', help='Reviewed source/complete-bootstrap fingerprint before the catalog/allowlist change')
+    parser.add_argument('--reset-lab', action='store_true', help='Back up and reset both owned lab databases to the current canonical seed; never automatic')
+    parser.add_argument('--from-fingerprint', help='Reviewed complete-bootstrap fingerprint before the explicit catalog change or lab reset')
     args=parser.parse_args(argv)
     if args.add_catalog and (args.verify or args.restart or not args.from_fingerprint or not re.fullmatch(r'[a-f0-9]{64}', args.from_fingerprint)):
         parser.error('Catalog migration requires --from-fingerprint and cannot combine with verification/restart.')
-    if args.from_fingerprint and not args.add_catalog:
-        parser.error('--from-fingerprint requires --add-catalog')
+    if args.reset_lab and (args.verify or args.restart or args.add_catalog or not args.from_fingerprint or not re.fullmatch(r'[a-f0-9]{64}', args.from_fingerprint)):
+        parser.error('Lab reset requires --from-fingerprint and cannot combine with other seed actions.')
+    if args.from_fingerprint and not (args.add_catalog or args.reset_lab):
+        parser.error('--from-fingerprint requires --add-catalog or --reset-lab')
 
     backend = Path(os.environ.get('MYSCOUTEE_BACKEND_SOURCE', w.SHELL.parent))
     files, allowlist, fingerprint = seed_bundle(backend)
@@ -265,6 +309,8 @@ def main(argv=None):
         if args.verify or args.restart:
             verify_persistence(fingerprint, namespace['metadata']['uid'], args.restart)
             return
+        if args.reset_lab:
+            reset_lab(fingerprint, namespace['metadata']['uid'], args.from_fingerprint)
         if w.CONFIG.get('mongoReplicaSet'):
             # A fresh frontend-only deployment has no primary yet. Reuse the
             # owned replica initializer before the canonical bootstrap write.

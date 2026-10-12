@@ -1,3 +1,4 @@
+import { openProfileIntegrations, closeProfileEditor } from '../profile-editor/assert.mjs';
 import assert from 'node:assert/strict';
 import { randomUUID } from 'node:crypto';
 import { launchChromeBrowser } from '../lib/chrome-cdp.mjs';
@@ -12,8 +13,8 @@ async function keyRequest(route,method='GET'){
  const response=await fetch(baseUrl+'/api/integrations/v1/'+route,{method,headers:{Authorization:'Bearer '+key,'X-App-Session-Kind':'demo','X-MyScoutee-Client-Id':clientId}});
  return {status:response.status,data:response.ok?await response.json():null};
 }
-async function open(){await page.clickVisible('.avatar-menu [data-guide-item="navigator-avatar"]');await page.clickVisible('.settings-menu .app-menu__trigger');await page.clickVisible('[data-guide-item="api"]');await page.waitForSelector(`${api} [data-guide-control="integration-generate"]`);}
-async function close(){await page.clickVisible(`${api} > app-popup > .ui-popup .ui-popup__header .ui-popup__close`);await page.waitFor('API popup removed',()=>page.evaluate(()=>!document.querySelector('app-integration-settings-popup')),15000);}
+async function open(){await openProfileIntegrations(page);await page.waitForSelector(`${api} [data-guide-control="integration-generate"]`);}
+async function close(){await page.clickVisible(`${api} > app-popup > .ui-popup .ui-popup__header .ui-popup__close`);await page.waitFor('API popup removed',()=>page.evaluate(()=>!document.querySelector('app-integration-settings-popup')),15000);await closeProfileEditor(page);}
 async function access(target,value){
  await page.clickVisible(`${target} [data-guide-item="permissions"]`);await page.fill('[data-guide-field="integration-access-editor"] input[type="range"]',value);
  await page.clickVisible('[data-guide-field="integration-access-apply"]');await page.waitForSelectorHidden('[data-guide-field="integration-access-editor"]');

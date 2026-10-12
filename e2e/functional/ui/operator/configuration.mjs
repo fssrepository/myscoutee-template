@@ -13,7 +13,7 @@ const controller='[data-control-id="operator-configuration-data-controller-name"
 const privacyEmail='[data-control-id="operator-configuration-privacy-contact-email"] input';
 const admin='[data-control-id="operator-configuration-admin-email-list"] textarea';
 const apiUrl=`${popup} [data-palette="blue"] app-link-input input`;
-async function open(){await page.clickVisible('.avatar-menu [data-guide-item="navigator-avatar"]');await page.clickVisible('.settings-menu .app-menu__trigger');await page.clickVisible('[data-guide-item="configuration"]');await page.waitForSelector(product);await page.waitFor('configuration loaded',()=>page.evaluate(selector=>document.querySelector(selector)?.disabled===false,product));}
+async function open(){await page.clickVisible('.operator-actions [data-guide-item="configuration"]');await page.waitForSelector(product);await page.waitFor('configuration loaded',()=>page.evaluate(selector=>document.querySelector(selector)?.disabled===false,product));}
 async function close(){await page.clickVisible(`${popup} > app-popup .ui-popup__header .ui-popup__close`);await page.waitFor('configuration removed',()=>page.evaluate(()=>!document.querySelector('app-operator-configuration-popup')));}
 async function saved(){await page.waitForSelector(`${popup} .operator-action-popup__result.is-success`);}
 async function value(selector){await page.waitForSelector(selector);return page.evaluate(s=>document.querySelector(s).value,selector);}
@@ -26,7 +26,7 @@ try{
   const originalName=await value(product);
   await page.fill(product,'Unsaved name');await close();await open();assert.equal(await value(product),originalName,'Closing discards unsaved name');
   await page.fill(product,'Template QA project');await page.clickVisible('[data-guide-item="operator-save-branding"]');await saved();
-  await close();assert.equal(await page.evaluate(()=>document.querySelector('.member-header .brand').textContent.trim()),'Template QA project');
+  await close();assert.equal(await page.evaluate(()=>document.querySelector('.operator-brand').getAttribute('aria-label')),'Template QA project');
   await page.navigate('/operator');await page.waitForText(fixture?.names[0]??'Template Operator');await open();assert.equal(await value(product),'Template QA project');
   await page.fill(controller,'Template QA Controller');assert.equal(await page.evaluate(()=>document.querySelector('[data-guide-item="operator-save-privacy-contact"]').disabled),true,'Incomplete privacy contact blocks save');
   await page.fill(privacyEmail,'Privacy@Example.test');await page.clickVisible('[data-guide-item="operator-save-privacy-contact"]');await saved();

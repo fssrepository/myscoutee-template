@@ -33,8 +33,8 @@ export async function callDiagnostics(page) {
 }
 export async function assertChatCall(sender,receiver,{holdMs=0}={}) {
  const start=Date.now();
- await sender.waitFor('call available',()=>sender.evaluate(()=>document.querySelector('[data-guide-field="chat-call"]')?.disabled===false));
- await sender.clickVisible('[data-guide-field="chat-call"]');
+ await sender.waitFor('call available',()=>sender.evaluate(()=>document.querySelector('[data-guide-control="chat-call"]')?.disabled===false));
+ await sender.clickVisible('[data-guide-control="chat-call"]');
  await receiver.waitForSelector('[data-call-state="incoming"]');
  await receiver.clickVisible('[data-call-accept]');
  for(const page of [sender,receiver]){

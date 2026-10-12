@@ -11,7 +11,7 @@ const fixture=local?null:await stageOperatorConfigurationFixture(baseUrl);
 const browser=await launchChromeBrowser({baseUrl}),page=await browser.newPage();
 const popup='app-operator-update-popup',check='[data-guide-item="operator-refresh-update"]';
 async function loaded(){await page.waitForSelector(popup+' .operator-action-popup');await page.waitFor('update loaded',()=>page.evaluate(selector=>document.querySelector(selector)?.getAttribute('aria-busy')==='false',popup+' .operator-action-popup'));}
-async function open(){await page.clickVisible('.avatar-menu [data-guide-item="navigator-avatar"]');await page.clickVisible('.settings-menu .app-menu__trigger');await page.clickVisible('[data-guide-item="updates"]');await loaded();}
+async function open(){await page.clickVisible('.operator-actions [data-guide-item="updates"]');await loaded();}
 async function close(){await page.clickVisible(`${popup} > app-popup .ui-popup__header .ui-popup__close`);await page.waitFor('update popup closed',()=>page.evaluate(()=>!document.querySelector('app-operator-update-popup')));}
 async function stageLocalRelease(){return page.evaluate(async()=>{
  const db=await new Promise((resolve,reject)=>{const r=indexedDB.open('myscoutee-template_demo_db');r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error);});
@@ -44,7 +44,7 @@ try{
    await close();
   }else{
    const reads=page.network.filter(r=>new URL(r.url).pathname==='/api/operator/updates');
-   assert.equal(reads.length,3,'Open, explicit check and full reload each read status once');
+   assert.equal(reads.length,4,'Login and the two full page loads preload once each; explicit Check adds one request, opening the cached popup adds none');
    assert(![...page.requests.values()].some(r=>r.method==='POST'&&new URL(r.url).pathname.startsWith('/api/operator/updates')),'Viewing updates never approves an installation');
   }
  }});

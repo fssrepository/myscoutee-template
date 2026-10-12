@@ -1,3 +1,4 @@
+import { openProfileIntegrations, closeProfileEditor } from '../profile-editor/assert.mjs';
 import assert from 'node:assert/strict';
 import {mkdir,writeFile} from 'node:fs/promises';
 import { assertGuideTour } from '../guide/assert.mjs';
@@ -8,7 +9,7 @@ const local=process.argv.includes('--local'),fixture=local?null:await stageInteg
 const browser=await launchChromeBrowser({baseUrl:local?(process.env.E2E_LOCAL_BASE_URL??'http://127.0.0.1:4200'):process.env.E2E_SERVER_BASE_URL??'http://localhost'}),page=await browser.newPage();
 try{
  await assertUi({page,local,actorId:fixture?.ids[0],actorName:fixture?.names[0],memberReady:async()=>{
-  await page.clickVisible('.avatar-menu [data-guide-item="navigator-avatar"]');await page.clickVisible('.settings-menu .app-menu__trigger');await page.clickVisible('[data-guide-item="api"]');await page.waitForSelector('[data-guide-field="mcp-main-access"] button');
+  await openProfileIntegrations(page);await page.waitForSelector('[data-guide-field="mcp-main-access"] button');
   if(process.env.E2E_SCREENSHOT_DIR){
    await mkdir(process.env.E2E_SCREENSHOT_DIR,{recursive:true});await writeFile(process.env.E2E_SCREENSHOT_DIR+'/api-desktop.png',await page.screenshot());
    await page.setViewport({width:390,height:844});await writeFile(process.env.E2E_SCREENSHOT_DIR+'/api-mobile.png',await page.screenshot());
@@ -25,7 +26,7 @@ try{
   await assertGuideTour(page,['Manual client keys','Create client','Close']);
   await page.clickVisible('app-mcp-connections app-popup .ui-popup__close');
   await page.clickVisible('app-integration-settings-popup > app-popup .ui-popup__header .ui-popup__close');
-  await page.waitFor('API removed',()=>page.evaluate(()=>!document.querySelector('app-integration-settings-popup')));
+  await page.waitFor('API removed',()=>page.evaluate(()=>!document.querySelector('app-integration-settings-popup')));await closeProfileEditor(page);
  }});
  console.log('PASS '+(local?'local':'HTTP')+' API, permission, connection help and manual MCP guides with only retained controls');
 }catch(error){console.error(error.stack);console.error(await page.evaluate(()=>document.body.innerText.slice(0,2500)));process.exitCode=1;}

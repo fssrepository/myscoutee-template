@@ -1,3 +1,4 @@
+import { openProfileIntegrations, closeProfileEditor } from '../profile-editor/assert.mjs';
 import assert from 'node:assert/strict';
 import {randomUUID} from 'node:crypto';
 import {launchChromeBrowser} from '../lib/chrome-cdp.mjs';
@@ -12,8 +13,8 @@ const browser=await launchChromeBrowser({baseUrl}),page=await browser.newPage();
 const sessions=local?null:nativeDemoSessions(baseUrl);
 const clientId=randomUUID();let key='';
 const popup='app-integration-settings-popup';
-async function open(){await page.clickVisible('.avatar-menu [data-guide-item="navigator-avatar"]');await page.clickVisible('.settings-menu .app-menu__trigger');await page.clickVisible('[data-guide-item="api"]');await page.waitForSelector(popup+' [data-guide-control="integration-generate"]');}
-async function close(){await page.clickVisible(popup+' > app-popup > .ui-popup .ui-popup__close');await page.waitFor('API closed',()=>page.evaluate(()=>!document.querySelector('app-integration-settings-popup')));}
+async function open(){await openProfileIntegrations(page);await page.waitForSelector(popup+' [data-guide-control="integration-generate"]');}
+async function close(){await page.clickVisible(popup+' > app-popup > .ui-popup .ui-popup__close');await page.waitFor('API closed',()=>page.evaluate(()=>!document.querySelector('app-integration-settings-popup')));await closeProfileEditor(page);}
 async function request(path){return fetch(baseUrl+path,{headers:{Authorization:'Bearer '+key,'X-App-Session-Kind':'demo','X-MyScoutee-Client-Id':clientId}});}
 try{
  await assertUi({page,local,role:'admin',actorId:fixture?.adminId??'100000000000000000000003',actorName:fixture?.adminName??'Template Admin',memberReady:async()=>{

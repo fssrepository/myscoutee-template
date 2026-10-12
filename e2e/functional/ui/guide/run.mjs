@@ -8,17 +8,19 @@ const local=process.argv.includes('--local'),fixture=local?null:await stageChatF
 const browser=await launchChromeBrowser({baseUrl:local?(process.env.E2E_LOCAL_BASE_URL??'http://127.0.0.1:4200'):process.env.E2E_SERVER_BASE_URL??'http://localhost'}),page=await browser.newPage();
 
 try{
- await page.navigate('/entry');await page.waitForText('v' + expectedVersion);await assertGuideTour(page, ['Enter the application']);
+ await page.navigate('/entry');await page.waitForText('v' + expectedVersion);
+ await page.waitForText('Help when you need it');await page.clickVisible('.explanation-guide-overlay__next [data-guide-item="next"]');await page.waitForSelectorHidden('.explanation-guide-overlay__card');
+ await assertGuideTour(page, ['Enter the application']);
  await assertUi({page,local,actorId:fixture?.ids[0],actorName:fixture?.names[0],memberReady:async()=>{
-  await page.clickVisible('.avatar-menu [data-guide-item="navigator-avatar"]');
+  await page.clickVisible('.user-selector-menu [data-guide-item="navigator-avatar"]');
   await assertGuideTour(page, ['Edit profile','Example cards','Chat']);
   await page.clickVisible('[data-guide-field="navigation-profile"]');await page.waitForSelector('app-profile-editor [data-control-id="name"] input');
   await assertGuideTour(page, ['Save profile','Profile picture','Display name']);
   await page.clickVisible('app-profile-editor .ui-popup__close');
-  await page.clickVisible('.avatar-menu [data-guide-item="navigator-avatar"]');
-  await page.clickVisible('.member-navigation [data-guide-item="chat"]');await page.waitForSelector('app-template-chat single-row article');
+  await page.clickVisible('.user-selector-menu [data-guide-item="navigator-avatar"]');
+  await page.clickVisible('.user-menu-content [data-guide-item="chat"]');await page.waitForSelector('app-template-chat single-row article');
   await assertGuideTour(page, ['Conversations']);
-  await page.clickVisible('app-template-chat single-row article');await page.waitForSelector('.chat-composer');
+  await page.clickVisible('app-template-chat single-row article');await page.waitForSelector('.chat-compose-box');
   await assertGuideTour(page, ['Pinned messages','Audio and video call','Back to conversations','Write a message']);
  }});
  console.log('PASS '+(local?'local':'HTTP')+' landing, navigation, profile, conversation list and message composer guides');

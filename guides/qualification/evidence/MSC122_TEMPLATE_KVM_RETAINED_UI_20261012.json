@@ -1,0 +1,690 @@
+{
+  "recordedAt": "2026-10-12",
+  "step": 25,
+  "status": "PASS for recorded current KVM qualification",
+  "source": {
+    ".": {
+      "revision": "5b136d0d0cddb475c481e43bff0f90efdeeef5ba",
+      "trackedDiffSha256": "1ff1206a33db4f9637c1c330bef7a98974226c7ea5b8b5a48502c079b7a068a8"
+    },
+    "frontend": {
+      "revision": "549e9a0279627cd6520a1ce5c189808481f57216",
+      "trackedDiffSha256": "a48d949e6756e8fc038ca5a197d7a08a5c4dc7fc8c682b507d6277aa22788e69"
+    },
+    "frontend/components": {
+      "revision": "75a6a5363d119ee62fdcb015578481d26f8233d5",
+      "trackedDiffSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "../myscoutee-backend": {
+      "revision": "30593266d5c961d187a029faf7c6c14ec46c397e",
+      "trackedDiffSha256": "b5d9410ab5e208b3853b1c52c6968eb209ff9298e3882f738b8a57613cda5f98"
+    },
+    "../myscoutee-backend/frontend": {
+      "revision": "64ac5cb1e427796b67d8528e04208cdd108534f3",
+      "trackedDiffSha256": "69535e2f2af9fe996f4b44106e6ed8f7a078164058d069364b350ea84c4deb7c"
+    }
+  },
+  "runtime": {
+    "vm": "myscoutee-template",
+    "namespace": "myscoutee-template",
+    "release": [
+      {
+        "name": "myscoutee-template",
+        "namespace": "myscoutee-template",
+        "revision": "8",
+        "updated": "2026-10-12 12:24:33.288227222 +0200 CEST",
+        "status": "deployed",
+        "chart": "myscoutee-template-microservices-1.0.0",
+        "app_version": "1.0.0"
+      }
+    ],
+    "cpu": 4,
+    "memoryMiB": 6144,
+    "autostart": false,
+    "otherApplicationStacks": "stopped"
+  },
+  "seed": {
+    "status": "Refreshed from current canonical seed using explicit reset, both owned lab databases",
+    "marker": {
+      "_id": "canonical",
+      "fingerprint": "ddf18c4d25258ebce417d750c1541937dd96910f63acab53a0c7b1ea5806f460",
+      "status": "complete",
+      "resetFrom": "e31c926d63837e3025356c4cb50e05fbd2f9c8b8742e2a57f2dd320895a2a0f5"
+    },
+    "beforeFingerprint": "e31c926d63837e3025356c4cb50e05fbd2f9c8b8742e2a57f2dd320895a2a0f5",
+    "backup": "private VM state, backups/mongo-before-seed-reset-20261012T102314Z.archive.gz",
+    "verification": "seed-mongo.py --verify PASS; identical repeated reset was a no-op",
+    "initialFailures": "Old seed caused 3 of 17 checks to fail. Fixed seed; legacy test expectations removed. Current expectations all pass."
+  },
+  "backend": {
+    "recordedAt": "2026-10-12T10:25:14.152Z",
+    "mode": "kvm",
+    "baseUrl": "http://localhost:18080",
+    "apiPrefix": "/api",
+    "selection": {
+      "filter": "",
+      "group": "",
+      "qaCase": ""
+    },
+    "passed": 17,
+    "failed": 0,
+    "skipped": 0,
+    "total": 17,
+    "ownedSessionsRevoked": true,
+    "scope": "Backend contracts and owned session lifecycle in the recorded deployment mode; not UI, load or installed-release proof."
+  },
+  "ui": {
+    "chat": {
+      "mode": "http",
+      "startedAt": "2026-10-12T10:26:34.573Z",
+      "baseUrl": "http://localhost:18080",
+      "passed": 1,
+      "failed": 0,
+      "results": [
+        {
+          "id": "chat/lifecycle",
+          "qaBranches": [
+            "T-CHAT-001",
+            "T-CHAT-002"
+          ],
+          "status": "PASS",
+          "durationMs": 59820,
+          "log": "chat/lifecycle/run.log"
+        }
+      ]
+    },
+    "profile": {
+      "mode": "http",
+      "startedAt": "2026-10-12T10:32:16.679Z",
+      "baseUrl": "http://localhost:18080",
+      "passed": 1,
+      "failed": 0,
+      "results": [
+        {
+          "id": "profile/avatar",
+          "qaBranches": [
+            "T-PROFILE-001",
+            "T-PROFILE-002"
+          ],
+          "status": "PASS",
+          "durationMs": 16149,
+          "log": "profile/avatar/run.log"
+        }
+      ]
+    },
+    "discover": {
+      "mode": "http",
+      "startedAt": "2026-10-12T10:32:49.549Z",
+      "baseUrl": "http://localhost:18080",
+      "passed": 1,
+      "failed": 0,
+      "results": [
+        {
+          "id": "entry/showcase",
+          "qaBranches": [
+            "T-IDENTITY-001",
+            "T-SMARTLIST-001"
+          ],
+          "status": "PASS",
+          "durationMs": 7388,
+          "log": "entry/showcase/run.log"
+        }
+      ]
+    }
+  },
+  "adminBoundary": {
+    "result": "PASS",
+    "checks": "Admin API retained and member denied; report/feedback/support mutations absent; personal chat still persists and reads; omitted collections are not initialized",
+    "timings": [
+      {
+        "method": "GET",
+        "path": "/admin/client-api/settings",
+        "ms": 41,
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/admin/client-api/settings",
+        "ms": 22,
+        "status": 403
+      },
+      {
+        "method": "GET",
+        "path": "/admin/dashboard",
+        "ms": 60,
+        "status": 404
+      },
+      {
+        "method": "POST",
+        "path": "/auth/me/report-user",
+        "ms": 39,
+        "status": 404
+      },
+      {
+        "method": "POST",
+        "path": "/auth/me/feedback",
+        "ms": 16,
+        "status": 404
+      },
+      {
+        "method": "POST",
+        "path": "/admin/users/<target>/warn",
+        "ms": 24,
+        "status": 404
+      },
+      {
+        "method": "POST",
+        "path": "/admin/users/<target>/block",
+        "ms": 16,
+        "status": 404
+      },
+      {
+        "method": "POST",
+        "path": "/admin/users/<target>/unblock",
+        "ms": 11,
+        "status": 404
+      },
+      {
+        "method": "POST",
+        "path": "/admin/reports/omitted/resolve",
+        "ms": 27,
+        "status": 404
+      },
+      {
+        "method": "POST",
+        "path": "/admin/feedback/omitted/resolve",
+        "ms": 26,
+        "status": 404
+      },
+      {
+        "method": "POST",
+        "path": "/activities/chats/<chat>/support-case",
+        "ms": 70,
+        "status": 404
+      },
+      {
+        "method": "GET",
+        "path": "/auth/me",
+        "ms": 32,
+        "status": 200
+      },
+      {
+        "method": "POST",
+        "path": "/activities/chats/<chat>/messages",
+        "ms": 292,
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/activities/chats/<chat>/messages",
+        "ms": 140,
+        "status": 200
+      }
+    ]
+  },
+  "monitoringPanels": [
+    {
+      "title": "Scrape availability",
+      "expression": "up{job=\"myscoutee\"}",
+      "values": [
+        {
+          "metric": {
+            "__name__": "up",
+            "instance": "192.168.174.10:30081",
+            "job": "myscoutee",
+            "service": "communication"
+          },
+          "value": [
+            1791801158.011,
+            "1"
+          ]
+        },
+        {
+          "metric": {
+            "__name__": "up",
+            "instance": "192.168.174.10:30081",
+            "job": "myscoutee",
+            "service": "media"
+          },
+          "value": [
+            1791801158.011,
+            "1"
+          ]
+        },
+        {
+          "metric": {
+            "__name__": "up",
+            "instance": "192.168.174.10:30081",
+            "job": "myscoutee",
+            "service": "identity"
+          },
+          "value": [
+            1791801158.011,
+            "1"
+          ]
+        },
+        {
+          "metric": {
+            "__name__": "up",
+            "instance": "192.168.174.10:30081",
+            "job": "myscoutee",
+            "service": "help"
+          },
+          "value": [
+            1791801158.011,
+            "1"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "JVM heap used",
+      "expression": "sum by (service) (jvm_memory_used_bytes{area=\"heap\"})",
+      "values": [
+        {
+          "metric": {
+            "service": "communication"
+          },
+          "value": [
+            1791801158.015,
+            "71868112"
+          ]
+        },
+        {
+          "metric": {
+            "service": "media"
+          },
+          "value": [
+            1791801158.015,
+            "55325992"
+          ]
+        },
+        {
+          "metric": {
+            "service": "identity"
+          },
+          "value": [
+            1791801158.015,
+            "70551016"
+          ]
+        },
+        {
+          "metric": {
+            "service": "help"
+          },
+          "value": [
+            1791801158.015,
+            "53664656"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "HTTP requests per second",
+      "expression": "sum by (service) (rate(http_server_requests_seconds_count[5m]))",
+      "values": [
+        {
+          "metric": {
+            "service": "communication"
+          },
+          "value": [
+            1791801158.017,
+            "0.25925925925925924"
+          ]
+        },
+        {
+          "metric": {
+            "service": "media"
+          },
+          "value": [
+            1791801158.017,
+            "0.11068791666666666"
+          ]
+        },
+        {
+          "metric": {
+            "service": "identity"
+          },
+          "value": [
+            1791801158.017,
+            "0.8475507777777778"
+          ]
+        },
+        {
+          "metric": {
+            "service": "help"
+          },
+          "value": [
+            1791801158.017,
+            "0.17037037037037037"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "HTTP p95 latency",
+      "expression": "histogram_quantile(0.95, sum by (service, le) (rate(http_server_requests_seconds_bucket[5m])))",
+      "values": [
+        {
+          "metric": {
+            "service": "communication"
+          },
+          "value": [
+            1791801158.02,
+            "0.03075822849999994"
+          ]
+        },
+        {
+          "metric": {
+            "service": "media"
+          },
+          "value": [
+            1791801158.02,
+            "0.1620756443138369"
+          ]
+        },
+        {
+          "metric": {
+            "service": "identity"
+          },
+          "value": [
+            1791801158.02,
+            "0.054237429886493195"
+          ]
+        },
+        {
+          "metric": {
+            "service": "help"
+          },
+          "value": [
+            1791801158.02,
+            "0.06038337882294997"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "JVM process CPU",
+      "expression": "process_cpu_usage{job=\"myscoutee\"}",
+      "values": [
+        {
+          "metric": {
+            "__name__": "process_cpu_usage",
+            "exported_service": "communication",
+            "instance": "192.168.174.10:30081",
+            "job": "myscoutee",
+            "service": "communication"
+          },
+          "value": [
+            1791801158.035,
+            "0.01649746192893401"
+          ]
+        },
+        {
+          "metric": {
+            "__name__": "process_cpu_usage",
+            "exported_service": "media",
+            "instance": "192.168.174.10:30081",
+            "job": "myscoutee",
+            "service": "media"
+          },
+          "value": [
+            1791801158.035,
+            "0.047474747474747475"
+          ]
+        },
+        {
+          "metric": {
+            "__name__": "process_cpu_usage",
+            "exported_service": "identity",
+            "instance": "192.168.174.10:30081",
+            "job": "myscoutee",
+            "service": "identity"
+          },
+          "value": [
+            1791801158.035,
+            "0.049210526315789475"
+          ]
+        },
+        {
+          "metric": {
+            "__name__": "process_cpu_usage",
+            "exported_service": "help",
+            "instance": "192.168.174.10:30081",
+            "job": "myscoutee",
+            "service": "help"
+          },
+          "value": [
+            1791801158.035,
+            "0.04521739130434783"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "HTTP server errors per second",
+      "expression": "sum by (service) (rate(http_server_requests_seconds_count{status=~\"5..\"}[5m]))",
+      "values": []
+    }
+  ],
+  "resources": {
+    "scope": "Functional qualification interval including idle/diagnosis; not matched load or speed comparison",
+    "host": {
+      "seconds": 437.3825317209994,
+      "logicalCpus": 12,
+      "busyPercent": 28.56822507175839,
+      "qemuCpuCores": 0.8511870296582436
+    },
+    "containers": [
+      {
+        "pod": "media-5d54cff5fd-f8d22",
+        "container": "media",
+        "seconds": 437.33769965171814,
+        "cpuCores": 0.023268092387424763,
+        "throttledSeconds": 0.0,
+        "cpuMax": "200000 100000",
+        "memoryMiB": 231.5625
+      },
+      {
+        "pod": "identity-775c6989cd-hk7cg",
+        "container": "identity",
+        "seconds": 437.33873748779297,
+        "cpuCores": 0.052524919543952296,
+        "throttledSeconds": 0.0,
+        "cpuMax": "200000 100000",
+        "memoryMiB": 336.40625
+      },
+      {
+        "pod": "help-7984878dbc-ld6ws",
+        "container": "help",
+        "seconds": 437.3437304496765,
+        "cpuCores": 0.025717334482960392,
+        "throttledSeconds": 0.0,
+        "cpuMax": "200000 100000",
+        "memoryMiB": 213.8828125
+      },
+      {
+        "pod": "communication-f87fcd4d4-hs56b",
+        "container": "communication",
+        "seconds": 437.35679507255554,
+        "cpuCores": 0.05340396505357885,
+        "throttledSeconds": 0.0,
+        "cpuMax": "200000 100000",
+        "memoryMiB": 317.62109375
+      },
+      {
+        "pod": "mongodb-0",
+        "container": "mongodb",
+        "seconds": 437.42346715927124,
+        "cpuCores": 0.07824282090365803,
+        "throttledSeconds": 0.0,
+        "cpuMax": "300000 100000",
+        "memoryMiB": 336.6171875
+      },
+      {
+        "pod": "release-simulator-b76ffb84f-dxxc8",
+        "container": "release-simulator",
+        "seconds": 437.443954706192,
+        "cpuCores": 0.0011487414435467727,
+        "throttledSeconds": 0.0,
+        "cpuMax": "50000 100000",
+        "memoryMiB": 16.01953125
+      },
+      {
+        "pod": "mongodb-1",
+        "container": "mongodb",
+        "seconds": 437.4618809223175,
+        "cpuCores": 0.030984592237893658,
+        "throttledSeconds": 0.0,
+        "cpuMax": "300000 100000",
+        "memoryMiB": 277.8125
+      },
+      {
+        "pod": "stun-7d949ff87f-lt7t9",
+        "container": "stun",
+        "seconds": 437.4729263782501,
+        "cpuCores": 0.006670707657636404,
+        "throttledSeconds": 0.524826,
+        "cpuMax": "50000 100000",
+        "memoryMiB": 4.5703125
+      },
+      {
+        "pod": "mcp-78656b4fdd-zkfzc",
+        "container": "mcp",
+        "seconds": 437.46080350875854,
+        "cpuCores": 0.00020831352036360324,
+        "throttledSeconds": 0.0,
+        "cpuMax": "50000 100000",
+        "memoryMiB": 4.90625
+      },
+      {
+        "pod": "minio-56b9769d5f-6s5vh",
+        "container": "minio",
+        "seconds": 437.48676800727844,
+        "cpuCores": 0.0034274499474120173,
+        "throttledSeconds": 0.0,
+        "cpuMax": "100000 100000",
+        "memoryMiB": 65.08984375
+      },
+      {
+        "pod": "redis-847f467898-4d2vk",
+        "container": "redis",
+        "seconds": 437.4809935092926,
+        "cpuCores": 0.00489101019643394,
+        "throttledSeconds": 0.0,
+        "cpuMax": "200000 100000",
+        "memoryMiB": 3.359375
+      },
+      {
+        "pod": "frontend-5b9f9d4cd6-66gzp",
+        "container": "frontend",
+        "seconds": 437.40383887290955,
+        "cpuCores": 0.005416054431768097,
+        "throttledSeconds": 0.0,
+        "cpuMax": "50000 100000",
+        "memoryMiB": 8.28515625
+      }
+    ]
+  },
+  "images": {
+    "schemaVersion": 1,
+    "images": {
+      "identity": {
+        "source": "myscoutee-template-service-identity:1.4.0",
+        "id": "sha256:9431425f46747dfc0345486ac25aaf6eba73c2fdc2e6e82ce6111a3277b470a0",
+        "contentFingerprint": "sha256:fb77cd839f995ee0b47a37426ad703ae669f33f34e94d11727c3104f03233d47",
+        "sourceDigests": [],
+        "reference": "docker.io/library/myscoutee-template-service-identity:1.4.0-9431425f4674"
+      },
+      "communication": {
+        "source": "myscoutee-template-service-communication:1.4.0",
+        "id": "sha256:55d790878c0743a2e9cf6e70b304b479ef314d91c8a44744a47f119c1b580c9a",
+        "contentFingerprint": "sha256:0ee1c7b764341f503662ab729a0768e63227066203f43e757864c55f2509e324",
+        "sourceDigests": [],
+        "reference": "docker.io/library/myscoutee-template-service-communication:1.4.0-55d790878c07"
+      },
+      "media": {
+        "source": "myscoutee-template-service-media:1.4.0",
+        "id": "sha256:03b5f57f5db6ff2abd35e3532253026885d2d5ad93028749002e6bb43c629b49",
+        "contentFingerprint": "sha256:4c1bd839700b122c1066211bc244a6868adf20b0746e2a5ba24d76f6dcd496ae",
+        "sourceDigests": [],
+        "reference": "docker.io/library/myscoutee-template-service-media:1.4.0-03b5f57f5db6"
+      },
+      "help": {
+        "source": "myscoutee-template-service-help:1.4.0",
+        "id": "sha256:96cb538612192e7d1604393336c89fdd0b3bf2a26f2b435f0c61aece35490c14",
+        "contentFingerprint": "sha256:d93fae2139288e9a36335e85a28534543f2eb6bd6c594df6e351c01424aeadf2",
+        "sourceDigests": [],
+        "reference": "docker.io/library/myscoutee-template-service-help:1.4.0-96cb53861219"
+      },
+      "frontend": {
+        "source": "myscoutee-template-service-frontend:1.4.0",
+        "id": "sha256:3167857a6d660c5b8aad13f2c968e5ef7b69cf147d597c346a4d89ba4af31b5a",
+        "contentFingerprint": "sha256:a6c28083d95f8b1887315352348d1541b5c76f196b49c62186bf43f3decdde24",
+        "sourceDigests": [],
+        "reference": "docker.io/library/myscoutee-template-service-frontend:1.4.0-3167857a6d66"
+      },
+      "mongodb": {
+        "source": "mongo:8.0.4",
+        "id": "sha256:6fe2220a3a52775d0ddfc59d6ca8140c80e5169c5c374f048b8a76f2f11820e7",
+        "contentFingerprint": "sha256:9966eceb6b87df6119961641623028e5cdd1a6517f25bf74b99f0f8cec7e57a8",
+        "sourceDigests": [
+          "mongo@sha256:aaad67f2dca93148e5343c03210bcfc89a0107516a4756bfa018acd6579e5b18"
+        ],
+        "reference": "docker.io/library/myscoutee-template-service-mongodb:1.4.0-6fe2220a3a52"
+      },
+      "redis": {
+        "source": "redis:8.6.1-alpine",
+        "id": "sha256:47ee395bd02d37907b34c2d503d6a5e8de1d2704cbe9b4db54c75d9757410311",
+        "contentFingerprint": "sha256:670b4c814a7ff6abfae317c2806defb675a3e6d28b49ed79479fddd26078e513",
+        "sourceDigests": [
+          "redis@sha256:2afba59292f25f5d1af200496db41bea2c6c816b059f57ae74703a50a03a27d0"
+        ],
+        "reference": "docker.io/library/myscoutee-template-service-redis:1.4.0-47ee395bd02d"
+      },
+      "minio": {
+        "source": "myscoutee-template-service-minio:1.4.0",
+        "id": "sha256:414224af6fd2f5c466ad09d54a63f9c6e852612b0ca4bea6170a489bc1a1b920",
+        "contentFingerprint": "sha256:3db0fa6bcb036e9cb6e48cf575d740354e6435de30248a95716832fc73042487",
+        "sourceDigests": [],
+        "reference": "docker.io/library/myscoutee-template-service-minio:1.4.0-414224af6fd2"
+      },
+      "stun": {
+        "source": "coturn/coturn:4.18.0-r0-alpine",
+        "id": "sha256:e3edb90547874dadcea80c7bd47bb4160f37caf2e606500583405dc2939b19da",
+        "contentFingerprint": "sha256:aea569c6ca246b27e3f59c644cef098d88e7d48d3361d2072a24c932efd1235e",
+        "sourceDigests": [
+          "coturn/coturn@sha256:c29135c08565810d37053f384584392b7c24b69570fc81a721b878d6fe63e04e"
+        ],
+        "reference": "docker.io/library/myscoutee-template-service-stun:1.4.0-e3edb9054787"
+      },
+      "mcp": {
+        "source": "myscoutee-template-service-mcp:1.4.0",
+        "id": "sha256:8b1f9fcf18ccb2bf3383621f0cec86ac72650a4d738bb073aaa89e75026e01c0",
+        "contentFingerprint": "sha256:0973cc37341409999b2acaecd47c0dbb5349c5d0f6a3f7f7f4c1a11721c9a792",
+        "sourceDigests": [],
+        "reference": "docker.io/library/myscoutee-template-service-mcp:1.4.0-8b1f9fcf18cc"
+      },
+      "release-simulator": {
+        "source": "myscoutee-template-service-release-simulator:1.4.0",
+        "id": "sha256:afc8f2abeca8ab582d558610320707cb28f6d27e345bc793e9d1af66989bda1b",
+        "contentFingerprint": "sha256:24805a07b626407333e28eec9c4ba43571220f67922f64462db5818ade9866f9",
+        "sourceDigests": [],
+        "reference": "docker.io/library/myscoutee-template-service-release-simulator:1.4.0-afc8f2abeca8"
+      }
+    }
+  },
+  "testHarnessCorrections": [
+    "Await profile editor DOM teardown after save, not zero-sized host visibility; old check navigated early and aborted profile requests.",
+    "Await existing lazy-loaded image before choosing replacement; preserve the uploaded URL across save/reload.",
+    "Clean only UUID-owned profile images through existing KVM namespace/transport owner."
+  ],
+  "deferredObservations": [
+    "CALL-01 remains deferred, not fixed; the ordinary KVM chat gate passed without an additional reproduction campaign."
+  ],
+  "limits": [
+    "Fake local camera/microphone, not physical devices or public-network TURN.",
+    "Selected retained flows, not every remaining UI/provider/release requirement in the 31-step plan.",
+    "No matched performance claim from the KVM functional interval."
+  ]
+}

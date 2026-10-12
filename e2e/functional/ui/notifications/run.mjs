@@ -3,6 +3,7 @@ import { mkdir, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { launchChromeBrowser } from '../lib/chrome-cdp.mjs';
 import { assertUi } from '../entry/assert.mjs';
+import { assertGuideTour } from '../guide/assert.mjs';
 import { stageChatFixture } from '../chat/fixture.mjs';
 const local=process.argv.includes('--local');
 const fixture=local?null:await stageChatFixture();
@@ -17,7 +18,8 @@ if(fixture) await fixture.query(`(()=>{
 const browser=await launchChromeBrowser({baseUrl:local?(process.env.E2E_LOCAL_BASE_URL??'http://127.0.0.1:4200'):process.env.E2E_SERVER_BASE_URL??'http://localhost'});
 const page=await browser.newPage();
 const popup='app-notification-center-popup';
-async function openNotifications(){await page.clickVisible('.member-actions [data-guide-item="notifications"]');await page.waitForSelector(popup+' single-row article');}
+async function navigatorAction(id){await page.clickVisible('.user-selector-menu [data-guide-item="navigator-avatar"]');await page.clickVisible(`.navigator-header-actions [data-guide-item="${id}"]`);}
+async function openNotifications(){await navigatorAction('notifications');await page.waitForSelector(popup+' single-row article');}
 async function openGuide(expected){await page.clickVisible('app-explanation-launcher .explanation-guide-menu button');await page.waitForSelector('.explanation-guide-overlay__card');await page.waitForText(expected);}
 async function closeGuide(){await page.clickVisible('.explanation-guide-overlay__close');await page.waitForSelectorHidden('.explanation-guide-overlay__card');}
 async function userState(){
@@ -32,16 +34,14 @@ try{
   if(process.env.E2E_SCREENSHOT_DIR){
    await mkdir(process.env.E2E_SCREENSHOT_DIR,{recursive:true});
    await page.setViewport({width:390,height:844});
-   await page.waitForSelector('app-showcase app-image-card');
+   await page.waitForSelector('.user-selector-menu [data-guide-item="navigator-avatar"]');
    assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'Mobile member header must not overflow');
    await writeFile(join(process.env.E2E_SCREENSHOT_DIR,'member-mobile.png'),await page.screenshot());
-   await openGuide('Help and notifications');
+   await openGuide('Your menu');
    await writeFile(join(process.env.E2E_SCREENSHOT_DIR,'guide-mobile.png'),await page.screenshot());
    await closeGuide();await page.setViewport({width:1440,height:950});
   }
-  await openGuide('Help and notifications');
-  await page.clickVisible('.explanation-guide-overlay__next [data-guide-item="next"]');await page.waitForText('Your menu');
-  await page.clickVisible('.explanation-guide-overlay__next [data-guide-item="next"]');await page.waitForSelectorHidden('.explanation-guide-overlay__card');
+  await assertGuideTour(page,['Your menu']);
   await openNotifications();await page.waitForText('Welcome to Templates');
   if(process.env.E2E_SCREENSHOT_DIR){
    await mkdir(process.env.E2E_SCREENSHOT_DIR,{recursive:true});
@@ -65,18 +65,18 @@ try{
   await page.clickVisible(popup+' .ui-popup__close');
   await page.navigate('/home');await page.waitForText(fixture?.names[0]??'Alex Morgan');
   assert.equal((await userState()).notificationPreferences.muted,true);
-  await page.clickVisible('.member-actions [data-guide-item="notifications"]');
+  await navigatorAction('notifications');
   await page.clickVisible(popup+' [data-guide-control="notification-bucket"] .app-menu__trigger');
   await page.clickVisible('[data-guide-item="notification-bucket:new"]');await page.waitForText('No notifications');
   await page.clickVisible('[data-guide-item="notification-attention-toggle"]');await page.clickVisible('app-dialog [data-guide-item="confirm"]');await page.waitForSelectorHidden('.dialog');
   assert.equal((await userState()).notificationPreferences.muted,false);
   await page.clickVisible(popup+' .ui-popup__close');
   // The guide preference is owned by the native service and must survive a reload.
-  await page.clickVisible('.member-actions [data-guide-item="explanations"]');
+  await navigatorAction('explanations');await page.clickVisible('.user-menu-close-btn');
   await page.waitForSelectorHidden('app-explanation-launcher .explanation-guide-menu button');
   await page.navigate('/home');await page.waitForText(fixture?.names[0]??'Alex Morgan');
   assert.equal(await page.isSelectorVisible('app-explanation-launcher .explanation-guide-menu button'),false);
-  await page.clickVisible('.member-actions [data-guide-item="explanations"]');await openGuide('Help and notifications');await closeGuide();
+  await navigatorAction('explanations');await page.clickVisible('.user-menu-close-btn');await openGuide('Your menu');await closeGuide();
   if(fixture){
    await fixture.query(`(()=>{
     const actor=${JSON.stringify(actorId)},peer=${JSON.stringify(fixture.ids[1])},chat=${JSON.stringify(fixture.chatId)};
@@ -87,11 +87,11 @@ try{
     db.chats.updateOne({id:chat,ownerUserId:actor},{$set:{unread:1,lastMessage:'Notification target message',lastSenderId:peer}});
    })()`);
    const start=Date.now();
-   await page.waitFor('realtime badge while popup closed',()=>page.isSelectorVisible('.notification-launcher'),45000);
+   await page.waitFor('realtime badge while popup closed',()=>page.isSelectorVisible('.notification-attention-menu'),45000);
    console.log('Realtime badge refreshed after '+(Date.now()-start)+' ms at the native 30-second interval');
    await openNotifications();await page.waitForText('Notification target message');
    await page.clickVisible(popup+' single-row .ui-single-row__menu-trigger');await page.clickVisible('[data-guide-item="openNotificationChat"]');
-   await page.waitForSelector('.chat-composer');await page.waitForText('Notification target message');
+   await page.waitForSelector('.chat-compose-box');await page.waitForText('Notification target message');
    await page.waitFor('chat marks its notification read',async()=>Number((await userState()).activities.notifications)===0);
    const record=await fixture.query(`db.userNotifications.findOne({_id:${JSON.stringify('qa-chat-notification:'+actorId)}},{readAtIso:1})`);assert.ok(record.readAtIso);
   }

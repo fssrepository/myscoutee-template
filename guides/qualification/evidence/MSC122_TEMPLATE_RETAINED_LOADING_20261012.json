@@ -1,0 +1,394 @@
+{
+  "checkedAt": "2026-10-12",
+  "nativeFrontend": "64ac5cb1e427796b67d8528e04208cdd108534f3",
+  "templateFrontend": "549e9a0279627cd6520a1ce5c189808481f57216",
+  "http": {
+    "checkedAt": "2026-10-12T09:31:04.105Z",
+    "checks": [
+      {
+        "surface": "member profile",
+        "ring": true,
+        "elapsedMs": 52,
+        "title": " Profile "
+      },
+      {
+        "surface": "member profile save",
+        "saveRing": true
+      },
+      {
+        "surface": "chat thread",
+        "indicator": "bar"
+      },
+      {
+        "surface": "landing",
+        "width": 320,
+        "brand": {
+          "left": 16,
+          "right": 118.921875,
+          "top": 21,
+          "bottom": 49,
+          "width": 102.921875
+        },
+        "login": {
+          "left": 216.484375,
+          "right": 304,
+          "top": 16,
+          "bottom": 54,
+          "width": 87.515625
+        },
+        "title": {
+          "left": 40.5625,
+          "right": 279.4375,
+          "top": 406.59375,
+          "bottom": 483.390625,
+          "width": 238.875
+        },
+        "explore": {
+          "left": 110.8125,
+          "right": 209.1875,
+          "top": 499.390625,
+          "bottom": 543.390625,
+          "width": 98.375
+        },
+        "scroll": 320,
+        "background": "rgb(233, 237, 255)"
+      },
+      {
+        "surface": "landing",
+        "width": 393,
+        "brand": {
+          "left": 16,
+          "right": 118.921875,
+          "top": 21,
+          "bottom": 49,
+          "width": 102.921875
+        },
+        "login": {
+          "left": 289.484375,
+          "right": 377,
+          "top": 16,
+          "bottom": 54,
+          "width": 87.515625
+        },
+        "title": {
+          "left": 77.0625,
+          "right": 315.9375,
+          "top": 406.59375,
+          "bottom": 483.390625,
+          "width": 238.875
+        },
+        "explore": {
+          "left": 147.3125,
+          "right": 245.6875,
+          "top": 499.390625,
+          "bottom": 543.390625,
+          "width": 98.375
+        },
+        "scroll": 393,
+        "background": "rgb(233, 237, 255)"
+      },
+      {
+        "surface": "landing",
+        "width": 768,
+        "brand": {
+          "left": 24,
+          "right": 148.703125,
+          "top": 27,
+          "bottom": 59,
+          "width": 124.703125
+        },
+        "login": {
+          "left": 656.484375,
+          "right": 744,
+          "top": 24,
+          "bottom": 62,
+          "width": 87.515625
+        },
+        "title": {
+          "left": 183.359375,
+          "right": 584.640625,
+          "top": 380.484375,
+          "bottom": 509.5,
+          "width": 401.28125
+        },
+        "explore": {
+          "left": 334.8125,
+          "right": 433.1875,
+          "top": 525.5,
+          "bottom": 569.5,
+          "width": 98.375
+        },
+        "scroll": 768,
+        "background": "rgb(233, 237, 255)"
+      },
+      {
+        "surface": "landing",
+        "width": 1440,
+        "brand": {
+          "left": 84,
+          "right": 208.703125,
+          "top": 27,
+          "bottom": 59,
+          "width": 124.703125
+        },
+        "login": {
+          "left": 1268.484375,
+          "right": 1356,
+          "top": 24,
+          "bottom": 62,
+          "width": 87.515625
+        },
+        "title": {
+          "left": 391.546875,
+          "right": 1048.4375,
+          "top": 339.40625,
+          "bottom": 550.59375,
+          "width": 656.890625
+        },
+        "explore": {
+          "left": 670.796875,
+          "right": 769.171875,
+          "top": 566.59375,
+          "bottom": 610.59375,
+          "width": 98.375
+        },
+        "scroll": 1440,
+        "background": "rgb(233, 237, 255)"
+      },
+      {
+        "surface": "operator updates",
+        "preloaded": true,
+        "popupElapsedMs": 109,
+        "requests": [
+          {
+            "url": "https://localhost/api/operator/updates",
+            "status": 200,
+            "elapsedMs": 12
+          },
+          {
+            "url": "https://localhost/api/operator/updates/releases",
+            "status": 200,
+            "elapsedMs": 1219
+          }
+        ]
+      },
+      {
+        "surface": "operator profile",
+        "ring": true,
+        "elapsedMs": 68,
+        "title": " Operator profile "
+      },
+      {
+        "surface": "operator profile save",
+        "saveRing": true
+      },
+      {
+        "surface": "admin profile",
+        "ring": true,
+        "elapsedMs": 73,
+        "title": " Admin profile "
+      },
+      {
+        "surface": "admin profile save",
+        "saveRing": true
+      }
+    ],
+    "errors": []
+  },
+  "automaticLocal": {
+    "checkedAt": "2026-10-12T09:42:34.844Z",
+    "checks": [
+      {
+        "surface": "member profile",
+        "ring": true,
+        "elapsedMs": 86,
+        "title": " Profile "
+      },
+      {
+        "surface": "member profile save",
+        "saveRing": true
+      },
+      {
+        "surface": "chat thread",
+        "indicator": "bar"
+      },
+      {
+        "surface": "landing",
+        "width": 320,
+        "brand": {
+          "left": 16,
+          "right": 118.921875,
+          "top": 21,
+          "bottom": 49,
+          "width": 102.921875
+        },
+        "login": {
+          "left": 216.484375,
+          "right": 304,
+          "top": 16,
+          "bottom": 54,
+          "width": 87.515625
+        },
+        "title": {
+          "left": 40.5625,
+          "right": 279.4375,
+          "top": 406.59375,
+          "bottom": 483.390625,
+          "width": 238.875
+        },
+        "explore": {
+          "left": 110.8125,
+          "right": 209.1875,
+          "top": 499.390625,
+          "bottom": 543.390625,
+          "width": 98.375
+        },
+        "scroll": 320,
+        "exploreDisabled": false,
+        "background": "rgb(233, 237, 255)"
+      },
+      {
+        "surface": "landing",
+        "width": 393,
+        "brand": {
+          "left": 16,
+          "right": 118.921875,
+          "top": 21,
+          "bottom": 49,
+          "width": 102.921875
+        },
+        "login": {
+          "left": 289.484375,
+          "right": 377,
+          "top": 16,
+          "bottom": 54,
+          "width": 87.515625
+        },
+        "title": {
+          "left": 77.0625,
+          "right": 315.9375,
+          "top": 406.59375,
+          "bottom": 483.390625,
+          "width": 238.875
+        },
+        "explore": {
+          "left": 147.3125,
+          "right": 245.6875,
+          "top": 499.390625,
+          "bottom": 543.390625,
+          "width": 98.375
+        },
+        "scroll": 393,
+        "exploreDisabled": false,
+        "background": "rgb(233, 237, 255)"
+      },
+      {
+        "surface": "landing",
+        "width": 768,
+        "brand": {
+          "left": 24,
+          "right": 148.703125,
+          "top": 27,
+          "bottom": 59,
+          "width": 124.703125
+        },
+        "login": {
+          "left": 656.484375,
+          "right": 744,
+          "top": 24,
+          "bottom": 62,
+          "width": 87.515625
+        },
+        "title": {
+          "left": 183.359375,
+          "right": 584.640625,
+          "top": 380.484375,
+          "bottom": 509.5,
+          "width": 401.28125
+        },
+        "explore": {
+          "left": 334.8125,
+          "right": 433.1875,
+          "top": 525.5,
+          "bottom": 569.5,
+          "width": 98.375
+        },
+        "scroll": 768,
+        "exploreDisabled": false,
+        "background": "rgb(233, 237, 255)"
+      },
+      {
+        "surface": "landing",
+        "width": 1440,
+        "brand": {
+          "left": 84,
+          "right": 208.703125,
+          "top": 27,
+          "bottom": 59,
+          "width": 124.703125
+        },
+        "login": {
+          "left": 1268.484375,
+          "right": 1356,
+          "top": 24,
+          "bottom": 62,
+          "width": 87.515625
+        },
+        "title": {
+          "left": 391.546875,
+          "right": 1048.4375,
+          "top": 339.40625,
+          "bottom": 550.59375,
+          "width": 656.890625
+        },
+        "explore": {
+          "left": 670.796875,
+          "right": 769.171875,
+          "top": 566.59375,
+          "bottom": 610.59375,
+          "width": 98.375
+        },
+        "scroll": 1440,
+        "exploreDisabled": false,
+        "background": "rgb(233, 237, 255)"
+      },
+      {
+        "surface": "operator updates",
+        "preloaded": false,
+        "popupElapsedMs": 1555,
+        "requests": []
+      },
+      {
+        "surface": "operator profile",
+        "ring": true,
+        "elapsedMs": 77,
+        "title": " Operator profile "
+      },
+      {
+        "surface": "operator profile save",
+        "saveRing": true
+      },
+      {
+        "surface": "admin profile",
+        "ring": true,
+        "elapsedMs": 72,
+        "title": " Admin profile "
+      },
+      {
+        "surface": "admin profile save",
+        "saveRing": true
+      }
+    ],
+    "mode": "automatic frontend local",
+    "errors": []
+  },
+  "startupObservation": {
+    "routeWarmupWithoutBrandingMs": 69,
+    "source": "DeploymentConfigurationService asynchronous operator configuration; no invented logo before response",
+    "staticBootstrapUsesOriginalBundledLogo": true
+  },
+  "limits": [
+    "Profile saves in these loading checks retain the current field values; edited/cleared field persistence has separate gates.",
+    "These DEV browser checks do not qualify KVM, installed packages or performance."
+  ]
+}

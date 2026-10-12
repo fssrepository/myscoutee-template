@@ -12,7 +12,7 @@ const actorId=fixture?.ids[0]??'100000000000000000000001';
 await page.connection.send('Page.addScriptToEvaluateOnNewDocument',{source:`if(localStorage.getItem(${JSON.stringify(key)})===null)localStorage.setItem(${JSON.stringify(key)},'false');`});
 await page.setGeolocation(point);
 await page.setGeolocationPermission('denied');
-async function open(){await page.clickVisible('.avatar-menu [data-guide-item="navigator-avatar"]');await page.clickVisible('.settings-menu .app-menu__trigger');await page.clickVisible('[data-guide-item="app-setup"]');await page.waitForSelector('app-setup-popup .ui-popup');await page.waitFor('permission controls ready',()=>page.evaluate(()=>!document.querySelector('app-setup-popup [data-guide-item="location"]')?.disabled));}
+async function open(){await page.clickVisible('.user-selector-menu [data-guide-item="navigator-avatar"]');await page.clickVisible('[data-guide-item="settings"]');await page.clickVisible('[data-guide-item="app-setup"]');await page.waitForSelector('app-setup-popup .ui-popup');await page.waitFor('permission controls ready',()=>page.evaluate(()=>!document.querySelector('app-setup-popup [data-guide-item="location"]')?.disabled));}
 async function storedPoint(){
  if(fixture)return fixture.query(`db.users.findOne({userId:${JSON.stringify(actorId)}}).locationCoordinates`);
  return page.evaluate(async actorId=>{

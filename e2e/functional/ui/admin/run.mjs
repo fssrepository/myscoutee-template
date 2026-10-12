@@ -10,14 +10,13 @@ const baseUrl=local?(process.env.E2E_LOCAL_BASE_URL??'http://127.0.0.1:4200'):pr
 const fixture=local?null:await stageAdminFixture(baseUrl);
 const browser=await launchChromeBrowser({baseUrl}),page=await browser.newPage();
 async function settings(){
- await page.clickVisible('.avatar-menu [data-guide-item="navigator-avatar"]');
- await page.clickVisible('.settings-menu .app-menu__trigger');
- await page.waitForSelector('[data-guide-item="api"]');
+ await page.clickVisible('.user-selector-menu [data-guide-item="navigator-avatar"]');
+ await page.clickVisible('[data-guide-item="settings"]');
  for(const id of ['reports','feedback-review','support','feedback']){
   assert.equal(await page.isSelectorVisible(`[data-guide-item="${id}"]`),false,'Omitted menu item: '+id);
  }
  assert(await page.isSelectorVisible('[data-guide-item="privacy"]'),'Common privacy settings remain');
- await page.clickVisible('.menu-close');
+ await page.clickVisible('.user-menu-close-btn');
 }
 async function emptyAdmin(){
  assert.equal(await page.evaluate(()=>document.querySelectorAll('app-template-chat,app-showcase,app-admin-reports-popup,app-admin-feedback-popup,app-admin-chat-review-popup,.member-navigation').length),0,'Admin has no product pages or moderation popups');
@@ -27,7 +26,7 @@ try{
   await settings();
   await openConversation(page,fixture?.names[0]??'Sam Taylor');
   const text='Minimal member chat '+Date.now();
-  await page.fillVisible('.chat-composer textarea',text);await page.clickVisible('.chat-composer .send');await page.waitForText(text);
+  await page.fillVisible('.chat-compose-box textarea',text);await page.clickVisible('.chat-compose-box .chat-send-btn');await page.waitForText(text);
   assert.equal(await page.isSelectorVisible('button[aria-label="Report user"]'),false,'Chat does not offer reporting');
   await page.navigate('/home?page=chat');await page.waitForText(fixture?.names[0]??'Sam Taylor');
   await page.clickByText('single-row article',fixture?.names[0]??'Sam Taylor');await page.waitForText(text);
@@ -35,7 +34,7 @@ try{
  await assertUi({page,local,role:'admin',actorId:fixture?.adminId??'100000000000000000000003',actorName:fixture?.adminName??'Template Admin',consentExpected:false,memberReady:async()=>{
   await emptyAdmin();await settings();
   for(const query of ['page=chat','notificationTarget=reports','notificationTarget=feedback']){
-   await page.navigate('/admin?'+query);await page.waitForSelector('.avatar-menu');await emptyAdmin();
+   await page.navigate('/admin?'+query);await page.waitForSelector('.user-selector-menu');await emptyAdmin();
   }
   assert(!page.network.some(request=>/\/api\/admin\/(dashboard|reports|feedback)(?:[/?]|$)/.test(new URL(request.url).pathname)),'The minimal shell never requests a moderation dashboard');
   const before=await page.performanceMetrics(),started=performance.now();

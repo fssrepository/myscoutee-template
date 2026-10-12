@@ -16,8 +16,9 @@ try{
   await assertUi({page:b,local:false,actorId:fixture.ids[1],actorName:fixture.names[1],memberReady:async()=>{
    await openConversation(b,fixture.names[0]);
    if(process.env.E2E_CHAT_CALL_ONLY!=='true')console.log(JSON.stringify(await assertPairedChat(a,b)));
-   console.log(JSON.stringify({call:1,...await assertChatCall(a,b,{holdMs:process.env.E2E_MONGO_TRANSPORT==='kvm'?35000:0})}));
-   console.log(JSON.stringify({call:2,...await assertChatCall(a,b)}));
+   const rounds=Number(process.env.E2E_CHAT_CALL_ROUNDS??2);
+   assert(Number.isInteger(rounds)&&rounds>=2&&rounds<=20);
+   for(let call=1;call<=rounds;call++)console.log(JSON.stringify({call,...await assertChatCall(a,b,{holdMs:call===1&&process.env.E2E_MONGO_TRANSPORT==='kvm'?35000:0})}));
   }});
  }});
  console.log('PASS two-browser HTTP chat lifecycle');

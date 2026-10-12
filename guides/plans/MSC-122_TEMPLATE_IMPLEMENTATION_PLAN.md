@@ -8,25 +8,31 @@ It continues the source-separation work documented in
 Update this file as work progresses; keep detailed test results in
 [`../qualification/evidence`](../qualification/evidence).
 
-## Live execution pointer — 2026-10-12, 11:40 CEST
+## Live execution pointer — 2026-10-12, after mini E2E and stress
 
-**Current numbered gate: 14 — frontend foundation and HTTP/local behavior.**
+**Current numbered gate: 26 — production Docker qualification of the corrected source.**
 The retained UI corrections also exercise steps 15–20. This is not a claim that
 all earlier numbered requirements or all of steps 15–20 are complete. Every
 numbered item and its existing subrequirements below remain in force.
 
 | Order now authorized by the user | Exact current status |
 | --- | --- |
-| 14, with retained surfaces from 15–20 | DEV/HTTP loading checks passed for member/admin/operator profiles and saves; chat uses the native line indicator. Landing layout passed at 320/393/768/1440 px. Automatic local failover, lists, chat and persisted local messages passed. The expanded local role-change/reload check exposed a bootstrap-mode defect; repair and retest remain open. |
-| 21–24 | Next: selected tests, mini functional E2E and matched stress measurement on the corrected source. Earlier recorded PASS results remain historical and do not qualify this new batch. |
-| 25 | Then repeat KVM qualification, serially after stopping the monolith. |
-| 26 | Verify the matching production Docker artifacts before installed testing. |
+| 14, with retained surfaces from 15–20 | DEV/HTTP loading checks passed for member/admin/operator profiles and saves; chat uses the native line indicator. Landing layout passed at 320/393/768/1440 px. Automatic local failover, lists, chat and persisted local messages passed. The expanded local role-change/reload defect is repaired in the common native/template owner; member → operator → admin with cold reload, native profile/save indicators and an enabled offline Explore button all passed. See `../qualification/evidence/MSC122_TEMPLATE_RETAINED_LOADING_20261012.json`. |
+| 21–24 | Current batch: focused frontend tests (24 template, 43 native), 17 backend cases, removed-admin boundary, chat lifecycle, profile/avatar and Discover views passed. Two 60-second read-stress runs passed with zero errors, 7007/7098 cases and p95 62.67/60.99 ms. See `../qualification/evidence/MSC122_TEMPLATE_MINI_E2E_STRESS_20261012.json`. This selected batch does not close every remaining subrequirement below. |
+| 25 | Current corrected batch PASS: 17 backend cases; chat lifecycle and two planned calls (including 35-second renewal); profile/avatar upload, replace, remove and reload; Discover day/week/month; removed-admin boundary; four healthy Prometheus targets and populated Grafana panels. Old KVM test data was refreshed from the current canonical seed with a verified backup; no legacy-expectation exception remains. See `../qualification/evidence/MSC122_TEMPLATE_KVM_RETAINED_UI_20261012.json`. |
+| 26 | Current: verify the matching production Docker artifacts before installed testing. |
 | 27 | VMware is deferred until the user starts the guest after the KVM repeat. Do not reinstall DEBs during the current DEV correction pass. |
 | 28–31 | Signed release, publication, documentation/PDF and final acceptance remain open. Final Git squashing/tagging uses `[MSC-122]` and force-with-lease as authorized; DEBs are uploaded by the user. |
 
 This pointer changes execution order only. No requirement in steps 1–31 is
 removed, silently marked passed, or replaced by this summary. Read each item's
 remaining gates and its linked evidence when reaching it.
+
+The [separate observation log](../qualification/MSC122_DEFERRED_OBSERVATIONS.md)
+is reserved for cases that remain unexplained after investigation, not ordinary
+failures. The user removed the video-call observation after the successful call
+checks. The production integration-guide entry failure remains under active
+investigation in step 23; it is not deferred or counted as passed.
 
 ## Delivery contract
 
@@ -660,8 +666,8 @@ administrators, social links, payment, Firebase, email; omit payment only.
     routes and flows. Cover entry, SmartList views, chat, profile/avatar, consent,
     guide/notification/settings and privileged shells in the applicable modes.
     Verify reload, responsive layouts, navigation, assets and browser errors.
-    The user explicitly authorized headless Chrome for automatic template QA;
-    prefer that mode with the native runner and isolated, versioned fixtures.
+    The current user instruction requires visible managed browsers and the
+    versioned checkpoint launcher with isolated fixtures; no headless fallback.
     Use previously qualified MyScoutee behavior as the comparison baseline, keeping
     its four outstanding QA tasks explicitly outside the proven baseline. Classify
     a failure as fixture/runner, template composition or upstream behavior before
@@ -694,7 +700,25 @@ administrators, social links, payment, Firebase, email; omit payment only.
     Compare equivalent builds/workloads and investigate regressions. Close with
     repeatable commands and an honest baseline; do not repeatedly stress every edit.
 
+    The corrected retained-UI batch now also passes two matched 60-second runs
+    after a 15-second warmup: 7007/7098 cases, 116.25/117.96 cases/s, zero errors,
+    p95 62.67/60.99 ms and p99 82.28/80.29 ms. Maximum latency increased from
+    101.66 to 127.86 ms. Java peak CPU was 185.41/132.39%; Mongo peak CPU was
+    172.03/167.73%. This is repeatability on identical source/images, not a speedup
+    claim. Full resource summaries, including increases in Redis/MCP CPU, are in
+    `MSC122_TEMPLATE_MINI_E2E_STRESS_20261012.json`. Browser/WebSocket stress remains
+    a separate open subrequirement. No additional video-call repetition is scheduled.
+
 25. **Compose and qualify the minimal microservices/KVM deployment — IN PROGRESS.**
+    The corrected retained-UI batch passed its planned KVM repeat on 2026-10-12;
+    current evidence is `MSC122_TEMPLATE_KVM_RETAINED_UI_20261012.json`. The explicit
+    seed refresh fixed stale branding, missing demo avatars and missing card dates.
+    A verified private Mongo backup was retained, both owned lab databases were
+    imported through the canonical importer, and repeating the completed refresh
+    was a no-op. The unchanged current-seed expectations pass all 17 cases.
+    Browser profile tests now await actual save teardown and loaded image URLs;
+    the application was not changed to accommodate timing errors in those tests.
+    Historical implementation milestones below remain for traceability.
     Reuse `microservices` assemblies, bindings, transport/authentication, build and
     ownership audits, image locks, manifests/charts, gateway, VM/host tools and
     monitoring, including **Prometheus and Grafana**. Retain the existing metric
@@ -896,10 +920,12 @@ administrators, social links, payment, Firebase, email; omit payment only.
 
 ## Current continuation point
 
-**Resume at step 14 using the live execution pointer at the top of this file.**
-The current DEV correction batch is newer than the qualification results below.
-Close the local role-change/reload defect and retained loading checks first, then
-continue with 21–24, 25, 26 and the user-started VMware gate in 27. The earlier
+**Resume at step 26 using the live execution pointer at the top of this file.**
+The corrected batch passed the selected tests, mini E2E and read stress recorded
+above, in addition to local role-change/reload and retained loading checks.
+The planned KVM repeat also passed with the current seed. Continue with 26 and
+the user-started VMware gate in 27, preserving all open
+subrequirements in 21–24. The video-call observation is no longer open. The earlier
 results below remain evidence for their named revisions, not an automatic PASS
 for the corrected working tree.
 

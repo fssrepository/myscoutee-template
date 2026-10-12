@@ -25,7 +25,7 @@ try {
         }
       }
     } });
-  console.log('PASS entry, consent, member login, SmartList card/row/gallery views and reload');
+  console.log('PASS entry, consent, member login, SmartList day/week/month views and reload');
 } finally {
   await page.close(); await browser.close();
   if (fixture) console.log('Owned fixture cleanup', await fixture.close());
