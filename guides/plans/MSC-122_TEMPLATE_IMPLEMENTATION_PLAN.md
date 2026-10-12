@@ -56,7 +56,7 @@ Required environment coverage:
 | E2E | Existing standalone, disposable production-style stack, separate physical E2E fixtures, backend and browser runners |
 | Production | Built frontend/backend artifacts, production security and secrets, durable data and background work; separate REAL and Explore/DEMO state |
 | Microservices / KVM | Existing assembly, transport, deployment, health and measurement tools; Prometheus and Grafana with native metrics/dashboard/access wiring; only the retained application owners and required supporting services |
-| Installed release | Docker images, signed DEB/update metadata, host helpers, Netcup/Debian setup, backup/restore and upgrade verification |
+| Installed release | Docker images, signed DEB/update metadata, host helpers, local VMware Debian setup, backup/restore and upgrade verification |
 | GitHub Pages | Native static/local frontend build, correct base path, deep links, assets and visible version; no dependency on a private backend |
 
 ### Frontend environment inventory
@@ -629,7 +629,7 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     exclude source watchers, test fixtures and secrets. Close with startup and
     retained-flow checks using the actual built images, not a dev bind mount.
 
-27. **Complete DEB, host operations and Debian/Netcup installation — PENDING.**
+27. **Complete DEB, host operations and local VMware Debian installation — PENDING.**
     Concrete source-reuse gap identified: the existing update worker hard-codes
     the MyScoutee package name/path, installed service and image inventory
     (including Registry/payment images and the 1.3.0 MCP transition). Separate
@@ -653,11 +653,13 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     seed selections and deployment paths at the existing MyScoutee owners first
     when their current inputs cannot already express the template. Copy the
     qualified shared helper, rather than forking its complete implementation.
-    Close with a fresh isolated Debian/KVM installation and applicable Netcup setup
-    verification, restart, backup/restore and data-preserving removal checks.
-    Inventory and prepare the VMware deployment requested for the final user smoke
-    check, reusing the available installation workflow. Record its evidence
-    separately from the KVM lab; one hypervisor does not qualify the other.
+    Perform installation qualification only on a local VMware Debian VM: fresh
+    install, restart, backup/restore and data-preserving removal. Reuse the existing
+    installation workflow and prepare this same VMware deployment for the final
+    user smoke check. Record its evidence separately from the KVM lab; one
+    hypervisor does not qualify the other.
+    **Netcup is strictly out of scope: do not connect to, inspect, deploy to or
+    modify any Netcup host or resource under any circumstances.**
 
 28. **Complete signed releases and the updater — PENDING.**
     Reuse native release discovery, canonical signing, manifests, staging,
@@ -680,7 +682,7 @@ deep-link behavior. A working `local` build alone does not close frontend work.
 30. **Finish developer/operator documentation and the single PDF — PENDING.**
     Adapt the existing guides and manual builder to this project. Document clean
     setup, local/HTTP, dev/prod/E2E, tests/stress, seeds/reset, domain extension,
-    KVM, DEB/Netcup, configuration, TLS, backup/restore, updates and releases.
+    KVM, local VMware/DEB, configuration, TLS, backup/restore, updates and releases.
     Explain how a developer builds a different application on these foundations.
     Keep English repository text, one canonical manual source and one generated
     getting-started PDF path; do not accumulate duplicate version-named PDFs in Git.

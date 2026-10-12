@@ -38,7 +38,7 @@ backend contracts from pending frontend, KVM and installed-release checks.
 
 The deliverable is a complete minimal counterpart of `myscoutee-backend`, with
 its own backend/frontend shell, development workflow, versioned releases,
-Debian/Netcup installation, KVM lab and getting started guide/PDF. Backend
+local VMware Debian installation, KVM lab and getting started guide/PDF. Backend
 preparation has passed its source KVM and monolith gates; the standalone template
 composition is in progress. Its selected backend is runnable; the frontend and
 complete deployment workflows are not ready yet.
