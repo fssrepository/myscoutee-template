@@ -4296,11 +4296,46 @@
       "adaptation": "Retain identity/chat framework, nginx, MongoDB, Redis, MinIO, MCP and STUN; project-owned images, host paths and repository; omit product Registry/payment configuration."
     },
     {
+      "path": "packaging/debian/postinst",
+      "sourceRevision": "8ceb635bc2860029699faef48210c503e9826b99",
+      "upstreamSha256": "46ea1b2f792bac52f60cef01295b7038a9b772db67aba38f47d9732acfba4707",
+      "purpose": "Shared package lifecycle, artifact audit, selected host operations or their focused regression checks.",
+      "adaptation": null
+    },
+    {
+      "path": "packaging/debian/postrm",
+      "sourceRevision": "8ceb635bc2860029699faef48210c503e9826b99",
+      "upstreamSha256": "c778077a4819580ecc4f4def0ce50d7d175a712e0d503ebc90c71d30bbbe5205",
+      "purpose": "Shared package lifecycle, artifact audit, selected host operations or their focused regression checks.",
+      "adaptation": null
+    },
+    {
+      "path": "packaging/debian/prerm",
+      "sourceRevision": "8ceb635bc2860029699faef48210c503e9826b99",
+      "upstreamSha256": "7e86db589453b191031f834c388f174dfbf1265f70d8475d5305691a839af0e2",
+      "purpose": "Shared package lifecycle, artifact audit, selected host operations or their focused regression checks.",
+      "adaptation": null
+    },
+    {
       "path": "packaging/migrations/012-integration-indexes.js",
       "sourceRevision": "c7b2ba03254314a876a4b599a811d02e7592896f",
       "upstreamSha256": "13d7bd096bfedc203cc88eb6207cb3d2a3233e71d58578f9eed0510f35dec9f8",
       "purpose": "Native minimal integration storage, lifecycle and migration ownership.",
       "adaptation": "Select the eight indexes for tokens, public OAuth clients and grants; omit product subscriptions and deliveries. Keep the native ordered migration runner and number."
+    },
+    {
+      "path": "packaging/release/audit-nested-archive.py",
+      "sourceRevision": "8ceb635bc2860029699faef48210c503e9826b99",
+      "upstreamSha256": "c03d45636b9a47cb39d50c4f0ae732446eea8193282723c6f22c9fcadb227f4f",
+      "purpose": "Shared package lifecycle, artifact audit, selected host operations or their focused regression checks.",
+      "adaptation": null
+    },
+    {
+      "path": "packaging/release/audit-package-credentials.sh",
+      "sourceRevision": "8ceb635bc2860029699faef48210c503e9826b99",
+      "upstreamSha256": "ce61986e723fa27592da5c36a415defbfdd1e6513231284e58b56c995975655b",
+      "purpose": "Shared package lifecycle, artifact audit, selected host operations or their focused regression checks.",
+      "adaptation": null
     },
     {
       "path": "packaging/release/build-production.sh",
@@ -4317,6 +4352,13 @@
       "adaptation": null
     },
     {
+      "path": "packaging/release/package-production.sh",
+      "sourceRevision": "25bd81ff4fce8e3f89d43efcee7a4713b7392fe9",
+      "upstreamSha256": "f9b4664809c7122389cd92d6bc0695087607c5c4a50a6973a6b4ad2423e3f872",
+      "purpose": "Shared package lifecycle, artifact audit, selected host operations or their focused regression checks.",
+      "adaptation": null
+    },
+    {
       "path": "packaging/release/prepare-release.py",
       "upstreamSha256": "c85d07329b59cadaac6825057a08bb2a5e63cf99a24209f38c7f4162aa41f8f6",
       "sourceRevision": "7385fa358f3c051427cea62cf8212d2257d5138b",
@@ -4324,10 +4366,24 @@
       "adaptation": null
     },
     {
+      "path": "packaging/release/private_key_material.py",
+      "sourceRevision": "8ceb635bc2860029699faef48210c503e9826b99",
+      "upstreamSha256": "3ef5217a42846583a0d6124d8c5ffd17bd5e198693a1a64cb6f714f731bbc87e",
+      "purpose": "Shared package lifecycle, artifact audit, selected host operations or their focused regression checks.",
+      "adaptation": null
+    },
+    {
       "path": "packaging/release/publish-images.sh",
       "upstreamSha256": "96a67ba970c9563030a80ac8a54df0ea9208b6073940926b841ff7af59e89ff9",
       "sourceRevision": "7385fa358f3c051427cea62cf8212d2257d5138b",
       "purpose": "Shared production build, complete release signatures, privileged update boundary or browser qualification support.",
+      "adaptation": null
+    },
+    {
+      "path": "packaging/release/render-postrm.py",
+      "sourceRevision": "8ceb635bc2860029699faef48210c503e9826b99",
+      "upstreamSha256": "979f4a64db5fb11fe4a44fdf1e7ee9094da5ea8e846a9d96c5bd7b3de5088328",
+      "purpose": "Shared package lifecycle, artifact audit, selected host operations or their focused regression checks.",
       "adaptation": null
     },
     {
@@ -4345,10 +4401,52 @@
       "adaptation": null
     },
     {
+      "path": "packaging/scripts/backup-production.sh",
+      "sourceRevision": "8ceb635bc2860029699faef48210c503e9826b99",
+      "upstreamSha256": "4f8e4d2bf07ae511fa5b7cc3149d537f0e9a96189f8b104aa2c657ca5d233e12",
+      "purpose": "Shared package lifecycle, artifact audit, selected host operations or their focused regression checks.",
+      "adaptation": null
+    },
+    {
+      "path": "packaging/scripts/deployment-diagnostics.sh",
+      "sourceRevision": "8ceb635bc2860029699faef48210c503e9826b99",
+      "upstreamSha256": "82f69d3b50581760358633a574cc90efe9eb423f1f28ba008b6f9ca5b41ed8b3",
+      "purpose": "Shared package lifecycle, artifact audit, selected host operations or their focused regression checks.",
+      "adaptation": null
+    },
+    {
+      "path": "packaging/scripts/ensure-operator-bootstrap.sh",
+      "sourceRevision": "8ceb635bc2860029699faef48210c503e9826b99",
+      "upstreamSha256": "9b1dff25c169354a3819aa9e6326ad2326a92aa10a2d33e2ab49742a40a9a70a",
+      "purpose": "Shared package lifecycle, artifact audit, selected host operations or their focused regression checks.",
+      "adaptation": null
+    },
+    {
+      "path": "packaging/scripts/ensure-operator-configuration-key.sh",
+      "sourceRevision": "8ceb635bc2860029699faef48210c503e9826b99",
+      "upstreamSha256": "ee572c825aaed3684088cda7eb0256005d757a7423ef0d0424b4b9bc0978a9dd",
+      "purpose": "Shared package lifecycle, artifact audit, selected host operations or their focused regression checks.",
+      "adaptation": null
+    },
+    {
       "path": "packaging/scripts/image-content-fingerprint.sh",
       "sourceRevision": "9a8c48319",
       "upstreamSha256": "92bd04a5af26d7312cf2bad37168d50018969ad785b3da56633b8af9b0f4ce0d",
       "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "adaptation": null
+    },
+    {
+      "path": "packaging/scripts/migrate-production-data.sh",
+      "sourceRevision": "8ceb635bc2860029699faef48210c503e9826b99",
+      "upstreamSha256": "6e8257e975b22b24899da4bad12e593b211438dc6729247d863f292a2846ddf0",
+      "purpose": "Shared package lifecycle, artifact audit, selected host operations or their focused regression checks.",
+      "adaptation": null
+    },
+    {
+      "path": "packaging/scripts/myscoutee-compose.sh",
+      "sourceRevision": "8ceb635bc2860029699faef48210c503e9826b99",
+      "upstreamSha256": "ff653bbe4ffdb246047b39c61174e805eeb29d69f3adfcd2a41ff6109d47eadc",
+      "purpose": "Shared package lifecycle, artifact audit, selected host operations or their focused regression checks.",
       "adaptation": null
     },
     {
@@ -4359,10 +4457,31 @@
       "adaptation": null
     },
     {
+      "path": "packaging/scripts/myscoutee-tls-worker.sh",
+      "sourceRevision": "8ceb635bc2860029699faef48210c503e9826b99",
+      "upstreamSha256": "d21071390eea4d56e4a2e628d5b06c402039bdb612e8116dd1447f2044630f7a",
+      "purpose": "Shared package lifecycle, artifact audit, selected host operations or their focused regression checks.",
+      "adaptation": null
+    },
+    {
       "path": "packaging/scripts/myscoutee-update-worker.sh",
       "sourceRevision": "7385fa358f3c051427cea62cf8212d2257d5138b",
       "upstreamSha256": "655f9722a22a403322c0a83bad65e6d9b03c99f9761761fa0a98fc435d6d876f",
       "purpose": "Shared production build, complete release signatures, privileged update boundary or browser qualification support.",
+      "adaptation": null
+    },
+    {
+      "path": "packaging/scripts/qualify-deployment.sh",
+      "sourceRevision": "8ceb635bc2860029699faef48210c503e9826b99",
+      "upstreamSha256": "d7dfe52e9919d8a0199ad5030bbbb98932ac6a06115093a7ba05c13358216d30",
+      "purpose": "Shared package lifecycle, artifact audit, selected host operations or their focused regression checks.",
+      "adaptation": null
+    },
+    {
+      "path": "packaging/scripts/record-installed-package.sh",
+      "sourceRevision": "8ceb635bc2860029699faef48210c503e9826b99",
+      "upstreamSha256": "99b0a9bf361977ed1e0ba363f373ee9f4ad6f0a24d735c807e4711917043bf75",
+      "purpose": "Shared package lifecycle, artifact audit, selected host operations or their focused regression checks.",
       "adaptation": null
     },
     {
@@ -4373,10 +4492,73 @@
       "adaptation": null
     },
     {
+      "path": "packaging/scripts/reset-demo-state.sh",
+      "sourceRevision": "8ceb635bc2860029699faef48210c503e9826b99",
+      "upstreamSha256": "f31424e85ce314418ec8adf646f88b77451e9e1bf1e78b82d814ec809ab9b4cc",
+      "purpose": "Shared package lifecycle, artifact audit, selected host operations or their focused regression checks.",
+      "adaptation": null
+    },
+    {
+      "path": "packaging/scripts/restart-update-stack.sh",
+      "sourceRevision": "8ceb635bc2860029699faef48210c503e9826b99",
+      "upstreamSha256": "40e841fca0994e780e64030a86161c8efec39205bf079252dc9ea03694d57eda",
+      "purpose": "Shared package lifecycle, artifact audit, selected host operations or their focused regression checks.",
+      "adaptation": null
+    },
+    {
+      "path": "packaging/scripts/restore-production.sh",
+      "sourceRevision": "8ceb635bc2860029699faef48210c503e9826b99",
+      "upstreamSha256": "3834e24b9be8f96026d21c3994f87bfad2a56004ebdda88a59c13711391b1ddb",
+      "purpose": "Shared package lifecycle, artifact audit, selected host operations or their focused regression checks.",
+      "adaptation": null
+    },
+    {
       "path": "packaging/scripts/run-data-migrations.js",
       "sourceRevision": "c7b2ba03254314a876a4b599a811d02e7592896f",
       "upstreamSha256": "982fc266966aeb29fef3bb5b5e713722d1a4fabb79bb21cafae39c1532298ded",
       "purpose": "Native minimal integration storage, lifecycle and migration ownership.",
+      "adaptation": null
+    },
+    {
+      "path": "packaging/scripts/smoke-mongo-compatibility.sh",
+      "sourceRevision": "8ceb635bc2860029699faef48210c503e9826b99",
+      "upstreamSha256": "777f9d51d41f1713f3881d89f7a480dc1725fca0396f54900de0769a0192eb5a",
+      "purpose": "Shared package lifecycle, artifact audit, selected host operations or their focused regression checks.",
+      "adaptation": null
+    },
+    {
+      "path": "packaging/scripts/start-production.sh",
+      "sourceRevision": "8ceb635bc2860029699faef48210c503e9826b99",
+      "upstreamSha256": "726f3ecf080824d63232a6c025d8c6dafe8236ee5d5e2050e26d679d94300d9a",
+      "purpose": "Shared package lifecycle, artifact audit, selected host operations or their focused regression checks.",
+      "adaptation": null
+    },
+    {
+      "path": "packaging/scripts/status-production.sh",
+      "sourceRevision": "8ceb635bc2860029699faef48210c503e9826b99",
+      "upstreamSha256": "729435003ad36495ebef0604dac2f11173284f914063c79bf2bc2f9337694299",
+      "purpose": "Shared package lifecycle, artifact audit, selected host operations or their focused regression checks.",
+      "adaptation": null
+    },
+    {
+      "path": "packaging/scripts/stop-production.sh",
+      "sourceRevision": "8ceb635bc2860029699faef48210c503e9826b99",
+      "upstreamSha256": "bf9ce9dea5943b4160f5a50c4bf622befe2339c137e90eabcbff6d3f8423a5de",
+      "purpose": "Shared package lifecycle, artifact audit, selected host operations or their focused regression checks.",
+      "adaptation": null
+    },
+    {
+      "path": "packaging/scripts/sync-i18n-seeds.sh",
+      "sourceRevision": "8ceb635bc2860029699faef48210c503e9826b99",
+      "upstreamSha256": "c4a5f7cd3639c38245fe6a621d1f3d106d6b4b74c9f526d430d083aa581b8775",
+      "purpose": "Shared package lifecycle, artifact audit, selected host operations or their focused regression checks.",
+      "adaptation": null
+    },
+    {
+      "path": "packaging/scripts/sync-release-system-seeds.js",
+      "sourceRevision": "8ceb635bc2860029699faef48210c503e9826b99",
+      "upstreamSha256": "f2b56bfe0b95c78efee230638a1b20be5308d1243f713fda4dd16d3b63147a92",
+      "purpose": "Shared package lifecycle, artifact audit, selected host operations or their focused regression checks.",
       "adaptation": null
     },
     {
@@ -4387,10 +4569,24 @@
       "adaptation": null
     },
     {
+      "path": "packaging/tests/compose-firebase-path-test.sh",
+      "sourceRevision": "8ceb635bc2860029699faef48210c503e9826b99",
+      "upstreamSha256": "fd851cf1beb1a143f0abb5dd4f9f749f98a9eecf4fdc78a380188a4f7f04a1c9",
+      "purpose": "Shared package lifecycle, artifact audit, selected host operations or their focused regression checks.",
+      "adaptation": null
+    },
+    {
       "path": "packaging/tests/deployment-http-test.mjs",
       "sourceRevision": "b81c7363cda3755be2d657f34c267fb8f88be47d",
       "upstreamSha256": "c1b976225229e00176aca7f2c65479715d3bd3c8dfedd018ff679e09be51b474",
       "purpose": "Shared release client installation/verification; template selects its own package identity and public content contract.",
+      "adaptation": null
+    },
+    {
+      "path": "packaging/tests/install-policy-test.py",
+      "sourceRevision": "8ceb635bc2860029699faef48210c503e9826b99",
+      "upstreamSha256": "76b728deb5c06903065448af4bf04cdacee2c0d22c1e4b9d8cae6cbdbc2efe84",
+      "purpose": "Shared package lifecycle, artifact audit, selected host operations or their focused regression checks.",
       "adaptation": null
     },
     {
@@ -4415,10 +4611,24 @@
       "adaptation": null
     },
     {
+      "path": "packaging/tests/release-seed-selection-test.mjs",
+      "sourceRevision": "8ceb635bc2860029699faef48210c503e9826b99",
+      "upstreamSha256": "1088942b0e6aaf341523df41d525408ea5102fa357b57b5a0694b68a9b737cd6",
+      "purpose": "Shared package lifecycle, artifact audit, selected host operations or their focused regression checks.",
+      "adaptation": null
+    },
+    {
       "path": "packaging/tests/release-signing-test.sh",
       "upstreamSha256": "c6fedacccf78d7f516510827ae32d99cfffd280db543731e3b566967a1482ae5",
       "sourceRevision": "7385fa358f3c051427cea62cf8212d2257d5138b",
       "purpose": "Shared production build, complete release signatures, privileged update boundary or browser qualification support.",
+      "adaptation": null
+    },
+    {
+      "path": "packaging/tests/tls-worker-test.sh",
+      "sourceRevision": "8ceb635bc2860029699faef48210c503e9826b99",
+      "upstreamSha256": "990c012be060f1f166f61c85944ac0496708351513833db55a2749617406bd43",
+      "purpose": "Shared package lifecycle, artifact audit, selected host operations or their focused regression checks.",
       "adaptation": null
     },
     {
@@ -5022,6 +5232,20 @@
       "upstreamSha256": "2c453a32f684a2621bcb043406db29b1135742b29ec8a9cab520e70b8d1ffe46",
       "purpose": "Retained reports, feedback, admin support and durable MCP role delivery, including account erasure.",
       "adaptation": "Select only template moderation/role-delivery dependencies and their configuration, indexes, erasure and focused tests; omit absent product domains."
+    },
+    {
+      "path": "server/projects/profile/secrets/README.md",
+      "sourceRevision": "8ceb635bc2860029699faef48210c503e9826b99",
+      "upstreamSha256": "0eb95d9899b157c4533300216dc9d5a5c9989a7a506aad0dfc2e8ff5774a3141",
+      "purpose": "Shared package lifecycle, artifact audit, selected host operations or their focused regression checks.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/secrets/firebase-service-account.json.example",
+      "sourceRevision": "8ceb635bc2860029699faef48210c503e9826b99",
+      "upstreamSha256": "2196dea4f4599d3aa07294355467f1da90f4101dc5f95c8f4ec5bdc675d63a32",
+      "purpose": "Shared package lifecycle, artifact audit, selected host operations or their focused regression checks.",
+      "adaptation": null
     },
     {
       "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/Main.java",
@@ -8009,6 +8233,13 @@
       "path": "tools/run-backend-junit.sh",
       "upstreamSha256": "bb8f8f12470ce12279ba7ef023f8f7d122e917e314f488c666fa4ec3462b613b",
       "purpose": "Existing Gradle toolchain, dependency security policy and isolated JUnit workflow.",
+      "adaptation": null
+    },
+    {
+      "path": "tools/seeds/check-system-seed-parity.py",
+      "sourceRevision": "8ceb635bc2860029699faef48210c503e9826b99",
+      "upstreamSha256": "26ade836f4c05f858ec6c6558a307e3960e7ee92bf3239530108c605cb8a7885",
+      "purpose": "Shared package lifecycle, artifact audit, selected host operations or their focused regression checks.",
       "adaptation": null
     }
   ],

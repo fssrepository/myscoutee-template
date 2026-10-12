@@ -1,0 +1,19 @@
+Template release-signing key
+================================
+
+Install the vendor-published Ed25519 public key as:
+
+  /etc/myscoutee-template/update/release-public-key.pem
+
+Required ownership and mode:
+
+  root:10001 0640
+
+Before enabling MYSCOUTEE_UPDATE_ENABLED, compare the complete SPKI DER
+fingerprint through an independent release channel. The deterministic key ID
+is:
+
+  pkey_<first 32 lowercase hex characters of SHA-256(SPKI DER)>
+
+The update worker rejects missing, symbolic-link, non-Ed25519, or mismatched
+keys. Never place the release private key on an application deployment.

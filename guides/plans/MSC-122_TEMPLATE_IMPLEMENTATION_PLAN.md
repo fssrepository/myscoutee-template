@@ -655,7 +655,24 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     exclude source watchers, test fixtures and secrets. Close with startup and
     retained-flow checks using the actual built images, not a dev bind mount.
 
-27. **Complete DEB, host operations and local VMware Debian installation — PENDING.**
+27. **Complete DEB, host operations and local VMware Debian installation — IN PROGRESS.**
+    **VMware order (user correction, 2026-10-12): first build and deploy the
+    current modified MyScoutee backend to the existing local guest, then validate
+    its installed startup, retained flows, response time and CPU. The old installed
+    1.3.0 is not evidence for these changes. Preserve the deployment state. After
+    that gate, stop MyScoutee and install the template with its own fresh database
+    and media directories. Never use the original MyScoutee database as template
+    test data. Leave the qualified template accessible at its browser URL.**
+    The host implementation is now selected: shared Debian lifecycle, systemd,
+    fresh credentials, TLS, status, image verification, seed migration, backup/
+    restore and purge. Native install/host/recovery policy was separated at
+    `b130cfb07`, `349f2a8af` and `8ceb635bc`; MyScoutee retains Registry/payment
+    behavior while template project data excludes it. The template requires nine
+    production catalogs, five bundled managed images and seven Compose services.
+    Native package-content, Registry recovery, update ingress, TLS, bootstrap and
+    seed-parity checks pass. Template command-double lifecycle tests pass without
+    touching a deployment. The user subsequently authorized local VMware qualification; use the existing local guest, preserve its MyScoutee installation and leave the template available for browser review.
+
     Concrete source-reuse gap identified: the existing update worker hard-codes
     the MyScoutee package name/path, installed service and image inventory
     (including Registry/payment images and the 1.3.0 MCP transition). Separate
@@ -679,13 +696,10 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     seed selections and deployment paths at the existing MyScoutee owners first
     when their current inputs cannot already express the template. Copy the
     qualified shared helper, rather than forking its complete implementation.
-    **Execution order (user instruction, 2026-10-12): defer the VMware deployment
-    and user smoke check until morning. Continue KVM, package/release preparation
-    and all independent automated checks overnight without waiting for a reply.
-    Execute steps 28–31 wherever feasible without VMware, including signed
-    releases, GitHub/GHCR/Pages publication, documentation and final checks. The
-    deferred VMware check is not a gate for those independent steps.
-    Keep VMware results explicitly unverified; do not treat this deferral as PASS.**
+    **Current execution order (user instruction, 2026-10-12): local VMware
+    testing is now authorized using the existing guest. Preserve its current
+    MyScoutee deployment before switching stacks. Continue independent release,
+    documentation and final checks; provide the template browser URL afterwards.**
     Perform installation qualification only on a local VMware Debian VM: fresh
     install, restart, backup/restore and data-preserving removal. Reuse the existing
     installation workflow and prepare this same VMware deployment for the final
@@ -700,14 +714,13 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     the template identity and retain the original signature/SSH boundaries.
     All 13 external deployment checks pass on the actual production-image
     monolith (not VMware); only public content assertions are project-owned.
-    The host DEB lifecycle and recovery helpers still need completion in step27.
+    The host lifecycle/recovery implementation and focused tests are delivered in step27; local VMware installation is now authorized and pending.
     Selected the unchanged native privileged updater, artifact signer/verifier,
     and strict five-image template policy. Source `prepare-release.py` now owns
     complete package/client-tool signatures plus matching signed update metadata;
     the existing source QA helper delegates to it. Real disposable Ed25519 signing,
     tampered-catalog rejection, metadata/hash binding and overwrite rejection pass
-    for native and minimal project identities. No production template signing key
-    or repository signing secret is configured yet; no DEB has been published.
+    for native and minimal project identities. The template release authority is generated outside Git with mode 0600; only its public key is versioned. No CI signing secret is configured. Installed update/recovery evidence remains pending.
     Reuse native release discovery, canonical signing, manifests, staging,
     verification, durable update jobs and rollback/recovery. A DEB must never be
     published without the required matching signed update metadata. Preserve
@@ -715,32 +728,24 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     Close with valid update installation, missing/tampered metadata rejection,
     restart/retry and rollback evidence on a disposable installed template.
 
-29. **Wire GitHub release, GHCR and GitHub Pages publication — IN PROGRESS.**
-    Portable frontend checkout now uses the local submodule's exact Git bundle
-    and the existing remote components repository. A clean independent checkout
-    passed. The Pages workflow builds the existing `github` configuration and
-    checks frontend tests, version and required static assets before publication.
-    The live Pages deployment at source `460f5c2` is published. All fourteen existing
-    local UI flows pass against that real repository base path after correcting
-    three harness path/network-scope assumptions; application code was unchanged.
-    The production-image workflow calls the existing native build and publication
-    owners, checks every pushed image by pulling it back, and records digests.
-    The five production images were published and pulled back with matching IDs.
-    They remain private. The CI build failed because the pinned upstream MinIO
-    image is unavailable; an identical cached amd64 image is preserved in GHCR,
-    but its CI/public access is not configured. The second workflow still returns
-    403 after repository association; this needs the package Actions access or
-    visibility setting. No broad personal token was installed as a CI secret.
-    See the production/Pages and release-tools evidence.
-    This failure and the DEB release remain open artifact gates.
-    Use the established release/build commands from CI rather than duplicating
-    packaging logic. Prepare `v1.0.0`, DEB/client-tools/signatures/checksums and
-    versioned Docker image publication to GitHub Container Registry. Configure
-    Pages for the existing static/local build with repository base path, deep-link
-    fallback, service-worker/assets and version consistency. Resolve submodule
-    checkout and required repository permissions/secrets before marking CI ready.
-    Close only after published artifacts and Pages behavior are verified; distinguish
-    a prepared workflow from an executed publication.
+29. **Publish GitHub release, GHCR and GitHub Pages from local builds — IN PROGRESS.**
+    User correction, 2026-10-12: GitHub Actions was not requested. Remove the
+    added repository workflows; run builds, tests, signing and image publication
+    locally with the existing versioned commands. Do not make Actions permissions
+    or hosted CI a release prerequisite and do not configure CI credentials.
+    Portable frontend checkout uses the exact local submodule Git bundle and the
+    existing remote components repository; a clean independent checkout passed.
+    Pages is live at source `460f5c2`; all fourteen existing local UI flows passed
+    against its real repository base path. Preserve that site and publish future
+    static output from a locally built Pages branch.
+    Five production images were locally published and pulled back with matching
+    IDs. They are private. The unavailable upstream MinIO amd64 image was
+    preserved byte-for-byte in GHCR; authenticated local builds can use it.
+    The earlier unrequested Actions attempt received 403; retain that historical
+    evidence, but it is not a required workflow or an open template gate.
+    Prepare `v1.0.0` and publish the complete signed DEB/client-tools/update
+    metadata/checksum set only after verification. Validate published artifacts
+    separately from source tests. Document registry authentication requirements.
 
 30. **Finish developer/operator documentation and the single PDF — IN PROGRESS.**
     The native PDF builder now reads a project-owned catalog. The template has

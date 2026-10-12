@@ -1,0 +1,13 @@
+Package: myscoutee-template
+Version: 1.0.0
+Section: web
+Priority: optional
+Architecture: amd64
+Maintainer: MyScoutee <admin@myscoutee.local>
+Depends: bash, coreutils, curl, jq, openssl, python3, systemd, tar, util-linux, docker.io | docker-ce, docker-compose-plugin | docker-compose-v2
+Recommends: gnupg, ufw, ncdu, iotop, redis-tools
+Description: Minimal application framework production bundle
+ Production packaging metadata for the template Docker deployment.
+ The package is expected to install the application bundle, systemd unit,
+ and operational helper scripts. Docker is a package dependency; optional
+ server convenience tools remain recommendations.

@@ -1,0 +1,18 @@
+[
+  {
+    "collection": "notificationRuleConfigs",
+    "replace": false
+  },
+  {
+    "collection": "countryPartitions",
+    "replace": true
+  },
+  {
+    "collection": "i18n_messages",
+    "replace": true
+  },
+  {
+    "collection": "i18n_bundles",
+    "replace": true
+  }
+]
