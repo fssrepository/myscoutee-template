@@ -262,6 +262,19 @@ class NotificationOutboxWorkerServiceTest {
                 .containsEntry("badge", "/api/assets/community.webp");
     }
 
+    @Test
+    void emptySavedLogoDoesNotReappearInAnExistingPushPayload() {
+        var service = service(org.mockito.Mockito.mock(ChatWebSocketSessionRegistry.class));
+        var item = item("chat-message", List.of("viewer-1"));
+        item.setPayload(Map.of("productName", "Configured", "productLogoUrl", "",
+                "productBrandingRevision", "9", "icon", "/assets/logo/heart.webp",
+                "badge", "/assets/logo/heart.webp"));
+        assertThat(service.payloadFor(item)).doesNotContainKeys("icon", "badge");
+        item.setIconUrl("/media/sender.webp");
+        assertThat(service.payloadFor(item)).containsEntry("icon", "/media/sender.webp")
+                .doesNotContainKey("badge");
+    }
+
     private NotificationOutboxWorkerService service(ChatWebSocketSessionRegistry sessionRegistry) {
         return new NotificationOutboxWorkerService(
                 new ConfigProperties(),

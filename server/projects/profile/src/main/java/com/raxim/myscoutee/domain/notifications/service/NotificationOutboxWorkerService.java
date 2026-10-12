@@ -569,14 +569,12 @@ public class NotificationOutboxWorkerService {
                 branding.productName()));
         putIfText(payload, "body", item.getBody());
         putIfText(payload, "url", firstNonBlank(item.getClickUrl(), payload.get("url"), "/game"));
-        putIfText(payload, "icon", branding.applicationIcon(
-                firstNonBlank(
-                        item.getIconUrl(),
-                        payload.get("icon"))));
-        putIfText(payload, "badge", branding.applicationIcon(
-                firstNonBlank(
-                        item.getBadgeUrl(),
-                        payload.get("badge"))));
+        String iconUrl = branding.applicationIcon(firstNonBlank(item.getIconUrl(), payload.get("icon")));
+        String badgeUrl = branding.applicationIcon(firstNonBlank(item.getBadgeUrl(), payload.get("badge")));
+        payload.remove("icon");
+        payload.remove("badge");
+        putIfText(payload, "icon", iconUrl);
+        putIfText(payload, "badge", badgeUrl);
         putIfText(payload, "tag", firstNonBlank(item.getTag(), payload.get("tag"), item.getNotificationType()));
         return payload;
     }
@@ -590,8 +588,6 @@ public class NotificationOutboxWorkerService {
 
     private ResolvedDeploymentBranding snapshottedBranding(
             Map<String, String> payload) {
-        ResolvedDeploymentBranding fallback =
-                com.raxim.myscoutee.domain.platform.api.DeploymentBranding.fallback();
         String revisionValue = firstNonBlank(
                 payload == null
                         ? null
@@ -610,16 +606,14 @@ public class NotificationOutboxWorkerService {
         return new ResolvedDeploymentBranding(
                 firstNonBlank(
                         payload == null ? null : payload.get("productName"),
-                        payload == null ? null : payload.get("product_name"),
-                        fallback.productName()),
+                        payload == null ? null : payload.get("product_name")),
                 firstNonBlank(
                         payload == null
                                 ? null
                                 : payload.get("productLogoUrl"),
                         payload == null
                                 ? null
-                                : payload.get("product_logo_url"),
-                        fallback.logoUrl()),
+                                : payload.get("product_logo_url")),
                 revision);
     }
 

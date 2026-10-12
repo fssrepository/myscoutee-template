@@ -107,9 +107,9 @@
     "_id": "landing.guide--guide-launcher",
     "id": "guide-launcher",
     "screenKey": "landing.guide",
-    "group": "controls",
-    "i18nKey": "guide.template.landing.guide.guide-launcher",
-    "order": 0
+    "group": "card",
+    "i18nKey": "guide.landing.guide.guide-launcher",
+    "order": 1
   },
   {
     "_id": "landing.entry--entry-login",

@@ -73,14 +73,15 @@ public final class AuthDtos {
             LocationCoordinatesDto locationCoordinates, String partitionKey, List<String> images,
             String profileStatus, String previousProfileStatus, String deletedAtIso,
             Boolean admin, Boolean operator, UserMenuCountersDto activities,
-            UserNotificationPreferencesDto notificationPreferences) {}
+            UserNotificationPreferencesDto notificationPreferences,
+            Integer completion, String headline, String about) {}
 
     public record UserByIdResponseDto(String id, String name, String city, String initials, String gender,
             LocationCoordinatesDto locationCoordinates, String partitionKey, List<String> images,
             String profileStatus, String previousProfileStatus, String deletedAtIso,
             Boolean admin, Boolean operator, UserMenuCountersDto activities,
             UserNotificationPreferencesDto notificationPreferences,
-            UserMenuCountersDto counterOverrides) {}
+            UserMenuCountersDto counterOverrides, Integer completion, String headline, String about) {}
 
     public record ProfileExtDto(UserDto profile) {}
     public record ProfileExtByIdResponseDto(ProfileExtDto profileExt, UserMenuCountersDto counterOverrides) {}

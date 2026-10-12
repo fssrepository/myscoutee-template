@@ -356,6 +356,22 @@ class NotificationOutboxServiceTest {
                 .containsEntry("productBrandingRevision", "17");
     }
 
+    @Test
+    void emptyLogoSnapshotIsCompleteAndDoesNotReloadOrInventBranding() {
+        var repository = org.mockito.Mockito.mock(NotificationOutboxRepository.class);
+        when(repository.save(any(NotificationOutboxItem.class))).thenAnswer(call -> call.getArgument(0));
+        var service = new NotificationOutboxService(repository);
+        var branding = org.mockito.Mockito.mock(DeploymentBrandingResolver.class);
+        service.setDeploymentBrandingResolver(branding);
+        var saved = service.enqueue(new NotificationIntent("chat-message", "chat", "c1", "users",
+                List.of("u1"), "Chat", "Message", "/home", null, null, "chat-c1",
+                Map.of("productName", "Configured", "productLogoUrl", "", "productBrandingRevision", "9",
+                        "icon", "/assets/logo/heart.webp", "badge", "/assets/logo/heart.webp"), "sender")).orElseThrow();
+        verify(branding, never()).resolve();
+        assertThat(saved.getPayload()).containsEntry("productLogoUrl", "")
+                .doesNotContainKeys("icon", "badge");
+    }
+
     private NotificationIntent intent(List<String> recipientUserIds, Map<String, String> payload) {
         return new NotificationIntent(
                 "asset-review",

@@ -15,7 +15,9 @@
       "longitude": 13.405
     },
     "partitionKey": "country:de",
-    "images": [],
+    "images": [
+      "/media/public?key=images/demo-profiles/b29df68956f3fe15e04558de/photo-01/large.webp"
+    ],
     "activities": {
       "chats": 1,
       "notifications": 1,
@@ -24,7 +26,8 @@
         "contacts": 1,
         "appSupport": 0
       }
-    }
+    },
+    "gender": "man"
   },
   {
     "_id": {
@@ -42,7 +45,9 @@
       "longitude": 13.405
     },
     "partitionKey": "country:de",
-    "images": [],
+    "images": [
+      "/media/public?key=images/demo-profiles/cdd937e0adcbd1a5e38f3ceb/photo-01/large.webp"
+    ],
     "activities": {
       "chats": 1,
       "notifications": 1,
@@ -51,7 +56,8 @@
         "contacts": 1,
         "appSupport": 0
       }
-    }
+    },
+    "gender": "man"
   },
   {
     "_id": {
@@ -69,7 +75,10 @@
       "longitude": 13.405
     },
     "partitionKey": "country:de",
-    "images": [],
+    "images": [
+      "/media/public?key=images/demo-profiles/1d7d3545ba5e0f1d63918589/photo-01/large.webp",
+      "/media/public?key=images/demo-profiles/1d7d3545ba5e0f1d63918589/photo-02/large.webp"
+    ],
     "activities": {
       "chats": 0,
       "notifications": 0,
@@ -79,7 +88,8 @@
         "appSupport": 0
       }
     },
-    "hostTier": "Admin"
+    "hostTier": "Admin",
+    "gender": "man"
   },
   {
     "_id": {
@@ -97,7 +107,10 @@
       "longitude": 13.405
     },
     "partitionKey": "country:de",
-    "images": [],
+    "images": [
+      "/media/public?key=images/demo-profiles/7822c5f99eff99d63abe8933/photo-01/large.webp",
+      "/media/public?key=images/demo-profiles/7822c5f99eff99d63abe8933/photo-02/large.webp"
+    ],
     "activities": {
       "chats": 0,
       "notifications": 0,
@@ -107,6 +120,7 @@
         "appSupport": 0
       }
     },
-    "operator": true
+    "operator": true,
+    "gender": "man"
   }
 ]

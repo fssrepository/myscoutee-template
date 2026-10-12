@@ -4,10 +4,10 @@
     "version": 0,
     "schemaVersion": 5,
     "branding": {
-      "productName": "Templates",
+      "productName": "MyScoutee",
       "logoCharacterIndex": 0,
-      "homeLabel": "Build something of your own",
-      "logoUrl": "",
+      "homeLabel": "Your preferences come first",
+      "logoUrl": "assets/logo/heart.webp",
       "revision": 0
     },
     "socialLinks": [],

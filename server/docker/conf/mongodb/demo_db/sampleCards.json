@@ -4,27 +4,31 @@
     "title": "Coastal light",
     "description": "An open horizon, quiet water and room for a new idea.",
     "imageUrl": "assets/showcase/coast.svg",
-    "palette": "blue"
+    "palette": "blue",
+    "dateIso": "2026-10-12T09:00:00.000Z"
   },
   {
     "_id": "500000000000000000000002",
     "title": "Quiet peaks",
     "description": "A little perspective from above the everyday.",
     "imageUrl": "assets/showcase/peaks.svg",
-    "palette": "violet"
+    "palette": "violet",
+    "dateIso": "2026-10-12T12:00:00.000Z"
   },
   {
     "_id": "500000000000000000000003",
     "title": "Desert rhythm",
     "description": "Warm tones, changing shapes and a slower pace.",
     "imageUrl": "assets/showcase/dunes.svg",
-    "palette": "orange"
+    "palette": "orange",
+    "dateIso": "2026-10-13T09:00:00.000Z"
   },
   {
     "_id": "500000000000000000000004",
     "title": "Forest canopy",
     "description": "A study in green, light and small details.",
     "imageUrl": "assets/showcase/forest.svg",
-    "palette": "green"
+    "palette": "green",
+    "dateIso": "2026-10-13T12:00:00.000Z"
   }
 ]

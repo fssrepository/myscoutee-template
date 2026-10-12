@@ -18,8 +18,6 @@ import com.raxim.myscoutee.domain.notifications.api.NotificationDelivery.Notific
 
 @Service
 public class ChatPushNotificationService {
-    private static final String APP_BADGE_URL = "/assets/logo/template.svg";
-    private static final String APP_FALLBACK_ICON_URL = "/assets/logo/template.svg";
     private static final String DEFAULT_CLICK_URL = "/game";
 
     private final ProfileSummaries usersRepository;
@@ -79,7 +77,7 @@ public class ChatPushNotificationService {
                 body,
                 clickUrl,
                 senderAvatarUrl,
-                APP_BADGE_URL,
+                null,
                 notificationTag,
                 payload,
                 safeText(event.senderId())));
@@ -150,7 +148,7 @@ public class ChatPushNotificationService {
                 }
             }
         }
-        return APP_FALLBACK_ICON_URL;
+        return null;
     }
 
     private String buildClickUrl(ChatStreamEvent event) {

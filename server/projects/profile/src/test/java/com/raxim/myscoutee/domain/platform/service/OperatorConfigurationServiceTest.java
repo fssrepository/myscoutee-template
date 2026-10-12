@@ -98,6 +98,27 @@ class OperatorConfigurationServiceTest {
         verifyNoInteractions(firebase);
     }
 
+    @Test void acceptsTheNativeBundledLogosAndAllowsExplicitRemoval() {
+        for (String logo : List.of("assets/logo/heart.webp", "assets/logo/heart.png", "")) {
+            var result = service.update(new OperatorConfigurationUpdateDto(List.of("admin@example.test"),
+                    new PrivacyContactUpdateDto("Example", "privacy@example.test"), List.of(),
+                    new BrandingUpdateDto("Templates", 0, logo), new IntegrationUpdateDto(""), null));
+            assertThat(result.branding().logoUrl()).isEqualTo(logo);
+            assertThat(service.branding().logoUrl()).isEqualTo(logo);
+        }
+    }
+
+    @Test void rejectsUnselectedBundledLogosAndExternalImages() {
+        for (String logo : List.of("assets/logo/template.svg", "assets/logo/other.svg", "https://untrusted.invalid/logo.svg")) {
+            assertThatThrownBy(() -> service.update(new OperatorConfigurationUpdateDto(List.of("admin@example.test"),
+                    new PrivacyContactUpdateDto("Example", "privacy@example.test"), List.of(),
+                    new BrandingUpdateDto("Templates", 0, logo), new IntegrationUpdateDto(""), null)))
+                    .isInstanceOfSatisfying(ResponseStatusException.class,
+                            error -> assertThat(error.getStatusCode()).isEqualTo(HttpStatus.BAD_REQUEST));
+        }
+        verify(repository, never()).save(any());
+    }
+
     @Test void encryptsCredentialsAndNeverReturnsTheirPlaintext() {
         var result = service.update(update(new FirebaseUpdateDto("project", "authentication-secret", "messaging-secret")));
         assertThat(crypto.decrypt(OperatorConfigurationService.FIREBASE_AUTHENTICATION_PURPOSE,

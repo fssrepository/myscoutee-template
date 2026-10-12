@@ -12,7 +12,7 @@
     "avatar": "ST",
     "lastMessage": "Try switching the list view, then send a message here.",
     "lastSenderId": "100000000000000000000002",
-    "unread": 0,
+    "unread": 1,
     "revision": 1,
     "dateIso": "2026-10-11T00:00:00Z"
   },
@@ -29,7 +29,7 @@
     "avatar": "AM",
     "lastMessage": "Try switching the list view, then send a message here.",
     "lastSenderId": "100000000000000000000002",
-    "unread": 0,
+    "unread": 1,
     "revision": 1,
     "dateIso": "2026-10-11T00:00:00Z"
   }

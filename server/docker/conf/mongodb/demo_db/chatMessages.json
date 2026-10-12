@@ -7,7 +7,9 @@
     "senderAvatar": {
       "id": "100000000000000000000001",
       "name": "Alex Morgan",
-      "initials": "AM"
+      "initials": "AM",
+      "gender": "man",
+      "imageUrl": "/media/public?key=images/demo-profiles/b29df68956f3fe15e04558de/photo-01/large.webp"
     },
     "text": "Welcome to Templates. This is a saved conversation.",
     "time": "00:00",
@@ -16,20 +18,16 @@
       {
         "id": "100000000000000000000001",
         "name": "Alex Morgan",
-        "initials": "AM"
-      },
-      {
-        "id": "100000000000000000000002",
-        "name": "Sam Taylor",
-        "initials": "ST"
+        "initials": "AM",
+        "gender": "man",
+        "imageUrl": "/media/public?key=images/demo-profiles/b29df68956f3fe15e04558de/photo-01/large.webp"
       }
     ],
     "messageSenderUserIds": [
       "100000000000000000000001"
     ],
     "messageReadByUserIds": [
-      "100000000000000000000001",
-      "100000000000000000000002"
+      "100000000000000000000001"
     ],
     "reactions": [],
     "attachments": []
@@ -42,28 +40,26 @@
     "senderAvatar": {
       "id": "100000000000000000000002",
       "name": "Sam Taylor",
-      "initials": "ST"
+      "initials": "ST",
+      "gender": "man",
+      "imageUrl": "/media/public?key=images/demo-profiles/cdd937e0adcbd1a5e38f3ceb/photo-01/large.webp"
     },
     "text": "Try switching the list view, then send a message here.",
     "time": "00:00",
     "sentAtIso": "2026-10-11T00:00:01Z",
     "readBy": [
       {
-        "id": "100000000000000000000001",
-        "name": "Alex Morgan",
-        "initials": "AM"
-      },
-      {
         "id": "100000000000000000000002",
         "name": "Sam Taylor",
-        "initials": "ST"
+        "initials": "ST",
+        "gender": "man",
+        "imageUrl": "/media/public?key=images/demo-profiles/cdd937e0adcbd1a5e38f3ceb/photo-01/large.webp"
       }
     ],
     "messageSenderUserIds": [
       "100000000000000000000002"
     ],
     "messageReadByUserIds": [
-      "100000000000000000000001",
       "100000000000000000000002"
     ],
     "reactions": [],

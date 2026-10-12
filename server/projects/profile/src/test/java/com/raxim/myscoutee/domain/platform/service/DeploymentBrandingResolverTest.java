@@ -67,62 +67,44 @@ class DeploymentBrandingResolverTest {
     }
 
     @Test
-    void fallsBackWhenTheSeedIsUnavailable() {
-        DeploymentConfigurationRepository repository =
-                org.mockito.Mockito.mock(
-                        DeploymentConfigurationRepository.class);
-        when(repository.findById(DeploymentConfiguration.SINGLETON_ID))
-                .thenThrow(new IllegalStateException("temporarily unavailable"));
-
-        DeploymentBrandingResolver.ResolvedDeploymentBranding resolved =
-                new DeploymentBrandingResolver(repository).resolve();
-
-        assertThat(resolved)
-                .isEqualTo(com.raxim.myscoutee.domain.platform.api.DeploymentBranding.fallback());
+    void absentSeedDoesNotInventAProductOrLogo() {
+        var repository = org.mockito.Mockito.mock(DeploymentConfigurationRepository.class);
+        when(repository.findById(DeploymentConfiguration.SINGLETON_ID)).thenReturn(Optional.empty());
+        var resolved = new DeploymentBrandingResolver(repository).resolve();
+        assertThat(resolved.productName()).isEmpty();
+        assertThat(resolved.logoUrl()).isEmpty();
+        assertThat(resolved.applicationIcon(null)).isEmpty();
     }
 
     @Test
-    void preservesTheLastKnownBrandDuringATransientReadFailure() {
-        DeploymentConfigurationRepository repository =
-                org.mockito.Mockito.mock(
-                        DeploymentConfigurationRepository.class);
-        DeploymentConfiguration configuration =
-                new DeploymentConfiguration();
-        DeploymentConfiguration.Branding branding =
-                new DeploymentConfiguration.Branding();
+    void savedEmptyLogoRemainsEmpty() {
+        var repository = org.mockito.Mockito.mock(DeploymentConfigurationRepository.class);
+        var configuration = new DeploymentConfiguration();
+        var branding = new DeploymentConfiguration.Branding();
         branding.setProductName("Community Hub");
-        branding.setLogoUrl("/api/assets/community.webp");
-        branding.setRevision(9L);
+        branding.setLogoUrl("");
+        configuration.setBranding(branding);
+        when(repository.findById(DeploymentConfiguration.SINGLETON_ID)).thenReturn(Optional.of(configuration));
+        var resolved = new DeploymentBrandingResolver(repository).resolve();
+        assertThat(resolved.productName()).isEqualTo("Community Hub");
+        assertThat(resolved.logoUrl()).isEmpty();
+        assertThat(resolved.applicationIcon("/assets/logo/heart.webp")).isEmpty();
+        assertThat(resolved.applicationIcon("/media/sender.webp")).isEqualTo("/media/sender.webp");
+    }
+
+    @Test
+    void aFailedReadIsNotReplacedWithAnEarlierBrand() {
+        var repository = org.mockito.Mockito.mock(DeploymentConfigurationRepository.class);
+        var configuration = new DeploymentConfiguration();
+        var branding = new DeploymentConfiguration.Branding();
+        branding.setProductName("Earlier brand");
         configuration.setBranding(branding);
         when(repository.findById(DeploymentConfiguration.SINGLETON_ID))
                 .thenReturn(Optional.of(configuration))
-                .thenThrow(new IllegalStateException(
-                        "temporarily unavailable"));
-        DeploymentBrandingResolver resolver =
-                new DeploymentBrandingResolver(repository);
-
-        DeploymentBrandingResolver.ResolvedDeploymentBranding first =
-                resolver.resolve();
-        DeploymentBrandingResolver.ResolvedDeploymentBranding second =
-                resolver.resolve();
-
-        assertThat(first.productName()).isEqualTo("Community Hub");
-        assertThat(second).isEqualTo(first);
-    }
-    @Test
-    void failureFallbackNeverLeaksBrandingFromAnotherDatabase() {
-        var repository = org.mockito.Mockito.mock(DeploymentConfigurationRepository.class);
-        var config = new DeploymentConfiguration();
-        var branding = new DeploymentConfiguration.Branding(); branding.setProductName("Real brand"); config.setBranding(branding);
-        when(repository.findById(DeploymentConfiguration.SINGLETON_ID)).thenReturn(Optional.of(config))
-                .thenThrow(new IllegalStateException("offline"));
+                .thenThrow(new IllegalStateException("temporarily unavailable"));
         var resolver = new DeploymentBrandingResolver(repository);
-        try {
-            com.raxim.myscoutee.common.config.mongo.MongoSessionModeContext.set(com.raxim.myscoutee.common.config.mongo.MongoSessionMode.REAL);
-            assertThat(resolver.resolve().productName()).isEqualTo("Real brand");
-            com.raxim.myscoutee.common.config.mongo.MongoSessionModeContext.set(com.raxim.myscoutee.common.config.mongo.MongoSessionMode.DEMO);
-            assertThat(resolver.resolve()).isEqualTo(com.raxim.myscoutee.domain.platform.api.DeploymentBranding.fallback());
-        } finally { com.raxim.myscoutee.common.config.mongo.MongoSessionModeContext.clear(); }
+        assertThat(resolver.resolve().productName()).isEqualTo("Earlier brand");
+        org.assertj.core.api.Assertions.assertThatThrownBy(resolver::resolve)
+                .isInstanceOf(IllegalStateException.class).hasMessage("temporarily unavailable");
     }
-
 }

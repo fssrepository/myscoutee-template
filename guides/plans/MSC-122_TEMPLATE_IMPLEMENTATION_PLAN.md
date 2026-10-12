@@ -88,7 +88,62 @@ Steps 21–23 verify tests against the correct environment; steps 26 and 29 veri
 the production/Pages outputs, version stamping, base paths, service worker and
 deep-link behavior. A working `local` build alone does not close frontend work.
 
-## Status and working rules
+## Status
+
+**Historical source baseline (2026-10-12 correction).** Compare retained behavior
+against MyScoutee before the domain/UI extraction, not merely the latest refactored
+HEAD: backend `5a23e829f`, its frontend gitlink
+`9019fb69c812304c40ca2411a15d75ca3cf3a9aa`. Classify every difference as an explicit
+omitted feature, a path/contract extraction, an intentional subsequent fix, or a
+regression. Do not redesign inherited behavior while selecting the template.
+The old `DeploymentBrandingResolver` already contained the MyScoutee default name,
+heart logo, and last-known-good behavior; `ChatPushNotificationService` already
+contained the two application-icon constants. The user subsequently explicitly
+requested their removal (2026-10-12 10:06): branding must come from the saved
+configuration, with no hardcoded product/logo substitution. Apply this correction
+to MyScoutee and the template together. Missing or cleared values stay absent;
+failed backend reads propagate instead of substituting a stale brand. Notification
+snapshots preserve an explicitly empty logo. This is an authorized behavior change,
+not part of the mechanical extraction.
+Original operator configuration order is TLS, branding, API, privacy contact,
+administrators, social links, payment, Firebase, email; omit payment only.
+
+
+- **Current correction batch (2026-10-12):** restore the native side-panel
+  transition by retaining its closed DOM state; restore the compact profile's
+  Basics block; retain the five desktop operator action slots with only two
+  selected actions; restore logout confirmation and account-deletion errors.
+  The Login action must use `SessionService.authMode` after the existing Firebase
+  runtime check, as in the source frontend. DEV's Firebase endpoint returns 204;
+  it must open the demo selector. Do not change seeds or activate Firebase to
+  compensate for this UI defect.
+- **Shared logo presentation:** the existing shared `DeploymentBrandComponent`
+  owns the original three-colour 3px underline, used by landing/member/admin/operator.
+  Remove duplicate caller rules; keep the original contextual heading sizes.
+- **Branding validation:** focused template and MyScoutee JUnit batches passed;
+  service-worker push checks cover configured logo, absent logo, cold offline push,
+  and distinct sender-photo/app-badge roles. KVM validation is still pending while
+  the user is inspecting DEV. No performance parity claim from compilation alone.
+
+- **OPEN — native frontend presentation parity (2026-10-12, user screenshots 09:19–09:22):**
+  the custom member header, default Discover home, navigation rows and one-slot
+  inline profile editor violate the requested minimal selection. Restore the
+  original MyScoutee empty home shell, round avatar launcher, side-menu header
+  and two icon tiles. Open SmartList/chat through the existing popup presentation.
+  Reuse the native profile header and separate multi-image editor. Audit retained
+  operator actions and chat presentation against their original owners. Keep only
+  explicitly selected controls; no product-domain restoration or new UI design.
+  Default operator branding remains MyScoutee and its native heart assets; the
+  requested central landing heading remains Templates. Prior functional tests
+  do not qualify these rejected visual adaptations. Verify local and HTTP visible
+  browsers after correction, then resume package/environment qualification.
+
+- **Final Git/release instruction (2026-10-12):** after all implementation and
+  qualification, inventory each repository's baseline and remote refs, squash
+  the task commits per repository using the existing `[MSC-122]` subject format,
+  update published branches with explicit `--force-with-lease`, and tag version
+  1.4.0. Publish source, Docker images and non-DEB release assets. The user uploads
+  the DEBs. Do not rewrite unrelated baseline history or delete unrelated refs.
 
 - **Open deployment blocker (2026-10-12):** complete the native and template
   [environment parity checklist](../../../myscoutee-backend/guides/qualification/ENVIRONMENT_PARITY_CHECKLIST.md).

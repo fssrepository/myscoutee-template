@@ -11214,18 +11214,6 @@
     "value": "Your menu"
   },
   {
-    "_id": "i18n-message-en-guide-template-landing-guide-guide-launcher-description",
-    "key": "guide.template.landing.guide.guide-launcher.description",
-    "lang": "en",
-    "value": "This button opens the guide for the current screen. You can move or dismiss it."
-  },
-  {
-    "_id": "i18n-message-en-guide-template-landing-guide-guide-launcher-label",
-    "key": "guide.template.landing.guide.guide-launcher.label",
-    "lang": "en",
-    "value": "Guide"
-  },
-  {
     "_id": "i18n-message-en-guide-template-navigation-chat-description",
     "key": "guide.template.navigation.chat.description",
     "lang": "en",
@@ -11398,18 +11386,6 @@
     "key": "guide.template.home.member-avatar.label",
     "lang": "hu",
     "value": "Saját menü"
-  },
-  {
-    "_id": "i18n-message-hu-guide-template-landing-guide-guide-launcher-description",
-    "key": "guide.template.landing.guide.guide-launcher.description",
-    "lang": "hu",
-    "value": "Ez a gomb az aktuális képernyő útmutatóját nyitja meg. Áthelyezheted vagy elrejtheted."
-  },
-  {
-    "_id": "i18n-message-hu-guide-template-landing-guide-guide-launcher-label",
-    "key": "guide.template.landing.guide.guide-launcher.label",
-    "lang": "hu",
-    "value": "Útmutató"
   },
   {
     "_id": "i18n-message-hu-guide-template-navigation-chat-description",
@@ -19210,5 +19186,173 @@
     "key": "guide.template.chat.chat-pins.label",
     "lang": "hu",
     "value": "Kitűzött üzenetek"
+  },
+  {
+    "_id": "i18n-message-en-operator-profile-open",
+    "key": "operator.profile.open",
+    "lang": "en",
+    "value": "Open operator profile"
+  },
+  {
+    "_id": "i18n-message-en-operator-popup-close",
+    "key": "operator.popup.close",
+    "lang": "en",
+    "value": "Close operator window"
+  },
+  {
+    "_id": "i18n-message-en-operator-action-updates-detail",
+    "key": "operator.action.updates.detail",
+    "lang": "en",
+    "value": "Update this deployment at any time"
+  },
+  {
+    "_id": "i18n-message-en-operator-actions",
+    "key": "operator.actions",
+    "lang": "en",
+    "value": "Operator actions"
+  },
+  {
+    "_id": "i18n-message-en-operator-action-configuration-detail",
+    "key": "operator.action.configuration.detail",
+    "lang": "en",
+    "value": "Check authentication and messaging"
+  },
+  {
+    "_id": "i18n-message-en-operator-action-updates-available",
+    "key": "operator.action.updates.available",
+    "lang": "en",
+    "value": "A deployment update is available"
+  },
+  {
+    "_id": "i18n-message-hu-operator-profile-open",
+    "key": "operator.profile.open",
+    "lang": "hu",
+    "value": "Operátori profil megnyitása"
+  },
+  {
+    "_id": "i18n-message-hu-operator-popup-close",
+    "key": "operator.popup.close",
+    "lang": "hu",
+    "value": "Operátori ablak bezárása"
+  },
+  {
+    "_id": "i18n-message-hu-operator-action-updates-detail",
+    "key": "operator.action.updates.detail",
+    "lang": "hu",
+    "value": "A telepítés bármikor frissíthető"
+  },
+  {
+    "_id": "i18n-message-hu-operator-actions",
+    "key": "operator.actions",
+    "lang": "hu",
+    "value": "Operátori műveletek"
+  },
+  {
+    "_id": "i18n-message-hu-operator-action-configuration-detail",
+    "key": "operator.action.configuration.detail",
+    "lang": "hu",
+    "value": "Hitelesítés és üzenetküldés ellenőrzése"
+  },
+  {
+    "_id": "i18n-message-hu-operator-action-updates-available",
+    "key": "operator.action.updates.available",
+    "lang": "hu",
+    "value": "Telepítési frissítés érhető el"
+  },
+  {
+    "_id": "i18n-message-en-profile-editor-basics-description",
+    "key": "profile.editor.basics.description",
+    "lang": "en",
+    "value": "Basic profile information."
+  },
+  {
+    "_id": "i18n-message-en-logout-question",
+    "key": "logout.question",
+    "lang": "en",
+    "value": "Are you sure you want to log out?"
+  },
+  {
+    "_id": "i18n-message-hu-profile-editor-basics-description",
+    "key": "profile.editor.basics.description",
+    "lang": "hu",
+    "value": "Alap profiladatok."
+  },
+  {
+    "_id": "i18n-message-hu-logout-question",
+    "key": "logout.question",
+    "lang": "hu",
+    "value": "Biztosan ki szeretnél jelentkezni?"
+  },
+  {
+    "_id": "i18n-message-en-friends-only",
+    "key": "friends.only",
+    "lang": "en",
+    "value": "Friends only"
+  },
+  {
+    "_id": "i18n-message-en-host-only",
+    "key": "host.only",
+    "lang": "en",
+    "value": "Host only"
+  },
+  {
+    "_id": "i18n-message-en-friends-only-10o064",
+    "key": "friends.only.10o064",
+    "lang": "en",
+    "value": "Friends only"
+  },
+  {
+    "_id": "i18n-message-en-host-only-nfiqdr",
+    "key": "host.only.nfiqdr",
+    "lang": "en",
+    "value": "Host only"
+  },
+  {
+    "_id": "i18n-message-hu-friends-only",
+    "key": "friends.only",
+    "lang": "hu",
+    "value": "Csak barátok"
+  },
+  {
+    "_id": "i18n-message-hu-host-only",
+    "key": "host.only",
+    "lang": "hu",
+    "value": "Csak szervezők"
+  },
+  {
+    "_id": "i18n-message-hu-friends-only-10o064",
+    "key": "friends.only.10o064",
+    "lang": "hu",
+    "value": "Csak barátok"
+  },
+  {
+    "_id": "i18n-message-hu-host-only-nfiqdr",
+    "key": "host.only.nfiqdr",
+    "lang": "hu",
+    "value": "Csak szervezők"
+  },
+  {
+    "_id": "i18n-message-en-guide-landing-guide-guide-launcher-label",
+    "key": "guide.landing.guide.guide-launcher.label",
+    "lang": "en",
+    "value": "Help when you need it"
+  },
+  {
+    "_id": "i18n-message-en-guide-landing-guide-guide-launcher-description",
+    "key": "guide.landing.guide.guide-launcher.description",
+    "lang": "en",
+    "value": "Help: Next, Back, Done. Drag the lightbulb or notification bell; drop on the red X to hide. Turn help off or back on permanently: side menu → Explanations."
+  },
+  {
+    "_id": "i18n-message-hu-guide-landing-guide-guide-launcher-label",
+    "key": "guide.landing.guide.guide-launcher.label",
+    "lang": "hu",
+    "value": "Segítség, amikor kell"
+  },
+  {
+    "_id": "i18n-message-hu-guide-landing-guide-guide-launcher-description",
+    "key": "guide.landing.guide.guide-launcher.description",
+    "lang": "hu",
+    "value": "Súgó: Előre, Vissza, Kész. A villanykörte és az értesítési csengő húzható; piros X-re ejtve elrejthető. Tartós ki-/bekapcsolás: oldalsó menü → Magyarázatok."
   }
 ]

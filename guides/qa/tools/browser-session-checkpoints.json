@@ -75,6 +75,28 @@
           "fakeMediaStream": true
         }
       ]
+    },
+    "MSC122-TEMPLATE-DEV-RETAINED-UI": {
+      "entryUrl": "https://localhost/entry",
+      "targetUrl": "https://localhost/entry",
+      "preserveOtherSessions": true,
+      "geolocationPermission": "granted",
+      "layout": {
+        "columns": 1
+      },
+      "sessions": [
+        {
+          "actor": "template-dev-retained-ui",
+          "expectedName": "Template retained UI qualification",
+          "sessionKind": "anonymous",
+          "fakeMediaStream": true
+        }
+      ],
+      "geolocation": {
+        "latitude": 52.52,
+        "longitude": 13.405,
+        "accuracy": 10
+      }
     }
   }
 }

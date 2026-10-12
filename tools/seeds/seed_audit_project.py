@@ -1,5 +1,7 @@
 """Selected template collections and their environment boundaries."""
 import copy
+import json
+from pathlib import Path
 
 SHARED = ('accessPolicyDefinitions', 'countryPartitions', 'helpCenterGuideFields',
           'helpCenterRevisions', 'i18n_bundles', 'i18n_messages')
@@ -10,6 +12,10 @@ DEMO_ONLY_RUNTIME = ('chatMessages', 'chats', 'contactChatAccess', 'sampleCards'
 
 def audit_project(data, errors):
     demo = data['demo_db']
+    local = json.loads((Path(__file__).resolve().parents[2] / 'frontend/src/app/shared/core/local/seed/data/deployment-configuration.json').read_text())
+    for key in ('productName', 'homeLabel', 'logoUrl', 'logoCharacterIndex', 'revision'):
+        if demo['deploymentConfigurations'][0]['branding'][key] != local[key]:
+            errors.append(f'demo_db/deploymentConfigurations: browser-local branding differs: {key}')
     for mode in ('myscoutee_db', 'e2e_db'):
         target = data[mode]
         for name in SHARED:

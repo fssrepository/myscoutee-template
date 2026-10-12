@@ -59,6 +59,8 @@ class ChatPushNotificationServiceTest {
 
         ArgumentCaptor<NotificationIntent> intent = ArgumentCaptor.forClass(NotificationIntent.class);
         verify(notificationOutboxService).enqueue(intent.capture());
+        assertThat(intent.getValue().iconUrl()).isNull();
+        assertThat(intent.getValue().badgeUrl()).isNull();
         assertThat(intent.getValue().recipientUserIds())
                 .containsExactly("offline-viewer")
                 .doesNotContain("connected-viewer")

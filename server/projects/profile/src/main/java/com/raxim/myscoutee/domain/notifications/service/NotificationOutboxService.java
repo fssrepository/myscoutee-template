@@ -521,8 +521,8 @@ public class NotificationOutboxService implements com.raxim.myscoutee.domain.not
         payload.putIfAbsent(
                 "notification_message_key",
                 notificationKey(intent.type(), "message"));
-        putIfText(payload, "productName", branding.productName());
-        putIfText(payload, "productLogoUrl", branding.logoUrl());
+        payload.put("productName", branding.productName());
+        payload.put("productLogoUrl", branding.logoUrl());
         putIfText(
                 payload,
                 "productBrandingRevision",
@@ -533,12 +533,12 @@ public class NotificationOutboxService implements com.raxim.myscoutee.domain.not
                 branding.productName()));
         putIfText(payload, "body", firstNonBlank(intent.body(), payload.get("body")));
         putIfText(payload, "url", firstNonBlank(intent.clickUrl(), payload.get("url"), DEFAULT_CLICK_URL));
-        putIfText(payload, "icon", branding.applicationIcon(firstNonBlank(
-                intent.iconUrl(),
-                payload.get("icon"))));
-        putIfText(payload, "badge", branding.applicationIcon(firstNonBlank(
-                intent.badgeUrl(),
-                payload.get("badge"))));
+        String iconUrl = branding.applicationIcon(firstNonBlank(intent.iconUrl(), payload.get("icon")));
+        String badgeUrl = branding.applicationIcon(firstNonBlank(intent.badgeUrl(), payload.get("badge")));
+        payload.remove("icon");
+        payload.remove("badge");
+        putIfText(payload, "icon", iconUrl);
+        putIfText(payload, "badge", badgeUrl);
         putIfText(payload, "tag", firstNonBlank(intent.tag(), payload.get("tag"), intent.type()));
         return payload;
     }
@@ -566,16 +566,16 @@ public class NotificationOutboxService implements com.raxim.myscoutee.domain.not
         Long revision = parseNonNegativeLong(firstNonBlank(
                 payload.get("productBrandingRevision"),
                 payload.get("product_branding_revision")));
-        if (StringUtils.hasText(productName)
-                && StringUtils.hasText(logoUrl)
-                && revision != null) {
+        if (revision != null
+                && (payload.containsKey("productName") || payload.containsKey("product_name"))
+                && (payload.containsKey("productLogoUrl") || payload.containsKey("product_logo_url"))) {
             return new ResolvedDeploymentBranding(
                     productName,
                     logoUrl,
                     revision);
         }
         return deploymentBrandingResolver == null
-                ? com.raxim.myscoutee.domain.platform.api.DeploymentBranding.fallback()
+                ? new ResolvedDeploymentBranding("", "", 0L)
                 : deploymentBrandingResolver.resolve();
     }
 

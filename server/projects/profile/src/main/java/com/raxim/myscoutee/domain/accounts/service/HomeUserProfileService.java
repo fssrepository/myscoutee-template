@@ -68,7 +68,7 @@ public class HomeUserProfileService implements ProfileReadState {
         return new UserByIdResponseDto(profile.id(), profile.name(), profile.city(), profile.initials(), profile.gender(),
                 profile.locationCoordinates(), profile.partitionKey(), profile.images(), profile.profileStatus(),
                 profile.previousProfileStatus(), profile.deletedAtIso(), admin, operator, profile.activities(),
-                profile.notificationPreferences(), profile.activities());
+                profile.notificationPreferences(), profile.activities(), profile.completion(), profile.headline(), profile.about());
     }
 
     public UserMenuCountersDto queryMenuCounters(String requestedUserId) {
@@ -95,7 +95,8 @@ public class HomeUserProfileService implements ProfileReadState {
                 safeText(user.getPartitionKey()), normalizeStrings(user.getImages()), resolveProfileStatus(user),
                 safeText(user.getPreviousProfileStatus()), safeText(user.getDeletedAtIso()), false, user.isOperator(),
                 buildMenuCounters(user), new UserNotificationPreferencesDto(user.getNotificationPreferences() != null
-                        && Boolean.TRUE.equals(user.getNotificationPreferences().muted())));
+                        && Boolean.TRUE.equals(user.getNotificationPreferences().muted())),
+                count(user.getCompletion()), safeText(user.getHeadline()), safeText(user.getAbout()));
     }
 
     public ProfileExtByIdResponseDto loadProfileExtById(String requestedUserId) {
@@ -104,7 +105,7 @@ public class HomeUserProfileService implements ProfileReadState {
         UserDto profile = new UserDto(response.id(), response.name(), response.city(), response.initials(), response.gender(),
                 response.locationCoordinates(), response.partitionKey(), response.images(), response.profileStatus(),
                 response.previousProfileStatus(), response.deletedAtIso(), response.admin(), response.operator(),
-                response.activities(), response.notificationPreferences());
+                response.activities(), response.notificationPreferences(), response.completion(), response.headline(), response.about());
         return new ProfileExtByIdResponseDto(new ProfileExtDto(profile), response.counterOverrides());
     }
 
@@ -229,6 +230,8 @@ public class HomeUserProfileService implements ProfileReadState {
         document.setCity(nullToEmpty(user.city()));
         document.setInitials(nullToEmpty(user.initials()));
         document.setGender(nullToEmpty(user.gender()));
+        if (user.headline() != null) document.setHeadline(user.headline());
+        if (user.about() != null) document.setAbout(user.about());
         document.setOperator((current != null && current.isOperator())
                 || isCurrentRequestOperatorForUser(user.id()));
         document.setLocationCoordinates(toLocationCoordinatesRecord(requestedLocation));
@@ -608,7 +611,7 @@ public class HomeUserProfileService implements ProfileReadState {
                 || (!admin && !operator) || !StringUtils.hasText(principal.getUserId())) return null;
         String name = admin ? adminDisplayName(principal.getEmail()) : "Operator";
         return response(new UserDto(principal.getUserId(), name, "", adminInitials(name), "man", null, "", List.of(),
-                "public", "", "", admin, operator, buildMenuCounters(null), new UserNotificationPreferencesDto(false)), admin, operator);
+                "public", "", "", admin, operator, buildMenuCounters(null), new UserNotificationPreferencesDto(false), 0, "", ""), admin, operator);
     }
 
 

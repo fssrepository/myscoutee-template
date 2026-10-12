@@ -383,19 +383,18 @@
     "languageLabel": "English",
     "version": 1,
     "active": true,
-    "title": "Using the guide",
-    "summary": "Using the guide",
-    "description": "Using the guide",
+    "title": "Your guide button",
+    "summary": "Help for the screen you are viewing.",
+    "description": "Learn how to use and move the floating buttons.",
     "presentation": "tour",
     "sections": [
       {
-        "id": "overview",
-        "icon": "tips_and_updates",
-        "title": "Using the guide",
+        "id": "guide-guide-launcher",
+        "guideStepId": "guide-launcher",
+        "icon": "touch_app",
+        "title": "Help when you need it",
         "blurb": "",
-        "contentHtml": "<p>Using the guide</p>",
-        "imageUrls": [],
-        "optional": false
+        "contentHtml": "<p>Help: Next, Back, Done. Drag the lightbulb or notification bell; drop on the red X to hide. Turn help off or back on permanently: side menu → Explanations.</p>"
       }
     ],
     "_id": "template-guide-landing.guide-en-v1",
@@ -403,7 +402,8 @@
     "createdDate": "2026-10-11T00:00:00Z",
     "updatedDate": "2026-10-11T00:00:00Z",
     "createdUser": "template-seed",
-    "updatedUser": "template-seed"
+    "updatedUser": "template-seed",
+    "headerColor": "violet"
   },
   {
     "contextKey": "landing.guide",
@@ -412,19 +412,18 @@
     "languageLabel": "Magyar",
     "version": 1,
     "active": true,
-    "title": "Az útmutató használata",
-    "summary": "Az útmutató használata",
-    "description": "Az útmutató használata",
+    "title": "A magyarázó gomb",
+    "summary": "Segítség az éppen megnyitott képernyőhöz.",
+    "description": "Ismerd meg a lebegő gombok használatát és mozgatását.",
     "presentation": "tour",
     "sections": [
       {
-        "id": "overview",
-        "icon": "tips_and_updates",
-        "title": "Az útmutató használata",
+        "id": "guide-guide-launcher",
+        "guideStepId": "guide-launcher",
+        "icon": "touch_app",
+        "title": "Segítség, amikor kell",
         "blurb": "",
-        "contentHtml": "<p>Az útmutató használata</p>",
-        "imageUrls": [],
-        "optional": false
+        "contentHtml": "<p>Súgó: Előre, Vissza, Kész. A villanykörte és az értesítési csengő húzható; piros X-re ejtve elrejthető. Tartós ki-/bekapcsolás: oldalsó menü → Magyarázatok.</p>"
       }
     ],
     "_id": "template-guide-landing.guide-hu-v1",
@@ -432,7 +431,8 @@
     "createdDate": "2026-10-11T00:00:00Z",
     "updatedDate": "2026-10-11T00:00:00Z",
     "createdUser": "template-seed",
-    "updatedUser": "template-seed"
+    "updatedUser": "template-seed",
+    "headerColor": "violet"
   },
   {
     "contextKey": "",

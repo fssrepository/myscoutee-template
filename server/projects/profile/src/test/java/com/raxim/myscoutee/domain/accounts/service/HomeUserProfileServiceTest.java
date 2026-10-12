@@ -73,6 +73,29 @@ class HomeUserProfileServiceTest {
         verifyNoInteractions(jobs);
     }
 
+    @Test void retainedProfileTextRoundTripsAndCanBeClearedWithoutChangingCompletion() {
+        Users original = user("member"); original.setCompletion(75);
+        when(access.canCurrentActorEditProfile("member")).thenReturn(true);
+        when(users.findByUserId("member")).thenReturn(Optional.of(original));
+        when(users.save(any(Users.class))).thenAnswer(call -> call.getArgument(0));
+        when(selected.resolveSelectedUserId("member")).thenReturn("member");
+        for (String text : List.of("Profile description", "")) {
+            UserDto base = profile("member", "Name", null, false, false);
+            UserDto request = new UserDto(base.id(), base.name(), base.city(), base.initials(), base.gender(),
+                    base.locationCoordinates(), base.partitionKey(), base.images(), base.profileStatus(),
+                    base.previousProfileStatus(), base.deletedAtIso(), base.admin(), base.operator(),
+                    base.activities(), base.notificationPreferences(), 100, text, text);
+            UserDto saved = service.saveUserProfile(request);
+            assertThat(saved.headline()).isEqualTo(text);
+            assertThat(saved.about()).isEqualTo(text);
+            assertThat(saved.completion()).isEqualTo(75);
+            UserDto reloaded = service.loadProfileExtById("member").profileExt().profile();
+            assertThat(reloaded.headline()).isEqualTo(text);
+            assertThat(reloaded.about()).isEqualTo(text);
+            assertThat(reloaded.completion()).isEqualTo(75);
+        }
+    }
+
     @Test void deniedProfileEditDoesNotReadOrWriteStorageOrResolveLocation() {
         assertThatThrownBy(() -> service.saveUserProfile(profile("other", "Changed", null, false, false)))
                 .isInstanceOf(org.springframework.web.server.ResponseStatusException.class).hasMessageContaining("403");
@@ -170,7 +193,7 @@ class HomeUserProfileServiceTest {
 
     private UserDto profile(String id, String name, LocationCoordinatesDto location, boolean admin, boolean operator) {
         return new UserDto(id, name, "City", "N", "man", location, "", List.of("/avatar.webp"),
-                "public", "", "", admin, operator, null, new UserNotificationPreferencesDto(true));
+                "public", "", "", admin, operator, null, new UserNotificationPreferencesDto(true), null, null, null);
     }
 
 

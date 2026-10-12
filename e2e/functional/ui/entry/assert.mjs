@@ -14,6 +14,10 @@ export async function assertUi({ page, ctx, local = ctx?.mode !== 'full', member
   await page.navigate('/entry');
   await page.waitForText('Templates');
   await page.waitForText('v' + expectedVersion);
+  await page.waitFor('bundled landing logo loaded', () => page.evaluate(() => {
+    const logo = document.querySelector('.brand img');
+    return Boolean(logo?.currentSrc && logo.complete && logo.naturalWidth > 0);
+  }));
   if (local) await page.clickVisible('.entry-actions .primary');
   else await page.clickByText('.entry-actions button', 'Explore');
   if (consentExpected) {
