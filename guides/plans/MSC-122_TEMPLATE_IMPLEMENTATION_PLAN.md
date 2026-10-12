@@ -100,15 +100,16 @@ deep-link behavior. A working `local` build alone does not close frontend work.
   through versioned installation/upgrade paths, never direct database repair.
   Netcup remains prohibited; use local VMware, then E2E/KVM/monolith serially.
 
-- **Queued user follow-up (2026-10-12):** after the complete deployment/input
-  audit and corrections, repair the local frontend submodule's remote/tracking
-  setup so ordinary VS Code Git push works. Inspect the existing bundle/sync
-  workflow first; retain the local submodule contract and do not create an
-  unrequested hosted frontend repository.
-  The user's 08:25 screenshot confirms `receive.denyCurrentBranch`: `origin`
-  points at the separate non-bare local frontend checkout with `master` checked
-  out. Ordinary Push/Sync must work without a special per-push command; preserve
-  the portable bundle and remote components workflow.
+- **DONE — local frontend Push/Sync (2026-10-12):** the user's 08:25 screenshot
+  identified Git's checked-out-branch rejection on the existing local receiver.
+  Its working tree was clean and its branch was an ancestor of the two outgoing
+  frontend commits. Configured that receiver's standard
+  `receive.denyCurrentBranch=updateInstead`; ordinary `git push origin master:master`
+  advanced `2eb5ef8` to `6fd3abd` and updated its working tree. Both checkouts are
+  clean and the frontend tracks `origin/master` with no ahead/behind difference.
+  VS Code uses this same push command. No hosted repository or special push
+  wrapper was introduced. Bundle export for the parent remains its existing
+  separate source-artifact step; see [local frontend workflow](../../tools/sources/README.md).
 
 - `DONE`: implemented and checked at the stated boundary, with evidence.
 - `IN PROGRESS`: some code exists; the step's acceptance conditions are not all proven.
