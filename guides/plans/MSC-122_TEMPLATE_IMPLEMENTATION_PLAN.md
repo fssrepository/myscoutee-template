@@ -653,6 +653,10 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     seed selections and deployment paths at the existing MyScoutee owners first
     when their current inputs cannot already express the template. Copy the
     qualified shared helper, rather than forking its complete implementation.
+    **Execution order (user instruction, 2026-10-12): defer the VMware deployment
+    and user smoke check until morning. Continue KVM, package/release preparation
+    and all independent automated checks overnight without waiting for a reply.
+    Keep VMware results explicitly unverified; do not treat this deferral as PASS.**
     Perform installation qualification only on a local VMware Debian VM: fresh
     install, restart, backup/restore and data-preserving removal. Reuse the existing
     installation workflow and prepare this same VMware deployment for the final
