@@ -606,5 +606,213 @@
     "group": "popup",
     "i18nKey": "guide.operator.updates.close",
     "order": 4
+  },
+  {
+    "_id": "chat.call--call-participants",
+    "id": "call-participants",
+    "screenKey": "chat.call",
+    "group": "card",
+    "i18nKey": "guide.chat.call.call-participants",
+    "order": 0
+  },
+  {
+    "_id": "chat.call--call-follow-speakers",
+    "id": "call-follow-speakers",
+    "screenKey": "chat.call",
+    "group": "menus",
+    "i18nKey": "guide.chat.call.call-follow-speakers",
+    "order": 1
+  },
+  {
+    "_id": "chat.call--call-self-mute",
+    "id": "call-self-mute",
+    "screenKey": "chat.call",
+    "group": "card",
+    "i18nKey": "guide.chat.call.call-self-mute",
+    "order": 2
+  },
+  {
+    "_id": "chat.call--call-self-camera",
+    "id": "call-self-camera",
+    "screenKey": "chat.call",
+    "group": "card",
+    "i18nKey": "guide.chat.call.call-self-camera",
+    "order": 3
+  },
+  {
+    "_id": "chat.call--call-peer-mute",
+    "id": "call-peer-mute",
+    "screenKey": "chat.call",
+    "group": "card",
+    "i18nKey": "guide.chat.call.call-peer-mute",
+    "order": 4
+  },
+  {
+    "_id": "chat.call--call-peer-video",
+    "id": "call-peer-video",
+    "screenKey": "chat.call",
+    "group": "card",
+    "i18nKey": "guide.chat.call.call-peer-video",
+    "order": 5
+  },
+  {
+    "_id": "chat.call--call-admin-mute",
+    "id": "call-admin-mute",
+    "screenKey": "chat.call",
+    "group": "card",
+    "i18nKey": "guide.chat.call.call-admin-mute",
+    "order": 6
+  },
+  {
+    "_id": "chat.call--call-zoom",
+    "id": "call-zoom",
+    "screenKey": "chat.call",
+    "group": "card",
+    "i18nKey": "guide.chat.call.call-zoom",
+    "order": 7
+  },
+  {
+    "_id": "chat.call--call-spectrum",
+    "id": "call-spectrum",
+    "screenKey": "chat.call",
+    "group": "card",
+    "i18nKey": "guide.chat.call.call-spectrum",
+    "order": 8
+  },
+  {
+    "_id": "chat.call--call-accept",
+    "id": "call-accept",
+    "screenKey": "chat.call",
+    "group": "card",
+    "i18nKey": "guide.chat.call.call-accept",
+    "order": 9
+  },
+  {
+    "_id": "chat.call--call-decline",
+    "id": "call-decline",
+    "screenKey": "chat.call",
+    "group": "card",
+    "i18nKey": "guide.chat.call.call-decline",
+    "order": 10
+  },
+  {
+    "_id": "chat.call--call-microphone",
+    "id": "call-microphone",
+    "screenKey": "chat.call",
+    "group": "card",
+    "i18nKey": "guide.chat.call.call-microphone",
+    "order": 11
+  },
+  {
+    "_id": "chat.call--call-camera",
+    "id": "call-camera",
+    "screenKey": "chat.call",
+    "group": "card",
+    "i18nKey": "guide.chat.call.call-camera",
+    "order": 12
+  },
+  {
+    "_id": "chat.call--call-volume",
+    "id": "call-volume",
+    "screenKey": "chat.call",
+    "group": "card",
+    "i18nKey": "guide.chat.call.call-volume",
+    "order": 13
+  },
+  {
+    "_id": "chat.call--call-play-audio",
+    "id": "call-play-audio",
+    "screenKey": "chat.call",
+    "group": "card",
+    "i18nKey": "guide.chat.call.call-play-audio",
+    "order": 14
+  },
+  {
+    "_id": "chat.call--call-hangup",
+    "id": "call-hangup",
+    "screenKey": "chat.call",
+    "group": "card",
+    "i18nKey": "guide.chat.call.call-hangup",
+    "order": 15
+  },
+  {
+    "_id": "chat.call--close",
+    "id": "close",
+    "screenKey": "chat.call",
+    "group": "popup",
+    "i18nKey": "guide.chat.call.close",
+    "order": 16
+  },
+  {
+    "_id": "chat.call.volume--master-volume",
+    "id": "master-volume",
+    "screenKey": "chat.call.volume",
+    "group": "card",
+    "i18nKey": "guide.chat.call.volume.master-volume",
+    "order": 0
+  },
+  {
+    "_id": "chat.call.volume--master-mute",
+    "id": "master-mute",
+    "screenKey": "chat.call.volume",
+    "group": "card",
+    "i18nKey": "guide.chat.call.volume.master-mute",
+    "order": 1
+  },
+  {
+    "_id": "chat.call.volume--self-camera",
+    "id": "self-camera",
+    "screenKey": "chat.call.volume",
+    "group": "card",
+    "i18nKey": "guide.chat.call.volume.self-camera",
+    "order": 2
+  },
+  {
+    "_id": "chat.call.volume--peer-volume",
+    "id": "peer-volume",
+    "screenKey": "chat.call.volume",
+    "group": "card",
+    "i18nKey": "guide.chat.call.volume.peer-volume",
+    "order": 3
+  },
+  {
+    "_id": "chat.call.volume--peer-mute",
+    "id": "peer-mute",
+    "screenKey": "chat.call.volume",
+    "group": "card",
+    "i18nKey": "guide.chat.call.volume.peer-mute",
+    "order": 4
+  },
+  {
+    "_id": "chat.call.volume--peer-video",
+    "id": "peer-video",
+    "screenKey": "chat.call.volume",
+    "group": "card",
+    "i18nKey": "guide.chat.call.volume.peer-video",
+    "order": 5
+  },
+  {
+    "_id": "chat.call.volume--close",
+    "id": "close",
+    "screenKey": "chat.call.volume",
+    "group": "popup",
+    "i18nKey": "guide.chat.call.volume.close",
+    "order": 6
+  },
+  {
+    "_id": "chat--chat-call",
+    "id": "chat-call",
+    "screenKey": "chat",
+    "group": "controls",
+    "i18nKey": "guide.template.chat.chat-call",
+    "order": 3
+  },
+  {
+    "_id": "chat--chat-pins",
+    "id": "chat-pins",
+    "screenKey": "chat",
+    "group": "controls",
+    "i18nKey": "guide.template.chat.chat-pins",
+    "order": 4
   }
 ]

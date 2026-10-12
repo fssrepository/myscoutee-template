@@ -17698,5 +17698,1517 @@
     "key": "operator.email.title",
     "lang": "hu",
     "value": "Email-küldés"
+  },
+  {
+    "_id": "i18n-message-en-activities-zoahtk",
+    "key": "Activities",
+    "lang": "en",
+    "value": "Activities"
+  },
+  {
+    "_id": "i18n-message-en-animals-nature",
+    "key": "Animals & nature",
+    "lang": "en",
+    "value": "Animals & nature"
+  },
+  {
+    "_id": "i18n-message-en-cancel-reply",
+    "key": "Cancel reply",
+    "lang": "en",
+    "value": "Cancel reply"
+  },
+  {
+    "_id": "i18n-message-en-chat-call-accept-audio",
+    "key": "chat.call.accept.audio",
+    "lang": "en",
+    "value": "Join with audio"
+  },
+  {
+    "_id": "i18n-message-en-chat-call-accept-video",
+    "key": "chat.call.accept.video",
+    "lang": "en",
+    "value": "Join with video"
+  },
+  {
+    "_id": "i18n-message-en-chat-call-admin-mute",
+    "key": "chat.call.admin.mute",
+    "lang": "en",
+    "value": "Mute participant for everyone"
+  },
+  {
+    "_id": "i18n-message-en-chat-call-admin-muted",
+    "key": "chat.call.admin.muted",
+    "lang": "en",
+    "value": "Muted by admin"
+  },
+  {
+    "_id": "i18n-message-en-chat-call-admin-release",
+    "key": "chat.call.admin.release",
+    "lang": "en",
+    "value": "Allow participant to unmute"
+  },
+  {
+    "_id": "i18n-message-en-chat-call-camera",
+    "key": "chat.call.camera",
+    "lang": "en",
+    "value": "Turn camera on or off"
+  },
+  {
+    "_id": "i18n-message-en-chat-call-close",
+    "key": "chat.call.close",
+    "lang": "en",
+    "value": "Close call and leave"
+  },
+  {
+    "_id": "i18n-message-en-chat-call-coordinator",
+    "key": "chat.call.coordinator",
+    "lang": "en",
+    "value": "Coordinator"
+  },
+  {
+    "_id": "i18n-message-en-chat-call-decline",
+    "key": "chat.call.decline",
+    "lang": "en",
+    "value": "Decline"
+  },
+  {
+    "_id": "i18n-message-en-chat-call-direct-help",
+    "key": "chat.call.direct.help",
+    "lang": "en",
+    "value": "Audio and video go directly between participants. Everyone must open this chat to receive or join the call."
+  },
+  {
+    "_id": "i18n-message-en-chat-call-enlarge",
+    "key": "chat.call.enlarge",
+    "lang": "en",
+    "value": "Enlarge participant"
+  },
+  {
+    "_id": "i18n-message-en-chat-call-error-browser",
+    "key": "chat.call.error.browser",
+    "lang": "en",
+    "value": "Calls require HTTPS or localhost and a browser supporting WebRTC."
+  },
+  {
+    "_id": "i18n-message-en-chat-call-error-direct",
+    "key": "chat.call.error.direct",
+    "lang": "en",
+    "value": "A direct connection could not be established with a participant. Check the network or firewall. Media is never relayed through the server."
+  },
+  {
+    "_id": "i18n-message-en-chat-call-error-media",
+    "key": "chat.call.error.media",
+    "lang": "en",
+    "value": "Allow camera or microphone access and check that the device is available."
+  },
+  {
+    "_id": "i18n-message-en-chat-call-error-node",
+    "key": "chat.call.error.node",
+    "lang": "en",
+    "value": "The selected connection discovery node is unavailable."
+  },
+  {
+    "_id": "i18n-message-en-chat-call-error-secure",
+    "key": "chat.call.error.secure",
+    "lang": "en",
+    "value": "A secure connection could not be established with a participant. Leave and join again."
+  },
+  {
+    "_id": "i18n-message-en-chat-call-error-signaling",
+    "key": "chat.call.error.signaling",
+    "lang": "en",
+    "value": "Call coordination is unavailable. You can leave and try joining again."
+  },
+  {
+    "_id": "i18n-message-en-chat-call-follow-speakers",
+    "key": "chat.call.follow.speakers",
+    "lang": "en",
+    "value": "Follow speakers"
+  },
+  {
+    "_id": "i18n-message-en-chat-call-hangup",
+    "key": "chat.call.hangup",
+    "lang": "en",
+    "value": "Leave call"
+  },
+  {
+    "_id": "i18n-message-en-chat-call-mute",
+    "key": "chat.call.mute",
+    "lang": "en",
+    "value": "Mute microphone"
+  },
+  {
+    "_id": "i18n-message-en-chat-call-muted",
+    "key": "chat.call.muted",
+    "lang": "en",
+    "value": "Muted"
+  },
+  {
+    "_id": "i18n-message-en-chat-call-node",
+    "key": "chat.call.node",
+    "lang": "en",
+    "value": "Connection discovery node"
+  },
+  {
+    "_id": "i18n-message-en-chat-call-node-direct",
+    "key": "chat.call.node.direct",
+    "lang": "en",
+    "value": "Local network only"
+  },
+  {
+    "_id": "i18n-message-en-chat-call-notice-declined",
+    "key": "chat.call.notice.declined",
+    "lang": "en",
+    "value": "A participant declined the invitation."
+  },
+  {
+    "_id": "i18n-message-en-chat-call-open",
+    "key": "chat.call.open",
+    "lang": "en",
+    "value": "Open call"
+  },
+  {
+    "_id": "i18n-message-en-chat-call-participant",
+    "key": "chat.call.participant",
+    "lang": "en",
+    "value": "Participant"
+  },
+  {
+    "_id": "i18n-message-en-chat-call-peer-connected",
+    "key": "chat.call.peer.connected",
+    "lang": "en",
+    "value": "Direct connection"
+  },
+  {
+    "_id": "i18n-message-en-chat-call-peer-connecting",
+    "key": "chat.call.peer.connecting",
+    "lang": "en",
+    "value": "Connecting"
+  },
+  {
+    "_id": "i18n-message-en-chat-call-peer-failed",
+    "key": "chat.call.peer.failed",
+    "lang": "en",
+    "value": "Connection failed"
+  },
+  {
+    "_id": "i18n-message-en-chat-call-play-audio",
+    "key": "chat.call.play.audio",
+    "lang": "en",
+    "value": "Play incoming audio"
+  },
+  {
+    "_id": "i18n-message-en-chat-call-receive-video-off",
+    "key": "chat.call.receive.video.off",
+    "lang": "en",
+    "value": "Stop receiving video"
+  },
+  {
+    "_id": "i18n-message-en-chat-call-receive-video-on",
+    "key": "chat.call.receive.video.on",
+    "lang": "en",
+    "value": "Resume receiving video"
+  },
+  {
+    "_id": "i18n-message-en-chat-call-restore-grid",
+    "key": "chat.call.restore.grid",
+    "lang": "en",
+    "value": "Show all participants"
+  },
+  {
+    "_id": "i18n-message-en-chat-call-speaker",
+    "key": "chat.call.speaker",
+    "lang": "en",
+    "value": "Mute or unmute incoming audio"
+  },
+  {
+    "_id": "i18n-message-en-chat-call-speaking",
+    "key": "chat.call.speaking",
+    "lang": "en",
+    "value": "Speaking"
+  },
+  {
+    "_id": "i18n-message-en-chat-call-start-audio",
+    "key": "chat.call.start.audio",
+    "lang": "en",
+    "value": "Start audio call"
+  },
+  {
+    "_id": "i18n-message-en-chat-call-start-video",
+    "key": "chat.call.start.video",
+    "lang": "en",
+    "value": "Start video call"
+  },
+  {
+    "_id": "i18n-message-en-chat-call-status-active",
+    "key": "chat.call.status.active",
+    "lang": "en",
+    "value": "Call connected"
+  },
+  {
+    "_id": "i18n-message-en-chat-call-status-connecting",
+    "key": "chat.call.status.connecting",
+    "lang": "en",
+    "value": "Connecting directly…"
+  },
+  {
+    "_id": "i18n-message-en-chat-call-status-idle",
+    "key": "chat.call.status.idle",
+    "lang": "en",
+    "value": "Ready to call"
+  },
+  {
+    "_id": "i18n-message-en-chat-call-status-incoming",
+    "key": "chat.call.status.incoming",
+    "lang": "en",
+    "value": "Incoming group call"
+  },
+  {
+    "_id": "i18n-message-en-chat-call-status-preparing",
+    "key": "chat.call.status.preparing",
+    "lang": "en",
+    "value": "Preparing camera and microphone…"
+  },
+  {
+    "_id": "i18n-message-en-chat-call-status-waiting",
+    "key": "chat.call.status.waiting",
+    "lang": "en",
+    "value": "Waiting for participants"
+  },
+  {
+    "_id": "i18n-message-en-chat-call-unmute",
+    "key": "chat.call.unmute",
+    "lang": "en",
+    "value": "Unmute microphone"
+  },
+  {
+    "_id": "i18n-message-en-chat-call-verify",
+    "key": "chat.call.verify",
+    "lang": "en",
+    "value": "Verify call identity"
+  },
+  {
+    "_id": "i18n-message-en-chat-call-verify-help",
+    "key": "chat.call.verify.help",
+    "lang": "en",
+    "value": "Compare this code with every participant through a trusted channel. It changes when someone joins or leaves. Matching codes verify the call keys; they do not verify who owns a browser."
+  },
+  {
+    "_id": "i18n-message-en-chat-call-volume",
+    "key": "chat.call.volume",
+    "lang": "en",
+    "value": "Volume"
+  },
+  {
+    "_id": "i18n-message-en-chat-call-you",
+    "key": "chat.call.you",
+    "lang": "en",
+    "value": "You"
+  },
+  {
+    "_id": "i18n-message-en-close-1l0xxoj",
+    "key": "Close",
+    "lang": "en",
+    "value": "Close"
+  },
+  {
+    "_id": "i18n-message-en-close-pinned-messages",
+    "key": "Close pinned messages",
+    "lang": "en",
+    "value": "Close pinned messages"
+  },
+  {
+    "_id": "i18n-message-en-flags",
+    "key": "Flags",
+    "lang": "en",
+    "value": "Flags"
+  },
+  {
+    "_id": "i18n-message-en-food-drink",
+    "key": "Food & drink",
+    "lang": "en",
+    "value": "Food & drink"
+  },
+  {
+    "_id": "i18n-message-en-guide-chat-call-call-accept-description",
+    "key": "guide.chat.call.call-accept.description",
+    "lang": "en",
+    "value": "Join this call with your microphone. Your camera starts off and can be enabled later."
+  },
+  {
+    "_id": "i18n-message-en-guide-chat-call-call-accept-label",
+    "key": "guide.chat.call.call-accept.label",
+    "lang": "en",
+    "value": "Join with audio"
+  },
+  {
+    "_id": "i18n-message-en-guide-chat-call-call-admin-mute-description",
+    "key": "guide.chat.call.call-admin-mute.description",
+    "lang": "en",
+    "value": "As an admin, mute this participant for the whole call. Releasing the restriction lets them switch their own microphone back on; it does not turn it on for them."
+  },
+  {
+    "_id": "i18n-message-en-guide-chat-call-call-admin-mute-label",
+    "key": "guide.chat.call.call-admin-mute.label",
+    "lang": "en",
+    "value": "Mute for everyone"
+  },
+  {
+    "_id": "i18n-message-en-guide-chat-call-call-camera-description",
+    "key": "guide.chat.call.call-camera.description",
+    "lang": "en",
+    "value": "Choose whether to send your camera picture. You can keep talking with the camera off."
+  },
+  {
+    "_id": "i18n-message-en-guide-chat-call-call-camera-label",
+    "key": "guide.chat.call.call-camera.label",
+    "lang": "en",
+    "value": "Camera on or off"
+  },
+  {
+    "_id": "i18n-message-en-guide-chat-call-call-decline-description",
+    "key": "guide.chat.call.call-decline.description",
+    "lang": "en",
+    "value": "Decline this invitation without starting your microphone or camera. The chat remains available."
+  },
+  {
+    "_id": "i18n-message-en-guide-chat-call-call-decline-label",
+    "key": "guide.chat.call.call-decline.label",
+    "lang": "en",
+    "value": "Decline the call"
+  },
+  {
+    "_id": "i18n-message-en-guide-chat-call-call-follow-speakers-description",
+    "key": "guide.chat.call.call-follow-speakers.description",
+    "lang": "en",
+    "value": "Turn this on to keep the current and most recent speakers visible. Turn it off to choose a page yourself."
+  },
+  {
+    "_id": "i18n-message-en-guide-chat-call-call-follow-speakers-label",
+    "key": "guide.chat.call.call-follow-speakers.label",
+    "lang": "en",
+    "value": "Follow speakers"
+  },
+  {
+    "_id": "i18n-message-en-guide-chat-call-call-hangup-description",
+    "key": "guide.chat.call.call-hangup.description",
+    "lang": "en",
+    "value": "Leave the call and release your microphone and camera. The chat stays open and the others can continue talking."
+  },
+  {
+    "_id": "i18n-message-en-guide-chat-call-call-hangup-label",
+    "key": "guide.chat.call.call-hangup.label",
+    "lang": "en",
+    "value": "Leave the call"
+  },
+  {
+    "_id": "i18n-message-en-guide-chat-call-call-microphone-description",
+    "key": "guide.chat.call.call-microphone.description",
+    "lang": "en",
+    "value": "Choose whether others can hear you. This does not mute incoming sound. The red button and your tile show when you are muted."
+  },
+  {
+    "_id": "i18n-message-en-guide-chat-call-call-microphone-label",
+    "key": "guide.chat.call.call-microphone.label",
+    "lang": "en",
+    "value": "Microphone on or off"
+  },
+  {
+    "_id": "i18n-message-en-guide-chat-call-call-participants-description",
+    "key": "guide.chat.call.call-participants.description",
+    "lang": "en",
+    "value": "Each tile belongs to one participant. Swipe or use the arrows for more people. Offscreen video pauses while their audio continues."
+  },
+  {
+    "_id": "i18n-message-en-guide-chat-call-call-participants-label",
+    "key": "guide.chat.call.call-participants.label",
+    "lang": "en",
+    "value": "Participants"
+  },
+  {
+    "_id": "i18n-message-en-guide-chat-call-call-peer-mute-description",
+    "key": "guide.chat.call.call-peer-mute.description",
+    "lang": "en",
+    "value": "Mute this participant only on your device. Others still hear them. Their volume-panel mute controls the same setting."
+  },
+  {
+    "_id": "i18n-message-en-guide-chat-call-call-peer-mute-label",
+    "key": "guide.chat.call.call-peer-mute.label",
+    "lang": "en",
+    "value": "Mute one person for yourself"
+  },
+  {
+    "_id": "i18n-message-en-guide-chat-call-call-peer-video-description",
+    "key": "guide.chat.call.call-peer-video.description",
+    "lang": "en",
+    "value": "Stop or restore video from this participant to save bandwidth. Audio continues. This matches their camera control in the volume panel."
+  },
+  {
+    "_id": "i18n-message-en-guide-chat-call-call-peer-video-label",
+    "key": "guide.chat.call.call-peer-video.label",
+    "lang": "en",
+    "value": "Receive this video"
+  },
+  {
+    "_id": "i18n-message-en-guide-chat-call-call-play-audio-description",
+    "key": "guide.chat.call.call-play-audio.description",
+    "lang": "en",
+    "value": "Your browser paused incoming audio. Press this button to allow playback on this device."
+  },
+  {
+    "_id": "i18n-message-en-guide-chat-call-call-play-audio-label",
+    "key": "guide.chat.call.call-play-audio.label",
+    "lang": "en",
+    "value": "Allow audio playback"
+  },
+  {
+    "_id": "i18n-message-en-guide-chat-call-call-self-camera-description",
+    "key": "guide.chat.call.call-self-camera.description",
+    "lang": "en",
+    "value": "Switch your own camera on or off. This matches the bottom camera button and the camera in your volume block. Audio can stay on."
+  },
+  {
+    "_id": "i18n-message-en-guide-chat-call-call-self-camera-label",
+    "key": "guide.chat.call.call-self-camera.label",
+    "lang": "en",
+    "value": "Your camera"
+  },
+  {
+    "_id": "i18n-message-en-guide-chat-call-call-self-mute-description",
+    "key": "guide.chat.call.call-self-mute.description",
+    "lang": "en",
+    "value": "Mute or restore your microphone here or with the bottom microphone button. Red means muted. An admin mute must first be released by an admin."
+  },
+  {
+    "_id": "i18n-message-en-guide-chat-call-call-self-mute-label",
+    "key": "guide.chat.call.call-self-mute.label",
+    "lang": "en",
+    "value": "Your microphone"
+  },
+  {
+    "_id": "i18n-message-en-guide-chat-call-call-spectrum-description",
+    "key": "guide.chat.call.call-spectrum.description",
+    "lang": "en",
+    "value": "The bars show the microphone sound level across frequencies. The green microphone and frame show speech; a red crossed microphone means muted."
+  },
+  {
+    "_id": "i18n-message-en-guide-chat-call-call-spectrum-label",
+    "key": "guide.chat.call.call-spectrum.label",
+    "lang": "en",
+    "value": "Speech activity"
+  },
+  {
+    "_id": "i18n-message-en-guide-chat-call-call-volume-description",
+    "key": "guide.chat.call.call-volume.description",
+    "lang": "en",
+    "value": "Open playback volume and individual participant controls. Each named block lets you adjust sound or stop receiving that person’s video."
+  },
+  {
+    "_id": "i18n-message-en-guide-chat-call-call-volume-label",
+    "key": "guide.chat.call.call-volume.label",
+    "lang": "en",
+    "value": "Volume and received video"
+  },
+  {
+    "_id": "i18n-message-en-guide-chat-call-call-zoom-description",
+    "key": "guide.chat.call.call-zoom.description",
+    "lang": "en",
+    "value": "Show one tile at full size. Press again to return to the grid. Other participants remain audible."
+  },
+  {
+    "_id": "i18n-message-en-guide-chat-call-call-zoom-label",
+    "key": "guide.chat.call.call-zoom.label",
+    "lang": "en",
+    "value": "Enlarge a participant"
+  },
+  {
+    "_id": "i18n-message-en-guide-chat-call-close-description",
+    "key": "guide.chat.call.close.description",
+    "lang": "en",
+    "value": "Closing this call window also leaves the call. Closing only the explanation guide does not leave it."
+  },
+  {
+    "_id": "i18n-message-en-guide-chat-call-close-label",
+    "key": "guide.chat.call.close.label",
+    "lang": "en",
+    "value": "Close and leave"
+  },
+  {
+    "_id": "i18n-message-en-guide-chat-call-volume-close-description",
+    "key": "guide.chat.call.volume.close.description",
+    "lang": "en",
+    "value": "Return to the call with your settings kept. Closing this panel does not leave the call."
+  },
+  {
+    "_id": "i18n-message-en-guide-chat-call-volume-close-label",
+    "key": "guide.chat.call.volume.close.label",
+    "lang": "en",
+    "value": "Close the volume panel"
+  },
+  {
+    "_id": "i18n-message-en-guide-chat-call-volume-master-mute-description",
+    "key": "guide.chat.call.volume.master-mute.description",
+    "lang": "en",
+    "value": "Mute all incoming audio on this device. Unmute to return to the previous volume. The outer volume button turns red while muted."
+  },
+  {
+    "_id": "i18n-message-en-guide-chat-call-volume-master-mute-label",
+    "key": "guide.chat.call.volume.master-mute.label",
+    "lang": "en",
+    "value": "Mute incoming sound"
+  },
+  {
+    "_id": "i18n-message-en-guide-chat-call-volume-master-volume-description",
+    "key": "guide.chat.call.volume.master-volume.description",
+    "lang": "en",
+    "value": "The Me slider controls all incoming sound on this device. It does not change your microphone or what others hear."
+  },
+  {
+    "_id": "i18n-message-en-guide-chat-call-volume-master-volume-label",
+    "key": "guide.chat.call.volume.master-volume.label",
+    "lang": "en",
+    "value": "Overall playback volume"
+  },
+  {
+    "_id": "i18n-message-en-guide-chat-call-volume-peer-mute-description",
+    "key": "guide.chat.call.volume.peer-mute.description",
+    "lang": "en",
+    "value": "Mute only this participant on your device. Unmuting keeps their previous volume. Their tile microphone shows the same setting."
+  },
+  {
+    "_id": "i18n-message-en-guide-chat-call-volume-peer-mute-label",
+    "key": "guide.chat.call.volume.peer-mute.label",
+    "lang": "en",
+    "value": "Mute this person"
+  },
+  {
+    "_id": "i18n-message-en-guide-chat-call-volume-peer-video-description",
+    "key": "guide.chat.call.volume.peer-video.description",
+    "lang": "en",
+    "value": "Stop or allow their video on your device; their audio stays on. Allowing it resumes video when their tile is visible."
+  },
+  {
+    "_id": "i18n-message-en-guide-chat-call-volume-peer-video-label",
+    "key": "guide.chat.call.volume.peer-video.label",
+    "lang": "en",
+    "value": "This person’s video"
+  },
+  {
+    "_id": "i18n-message-en-guide-chat-call-volume-peer-volume-description",
+    "key": "guide.chat.call.volume.peer-volume.description",
+    "lang": "en",
+    "value": "Adjust the participant named above this slider. The setting combines with your overall playback volume and does not affect other listeners."
+  },
+  {
+    "_id": "i18n-message-en-guide-chat-call-volume-peer-volume-label",
+    "key": "guide.chat.call.volume.peer-volume.label",
+    "lang": "en",
+    "value": "This person’s volume"
+  },
+  {
+    "_id": "i18n-message-en-guide-chat-call-volume-self-camera-description",
+    "key": "guide.chat.call.volume.self-camera.description",
+    "lang": "en",
+    "value": "This switches your own camera, just like the bottom camera button and the icon on your tile. It does not switch everyone’s video."
+  },
+  {
+    "_id": "i18n-message-en-guide-chat-call-volume-self-camera-label",
+    "key": "guide.chat.call.volume.self-camera.label",
+    "lang": "en",
+    "value": "Your camera"
+  },
+  {
+    "_id": "i18n-message-en-is-typing",
+    "key": "is typing",
+    "lang": "en",
+    "value": "is typing"
+  },
+  {
+    "_id": "i18n-message-en-message",
+    "key": "Message",
+    "lang": "en",
+    "value": "Message"
+  },
+  {
+    "_id": "i18n-message-en-more-message-actions",
+    "key": "More message actions",
+    "lang": "en",
+    "value": "More message actions"
+  },
+  {
+    "_id": "i18n-message-en-no-pinned-messages",
+    "key": "No pinned messages",
+    "lang": "en",
+    "value": "No pinned messages"
+  },
+  {
+    "_id": "i18n-message-en-objects",
+    "key": "Objects",
+    "lang": "en",
+    "value": "Objects"
+  },
+  {
+    "_id": "i18n-message-en-pin",
+    "key": "Pin",
+    "lang": "en",
+    "value": "Pin"
+  },
+  {
+    "_id": "i18n-message-en-pinned-message",
+    "key": "Pinned message",
+    "lang": "en",
+    "value": "Pinned message"
+  },
+  {
+    "_id": "i18n-message-en-pinned-messages",
+    "key": "Pinned messages",
+    "lang": "en",
+    "value": "Pinned messages"
+  },
+  {
+    "_id": "i18n-message-en-react",
+    "key": "React",
+    "lang": "en",
+    "value": "React"
+  },
+  {
+    "_id": "i18n-message-en-reactions",
+    "key": "Reactions",
+    "lang": "en",
+    "value": "Reactions"
+  },
+  {
+    "_id": "i18n-message-en-read-by",
+    "key": "Read by",
+    "lang": "en",
+    "value": "Read by"
+  },
+  {
+    "_id": "i18n-message-en-reply",
+    "key": "Reply",
+    "lang": "en",
+    "value": "Reply"
+  },
+  {
+    "_id": "i18n-message-en-search-emoji",
+    "key": "Search emoji",
+    "lang": "en",
+    "value": "Search emoji"
+  },
+  {
+    "_id": "i18n-message-en-smileys-people",
+    "key": "Smileys & people",
+    "lang": "en",
+    "value": "Smileys & people"
+  },
+  {
+    "_id": "i18n-message-en-symbols",
+    "key": "Symbols",
+    "lang": "en",
+    "value": "Symbols"
+  },
+  {
+    "_id": "i18n-message-en-travel-places",
+    "key": "Travel & places",
+    "lang": "en",
+    "value": "Travel & places"
+  },
+  {
+    "_id": "i18n-message-en-unpin",
+    "key": "Unpin",
+    "lang": "en",
+    "value": "Unpin"
+  },
+  {
+    "_id": "i18n-message-en-unsend",
+    "key": "Unsend",
+    "lang": "en",
+    "value": "Unsend"
+  },
+  {
+    "_id": "i18n-message-en-yourself",
+    "key": "yourself",
+    "lang": "en",
+    "value": "yourself"
+  },
+  {
+    "_id": "i18n-message-hu-activities-zoahtk",
+    "key": "Activities",
+    "lang": "hu",
+    "value": "Activities"
+  },
+  {
+    "_id": "i18n-message-hu-animals-nature",
+    "key": "Animals & nature",
+    "lang": "hu",
+    "value": "Animals & nature"
+  },
+  {
+    "_id": "i18n-message-hu-cancel-reply",
+    "key": "Cancel reply",
+    "lang": "hu",
+    "value": "Válasz elvetése"
+  },
+  {
+    "_id": "i18n-message-hu-chat-call-accept-audio",
+    "key": "chat.call.accept.audio",
+    "lang": "hu",
+    "value": "Csatlakozás hanggal"
+  },
+  {
+    "_id": "i18n-message-hu-chat-call-accept-video",
+    "key": "chat.call.accept.video",
+    "lang": "hu",
+    "value": "Csatlakozás videóval"
+  },
+  {
+    "_id": "i18n-message-hu-chat-call-admin-mute",
+    "key": "chat.call.admin.mute",
+    "lang": "hu",
+    "value": "Résztvevő némítása mindenkinél"
+  },
+  {
+    "_id": "i18n-message-hu-chat-call-admin-muted",
+    "key": "chat.call.admin.muted",
+    "lang": "hu",
+    "value": "Admin által némítva"
+  },
+  {
+    "_id": "i18n-message-hu-chat-call-admin-release",
+    "key": "chat.call.admin.release",
+    "lang": "hu",
+    "value": "Résztvevő némításának feloldása"
+  },
+  {
+    "_id": "i18n-message-hu-chat-call-camera",
+    "key": "chat.call.camera",
+    "lang": "hu",
+    "value": "Kamera ki- vagy bekapcsolása"
+  },
+  {
+    "_id": "i18n-message-hu-chat-call-close",
+    "key": "chat.call.close",
+    "lang": "hu",
+    "value": "Hívás bezárása és kilépés"
+  },
+  {
+    "_id": "i18n-message-hu-chat-call-coordinator",
+    "key": "chat.call.coordinator",
+    "lang": "hu",
+    "value": "Koordinátor"
+  },
+  {
+    "_id": "i18n-message-hu-chat-call-decline",
+    "key": "chat.call.decline",
+    "lang": "hu",
+    "value": "Elutasítás"
+  },
+  {
+    "_id": "i18n-message-hu-chat-call-direct-help",
+    "key": "chat.call.direct.help",
+    "lang": "hu",
+    "value": "A hang és kép közvetlenül a résztvevők között halad. A fogadáshoz vagy csatlakozáshoz mindenkinek meg kell nyitnia ezt a chatet."
+  },
+  {
+    "_id": "i18n-message-hu-chat-call-enlarge",
+    "key": "chat.call.enlarge",
+    "lang": "hu",
+    "value": "Résztvevő nagyítása"
+  },
+  {
+    "_id": "i18n-message-hu-chat-call-error-browser",
+    "key": "chat.call.error.browser",
+    "lang": "hu",
+    "value": "A híváshoz HTTPS vagy localhost és WebRTC-t támogató böngésző szükséges."
+  },
+  {
+    "_id": "i18n-message-hu-chat-call-error-direct",
+    "key": "chat.call.error.direct",
+    "lang": "hu",
+    "value": "Egy résztvevővel nem sikerült közvetlen kapcsolatot létrehozni. Ellenőrizd a hálózatot vagy a tűzfalat. A média sosem kerül a szerveren át továbbításra."
+  },
+  {
+    "_id": "i18n-message-hu-chat-call-error-media",
+    "key": "chat.call.error.media",
+    "lang": "hu",
+    "value": "Engedélyezd a kamera vagy mikrofon használatát, és ellenőrizd, hogy az eszköz elérhető-e."
+  },
+  {
+    "_id": "i18n-message-hu-chat-call-error-node",
+    "key": "chat.call.error.node",
+    "lang": "hu",
+    "value": "A kiválasztott kapcsolatfelderítő node nem érhető el."
+  },
+  {
+    "_id": "i18n-message-hu-chat-call-error-secure",
+    "key": "chat.call.error.secure",
+    "lang": "hu",
+    "value": "Egy résztvevővel nem sikerült biztonságos kapcsolatot létrehozni. Lépj ki, majd csatlakozz újra."
+  },
+  {
+    "_id": "i18n-message-hu-chat-call-error-signaling",
+    "key": "chat.call.error.signaling",
+    "lang": "hu",
+    "value": "A hívásszervezés nem érhető el. Lépj ki, majd próbálj újra csatlakozni."
+  },
+  {
+    "_id": "i18n-message-hu-chat-call-follow-speakers",
+    "key": "chat.call.follow.speakers",
+    "lang": "hu",
+    "value": "Beszélők követése"
+  },
+  {
+    "_id": "i18n-message-hu-chat-call-hangup",
+    "key": "chat.call.hangup",
+    "lang": "hu",
+    "value": "Kilépés a hívásból"
+  },
+  {
+    "_id": "i18n-message-hu-chat-call-mute",
+    "key": "chat.call.mute",
+    "lang": "hu",
+    "value": "Mikrofon némítása"
+  },
+  {
+    "_id": "i18n-message-hu-chat-call-muted",
+    "key": "chat.call.muted",
+    "lang": "hu",
+    "value": "Némítva"
+  },
+  {
+    "_id": "i18n-message-hu-chat-call-node",
+    "key": "chat.call.node",
+    "lang": "hu",
+    "value": "Kapcsolatfelderítő node"
+  },
+  {
+    "_id": "i18n-message-hu-chat-call-node-direct",
+    "key": "chat.call.node.direct",
+    "lang": "hu",
+    "value": "Csak helyi hálózat"
+  },
+  {
+    "_id": "i18n-message-hu-chat-call-notice-declined",
+    "key": "chat.call.notice.declined",
+    "lang": "hu",
+    "value": "Egy résztvevő elutasította a meghívást."
+  },
+  {
+    "_id": "i18n-message-hu-chat-call-open",
+    "key": "chat.call.open",
+    "lang": "hu",
+    "value": "Hívás megnyitása"
+  },
+  {
+    "_id": "i18n-message-hu-chat-call-participant",
+    "key": "chat.call.participant",
+    "lang": "hu",
+    "value": "Résztvevő"
+  },
+  {
+    "_id": "i18n-message-hu-chat-call-peer-connected",
+    "key": "chat.call.peer.connected",
+    "lang": "hu",
+    "value": "Közvetlen kapcsolat"
+  },
+  {
+    "_id": "i18n-message-hu-chat-call-peer-connecting",
+    "key": "chat.call.peer.connecting",
+    "lang": "hu",
+    "value": "Kapcsolódás"
+  },
+  {
+    "_id": "i18n-message-hu-chat-call-peer-failed",
+    "key": "chat.call.peer.failed",
+    "lang": "hu",
+    "value": "Sikertelen kapcsolat"
+  },
+  {
+    "_id": "i18n-message-hu-chat-call-play-audio",
+    "key": "chat.call.play.audio",
+    "lang": "hu",
+    "value": "Bejövő hang lejátszása"
+  },
+  {
+    "_id": "i18n-message-hu-chat-call-receive-video-off",
+    "key": "chat.call.receive.video.off",
+    "lang": "hu",
+    "value": "Videófogadás kikapcsolása"
+  },
+  {
+    "_id": "i18n-message-hu-chat-call-receive-video-on",
+    "key": "chat.call.receive.video.on",
+    "lang": "hu",
+    "value": "Videófogadás bekapcsolása"
+  },
+  {
+    "_id": "i18n-message-hu-chat-call-restore-grid",
+    "key": "chat.call.restore.grid",
+    "lang": "hu",
+    "value": "Összes résztvevő mutatása"
+  },
+  {
+    "_id": "i18n-message-hu-chat-call-speaker",
+    "key": "chat.call.speaker",
+    "lang": "hu",
+    "value": "Bejövő hang ki- vagy bekapcsolása"
+  },
+  {
+    "_id": "i18n-message-hu-chat-call-speaking",
+    "key": "chat.call.speaking",
+    "lang": "hu",
+    "value": "Beszél"
+  },
+  {
+    "_id": "i18n-message-hu-chat-call-start-audio",
+    "key": "chat.call.start.audio",
+    "lang": "hu",
+    "value": "Hanghívás indítása"
+  },
+  {
+    "_id": "i18n-message-hu-chat-call-start-video",
+    "key": "chat.call.start.video",
+    "lang": "hu",
+    "value": "Videóhívás indítása"
+  },
+  {
+    "_id": "i18n-message-hu-chat-call-status-active",
+    "key": "chat.call.status.active",
+    "lang": "hu",
+    "value": "Hívás kapcsolódva"
+  },
+  {
+    "_id": "i18n-message-hu-chat-call-status-connecting",
+    "key": "chat.call.status.connecting",
+    "lang": "hu",
+    "value": "Közvetlen kapcsolódás…"
+  },
+  {
+    "_id": "i18n-message-hu-chat-call-status-idle",
+    "key": "chat.call.status.idle",
+    "lang": "hu",
+    "value": "Hívásra kész"
+  },
+  {
+    "_id": "i18n-message-hu-chat-call-status-incoming",
+    "key": "chat.call.status.incoming",
+    "lang": "hu",
+    "value": "Bejövő csoportos hívás"
+  },
+  {
+    "_id": "i18n-message-hu-chat-call-status-preparing",
+    "key": "chat.call.status.preparing",
+    "lang": "hu",
+    "value": "Kamera és mikrofon előkészítése…"
+  },
+  {
+    "_id": "i18n-message-hu-chat-call-status-waiting",
+    "key": "chat.call.status.waiting",
+    "lang": "hu",
+    "value": "Várakozás a résztvevőkre"
+  },
+  {
+    "_id": "i18n-message-hu-chat-call-unmute",
+    "key": "chat.call.unmute",
+    "lang": "hu",
+    "value": "Mikrofon bekapcsolása"
+  },
+  {
+    "_id": "i18n-message-hu-chat-call-verify",
+    "key": "chat.call.verify",
+    "lang": "hu",
+    "value": "Hívásazonosság ellenőrzése"
+  },
+  {
+    "_id": "i18n-message-hu-chat-call-verify-help",
+    "key": "chat.call.verify.help",
+    "lang": "hu",
+    "value": "Egyeztessétek ezt a kódot minden résztvevővel megbízható csatornán. Belépéskor és kilépéskor változik. Az egyező kód a hívás kulcsait ellenőrzi; a böngészőt használó személyt nem azonosítja."
+  },
+  {
+    "_id": "i18n-message-hu-chat-call-volume",
+    "key": "chat.call.volume",
+    "lang": "hu",
+    "value": "Hangerő"
+  },
+  {
+    "_id": "i18n-message-hu-chat-call-you",
+    "key": "chat.call.you",
+    "lang": "hu",
+    "value": "Te"
+  },
+  {
+    "_id": "i18n-message-hu-close-1l0xxoj",
+    "key": "Close",
+    "lang": "hu",
+    "value": "Bezárás"
+  },
+  {
+    "_id": "i18n-message-hu-close-pinned-messages",
+    "key": "Close pinned messages",
+    "lang": "hu",
+    "value": "Kitűzött üzenetek bezárása"
+  },
+  {
+    "_id": "i18n-message-hu-flags",
+    "key": "Flags",
+    "lang": "hu",
+    "value": "Flags"
+  },
+  {
+    "_id": "i18n-message-hu-food-drink",
+    "key": "Food & drink",
+    "lang": "hu",
+    "value": "Food & drink"
+  },
+  {
+    "_id": "i18n-message-hu-guide-chat-call-call-accept-description",
+    "key": "guide.chat.call.call-accept.description",
+    "lang": "hu",
+    "value": "Csatlakozz a híváshoz mikrofonnal. A kamerád kezdetben ki van kapcsolva, később bekapcsolhatod."
+  },
+  {
+    "_id": "i18n-message-hu-guide-chat-call-call-accept-label",
+    "key": "guide.chat.call.call-accept.label",
+    "lang": "hu",
+    "value": "Csatlakozás hanggal"
+  },
+  {
+    "_id": "i18n-message-hu-guide-chat-call-call-admin-mute-description",
+    "key": "guide.chat.call.call-admin-mute.description",
+    "lang": "hu",
+    "value": "Adminként az egész hívásban némíthatod ezt a résztvevőt. Feloldás után ő kapcsolhatja vissza a mikrofonját; az nem indul el magától."
+  },
+  {
+    "_id": "i18n-message-hu-guide-chat-call-call-admin-mute-label",
+    "key": "guide.chat.call.call-admin-mute.label",
+    "lang": "hu",
+    "value": "Némítás mindenkinél"
+  },
+  {
+    "_id": "i18n-message-hu-guide-chat-call-call-camera-description",
+    "key": "guide.chat.call.call-camera.description",
+    "lang": "hu",
+    "value": "Állítsd be, küldöd-e a kameraképedet. Kikapcsolt kamerával is beszélgethetsz."
+  },
+  {
+    "_id": "i18n-message-hu-guide-chat-call-call-camera-label",
+    "key": "guide.chat.call.call-camera.label",
+    "lang": "hu",
+    "value": "Kamera be vagy ki"
+  },
+  {
+    "_id": "i18n-message-hu-guide-chat-call-call-decline-description",
+    "key": "guide.chat.call.call-decline.description",
+    "lang": "hu",
+    "value": "Utasítsd el a meghívást a mikrofon és a kamera elindítása nélkül. A chat tovább használható."
+  },
+  {
+    "_id": "i18n-message-hu-guide-chat-call-call-decline-label",
+    "key": "guide.chat.call.call-decline.label",
+    "lang": "hu",
+    "value": "Hívás elutasítása"
+  },
+  {
+    "_id": "i18n-message-hu-guide-chat-call-call-follow-speakers-description",
+    "key": "guide.chat.call.call-follow-speakers.description",
+    "lang": "hu",
+    "value": "Bekapcsolva az aktuális és a legutóbbi beszélők maradnak láthatók. Kikapcsolva te választod ki a lapot."
+  },
+  {
+    "_id": "i18n-message-hu-guide-chat-call-call-follow-speakers-label",
+    "key": "guide.chat.call.call-follow-speakers.label",
+    "lang": "hu",
+    "value": "Beszélők követése"
+  },
+  {
+    "_id": "i18n-message-hu-guide-chat-call-call-hangup-description",
+    "key": "guide.chat.call.call-hangup.description",
+    "lang": "hu",
+    "value": "Lépj ki és engedd el a mikrofont, kamerát. A chat nyitva marad, a többiek folytathatják a beszélgetést."
+  },
+  {
+    "_id": "i18n-message-hu-guide-chat-call-call-hangup-label",
+    "key": "guide.chat.call.call-hangup.label",
+    "lang": "hu",
+    "value": "Kilépés a hívásból"
+  },
+  {
+    "_id": "i18n-message-hu-guide-chat-call-call-microphone-description",
+    "key": "guide.chat.call.call-microphone.description",
+    "lang": "hu",
+    "value": "Állítsd be, halljanak-e téged a többiek. Ez nem némítja a bejövő hangot. Némításkor a gomb és a saját csempéd is piros jelzést kap."
+  },
+  {
+    "_id": "i18n-message-hu-guide-chat-call-call-microphone-label",
+    "key": "guide.chat.call.call-microphone.label",
+    "lang": "hu",
+    "value": "Mikrofon be vagy ki"
+  },
+  {
+    "_id": "i18n-message-hu-guide-chat-call-call-participants-description",
+    "key": "guide.chat.call.call-participants.description",
+    "lang": "hu",
+    "value": "Minden csempe egy résztvevőé. További emberekhez lapozz vagy használd a nyilakat. A nem látható videó szünetel, a hang tovább szól."
+  },
+  {
+    "_id": "i18n-message-hu-guide-chat-call-call-participants-label",
+    "key": "guide.chat.call.call-participants.label",
+    "lang": "hu",
+    "value": "Résztvevők"
+  },
+  {
+    "_id": "i18n-message-hu-guide-chat-call-call-peer-mute-description",
+    "key": "guide.chat.call.call-peer-mute.description",
+    "lang": "hu",
+    "value": "Csak a saját eszközödön némítod ezt a résztvevőt. Mások tovább hallják. A hangerőpanel név szerinti némítógombja ugyanezt kapcsolja."
+  },
+  {
+    "_id": "i18n-message-hu-guide-chat-call-call-peer-mute-label",
+    "key": "guide.chat.call.call-peer-mute.label",
+    "lang": "hu",
+    "value": "Egy résztvevő helyi némítása"
+  },
+  {
+    "_id": "i18n-message-hu-guide-chat-call-call-peer-video-description",
+    "key": "guide.chat.call.call-peer-video.description",
+    "lang": "hu",
+    "value": "Állítsd le vagy engedélyezd ennek a résztvevőnek a videóját a kapcsolat kíméléséhez. A hang megmarad. A hangerőpanel név szerinti kameragombja ugyanezt állítja."
+  },
+  {
+    "_id": "i18n-message-hu-guide-chat-call-call-peer-video-label",
+    "key": "guide.chat.call.call-peer-video.label",
+    "lang": "hu",
+    "value": "Egy videó fogadása"
+  },
+  {
+    "_id": "i18n-message-hu-guide-chat-call-call-play-audio-description",
+    "key": "guide.chat.call.call-play-audio.description",
+    "lang": "hu",
+    "value": "A böngésző megállította a bejövő hang lejátszását. Ezzel a gombbal engedélyezheted ezen az eszközön."
+  },
+  {
+    "_id": "i18n-message-hu-guide-chat-call-call-play-audio-label",
+    "key": "guide.chat.call.call-play-audio.label",
+    "lang": "hu",
+    "value": "Hang lejátszásának engedélyezése"
+  },
+  {
+    "_id": "i18n-message-hu-guide-chat-call-call-self-camera-description",
+    "key": "guide.chat.call.call-self-camera.description",
+    "lang": "hu",
+    "value": "Kapcsold be vagy ki a saját kamerádat. Az alsó kameragomb és a hangerőpanel saját kameragombja is ezt kapcsolja. A hang bekapcsolva maradhat."
+  },
+  {
+    "_id": "i18n-message-hu-guide-chat-call-call-self-camera-label",
+    "key": "guide.chat.call.call-self-camera.label",
+    "lang": "hu",
+    "value": "Saját kamera"
+  },
+  {
+    "_id": "i18n-message-hu-guide-chat-call-call-self-mute-description",
+    "key": "guide.chat.call.call-self-mute.description",
+    "lang": "hu",
+    "value": "Itt vagy az alsó mikrofongombbal némíthatsz és kapcsolhatsz vissza. A piros némítást jelez. Az admin némítását előbb az adminnak kell feloldania."
+  },
+  {
+    "_id": "i18n-message-hu-guide-chat-call-call-self-mute-label",
+    "key": "guide.chat.call.call-self-mute.label",
+    "lang": "hu",
+    "value": "Saját mikrofon"
+  },
+  {
+    "_id": "i18n-message-hu-guide-chat-call-call-spectrum-description",
+    "key": "guide.chat.call.call-spectrum.description",
+    "lang": "hu",
+    "value": "Az oszlopok a mikrofon hangját mutatják frekvenciák szerint. A zöld mikrofon és keret beszédet, a piros áthúzott mikrofon némítást jelez."
+  },
+  {
+    "_id": "i18n-message-hu-guide-chat-call-call-spectrum-label",
+    "key": "guide.chat.call.call-spectrum.label",
+    "lang": "hu",
+    "value": "Beszédjelzés"
+  },
+  {
+    "_id": "i18n-message-hu-guide-chat-call-call-volume-description",
+    "key": "guide.chat.call.call-volume.description",
+    "lang": "hu",
+    "value": "Nyisd meg a lejátszási hangerőt és a résztvevők vezérlőit. A név szerinti blokkban állíthatod a hangot vagy letilthatod az adott videó fogadását."
+  },
+  {
+    "_id": "i18n-message-hu-guide-chat-call-call-volume-label",
+    "key": "guide.chat.call.call-volume.label",
+    "lang": "hu",
+    "value": "Hangerő és fogadott videók"
+  },
+  {
+    "_id": "i18n-message-hu-guide-chat-call-call-zoom-description",
+    "key": "guide.chat.call.call-zoom.description",
+    "lang": "hu",
+    "value": "Mutass egy csempét nagy méretben. Újabb kattintással visszatérsz a rácshoz. A többiek hangját továbbra is hallod."
+  },
+  {
+    "_id": "i18n-message-hu-guide-chat-call-call-zoom-label",
+    "key": "guide.chat.call.call-zoom.label",
+    "lang": "hu",
+    "value": "Résztvevő nagyítása"
+  },
+  {
+    "_id": "i18n-message-hu-guide-chat-call-close-description",
+    "key": "guide.chat.call.close.description",
+    "lang": "hu",
+    "value": "A hívásablak bezárásával a hívásból is kilépsz. Csak a magyarázó bezárása nem szakítja meg a hívást."
+  },
+  {
+    "_id": "i18n-message-hu-guide-chat-call-close-label",
+    "key": "guide.chat.call.close.label",
+    "lang": "hu",
+    "value": "Bezárás és kilépés"
+  },
+  {
+    "_id": "i18n-message-hu-guide-chat-call-volume-close-description",
+    "key": "guide.chat.call.volume.close.description",
+    "lang": "hu",
+    "value": "Térj vissza a híváshoz a beállítások megtartásával. Ennek a panelnek a bezárása nem léptet ki a hívásból."
+  },
+  {
+    "_id": "i18n-message-hu-guide-chat-call-volume-close-label",
+    "key": "guide.chat.call.volume.close.label",
+    "lang": "hu",
+    "value": "Hangerőpanel bezárása"
+  },
+  {
+    "_id": "i18n-message-hu-guide-chat-call-volume-master-mute-description",
+    "key": "guide.chat.call.volume.master-mute.description",
+    "lang": "hu",
+    "value": "Némítsd az összes bejövő hangot ezen az eszközön. Feloldáskor visszatér a korábbi hangerő. Némításkor a külső hangerőgomb is piros."
+  },
+  {
+    "_id": "i18n-message-hu-guide-chat-call-volume-master-mute-label",
+    "key": "guide.chat.call.volume.master-mute.label",
+    "lang": "hu",
+    "value": "Bejövő hang némítása"
+  },
+  {
+    "_id": "i18n-message-hu-guide-chat-call-volume-master-volume-description",
+    "key": "guide.chat.call.volume.master-volume.description",
+    "lang": "hu",
+    "value": "Az Én csúszka az összes bejövő hang erejét állítja ezen az eszközön. Nem a mikrofonodat és nem a többiek által hallott hangerőt változtatja."
+  },
+  {
+    "_id": "i18n-message-hu-guide-chat-call-volume-master-volume-label",
+    "key": "guide.chat.call.volume.master-volume.label",
+    "lang": "hu",
+    "value": "Közös lejátszási hangerő"
+  },
+  {
+    "_id": "i18n-message-hu-guide-chat-call-volume-peer-mute-description",
+    "key": "guide.chat.call.volume.peer-mute.description",
+    "lang": "hu",
+    "value": "Csak ezt a résztvevőt némítod a saját eszközödön. Feloldás után megmarad a korábbi hangereje. A csempe mikrofonikonja ugyanezt jelzi."
+  },
+  {
+    "_id": "i18n-message-hu-guide-chat-call-volume-peer-mute-label",
+    "key": "guide.chat.call.volume.peer-mute.label",
+    "lang": "hu",
+    "value": "Ennek a résztvevőnek a némítása"
+  },
+  {
+    "_id": "i18n-message-hu-guide-chat-call-volume-peer-video-description",
+    "key": "guide.chat.call.volume.peer-video.description",
+    "lang": "hu",
+    "value": "Tiltsd vagy engedélyezd a videóját a saját eszközödön; a hang megmarad. Engedélyezés után akkor indul újra a kép, amikor a csempe látható."
+  },
+  {
+    "_id": "i18n-message-hu-guide-chat-call-volume-peer-video-label",
+    "key": "guide.chat.call.volume.peer-video.label",
+    "lang": "hu",
+    "value": "Ennek a résztvevőnek a videója"
+  },
+  {
+    "_id": "i18n-message-hu-guide-chat-call-volume-peer-volume-description",
+    "key": "guide.chat.call.volume.peer-volume.description",
+    "lang": "hu",
+    "value": "A csúszka feletti névhez tartozó hangot állítod. A közös hangerővel együtt érvényesül, a többiek lejátszását nem változtatja."
+  },
+  {
+    "_id": "i18n-message-hu-guide-chat-call-volume-peer-volume-label",
+    "key": "guide.chat.call.volume.peer-volume.label",
+    "lang": "hu",
+    "value": "Ennek a résztvevőnek a hangereje"
+  },
+  {
+    "_id": "i18n-message-hu-guide-chat-call-volume-self-camera-description",
+    "key": "guide.chat.call.volume.self-camera.description",
+    "lang": "hu",
+    "value": "Ez a saját kamerádat kapcsolja, ugyanúgy, mint az alsó gomb és a saját csempéd ikonja. Nem az összes résztvevő videóját állítja."
+  },
+  {
+    "_id": "i18n-message-hu-guide-chat-call-volume-self-camera-label",
+    "key": "guide.chat.call.volume.self-camera.label",
+    "lang": "hu",
+    "value": "Saját kamera"
+  },
+  {
+    "_id": "i18n-message-hu-is-typing",
+    "key": "is typing",
+    "lang": "hu",
+    "value": "gépel"
+  },
+  {
+    "_id": "i18n-message-hu-message",
+    "key": "Message",
+    "lang": "hu",
+    "value": "Üzenet"
+  },
+  {
+    "_id": "i18n-message-hu-more-message-actions",
+    "key": "More message actions",
+    "lang": "hu",
+    "value": "Üzenetműveletek"
+  },
+  {
+    "_id": "i18n-message-hu-no-pinned-messages",
+    "key": "No pinned messages",
+    "lang": "hu",
+    "value": "Nincs kitűzött üzenet"
+  },
+  {
+    "_id": "i18n-message-hu-objects",
+    "key": "Objects",
+    "lang": "hu",
+    "value": "Objects"
+  },
+  {
+    "_id": "i18n-message-hu-pin",
+    "key": "Pin",
+    "lang": "hu",
+    "value": "Kitűzés"
+  },
+  {
+    "_id": "i18n-message-hu-pinned-message",
+    "key": "Pinned message",
+    "lang": "hu",
+    "value": "Kitűzött üzenet"
+  },
+  {
+    "_id": "i18n-message-hu-pinned-messages",
+    "key": "Pinned messages",
+    "lang": "hu",
+    "value": "Kitűzött üzenetek"
+  },
+  {
+    "_id": "i18n-message-hu-react",
+    "key": "React",
+    "lang": "hu",
+    "value": "Reakció"
+  },
+  {
+    "_id": "i18n-message-hu-reactions",
+    "key": "Reactions",
+    "lang": "hu",
+    "value": "Reakciók"
+  },
+  {
+    "_id": "i18n-message-hu-read-by",
+    "key": "Read by",
+    "lang": "hu",
+    "value": "Olvasta"
+  },
+  {
+    "_id": "i18n-message-hu-reply",
+    "key": "Reply",
+    "lang": "hu",
+    "value": "Válasz"
+  },
+  {
+    "_id": "i18n-message-hu-search-emoji",
+    "key": "Search emoji",
+    "lang": "hu",
+    "value": "Hangulatjel keresése"
+  },
+  {
+    "_id": "i18n-message-hu-smileys-people",
+    "key": "Smileys & people",
+    "lang": "hu",
+    "value": "Smileys & people"
+  },
+  {
+    "_id": "i18n-message-hu-symbols",
+    "key": "Symbols",
+    "lang": "hu",
+    "value": "Symbols"
+  },
+  {
+    "_id": "i18n-message-hu-travel-places",
+    "key": "Travel & places",
+    "lang": "hu",
+    "value": "Travel & places"
+  },
+  {
+    "_id": "i18n-message-hu-unpin",
+    "key": "Unpin",
+    "lang": "hu",
+    "value": "Kitűzés megszüntetése"
+  },
+  {
+    "_id": "i18n-message-hu-unsend",
+    "key": "Unsend",
+    "lang": "hu",
+    "value": "Üzenet visszavonása"
+  },
+  {
+    "_id": "i18n-message-hu-yourself",
+    "key": "yourself",
+    "lang": "hu",
+    "value": "saját magad"
+  },
+  {
+    "_id": "i18n-message-en-guide-template-chat-chat-call-description",
+    "key": "guide.template.chat.chat-call.description",
+    "lang": "en",
+    "value": "Start a call with the people in this conversation. They must open the same chat to join. Use the camera control to enable video. Calls require a backend connection."
+  },
+  {
+    "_id": "i18n-message-en-guide-template-chat-chat-call-label",
+    "key": "guide.template.chat.chat-call.label",
+    "lang": "en",
+    "value": "Audio and video call"
+  },
+  {
+    "_id": "i18n-message-en-guide-template-chat-chat-pins-description",
+    "key": "guide.template.chat.chat-pins.description",
+    "lang": "en",
+    "value": "Open the pinned messages in the loaded conversation. Select one to return to it. Pin or unpin a message from its message menu."
+  },
+  {
+    "_id": "i18n-message-en-guide-template-chat-chat-pins-label",
+    "key": "guide.template.chat.chat-pins.label",
+    "lang": "en",
+    "value": "Pinned messages"
+  },
+  {
+    "_id": "i18n-message-hu-guide-template-chat-chat-call-description",
+    "key": "guide.template.chat.chat-call.description",
+    "lang": "hu",
+    "value": "Indíts hívást a beszélgetés résztvevőivel. A csatlakozáshoz nekik is meg kell nyitniuk ezt a chatet. A kameragombbal kapcsolhatod be a videót. A híváshoz backendkapcsolat szükséges."
+  },
+  {
+    "_id": "i18n-message-hu-guide-template-chat-chat-call-label",
+    "key": "guide.template.chat.chat-call.label",
+    "lang": "hu",
+    "value": "Hang- és videóhívás"
+  },
+  {
+    "_id": "i18n-message-hu-guide-template-chat-chat-pins-description",
+    "key": "guide.template.chat.chat-pins.description",
+    "lang": "hu",
+    "value": "Nyisd meg a betöltött beszélgetés kitűzött üzeneteit. Válassz egyet a visszaugráshoz. Az üzenet menüjében tűzheted ki vagy veheted le a kitűzést."
+  },
+  {
+    "_id": "i18n-message-hu-guide-template-chat-chat-pins-label",
+    "key": "guide.template.chat.chat-pins.label",
+    "lang": "hu",
+    "value": "Kitűzött üzenetek"
   }
 ]

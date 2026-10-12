@@ -5,6 +5,20 @@
   "status": "Implementation in progress; this manifest records selected files, not a runnable or qualified release.",
   "files": [
     {
+      "path": "e2e/functional/backend/chat/call/chat-call-mls.test.mjs",
+      "sourceRevision": "415888834dbb1429b08cd6e2cee97b8f63ea67c3",
+      "upstreamSha256": "ebd09003d85171f1d42de1bf71e29a7a3589fa9e6e0de7fd085b283369ff3092",
+      "purpose": "Native real-WASM MLS and PCM voice-activity regression tests.",
+      "adaptation": "Only the relative frontend import path changes from e2e/functional/backend/flows/chat/call-signaling/chat-call-mls.test.mjs."
+    },
+    {
+      "path": "e2e/functional/backend/chat/call/chat-call-voice-activity.test.mjs",
+      "sourceRevision": "415888834dbb1429b08cd6e2cee97b8f63ea67c3",
+      "upstreamSha256": "30c49af74b6221f3a641272fa22af365e0cd812a7e15e3a01673497359b0ba85",
+      "purpose": "Native real-WASM MLS and PCM voice-activity regression tests.",
+      "adaptation": "Only the relative frontend import path changes from e2e/functional/backend/flows/chat/call-signaling/chat-call-voice-activity.test.mjs."
+    },
+    {
       "path": "e2e/functional/ui/lib/chrome-cdp.mjs",
       "upstreamSha256": "f0c105b9522b7b4819e56af54d9a4bcbfd48f6575a5bacd9f41d0cdc16f75805",
       "purpose": "Selected native dev gateway, frontend watch/sync, availability lease, localization generator/audit or browser qualification support.",
@@ -396,10 +410,10 @@
     {
       "path": "frontend/src/app/shared/core/base/app-utils.ts",
       "upstreamSha256": "e467763e7fe3d84cb499e81645dbd4e77053b04fc94f8ceaa57c2849a1bc1371",
-      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
-      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
-      "purpose": "Native personal/support chat protocol, local persistence, HTTP/WebSocket transport, shared memory table or scoped fixture transport.",
-      "adaptation": "Select the personal/support chat dependency closure and minimal template composition. Omit event/group/campaign/asset navigation models, product metrics and unselected account fields; retain message IDs, ownership, paging, read receipts and reconnect behavior. Template seed IDs/data replace product actors."
+      "sourceRevision": "415888834dbb1429b08cd6e2cee97b8f63ea67c3",
+      "sourceFrontendRevision": "d6cd39c15ba6735dfc3714bef72f106e1d661dc1",
+      "purpose": "Selected basic utilities used by retained template flows, including native ASCII emoji conversion and composer suggestions.",
+      "adaptation": "Selected helper methods only; omitted unrelated native application helpers."
     },
     {
       "path": "frontend/src/app/shared/core/base/builders/help/help-center-content.builder.ts",
@@ -538,6 +552,30 @@
       "purpose": "Minimal native admin feedback, reports and support with local/HTTP parity.",
       "adaptation": "Select native submission orchestration, abort and timeout semantics using the existing template runtime store. Selected the qualified core without Reports, Feedback or Support mutations; shared identity/chat models and required lifecycle remain.",
       "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
+    },
+    {
+      "path": "frontend/src/app/shared/core/base/services/chat/chat-call-mls.ts",
+      "sourceRevision": "415888834dbb1429b08cd6e2cee97b8f63ea67c3",
+      "sourceFrontendRevision": "d6cd39c15ba6735dfc3714bef72f106e1d661dc1",
+      "upstreamSha256": "4e93481f6d55ad7e7cd27faa1396d2bbb8484ffaa8be53b1f4ef58aca5045bc8",
+      "purpose": "Native domain-independent chat calls and basic message actions; includes verified bidirectional media and typed MLS cancellation errors.",
+      "adaptation": null
+    },
+    {
+      "path": "frontend/src/app/shared/core/base/services/chat/chat-call-voice-activity.ts",
+      "sourceRevision": "415888834dbb1429b08cd6e2cee97b8f63ea67c3",
+      "sourceFrontendRevision": "d6cd39c15ba6735dfc3714bef72f106e1d661dc1",
+      "upstreamSha256": "9ce20ff994c9ff2a8bc84047d3dc121a7b57847bd07406e3b1d93d6fd9244b4a",
+      "purpose": "Native domain-independent chat calls and basic message actions; includes verified bidirectional media and typed MLS cancellation errors.",
+      "adaptation": null
+    },
+    {
+      "path": "frontend/src/app/shared/core/base/services/chat/chat-call.service.ts",
+      "sourceRevision": "415888834dbb1429b08cd6e2cee97b8f63ea67c3",
+      "sourceFrontendRevision": "d6cd39c15ba6735dfc3714bef72f106e1d661dc1",
+      "upstreamSha256": "f38f67e3f5c41521fce202443e00e70393655328e604719ef3d296a930bf5601",
+      "purpose": "Native domain-independent chat calls and basic message actions; includes verified bidirectional media and typed MLS cancellation errors.",
+      "adaptation": null
     },
     {
       "path": "frontend/src/app/shared/core/base/services/chat/chats.service.ts",
@@ -1499,6 +1537,14 @@
       "adaptation": "Register the existing popup guide context through PopupComponent so the active entry/member guide owns it; keep native permission/install controls and nested help."
     },
     {
+      "path": "frontend/src/app/shared/ui/components/chat-call-popup/chat-call-popup.component.ts",
+      "sourceRevision": "415888834dbb1429b08cd6e2cee97b8f63ea67c3",
+      "sourceFrontendRevision": "d6cd39c15ba6735dfc3714bef72f106e1d661dc1",
+      "upstreamSha256": "796a4810a10332e307cca9820b4aa5a2db30d285a3536460e841b2483de28af9",
+      "purpose": "Native domain-independent chat calls and basic message actions; includes verified bidirectional media and typed MLS cancellation errors.",
+      "adaptation": null
+    },
+    {
       "path": "frontend/src/app/shared/ui/components/demo-bootstrap-selector/demo-bootstrap-selector.component.html",
       "upstreamSha256": "b415ace0e006e34fd691ba85e861e1b926fe517b0e3e85927ccf09fb58229bd6",
       "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
@@ -1779,6 +1825,22 @@
       "adaptation": null,
       "sourceRevision": "bfc9a167c",
       "sourceFrontendRevision": "5fbf3e62"
+    },
+    {
+      "path": "frontend/src/app/shared/ui/converters/chat/chat-message-menu.converter.spec.ts",
+      "sourceRevision": "415888834dbb1429b08cd6e2cee97b8f63ea67c3",
+      "sourceFrontendRevision": "d6cd39c15ba6735dfc3714bef72f106e1d661dc1",
+      "upstreamSha256": "fd3280c77ddddf6c339bbc4210b8ff37b6b79294a3ef77179f5206a492281087",
+      "purpose": "Native domain-independent chat calls and basic message actions; includes verified bidirectional media and typed MLS cancellation errors.",
+      "adaptation": null
+    },
+    {
+      "path": "frontend/src/app/shared/ui/converters/chat/chat-message-menu.converter.ts",
+      "sourceRevision": "415888834dbb1429b08cd6e2cee97b8f63ea67c3",
+      "sourceFrontendRevision": "d6cd39c15ba6735dfc3714bef72f106e1d661dc1",
+      "upstreamSha256": "76d1dbb87366f170d8746618057bc3bf262af31cdabbc6dc1d15b182b0957eea",
+      "purpose": "Native domain-independent chat calls and basic message actions; includes verified bidirectional media and typed MLS cancellation errors.",
+      "adaptation": null
     },
     {
       "path": "frontend/src/app/shared/ui/converters/notification/notification-single-row.converter.ts",

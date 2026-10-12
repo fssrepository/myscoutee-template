@@ -32,6 +32,7 @@ export async function launchChromeBrowser(options = {}) {
     '--allow-insecure-localhost',
     // Explicit fixture-only opt-in, matching the managed QA browser launcher.
     ...(options.ignoreCertificateErrors === true ? ['--ignore-certificate-errors'] : []),
+    ...(options.fakeMediaStream === true ? ['--use-fake-device-for-media-stream', '--use-fake-ui-for-media-stream'] : []),
     '--hide-scrollbars',
     '--mute-audio',
     '--no-sandbox',

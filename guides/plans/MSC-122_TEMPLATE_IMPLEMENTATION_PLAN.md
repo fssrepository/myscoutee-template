@@ -393,12 +393,21 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     See `MSC122_TEMPLATE_SHOWCASE_20261011.json`. KVM remains step 25; production
     intentionally has no synthetic sample-card data.
 
-17. **Build the minimal member chat screen — DONE (local and dev HTTP).**
+17. **Build the minimal member chat screen — DONE (local and HTTP; KVM remains step 25).**
     Connect the existing chat components and adapters to the retained backend/local
     owners. Apply the requested compact chrome: avatar pill and collapse control;
-    omit the extra top action and bottom add-item “+” menu. Keep the actions needed
+    omit product-specific badges, invite/report actions and the bottom add-item “+” menu. Preserve audio/video calls, replies, reactions, pin/unpin and pinned-message access, typing, editing, unsending, read receipts and reconnect. Keep the actions needed
     for the retained conversation flow. Close with message send/edit/read/reconnect
     checks and consistent state across two participants and reload.
+    The earlier text-only qualification did not establish native basic chat parity.
+    The 2026-10-12 correction reuses the native call implementation and extracts
+    its product-independent message menu before selection. Local/HTTP reply,
+    reaction and pin save/reload, author-only edit/unsend and two consecutive
+    two-party HTTP audio/video calls pass. Invite/report stay omitted.
+    Two native call defects (one-way media negotiation and rejected-commit WASM
+    traps) are fixed at source and selected unchanged. All 297 frontend tests,
+    seven crypto/voice tests and both production builds pass. See
+    `MSC122_TEMPLATE_CHAT_PARITY_20261012.json`.
     Frontend `7b3ab41`: 114 unit checks, local send/edit/read/delete/reload across
     both participants, and two-browser HTTP delivery/reconnect/no-duplicate/
     persistence checks passed. The native local read-receipt repair `bf4760f9`
@@ -736,7 +745,7 @@ qualification gates; scheduled testing is not a PASS:
 | --- | --- |
 | MSC-115 Work/Community | Product owners are omitted; a defect in shared components can still apply |
 | MSC-116 API/MCP access | Direct: retained consent, credentials, permissions and revocation |
-| MSC-117 audio/video calls | Retained chat/signaling backend can be affected; the minimal member screen currently has no call controls |
+| MSC-117 audio/video calls | Direct: native call service and popup are selected; qualify two-party audio/video, mute/camera, hang-up, reconnect and isolation on template HTTP and KVM. Frontend-local calls stay unavailable, matching the native adapter. |
 | MSC-119 MCP Events, roles and guide | Direct for the selected role/callback/guide paths; omitted product tools stay omitted |
 
 Carry verified corrections from their actual source owner with the selected
