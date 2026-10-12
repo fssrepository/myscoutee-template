@@ -6,9 +6,18 @@ const migration = fs.readFileSync(new URL('packaging/migrations/016-release-cata
 const files = Object.fromEntries(['catalog-defaults','helpCenterRevisions','helpCenterGuideFields'].map(name=>[
   name, fs.readFileSync(new URL('packaging/migrations/seeds/016-release-catalog-parity/'+name+'.json',root),'utf8')
 ]));
-for (const name of ['helpCenterRevisions','helpCenterGuideFields']) {
-  assert.deepEqual(JSON.parse(files[name]), JSON.parse(fs.readFileSync(new URL('server/docker/conf/mongodb/myscoutee_db/'+name+'.json',root),'utf8')));
-}
+const guideMigration = fs.readFileSync(new URL('packaging/migrations/017-retained-guide-controls.js',root),'utf8');
+const guideUpdates = fs.readFileSync(new URL('packaging/migrations/seeds/017-retained-guide-controls/guide-field-updates.json',root),'utf8');
+const updates = JSON.parse(guideUpdates);
+const upgradedFields = new Map(JSON.parse(files.helpCenterGuideFields).map(row => [row._id,row]));
+for (const row of updates.fields) upgradedFields.set(row._id,row);
+for (const id of updates.removedIds) upgradedFields.delete(id);
+const currentFields = JSON.parse(fs.readFileSync(new URL('server/docker/conf/mongodb/myscoutee_db/helpCenterGuideFields.json',root),'utf8'));
+assert.deepEqual([...upgradedFields.values()].sort((a,b)=>a._id.localeCompare(b._id)),currentFields.sort((a,b)=>a._id.localeCompare(b._id)));
+const upgradedRevisions = new Map(JSON.parse(files.helpCenterRevisions).map(row => [row._id,row]));
+for (const {previous,target} of updates.revisions) { assert.deepEqual(upgradedRevisions.get(previous._id),previous); upgradedRevisions.set(target._id,target); }
+const currentRevisions = JSON.parse(fs.readFileSync(new URL('server/docker/conf/mongodb/myscoutee_db/helpCenterRevisions.json',root),'utf8'));
+assert.deepEqual([...upgradedRevisions.values()].sort((a,b)=>a._id.localeCompare(b._id)),currentRevisions.sort((a,b)=>a._id.localeCompare(b._id)));
 for (const row of JSON.parse(files['catalog-defaults'])) {
   assert.deepEqual(row.rows,JSON.parse(fs.readFileSync(new URL('server/docker/conf/mongodb/myscoutee_db/'+row.collection+'.json',root),'utf8')));
 }
@@ -18,16 +27,18 @@ if (!process.argv.includes('--print-script')) {
 const inputs=${JSON.stringify(files)};
 const catalogs=EJSON.parse(inputs['catalog-defaults']);
 const seeds=EJSON.parse(inputs.helpCenterRevisions);
-const fields=EJSON.parse(inputs.helpCenterGuideFields);
+const fields=${JSON.stringify(currentFields)};
 const target=db.getSiblingDB('qa_release_catalogs_'+new ObjectId().toHexString());
 const names=[...catalogs.map(row=>row.collection),'helpCenterRevisions','helpCenterGuideFields'];
 const scope=row=>JSON.stringify([row.baseGroupId??null,row.documentType,row.lang,row.contextKey??null]);
 const snapshot=name=>EJSON.stringify(target.getCollection(name).find().sort({_id:1}).toArray());
 function check(ok,message){if(!ok)throw Error(message);}
+const canonical=value=>Array.isArray(value)?value.map(canonical):value&&typeof value==='object'?Object.fromEntries(Object.keys(value).sort().map(key=>[key,canonical(value[key])])):value;
 function migrate(db){
  const process={env:{MYSCOUTEE_MIGRATION_SEED_DIRECTORY:'/pinned'}};
  const require=()=>({readFileSync:path=>inputs[path.split('/').pop().replace(/\\.json$/,'')]});
- ${migration}
+ { ${migration} }
+ { const require=()=>({readFileSync:()=>${JSON.stringify(guideUpdates)}}); ${guideMigration} }
 }
 function empty(){for(const name of names)target.getCollection(name).deleteMany({});}
 try {
@@ -45,6 +56,7 @@ try {
  check(target.helpCenterRevisions.countDocuments({})===seeds.length,'fresh help incomplete');
  check(target.helpCenterRevisions.countDocuments({active:true})===seeds.filter(row=>row.active).length,'active help differs');
  check(target.helpCenterGuideFields.countDocuments({})===fields.length,'guide fields incomplete');
+ for(const row of ${JSON.stringify(currentRevisions)})check(EJSON.stringify(canonical(target.helpCenterRevisions.findOne({_id:row._id})))===EJSON.stringify(canonical(row)),'current help differs: '+row._id);
  const first=names.map(name=>[name,snapshot(name)]);migrate(target);
  for(const [name,before] of first)check(snapshot(name)===before,'repeat changed '+name);
  print('PASS: complete fresh selected catalogs and repeated upgrade');
@@ -94,6 +106,13 @@ try {
   }
   print('PASS: older defaults, customization, explicit inactive selection and interrupted upgrade');
  }
+ for(const {previous,next} of ${JSON.stringify(updates.revisions.map(row=>({previous:row.previous,next:row.target})) )}){
+  for(const override of [{title:'Operator introduction'},{active:false}]){
+   empty();const retained={...previous,...override};target.helpCenterRevisions.insertOne(retained);migrate(target);
+   check(EJSON.stringify(canonical(target.helpCenterRevisions.findOne({_id:previous._id})))===EJSON.stringify(canonical(retained)),'landing introduction override changed');
+  }
+ }
+ print('PASS: revised landing guide preserves operator text and inactive choices');
  for(const [name,before] of controls)check(snapshot(name)===before,'retained control changed: '+name);
  print('PASS: retained users, consents and deployment configuration; test database only');
 }finally{target.dropDatabase();}

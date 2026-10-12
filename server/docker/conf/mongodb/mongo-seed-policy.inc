@@ -4,6 +4,7 @@
 allowed_collections_by_db="${MONGO_IMPORT_ALLOWED_COLLECTIONS_BY_DB:-demo_db:*;e2e_db:*;myscoutee_db:countryPartitions,i18n_bundles,i18n_messages,helpCenterRevisions,helpCenterGuideFields,appSettings,notificationRuleConfigs,accessPolicyDefinitions,deploymentConfigurations;production_db:countryPartitions,i18n_bundles,i18n_messages,helpCenterRevisions,helpCenterGuideFields,appSettings,notificationRuleConfigs,accessPolicyDefinitions,deploymentConfigurations}"
 
 declare -A seed_import_handlers=(
+  [appSettings]=import_app_settings_seed
   [deploymentConfigurations]=import_deployment_configuration_seed
 )
 
@@ -31,6 +32,7 @@ collection_should_replace_on_import() {
   local collection_name="$1"
 
   if [ "${collection_name}" = "adminUsers" ] \
+      || [ "${collection_name}" = "appSettings" ] \
       || [ "${collection_name}" = "deploymentConfigurations" ]; then
     return 1
   fi
@@ -51,26 +53,9 @@ target_collection_name() {
   printf '%s\n' "${collection_name}"
 }
 
-deployment_configuration_exists() {
-  local target_db="$1"
 
-  mongosh \
-    --host "${mongo_host}" \
-    --port "${mongo_port}" \
-    --username "${mongo_username}" \
-    --password "${mongo_password}" \
-    --authenticationDatabase "${target_db}" \
-    --quiet \
-    "${target_db}" \
-    --eval "
-if (db.getCollection('deploymentConfigurations').countDocuments(
-      { _id: 'deployment-configuration' },
-      { limit: 1 }
-    ) > 0) {
-  quit(0);
-}
-quit(1);
-" >/dev/null
+import_app_settings_seed() {
+  import_singleton_seed "$1" "$2" appSettings app-settings-global
 }
 
 import_deployment_configuration_seed() {
@@ -78,35 +63,7 @@ import_deployment_configuration_seed() {
   local jsonfile="$2"
 
   # Template 1.0.0 starts with schema 5. Existing operator values remain authoritative.
-  if deployment_configuration_exists "${target_db}"; then
-    echo "Preserving existing ${target_db}.deploymentConfigurations singleton."
-    return 0
-  fi
-
-  # This singleton is mutable operator state after its first import. Insert
-  # mode is deliberate: a concurrent importer/operator write can only make
-  # this insert fail with a duplicate key; it can never overwrite that state.
-  if mongoimport \
-      -h "${mongo_host}" \
-      --port "${mongo_port}" \
-      -d "${target_db}" \
-      -c "deploymentConfigurations" \
-      -u "${mongo_username}" \
-      -p "${mongo_password}" \
-      --mode=insert \
-      --file "${jsonfile}" \
-      --jsonArray \
-      --type json; then
-    return 0
-  fi
-
-  if deployment_configuration_exists "${target_db}"; then
-    echo "Preserving concurrently created ${target_db}.deploymentConfigurations singleton."
-    return 0
-  fi
-
-  echo "Failed to insert ${target_db}.deploymentConfigurations singleton." >&2
-  return 1
+  import_singleton_seed "${target_db}" "${jsonfile}" deploymentConfigurations deployment-configuration
 }
 
 ensure_collection_indexes() {

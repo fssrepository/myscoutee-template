@@ -19354,5 +19354,449 @@
     "key": "guide.landing.guide.guide-launcher.description",
     "lang": "hu",
     "value": "Súgó: Előre, Vissza, Kész. A villanykörte és az értesítési csengő húzható; piros X-re ejtve elrejthető. Tartós ki-/bekapcsolás: oldalsó menü → Magyarázatok."
+  },
+  {
+    "_id": "i18n-message-en-guide-chats-chat-actions-description",
+    "key": "guide.chats.chat-actions.description",
+    "lang": "en",
+    "value": "Open a message menu to reply, react, or use other available actions. These controls apply to one message, keeping the rest of the conversation unchanged."
+  },
+  {
+    "_id": "i18n-message-en-guide-chats-chat-actions-label",
+    "key": "guide.chats.chat-actions.label",
+    "lang": "en",
+    "value": "Message actions"
+  },
+  {
+    "_id": "i18n-message-en-guide-chats-chat-call-description",
+    "key": "guide.chats.chat-call.description",
+    "lang": "en",
+    "value": "The green phone opens an audio call immediately. Turn on your camera inside the call if you want. A red crossed phone means calling is unavailable."
+  },
+  {
+    "_id": "i18n-message-en-guide-chats-chat-call-label",
+    "key": "guide.chats.chat-call.label",
+    "lang": "en",
+    "value": "Start or join a call"
+  },
+  {
+    "_id": "i18n-message-en-guide-chats-chat-compose-description",
+    "key": "guide.chats.chat-compose.description",
+    "lang": "en",
+    "value": "Enter your message here and send it to the open conversation. Replies, shared items, and any selected context stay attached to this chat."
+  },
+  {
+    "_id": "i18n-message-en-guide-chats-chat-compose-label",
+    "key": "guide.chats.chat-compose.label",
+    "lang": "en",
+    "value": "Write a message"
+  },
+  {
+    "_id": "i18n-message-en-guide-chats-chat-send-description",
+    "key": "guide.chats.chat-send.description",
+    "lang": "en",
+    "value": "Send the text you have written to the current conversation. Check the recipient and context first, since sending makes the message visible to its participants."
+  },
+  {
+    "_id": "i18n-message-en-guide-chats-chat-send-label",
+    "key": "guide.chats.chat-send.label",
+    "lang": "en",
+    "value": "Send message"
+  },
+  {
+    "_id": "i18n-message-en-guide-common-close-description",
+    "key": "guide.common.close.description",
+    "lang": "en",
+    "value": "Close this popup when you are done here. The guide ends with this screen, while the parent view stays open if the app keeps it underneath."
+  },
+  {
+    "_id": "i18n-message-en-guide-common-close-label",
+    "key": "guide.common.close.label",
+    "lang": "en",
+    "value": "Close this popup"
+  },
+  {
+    "_id": "i18n-message-en-guide-event-chat-chat-members-description",
+    "key": "guide.event.chat.chat-members.description",
+    "lang": "en",
+    "value": "Open participant details to see who can take part in this conversation. Membership context helps you understand who will receive shared updates."
+  },
+  {
+    "_id": "i18n-message-en-guide-event-chat-chat-members-label",
+    "key": "guide.event.chat.chat-members.label",
+    "lang": "en",
+    "value": "Conversation members"
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-editor-about-description",
+    "key": "guide.profile.editor.about.description",
+    "lang": "en",
+    "value": "Write a short introduction. This text helps people understand who you are before meeting you."
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-editor-about-label",
+    "key": "guide.profile.editor.about.label",
+    "lang": "en",
+    "value": "About you"
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-editor-api-integration-description",
+    "key": "guide.profile.editor.api-integration.description",
+    "lang": "en",
+    "value": "Open your API keys and AI-client connections through MCP. Admin accounts open their management API settings here."
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-editor-api-integration-label",
+    "key": "guide.profile.editor.api-integration.label",
+    "lang": "en",
+    "value": "Account connections"
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-editor-image-copy-description",
+    "key": "guide.profile.editor.image-copy.description",
+    "lang": "en",
+    "value": "Copies the image link to the clipboard. It does not duplicate the photo into another slot or save your profile."
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-editor-image-copy-label",
+    "key": "guide.profile.editor.image-copy.label",
+    "lang": "en",
+    "value": "Copy the image address"
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-editor-image-pages-description",
+    "key": "guide.profile.editor.image-pages.description",
+    "lang": "en",
+    "value": "The dots move between pages of photo slots. This only changes which slots are visible; it does not reorder or remove images."
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-editor-image-pages-label",
+    "key": "guide.profile.editor.image-pages.label",
+    "lang": "en",
+    "value": "Find additional photo slots"
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-editor-image-preview-description",
+    "key": "guide.profile.editor.image-preview.description",
+    "lang": "en",
+    "value": "The large preview shows the selected photo. Selecting another filled slot changes this preview; selecting it again opens replacement."
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-editor-image-preview-label",
+    "key": "guide.profile.editor.image-preview.label",
+    "lang": "en",
+    "value": "Inspect the selected photo"
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-editor-image-remove-description",
+    "key": "guide.profile.editor.image-remove.description",
+    "lang": "en",
+    "value": "Removes this photo from the edited collection. Review the remaining images before saving the parent profile, event, asset or post."
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-editor-image-remove-label",
+    "key": "guide.profile.editor.image-remove.label",
+    "lang": "en",
+    "value": "Remove this photo from the draft"
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-editor-image-replace-description",
+    "key": "guide.profile.editor.image-replace.description",
+    "lang": "en",
+    "value": "A filled slot first selects its photo. Click the selected slot again to choose a replacement; check the new preview before saving the parent editor."
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-editor-image-replace-label",
+    "key": "guide.profile.editor.image-replace.label",
+    "lang": "en",
+    "value": "Replace a selected photo"
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-editor-image-upload-description",
+    "key": "guide.profile.editor.image-upload.description",
+    "lang": "en",
+    "value": "Choose a file from your device for this empty slot. Wait for upload to finish; uploading a file does not save the whole profile or publish a feed post."
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-editor-image-upload-label",
+    "key": "guide.profile.editor.image-upload.label",
+    "lang": "en",
+    "value": "Fill an empty photo slot"
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-editor-profile-name-description",
+    "key": "guide.profile.editor.profile-name.description",
+    "lang": "en",
+    "value": "Review your name and core profile details so people can recognize you. Accurate information makes your profile and event introductions clearer."
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-editor-profile-name-label",
+    "key": "guide.profile.editor.profile-name.label",
+    "lang": "en",
+    "value": "Profile basics"
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-editor-profile-photo-description",
+    "key": "guide.profile.editor.profile.photo.description",
+    "lang": "en",
+    "value": "The pencil opens your photo slots for upload, replacement and removal. Closing that popup returns to the draft; Save profile persists the changes."
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-editor-profile-photo-label",
+    "key": "guide.profile.editor.profile.photo.label",
+    "lang": "en",
+    "value": "Manage your profile photos"
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-editor-profile-save-description",
+    "key": "guide.profile.editor.profile-save.description",
+    "lang": "en",
+    "value": "Save your edits when the sections are ready. The updated information is then used by your profile view and the surfaces where others discover you."
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-editor-profile-save-label",
+    "key": "guide.profile.editor.profile-save.label",
+    "lang": "en",
+    "value": "Save profile changes"
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-editor-profile-status-trigger-description",
+    "key": "guide.profile.editor.profile-status.trigger.description",
+    "lang": "en",
+    "value": "Choose who can see this profile. Visibility affects discovery and profile access, while saved profile details remain unchanged."
+  },
+  {
+    "_id": "i18n-message-en-guide-profile-editor-profile-status-trigger-label",
+    "key": "guide.profile.editor.profile-status.trigger.label",
+    "lang": "en",
+    "value": "Profile visibility"
+  },
+  {
+    "_id": "i18n-message-hu-guide-chats-chat-actions-description",
+    "key": "guide.chats.chat-actions.description",
+    "lang": "hu",
+    "value": "Az üzenet menüjében válaszolhatsz, reakciót adhatsz vagy más elérhető műveletet választhatsz. Ezek a vezérlők az adott üzenetre hatnak, a beszélgetés többi része változatlan marad."
+  },
+  {
+    "_id": "i18n-message-hu-guide-chats-chat-actions-label",
+    "key": "guide.chats.chat-actions.label",
+    "lang": "hu",
+    "value": "Üzenetműveletek"
+  },
+  {
+    "_id": "i18n-message-hu-guide-chats-chat-call-description",
+    "key": "guide.chats.chat-call.description",
+    "lang": "hu",
+    "value": "A zöld telefon rögtön hanghívást nyit. A kamerát a hívásban kapcsolhatod be. A piros áthúzott telefon azt jelzi, hogy a hívás most nem érhető el."
+  },
+  {
+    "_id": "i18n-message-hu-guide-chats-chat-call-label",
+    "key": "guide.chats.chat-call.label",
+    "lang": "hu",
+    "value": "Hívás indítása vagy csatlakozás"
+  },
+  {
+    "_id": "i18n-message-hu-guide-chats-chat-compose-description",
+    "key": "guide.chats.chat-compose.description",
+    "lang": "hu",
+    "value": "Itt írhatod meg és küldheted el az üzenetedet a megnyitott beszélgetésben. A válaszok, megosztott elemek és a kiválasztott kontextus ehhez a chathez kapcsolódnak."
+  },
+  {
+    "_id": "i18n-message-hu-guide-chats-chat-compose-label",
+    "key": "guide.chats.chat-compose.label",
+    "lang": "hu",
+    "value": "Üzenet írása"
+  },
+  {
+    "_id": "i18n-message-hu-guide-chats-chat-send-description",
+    "key": "guide.chats.chat-send.description",
+    "lang": "hu",
+    "value": "Elküldheted a megírt szöveget az aktuális beszélgetésbe. Küldés előtt ellenőrizd a címzettet és a kontextust, mert az üzenetet a résztvevők látják."
+  },
+  {
+    "_id": "i18n-message-hu-guide-chats-chat-send-label",
+    "key": "guide.chats.chat-send.label",
+    "lang": "hu",
+    "value": "Üzenet küldése"
+  },
+  {
+    "_id": "i18n-message-hu-guide-common-close-description",
+    "key": "guide.common.close.description",
+    "lang": "hu",
+    "value": "Ha végeztél, zárd be ezt az ablakot. Ezzel a guide is befejeződik; a mögötte nyitva maradó nézetet az alkalmazás nem zárja be."
+  },
+  {
+    "_id": "i18n-message-hu-guide-common-close-label",
+    "key": "guide.common.close.label",
+    "lang": "hu",
+    "value": "Ablak bezárása"
+  },
+  {
+    "_id": "i18n-message-hu-guide-event-chat-chat-members-description",
+    "key": "guide.event.chat.chat-members.description",
+    "lang": "hu",
+    "value": "Nyisd meg a résztvevői részleteket, hogy lásd, kik vehetnek részt a beszélgetésben. A tagsági kontextusból kiderül, kik kapják meg a megosztott híreket."
+  },
+  {
+    "_id": "i18n-message-hu-guide-event-chat-chat-members-label",
+    "key": "guide.event.chat.chat-members.label",
+    "lang": "hu",
+    "value": "A beszélgetés résztvevői"
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-editor-about-description",
+    "key": "guide.profile.editor.about.description",
+    "lang": "hu",
+    "value": "Írj rövid bemutatkozást. Segít megismerni téged azoknak, akikkel még nem találkoztál."
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-editor-about-label",
+    "key": "guide.profile.editor.about.label",
+    "lang": "hu",
+    "value": "Bemutatkozás"
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-editor-api-integration-description",
+    "key": "guide.profile.editor.api-integration.description",
+    "lang": "hu",
+    "value": "Nyisd meg az API-kulcsaidat és az MCP-n keresztüli AI-klienskapcsolataidat. Az adminfiókok itt a kezelői API-beállításokat nyitják meg."
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-editor-api-integration-label",
+    "key": "guide.profile.editor.api-integration.label",
+    "lang": "hu",
+    "value": "Fiókkapcsolatok"
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-editor-image-copy-description",
+    "key": "guide.profile.editor.image-copy.description",
+    "lang": "hu",
+    "value": "A kép linkjét a vágólapra másolja. Nem másolja a képet másik helyre, és nem menti a profilt."
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-editor-image-copy-label",
+    "key": "guide.profile.editor.image-copy.label",
+    "lang": "hu",
+    "value": "A kép címének másolása"
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-editor-image-pages-description",
+    "key": "guide.profile.editor.image-pages.description",
+    "lang": "hu",
+    "value": "A pontok a képhelyek lapjai között váltanak. Csak a látható helyek változnak; a képek sorrendje és tartalma nem."
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-editor-image-pages-label",
+    "key": "guide.profile.editor.image-pages.label",
+    "lang": "hu",
+    "value": "További képhelyek elérése"
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-editor-image-preview-description",
+    "key": "guide.profile.editor.image-preview.description",
+    "lang": "hu",
+    "value": "A nagy előnézet a kiválasztott képet mutatja. Másik kitöltött helyre kattintva átváltasz rá; az ismételt kattintás cserét indít."
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-editor-image-preview-label",
+    "key": "guide.profile.editor.image-preview.label",
+    "lang": "hu",
+    "value": "A kiválasztott kép ellenőrzése"
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-editor-image-remove-description",
+    "key": "guide.profile.editor.image-remove.description",
+    "lang": "hu",
+    "value": "Kiveszi ezt a képet a szerkesztett gyűjteményből. A profil, esemény, eszköz vagy bejegyzés mentése előtt ellenőrizd a megmaradt képeket."
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-editor-image-remove-label",
+    "key": "guide.profile.editor.image-remove.label",
+    "lang": "hu",
+    "value": "Kép kivétele a piszkozatból"
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-editor-image-replace-description",
+    "key": "guide.profile.editor.image-replace.description",
+    "lang": "hu",
+    "value": "A kitöltött hely először kiválasztja a képet. Újabb kattintásra cserélhető; a szülőszerkesztő mentése előtt ellenőrizd az új előnézetet."
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-editor-image-replace-label",
+    "key": "guide.profile.editor.image-replace.label",
+    "lang": "hu",
+    "value": "Kiválasztott kép cseréje"
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-editor-image-upload-description",
+    "key": "guide.profile.editor.image-upload.description",
+    "lang": "hu",
+    "value": "Válassz képfájlt az eszközödről az üres helyre. Várd meg a feltöltést: ez még nem menti a teljes profilt és nem tesz közzé feed-bejegyzést."
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-editor-image-upload-label",
+    "key": "guide.profile.editor.image-upload.label",
+    "lang": "hu",
+    "value": "Üres képhely feltöltése"
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-editor-profile-name-description",
+    "key": "guide.profile.editor.profile-name.description",
+    "lang": "hu",
+    "value": "Ellenőrizd a nevedet és az alapvető profiladataidat, hogy mások felismerjenek. A pontos adatok érthetőbbé teszik a profilodat és az eseménybemutatkozásodat."
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-editor-profile-name-label",
+    "key": "guide.profile.editor.profile-name.label",
+    "lang": "hu",
+    "value": "Profil alapadatai"
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-editor-profile-photo-description",
+    "key": "guide.profile.editor.profile.photo.description",
+    "lang": "hu",
+    "value": "A ceruzával feltöltheted, cserélheted vagy kiveheted a profilképeket. A popup bezárása a piszkozathoz visz vissza; a Profil mentése rögzíti a módosításokat."
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-editor-profile-photo-label",
+    "key": "guide.profile.editor.profile.photo.label",
+    "lang": "hu",
+    "value": "Profilképek kezelése"
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-editor-profile-save-description",
+    "key": "guide.profile.editor.profile-save.description",
+    "lang": "hu",
+    "value": "Mentsd el a módosításaidat, amikor elkészültél a szekciókkal. A frissített adatokat ezután a profilnézet és azok a felületek használják, ahol mások rád találhatnak."
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-editor-profile-save-label",
+    "key": "guide.profile.editor.profile-save.label",
+    "lang": "hu",
+    "value": "Profilváltozások mentése"
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-editor-profile-status-trigger-description",
+    "key": "guide.profile.editor.profile-status.trigger.description",
+    "lang": "hu",
+    "value": "Válaszd ki, ki láthatja a profilodat. A láthatóság a felfedezést és a hozzáférést érinti, a mentett profiladatokat nem módosítja."
+  },
+  {
+    "_id": "i18n-message-hu-guide-profile-editor-profile-status-trigger-label",
+    "key": "guide.profile.editor.profile-status.trigger.label",
+    "lang": "hu",
+    "value": "Profil láthatósága"
+  },
+  {
+    "_id": "i18n-message-en-loading-profile",
+    "key": "loading.profile",
+    "lang": "en",
+    "value": "Loading profile"
+  },
+  {
+    "_id": "i18n-message-hu-loading-profile",
+    "key": "loading.profile",
+    "lang": "hu",
+    "value": "Profil betöltése"
   }
 ]

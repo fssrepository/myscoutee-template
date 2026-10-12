@@ -37,11 +37,7 @@ export async function assertUi({ page, ctx, local = ctx?.mode !== 'full', member
   if (profileSelected) await profileSelected({ page, local });
   try { await page.waitForUrlPath(workspacePath, 30000); }
   catch (error) {
-    console.error('Entry navigation diagnostic', JSON.stringify({
-      page: await page.evaluate(()=>({path:location.pathname,queryKeys:[...new URL(location.href).searchParams.keys()],text:document.body.innerText.slice(0,2000)})),
-      routes:page.network.slice(networkStart).filter(request=>/\/(auth|privacy)\//.test(new URL(request.url).pathname)).map(request=>({path:new URL(request.url).pathname,status:request.status})),
-      errors:page.pageErrors
-    }));
+    await logEntryNavigationDiagnostic(page, networkStart);
     throw error;
   }
   await page.waitForText(actorName);
@@ -96,4 +92,23 @@ export function assertNoResourceFailures(page, local, workspacePaths = ['/home']
       && new URL(request.url).pathname === basePath + route);
   const failures = page.network.slice(fromIndex).filter(request => request.status >= 400 && !expectedPagesRedirect(request));
   assert(!failures.length, 'No failed HTTP resources beyond the explicit Pages document redirect', { failures });
+}
+
+export async function logEntryNavigationDiagnostic(page, networkStart = 0) {
+  const responses = [];
+  for (const request of page.network.slice(networkStart).filter(request => /\/privacy\/(active|consents)$|\/auth\/eligibility$/.test(new URL(request.url).pathname))) {
+    try {
+      const response = await page.connection.send('Network.getResponseBody', {requestId: request.requestId});
+      const body = JSON.parse(response.body);
+      const value = body?.activeRevision ?? body;
+      responses.push({path: new URL(request.url).pathname, method: page.requests.get(request.requestId)?.method,
+        query: [...new URL(request.url).searchParams], body: value === null ? null : Object.fromEntries(
+          ['id','version','revisionId','revisionVersion','userId','eligible','locationRequired'].filter(key => key in value).map(key => [key, value[key]]))});
+    } catch { /* A navigation may have evicted this diagnostic response. */ }
+  }
+  console.error('Entry navigation diagnostic', JSON.stringify({
+    page: await page.evaluate(()=>({path:location.pathname,queryKeys:[...new URL(location.href).searchParams.keys()],text:document.body.innerText.slice(0,2000)})),
+    routes: page.network.slice(networkStart).filter(request=>/\/(auth|privacy)\//.test(new URL(request.url).pathname)).map(request=>({path:new URL(request.url).pathname,status:request.status})),
+    errors: page.pageErrors, responses
+  }));
 }

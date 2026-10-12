@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "issue": "MSC-122",
   "projectName": "myscoutee-template-microservices",
-  "version": "1.0.0",
+  "version": "1.4.0",
   "sharedJavaIncludes": [
     "common/config/NotificationParameters.java"
   ],

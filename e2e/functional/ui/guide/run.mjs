@@ -15,13 +15,13 @@ try{
   await page.clickVisible('.user-selector-menu [data-guide-item="navigator-avatar"]');
   await assertGuideTour(page, ['Edit profile','Example cards','Chat']);
   await page.clickVisible('[data-guide-field="navigation-profile"]');await page.waitForSelector('app-profile-editor [data-control-id="name"] input');
-  await assertGuideTour(page, ['Save profile','Profile picture','Display name']);
+  await assertGuideTour(page, ['Manage your profile photos','Account connections','Display name','Profile visibility','Save profile changes','Close this popup']);
   await page.clickVisible('app-profile-editor .ui-popup__close');
   await page.clickVisible('.user-selector-menu [data-guide-item="navigator-avatar"]');
   await page.clickVisible('.user-menu-content [data-guide-item="chat"]');await page.waitForSelector('app-template-chat single-row article');
-  await assertGuideTour(page, ['Conversations']);
+  await assertGuideTour(page, ['Conversations','Close this popup']);
   await page.clickVisible('app-template-chat single-row article');await page.waitForSelector('.chat-compose-box');
-  await assertGuideTour(page, ['Pinned messages','Audio and video call','Back to conversations','Write a message']);
+  await assertGuideTour(page, ['Conversations','Write a message','Send message','Start or join a call','Conversation members','Pinned messages','Close this popup']);
  }});
  console.log('PASS '+(local?'local':'HTTP')+' landing, navigation, profile, conversation list and message composer guides');
 }catch(error){console.error(error.stack);console.error(await page.evaluate(()=>document.body.innerText.slice(0,2500)));process.exitCode=1;}

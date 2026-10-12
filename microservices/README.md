@@ -1,7 +1,8 @@
 # Template service shell
 
-This is the selected native service build and transport framework. It is not yet
-an independently qualified KVM deployment. Version: **1.0.0**.
+This is the selected native service build and transport framework for template
+**1.4.0**. The retained KVM flows were qualified on 2026-10-12; the exact source,
+seed, image and Helm revisions are recorded in the evidence linked below.
 
 | Assembly | Canonical domains |
 | --- | --- |
@@ -27,8 +28,12 @@ The source checkpoint passes four assembly ownership audits, 51 transport tests,
 and 23 focused canonical tests. Selected wire evidence and qualification limits
 are recorded in
 [`MSC122_TEMPLATE_ASSEMBLY_SELECTION_20261012.json`](../guides/qualification/evidence/MSC122_TEMPLATE_ASSEMBLY_SELECTION_20261012.json).
-KVM, monitoring, deployment flows and runtime performance remain pending under
-step 25 of the [implementation plan](../guides/plans/MSC-122_TEMPLATE_IMPLEMENTATION_PLAN.md).
+The current retained KVM qualification includes 17 backend contracts, profile
+images, Discover, chat and working monitoring targets/panels; see
+[`MSC122_TEMPLATE_KVM_RETAINED_UI_20261012.json`](../guides/qualification/evidence/MSC122_TEMPLATE_KVM_RETAINED_UI_20261012.json).
+This selected evidence does not close every performance, installed-release or
+final acceptance requirement in the
+[implementation plan](../guides/plans/MSC-122_TEMPLATE_IMPLEMENTATION_PLAN.md).
 
 For an explicitly requested refresh of disposable KVM test data, use the native
 seed owner after `python3 microservices/tools/workloads.py backends-stop`:

@@ -13,6 +13,68 @@ single_file="${MONGO_IMPORT_SINGLE_FILE:-}"
 # The adjacent policy travels with this script in Compose, DEB, E2E and KVM bundles.
 source "$(dirname -- "${BASH_SOURCE[0]}")/mongo-seed-policy.inc"
 
+# Shared insert-only path for operator-owned singleton configuration.
+seed_singleton_exists() {
+  local target_db="$1"
+  local collection_name="$2"
+  local document_id="$3"
+
+  mongosh \
+    --host "${mongo_host}" \
+    --port "${mongo_port}" \
+    --username "${mongo_username}" \
+    --password "${mongo_password}" \
+    --authenticationDatabase "${target_db}" \
+    --quiet \
+    "${target_db}" \
+    --eval "
+if (db.getCollection('${collection_name}').countDocuments(
+      { _id: '${document_id}' },
+      { limit: 1 }
+    ) > 0) {
+  quit(0);
+}
+quit(1);
+" >/dev/null
+}
+
+import_singleton_seed() {
+  local target_db="$1"
+  local jsonfile="$2"
+  local collection_name="$3"
+  local document_id="$4"
+
+  if seed_singleton_exists "${target_db}" "${collection_name}" "${document_id}"; then
+    echo "Preserving existing ${target_db}.${collection_name} singleton."
+    return 0
+  fi
+
+  # This singleton is mutable operator state after its first import. Insert
+  # mode is deliberate: a concurrent importer/operator write can only make
+  # this insert fail with a duplicate key; it can never overwrite that state.
+  if mongoimport \
+      -h "${mongo_host}" \
+      --port "${mongo_port}" \
+      -d "${target_db}" \
+      -c "${collection_name}" \
+      -u "${mongo_username}" \
+      -p "${mongo_password}" \
+      --mode=insert \
+      --file "${jsonfile}" \
+      --jsonArray \
+      --type json; then
+    return 0
+  fi
+
+  if seed_singleton_exists "${target_db}" "${collection_name}" "${document_id}"; then
+    echo "Preserving concurrently created ${target_db}.${collection_name} singleton."
+    return 0
+  fi
+
+  echo "Failed to insert ${target_db}.${collection_name} singleton." >&2
+  return 1
+}
+
 json_file_has_documents() {
   local jsonfile="$1"
 

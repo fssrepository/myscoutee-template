@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "source": "https://github.com/fssrepository/myscoutee-backend",
   "sourceRevision": "ab4f624073457e6f21ace9eb34368cf68e7a4070",
-  "status": "Implementation in progress; this manifest records selected files, not a runnable or qualified release.",
+  "status": "File selection/provenance inventory reconciled on 2026-10-12. Implementation and qualification completion are tracked only by the numbered implementation plan.",
   "files": [
     {
       "path": "e2e/functional/backend/chat/call/chat-call-mls.test.mjs",
@@ -1173,9 +1173,9 @@
       "path": "frontend/src/app/shared/core/local/seed/data/help-center-guide-fields.json",
       "upstreamSha256": "c9c462c0617893444853ed891a1c9d9b34e6be5c820eed66fad89e1e24440ba0",
       "purpose": "Selected native API/MCP settings, local persistence, consent route and contextual guides for the minimal template.",
-      "adaptation": "Retain native API/MCP contracts, stores and adapter behavior; omit affiliate/payment/product fields and text. Compose member entry/guide contexts with the minimal shell. Operator configuration record contains deployment settings only.",
-      "sourceRevision": "f8a1b83b6",
-      "sourceFrontendRevision": "c90a5b1f",
+      "adaptation": "Select retained native guide fields and translations; map native profile/chat context and field identifiers to the minimal shell. Omit affiliate/event-only claims. Keep the same visible-control guide service and local/Mongo catalogs.",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
       "templateSelectionNote": "2026-10-12: omit admin Reports/Support chat/Feedback and member report/feedback UI, associated presentation stores, guide contexts and notification links. Retain backend/local contracts pending source-first modularization in plan step 5."
     },
     {
@@ -1856,11 +1856,11 @@
     },
     {
       "path": "frontend/src/app/shared/ui/context/ui.providers.ts",
-      "upstreamSha256": "8de81f742bfbfe745bbad513d69392f85136e26219ac1931fc94d215eb822a2b",
+      "upstreamSha256": "52463f8c15db9acbaa3c143a89a543cd8adf258fc9958b4bfc235795493a1aca",
       "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
-      "adaptation": "Selected native methods/contracts plus template-owned seed, profile fields or entry composition; omitted product group, article and affiliate flows.",
-      "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
-      "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
+      "adaptation": "Select the retained UI bindings; initialize the same native OverlayNavigationStore before Router history listeners, preserving existing overlay Back behavior.",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514"
     },
     {
       "path": "frontend/src/app/shared/ui/converters/app/help-center-revision-document-viewer.converter.ts",
@@ -1898,18 +1898,18 @@
     {
       "path": "frontend/src/assets/i18n/en.json",
       "upstreamSha256": "e583e163ea2e74507f91cd8d2f8c3d6c412d4475d48f830a675f22ed074ec410",
-      "sourceRevision": "f8a1b83b6",
-      "sourceFrontendRevision": "c90a5b1f",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
       "purpose": "Selected native API/MCP settings, local persistence, consent route and contextual guides for the minimal template.",
-      "adaptation": "Retain native API/MCP contracts, stores and adapter behavior; omit affiliate/payment/product fields and text. Compose member entry/guide contexts with the minimal shell. Operator configuration record contains deployment settings only."
+      "adaptation": "Select retained native guide fields and translations; map native profile/chat context and field identifiers to the minimal shell. Omit affiliate/event-only claims. Keep the same visible-control guide service and local/Mongo catalogs."
     },
     {
       "path": "frontend/src/assets/i18n/hu.json",
       "upstreamSha256": "cb9ab4093aa0c0b62b114efc9a774dc9d9193c28edbb1cba5bbede131320e902",
-      "sourceRevision": "f8a1b83b6",
-      "sourceFrontendRevision": "c90a5b1f",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
       "purpose": "Selected native API/MCP settings, local persistence, consent route and contextual guides for the minimal template.",
-      "adaptation": "Retain native API/MCP contracts, stores and adapter behavior; omit affiliate/payment/product fields and text. Compose member entry/guide contexts with the minimal shell. Operator configuration record contains deployment settings only."
+      "adaptation": "Select retained native guide fields and translations; map native profile/chat context and field identifiers to the minimal shell. Omit affiliate/event-only claims. Keep the same visible-control guide service and local/Mongo catalogs."
     },
     {
       "path": "frontend/src/assets/icon/android-chrome-192x192.png",
@@ -5410,7 +5410,7 @@
       "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
       "upstreamSha256": "939c31c9f8590263a8755a9ff26341d3a0a198fdc4e83ffab9aec67274d3ffd9",
       "purpose": "Native durable notification delivery, inbox and chat transport support for the minimal application.",
-      "adaptation": "Retain native notification limits and account-purge window bounds without the product affinity catalog; configure purge days through users.account-purge-window-days (default 30, native allowed range 1\u2013365)."
+      "adaptation": "Retain native notification limits and account-purge window bounds without the product affinity catalog; configure purge days through users.account-purge-window-days (default 30, native allowed range 1–365)."
     },
     {
       "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/common/config/WebSecurityConfig.java",
@@ -8353,6 +8353,247 @@
       "upstreamSha256": "4a513c43fc48a7ea877be3ee7052e0ec33cd01551125df83230aa1a2389d0a02",
       "purpose": "Shared release input/environment verification, exact artifact selection and existing Mongo index upgrade; project data stays selected separately.",
       "adaptation": null
+    },
+    {
+      "path": "frontend/src/app/home/components/home-header/home-header.component.scss",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
+      "upstreamSha256": "eb1b8839ed6ef8789056c01097d415ae91c742859dfe91e007a277ae087b8d44",
+      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
+      "adaptation": null
+    },
+    {
+      "path": "frontend/src/app/home/components/home-header/home-header.component.ts",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
+      "upstreamSha256": "4638c41cf526ae98a60fec46b906153476eb93efcb55575bb86d38b3f6025d7b",
+      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
+      "adaptation": null
+    },
+    {
+      "path": "frontend/src/app/entry/components/entry-page.component.html",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
+      "upstreamSha256": "c795876283d0ae0ddab7bc47d329c7ed43df3c4caf24ec19f410d57608ce4700",
+      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
+      "adaptation": "Retained template selection of this native owner: minimal profile/role controls, image-only media surface, or product-independent shell/entry. No new alternate service or component engine. See templateOwnedFeatures for the selected consumers.",
+      "upstreamPath": "frontend/src/app/entry/components/entry-page/entry-page.component.html"
+    },
+    {
+      "path": "frontend/src/app/entry/components/entry-page.component.ts",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
+      "upstreamSha256": "ac11645d55949fab2971e7cd7fe3a6a3a07759689554c4ce2138705bac06e55b",
+      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
+      "adaptation": "Retained template selection of this native owner: minimal profile/role controls, image-only media surface, or product-independent shell/entry. No new alternate service or component engine. See templateOwnedFeatures for the selected consumers.",
+      "upstreamPath": "frontend/src/app/entry/components/entry-page/entry-page.component.ts"
+    },
+    {
+      "path": "frontend/src/app/entry/components/entry-page.component.scss",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
+      "upstreamSha256": "2e4a8e0cb30f211f7d97f4ad84f0cce7926f2cd0361a4b9cacb77e7e848c4e76",
+      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
+      "adaptation": "Retained template selection of this native owner: minimal profile/role controls, image-only media surface, or product-independent shell/entry. No new alternate service or component engine. See templateOwnedFeatures for the selected consumers.",
+      "upstreamPath": "frontend/src/app/entry/components/entry-page/entry-page.component.scss"
+    },
+    {
+      "path": "frontend/src/app/profile/components/settings-popups/settings-popups.component.html",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
+      "upstreamSha256": "077d454885147d1d5ee8fecd51c3a574bd8d5b971b90637e9c3b04e074094f4a",
+      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
+      "adaptation": "Retained template selection of this native owner: minimal profile/role controls, image-only media surface, or product-independent shell/entry. No new alternate service or component engine. See templateOwnedFeatures for the selected consumers."
+    },
+    {
+      "path": "frontend/src/app/profile/components/settings-popups/settings-popups.component.ts",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
+      "upstreamSha256": "56cfc9e6a610d5b387c00e182ef65c7512af9291372f9927bffd7feff54c2b32",
+      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
+      "adaptation": "Retained template selection of this native owner: minimal profile/role controls, image-only media surface, or product-independent shell/entry. No new alternate service or component engine. See templateOwnedFeatures for the selected consumers."
+    },
+    {
+      "path": "frontend/src/app/profile/components/settings-popups/settings-popups.component.scss",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
+      "upstreamSha256": "185f1bd23a4b83e324051c74f3774b75125be6f369eca23f4cdac89b8f10c730",
+      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
+      "adaptation": null
+    },
+    {
+      "path": "frontend/src/app/profile/components/profile-editor/profile-editor.component.scss",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
+      "upstreamSha256": "34b3d99b49e055a19cda745f3145c81bd130b5ad3f674b8404a7c84cf21d73bb",
+      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
+      "adaptation": "Retained template selection of this native owner: minimal profile/role controls, image-only media surface, or product-independent shell/entry. No new alternate service or component engine. See templateOwnedFeatures for the selected consumers."
+    },
+    {
+      "path": "frontend/src/app/profile/components/profile-editor/profile-editor.component.html",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
+      "upstreamSha256": "9ed2ff4c2bdc7391091b2f50a81875a31ced970f67b1d091e24c0e18770996aa",
+      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
+      "adaptation": "Retained template selection of this native owner: minimal profile/role controls, image-only media surface, or product-independent shell/entry. No new alternate service or component engine. See templateOwnedFeatures for the selected consumers."
+    },
+    {
+      "path": "frontend/src/app/operator/components/operator-page/operator-page.component.html",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
+      "upstreamSha256": "3492cee554d74c5b49be77b31c3f6945ff924a3cfeb219f3e4ca7f5c29344694",
+      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
+      "adaptation": "Retained template selection of this native owner: minimal profile/role controls, image-only media surface, or product-independent shell/entry. No new alternate service or component engine. See templateOwnedFeatures for the selected consumers."
+    },
+    {
+      "path": "frontend/src/app/operator/components/operator-page/operator-page.component.ts",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
+      "upstreamSha256": "764dfb3cb482cdfb35c69870bd57f5a0e166c631814329246684bcfa6dab2c7c",
+      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
+      "adaptation": "Retained template selection of this native owner: minimal profile/role controls, image-only media surface, or product-independent shell/entry. No new alternate service or component engine. See templateOwnedFeatures for the selected consumers."
+    },
+    {
+      "path": "frontend/src/app/operator/components/operator-page/operator-page.component.scss",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
+      "upstreamSha256": "46b993b01e8ba156a998d2de163e8947e778999864528fe9f8e85a27e5aa6c4c",
+      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
+      "adaptation": "Retained template selection of this native owner: minimal profile/role controls, image-only media surface, or product-independent shell/entry. No new alternate service or component engine. See templateOwnedFeatures for the selected consumers."
+    },
+    {
+      "path": "frontend/src/app/shared/core/base/services/media/media.service.ts",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
+      "upstreamSha256": "b581b740440ac6b17819e7431bc3325066986dd9b2e0858802645dd34fccb124",
+      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
+      "adaptation": "Retained template selection of this native owner: minimal profile/role controls, image-only media surface, or product-independent shell/entry. No new alternate service or component engine. See templateOwnedFeatures for the selected consumers."
+    },
+    {
+      "path": "frontend/src/app/shared/core/local/source/services/notifications/role-notifications.service.ts",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
+      "upstreamSha256": "b6faf52f238ce594d449e86fef63d94e22d391b0a266528c66302e71f01bc513",
+      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
+      "adaptation": "Retained template selection of this native owner: minimal profile/role controls, image-only media surface, or product-independent shell/entry. No new alternate service or component engine. See templateOwnedFeatures for the selected consumers."
+    },
+    {
+      "path": "frontend/src/app/shared/core/local/source/services/media/media.service.ts",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
+      "upstreamSha256": "ca52c11eaab6121c76ad245ae5d859aa6f45bcdbbc6adc0fc73f566ec0414a1d",
+      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
+      "adaptation": "Retained template selection of this native owner: minimal profile/role controls, image-only media surface, or product-independent shell/entry. No new alternate service or component engine. See templateOwnedFeatures for the selected consumers."
+    },
+    {
+      "path": "frontend/src/app/shared/core/local/source/repositories/media/media.repository.ts",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
+      "upstreamSha256": "cfa74ea60c94f2f0dc298c3173d29f8ce861cfdeed6b3ab4ce5d3406deb251d4",
+      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
+      "adaptation": null
+    },
+    {
+      "path": "frontend/src/app/shared/core/common/image-urls.ts",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
+      "upstreamSha256": "38baea3c741897b5fbc9b6cd76b6a8e5ddfee7fd05c61a30154f7f381a92f977",
+      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
+      "adaptation": "Same availability/image/runtime contract with template-owned runtime path, cache identity or fixtures; no product-domain import."
+    },
+    {
+      "path": "frontend/src/app/shared/core/common/demo-failover.spec.ts",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
+      "upstreamSha256": "369c1dd9a5f349badd993a222ca78e97744ad069668b1755b7ae40d352021beb",
+      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
+      "adaptation": "Same availability/image/runtime contract with template-owned runtime path, cache identity or fixtures; no product-domain import."
+    },
+    {
+      "path": "frontend/src/app/shared/core/common/demo-failover.ts",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
+      "upstreamSha256": "2ac4ac210cd3d1108e8660e1aa84f325b263713824fe04eb7a38b3cf789155bf",
+      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
+      "adaptation": "Same availability/image/runtime contract with template-owned runtime path, cache identity or fixtures; no product-domain import."
+    },
+    {
+      "path": "frontend/src/app/shared/core/common/runtime-status.spec.ts",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
+      "upstreamSha256": "b9297ea3598dad2ffb490ef4c83ab2456cc0b8d01b66ae6937d3f67e0988d3b0",
+      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
+      "adaptation": "Same availability/image/runtime contract with template-owned runtime path, cache identity or fixtures; no product-domain import."
+    },
+    {
+      "path": "frontend/src/app/shared/core/http/services/media/media.service.ts",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
+      "upstreamSha256": "68e477fec371514d98e3061e02a197380c92a2f0dc99b74953de2e29b209af3e",
+      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
+      "adaptation": "Retained template selection of this native owner: minimal profile/role controls, image-only media surface, or product-independent shell/entry. No new alternate service or component engine. See templateOwnedFeatures for the selected consumers."
+    },
+    {
+      "path": "frontend/src/app/shared/core/http/interceptors/platform/connectivity.interceptor.ts",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
+      "upstreamSha256": "3d7f0b6916de770b9f66ab444576a9e571fecc3229740dfc1211287df83796fb",
+      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
+      "adaptation": null
+    },
+    {
+      "path": "frontend/src/app/shared/ui/converters/profile/profile-header-card.converter.ts",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
+      "upstreamSha256": "c73d22d0bdeb7696f902935b09cd26cf961273675612b41a98cb26f522839c73",
+      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
+      "adaptation": "Retained template selection of this native owner: minimal profile/role controls, image-only media surface, or product-independent shell/entry. No new alternate service or component engine. See templateOwnedFeatures for the selected consumers."
+    },
+    {
+      "path": "frontend/src/app/shared/ui/converters/chat/activity-chat-single-row.converter.ts",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
+      "upstreamSha256": "bf5311e96b6eb58f9a4a13e77a4c229a09dbe9665a74774f91df6bc9e452465d",
+      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
+      "adaptation": "Retained template selection of this native owner: minimal profile/role controls, image-only media surface, or product-independent shell/entry. No new alternate service or component engine. See templateOwnedFeatures for the selected consumers."
+    },
+    {
+      "path": "frontend/src/app/shared/ui/converters/notification/notification-single-row.converter.spec.ts",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
+      "upstreamSha256": "80f34be46f2499b3f4790d1c1779c782b0dd7335957d4a6a47998142cd4cb9aa",
+      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
+      "adaptation": "Retained template selection of this native owner: minimal profile/role controls, image-only media surface, or product-independent shell/entry. No new alternate service or component engine. See templateOwnedFeatures for the selected consumers."
+    },
+    {
+      "path": "frontend/src/app/shared/ui/context/stores/profile/profile.store.ts",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
+      "upstreamSha256": "816bbc5b52c3ca821a3e3ecbec7ead3aa4d2404f5838e83e3aaa44640294410f",
+      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
+      "adaptation": "Retained template selection of this native owner: minimal profile/role controls, image-only media surface, or product-independent shell/entry. No new alternate service or component engine. See templateOwnedFeatures for the selected consumers."
+    },
+    {
+      "path": "frontend/src/app/shared/ui/components/side-menu/_navigator-avatar.scss",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
+      "upstreamSha256": "c0351f447ee377abe615f38da4d62fff158f803188c45ca4d3eee53ed1cecb11",
+      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
+      "adaptation": null
+    },
+    {
+      "path": ".vscode/launch.json",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "upstreamSha256": "dfeacdd156ec5a3e69230ef3de33961335888da8856862952946c79851bab30b",
+      "purpose": "Native Java launch/attach and lightweight IDE settings; automatic builds remain disabled to preserve the existing runtime resource rule.",
+      "adaptation": null
+    },
+    {
+      "path": ".vscode/settings.json",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "upstreamSha256": "075065fd3735e8d8ec708d3bd54a11b0e45c9ee6f12682a03327b3bbdab46260",
+      "purpose": "Native Java launch/attach and lightweight IDE settings; automatic builds remain disabled to preserve the existing runtime resource rule.",
+      "adaptation": null
     }
   ],
   "templateOwnedFeatures": [
@@ -8369,18 +8610,42 @@
       "implementation": "Template-owned DTO, Mongo repository/controller/service, local/HTTP adapters and four equal demo/E2E/browser seed cards. Native IndexedDB engine, SmartList and card components are reused; no new list engine.",
       "reason": "Existing MyScoutee event/activity lists carry product models excluded from this standalone example.",
       "productionSeed": "No sampleCards seed; production starts empty.",
-      "query": "Bounded page; stable Mongo _id index; no per-card IO."
+      "query": "Bounded page; stable Mongo _id index; no per-card IO.",
+      "files": [
+        "frontend/src/app/member/components/showcase/showcase.component.scss",
+        "frontend/src/app/member/components/showcase/showcase.component.html",
+        "frontend/src/app/member/components/showcase/showcase.component.ts",
+        "frontend/src/app/shared/core/base/services/showcase/showcase.service.ts",
+        "frontend/src/app/shared/core/local/seed/repositories/showcase/showcase-seed.repository.ts",
+        "frontend/src/app/shared/core/local/source/services/showcase/showcase.service.ts",
+        "frontend/src/app/shared/core/local/source/entity/showcase/showcase.entity.ts",
+        "frontend/src/app/shared/core/local/source/repositories/showcase/showcase.repository.spec.ts",
+        "frontend/src/app/shared/core/local/source/repositories/showcase/showcase.repository.ts",
+        "frontend/src/app/shared/core/http/services/showcase/showcase.service.ts",
+        "frontend/src/app/shared/core/contracts/showcase/showcase.interface.ts",
+        "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/showcase/controller/SampleCardController.java",
+        "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/showcase/repository/SampleCardRepository.java",
+        "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/showcase/service/SampleCardService.java",
+        "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/showcase/mapper/SampleCardMapper.java",
+        "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/showcase/document/SampleCard.java",
+        "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/showcase/dto/SampleCardDtos.java"
+      ]
     },
     {
       "name": "compact-chat",
       "purpose": "Member chat page with native SmartList/SingleRow, selected native local and HTTP chat adapters.",
       "reason": "The source event-chat popup includes event/group/campaign/resource navigation excluded from the template.",
-      "implementation": "Small component composition with avatar pill and collapse, text send/edit/delete/read, bounded history and native WebSocket reconnect. No bottom add menu.",
+      "implementation": "Native SmartList/channel converter, chat popup/header, message actions, replies/reactions/pins, read receipts, WebSocket reconnect and call owner composed for the retained personal conversation. No invite/report or bottom add-item menu.",
       "tests": [
         "e2e/functional/ui/chat/run-local.mjs",
         "e2e/functional/ui/chat/run.mjs"
       ],
-      "sourceRepair": "Native frontend bf4760f9 persists read receipts on existing participant copies; carried unchanged into the selected local repository."
+      "sourceRepair": "Native frontend bf4760f9 persists read receipts on existing participant copies; carried unchanged into the selected local repository.",
+      "files": [
+        "frontend/src/app/member/components/chat/chat.component.ts",
+        "frontend/src/app/member/components/chat/chat.component.html",
+        "frontend/src/app/member/components/chat/chat.component.scss"
+      ]
     },
     {
       "name": "minimal-profile-settings",
@@ -8392,51 +8657,69 @@
         "native MediaService local/HTTP adapters",
         "native side-menu ensureActivePrivacyConsent account-first rule"
       ],
-      "implementation": "The template form edits name and images, merges the current profile on save, clears drafts on actor change and uses the native profile endpoint. Image upload/import retains native implementations; document/audio methods are omitted until selected consumers need them. The avatar opens the selected native side-panel shell, with two member pages and a small gear menu.",
-      "remaining": "Notification/device preferences and account-reactivation entry UI remain open."
+      "implementation": "Selected native profile/header/Basics, visibility control, separate gallery editor and image adapters. Save merges the current profile, preserves hidden fields and clears actor drafts. Native animated side menu has the two member tiles; API access stays on the profile. Native settings include device preferences, logout/delete/reactivation confirmations and guides.",
+      "files": [
+        "frontend/src/app/entry/components/entry-page-consent.spec.ts",
+        "frontend/src/app/entry/components/entry-page-lifecycle.spec.ts",
+        "frontend/src/app/member/components/member-page.component.scss",
+        "frontend/src/app/member/components/member-page.component.html",
+        "frontend/src/app/member/components/member-page.component.ts",
+        "frontend/src/app/shared/ui/context/stores/profile/profile-editor.store.ts",
+        "frontend/src/app/shared/ui/context/stores/profile/profile-editor.store.spec.ts"
+      ]
     },
     {
       "name": "notifications-and-guide",
-      "composition": "Native notification services/store/SmartList/converter and guide engine/launcher/overlay. Template-owned welcome notifications, retained-screen guide catalogue and member header composition. Personal chat targets use the existing page and native read receipt operation.",
+      "composition": "Native notification services/store/SmartList/converter, guide engine/launcher/overlay and thirty-second HTTP unread scheduler. Template-owned guide catalog names the retained controls; chat deep links use existing read receipts.",
       "scope": "Local and HTTP inbox, read/mute persistence, contextual guides, same-user stale response guards and native 30-second HTTP user realtime scheduler. Production seed includes only guidance/localization, never synthetic notification rows.",
       "qualification": "MSC122_TEMPLATE_NOTIFICATIONS_GUIDE_20261011.json",
-      "remaining": "Browser push/device setup and installed/KVM environment qualification remain separate open steps."
+      "files": [
+        "frontend/src/app/shared/core/local/source/repositories/notifications/notifications.repository.spec.ts"
+      ]
     },
     {
       "name": "operator-configuration",
       "references": [
         "frontend/src/app/shared/core/contracts/operator/operator.interface.ts",
         "frontend/src/app/shared/core/base/mappers/operator/operator-configuration.mapper.ts",
-        "frontend/src/app/shared/core/base/mappers/operator/operator-configuration.mapper.spec.ts",
         "frontend/src/app/shared/core/local/seed/services/platform/demo-bootstrap.service.ts",
         "frontend/src/app/shared/ui/context/stores/operator/operator-workspace.store.ts",
-        "frontend/src/app/shared/ui/context/stores/operator/operator-workspace.store.spec.ts",
         "frontend/src/app/operator/components/_operator-configuration.scss",
-        "frontend/src/app/shared/core/base/services/operator-registry.service.ts",
-        "frontend/src/app/shared/core/http/services/operator-registry.service.ts",
-        "frontend/src/app/shared/core/local/source/services/operator-registry.service.ts",
-        "frontend/src/app/operator/components/operator-action-popup/operator-action-popup.component.ts",
-        "frontend/src/app/operator/components/operator-action-popup/operator-action-popup.component.html",
-        "frontend/src/app/operator/components/operator-action-popup/operator-action-popup.component.scss",
-        "frontend/src/app/shared/core/local/seed/builders/operator-registry-seed.builder.ts"
+        "frontend/src/app/shared/core/local/source/services/operator/operator-configuration.service.ts",
+        "frontend/src/app/shared/core/local/seed/builders/operator/operator-configuration-seed.builder.ts"
       ],
-      "implementation": "Selected native configuration facade/adapters/workspace and six action-popup sections under a dedicated configuration popup. Existing member shell adds operator-only access; local bootstrap seeds its single private configuration record once. Native guide engine uses selected controls and template API/social descriptions.",
+      "implementation": "Native configuration facade/adapters/workspace and configuration popup. Retained section order is TLS, branding, API, privacy, administrators, social, Firebase, email; payment/Registry are omitted. Operator page keeps native desktop frame/action sizing and side-menu/profile access.",
       "qualification": "MSC122_TEMPLATE_OPERATOR_CONFIGURATION_20261011.json",
-      "remaining": "TLS/host worker, signed update and live Firebase tests remain separate gates."
+      "files": [
+        "frontend/src/app/shared/core/local/seed/repositories/operator/operator-configuration-seed.repository.ts",
+        "frontend/src/app/shared/core/local/source/services/operator/operator-configuration.service.spec.ts",
+        "frontend/src/app/shared/core/local/source/repositories/platform/deployment-configuration.repository.ts",
+        "frontend/src/app/shared/core/local/source/repositories/platform/deployment-configuration.repository.spec.ts"
+      ]
     },
     {
       "name": "tls-update-selection",
       "qualification": "MSC122_TEMPLATE_TLS_UPDATE_SELECTION_20261011.json",
       "implementation": "Retain native TLS controls and update backend/signatures. Use template-owned paths/repository/version in application configuration. Retain cryptographic protocol identifiers and internal staging filename; no Registry state.",
-      "remaining": "KVM and privileged host workers/package inventory selection; no installation qualification yet."
+      "files": []
     },
     {
       "name": "operator-update-ui",
       "sourceFrontendRevision": "c90a5b1f",
       "templateFrontendRevision": "4b13d99",
       "qualification": "MSC122_TEMPLATE_UPDATE_UI_20261011.json",
-      "implementation": "Selected update DTOs, native facade/HTTP/local service methods, workspace state/progress and action-popup update body. Separate owner name without Registry state. Keep native bounded polling, signature capability, rollback and PWA reload. Local seed starts at version 1.0.0 with no fictitious newer release. Operator-only gear and consumed notification target use existing route/guide owners.",
-      "remaining": "KVM, signed host installation/rollback and release publication remain separate gates."
+      "implementation": "Selected native update DTO/facade/adapters/workspace, progress/polling, action-popup body, rollback and PWA reload. Template identity/version use existing configuration inputs. Dedicated update popup and notification target retain native ownership; no Registry state.",
+      "files": [
+        "frontend/src/app/operator/components/operator-update-popup/operator-update-popup.component.ts",
+        "frontend/src/app/operator/components/operator-update-popup/operator-update-popup.component.scss",
+        "frontend/src/app/operator/components/operator-update-popup/operator-update-popup.component.html",
+        "frontend/src/app/shared/core/base/services/operator/operator-update.service.ts",
+        "frontend/src/app/shared/core/local/source/services/operator/operator-update.service.ts",
+        "frontend/src/app/shared/core/local/source/services/operator/operator-update.service.spec.ts",
+        "frontend/src/app/shared/core/http/services/operator/operator-update.service.ts",
+        "frontend/src/app/shared/core/http/services/operator/operator-update.service.spec.ts",
+        "frontend/src/app/shared/core/contracts/operator/operator-update.interface.ts"
+      ]
     },
     {
       "name": "account-warning-email",
@@ -8444,7 +8727,48 @@
       "templateFrontendRevision": "fad8ec46cb21470ef213e690faa17bbd89c0c692",
       "qualification": "MSC122_TEMPLATE_ACCOUNT_EMAIL_20261011.json",
       "implementation": "Native email selection plus minimal warning rule, Mongo-owned indexes and operator setting mount. Four seeded retained jobs; no admin Jobs UI required.",
-      "remaining": "KVM, installed/external delivery and source runtime follow-up remain separate gates."
+      "files": []
+    },
+    {
+      "name": "notification-scheduling-configuration",
+      "files": [
+        "server/projects/profile/src/main/java/com/raxim/myscoutee/common/config/NotificationParameters.java"
+      ],
+      "references": [
+        "server/projects/profile/src/main/java/com/raxim/myscoutee/common/config/PlatformParametersService.java",
+        "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/platform/api/SchedulingPolicy.java",
+        "server/projects/profile/src/main/resources/application.yaml"
+      ],
+      "implementation": "Small ConfigurationProperties record consumed by the existing selected PlatformParametersService; the template binds only retained notification scheduling inputs.",
+      "reason": "The full source SchedulingParameters input is backed by product AffinityConfig. The omitted affinity administration/domain must not become a template dependency just to supply notification thresholds."
     }
-  ]
+  ],
+  "inventoryReview": {
+    "date": "2026-10-12",
+    "sourceEntries": 1193,
+    "javaFilesCovered": 370,
+    "frontendTsHtmlScssFilesCovered": 266,
+    "unresolvedInternalJavaImports": 0,
+    "assemblyAudit": "Existing microservices/tools/audit-assemblies.py; all twelve domains assigned to four owners.",
+    "optionalInjection": "ProfileStatusWork.SupportMessages is @Autowired(required=false); nonempty retained support work fails without its owner and is not acknowledged. Other unbound injected API candidate sets are empty.",
+    "missingSelectedCapability": "Native FacebookDataDeletionController/Service not yet selected; config/security/DTO declarations alone do not implement the callback. Explicit task9.5.",
+    "infrastructureConfiguration": {
+      "seed": "mongo-seed-policy.inc and db_init.js",
+      "localStore": "AppMemorySchema: users/contacts/chat/notifications/help/showcase; native IndexedDB engine",
+      "assemblies": "microservices/assemblies.json and transport/bindings.json",
+      "lab": "microservices/deploy/runtime.json",
+      "installed": "packaging/scripts/release-project.json and selected host policies",
+      "editor": "unchanged native .vscode launch/settings; autobuild disabled",
+      "github": "local publication; no Actions. Native root-path Dependabot is not required by the local release flow."
+    },
+    "omittedDomains": [
+      "events/community/groups",
+      "Assets product data",
+      "affinity product administration",
+      "payments/Registry/affiliate accounting",
+      "reports/moderation/feedback/support creation and exclusive jobs/stores/tests"
+    ],
+    "retainedContracts": "Shared identity/visibility/stored-chat DTOs remain where needed; no optional feature is replaced with fake counters or successful no-op providers.",
+    "verificationBoundary": "Static selection audit and existing qualified evidence, not new runtime qualification. Full task status exists only in the numbered checklist."
+  }
 }
