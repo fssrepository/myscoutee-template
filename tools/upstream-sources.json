@@ -4317,6 +4317,13 @@
       "adaptation": null
     },
     {
+      "path": "packaging/compose/docker-compose.production-replicaset.yml",
+      "sourceRevision": "15858a4cbc3831051160b71dcd2f3a0539ecd1dc",
+      "upstreamSha256": "da2a366bcc37830ab9e7b5167049d55630efb91d1b517906599df14cf963b4df",
+      "purpose": "Retained catalog delivery and consistent DEV/E2E/installed environment configuration.",
+      "adaptation": "Selected template domains and deployment identity; shared configuration and upgrade contract retained."
+    },
+    {
       "path": "packaging/compose/docker-compose.production.yml",
       "upstreamSha256": "52ce3058990d7a13017852fd41dfff27313bd45b26ce68d4a05b5abc8d4e7f69",
       "sourceRevision": "bca195a1736a05995a046849c20c8b32bc56e508",
@@ -4357,6 +4364,34 @@
       "upstreamSha256": "4b147d6c11f3437dab5a89b8533f91ab6edc70d1533d7b3dac69e5e5f764a656",
       "purpose": "Shared release input/environment verification, exact artifact selection and existing Mongo index upgrade; project data stays selected separately.",
       "adaptation": null
+    },
+    {
+      "path": "packaging/migrations/016-release-catalog-parity.js",
+      "sourceRevision": "15858a4cbc3831051160b71dcd2f3a0539ecd1dc",
+      "upstreamSha256": "fce06a267fbbccc2bc605f7ee90003f3b98d57a85354486636a1d0042bfd6717",
+      "purpose": "Retained catalog delivery and consistent DEV/E2E/installed environment configuration.",
+      "adaptation": null
+    },
+    {
+      "path": "packaging/migrations/seeds/016-release-catalog-parity/catalog-defaults.json",
+      "sourceRevision": "15858a4cbc3831051160b71dcd2f3a0539ecd1dc",
+      "upstreamSha256": "26b07d00021decb4e14c96c568b9fee9db4f691d11cdf2c1db1a6e9303454e74",
+      "purpose": "Retained catalog delivery and consistent DEV/E2E/installed environment configuration.",
+      "adaptation": "Selected template domains and deployment identity; shared configuration and upgrade contract retained."
+    },
+    {
+      "path": "packaging/migrations/seeds/016-release-catalog-parity/helpCenterGuideFields.json",
+      "sourceRevision": "15858a4cbc3831051160b71dcd2f3a0539ecd1dc",
+      "upstreamSha256": "2a73936f516e6892996b895f7ead8c66935aadd23b06584a3d9e578779cd48cb",
+      "purpose": "Retained catalog delivery and consistent DEV/E2E/installed environment configuration.",
+      "adaptation": "Selected template domains and deployment identity; shared configuration and upgrade contract retained."
+    },
+    {
+      "path": "packaging/migrations/seeds/016-release-catalog-parity/helpCenterRevisions.json",
+      "sourceRevision": "15858a4cbc3831051160b71dcd2f3a0539ecd1dc",
+      "upstreamSha256": "9a3cebb7a8f83598c716fcbfdb8659abb08f9ef6c186a65771661721de6c0707",
+      "purpose": "Retained catalog delivery and consistent DEV/E2E/installed environment configuration.",
+      "adaptation": "Selected template domains and deployment identity; shared configuration and upgrade contract retained."
     },
     {
       "path": "packaging/release/audit-nested-archive.py",
@@ -4556,9 +4591,9 @@
     },
     {
       "path": "packaging/scripts/smoke-mongo-compatibility.sh",
-      "sourceRevision": "8ceb635bc2860029699faef48210c503e9826b99",
-      "upstreamSha256": "777f9d51d41f1713f3881d89f7a480dc1725fca0396f54900de0769a0192eb5a",
-      "purpose": "Shared package lifecycle, artifact audit, selected host operations or their focused regression checks.",
+      "sourceRevision": "15858a4cbc3831051160b71dcd2f3a0539ecd1dc",
+      "upstreamSha256": "8103288a79971b48d65f4ce22e6995dbb4e6f0ba0f7ccf893d1807d886783880",
+      "purpose": "Retained catalog delivery and consistent DEV/E2E/installed environment configuration.",
       "adaptation": null
     },
     {
@@ -4633,9 +4668,9 @@
     },
     {
       "path": "packaging/tests/deployment-input-parity-test.py",
-      "sourceRevision": "aa2371c94bca3ba351e50e77821888fcb4e076d0",
-      "upstreamSha256": "4f067e1d3d972935617c2af8a75b6f59523bf29140a010e30324cbe803cead8e",
-      "purpose": "Shared release input/environment verification, exact artifact selection and existing Mongo index upgrade; project data stays selected separately.",
+      "sourceRevision": "15858a4cbc3831051160b71dcd2f3a0539ecd1dc",
+      "upstreamSha256": "3bf4552098737b186ce11739d46c58c1bf6658ee7c9a5dbc5aa306eabd0cefc8",
+      "purpose": "Retained catalog delivery and consistent DEV/E2E/installed environment configuration.",
       "adaptation": null
     },
     {
@@ -4664,6 +4699,13 @@
       "upstreamSha256": "527227fde9d55bcbb52652e4831cbc49ec89dc67b4a1a294589bf773a8c064e0",
       "sourceRevision": "7385fa358f3c051427cea62cf8212d2257d5138b",
       "purpose": "Shared production build, complete release signatures, privileged update boundary or browser qualification support.",
+      "adaptation": null
+    },
+    {
+      "path": "packaging/tests/release-catalog-parity-test.mjs",
+      "sourceRevision": "15858a4cbc3831051160b71dcd2f3a0539ecd1dc",
+      "upstreamSha256": "a94b9917f47c42204dd66c4187d60cd47dd51b02165152e919c12fc973903217",
+      "purpose": "Retained catalog delivery and consistent DEV/E2E/installed environment configuration.",
       "adaptation": null
     },
     {
@@ -4738,17 +4780,17 @@
     },
     {
       "path": "server/docker-compose-dev.yml",
-      "upstreamSha256": "0bd9f88d976c0bffeb15232c116ad202f14c69102f7f3ab2472c7d2e37e2808a",
-      "purpose": "Complete DEV-to-installed runtime input coverage and exact release JAR selection.",
+      "upstreamSha256": "fa7242bcf0e5f9341f4c090831c1593fb146bc9f1b47ba82da805a94f36f3140",
+      "purpose": "Retained catalog delivery and consistent DEV/E2E/installed environment configuration.",
       "adaptation": "Retained template services, project identity/version and selected indexes only; DEV/PROD/E2E configuration probes verify the same wiring contract.",
-      "sourceRevision": "aa2371c94bca3ba351e50e77821888fcb4e076d0",
+      "sourceRevision": "15858a4cbc3831051160b71dcd2f3a0539ecd1dc",
       "sourceFrontendRevision": null
     },
     {
       "path": "server/docker-compose-prod.yml",
-      "sourceRevision": "aa2371c94bca3ba351e50e77821888fcb4e076d0",
-      "upstreamSha256": "6499c71dc69b0d0342407bcac05297de77ec18ab85c7e9eb39793f02b781ba10",
-      "purpose": "Complete DEV-to-installed runtime input coverage and exact release JAR selection.",
+      "sourceRevision": "15858a4cbc3831051160b71dcd2f3a0539ecd1dc",
+      "upstreamSha256": "dbcf8ba5d08a72e7137af14a397ce5da39f0679b8b50ca97e90777359cde380c",
+      "purpose": "Retained catalog delivery and consistent DEV/E2E/installed environment configuration.",
       "adaptation": "Retained template services, project identity/version and selected indexes only; DEV/PROD/E2E configuration probes verify the same wiring contract."
     },
     {
@@ -4767,9 +4809,9 @@
     },
     {
       "path": "server/docker-compose.replicaset.yml",
-      "sourceRevision": "cfa26b923c515cc683ee329b38416d3e8f578d2a",
-      "upstreamSha256": "e6cb8f4337c764828f65d7cfb5c0405bf91dc572f658265167685e0b31d08392",
-      "purpose": "Native shared replica-set composition.",
+      "sourceRevision": "15858a4cbc3831051160b71dcd2f3a0539ecd1dc",
+      "upstreamSha256": "da2a366bcc37830ab9e7b5167049d55630efb91d1b517906599df14cf963b4df",
+      "purpose": "Retained catalog delivery and consistent DEV/E2E/installed environment configuration.",
       "adaptation": "Omit affinity worker settings; preserve Mongo replica configuration and application connection."
     },
     {
@@ -7785,9 +7827,9 @@
     {
       "path": "server/projects/profile/src/main/resources/application-prod.yaml",
       "upstreamSha256": "b22802f4eb02aab8ce2830a2ba3477cbc5fa3495e07d5056d4834d55daf4b046",
-      "purpose": "Preserve the native prod profile for authentication, MongoDB, Redis, media, multipart, health and logging.",
+      "purpose": "Retained catalog delivery and consistent DEV/E2E/installed environment configuration.",
       "adaptation": "Select the existing sections needed by the minimal backend; no separate runtime profile or deployment mechanism is introduced.",
-      "sourceRevision": "cfa26b923c515cc683ee329b38416d3e8f578d2a"
+      "sourceRevision": "15858a4cbc3831051160b71dcd2f3a0539ecd1dc"
     },
     {
       "path": "server/projects/profile/src/main/resources/application.yaml",

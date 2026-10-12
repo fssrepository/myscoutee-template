@@ -69,7 +69,7 @@ email:
   from-email: ${EMAIL_FROM_EMAIL:no-reply@template.local}
   from-name: ${EMAIL_FROM_NAME:Templates}
   reply-to: ${EMAIL_REPLY_TO:support@template.local}
-  base-url: ${EMAIL_BASE_URL:http://localhost}
+  base-url: ${EMAIL_BASE_URL:https://localhost}
   sendgrid:
     api-key: ${EMAIL_SENDGRID_API_KEY:}
     endpoint: ${EMAIL_SENDGRID_ENDPOINT:https://api.sendgrid.com/v3/mail/send}

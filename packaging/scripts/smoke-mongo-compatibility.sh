@@ -278,6 +278,14 @@ main() {
   fi
   status_line ok "running Mongo version: ${version}"
 
+  local mongo_file_limit
+  mongo_file_limit="$(docker exec mongodb awk '/^Max open files/ {print $4}' /proc/1/limits)"
+  if [[ "${mongo_file_limit}" != unlimited ]] \
+    && { [[ ! "${mongo_file_limit}" =~ ^[0-9]+$ ]] || (( mongo_file_limit < 64000 )); }; then
+    fail "Mongo open-file limit must be at least 64000; got ${mongo_file_limit:-unknown}"
+  fi
+  status_line ok "Mongo open-file limit: ${mongo_file_limit}"
+
   fcv="$(mongo_eval_root 'const fcv = db.adminCommand({ getParameter: 1, featureCompatibilityVersion: 1 }).featureCompatibilityVersion; print(fcv.version || fcv);' | tail -n 1 | tr -d '\r')"
   if [[ "${fcv}" != "${EXPECTED_MONGO_MINOR}" ]]; then
     fail "Mongo featureCompatibilityVersion must be ${EXPECTED_MONGO_MINOR}; got ${fcv}"

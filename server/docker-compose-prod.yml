@@ -75,7 +75,6 @@ services:
     - ./docker/conf/nginx/keys:/etc/nginx/keys
     - ./data/certbot/conf:/etc/letsencrypt
     - ./data/certbot/www:/var/www/certbot
-    - /etc/timezone:/etc/timezone:ro
     - /etc/localtime:/etc/localtime:ro
     networks:
     - myscoutee
@@ -113,7 +112,6 @@ services:
     volumes:
     - ./docker/conf/mongodb/:/docker-entrypoint-initdb.d
     - ./data/mongodb/data-v8-0:/data/db
-    - /etc/timezone:/etc/timezone:ro
     - /etc/localtime:/etc/localtime:ro
     networks:
     - myscoutee
@@ -135,7 +133,6 @@ services:
     environment:
       TZ: ${CONTAINER_TIMEZONE:-Europe/Brussels}
     volumes:
-    - /etc/timezone:/etc/timezone:ro
     - /etc/localtime:/etc/localtime:ro
     networks:
     - myscoutee
@@ -168,7 +165,6 @@ services:
       TZ: ${CONTAINER_TIMEZONE:-Europe/Brussels}
     volumes:
     - ./data/minio:/data
-    - /etc/timezone:/etc/timezone:ro
     - /etc/localtime:/etc/localtime:ro
     networks:
     - myscoutee
@@ -247,7 +243,6 @@ services:
     - ${MYSCOUTEE_UPDATE_STATE_DIR_HOST:-./data/update}/inbox/requests:/var/lib/myscoutee/update/requests:rw
     - ${MYSCOUTEE_UPDATE_STATE_DIR_HOST:-./data/update}/runtime/jobs:/var/lib/myscoutee/update/jobs:ro
     - ${MYSCOUTEE_UPDATE_CONFIG_DIR_HOST:-./data/update-config}:/etc/myscoutee/update:ro
-    - /etc/timezone:/etc/timezone:ro
     - /etc/localtime:/etc/localtime:ro
     networks:
     - myscoutee

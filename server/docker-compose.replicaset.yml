@@ -3,6 +3,12 @@
 
 services:
   mongodb:
+    # Do not inherit a host's low Docker default: each collection/index needs
+    # file descriptors. MongoDB recommends at least 64000 open files.
+    ulimits:
+      nofile:
+        soft: 64000
+        hard: 64000
     entrypoint: ["bash", "/docker-entrypoint-initdb.d/replica-entrypoint"]
     command: ["mongod", "--bind_ip_all", "--replSet", "${MONGO_REPLICA_SET_NAME:-rs0}"]
     environment:

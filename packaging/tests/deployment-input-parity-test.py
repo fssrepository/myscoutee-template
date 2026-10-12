@@ -148,6 +148,8 @@ def audit_environments():
         services = json.loads(result.stdout)['services']
         api = services['profilemanagement']
         environment = api['environment']
+        assert services['mongodb']['ulimits']['nofile'] == {'soft': 64000, 'hard': 64000}, \
+            mode + ': Mongo open-file limits must not depend on Docker host defaults'
         assert 'stun' in services, mode + ': missing STUN service'
         assert not any(key.startswith('CHAT_CALL_') for key in services['mongodb']['environment']), mode
         assert environment['SPRING_PROFILES_ACTIVE'] == ('dev' if mode == 'dev' else 'prod'), mode
@@ -164,6 +166,8 @@ def audit_environments():
             assert environment['MONGODB_DATABASE'] == environment['MONGODB_DEMO_DATABASE'] == mongo['MONGO_E2E_DATABASE']
             assert all(volume['type'] != 'bind' for service in services.values() for volume in service.get('volumes', [])), 'E2E contains host/source bind mounts'
         for name, service in services.items():
+            assert all(volume.get('target') != '/etc/timezone' for volume in service.get('volumes', [])), \
+                mode + ': host /etc/timezone is not a portable file mount; use TZ and /etc/localtime'
             build = service.get('build')
             if build:
                 context = Path(build['context'])
@@ -174,6 +178,8 @@ def audit_environments():
         resource = (ROOT / f'server/projects/profile/src/main/resources/application-{profile}.yaml').read_text()
         assert '${EMAIL_SENDGRID_API_KEY:' in resource, profile + ': packaged email secret is ignored'
         assert '${EMAIL_SENDGRID_ENDPOINT:' in resource, profile + ': email endpoint override is ignored'
+        if profile == 'prod':
+            assert '${EMAIL_BASE_URL:https://localhost}' in resource, 'production email URL lost its HTTPS default'
     for mode in ('prod', 'e2e'):
         dockerfile = (ROOT / f'server/docker/images/profilemanagement/{mode}/Dockerfile').read_text()
         assert 'ARG MYSCOUTEE_VERSION=' in dockerfile, mode
@@ -199,6 +205,8 @@ def main():
     project = json.loads((ROOT / 'packaging/scripts/release-project.json').read_text())
     package = project['packageName']
     installed = args.stage / 'opt' / package
+    subprocess.run(['node', str(ROOT / 'packaging/tests/runtime-index-parity-test.mjs')], check=True)
+    subprocess.run(['node', str(ROOT / 'packaging/tests/release-catalog-parity-test.mjs')], check=True)
     subprocess.run(['python3', str(ROOT / 'tools/seeds/check-system-seed-parity.py'), '--packaged-root', str(installed)], check=True)
     for directory in ['packaging/scripts', 'packaging/migrations', 'packaging/templates']:
         expected = files(ROOT / directory)
