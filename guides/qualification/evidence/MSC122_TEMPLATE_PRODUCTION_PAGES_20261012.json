@@ -1,0 +1,588 @@
+{
+  "recordedAt": "2026-10-12",
+  "sourceBackend": "77e461e9aac502c808f6826d258c01d96b6fa744",
+  "templateParentBeforeBatch": "bd3ad62",
+  "templateFrontend": "287f277",
+  "version": "1.0.0",
+  "scope": "Production-image monolith, live Pages and authenticated GHCR publication; not installed DEB/VMware or performance equivalence.",
+  "production": {
+    "buildLog": "/tmp/msc122-template-production-build.log",
+    "services": [
+      "nginx",
+      "profilemanagement",
+      "mongodb",
+      "redis",
+      "minio",
+      "mcp",
+      "stun"
+    ],
+    "backend": {
+      "recordedAt": "2026-10-12T02:54:30.462Z",
+      "mode": "prod",
+      "baseUrl": "https://127.0.0.1",
+      "apiPrefix": "/api",
+      "selection": {
+        "filter": "",
+        "group": "",
+        "qaCase": ""
+      },
+      "passed": 17,
+      "failed": 0,
+      "skipped": 0,
+      "total": 17,
+      "ownedSessionsRevoked": true,
+      "scope": "Backend contracts and owned session lifecycle in the recorded deployment mode; not UI, load or installed-release proof."
+    },
+    "ui": {
+      "mode": "http",
+      "startedAt": "2026-10-12T03:03:31.791Z",
+      "baseUrl": "https://127.0.0.1",
+      "passed": 1,
+      "failed": 0,
+      "results": [
+        {
+          "id": "entry/showcase",
+          "qaBranches": [
+            "T-IDENTITY-001",
+            "T-SMARTLIST-001"
+          ],
+          "status": "PASS",
+          "durationMs": 5079,
+          "log": "entry/showcase/run.log"
+        }
+      ]
+    },
+    "chat": {
+      "result": "PASS",
+      "checks": {
+        "sent": true,
+        "edited": true,
+        "peerReceived": true,
+        "readReceipt": true,
+        "noDuplicateEcho": true,
+        "reconnected": true,
+        "replyAfterReconnect": true,
+        "replyReference": true,
+        "pinReactionAndReplyReload": true,
+        "unpin": true,
+        "chronologicalOrder": true,
+        "deleted": true,
+        "reloadPersisted": true
+      },
+      "calls": [
+        {
+          "call": 1,
+          "twoPartyAudio": true,
+          "twoPartyVideo": true,
+          "directMedia": true,
+          "mute": true,
+          "cameraOff": true,
+          "mediaReleased": true,
+          "holdMs": 0,
+          "received": [
+            {
+              "audioBytes": 451,
+              "videoFrames": 1,
+              "connected": 1,
+              "relay": false
+            },
+            {
+              "audioBytes": 596,
+              "videoFrames": 2,
+              "connected": 1,
+              "relay": false
+            }
+          ],
+          "elapsedMs": 1411
+        },
+        {
+          "call": 2,
+          "twoPartyAudio": true,
+          "twoPartyVideo": true,
+          "directMedia": true,
+          "mute": true,
+          "cameraOff": true,
+          "mediaReleased": true,
+          "holdMs": 0,
+          "received": [
+            {
+              "audioBytes": 556,
+              "videoFrames": 2,
+              "connected": 1,
+              "relay": false
+            },
+            {
+              "audioBytes": 643,
+              "videoFrames": 2,
+              "connected": 1,
+              "relay": false
+            }
+          ],
+          "elapsedMs": 751
+        }
+      ],
+      "cleanup": "zero remaining owned users/chats/messages"
+    },
+    "adminRemoval": {
+      "result": "PASS",
+      "checks": "Admin API retained and member denied; report/feedback/support mutations absent; personal chat still persists and reads; omitted collections are not initialized",
+      "timings": [
+        {
+          "method": "GET",
+          "path": "/admin/client-api/settings",
+          "ms": 7,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/admin/client-api/settings",
+          "ms": 11,
+          "status": 403
+        },
+        {
+          "method": "GET",
+          "path": "/admin/dashboard",
+          "ms": 16,
+          "status": 404
+        },
+        {
+          "method": "POST",
+          "path": "/auth/me/report-user",
+          "ms": 13,
+          "status": 404
+        },
+        {
+          "method": "POST",
+          "path": "/auth/me/feedback",
+          "ms": 14,
+          "status": 404
+        },
+        {
+          "method": "POST",
+          "path": "/admin/users/<target>/warn",
+          "ms": 14,
+          "status": 404
+        },
+        {
+          "method": "POST",
+          "path": "/admin/users/<target>/block",
+          "ms": 9,
+          "status": 404
+        },
+        {
+          "method": "POST",
+          "path": "/admin/users/<target>/unblock",
+          "ms": 8,
+          "status": 404
+        },
+        {
+          "method": "POST",
+          "path": "/admin/reports/omitted/resolve",
+          "ms": 8,
+          "status": 404
+        },
+        {
+          "method": "POST",
+          "path": "/admin/feedback/omitted/resolve",
+          "ms": 6,
+          "status": 404
+        },
+        {
+          "method": "POST",
+          "path": "/activities/chats/<chat>/support-case",
+          "ms": 8,
+          "status": 404
+        },
+        {
+          "method": "GET",
+          "path": "/auth/me",
+          "ms": 19,
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/activities/chats/<chat>/messages",
+          "ms": 53,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/activities/chats/<chat>/messages",
+          "ms": 30,
+          "status": 200
+        }
+      ]
+    },
+    "fixtureBoundary": [
+      "Fresh generated credentials in ignored local secrets; test actor credentials resolved inside explicitly selected Docker container.",
+      "Self-signed disposable HTTPS; fixture-only Chrome TLS opt-in and Node CA trust. This does not qualify public TLS.",
+      "DEMO MCP explicitly enabled only in disposable QA environment; production default remains disabled."
+    ],
+    "cpuSnapshot": [
+      "myscoutee-template-prod-qa-nginx 0.01% 33.9MiB / 15.27GiB",
+      "myscoutee-template-prod-qa-profilemanagement 4.26% 480.5MiB / 15.27GiB",
+      "myscoutee-template-prod-qa-mongodb 1.62% 126.4MiB / 15.27GiB",
+      "myscoutee-template-prod-qa-redis 0.42% 5.453MiB / 15.27GiB",
+      "myscoutee-template-prod-qa-minio 0.09% 74.84MiB / 15.27GiB",
+      "myscoutee-template-prod-qa-mcp 0.00% 5.625MiB / 128MiB",
+      "myscoutee-template-prod-qa-stun 0.03% 4.902MiB / 64MiB"
+    ],
+    "state": "Stopped before next deployment; no application stack left running."
+  },
+  "refreshedE2eMonolith": {
+    "backend": "17 PASS",
+    "chat": "PASS lifecycle and two consecutive audio/video calls (1530/739 ms); owned fixture removed",
+    "adminRemoval": "PASS nine omitted routes, API authorization, persisted personal chat and omitted collections",
+    "logs": [
+      "/tmp/msc122-template-monolith-backend-qualified.log",
+      "/tmp/msc122-template-monolith-chat-qualified.log",
+      "/tmp/msc122-template-monolith-admin-qualified.log"
+    ]
+  },
+  "pages": {
+    "url": "https://fssrepository.github.io/myscoutee-template/",
+    "source": "460f5c2",
+    "workflow": "https://github.com/fssrepository/myscoutee-template/actions/runs/38196340753",
+    "initial": {
+      "mode": "local",
+      "startedAt": "2026-10-12T02:48:15.175Z",
+      "baseUrl": "https://fssrepository.github.io/myscoutee-template",
+      "passed": 11,
+      "failed": 3,
+      "results": [
+        {
+          "id": "entry/showcase",
+          "qaBranches": [
+            "T-IDENTITY-001",
+            "T-SMARTLIST-001"
+          ],
+          "status": "PASS",
+          "durationMs": 31345,
+          "log": "entry/showcase/run.log"
+        },
+        {
+          "id": "chat/lifecycle",
+          "qaBranches": [
+            "T-CHAT-001",
+            "T-CHAT-002"
+          ],
+          "status": "PASS",
+          "durationMs": 87179,
+          "log": "chat/lifecycle/run.log"
+        },
+        {
+          "id": "profile/avatar",
+          "qaBranches": [
+            "T-PROFILE-001",
+            "T-PROFILE-002"
+          ],
+          "status": "PASS",
+          "durationMs": 34990,
+          "log": "profile/avatar/run.log"
+        },
+        {
+          "id": "settings/lifecycle",
+          "qaBranches": [
+            "T-SETTINGS-001"
+          ],
+          "status": "FAIL",
+          "durationMs": 21409,
+          "log": "settings/lifecycle/run.log"
+        },
+        {
+          "id": "settings/setup",
+          "qaBranches": [
+            "T-DEVICE-001"
+          ],
+          "status": "PASS",
+          "durationMs": 42958,
+          "log": "settings/setup/run.log"
+        },
+        {
+          "id": "settings/onboarding",
+          "qaBranches": [
+            "T-ONBOARDING-001"
+          ],
+          "status": "FAIL",
+          "durationMs": 20397,
+          "log": "settings/onboarding/run.log"
+        },
+        {
+          "id": "notifications/inbox",
+          "qaBranches": [
+            "T-NOTIFICATION-001"
+          ],
+          "status": "PASS",
+          "durationMs": 54903,
+          "log": "notifications/inbox/run.log"
+        },
+        {
+          "id": "guide/member",
+          "qaBranches": [
+            "T-GUIDE-001"
+          ],
+          "status": "PASS",
+          "durationMs": 29875,
+          "log": "guide/member/run.log"
+        },
+        {
+          "id": "integrations/settings",
+          "qaBranches": [
+            "T-INTEGRATION-006"
+          ],
+          "status": "PASS",
+          "durationMs": 36290,
+          "log": "integrations/settings/run.log"
+        },
+        {
+          "id": "integrations/guides",
+          "qaBranches": [
+            "T-INTEGRATION-006"
+          ],
+          "status": "PASS",
+          "durationMs": 29898,
+          "log": "integrations/guides/run.log"
+        },
+        {
+          "id": "operator/configuration",
+          "qaBranches": [
+            "T-OPERATOR-001",
+            "T-OPERATOR-002"
+          ],
+          "status": "PASS",
+          "durationMs": 46484,
+          "log": "operator/configuration/run.log"
+        },
+        {
+          "id": "operator/updates",
+          "qaBranches": [
+            "T-OPERATOR-003"
+          ],
+          "status": "PASS",
+          "durationMs": 43689,
+          "log": "operator/updates/run.log"
+        },
+        {
+          "id": "admin/minimal-shell",
+          "qaBranches": [
+            "T-ADMIN-001"
+          ],
+          "status": "FAIL",
+          "durationMs": 73864,
+          "log": "admin/minimal-shell/run.log"
+        },
+        {
+          "id": "admin/api",
+          "qaBranches": [
+            "T-INTEGRATION-007"
+          ],
+          "status": "PASS",
+          "durationMs": 29252,
+          "log": "admin/api/run.log"
+        }
+      ]
+    },
+    "qualified": {
+      "mode": "local",
+      "startedAt": "2026-10-12T02:48:15.175Z",
+      "baseUrl": "https://fssrepository.github.io/myscoutee-template",
+      "passed": 14,
+      "failed": 0,
+      "results": [
+        {
+          "id": "entry/showcase",
+          "qaBranches": [
+            "T-IDENTITY-001",
+            "T-SMARTLIST-001"
+          ],
+          "status": "PASS",
+          "durationMs": 31345,
+          "log": "entry/showcase/run.log"
+        },
+        {
+          "id": "chat/lifecycle",
+          "qaBranches": [
+            "T-CHAT-001",
+            "T-CHAT-002"
+          ],
+          "status": "PASS",
+          "durationMs": 87179,
+          "log": "chat/lifecycle/run.log"
+        },
+        {
+          "id": "profile/avatar",
+          "qaBranches": [
+            "T-PROFILE-001",
+            "T-PROFILE-002"
+          ],
+          "status": "PASS",
+          "durationMs": 34990,
+          "log": "profile/avatar/run.log"
+        },
+        {
+          "id": "settings/lifecycle",
+          "qaBranches": [
+            "T-SETTINGS-001"
+          ],
+          "status": "PASS",
+          "durationMs": 42477,
+          "log": "/tmp/msc122-template-pages-retry/settings/lifecycle/run.log"
+        },
+        {
+          "id": "settings/setup",
+          "qaBranches": [
+            "T-DEVICE-001"
+          ],
+          "status": "PASS",
+          "durationMs": 42958,
+          "log": "settings/setup/run.log"
+        },
+        {
+          "id": "settings/onboarding",
+          "qaBranches": [
+            "T-ONBOARDING-001"
+          ],
+          "status": "PASS",
+          "durationMs": 31778,
+          "log": "/tmp/msc122-template-pages-retry/settings/onboarding/run.log"
+        },
+        {
+          "id": "notifications/inbox",
+          "qaBranches": [
+            "T-NOTIFICATION-001"
+          ],
+          "status": "PASS",
+          "durationMs": 54903,
+          "log": "notifications/inbox/run.log"
+        },
+        {
+          "id": "guide/member",
+          "qaBranches": [
+            "T-GUIDE-001"
+          ],
+          "status": "PASS",
+          "durationMs": 29875,
+          "log": "guide/member/run.log"
+        },
+        {
+          "id": "integrations/settings",
+          "qaBranches": [
+            "T-INTEGRATION-006"
+          ],
+          "status": "PASS",
+          "durationMs": 36290,
+          "log": "integrations/settings/run.log"
+        },
+        {
+          "id": "integrations/guides",
+          "qaBranches": [
+            "T-INTEGRATION-006"
+          ],
+          "status": "PASS",
+          "durationMs": 29898,
+          "log": "integrations/guides/run.log"
+        },
+        {
+          "id": "operator/configuration",
+          "qaBranches": [
+            "T-OPERATOR-001",
+            "T-OPERATOR-002"
+          ],
+          "status": "PASS",
+          "durationMs": 46484,
+          "log": "operator/configuration/run.log"
+        },
+        {
+          "id": "operator/updates",
+          "qaBranches": [
+            "T-OPERATOR-003"
+          ],
+          "status": "PASS",
+          "durationMs": 43689,
+          "log": "operator/updates/run.log"
+        },
+        {
+          "id": "admin/minimal-shell",
+          "qaBranches": [
+            "T-ADMIN-001"
+          ],
+          "status": "PASS",
+          "durationMs": 75243,
+          "log": "/tmp/msc122-template-pages-retry/admin/minimal-shell/run.log"
+        },
+        {
+          "id": "admin/api",
+          "qaBranches": [
+            "T-INTEGRATION-007"
+          ],
+          "status": "PASS",
+          "durationMs": 29252,
+          "log": "admin/api/run.log"
+        }
+      ]
+    },
+    "harnessCorrections": [
+      "Resolve lifecycle/onboarding paths against repository base path.",
+      "Scope resource assertions to current reused-page flow. Allow only expected exact same-origin Pages document fallback 404, never asset failures."
+    ],
+    "productChanges": "None for these harness corrections."
+  },
+  "ghcr": {
+    "publication": {
+      "version": "1.0.0",
+      "images": [
+        {
+          "service": "nginx-base",
+          "reference": "ghcr.io/fssrepository/myscoutee-template-nginx:1.0.0-base",
+          "imageId": "sha256:45c0bb9de7a903d626100397a6826a728464a8c1d6a91e4cb643db1a4f9202c7",
+          "digest": "ghcr.io/fssrepository/myscoutee-template-nginx@sha256:fb6a0855e824b2f33a35a7b97f4b70b49da2e34972abf3dd9e14dc9346b5bd3f"
+        },
+        {
+          "service": "nginx",
+          "reference": "ghcr.io/fssrepository/myscoutee-template-nginx:1.0.0-prod",
+          "imageId": "sha256:19c35d327c2ab8abe5141a69eb2fab05dc6ef99bb208f95e28b563c99250feb4",
+          "digest": "ghcr.io/fssrepository/myscoutee-template-nginx@sha256:6cc70b5b1675c8dec16b0c8ef8d7e40f64a7b2406e6ca5969d1481526d45688e"
+        },
+        {
+          "service": "profilemanagement",
+          "reference": "ghcr.io/fssrepository/myscoutee-template-api:1.0.0-prod",
+          "imageId": "sha256:6a8ec2c156a3210e9984bb1776e896132ff3e04f869524416bd37aae06c2af58",
+          "digest": "ghcr.io/fssrepository/myscoutee-template-api@sha256:7fb4edac762061c2a6f316d3d66f2638cdacb0dda9411d1c66985eef6a2bfc73"
+        },
+        {
+          "service": "minio",
+          "reference": "ghcr.io/fssrepository/myscoutee-template-minio:1.0.0-prod",
+          "imageId": "sha256:886b0ef81a1bfae563f7547d7bec76760f3ab96778fe8708bd2ce578eaf7160f",
+          "digest": "ghcr.io/fssrepository/myscoutee-template-minio@sha256:9fd983df6ce515bbb099efed28b1708617c6811137aec75d9c1f2b5de718b10b"
+        },
+        {
+          "service": "mcp",
+          "reference": "ghcr.io/fssrepository/myscoutee-template-mcp:1.0.0-prod",
+          "imageId": "sha256:4a29d6a23ffdecefcfc7df145566be3de991feefadfba475f001335e241b97a1",
+          "digest": "ghcr.io/fssrepository/myscoutee-template-mcp@sha256:7cef2dc38a988d9a1f767716f6bbb24525a0b87913822ad8d3d4b27592114268"
+        }
+      ]
+    },
+    "verification": "Each remote image pulled and config ID compared to the qualified local image.",
+    "visibility": "Private by default; anonymous delivery not qualified.",
+    "ciAttempt": {
+      "workflow": "https://github.com/fssrepository/myscoutee-template/actions/runs/38198115037",
+      "status": "FAILED",
+      "boundary": "Upstream MinIO base image unavailable to fresh build; cached local image had masked this upstream availability failure."
+    },
+    "minioRecovery": {
+      "original": "minio/minio:RELEASE.2025-09-07T16-13-09Z",
+      "imageId": "sha256:69b2ec208575b69597784255eec6fa6a2985ee9e1a47f4411a51f7f5fdd193a9",
+      "mirror": "ghcr.io/fssrepository/myscoutee-minio-base@sha256:52dfd5c0bbd38d3219f2058c7af216d9f9a27a994b7b5baad09bbd38866015ff",
+      "verified": "Pulled mirror has same config ID as cached upstream amd64 image; no binary or filesystem change.",
+      "remaining": "Package access/CI pull permission must be configured before this mirror can serve clean builds."
+    }
+  },
+  "limits": [
+    "CPU snapshots and functional timings do not prove matched performance parity.",
+    "Fake camera/microphone and local direct media, not external TURN or physical-device qualification.",
+    "VMware is deferred by user; Netcup is prohibited.",
+    "No signed template DEB, installed updater or release tag is qualified.",
+    "Real Firebase/external ChatGPT and four original QA checkpoints retain their separate pending gates."
+  ]
+}

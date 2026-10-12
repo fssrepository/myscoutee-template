@@ -42,7 +42,7 @@ and session-bearing curl commands in ignored `.e2e-artifacts/`, not in Git.
    installation/configuration/TLS/update, dev frontend and frontend-sync.
 5. Deployment and release: serial KVM/monolith checks, Prometheus targets and
    actual Grafana panel data, matched performance batch, production images,
-   DEB/Netcup, backup/restore, signed update and Pages.
+   DEB on local VMware, backup/restore, signed update and Pages. Netcup access is prohibited.
 
 ## User handoff
 

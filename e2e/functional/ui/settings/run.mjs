@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { launchChromeBrowser } from '../lib/chrome-cdp.mjs';
-import { assertUi } from '../entry/assert.mjs';
+import { assertUi, assertNoResourceFailures } from '../entry/assert.mjs';
 import { stageChatFixture } from '../chat/fixture.mjs';
 const local=process.argv.includes('--local');
 const fixture=local?null:await stageChatFixture();
@@ -16,7 +16,7 @@ try {
   }
   await openMenu();await page.clickVisible('[data-guide-item="delete-account"]');await page.waitForText('Delete account?');
   await page.clickVisible('app-dialog [data-guide-item="cancel"]');await page.waitForSelectorHidden('.dialog');
-  assert.equal(new URL(await page.evaluate(()=>location.href)).pathname,'/home','Cancel leaves the account active');
+  await page.waitForUrlPath('/home');
   await page.clickVisible('.settings-menu .app-menu__trigger');await page.clickVisible('[data-guide-item="delete-account"]');
   await page.clickVisible('app-dialog [data-guide-item="confirm"]');await page.waitForUrlPath('/entry',30000);
  }});
@@ -33,7 +33,7 @@ try {
   await page.clickVisible(`.demo-user-item[data-user-id="${actorId}"]`);await page.waitForText('Reactivate account?');
  }
  await selectDeleted();await page.clickVisible('app-dialog [data-guide-item="cancel"]');await page.waitForSelectorHidden('.dialog');
- assert.equal(new URL(await page.evaluate(()=>location.href)).pathname,'/entry');
+ await page.waitForUrlPath('/entry');
  await selectDeleted();await page.clickVisible('app-dialog [data-guide-item="confirm"]');await page.waitForUrlPath('/home',30000);
  await page.navigate('/home');await page.waitForText(fixture?.names[0]??'Alex Morgan');
  if(fixture){
@@ -41,7 +41,7 @@ try {
   assert.equal(restored.profileStatus,'public');assert.equal(restored.status,'A');assert(!restored.deletedAtIso);assert.equal(restored.accountPurgePendingCounterTracked,false);
  }
  await openMenu();await page.clickVisible('[data-guide-item="logout"]');await page.waitForUrlPath('/entry');
- assert.deepEqual(page.pageErrors,[]);assert(!page.network.some(request=>request.status>=400));
+ assert.deepEqual(page.pageErrors,[]);assertNoResourceFailures(page,local);
  console.log('PASS '+(local?'local':'HTTP')+' privacy/terms, delete cancel/confirm, reactivation cancel/confirm, restored reload and purge tracking');
 }catch(error){console.error(error.stack);console.error(JSON.stringify({errors:page.consoleMessages.filter(message=>message.type==='error'),text:await page.evaluate(()=>document.body.innerText.slice(0,2500))}));process.exitCode=1;}
 finally{await page.close();await browser.close();if(fixture)console.log('Owned fixture cleanup',await fixture.close());}

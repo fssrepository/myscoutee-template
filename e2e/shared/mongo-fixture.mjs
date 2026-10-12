@@ -40,6 +40,24 @@ export async function runE2eMongo(ctx, evalScript) {
     });
   }
   if (transport !== 'docker') throw new Error('E2E_MONGO_TRANSPORT must be docker or kvm.');
+  if (process.env.E2E_MONGO_USE_CONTAINER_CREDENTIALS === 'true') {
+    // Production-image qualification has generated credentials. Resolve those
+    // inside the explicitly selected container; never copy them into host args
+    // or an execFile error. Fixture JavaScript still uses the existing stdin path.
+    const container = process.env.E2E_MONGO_CONTAINER;
+    if (!container) throw new Error('Select the fixture Mongo container explicitly.');
+    const execution = execFileAsync('docker', [
+      'exec', '-i', container, 'sh', '-c',
+      'exec mongosh --quiet --username "$MONGO_APP_USERNAME" --password "$MONGO_APP_PASSWORD" --authenticationDatabase "$1" "$1" --file /dev/stdin',
+      'fixture', dbName
+    ], {
+      timeout: Number(process.env.E2E_FIXTURE_TIMEOUT_MS ?? 30000),
+      maxBuffer: 1024 * 1024
+    });
+    execution.child.stdin.on('error', error => { if (error.code !== 'EPIPE') execution.child.kill(); });
+    execution.child.stdin.end(evalScript);
+    return execution;
+  }
   return execFileAsync('docker', [
     'exec',
     process.env.E2E_MONGO_CONTAINER ?? 'mongodb',

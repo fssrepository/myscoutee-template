@@ -31,7 +31,9 @@ export async function launchChromeBrowser(options = {}) {
     '--disable-features=Translate,MediaRouter',
     '--allow-insecure-localhost',
     // Explicit fixture-only opt-in, matching the managed QA browser launcher.
-    ...(options.ignoreCertificateErrors === true ? ['--ignore-certificate-errors'] : []),
+    ...(options.ignoreCertificateErrors === true || process.env.E2E_IGNORE_CERTIFICATE_ERRORS === 'true'
+      ? ['--ignore-certificate-errors'] : []),
+    ...(options.fakeMediaStream === true ? ['--use-fake-device-for-media-stream', '--use-fake-ui-for-media-stream'] : []),
     '--hide-scrollbars',
     '--mute-audio',
     '--no-sandbox',

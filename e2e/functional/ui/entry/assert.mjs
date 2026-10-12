@@ -1,6 +1,7 @@
 import { assert } from '../../../shared/assertions.mjs';
 
 export async function assertUi({ page, ctx, local = ctx?.mode !== 'full', memberReady, profileSelected, role = 'member', actorId = '100000000000000000000001', actorName = 'Alex Morgan', consentExpected = true, endsSession = false }) {
+  const networkStart = page.network.length;
   const workspacePath = role === 'member' ? '/home' : '/' + role;
   const basePath = new URL(page.browser.baseUrl).pathname.replace(/\/$/, '');
   await page.navigate('/privacy-policy');
@@ -64,10 +65,16 @@ export async function assertUi({ page, ctx, local = ctx?.mode !== 'full', member
   await page.waitForUrlPath('/entry');
   assert(page.pageErrors.length === 0, 'No browser runtime exceptions', { errors: page.pageErrors });
   assert(!page.consoleMessages.some(message => message.type === 'error'), 'No handled Angular errors', { errors: page.consoleMessages.filter(message => message.type === 'error') });
+  assertNoResourceFailures(page, local, [workspacePath], networkStart);
+}
+
+export function assertNoResourceFailures(page, local, workspacePaths = ['/home'], fromIndex = 0) {
+  const basePath = new URL(page.browser.baseUrl).pathname.replace(/\/$/, '');
   const expectedPagesRedirect = request => process.env.E2E_PAGES_REDIRECT === 'true'
     && local && request.status === 404 && request.type === 'Document'
-    && ['/entry','/privacy-policy','/terms',workspacePath].some(route =>
-      request.url === page.browser.baseUrl + route);
-  const failures = page.network.filter(request => request.status >= 400 && !expectedPagesRedirect(request));
+    && ['/entry','/privacy-policy','/terms',...workspacePaths].some(route =>
+      new URL(request.url).origin === new URL(page.browser.baseUrl).origin
+      && new URL(request.url).pathname === basePath + route);
+  const failures = page.network.slice(fromIndex).filter(request => request.status >= 400 && !expectedPagesRedirect(request));
   assert(!failures.length, 'No failed HTTP resources beyond the explicit Pages document redirect', { failures });
 }

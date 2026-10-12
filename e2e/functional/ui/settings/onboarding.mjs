@@ -16,7 +16,7 @@ try{
  }
  async function completeOnboarding(){
   await page.waitForSelector('app-profile-editor [data-control-id="name"] input');
-  assert.equal(new URL(await page.evaluate(()=>location.href)).pathname,'/entry');
+  await page.waitForUrlPath('/entry');
   await page.fill('app-profile-editor [data-control-id="name"] input','');
   assert.equal(await page.evaluate(()=>document.querySelector('app-profile-editor [data-guide-field="profile-save"]').disabled),true,'Empty profile cannot finish onboarding');
   // Reload before completing: the retained session must reopen the same minimal form.

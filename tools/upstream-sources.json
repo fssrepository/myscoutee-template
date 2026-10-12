@@ -22,10 +22,10 @@
     },
     {
       "path": "e2e/functional/ui/lib/chrome-cdp.mjs",
-      "upstreamSha256": "6a488e3c193556cfe1361b85573d17b0424c3e60d4352b81721dca19a4422211",
-      "purpose": "Shared production build, complete release signatures, privileged update boundary or browser qualification support.",
+      "upstreamSha256": "f6b8545f62c8bfd6b7ac272c60c7c158038cbc002d22e84c086ceff3dca43d08",
+      "purpose": "Native fixture-only generated-credential and TLS support, qualified against disposable production images.",
       "adaptation": null,
-      "sourceRevision": "7385fa358f3c051427cea62cf8212d2257d5138b",
+      "sourceRevision": "77e461e9aac502c808f6826d258c01d96b6fa744",
       "sourceFrontendRevision": null
     },
     {
@@ -58,9 +58,9 @@
     },
     {
       "path": "e2e/shared/mongo-fixture.mjs",
-      "sourceRevision": "279644faf4bf0164d2eb6c5a2d74bce5403b9b02",
-      "upstreamSha256": "1b6ef9243b355a194cf4f65ad459a3146ef80c9a823d7a78d969ed9ad9697b95",
-      "purpose": "Owned KVM bootstrap/fixture transport and chat WebSocket registration, with the same configured origin policy as the monolith.",
+      "sourceRevision": "77e461e9aac502c808f6826d258c01d96b6fa744",
+      "upstreamSha256": "e63166a409ae5d7842164285cc5dac454db6f1ba061ad90d1961e5b08cd35b13",
+      "purpose": "Native fixture-only generated-credential and TLS support, qualified against disposable production images.",
       "adaptation": null
     },
     {

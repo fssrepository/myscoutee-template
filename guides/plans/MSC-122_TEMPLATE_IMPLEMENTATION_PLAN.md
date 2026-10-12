@@ -634,7 +634,11 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     Seven production services are healthy in an isolated artifact-only local
     qualification stack. The 17 backend cases pass with the DEMO MCP realm
     explicitly enabled as a test fixture; production retains its disabled default.
-    Production browser chat/call checks remain to be closed.
+    Production entry/SmartList, complete chat lifecycle and two consecutive
+    audio/video calls pass; the omitted-admin/API gate also passes. The actual
+    five images were published to GHCR, pulled back and matched by config ID.
+    See `MSC122_TEMPLATE_PRODUCTION_PAGES_20261012.json`. Private GHCR access
+    and the missing fresh-build MinIO source remain release-delivery gaps.
     Reuse native build/stamping, nginx/media/runtime images, image manifests and
     production Compose. Build retained services with project-owned versioned tags
     and immutable identities. Include required assets, seeds and helper files;
@@ -700,11 +704,16 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     and the existing remote components repository. A clean independent checkout
     passed. The Pages workflow builds the existing `github` configuration and
     checks frontend tests, version and required static assets before publication.
-    The live Pages deployment at source `460f5c2` is published. Fourteen existing
-    local UI flows are being checked against that real repository base path.
+    The live Pages deployment at source `460f5c2` is published. All fourteen existing
+    local UI flows pass against that real repository base path after correcting
+    three harness path/network-scope assumptions; application code was unchanged.
     The production-image workflow calls the existing native build and publication
     owners, checks every pushed image by pulling it back, and records digests.
-    GHCR execution and the DEB release remain separate artifact gates.
+    The five production images were published and pulled back with matching IDs.
+    They remain private. The CI build failed because the pinned upstream MinIO
+    image is unavailable; an identical cached amd64 image is preserved in GHCR,
+    but its CI/public access is not configured. See the production/Pages evidence.
+    This failure and the DEB release remain open artifact gates.
     Use the established release/build commands from CI rather than duplicating
     packaging logic. Prepare `v1.0.0`, DEB/client-tools/signatures/checksums and
     versioned Docker image publication to GitHub Container Registry. Configure
