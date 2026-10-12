@@ -4724,9 +4724,9 @@
     },
     {
       "path": "packaging/tests/runtime-index-parity-test.mjs",
-      "sourceRevision": "12104715f834eed5af8d7b5a700528151d59f457",
-      "upstreamSha256": "1e8c03a6752e9af00685310f08e184f9f2f914d14f15d2f863d1a24e1f6307cf",
-      "purpose": "Complete canonical initialization and selected-seed validation after packaged demo reset.",
+      "sourceRevision": "0028a661000c1fb1a26c5d315228e4ea5d87e646",
+      "upstreamSha256": "85d4a1992b4e04576eb77133fd60c137f3def5d775c96c55b23b4c41e11b4f49",
+      "purpose": "Complete canonical index/reset regression, including ordered keys and declared collation options.",
       "adaptation": null
     },
     {

@@ -92,9 +92,11 @@ deep-link behavior. A working `local` build alone does not close frontend work.
 
 - **Open deployment blocker (2026-10-12):** complete the native and template
   [environment parity checklist](../../../myscoutee-backend/guides/qualification/ENVIRONMENT_PARITY_CHECKLIST.md).
-  The installed native demo reset loses 29 canonical indexes; retained production
-  catalogs and the template's copied event-dependent reset oracle also require
-  review/correction. Source-file parity is not a passed deployment. Deliver fixes
+  Native 1.4.0 source `15858a4cb` now passes actual VMware installation, all
+  49/23 demo/production seed inventories, all 199 indexes, 18 retained production
+  controls, the historical migration chain, 13 HTTP checks and visible guide/demo
+  login. The selected template source corrections are present, but its actual
+  1.4.0 install and serial E2E/KVM/monolith checks remain open. Deliver fixes
   through versioned installation/upgrade paths, never direct database repair.
   Netcup remains prohibited; use local VMware, then E2E/KVM/monolith serially.
 
@@ -103,6 +105,10 @@ deep-link behavior. A working `local` build alone does not close frontend work.
   setup so ordinary VS Code Git push works. Inspect the existing bundle/sync
   workflow first; retain the local submodule contract and do not create an
   unrequested hosted frontend repository.
+  The user's 08:25 screenshot confirms `receive.denyCurrentBranch`: `origin`
+  points at the separate non-bare local frontend checkout with `master` checked
+  out. Ordinary Push/Sync must work without a special per-push command; preserve
+  the portable bundle and remote components workflow.
 
 - `DONE`: implemented and checked at the stated boundary, with evidence.
 - `IN PROGRESS`: some code exists; the step's acceptance conditions are not all proven.

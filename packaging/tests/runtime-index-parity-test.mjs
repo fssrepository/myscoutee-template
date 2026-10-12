@@ -87,6 +87,9 @@ try {
   check(actual&&JSON.stringify(actual.key)===JSON.stringify(row.key),'missing/key mismatch '+row.options.name);
   for(const field of ['unique','sparse','expireAfterSeconds','partialFilterExpression'])
    check(JSON.stringify(actual[field])===JSON.stringify(row.options[field]),'options mismatch '+row.options.name);
+  // Mongo expands collation defaults; compare every explicitly declared option.
+  for(const [field,value] of Object.entries(row.options.collation||{}))
+   check(actual.collation?.[field]===value,'collation mismatch '+row.options.name+'/'+field);
  }
  for(const row of catalog.retiredIndexes)
   check(!target.getCollection(row.collection).getIndexes().some(index=>index.name===row.name),'obsolete constraint retained');
