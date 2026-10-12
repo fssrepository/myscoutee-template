@@ -170,7 +170,7 @@ deep-link behavior. A working `local` build alone does not close frontend work.
    complete frontend, integration or deployment composition. Close with a live healthy application and retained
    routes exercised against its own databases.
 
-5. **Audit, modularize and remove omitted admin features from the template backend — IN PROGRESS (template KVM qualification pending).**
+5. **Audit, modularize and remove omitted admin features from the template backend — DONE.**
     Dependency inventory: [admin feature audit](MSC-122_ADMIN_FEATURE_DEPENDENCY_AUDIT.md).
     Added and prioritized by the user on 2026-10-12. The source audit and
     extraction cover Reports,
@@ -692,7 +692,11 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     Close only after published artifacts and Pages behavior are verified; distinguish
     a prepared workflow from an executed publication.
 
-30. **Finish developer/operator documentation and the single PDF — PENDING.**
+30. **Finish developer/operator documentation and the single PDF — IN PROGRESS.**
+    The native PDF builder now reads a project-owned catalog. The template has
+    one English HTML source and one stable seven-page PDF path, generated and
+    visually checked. Installed/release instructions remain explicitly pending
+    their delivered commands; the manual does not claim VMware/publication passed.
     Adapt the existing guides and manual builder to this project. Document clean
     setup, local/HTTP, dev/prod/E2E, tests/stress, seeds/reset, domain extension,
     KVM, local VMware/DEB, configuration, TLS, backup/restore, updates and releases.
@@ -717,6 +721,17 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     delegate unfinished functional testing to the user.
 
 ## Current continuation point
+
+Template KVM Helm 6 passed the 17 backend cases, personal-chat lifecycle,
+two consecutive audio/video calls (including a 35-second call across delegated
+authorization renewal), guide, notifications, entry/SmartList and empty-admin
+browser checks. The omitted nine admin/report/feedback/support routes returned
+404 at Helm 5, with personal chat retained. All four Java services now expose
+CPU/heap/request/histogram metrics through the actual Grafana datasource. See
+`MSC122_TEMPLATE_KVM_20261012.json`. The source policy startup correction and
+WebSocket fixes still need the current source KVM/monolith batch, then the
+refreshed template monolith. This closes step 5's template KVM removal gate;
+it does not close release/performance qualification.
 
 Step **5** source modularization is qualified in MyScoutee on KVM and monolith
 through `37f5f708e`. The original features remain available there. The template

@@ -3,6 +3,7 @@ sourceSets.main.java {
     srcDir rootProject.file('bootstrap/src/main/java')
     srcDir rootProject.file('transport/src/main/java')
     include '**/ServiceSecurityConfiguration.java'
+    include '**/ChatWebSocketTransportConfiguration.java'
     include '**/PolicyAuthorizationConfiguration.java'
     include 'com/raxim/myscoutee/common/security/policy/**'
     include '**/transport/**'
@@ -33,6 +34,7 @@ dependencies {
     implementation 'org.springframework:spring-tx'
     implementation 'org.mongodb:bson'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-websocket'
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.security:spring-security-oauth2-jose'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'

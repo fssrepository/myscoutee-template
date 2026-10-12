@@ -58,10 +58,9 @@
     },
     {
       "path": "e2e/shared/mongo-fixture.mjs",
-      "upstreamSha256": "a1faed9d807c3ca630e6f0eae49bbb23eb2eca1afb2d4ccd84bcf77ee70fea89",
-      "sourceRevision": "5a639775e",
-      "sourceFrontendRevision": null,
-      "purpose": "Native personal/support chat protocol, local persistence, HTTP/WebSocket transport, shared memory table or scoped fixture transport.",
+      "sourceRevision": "279644faf4bf0164d2eb6c5a2d74bce5403b9b02",
+      "upstreamSha256": "1b6ef9243b355a194cf4f65ad459a3146ef80c9a823d7a78d969ed9ad9697b95",
+      "purpose": "Owned KVM bootstrap/fixture transport and chat WebSocket registration, with the same configured origin policy as the monolith.",
       "adaptation": null
     },
     {
@@ -572,11 +571,19 @@
       "adaptation": null
     },
     {
+      "path": "frontend/src/app/shared/core/base/services/chat/chat-call.service.spec.ts",
+      "sourceRevision": "7ad19f7a69393aebccb05afb9c96e639b76955c4",
+      "sourceFrontendRevision": "539e230720ef00f33541b2d32193a5270179d148",
+      "upstreamSha256": "ba6783adc624508123e894be2dbf791a75617c5f7963cdbb11f8c15465c064c0",
+      "purpose": "Preserve a new call while a previous call end notification is still arriving.",
+      "adaptation": null
+    },
+    {
       "path": "frontend/src/app/shared/core/base/services/chat/chat-call.service.ts",
-      "sourceRevision": "415888834dbb1429b08cd6e2cee97b8f63ea67c3",
-      "sourceFrontendRevision": "d6cd39c15ba6735dfc3714bef72f106e1d661dc1",
-      "upstreamSha256": "f38f67e3f5c41521fce202443e00e70393655328e604719ef3d296a930bf5601",
-      "purpose": "Native domain-independent chat calls and basic message actions; includes verified bidirectional media and typed MLS cancellation errors.",
+      "sourceRevision": "7ad19f7a69393aebccb05afb9c96e639b76955c4",
+      "sourceFrontendRevision": "539e230720ef00f33541b2d32193a5270179d148",
+      "upstreamSha256": "387aba0a60a305edb1c9fdd5632182d36f1ded4643f5b8e1b1ec1cda48c41f2d",
+      "purpose": "Preserve a new call while a previous call end notification is still arriving.",
       "adaptation": null
     },
     {
@@ -1998,6 +2005,20 @@
       "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
+      "path": "guides/manuals/build-manuals.mjs",
+      "sourceRevision": "b37ba6dcf1d2deb225b31612282bb9a661cebab1",
+      "upstreamSha256": "cdc0bf7dc500fed8f47a5d35d98115f178b7480cc1676f00c21c318de2d72602",
+      "purpose": "Selected shared policy startup or catalog-driven PDF rendering implementation.",
+      "adaptation": null
+    },
+    {
+      "path": "guides/manuals/manuals.css",
+      "sourceRevision": "e2609125b9f07bc84b8eed8e0d2cf69f6dd3eab0",
+      "upstreamSha256": "79cc1d5c1bd0a8aa844ddd43c23a916589260597e0994f626e7b50ead7489e8f",
+      "purpose": "Selected shared policy startup or catalog-driven PDF rendering implementation.",
+      "adaptation": null
+    },
+    {
       "path": "guides/qa/tools/email-provider-stub.py",
       "sourceRevision": "4b63e893d66781ed91691c3f5ec7c8e7ad5e4486",
       "upstreamSha256": "1d8cac9bf542ea7bfc709805c1c67ac5ecaa69ae655994651aacee8ab7f07984",
@@ -2148,9 +2169,9 @@
     },
     {
       "path": "microservices/bootstrap-tests/build.gradle",
-      "upstreamSha256": "bf97532f53159d1c8ef8c9539587fd988d18726fa2b312b8c2a1d792a016717d",
-      "sourceRevision": "7e9e2797403566fef4db85b25f2535253a496361",
-      "purpose": "Minimal independent service build, typed transport and retained profile/notification contracts.",
+      "upstreamSha256": "ff3e7715ecb42036a3f04b77d1d71188ce8a60826a6b8505e925f6d641a1c796",
+      "sourceRevision": "3a477f3e96b9f39004fc6c02a61cad2830dcb08e",
+      "purpose": "Canonical WebSocket authentication and selected service transport renewal.",
       "adaptation": "Compile only retained HTTP/bootstrap tests and their canonical source dependencies."
     },
     {
@@ -2231,6 +2252,20 @@
       "adaptation": null
     },
     {
+      "path": "microservices/bootstrap-tests/src/test/java/com/raxim/myscoutee/microservices/transport/security/SocketAuthorizationTest.java",
+      "sourceRevision": "3a477f3e96b9f39004fc6c02a61cad2830dcb08e",
+      "upstreamSha256": "b3c063f7337954fdb008dc715ccd6bfd43608c524f4ea88b0aa8d15cea36aa64",
+      "purpose": "Canonical WebSocket authentication and selected service transport renewal.",
+      "adaptation": null
+    },
+    {
+      "path": "microservices/bootstrap/src/main/java/com/raxim/myscoutee/microservices/bootstrap/ChatWebSocketTransportConfiguration.java",
+      "sourceRevision": "3a477f3e96b9f39004fc6c02a61cad2830dcb08e",
+      "upstreamSha256": "3a9e962d4928f3c8267bf81a766194d4ae4c5a4ec365abe549f1e08517238381",
+      "purpose": "Canonical WebSocket authentication and selected service transport renewal.",
+      "adaptation": null
+    },
+    {
       "path": "microservices/bootstrap/src/main/java/com/raxim/myscoutee/microservices/bootstrap/CoreApplication.java",
       "upstreamSha256": "1aff228ff66fa0231bf83f018370b4c8af4706c883f33cd7dc1f387e4ab36c72",
       "sourceRevision": "7e9e2797403566fef4db85b25f2535253a496361",
@@ -2281,9 +2316,9 @@
     },
     {
       "path": "microservices/build-logic/service.gradle",
-      "upstreamSha256": "ad7c5b687c66c820a9d7a6226a4c4880488d30879d405d751036b11513fd0140",
-      "sourceRevision": "7e9e2797403566fef4db85b25f2535253a496361",
-      "purpose": "Minimal independent service build, typed transport and retained profile/notification contracts.",
+      "sourceRevision": "3a477f3e96b9f39004fc6c02a61cad2830dcb08e",
+      "upstreamSha256": "93e480a4fc2cc366c0143b786a065aa9aa885baf0d1ba96d495df20d67c25f3b",
+      "purpose": "Canonical WebSocket authentication and selected service transport renewal.",
       "adaptation": null
     },
     {
@@ -2316,9 +2351,16 @@
     },
     {
       "path": "microservices/deploy/chart/files/gateway.conf",
-      "sourceRevision": "9a8c48319",
-      "upstreamSha256": "edfc995feb9384c28dd337c84ba0d1dc2ec681e61df7d6cfb83b052d9a2b6e14",
-      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "sourceRevision": "3a477f3e96b9f39004fc6c02a61cad2830dcb08e",
+      "upstreamSha256": "883095ebf240da6831a4dd2e20651131a1875f92d9d043e77c7feb48f4356a96",
+      "purpose": "Canonical WebSocket authentication and selected service transport renewal.",
+      "adaptation": null
+    },
+    {
+      "path": "microservices/deploy/chart/files/public-upstream.conf",
+      "sourceRevision": "3a477f3e96b9f39004fc6c02a61cad2830dcb08e",
+      "upstreamSha256": "7d15d36fe1b3adad6b53eb26c5da3fe5966809fb9f9cdbfa79731fb230d44b9d",
+      "purpose": "Canonical WebSocket authentication and selected service transport renewal.",
       "adaptation": null
     },
     {
@@ -2330,9 +2372,9 @@
     },
     {
       "path": "microservices/deploy/chart/templates/configuration.yaml",
-      "sourceRevision": "9a8c48319",
-      "upstreamSha256": "42cf3394ff57411c79a0cc40efbf17647397f36cad3ad15a16b62cb21fc017c3",
-      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "sourceRevision": "3a477f3e96b9f39004fc6c02a61cad2830dcb08e",
+      "upstreamSha256": "4cfd63aef52e0d57be5a4aad10ca7c4d3186681dc34e5c83821b9d5156f21be4",
+      "purpose": "Canonical WebSocket authentication and selected service transport renewal.",
       "adaptation": null
     },
     {
@@ -2568,9 +2610,9 @@
     },
     {
       "path": "microservices/tools/audit-assemblies.py",
-      "upstreamSha256": "9f6df8e7758aae1ab8f3792e6a3054cdb157ebdac47c2e023de68562a1ee7aea",
-      "sourceRevision": "7e9e2797403566fef4db85b25f2535253a496361",
-      "purpose": "Minimal independent service build, typed transport and retained profile/notification contracts.",
+      "sourceRevision": "3a477f3e96b9f39004fc6c02a61cad2830dcb08e",
+      "upstreamSha256": "cbd9c7833cd9d74a7d32e2fab1e317a527c425662e1b19c8ed9a6b98c1c11df8",
+      "purpose": "Canonical WebSocket authentication and selected service transport renewal.",
       "adaptation": null
     },
     {
@@ -2578,6 +2620,13 @@
       "sourceRevision": "9a8c48319",
       "upstreamSha256": "bd642a5572fb4f92cbebe0086905d53873ea55e84d159def8c3236ff9d7edd1a",
       "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "adaptation": null
+    },
+    {
+      "path": "microservices/tools/e2e-mongo.py",
+      "sourceRevision": "279644faf4bf0164d2eb6c5a2d74bce5403b9b02",
+      "upstreamSha256": "d7f7256fc076029d52b5c62184e37f588e50d718f63a6ca9511af20c16e53dfa",
+      "purpose": "Owned KVM bootstrap/fixture transport and chat WebSocket registration, with the same configured origin policy as the monolith.",
       "adaptation": null
     },
     {
@@ -2631,9 +2680,9 @@
     },
     {
       "path": "microservices/tools/seed-mongo.py",
-      "sourceRevision": "9a8c48319",
-      "upstreamSha256": "ced3a4f350ab031847ace88006a567a97a7f75ec87b0ac3c67b16e6ccfeea372",
-      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "sourceRevision": "279644faf4bf0164d2eb6c5a2d74bce5403b9b02",
+      "upstreamSha256": "9fdf788d79a726b423c22d8e3698cf1a0c5aeab79d76d0a6667a6a9adf06bc46",
+      "purpose": "Owned KVM bootstrap/fixture transport and chat WebSocket registration, with the same configured origin policy as the monolith.",
       "adaptation": null
     },
     {
@@ -2680,9 +2729,9 @@
     },
     {
       "path": "microservices/tools/workloads.py",
-      "sourceRevision": "9a8c48319",
-      "upstreamSha256": "aef5c3a090f37b9b6839d76aa43f9f9350a38236a88d62f38c354b89dd8087ac",
-      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "sourceRevision": "279644faf4bf0164d2eb6c5a2d74bce5403b9b02",
+      "upstreamSha256": "d3287caefaad2e8c1ec0f0a5e05b19c8f0ab2f6d5e7a4f1ef183961d3a70bfc6",
+      "purpose": "Owned KVM bootstrap/fixture transport and chat WebSocket registration, with the same configured origin policy as the monolith.",
       "adaptation": null
     },
     {
@@ -4066,9 +4115,9 @@
     },
     {
       "path": "microservices/transport/src/main/java/com/raxim/myscoutee/microservices/transport/security/ActorDelegation.java",
-      "upstreamSha256": "a64a44a21b5e4f8504944f995a37418a0acd395caf0f4d1ffd252d98ab5cb112",
-      "sourceRevision": "7e9e2797403566fef4db85b25f2535253a496361",
-      "purpose": "Minimal independent service build, typed transport and retained profile/notification contracts.",
+      "upstreamSha256": "d13a2bfb1ee12516dd3924fca183c938b233e38de6aaf8e880f70ebbd79e779a",
+      "sourceRevision": "3a477f3e96b9f39004fc6c02a61cad2830dcb08e",
+      "purpose": "Canonical WebSocket authentication and selected service transport renewal.",
       "adaptation": null
     },
     {
@@ -4129,9 +4178,9 @@
     },
     {
       "path": "microservices/transport/src/main/java/com/raxim/myscoutee/microservices/transport/security/PublicAuthorizationClientConfiguration.java",
-      "upstreamSha256": "7fad4038fc6e236e25b215dcd290a756a08cdeb837cbb5cb329c8abb7b46e989",
-      "sourceRevision": "7e9e2797403566fef4db85b25f2535253a496361",
-      "purpose": "Minimal independent service build, typed transport and retained profile/notification contracts.",
+      "upstreamSha256": "a28ae9de021feff08898c43f6199f82ddc7694e1925bf89f08ff4265c85bc55a",
+      "sourceRevision": "3a477f3e96b9f39004fc6c02a61cad2830dcb08e",
+      "purpose": "Canonical WebSocket authentication and selected service transport renewal.",
       "adaptation": null
     },
     {
@@ -4143,9 +4192,9 @@
     },
     {
       "path": "microservices/transport/src/main/java/com/raxim/myscoutee/microservices/transport/security/PublicAuthorizationProtocol.java",
-      "upstreamSha256": "e34b1f325fcf8b7f1ddc1d4e5c4cab09fb6618f270abaf5ac53e3743a4ae897f",
-      "sourceRevision": "7e9e2797403566fef4db85b25f2535253a496361",
-      "purpose": "Minimal independent service build, typed transport and retained profile/notification contracts.",
+      "upstreamSha256": "013eea2fd7967fabce43308b945633c1796f32d66ff60361be1da4344f28423f",
+      "sourceRevision": "3a477f3e96b9f39004fc6c02a61cad2830dcb08e",
+      "purpose": "Canonical WebSocket authentication and selected service transport renewal.",
       "adaptation": null
     },
     {
@@ -4157,9 +4206,16 @@
     },
     {
       "path": "microservices/transport/src/main/java/com/raxim/myscoutee/microservices/transport/security/RemotePublicAuthorization.java",
-      "upstreamSha256": "6b5266e8c38362099bfa5e954b4874213f98afb6262acc50acc4858f6a206005",
-      "sourceRevision": "7e9e2797403566fef4db85b25f2535253a496361",
-      "purpose": "Minimal independent service build, typed transport and retained profile/notification contracts.",
+      "upstreamSha256": "cf5751b6d2b0654de115d3f96f65a682b5a10fa41428021060aa21c898731141",
+      "sourceRevision": "3a477f3e96b9f39004fc6c02a61cad2830dcb08e",
+      "purpose": "Canonical WebSocket authentication and selected service transport renewal.",
+      "adaptation": null
+    },
+    {
+      "path": "microservices/transport/src/main/java/com/raxim/myscoutee/microservices/transport/security/SocketAuthorization.java",
+      "sourceRevision": "3a477f3e96b9f39004fc6c02a61cad2830dcb08e",
+      "upstreamSha256": "0562f9282027e8f6efa5cff3288254a32cf2c66ea9914e7d04cb826257a4f242",
+      "purpose": "Canonical WebSocket authentication and selected service transport renewal.",
       "adaptation": null
     },
     {
@@ -4807,10 +4863,10 @@
     },
     {
       "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/common/config/ChatWebSocketConfig.java",
-      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
-      "upstreamSha256": "4e24aceb3f7dbc9292a2568b6c5b0ebe3e273a4d191dc8751c31e5277f2bb73b",
-      "purpose": "Native chat WebSocket configuration and media lookup indexes.",
-      "adaptation": "Select native chat WebSocket registration/origin policy. Omit the product notification/job editor socket endpoint."
+      "sourceRevision": "3a477f3e96b9f39004fc6c02a61cad2830dcb08e",
+      "upstreamSha256": "6ce8cb18d6efe2328f4afb63ff9e5227d5cf10b3cd10544531758ca60b55d5c7",
+      "purpose": "Canonical WebSocket authentication and selected service transport renewal.",
+      "adaptation": "Template retains chat only; the native admin notification handler is omitted."
     },
     {
       "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/common/config/JsonConfig.java",
@@ -4976,9 +5032,9 @@
     },
     {
       "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/common/security/policy/RequiresPolicyMethodInterceptor.java",
-      "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
-      "upstreamSha256": "c455dfc4f029444e8790f7e01cedacf353bfc9276a88d89ba1241e8eae32a898",
-      "purpose": "Native account/media/chat access policies, administrator identity and narrow profile/chat lookups.",
+      "sourceRevision": "7ad19f7a69393aebccb05afb9c96e639b76955c4",
+      "upstreamSha256": "0ebd443baf6e71b1b24d217e4cea9b6fb5325b09a5c5dd60ba6b952f6350bd7e",
+      "purpose": "Selected shared policy startup or catalog-driven PDF rendering implementation.",
       "adaptation": null
     },
     {
@@ -5527,9 +5583,9 @@
     },
     {
       "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/security/firebase/FirebaseFilter.java",
-      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
-      "upstreamSha256": "a8cd2afabfb9a864ad14c5201ac3fabb1deb818b6dfadb4fd9dc436f28776899",
-      "purpose": "Native REAL/DEMO request routing, Firebase/session verification, scoped media credential and operator bootstrap authentication.",
+      "sourceRevision": "3a477f3e96b9f39004fc6c02a61cad2830dcb08e",
+      "upstreamSha256": "6fe8e885064ba6929fc41e8985be7b7f07f0a5308b29f34fa847d8ee0988ced5",
+      "purpose": "Canonical WebSocket authentication and selected service transport renewal.",
       "adaptation": null
     },
     {
@@ -7279,6 +7335,13 @@
       "sourceRevision": "c7b2ba03254314a876a4b599a811d02e7592896f"
     },
     {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/common/config/ChatWebSocketConfigTest.java",
+      "sourceRevision": "279644faf4bf0164d2eb6c5a2d74bce5403b9b02",
+      "upstreamSha256": "20a77f9f0632fdefb742db8d59f10275658de0c7eb55bc475d727ee4c3d1d47a",
+      "purpose": "Owned KVM bootstrap/fixture transport and chat WebSocket registration, with the same configured origin policy as the monolith.",
+      "adaptation": "Only the retained chat handler is registered; the omitted admin notification review socket is not selected."
+    },
+    {
       "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/common/config/MongoConverterConfigTest.java",
       "upstreamSha256": "1e56faf8c3426229836a3fde9f180e5ba34a80fa68bf10ec333667bc60bd438c",
       "purpose": "Verify native stored model aliases, dotted keys and retained account/media integration values.",
@@ -7308,6 +7371,13 @@
       "sourceFrontendRevision": null
     },
     {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/common/security/policy/PolicyStartupOrderingTest.java",
+      "sourceRevision": "7ad19f7a69393aebccb05afb9c96e639b76955c4",
+      "upstreamSha256": "132eae5c9e32734ea65f66b8bf4034fa65fda8d908c50a39fb9f08cfd15ca666",
+      "purpose": "Selected shared policy startup or catalog-driven PDF rendering implementation.",
+      "adaptation": null
+    },
+    {
       "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/accounts/security/firebase/FirebaseFilterOperatorTest.java",
       "sourceRevision": "a7a47ab3557396d5be84cd90850ba496ff7d426f",
       "upstreamSha256": "9cfd016405f8fbc7a80482002a72d43416ae240f25dff563b7313b886a1d2a03",
@@ -7320,6 +7390,13 @@
       "upstreamSha256": "fd27ff9046c2cd8d346dea0c2be5ee9d032db2411964b64b5ba50a1ce50a35b4",
       "adaptation": null,
       "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac"
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/accounts/security/firebase/FirebaseFilterWebSocketTest.java",
+      "sourceRevision": "3a477f3e96b9f39004fc6c02a61cad2830dcb08e",
+      "upstreamSha256": "a8a53c791e410dbb821bca01c10f3141d8c413927a970f092ac17db36f60bc21",
+      "purpose": "Canonical WebSocket authentication and selected service transport renewal.",
+      "adaptation": null
     },
     {
       "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/accounts/security/firebase/FirebaseServiceTest.java",

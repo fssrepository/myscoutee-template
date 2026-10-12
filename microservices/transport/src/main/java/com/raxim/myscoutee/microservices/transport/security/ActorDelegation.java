@@ -51,6 +51,7 @@ public final class ActorDelegation {
         @Override public ProfileIdentityDto getProfileIdentity() { return profile; }
         @Override public List<org.springframework.security.core.authority.SimpleGrantedAuthority> getAuthorities() { return authorities; }
         String delegation() { return delegation; }
+        boolean expiresWithin(Instant now, long seconds) { return !expiresAt.isAfter(now.plusSeconds(seconds)); }
         void requireCurrentMode() {
             if (!mode.equals(MongoSessionModeContext.currentMode().name()))
                 throw new AccessDeniedException("Actor delegation mode mismatch");

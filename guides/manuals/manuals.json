@@ -1,0 +1,14 @@
+{
+  "brandName": "MyScoutee Template",
+  "publishToFrontend": false,
+  "manuals": [
+    {
+      "source": "template-getting-started-en.html",
+      "output": "MyScoutee_Template_Getting_Started_EN.pdf",
+      "title": "Developer and Operator Guide",
+      "documentId": "T-START-001",
+      "documentVersion": "1.0.0",
+      "releaseDate": "2026-10-12"
+    }
+  ]
+}

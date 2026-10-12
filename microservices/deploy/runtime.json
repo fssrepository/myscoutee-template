@@ -59,7 +59,9 @@
     "MEDIA_OBJECT_STORE_PATH_STYLE": "true",
     "EMAIL_ENABLED": "false",
     "CHAT_CALL_STUN_URLS": "stun:@VM_IP@:@STUN_NODE_PORT@",
-    "CHAT_CALL_STUN_HEALTH_HOST": "stun"
+    "CHAT_CALL_STUN_HEALTH_HOST": "stun",
+    "CONFIG_MCP_DEMO_ENABLED": "true",
+    "WEBSOCKET_ALLOWED_ORIGIN_PATTERNS": "@PUBLIC_BASE_URL@,@LOOPBACK_BASE_URL@"
   },
   "publicRoutes": [
     {

@@ -291,6 +291,7 @@ def release_simulator_certificate():
 
 def runtime_environment():
     replacements = {'@PUBLIC_BASE_URL@': 'http://localhost:' + str(CONFIG['localPort']),
+                    '@LOOPBACK_BASE_URL@': 'http://127.0.0.1:' + str(CONFIG['localPort']),
                     '@VM_IP@': vm.IP, '@STUN_NODE_PORT@': str(CONFIG['stunNodePort'])}
     result = {}
     for key, value in CONFIG['environment'].items():

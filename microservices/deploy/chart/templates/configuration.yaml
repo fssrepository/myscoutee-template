@@ -23,6 +23,8 @@ metadata:
 data:
   nginx.conf: |
     {{- .Files.Get "files/gateway.conf" | replace "@CLUSTER_DNS@" .Values.clusterDns | replace "@NAMESPACE@" .Release.Namespace | replace "@MEDIA_SERVICE@" .Values.shared.mediaService | replace "@METRICS_UPSTREAMS@" .Values.shared.metricsUpstreamRoutes | replace "@PUBLIC_UPSTREAMS@" .Values.shared.publicUpstreamRoutes | replace "@PAYMENT_PROVIDER_LOCATIONS@" (ternary (.Files.Get "files/payment-provider-locations.conf" | trimSuffix "\n") "" (hasKey .Values.images "payment-simulator")) | replace "@NAMESPACE@" .Release.Namespace | nindent 4 }}
+  public-upstream.conf: |
+    {{- .Files.Get "files/public-upstream.conf" | nindent 4 }}
   response-policy.conf: |
     {{- .Values.shared.responsePolicy | nindent 4 }}
   runtime-status.conf: |

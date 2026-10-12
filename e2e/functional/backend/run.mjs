@@ -36,7 +36,7 @@ if (!args.listOnly) {
     recordedAt: new Date().toISOString(), mode: ctx.mode, baseUrl, apiPrefix,
     selection: { filter: args.filter, group: args.group, qaCase: args.qaCase },
     ...summary, ownedSessionsRevoked: !cleanupError, cleanupError,
-    scope: 'Backend contracts and owned session lifecycle; not UI, KVM, load or installed-release proof.'
+    scope: 'Backend contracts and owned session lifecycle in the recorded deployment mode; not UI, load or installed-release proof.'
   }, null, 2) + '\n');
 }
 console.log(`\ntemplate backend: ${summary.passed} passed, ${summary.failed} failed, ${summary.skipped} skipped, ${summary.total} selected`);

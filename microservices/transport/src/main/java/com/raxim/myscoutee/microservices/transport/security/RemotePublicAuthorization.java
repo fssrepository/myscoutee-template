@@ -22,24 +22,36 @@ public final class RemotePublicAuthorization extends RemoteReadTransport {
         this.origin = origin; this.token = token; this.service = service; this.timeout = timeout;
     }
     public HttpResponse<byte[]> authorize(HttpServletRequest source, String nonce) {
-        String target = PublicAuthorizationProtocol.target(source);
-        var request = HttpRequest.newBuilder(origin.resolve(target)).timeout(timeout)
-                .POST(HttpRequest.BodyPublishers.noBody())
-                .header("Accept", "application/json")
-                .header(PublicAuthorizationProtocol.METHOD, source.getMethod())
-                .header(PublicAuthorizationProtocol.CLIENT, service)
-                .header(PublicAuthorizationProtocol.TOKEN, token)
-                .header(PublicAuthorizationProtocol.NONCE, nonce)
-                .header(PublicAuthorizationProtocol.PEER, source.getRemoteAddr());
+        return authorize(snapshot(source), nonce);
+    }
+    /** Bounded immutable authentication input; never retain a recycled servlet request. */
+    public record Request(String method, String target, String peer, java.util.Map<String, java.util.List<String>> headers) {
+        @Override public String toString() { return "PublicAuthorizationRequest[redacted]"; }
+    }
+    public static Request snapshot(HttpServletRequest source) {
+        var headers = new java.util.LinkedHashMap<String, java.util.List<String>>();
         int bytes = 0;
         for (String name : PublicAuthorizationProtocol.REQUEST_HEADERS) {
-            var values = Collections.list(source.getHeaders(name));
+            var values = java.util.List.copyOf(Collections.list(source.getHeaders(name)));
             for (String value : values) {
                 bytes += name.length() + value.length();
                 if (bytes > 32768) throw new IllegalArgumentException("Authorization headers exceed limit");
-                request.header(name, value);
             }
+            headers.put(name, values);
         }
+        return new Request(source.getMethod(), PublicAuthorizationProtocol.target(source),
+                source.getRemoteAddr(), java.util.Map.copyOf(headers));
+    }
+    public HttpResponse<byte[]> authorize(Request source, String nonce) {
+        var request = HttpRequest.newBuilder(origin.resolve(source.target())).timeout(timeout)
+                .POST(HttpRequest.BodyPublishers.noBody())
+                .header("Accept", "application/json")
+                .header(PublicAuthorizationProtocol.METHOD, source.method())
+                .header(PublicAuthorizationProtocol.CLIENT, service)
+                .header(PublicAuthorizationProtocol.TOKEN, token)
+                .header(PublicAuthorizationProtocol.NONCE, nonce)
+                .header(PublicAuthorizationProtocol.PEER, source.peer());
+        source.headers().forEach((name, values) -> values.forEach(value -> request.header(name, value)));
         return exchangeRequest(request.build(), "public-authority.authorize", 32768, response -> response);
     }
 }

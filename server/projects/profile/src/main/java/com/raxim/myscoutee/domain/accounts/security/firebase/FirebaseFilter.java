@@ -170,6 +170,11 @@ public class FirebaseFilter extends OncePerRequestFilter {
 
     private void authenticateDemoUser(HttpServletRequest request) {
         String requestedUserId = request == null ? null : request.getHeader(DEMO_USER_ID);
+        // Browser WebSockets cannot set custom headers. The existing socket
+        // sessionId check below still validates this selected DEMO account.
+        if (!StringUtils.hasText(requestedUserId) && isWebSocketTokenRequest(request)) {
+            requestedUserId = request.getParameter("userId");
+        }
         if (!StringUtils.hasText(requestedUserId)) {
             return;
         }

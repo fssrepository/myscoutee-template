@@ -9,14 +9,14 @@ const browsers=[],pages=[];
 try{
  for(let i=0;i<2;i++){const browser=await launchChromeBrowser({fakeMediaStream:true,baseUrl:process.env.E2E_SERVER_BASE_URL??'http://localhost'});browsers.push(browser);pages.push(await browser.newPage());}
  const [a,b]=pages;
- await trackChatTransport(a);
+ for(const page of pages)await trackChatTransport(page);
  for(const page of pages)await trackCallMedia(page);
  await assertUi({page:a,local:false,actorId:fixture.ids[0],actorName:fixture.names[0],memberReady:async()=>{
   await openConversation(a,fixture.names[1]);
   await assertUi({page:b,local:false,actorId:fixture.ids[1],actorName:fixture.names[1],memberReady:async()=>{
    await openConversation(b,fixture.names[0]);
    if(process.env.E2E_CHAT_CALL_ONLY!=='true')console.log(JSON.stringify(await assertPairedChat(a,b)));
-   console.log(JSON.stringify({call:1,...await assertChatCall(a,b)}));
+   console.log(JSON.stringify({call:1,...await assertChatCall(a,b,{holdMs:process.env.E2E_MONGO_TRANSPORT==='kvm'?35000:0})}));
    console.log(JSON.stringify({call:2,...await assertChatCall(a,b)}));
   }});
  }});

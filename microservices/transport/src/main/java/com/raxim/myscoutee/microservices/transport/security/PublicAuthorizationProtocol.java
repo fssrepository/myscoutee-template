@@ -29,4 +29,15 @@ public final class PublicAuthorizationProtocol {
     }
     public static String audience(String client) { return "assembly:public:" + client; }
     public static byte[] nonceBytes(String nonce) { return nonce.getBytes(StandardCharsets.US_ASCII); }
+    public static Result decode(java.net.http.HttpResponse<byte[]> reply, tools.jackson.databind.ObjectMapper mapper) {
+        if (reply.statusCode() != 200 || !reply.headers().firstValue("Content-Type").orElse("").startsWith("application/json"))
+            throw new IllegalStateException("Authorization unavailable");
+        var result = mapper.readValue(reply.body(), Result.class);
+        if (result == null || !("REAL".equals(result.mode()) || "DEMO".equals(result.mode()))
+                || result.actor() != null && result.mediaUserId() != null
+                || result.actor() != null && result.actor().length() > 8192
+                || result.mediaUserId() != null && (result.mediaUserId().isBlank() || result.mediaUserId().length() > 512))
+            throw new IllegalStateException("Invalid authorization result");
+        return result;
+    }
 }

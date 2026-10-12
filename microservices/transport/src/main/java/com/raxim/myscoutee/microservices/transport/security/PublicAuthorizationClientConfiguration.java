@@ -73,14 +73,7 @@ public class PublicAuthorizationClientConfiguration {
                     response.setHeader("Cache-Control", "no-store");
                     response.getOutputStream().write(reply.body()); return;
                 }
-                if (reply.statusCode() != 200 || !reply.headers().firstValue("Content-Type").orElse("").startsWith("application/json"))
-                    throw new IllegalStateException("Authorization unavailable");
-                result = mapper.readValue(reply.body(), PublicAuthorizationProtocol.Result.class);
-                if (result == null || !("REAL".equals(result.mode()) || "DEMO".equals(result.mode()))
-                        || result.actor() != null && result.mediaUserId() != null
-                        || result.actor() != null && result.actor().length() > 8192
-                        || result.mediaUserId() != null && (result.mediaUserId().isBlank() || result.mediaUserId().length() > 512))
-                    throw new IllegalStateException("Invalid authorization result");
+                result = PublicAuthorizationProtocol.decode(reply, mapper);
             } catch (RuntimeException unavailable) { InternalReadCredentialFilter.fail(response, 503, "AUTHORIZATION_UNAVAILABLE"); return; }
             var previousMode = MongoSessionModeContext.currentMode();
             try {

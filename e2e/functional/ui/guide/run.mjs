@@ -17,7 +17,7 @@ try{
   await page.clickVisible('.member-navigation [data-guide-item="chat"]');await page.waitForSelector('app-template-chat single-row article');
   await assertGuideTour(page, ['Conversations']);
   await page.clickVisible('app-template-chat single-row article');await page.waitForSelector('.chat-composer');
-  await assertGuideTour(page, ['Back to conversations','Write a message']);
+  await assertGuideTour(page, ['Pinned messages','Audio and video call','Back to conversations','Write a message']);
  }});
  console.log('PASS '+(local?'local':'HTTP')+' landing, navigation, profile, conversation list and message composer guides');
 }catch(error){console.error(error.stack);console.error(await page.evaluate(()=>document.body.innerText.slice(0,2500)));process.exitCode=1;}

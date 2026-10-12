@@ -25,13 +25,13 @@ export async function mediaStats(page) {
  });
 }
 export async function callDiagnostics(page) {
- return page.evaluate(async()=>({tracks:window.__qaCallTracks?.map(t=>({kind:t.kind,enabled:t.enabled,muted:t.muted,state:t.readyState})),peers:await Promise.all((window.__qaCallPeers??[]).map(async peer=>({
+ return page.evaluate(async()=>({transport:window.__qaChatTransport,tracks:window.__qaCallTracks?.map(t=>({kind:t.kind,enabled:t.enabled,muted:t.muted,state:t.readyState})),peers:await Promise.all((window.__qaCallPeers??[]).map(async peer=>({
   state:peer.connectionState,signaling:peer.signalingState,ice:peer.iceConnectionState,
   transceivers:peer.getTransceivers().map(t=>({mid:t.mid,direction:t.direction,currentDirection:t.currentDirection,sending:t.sender.track?{kind:t.sender.track.kind,state:t.sender.track.readyState,enabled:t.sender.track.enabled}:null,receiving:{kind:t.receiver.track.kind,muted:t.receiver.track.muted,state:t.receiver.track.readyState}})),
   rtp:[...await peer.getStats()].map(([,v])=>v).filter(v=>['inbound-rtp','outbound-rtp'].includes(v.type)).map(v=>({type:v.type,kind:v.kind,bytesReceived:v.bytesReceived,bytesSent:v.bytesSent,framesDecoded:v.framesDecoded,packetsReceived:v.packetsReceived,packetsSent:v.packetsSent}))
  })))}));
 }
-export async function assertChatCall(sender,receiver) {
+export async function assertChatCall(sender,receiver,{holdMs=0}={}) {
  const start=Date.now();
  await sender.waitFor('call available',()=>sender.evaluate(()=>document.querySelector('[data-guide-field="chat-call"]')?.disabled===false));
  await sender.clickVisible('[data-guide-field="chat-call"]');
@@ -44,6 +44,18 @@ export async function assertChatCall(sender,receiver) {
  }
  for(const page of [sender,receiver])await page.waitFor('decoded peer video frames',async()=>{const stats=await mediaStats(page);return stats.videoFrames>0&&!stats.relay;},45000);
  const before=await Promise.all([sender,receiver].map(mediaStats));
+ if(holdMs){
+  for(const page of [sender,receiver])await page.evaluate(()=>{
+   window.__qaCallSocket=[...window.__qaChatSockets].find(socket=>socket.readyState===WebSocket.OPEN);
+   if(!window.__qaCallSocket)throw Error('Call requires an open chat socket');
+  });
+  console.log(`Keeping the real call active for ${holdMs}ms across the delegation expiry.`);
+  await new Promise(resolve=>setTimeout(resolve,holdMs));
+  for(const [index,page] of [sender,receiver].entries()){
+   const after=await mediaStats(page);
+   assert(after.audioBytes>before[index].audioBytes&&after.videoFrames>before[index].videoFrames,'Audio and video must continue during the long call');
+  }
+ }
  for(const page of [sender,receiver]){
   const state=await callDiagnostics(page);
   const peers=state.peers.filter(peer=>peer.state!=='closed');
@@ -58,10 +70,15 @@ export async function assertChatCall(sender,receiver) {
  await sender.clickVisible('[data-call-camera]');
  await sender.waitForSelector('[data-call-camera][aria-pressed="true"]');
  assert(await sender.evaluate(()=>window.__qaCallTracks.filter(t=>t.kind==='video').every(t=>t.readyState==='ended')),'Camera off releases the device');
+ if(holdMs){
+  // Camera changes and leave use the production signaling transport after its
+  // initial 30-second delegation expired; a reconnect must not mask renewal.
+  for(const page of [sender,receiver])assert(await page.evaluate(()=>window.__qaCallSocket.readyState===WebSocket.OPEN&&window.__qaChatSockets.has(window.__qaCallSocket)),'Long call preserves its original signaling socket');
+ }
  for(const page of [sender,receiver])await page.clickVisible('[data-call-hangup]');
  for(const page of [sender,receiver]){
   await page.waitFor('call media teardown',()=>page.evaluate(()=>window.__qaCallTracks.every(t=>t.readyState==='ended')&&window.__qaCallPeers.every(p=>p.connectionState==='closed')));
   assert(!await page.isSelectorVisible('[data-chat-call]'),'Leave closes the call popup');
  }
- return {twoPartyAudio:true,twoPartyVideo:true,directMedia:true,mute:true,cameraOff:true,mediaReleased:true,received:before,elapsedMs:Date.now()-start};
+ return {twoPartyAudio:true,twoPartyVideo:true,directMedia:true,mute:true,cameraOff:true,mediaReleased:true,holdMs,received:before,elapsedMs:Date.now()-start};
 }

@@ -10,6 +10,7 @@ import java.util.Map;
 import org.aopalliance.intercept.MethodInterceptor;
 import org.aopalliance.intercept.MethodInvocation;
 import org.springframework.aop.support.AopUtils;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -23,7 +24,7 @@ public class RequiresPolicyMethodInterceptor implements MethodInterceptor {
     private final PolicyExpressionEvaluator expressionEvaluator;
 
     public RequiresPolicyMethodInterceptor(
-            AccessPermissions accessControlService,
+            @Lazy AccessPermissions accessControlService,
             PolicyExpressionEvaluator expressionEvaluator) {
         this.accessControlService = accessControlService;
         this.expressionEvaluator = expressionEvaluator;

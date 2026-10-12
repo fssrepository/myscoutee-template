@@ -265,6 +265,10 @@ def main(argv=None):
         if args.verify or args.restart:
             verify_persistence(fingerprint, namespace['metadata']['uid'], args.restart)
             return
+        if w.CONFIG.get('mongoReplicaSet'):
+            # A fresh frontend-only deployment has no primary yet. Reuse the
+            # owned replica initializer before the canonical bootstrap write.
+            mongo_replica.initialize()
         state = claim_bootstrap(fingerprint, namespace['metadata']['uid'])
         if state['status'] == 'complete':
             print('Canonical seed already bootstrapped; no data or indexes changed.')

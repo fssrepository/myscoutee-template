@@ -6,12 +6,25 @@ export async function trackChatTransport(page) {
  await page.addInitScript(`(() => {
   const sockets = new Set();
   window.__qaChatSockets = sockets;
+  window.__qaChatTransport = [];
+  const callIds = new Map();
+  const record = (direction, raw) => {
+   try {
+    const event=JSON.parse(raw), call=event.call??event;
+    if(event.type!=='call')return;
+    if(call.callId&&!callIds.has(call.callId))callIds.set(call.callId,callIds.size+1);
+    window.__qaChatTransport.push({at:Math.round(performance.now()),direction,kind:call.kind??call.action,call:callIds.get(call.callId),epoch:call.epoch,participants:call.participants?.length,error:call.error});
+   }catch{}
+  };
   window.WebSocket = new Proxy(window.WebSocket, {
    construct(target, args, newTarget) {
     const socket = Reflect.construct(target, args, newTarget);
     if (new URL(args[0], location.href).pathname === '/api/activities/chats/ws') {
      sockets.add(socket);
-     socket.addEventListener('close', () => sockets.delete(socket));
+     socket.addEventListener('message', event => record('received',event.data));
+     const send=socket.send.bind(socket);
+     socket.send=data=>{record('sent',data);return send(data);};
+     socket.addEventListener('close', event => {sockets.delete(socket);window.__qaChatTransport.push({at:Math.round(performance.now()),closed:event.code});});
     }
     return socket;
    }

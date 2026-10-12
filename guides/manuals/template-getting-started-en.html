@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>MyScoutee Template · Developer and Operator Guide</title>
+<link rel="stylesheet" href="manuals.css"></head><body><article class="manual">
+<section class="cover"><div class="cover-brand"><div class="cover-brand-name">Templates</div>
+<div class="cover-brand-subtitle">A minimal application with the complete framework structure</div></div>
+<div class="cover-title-block"><div class="cover-kicker">Start, extend, test and operate</div>
+<h1>Developer and Operator Guide</h1><p class="cover-lead">Identity, a visual SmartList and ordinary chat, using the same development and deployment foundations as MyScoutee.</p></div>
+<div class="cover-meta"><div><strong>Document ID</strong><span>T-START-001</span></div>
+<div><strong>Document version</strong><span>1.0.0</span></div><div><strong>Software version</strong><span>1.0.0</span></div>
+<div><strong>Released</strong><span>2026-10-12</span></div><div><strong>Status</strong><span>Implementation qualification in progress</span></div></div></section>
+<section class="document-control" id="control"><h2>Document control</h2>
+<p>This HTML file is the canonical manual. Generate the single stable PDF path with <code>node guides/manuals/build-manuals.mjs T-START-001</code>. Git records revisions; PDF filenames do not contain a changing version. The document is not evidence of an installed or published release.</p>
+<p>The numbered plan in <code>guides/plans/MSC-122_TEMPLATE_IMPLEMENTATION_PLAN.md</code> and the QA evidence identify passed, failed and pending gates. Local VMware installation is deferred to the next attended session. Netcup is outside the authorized work: do not connect to or change it.</p></section>
+<nav class="toc"><h2>Contents</h2><ol>
+<li><a href="#selection">Framework and domain selection</a></li><li><a href="#checkout">Checkout and frontend ownership</a></li>
+<li><a href="#development">Local and HTTP development</a></li><li><a href="#testing">Automated qualification</a></li>
+<li><a href="#kvm">KVM and monitoring</a></li><li><a href="#data">Data and account lifecycle</a></li>
+<li><a href="#extension">Build another application</a></li><li><a href="#operations">Installed operation and releases</a></li></ol></nav>
+<section id="selection"><h2>1. Framework and domain selection</h2>
+<p>The landing page shows Templates, login and the version badge. Members have a visual sample-card SmartList and ordinary chat. The avatar menu retains the small profile and image editor, API access and minimal settings. Notifications, guides, help documents and consent remain available. The administrator shell has no product navigation; administrator API access remains. Operator configuration, email, TLS and update surfaces are retained.</p>
+<p>Chat includes message editing, deletion, replies, reactions, pins, read state, reconnect and two-party audio/video calls. It excludes MyScoutee invitations, reports, feedback and support-case management. Calls use encrypted WebRTC media and STUN discovery. A local fake-camera test does not prove physical devices, public-network traversal or a TURN relay.</p>
+<p>There is no event, community/group, matchmaking, payment or virtual-company Registry implementation. Necessary account and chat model fields retain their original meaning. Optional product fields are omitted from JSON rather than recreated as empty product domains. Localization and geographic location are both retained.</p>
+</section>
+<section id="checkout"><h2>2. Checkout and frontend ownership</h2>
+<p>The backend is the parent repository. <code>frontend</code> is its own local Git submodule, currently backed by the sibling <code>myscoutee-template-frontend</code> repository. Its <code>components</code> submodule uses <code>https://github.com/fssrepository/myscoutee-components.git</code>. Do not flatten either submodule into the parent tree.</p>
+<p>The current absolute frontend URL is a workspace arrangement; portable clean-checkout publication remains a release gate. To move the frontend to its own remote later, publish its pinned commit first, update its origin and then run <code>git submodule set-url frontend &lt;repository-url&gt;</code> in the parent. Commit frontend changes before updating the parent gitlink.</p>
+<p>Use the checked-in Gradle wrapper and frontend lockfile. The development environment uses Java 25, Node 24, Docker Compose and a supported Chrome/Chromium. Install frontend dependencies with <code>npm ci</code> in <code>frontend</code> after initializing components. Never copy local credentials, generated databases or build caches into Git.</p></section>
+<section id="development"><h2>3. Local and HTTP development</h2>
+<p>Browser-local mode uses IndexedDB and the selected four-person seed. In <code>frontend</code>, run <code>npm run start:local</code> and open <code>http://127.0.0.1:4200</code>. It is a UI/data-adapter environment, not a backend or live WebRTC deployment.</p>
+<p>HTTP development uses the versioned <code>server/docker-compose-dev.yml</code> and <code>server/docker-dev.env</code>. Its existing backend hot-deploy and frontend synchronization process own compilation and asset delivery. Inspect that process and its logs before starting a build. Do not start another watcher or compile the same target alongside it.</p>
+<p>The frontend keeps distinct local, dev, E2E, production and GitHub Pages configurations. Production output belongs to <code>frontend/prod</code>; Pages output belongs to <code>frontend/docs</code>. Frontend synchronization, runtime availability and build stamping remain part of the workflow. Preserve relative assets and the configured base path when changing the application name.</p>
+<p>Stop the active dev stack before starting KVM, E2E or another application stack. A monolith and the independent-service lab are alternate deployments, not parallel development servers.</p></section>
+<section id="testing"><h2>4. Automated qualification</h2>
+<p><code>tools/run-backend-junit.sh standard</code> runs the selected Java unit tests with isolated outputs. Use its <code>--tests</code> filter for a focused change; embedded Mongo checks use the separate <code>embedded</code> group. Frontend tests use <code>npm test -- --watch=false</code>. Do not rerun every suite after each small edit.</p>
+<p><code>e2e/README.md</code> defines the disposable E2E composition, certificate trust, fixture variables and serial runners. Run <code>node e2e/functional/backend/run.mjs</code> for the retained API contracts and <code>node e2e/functional/ui/run.mjs --fail-fast</code> for browser flows. <code>--case</code> selects one matching flow. Each fixture owns its actors and removes them afterward; it must not reset production data or another user's sessions.</p>
+<p>Record actual build revisions, image IDs, environment and fixture scope. Browser-local success does not qualify HTTP, and a healthy container does not prove a working user flow. Compare CPU and latency using identical workloads and limits after a coherent change batch. Stress-tool selection and a repeatable template baseline remain explicit plan items.</p></section>
+<section id="kvm"><h2>5. KVM and monitoring</h2>
+<p>The template owns a separate VM named <code>myscoutee-template</code>, with four vCPUs and 6 GiB RAM. Its private keys, disks and Terraform state live outside Git under <code>~/.local/state/myscoutee-template/microservices</code>. Host-boot autostart is disabled. The namespace contains four JVM owners:</p>
+<table><thead><tr><th>Owner</th><th>Selected domains</th></tr></thead><tbody>
+<tr><td>identity</td><td>Accounts, access, minimal administration, platform, integrations and showcase</td></tr>
+<tr><td>communication</td><td>Chat, notifications, email and localization</td></tr><tr><td>media</td><td>Media storage and processing</td></tr><tr><td>help</td><td>Help, guide and consent documents</td></tr></tbody></table>
+<p>The lab includes a two-member Mongo replica set with distinct REAL and DEMO databases, Redis, MinIO, MCP, STUN, ingress and a local release simulator. Two voting Mongo members require both for majority writes; this is not one-node-loss availability.</p>
+<pre>microservices/tools/lab.sh preflight
+microservices/tools/lab.sh build
+microservices/tools/lab.sh frontend-image
+python3 microservices/tools/workloads.py lock-images
+python3 microservices/tools/vm.py start
+python3 microservices/tools/workloads.py backends-stop
+python3 microservices/tools/workloads.py up
+python3 microservices/tools/workloads.py forward
+microservices/tools/lab.sh monitoring-up</pre>
+<p>Build support images when their canonical sources change using <code>lab.sh support-images</code>, <code>minio-image</code> and <code>release-simulator-image</code>. Startup imports locked images; it does not silently rebuild. Stop backends before deploying changed writers. <code>seed-mongo.py</code> owns Mongo initialization; do not replace it with hand-written import commands.</p>
+<p>The application is at <code>http://localhost:18080</code>, Grafana at <code>http://localhost:13000</code>, and Prometheus at <code>http://localhost:19090</code>. The loopback-only Grafana login is <code>lab / template-local-only</code>. Use <code>microservices/tools/open-terminals.sh</code> for the live status view or <code>python3 microservices/tools/vm.py observe --once</code> for one snapshot. The terminal shows guest/container CPU, RAM, readiness and host monitoring. Closing it does not stop the VM.</p>
+<pre>microservices/tools/lab.sh monitoring-stop
+python3 microservices/tools/vm.py stop</pre>
+<p>These commands retain owned data and do not enable autostart. Use the versioned ownership-checked destroy tools only when intentionally discarding a lab; never use global Docker prune as a cleanup substitute.</p></section>
+<section id="data"><h2>6. Data and account lifecycle</h2>
+<p>Canonical Mongo collection/index definitions, selected system catalogs and small demo fixtures are under <code>server/docker/conf/mongodb</code>. Production identity records are empty. The operator provisions real credentials and branding after installation. Browser-local seeds use the same selected model meanings.</p>
+<p>Account deletion keeps the original grace period, normally 30 days, followed by durable purge retries across the retained owners. Notification outbox delivery, scheduled messages, warning email and integration callback work retain their own state and retry behavior. A removed administrator screen is not a reason to remove necessary lifecycle jobs.</p>
+<p>Keep REAL and DEMO boundaries intact in HTTP, internal transport, workers and sockets. Internal actor grants are short-lived and validated per operation. A persistent split-service socket renews through its original account session; message bursts reuse its current grant. Never replace session checks with a caller-supplied user ID.</p></section>
+<section id="extension"><h2>7. Build another application</h2>
+<p>Start with the showcase owner and its visual cards. Replace those sample records and presentations with your domain while keeping identity, navigation, popup behavior, SmartList views and chat infrastructure. Add optional JSON fields only when the new application needs them.</p>
+<p>Canonical Java implementations remain in <code>server/projects/profile</code>. Add a domain's contracts and implementation there, then select its owner in <code>microservices/assemblies.json</code>. Cross-owner calls use the existing typed transport and authority protocol. Do not copy the monolith into each service.</p>
+<p>Frontend contracts, services and repositories follow domain folders across base, HTTP and local adapters. Extend the existing component/store/repository owner, preserving observable local/HTTP behavior. Shared visual controls belong to the existing components submodule. <code>tools/upstream-sources.json</code> records the source revisions and deliberate adaptations needed for future upgrades.</p></section>
+<section id="operations"><h2>8. Installed operation and releases</h2>
+<p>The target is a versioned Debian package and immutable Docker images, signed update metadata, client installation tools and a static Pages build. Packaging, installed backup/restore, update interruption/rollback and actual publication are still under qualification. Use the numbered plan rather than assuming these gates passed because local or KVM tests passed.</p>
+<p>DEB qualification will run on a local VMware Debian VM in the next attended session. Keep its evidence separate from KVM. Test fresh installation, restart, backup/restore and data-preserving removal. Do not mark the deferred VMware check as successful.</p>
+<p>A release must include the matching signed update metadata beside its DEB, with package and client-tool hashes and a separately trusted public-key fingerprint. Private signing keys and deployment secrets stay outside the repository and package. The updater must reject missing or changed metadata; a signature-verification test alone does not prove an installed update.</p>
+<p>Before release acceptance, reproduce a clean checkout with both submodules, build the retained runtime, verify the exact artifacts, and record the remaining external-provider or installed-host limits. The final user smoke check is login plus opening SmartList and chat; detailed automatic qualification remains the project's responsibility.</p></section>
+</article></body></html>
