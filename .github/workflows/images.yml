@@ -1,0 +1,52 @@
+name: Production images
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+  packages: write
+concurrency:
+  group: production-images
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          submodules: false
+      - name: Restore the exact local frontend and remote components
+        run: bash tools/bootstrap-submodules.sh
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 24.13.0
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - uses: actions/setup-java@de7274f081f381c8f8158605e0321c36c376e2e6 # v6
+        with:
+          distribution: temurin
+          java-version: 25.0.2
+          cache: gradle
+      - name: Prepare build inputs (no deployment credentials)
+        run: |
+          npm --prefix frontend ci
+          cp server/.env.example server/.env
+          touch server/.env.secrets
+          test "$(cat VERSION)" = "$(node -p "require('./frontend/package.json').version")"
+          echo "MYSCOUTEE_VERSION=$(cat VERSION)" >> "$GITHUB_ENV"
+      - name: Build the versioned production inventory
+        run: bash packaging/release/build-production.sh
+      - name: Authenticate to the repository container registry
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: printf '%s' "$GH_TOKEN" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
+      - name: Publish and verify the exact image identities
+        run: bash packaging/release/publish-images.sh
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: production-image-identities
+          path: packaging/dist/published-images.json
+          if-no-files-found: error
+      - name: Remove registry credentials
+        if: always()
+        run: docker logout ghcr.io

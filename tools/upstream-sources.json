@@ -22,10 +22,10 @@
     },
     {
       "path": "e2e/functional/ui/lib/chrome-cdp.mjs",
-      "upstreamSha256": "f0c105b9522b7b4819e56af54d9a4bcbfd48f6575a5bacd9f41d0cdc16f75805",
-      "purpose": "Selected native dev gateway, frontend watch/sync, availability lease, localization generator/audit or browser qualification support.",
+      "upstreamSha256": "6a488e3c193556cfe1361b85573d17b0424c3e60d4352b81721dca19a4422211",
+      "purpose": "Shared production build, complete release signatures, privileged update boundary or browser qualification support.",
       "adaptation": null,
-      "sourceRevision": "bd81ab0c1",
+      "sourceRevision": "7385fa358f3c051427cea62cf8212d2257d5138b",
       "sourceFrontendRevision": null
     },
     {
@@ -4233,11 +4233,53 @@
       "adaptation": null
     },
     {
+      "path": "packaging/client-tools/verify-release.sh",
+      "sourceRevision": "7385fa358f3c051427cea62cf8212d2257d5138b",
+      "upstreamSha256": "bc9e9e3852f1519554e2593924d87adb8f6df67f6f2aa079fc76748ea7c9326f",
+      "purpose": "Shared production build, complete release signatures, privileged update boundary or browser qualification support.",
+      "adaptation": null
+    },
+    {
+      "path": "packaging/compose/docker-compose.production.yml",
+      "upstreamSha256": "52ce3058990d7a13017852fd41dfff27313bd45b26ce68d4a05b5abc8d4e7f69",
+      "sourceRevision": "7385fa358f3c051427cea62cf8212d2257d5138b",
+      "purpose": "Selected production deployment data.",
+      "adaptation": "Retain identity/chat framework, nginx, MongoDB, Redis, MinIO, MCP and STUN; project-owned images, host paths and repository; omit product Registry/payment configuration."
+    },
+    {
       "path": "packaging/migrations/012-integration-indexes.js",
       "sourceRevision": "c7b2ba03254314a876a4b599a811d02e7592896f",
       "upstreamSha256": "13d7bd096bfedc203cc88eb6207cb3d2a3233e71d58578f9eed0510f35dec9f8",
       "purpose": "Native minimal integration storage, lifecycle and migration ownership.",
       "adaptation": "Select the eight indexes for tokens, public OAuth clients and grants; omit product subscriptions and deliveries. Keep the native ordered migration runner and number."
+    },
+    {
+      "path": "packaging/release/build-production.sh",
+      "upstreamSha256": "44d46642e028038b0cf71a4beaaa1522ef5c1a5e0ab878936f67942ce7430976",
+      "sourceRevision": "7385fa358f3c051427cea62cf8212d2257d5138b",
+      "purpose": "Shared production build, complete release signatures, privileged update boundary or browser qualification support.",
+      "adaptation": null
+    },
+    {
+      "path": "packaging/release/prepare-release.py",
+      "upstreamSha256": "c85d07329b59cadaac6825057a08bb2a5e63cf99a24209f38c7f4162aa41f8f6",
+      "sourceRevision": "7385fa358f3c051427cea62cf8212d2257d5138b",
+      "purpose": "Shared production build, complete release signatures, privileged update boundary or browser qualification support.",
+      "adaptation": null
+    },
+    {
+      "path": "packaging/release/publish-images.sh",
+      "upstreamSha256": "96a67ba970c9563030a80ac8a54df0ea9208b6073940926b841ff7af59e89ff9",
+      "sourceRevision": "7385fa358f3c051427cea62cf8212d2257d5138b",
+      "purpose": "Shared production build, complete release signatures, privileged update boundary or browser qualification support.",
+      "adaptation": null
+    },
+    {
+      "path": "packaging/release/sign-release-artifacts.sh",
+      "sourceRevision": "7385fa358f3c051427cea62cf8212d2257d5138b",
+      "upstreamSha256": "a1f5bc630a7dd8e1bb7d5a9a28d33b743a4d0d1b5c3daf6cd0e6444aac7714a9",
+      "purpose": "Shared production build, complete release signatures, privileged update boundary or browser qualification support.",
+      "adaptation": null
     },
     {
       "path": "packaging/release/sign-update-manifest.py",
@@ -4254,10 +4296,38 @@
       "adaptation": null
     },
     {
+      "path": "packaging/scripts/myscoutee-safe-copy.py",
+      "sourceRevision": "7385fa358f3c051427cea62cf8212d2257d5138b",
+      "upstreamSha256": "5478ec9fe93f5eb264e115dac3932ec6d9c0b5dc7f55cc81bf2bc6445bfc71c1",
+      "purpose": "Shared production build, complete release signatures, privileged update boundary or browser qualification support.",
+      "adaptation": null
+    },
+    {
+      "path": "packaging/scripts/myscoutee-update-worker.sh",
+      "sourceRevision": "7385fa358f3c051427cea62cf8212d2257d5138b",
+      "upstreamSha256": "655f9722a22a403322c0a83bad65e6d9b03c99f9761761fa0a98fc435d6d876f",
+      "purpose": "Shared production build, complete release signatures, privileged update boundary or browser qualification support.",
+      "adaptation": null
+    },
+    {
+      "path": "packaging/scripts/release-project.sh",
+      "sourceRevision": "7385fa358f3c051427cea62cf8212d2257d5138b",
+      "upstreamSha256": "c6fde032ff67fb019ee59b357e33ce1882f36e8217ee347c24fdf5c793e91f47",
+      "purpose": "Shared production build, complete release signatures, privileged update boundary or browser qualification support.",
+      "adaptation": null
+    },
+    {
       "path": "packaging/scripts/run-data-migrations.js",
       "sourceRevision": "c7b2ba03254314a876a4b599a811d02e7592896f",
       "upstreamSha256": "982fc266966aeb29fef3bb5b5e713722d1a4fabb79bb21cafae39c1532298ded",
       "purpose": "Native minimal integration storage, lifecycle and migration ownership.",
+      "adaptation": null
+    },
+    {
+      "path": "packaging/scripts/update-status-server.py",
+      "sourceRevision": "7385fa358f3c051427cea62cf8212d2257d5138b",
+      "upstreamSha256": "e820fdfae2b1b6435046624f344d9c3f3271443b21d08e4329e21ad08a912a2b",
+      "purpose": "Shared production build, complete release signatures, privileged update boundary or browser qualification support.",
       "adaptation": null
     },
     {
@@ -4272,6 +4342,20 @@
       "sourceRevision": "399f450abba8e90196002399df067c05b72d08e3",
       "upstreamSha256": "cfee6b104ffac42d22478b5f94c0482be9aba0e8e960ff0a5f6dc8bc409f215b",
       "purpose": "Native Mongo schema tests against the one already-running configured deployment.",
+      "adaptation": null
+    },
+    {
+      "path": "packaging/tests/release-bundle-test.py",
+      "upstreamSha256": "527227fde9d55bcbb52652e4831cbc49ec89dc67b4a1a294589bf773a8c064e0",
+      "sourceRevision": "7385fa358f3c051427cea62cf8212d2257d5138b",
+      "purpose": "Shared production build, complete release signatures, privileged update boundary or browser qualification support.",
+      "adaptation": null
+    },
+    {
+      "path": "packaging/tests/release-signing-test.sh",
+      "upstreamSha256": "c6fedacccf78d7f516510827ae32d99cfffd280db543731e3b566967a1482ae5",
+      "sourceRevision": "7385fa358f3c051427cea62cf8212d2257d5138b",
+      "purpose": "Shared production build, complete release signatures, privileged update boundary or browser qualification support.",
       "adaptation": null
     },
     {
@@ -4291,10 +4375,10 @@
     },
     {
       "path": "server/docker-compose-prod.yml",
-      "sourceRevision": "094af314889106cd193a4058110312c40dee9ebc",
+      "sourceRevision": "7385fa358f3c051427cea62cf8212d2257d5138b",
       "upstreamSha256": "11a8066baaa120353b3052419bc32570fa3fd7f0ee595663ec46b1c4828e185a",
-      "purpose": "Native prod application/backing-service composition.",
-      "adaptation": "Select implemented backing services and backend; isolate container names and template image tags, omit product/runtime dependencies not yet selected. Complete edge/frontend/MCP/STUN/operator composition remains tracked in the plan."
+      "purpose": "Selected production deployment data.",
+      "adaptation": "Retain identity/chat framework, nginx, MongoDB, Redis, MinIO, MCP and STUN; project-owned images, host paths and repository; omit product Registry/payment configuration."
     },
     {
       "path": "server/docker-compose-stun.yml",

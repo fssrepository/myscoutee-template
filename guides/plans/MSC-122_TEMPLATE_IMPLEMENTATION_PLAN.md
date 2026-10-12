@@ -629,7 +629,12 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     Close with focused KVM checks followed serially
     by monolith checks, CPU/log evidence, correct service credentials and cleanup.
 
-26. **Build and verify production Docker artifacts — PENDING.**
+26. **Build and verify production Docker artifacts — IN PROGRESS.**
+    All five managed 1.0.0 images have been built with the native release builder.
+    Seven production services are healthy in an isolated artifact-only local
+    qualification stack. The 17 backend cases pass with the DEMO MCP realm
+    explicitly enabled as a test fixture; production retains its disabled default.
+    Production browser chat/call checks remain to be closed.
     Reuse native build/stamping, nginx/media/runtime images, image manifests and
     production Compose. Build retained services with project-owned versioned tags
     and immutable identities. Include required assets, seeds and helper files;
@@ -675,7 +680,14 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     **Netcup is strictly out of scope: do not connect to, inspect, deploy to or
     modify any Netcup host or resource under any circumstances.**
 
-28. **Complete signed releases and the updater — PENDING.**
+28. **Complete signed releases and the updater — IN PROGRESS.**
+    Selected the unchanged native privileged updater, artifact signer/verifier,
+    and strict five-image template policy. Source `prepare-release.py` now owns
+    complete package/client-tool signatures plus matching signed update metadata;
+    the existing source QA helper delegates to it. Real disposable Ed25519 signing,
+    tampered-catalog rejection, metadata/hash binding and overwrite rejection pass
+    for native and minimal project identities. No production template signing key
+    or repository signing secret is configured yet; no DEB has been published.
     Reuse native release discovery, canonical signing, manifests, staging,
     verification, durable update jobs and rollback/recovery. A DEB must never be
     published without the required matching signed update metadata. Preserve
@@ -688,7 +700,11 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     and the existing remote components repository. A clean independent checkout
     passed. The Pages workflow builds the existing `github` configuration and
     checks frontend tests, version and required static assets before publication.
-    DEB/GHCR publication remains a separate artifact gate.
+    The live Pages deployment at source `460f5c2` is published. Fourteen existing
+    local UI flows are being checked against that real repository base path.
+    The production-image workflow calls the existing native build and publication
+    owners, checks every pushed image by pulling it back, and records digests.
+    GHCR execution and the DEB release remain separate artifact gates.
     Use the established release/build commands from CI rather than duplicating
     packaging logic. Prepare `v1.0.0`, DEB/client-tools/signatures/checksums and
     versioned Docker image publication to GitHub Container Registry. Configure
@@ -735,8 +751,10 @@ browser checks. The omitted nine admin/report/feedback/support routes returned
 404 at Helm 5, with personal chat retained. All four Java services now expose
 CPU/heap/request/histogram metrics through the actual Grafana datasource. See
 `MSC122_TEMPLATE_KVM_20261012.json`. The source policy startup correction and
-WebSocket fixes still need the current source KVM/monolith batch, then the
-refreshed template monolith. This closes step 5's template KVM removal gate;
+WebSocket fixes passed source KVM (Helm 154, all eight services) and source
+monolith; the refreshed template monolith passed all 17 backend cases, the
+chat lifecycle with two consecutive audio/video calls and the removed-admin gate.
+The stacks were run serially and stopped between deployments. This closes step 5's template KVM removal gate;
 it does not close release/performance qualification.
 
 Step **5** source modularization is qualified in MyScoutee on KVM and monolith
@@ -749,11 +767,9 @@ routes, preserves two-member chat and does not create report/feedback collection
 See `MSC122_TEMPLATE_ADMIN_FEATURE_REMOVAL_20261012.json` for the final local/HTTP
 browser results, test corrections, exact source revisions and evidence limits.
 
-Next, compose the minimal independent services in **25**, using the same selected
-source owners. This is required to close step 5's outstanding template KVM gate;
-it is not permission to reinstate removed features. Reuse the native shell and
-separate its hard-coded project/lab inputs at their original owners before copying.
-Then complete remaining runtime, performance, packaging and release gates. Earlier
+The minimal independent-service deployment in **25** is now qualified as
+recorded above. Continue the remaining performance, host-package and release
+work; do not reinstate removed features. Earlier
 steps retain their explicitly pending provider, live Firebase, installed-host and
 release checks; completed component or E2E checks do not close those gates.
 

@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "packageName": "myscoutee-template",
+  "images": [
+    {
+      "service": "nginx-base",
+      "container": null,
+      "repository": "myscoutee-template-nginx",
+      "tagSuffix": "base",
+      "environment": "NGINX_BASE_IMAGE",
+      "sinceVersion": "1.0.0"
+    },
+    {
+      "service": "nginx",
+      "container": "nginx",
+      "repository": "myscoutee-template-nginx",
+      "tagSuffix": "prod",
+      "environment": "NGINX_PRODUCTION_IMAGE",
+      "sinceVersion": "1.0.0"
+    },
+    {
+      "service": "profilemanagement",
+      "container": "myscoutee-template",
+      "repository": "myscoutee-template-api",
+      "tagSuffix": "prod",
+      "environment": "MYSCOUTEE_PRODUCTION_IMAGE",
+      "sinceVersion": "1.0.0"
+    },
+    {
+      "service": "minio",
+      "container": "minio",
+      "repository": "myscoutee-template-minio",
+      "tagSuffix": "prod",
+      "environment": "MINIO_PRODUCTION_IMAGE",
+      "sinceVersion": "1.0.0"
+    },
+    {
+      "service": "mcp",
+      "container": "mcp",
+      "repository": "myscoutee-template-mcp",
+      "tagSuffix": "prod",
+      "environment": "MCP_IMAGE",
+      "sinceVersion": "1.0.0"
+    }
+  ]
+}

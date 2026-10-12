@@ -21,3 +21,6 @@ server/docker/conf/nginx/keys/*
 # Independent service artifacts and Gradle state
 /microservices/build/
 /microservices/.gradle/
+
+# Build and publication artifacts; only qualification summaries are versioned.
+/packaging/dist/
