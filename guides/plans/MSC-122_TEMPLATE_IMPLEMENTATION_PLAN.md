@@ -677,9 +677,19 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     retained-flow checks using the actual built images, not a dev bind mount.
 
 27. **Complete DEB, host operations and local VMware Debian installation — IN PROGRESS.**
+    The first template 1.4.0 install exposed a host-account collision with the
+    retained MyScoutee UID/GID 10001. Native source `f5d612bce` makes runtime
+    ownership package-owned; template selects 10002. Host helpers, API image
+    and sysusers are checked together, including another retained account and
+    repeated configuration. All focused host/worker and four-environment checks
+    pass. Retry the installer from the qualified native snapshot, then perform
+    the visible browser flows. Shared ports still require serial execution.
+
     **VMware order (user correction, 2026-10-12): first build and deploy the
     current modified MyScoutee backend to the existing local guest, then validate
-    its installed startup, retained flows, response time and CPU. The old installed
+    its installed startup, retained flows, response time and CPU. The user waived
+    the currently unavailable email-verification registration check on 2026-10-12;
+    record it as SKIPPED and continue with template installation. The old installed
     1.3.0 is not evidence for these changes. Preserve the deployment state. After
     that gate, stop MyScoutee and install the template with its own fresh database
     and media directories. Never use the original MyScoutee database as template

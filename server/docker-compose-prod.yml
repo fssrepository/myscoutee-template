@@ -189,6 +189,8 @@ services:
       dockerfile: ../../../../docker/images/profilemanagement/prod/Dockerfile
       args:
         MYSCOUTEE_VERSION: ${MYSCOUTEE_VERSION:-1.4.0}
+        MYSCOUTEE_API_UID: ${MYSCOUTEE_API_UID:-10002}
+        MYSCOUTEE_API_GID: ${MYSCOUTEE_API_GID:-10002}
         TZ: ${CONTAINER_TIMEZONE:-Europe/Brussels}
     container_name: myscoutee-template-prod-profilemanagement
     hostname: myscoutee

@@ -133,7 +133,7 @@ stage_configuration_key() {
   chmod 0750 "${CONFIGURATION_KEY_DIR}"
   chmod 0640 "${STAGED_CONFIGURATION_KEY}"
   if [[ "${EUID}" -eq 0 ]]; then
-    chown "+0:+${MYSCOUTEE_API_GID:-10001}" -- \
+    chown "+0:+${MYSCOUTEE_API_GID:-$RELEASE_PROJECT_GID}" -- \
       "${CONFIGURATION_KEY_DIR}" "${STAGED_CONFIGURATION_KEY}"
   fi
   sync -f "${STAGED_CONFIGURATION_KEY}"

@@ -11,8 +11,10 @@ release_project_load() {
   jq -e '
     def name: type == "string" and test("^[a-z][a-z0-9-]{1,63}$");
     def version: type == "string" and test("^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(-qa\\.[1-9][0-9]*)?$");
-    type == "object" and (keys | sort) == ["images","packageName","schemaVersion"]
+    type == "object" and (keys | sort) == ["images","packageName","runtimeIdentity","schemaVersion"]
     and .schemaVersion == 1 and (.packageName | name)
+    and (.runtimeIdentity | type == "object" and (keys | sort) == ["gid","uid"]
+      and all(.[]; type == "number" and floor == . and . >= 10000 and . <= 60000))
     and (.images | type == "array" and length > 0 and length <= 32)
     and ([.images[].service] | length == (unique | length))
     and ([.images[].environment] | length == (unique | length))
@@ -27,6 +29,8 @@ release_project_load() {
   RELEASE_PROJECT_POLICY="$policy"
   RELEASE_PROJECT_NAME="$(jq -r '.packageName' "$policy")"
   RELEASE_PROJECT_ROOT="/opt/${RELEASE_PROJECT_NAME}"
+  RELEASE_PROJECT_UID="$(jq -r '.runtimeIdentity.uid' "$policy")"
+  RELEASE_PROJECT_GID="$(jq -r '.runtimeIdentity.gid' "$policy")"
 }
 
 release_project_images() {

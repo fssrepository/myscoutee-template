@@ -2,8 +2,11 @@ FROM eclipse-temurin:25.0.2_10-jre-alpine AS jre-runtime
 
 EXPOSE 8080
 
-RUN addgroup -S -g 10001 myscoutee && \
-    adduser -S -D -H -u 10001 -G myscoutee myscoutee && \
+ARG MYSCOUTEE_API_UID=10001
+ARG MYSCOUTEE_API_GID=10001
+
+RUN addgroup -S -g "${MYSCOUTEE_API_GID}" myscoutee && \
+    adduser -S -D -H -u "${MYSCOUTEE_API_UID}" -G myscoutee myscoutee && \
     install -d -o myscoutee -g myscoutee /app
 
 FROM jre-runtime AS media-runtime
@@ -19,6 +22,6 @@ RUN install -d -o myscoutee -g myscoutee \
 ARG MYSCOUTEE_VERSION=1.4.0
 COPY --chown=myscoutee:myscoutee profile-${MYSCOUTEE_VERSION}.jar /app/spring-boot-application.jar
 
-USER 10001:10001
+USER ${MYSCOUTEE_API_UID}:${MYSCOUTEE_API_GID}
 
 ENTRYPOINT ["java", "-XX:+UnlockExperimentalVMOptions", "-Djava.security.egd=file:/dev/./urandom", "-jar", "/app/spring-boot-application.jar"]

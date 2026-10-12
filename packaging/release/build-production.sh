@@ -24,6 +24,7 @@ release_project_load "${REPO_ROOT}/packaging/scripts" "$(id -u)" || {
   echo 'Invalid release project policy.' >&2; exit 1;
 }
 release_project_export_images "${VERSION}" false
+export MYSCOUTEE_API_UID="$RELEASE_PROJECT_UID" MYSCOUTEE_API_GID="$RELEASE_PROJECT_GID"
 
 BUILD_FRONTEND="${BUILD_FRONTEND:-true}"
 BUILD_BACKEND="${BUILD_BACKEND:-true}"

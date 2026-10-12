@@ -42,5 +42,9 @@
       "environment": "MCP_IMAGE",
       "sinceVersion": "1.0.0"
     }
-  ]
+  ],
+  "runtimeIdentity": {
+    "uid": 10002,
+    "gid": 10002
+  }
 }

@@ -4,7 +4,10 @@ import { queryE2eMongo } from '../../../shared/mongo-fixture.mjs';
 // The native Mongo fixture transport is reused; only the template actors/data differ.
 export async function stageChatFixture() {
   const kvm = process.env.E2E_MONGO_TRANSPORT === 'kvm';
-  if (!kvm && !process.env.E2E_MONGO_CONTAINER?.startsWith('myscoutee-template-')) throw new Error('Select the template Mongo container explicitly.');
+  const installed = process.env.E2E_MONGO_TRANSPORT === 'ssh'
+    && process.env.E2E_MONGO_CONTAINER === 'mongodb'
+    && Boolean(process.env.E2E_MONGO_SSH_CONFIG);
+  if (!kvm && !installed && !process.env.E2E_MONGO_CONTAINER?.startsWith('myscoutee-template-')) throw new Error('Select the template Mongo container explicitly.');
   const database = process.env.E2E_DATABASE ?? 'demo_db';
   if (!(kvm ? ['template_demo'] : ['demo_db','e2e_db']).includes(database)) throw new Error('Chat fixtures require an isolated demo/E2E database.');
   const run = randomUUID();

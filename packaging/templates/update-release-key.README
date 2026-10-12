@@ -7,7 +7,7 @@ Install the vendor-published Ed25519 public key as:
 
 Required ownership and mode:
 
-  root:10001 0640
+  root:10002 0640
 
 Before enabling MYSCOUTEE_UPDATE_ENABLED, compare the complete SPKI DER
 fingerprint through an independent release channel. The deterministic key ID

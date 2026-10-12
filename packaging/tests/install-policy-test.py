@@ -9,11 +9,14 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 source = (ROOT / 'packaging/debian/postinst').read_text()
-validator = source.split("jq -e --arg package \"$PACKAGE_NAME\" '\n", 1)[1].split("\n' \"$INSTALL_POLICY\"", 1)[0]
+validator = re.search(r"jq -e --arg package .*?'\n(.*?)\n' \"\$INSTALL_POLICY\"", source, re.S).group(1)
 policy = json.loads((ROOT / 'packaging/templates/install-policy.json').read_text())
+project = json.loads((ROOT / 'packaging/scripts/release-project.json').read_text())
 
 def validate(value):
-    return subprocess.run(['jq', '-e', '--arg', 'package', 'myscoutee', validator], input=json.dumps(value),
+    return subprocess.run(['jq', '-e', '--arg', 'package', project['packageName'],
+                           '--argjson', 'uid', str(project['runtimeIdentity']['uid']),
+                           '--argjson', 'gid', str(project['runtimeIdentity']['gid']), validator], input=json.dumps(value),
                           text=True, capture_output=True).returncode == 0
 
 assert validate(policy)

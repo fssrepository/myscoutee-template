@@ -26,13 +26,21 @@ PACKAGE_LOG="/var/log/${PACKAGE_NAME}"
 PACKAGE_CACHE="/var/cache/${PACKAGE_NAME}-update"
 readonly PACKAGE_NAME PACKAGE_ROOT PACKAGE_ETC PACKAGE_STATE PACKAGE_LOG PACKAGE_CACHE
 
+source "${PACKAGE_ROOT}/packaging/scripts/release-project.sh"
+release_project_load "${PACKAGE_ROOT}/packaging/scripts" 0 || {
+  echo 'The installed release identity is missing or unsafe.' >&2; exit 1;
+}
+[[ "$RELEASE_PROJECT_NAME" == "$PACKAGE_NAME" ]] || exit 1
+MYSCOUTEE_API_UID="$RELEASE_PROJECT_UID"
+MYSCOUTEE_API_GID="$RELEASE_PROJECT_GID"
+
 # Trusted package data, never an application request or deployment override.
 INSTALL_POLICY=${PACKAGE_ROOT}/packaging/templates/install-policy.json
 [[ -f "$INSTALL_POLICY" && ! -L "$INSTALL_POLICY" && "$(stat -c %u "$INSTALL_POLICY")" == 0 ]] || {
   echo 'The installed lifecycle policy is missing or unsafe.' >&2; exit 1;
 }
 (( (8#$(stat -c %a "$INSTALL_POLICY") & 8#022) == 0 )) || exit 1
-jq -e --arg package "$PACKAGE_NAME" '
+jq -e --arg package "$PACKAGE_NAME" --argjson uid "$MYSCOUTEE_API_UID" --argjson gid "$MYSCOUTEE_API_GID" '
   def key: type == "string" and test("^[A-Z][A-Z0-9_]+$");
   def text: type == "string" and (test("[[:cntrl:]]") | not);
   def directory: type == "string" and test("^/(etc|var/lib)/[a-z][a-z0-9-]+(/[a-z0-9-]+)+$")
@@ -45,7 +53,7 @@ jq -e --arg package "$PACKAGE_NAME" '
     "migrateOwnership","mongoSeedFallback","ownedDirectories","replicaSetDefaults","requiredMongoCollections","schemaVersion"]
   and (.ownedDirectories|type=="array" and all(.[];
     (keys|sort)==["gid","mode","path","uid"] and (.path|directory)
-    and (.mode|type=="string" and test("^0[0-7]{3}$")) and .uid==10001 and .gid==10001))
+    and (.mode|type=="string" and test("^0[0-7]{3}$")) and .uid==$uid and .gid==$gid))
   and (.migrateOwnership|type=="array" and all(.[];directory))
   and (.environmentDefaults|type=="object" and all(to_entries[];(.key|key) and (.value|text)))
   and (.freshSecrets|type=="array" and all(.[];secret))
@@ -55,17 +63,23 @@ jq -e --arg package "$PACKAGE_NAME" '
   and (.installationMessage|type=="string")
 ' "$INSTALL_POLICY" >/dev/null || { echo 'Invalid installed lifecycle policy.' >&2; exit 1; }
 
-MYSCOUTEE_API_UID=10001
-MYSCOUTEE_API_GID=10001
 
 printf '[myscoutee-update-phase] CONFIGURING_PACKAGE\n'
 
 # The host reader uses the same numeric ownership as the application. Register
 # a real non-login system identity rather than relying on an unknown numeric user.
+# Reject a foreign identity before sysusers can allocate a fallback UID.
+for entry in "passwd:${MYSCOUTEE_API_UID}" "group:${MYSCOUTEE_API_GID}"; do
+  record="$(getent "${entry%%:*}" "${entry#*:}" || true)"
+  if [[ -n "$record" && "${record%%:*}" != "${PACKAGE_NAME}-runtime" ]]; then
+    echo "Runtime ${entry} is reserved by another account; choose a distinct project identity." >&2
+    exit 1
+  fi
+done
 systemd-sysusers /usr/lib/sysusers.d/${PACKAGE_NAME}.conf
 if [[ "$(id -u ${PACKAGE_NAME}-runtime)" != "${MYSCOUTEE_API_UID}" \
    || "$(id -g ${PACKAGE_NAME}-runtime)" != "${MYSCOUTEE_API_GID}" ]]; then
-  echo "MyScoutee runtime UID/GID10001 is already reserved by another account." >&2
+  echo "${PACKAGE_NAME} runtime identity does not match UID/GID ${MYSCOUTEE_API_UID}:${MYSCOUTEE_API_GID}." >&2
   exit 1
 fi
 

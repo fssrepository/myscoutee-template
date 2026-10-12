@@ -22,7 +22,7 @@ temporary="$(mktemp "$runtime/.installed-package.XXXXXX")"
 trap 'test ! -f "$temporary" || unlink "$temporary"' EXIT
 jq -n --arg version "${version/\~/-}" --arg sha "sha256:$(sha256sum "$artifact" | cut -d' ' -f1)" \
   '{version:$version,artifactSha256:$sha}' > "$temporary"
-chown 0:10001 "$temporary"
+chown "+0:+${RELEASE_PROJECT_GID}" -- "$temporary"
 chmod 0640 "$temporary"
 sync -f "$temporary"
 mv -T "$temporary" "$runtime/installed-package.json"

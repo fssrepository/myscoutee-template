@@ -79,6 +79,9 @@ def audit_images(installed):
                     assert list(image_files(container, '/scripts/' + name).values()) == [(ROOT / 'server/docker/scripts' / name).read_bytes()]
                 print('PASS: MinIO bootstrap scripts')
             elif row['service'] == 'profilemanagement':
+                identity = json.loads((ROOT / 'packaging/scripts/release-project.json').read_text())['runtimeIdentity']
+                actual_user = run('docker', 'image', 'inspect', '--format', '{{.Config.User}}', row['imageId']).decode().strip()
+                assert actual_user == f"{identity['uid']}:{identity['gid']}", 'API image and host runtime ownership disagree'
                 jar = next(iter(image_files(container, '/app/spring-boot-application.jar').values()))
                 expected = ROOT / ('server/projects/profile/build/libs/profile-' + manifest['releaseVersion'] + '.jar')
                 assert digest(jar) == digest(expected.read_bytes()), 'API image has a stale JAR'
@@ -156,6 +159,9 @@ def audit_environments():
         if mode != 'e2e':
             assert environment['CHAT_CALL_STUN_PORT'] == probe['CHAT_CALL_STUN_PORT'], mode
             assert environment['CHAT_CALL_STUN_URLS'] == probe['CHAT_CALL_STUN_URLS'], mode
+        if mode == 'prod':
+            for field in ('uid', 'gid'):
+                assert str(api['build']['args']['MYSCOUTEE_API_' + field.upper()]) == str(project['runtimeIdentity'][field]), 'API build ownership differs from package policy'
         if mode in ('prod', 'e2e'):
             assert api['build']['args']['MYSCOUTEE_VERSION'] == '8.7.6', mode + ': release version not passed to Docker build'
         if mode in ('prod', 'installed'):
@@ -174,6 +180,12 @@ def audit_environments():
                 assert context.is_dir(), mode + ': missing build context for ' + name
                 assert (context / build.get('dockerfile', 'Dockerfile')).is_file(), mode + ': missing Dockerfile for ' + name
         print(f'PASS: {mode}: composed services, nondefault configuration wiring, version and deployment isolation')
+    identity = project['runtimeIdentity']
+    account = (ROOT / 'packaging/sysusers' / (project['packageName'] + '.conf')).read_text()
+    assert re.search(r'^u ' + re.escape(project['packageName']) + r'-runtime '
+                     + str(identity['uid']) + r'(?:[:]' + str(identity['gid']) + r')? ', account, re.M), 'sysusers ownership differs from package policy'
+    assert identity['uid'] == identity['gid'] or ':' in account.splitlines()[-1], 'distinct group ID must be explicit'
+    print('PASS: package policy, system account and production API build ownership agree')
     for profile in ('dev', 'prod'):
         resource = (ROOT / f'server/projects/profile/src/main/resources/application-{profile}.yaml').read_text()
         assert '${EMAIL_SENDGRID_API_KEY:' in resource, profile + ': packaged email secret is ignored'
@@ -190,18 +202,101 @@ def audit_environments():
     print('PASS: DEV/PROD email credentials and exact production/E2E build version')
 
 
+def print_mongo_audit():
+    """Emit read-only mongosh inventory; differences require ownership review."""
+    catalog = json.loads((ROOT / 'packaging/migrations/seeds/015-runtime-index-parity/runtime-indexes.json').read_text())
+    print('const catalog=' + json.dumps(catalog) + ';')
+    print(r'''
+function canonical(value) {
+    if (value === undefined) return 'undefined';
+    if (value === null || typeof value !== 'object') return JSON.stringify(value);
+    if (value._bsontype || value instanceof Date) return JSON.stringify(value);
+    if (Array.isArray(value)) return '[' + value.map(canonical).join(',') + ']';
+    return '{' + Object.keys(value).sort()
+        .map(key => JSON.stringify(key) + ':' + canonical(value[key])).join(',') + '}';
+}
+function record(value) {
+    return value && typeof value === 'object' && !Array.isArray(value)
+        && !value._bsontype && !(value instanceof Date);
+}
+function differences(expected, actual, path = '', result = []) {
+    if (canonical(expected) === canonical(actual)) return result;
+    if (record(expected) && record(actual)) {
+        for (const key of Object.keys(expected))
+            differences(expected[key], actual[key], path ? path + '.' + key : key, result);
+    } else result.push(path);
+    return result;
+}
+try {
+    const fs = require('fs');
+    const realDatabase = process.env.MONGO_APP_DATABASE || process.env.MONGO_INITDB_DATABASE;
+    if (!realDatabase || realDatabase === 'demo_db')
+        throw Error('Run this audit in the installed Mongo container with an isolated REAL database.');
+    const databases = [['demo_db', 'demo_db'], [realDatabase, 'myscoutee_db']];
+    for (const [name, seed] of databases) {
+        const target = db.getSiblingDB(name);
+        const directory = '/docker-entrypoint-initdb.d/' + seed;
+        const inventory = [];
+        for (const file of fs.readdirSync(directory).filter(n => n.endsWith('.json')).sort()) {
+            const source = EJSON.parse(fs.readFileSync(directory + '/' + file, 'utf8'));
+            const collection = target.getCollection(file === 'adminUsers.json' ? 'users' : file.slice(0, -5));
+            // One batch read per collection; never a database query per seed row.
+            const documents = new Map(collection.find({_id: {$in: source.map(row => row._id)}})
+                .toArray().map(row => [canonical(row._id), row]));
+            let missing = 0, changed = 0;
+            const fields = {};
+            for (const row of source) {
+                const actual = documents.get(canonical(row._id));
+                if (!actual) { missing++; continue; }
+                const paths = differences(row, actual);
+                if (paths.length) changed++;
+                for (const path of paths) fields[path] = (fields[path] || 0) + 1;
+            }
+            inventory.push({file, seed: source.length, count: collection.countDocuments({}),
+                missing, changed, fields});
+        }
+        print(JSON.stringify({database: name, inventory}));
+        const existing = new Map(target.getCollectionNames()
+            .map(name => [name, target.getCollection(name).getIndexes()]));
+        const missingIndexes = [], differentIndexes = [];
+        for (const row of catalog.indexes) {
+            const identity = row.collection + '/' + row.options.name;
+            const actual = (existing.get(row.collection) || [])
+                .find(index => index.name === row.options.name);
+            if (!actual) { missingIndexes.push(identity); continue; }
+            const changedOptions = ['unique', 'sparse', 'expireAfterSeconds', 'partialFilterExpression']
+                .some(key => canonical(actual[key]) !== canonical(row.options[key]));
+            // Mongo expands collation defaults. Compare the declared fields and
+            // reject an unexpected collation where simple comparison was required.
+            const changedCollation = row.options.collation
+                ? Object.entries(row.options.collation).some(([key, value]) => actual.collation?.[key] !== value)
+                : Boolean(actual.collation);
+            if (JSON.stringify(actual.key) !== JSON.stringify(row.key) || changedOptions || changedCollation)
+                differentIndexes.push(identity);
+        }
+        print(JSON.stringify({database: name, missingIndexes, differentIndexes}));
+    }
+} catch (error) { print(error.stack); quit(1); }
+''')
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('stage', type=Path, nargs='?')
     parser.add_argument('--environments-only', action='store_true')
+    parser.add_argument('--print-mongo-audit', action='store_true',
+                        help='emit read-only inventory for the installed Mongo container; review retained/runtime differences')
     parser.add_argument('--deb', type=Path)
     parser.add_argument('--images', action='store_true')
     args = parser.parse_args()
+    if args.print_mongo_audit:
+        print_mongo_audit()
+        return
     if args.environments_only:
         audit_environments()
         return
     if args.stage is None:
-        parser.error('stage is required unless --environments-only is selected')
+        parser.error('stage is required unless --environments-only or --print-mongo-audit is selected')
     project = json.loads((ROOT / 'packaging/scripts/release-project.json').read_text())
     package = project['packageName']
     installed = args.stage / 'opt' / package

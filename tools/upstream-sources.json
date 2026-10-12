@@ -4332,8 +4332,8 @@
     },
     {
       "path": "packaging/debian/postinst",
-      "sourceRevision": "aa2371c94bca3ba351e50e77821888fcb4e076d0",
-      "upstreamSha256": "31563a4cefab4ddc302c36ab5fb1f551934c501e982738a84a9913b01a6049a5",
+      "sourceRevision": "f5d612bcedb08d3706cf1aae1f7fe077ddceddc5",
+      "upstreamSha256": "e88ab1816f1b01017d70f4004fa5193827bbb439d9575c2cf49b83a76c3f8571",
       "purpose": "Shared release input/environment verification, exact artifact selection and existing Mongo index upgrade; project data stays selected separately.",
       "adaptation": null
     },
@@ -4409,8 +4409,8 @@
     },
     {
       "path": "packaging/release/build-production.sh",
-      "upstreamSha256": "2086922250cc735a147ead7b8e0df1960c2ffbc0dd9a1fec4d720715b7ed7eda",
-      "sourceRevision": "aa2371c94bca3ba351e50e77821888fcb4e076d0",
+      "upstreamSha256": "2de5bfdf25e8d9ad9d6cf0957be091d462dc43ae42fa2f473cee9b6327024c4d",
+      "sourceRevision": "f5d612bcedb08d3706cf1aae1f7fe077ddceddc5",
       "purpose": "Shared release input/environment verification, exact artifact selection and existing Mongo index upgrade; project data stays selected separately.",
       "adaptation": null
     },
@@ -4493,8 +4493,8 @@
     },
     {
       "path": "packaging/scripts/ensure-operator-configuration-key.sh",
-      "sourceRevision": "8ceb635bc2860029699faef48210c503e9826b99",
-      "upstreamSha256": "ee572c825aaed3684088cda7eb0256005d757a7423ef0d0424b4b9bc0978a9dd",
+      "sourceRevision": "f5d612bcedb08d3706cf1aae1f7fe077ddceddc5",
+      "upstreamSha256": "3a6b69b3226dd1dc0345577bcfddcdb29e8761cc1b00ae67a47823a312913823",
       "purpose": "Shared package lifecycle, artifact audit, selected host operations or their focused regression checks.",
       "adaptation": null
     },
@@ -4528,15 +4528,15 @@
     },
     {
       "path": "packaging/scripts/myscoutee-tls-worker.sh",
-      "sourceRevision": "8ceb635bc2860029699faef48210c503e9826b99",
-      "upstreamSha256": "d21071390eea4d56e4a2e628d5b06c402039bdb612e8116dd1447f2044630f7a",
+      "sourceRevision": "f5d612bcedb08d3706cf1aae1f7fe077ddceddc5",
+      "upstreamSha256": "a033f49ce1e0b08af8740e934d3545f3f2b334c2e3685c1bbe01c4fdd4e32bbc",
       "purpose": "Shared package lifecycle, artifact audit, selected host operations or their focused regression checks.",
       "adaptation": null
     },
     {
       "path": "packaging/scripts/myscoutee-update-worker.sh",
-      "sourceRevision": "7385fa358f3c051427cea62cf8212d2257d5138b",
-      "upstreamSha256": "655f9722a22a403322c0a83bad65e6d9b03c99f9761761fa0a98fc435d6d876f",
+      "sourceRevision": "f5d612bcedb08d3706cf1aae1f7fe077ddceddc5",
+      "upstreamSha256": "d80a50fbaca103d20a797028e36500c1f7ebb29bd1ce5c4827919f8851319aaa",
       "purpose": "Shared production build, complete release signatures, privileged update boundary or browser qualification support.",
       "adaptation": null
     },
@@ -4549,15 +4549,15 @@
     },
     {
       "path": "packaging/scripts/record-installed-package.sh",
-      "sourceRevision": "8ceb635bc2860029699faef48210c503e9826b99",
-      "upstreamSha256": "99b0a9bf361977ed1e0ba363f373ee9f4ad6f0a24d735c807e4711917043bf75",
+      "sourceRevision": "f5d612bcedb08d3706cf1aae1f7fe077ddceddc5",
+      "upstreamSha256": "9410e06a665ae567272c357da961c3445507839012c31eee5ed8921ea97974d6",
       "purpose": "Shared package lifecycle, artifact audit, selected host operations or their focused regression checks.",
       "adaptation": null
     },
     {
       "path": "packaging/scripts/release-project.sh",
-      "sourceRevision": "7385fa358f3c051427cea62cf8212d2257d5138b",
-      "upstreamSha256": "c6fde032ff67fb019ee59b357e33ce1882f36e8217ee347c24fdf5c793e91f47",
+      "sourceRevision": "f5d612bcedb08d3706cf1aae1f7fe077ddceddc5",
+      "upstreamSha256": "f471037087e4e9d18030a8b6ebe0dc9e776806b8dca4619d6687338562a19096",
       "purpose": "Shared production build, complete release signatures, privileged update boundary or browser qualification support.",
       "adaptation": null
     },
@@ -4577,8 +4577,8 @@
     },
     {
       "path": "packaging/scripts/restore-production.sh",
-      "sourceRevision": "8ceb635bc2860029699faef48210c503e9826b99",
-      "upstreamSha256": "3834e24b9be8f96026d21c3994f87bfad2a56004ebdda88a59c13711391b1ddb",
+      "sourceRevision": "f5d612bcedb08d3706cf1aae1f7fe077ddceddc5",
+      "upstreamSha256": "77d01a004f79ba7c39dd4b85cb84cb27f9dbc2f9c01ae9b29e8c70f7e8703f14",
       "purpose": "Shared package lifecycle, artifact audit, selected host operations or their focused regression checks.",
       "adaptation": null
     },
@@ -4668,15 +4668,15 @@
     },
     {
       "path": "packaging/tests/deployment-input-parity-test.py",
-      "sourceRevision": "15858a4cbc3831051160b71dcd2f3a0539ecd1dc",
-      "upstreamSha256": "3bf4552098737b186ce11739d46c58c1bf6658ee7c9a5dbc5aa306eabd0cefc8",
+      "sourceRevision": "f5d612bcedb08d3706cf1aae1f7fe077ddceddc5",
+      "upstreamSha256": "85fd0025afcd8bcbcdd62809848470bf0c76580e893b29e7e0704df7a3d1b3dc",
       "purpose": "Retained catalog delivery and consistent DEV/E2E/installed environment configuration.",
       "adaptation": null
     },
     {
       "path": "packaging/tests/install-policy-test.py",
-      "sourceRevision": "aa2371c94bca3ba351e50e77821888fcb4e076d0",
-      "upstreamSha256": "a46b576c2c482a99c28f99299faeba5aa1e6b4584bb47db8b90dc1fd70eba9af",
+      "sourceRevision": "f5d612bcedb08d3706cf1aae1f7fe077ddceddc5",
+      "upstreamSha256": "9d7887bbec1da3f5fc15480b9685664607e9b698addedd2381dc374c2c0d35c7",
       "purpose": "Shared release input/environment verification, exact artifact selection and existing Mongo index upgrade; project data stays selected separately.",
       "adaptation": null
     },
@@ -4692,6 +4692,13 @@
       "sourceRevision": "399f450abba8e90196002399df067c05b72d08e3",
       "upstreamSha256": "cfee6b104ffac42d22478b5f94c0482be9aba0e8e960ff0a5f6dc8bc409f215b",
       "purpose": "Native Mongo schema tests against the one already-running configured deployment.",
+      "adaptation": null
+    },
+    {
+      "path": "packaging/tests/numeric-ownership-policy-test.sh",
+      "purpose": "Shared installed runtime ownership and complete source/artifact parity verification.",
+      "sourceRevision": "f5d612bcedb08d3706cf1aae1f7fe077ddceddc5",
+      "upstreamSha256": "e43b33c03d91f63252bef522ed8db28f21b74ab92eda396b580690c80ef8d79a",
       "adaptation": null
     },
     {
