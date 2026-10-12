@@ -619,6 +619,12 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     notification-read transport: same owner count query, signed actor/body/mode
     validation and no page fetch/retry. Native HTTP tests and contract validation
     pass; runtime qualification of this new operation remains open.
+    Native configurable-lab follow-up `9a8c48319` passed KVM and monolith checks.
+    The template selects 59 framework files (57 byte-identical; two chart metadata/
+    support-inventory adaptations), with its four owners and project identity in
+    `deploy/runtime.json`. Terraform validation passes; the pinned cloud image and
+    a new private VM identity are prepared in template-owned local state. Actual
+    template deployment and monitoring checks remain in progress.
     Close with focused KVM checks followed serially
     by monolith checks, CPU/log evidence, correct service credentials and cleanup.
 

@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: runtime
+  labels: {app.kubernetes.io/part-of: {{ $.Release.Namespace }}}
+data:
+  {{- toYaml .Values.runtime | nindent 2 }}
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mongodb-init
+  labels: {app.kubernetes.io/part-of: {{ $.Release.Namespace }}}
+data:
+  db_init.js: |
+    {{- .Values.shared.mongoInitScript | nindent 4 }}
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: frontend
+  labels: {app.kubernetes.io/part-of: {{ $.Release.Namespace }}}
+data:
+  nginx.conf: |
+    {{- .Files.Get "files/gateway.conf" | replace "@CLUSTER_DNS@" .Values.clusterDns | replace "@NAMESPACE@" .Release.Namespace | replace "@MEDIA_SERVICE@" .Values.shared.mediaService | replace "@METRICS_UPSTREAMS@" .Values.shared.metricsUpstreamRoutes | replace "@PUBLIC_UPSTREAMS@" .Values.shared.publicUpstreamRoutes | replace "@PAYMENT_PROVIDER_LOCATIONS@" (ternary (.Files.Get "files/payment-provider-locations.conf" | trimSuffix "\n") "" (hasKey .Values.images "payment-simulator")) | replace "@NAMESPACE@" .Release.Namespace | nindent 4 }}
+  response-policy.conf: |
+    {{- .Values.shared.responsePolicy | nindent 4 }}
+  runtime-status.conf: |
+    {{- .Values.shared.runtimeStatusLocation | replace "/etc/nginx/conf.d/https-response-policy.conf" "/etc/myscoutee/response-policy.conf" | nindent 4 }}

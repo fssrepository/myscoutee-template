@@ -1,0 +1,72 @@
+images: {}
+services: {}
+imagePullPolicy: IfNotPresent
+frontend:
+  replicas: 1
+  nodePort: 30080
+metricsNodePort: 30081
+mongodb:
+  replicaSet: false
+  cpuLimit: '2'
+  memoryMiB: 768
+  storage: 4Gi
+redis:
+  memoryMiB: 128
+minio:
+  memoryMiB: 384
+  storage: 1Gi
+clusterDns: ''
+runtime: {}
+databases: {}
+releaseSimulatorCertificate: ''
+credentials: {}
+transportCredentialsByService: {}
+actorDelegation:
+  clients: {}
+shared:
+  metricsUpstreamRoutes: ''
+  mongoInitScript: ''
+  responsePolicy: ''
+  runtimeStatusLocation: ''
+publicBaseUrl: http://localhost:18080
+stunNodePort: 30478
+supportServices:
+  release-simulator:
+    memoryMiB: 128
+    port: 18445
+    storage: 1Gi
+    healthPath: /repos/fssrepository/myscoutee-template/releases
+    healthScheme: HTTPS
+    environment:
+      RELEASE_SIMULATOR_REPOSITORY: fssrepository/myscoutee-template
+  mcp:
+    memoryMiB: 128
+    port: 8080
+    healthPath: /healthz
+    environment:
+      MYSCOUTEE_MCP_TRANSPORT: http
+      MYSCOUTEE_MCP_LISTEN: 0.0.0.0:8080
+      MYSCOUTEE_API_BASE_URL: http://frontend:8080/api
+  stun:
+    memoryMiB: 64
+    port: 3478
+    command:
+    - /usr/bin/turnserver
+    healthCommand:
+    - turnutils_stunclient
+    - -p
+    - '3478'
+    - 127.0.0.1
+    args:
+    - -n
+    - --stun-only
+    - --no-auth
+    - --no-tls
+    - --relay-threads=1
+    - --listening-ip=0.0.0.0
+    - --listening-port=3478
+    - --realm=myscoutee
+    - --log-file=stdout
+    - --simple-log
+    - --pidfile=/tmp/turnserver.pid
+    environment: {}

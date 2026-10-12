@@ -9,14 +9,16 @@
       "sourceRevision": "415888834dbb1429b08cd6e2cee97b8f63ea67c3",
       "upstreamSha256": "ebd09003d85171f1d42de1bf71e29a7a3589fa9e6e0de7fd085b283369ff3092",
       "purpose": "Native real-WASM MLS and PCM voice-activity regression tests.",
-      "adaptation": "Only the relative frontend import path changes from e2e/functional/backend/flows/chat/call-signaling/chat-call-mls.test.mjs."
+      "adaptation": "Relative frontend import path for the selected template test directory.",
+      "upstreamPath": "e2e/functional/backend/flows/chat/call-signaling/chat-call-mls.test.mjs"
     },
     {
       "path": "e2e/functional/backend/chat/call/chat-call-voice-activity.test.mjs",
       "sourceRevision": "415888834dbb1429b08cd6e2cee97b8f63ea67c3",
       "upstreamSha256": "30c49af74b6221f3a641272fa22af365e0cd812a7e15e3a01673497359b0ba85",
       "purpose": "Native real-WASM MLS and PCM voice-activity regression tests.",
-      "adaptation": "Only the relative frontend import path changes from e2e/functional/backend/flows/chat/call-signaling/chat-call-voice-activity.test.mjs."
+      "adaptation": "Relative frontend import path for the selected template test directory.",
+      "upstreamPath": "e2e/functional/backend/flows/chat/call-signaling/chat-call-voice-activity.test.mjs"
     },
     {
       "path": "e2e/functional/ui/lib/chrome-cdp.mjs",
@@ -2003,6 +2005,13 @@
       "adaptation": "Unchanged selection."
     },
     {
+      "path": "guides/qa/tools/operator-update-release-server.py",
+      "sourceRevision": "9a8c48319",
+      "upstreamSha256": "5cee4332674012caaf642b9e3ba0927ca7f91da19e98787a864fda738fe52927",
+      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "adaptation": null
+    },
+    {
       "path": "mcp/Dockerfile",
       "source": "https://github.com/fssrepository/myscoutee-mcp",
       "sourceRevision": "c11b292599b3220d7f0c2a7f48bf8f83e3aa8c44",
@@ -2292,10 +2301,262 @@
       "adaptation": null
     },
     {
+      "path": "microservices/deploy/chart/.helmignore",
+      "sourceRevision": "9a8c48319",
+      "upstreamSha256": "ae9a2868b5090b9e81953b7cd8316b3002e7cd6897320c2aa69ee71fc27be3ae",
+      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "adaptation": null
+    },
+    {
+      "path": "microservices/deploy/chart/Chart.yaml",
+      "sourceRevision": "9a8c48319",
+      "upstreamSha256": "6aa72801b37ae95a8501ccb1fad2a0e3eede3d94b96fc99e765c9c3c8bf1d117",
+      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "adaptation": "Template chart name/version or selected support inventory, repository and health path; no Registry/payment deployment selected."
+    },
+    {
+      "path": "microservices/deploy/chart/files/gateway.conf",
+      "sourceRevision": "9a8c48319",
+      "upstreamSha256": "edfc995feb9384c28dd337c84ba0d1dc2ec681e61df7d6cfb83b052d9a2b6e14",
+      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "adaptation": null
+    },
+    {
+      "path": "microservices/deploy/chart/templates/assemblies.yaml",
+      "sourceRevision": "9a8c48319",
+      "upstreamSha256": "569b75f6755e4d412d290931a9cacf5f252a3273b3b71b6628ca652b571bba6f",
+      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "adaptation": null
+    },
+    {
+      "path": "microservices/deploy/chart/templates/configuration.yaml",
+      "sourceRevision": "9a8c48319",
+      "upstreamSha256": "42cf3394ff57411c79a0cc40efbf17647397f36cad3ad15a16b62cb21fc017c3",
+      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "adaptation": null
+    },
+    {
+      "path": "microservices/deploy/chart/templates/frontend.yaml",
+      "sourceRevision": "9a8c48319",
+      "upstreamSha256": "150fcb86af02fae6e18d3412789c3b74c2131ef481dd7b5ef08a735211392a98",
+      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "adaptation": null
+    },
+    {
+      "path": "microservices/deploy/chart/templates/minio.yaml",
+      "sourceRevision": "9a8c48319",
+      "upstreamSha256": "26fd0396ce78ec0ddd24db728765d058d457043c60dd303a34a991a7762a8c63",
+      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "adaptation": null
+    },
+    {
+      "path": "microservices/deploy/chart/templates/mongodb.yaml",
+      "sourceRevision": "9a8c48319",
+      "upstreamSha256": "26388521875dcb251896f5e907f7be3d87008ba92a87fad575c82e5ddc1fe5c2",
+      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "adaptation": null
+    },
+    {
+      "path": "microservices/deploy/chart/templates/redis.yaml",
+      "sourceRevision": "9a8c48319",
+      "upstreamSha256": "f40445bbf896aef2749c3416e4a45b0f9e025ff58c5d4c549e4f997030a0c8f3",
+      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "adaptation": null
+    },
+    {
+      "path": "microservices/deploy/chart/templates/release-simulator-ca.yaml",
+      "sourceRevision": "9a8c48319",
+      "upstreamSha256": "8057691f1d8e35952dd00ca01d1d19a9cadc669153b200afec19b52a093c7099",
+      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "adaptation": null
+    },
+    {
+      "path": "microservices/deploy/chart/templates/runtime-status.yaml",
+      "sourceRevision": "9a8c48319",
+      "upstreamSha256": "f77179354add9233d18e1f37bca2c7096dc70ba6d8a4fe051899d64f2275d140",
+      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "adaptation": null
+    },
+    {
+      "path": "microservices/deploy/chart/templates/secrets.yaml",
+      "sourceRevision": "9a8c48319",
+      "upstreamSha256": "0f786df341778d397b38da16f777789a53fc4e2d419079d159321222a1597c26",
+      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "adaptation": null
+    },
+    {
+      "path": "microservices/deploy/chart/templates/support.yaml",
+      "sourceRevision": "9a8c48319",
+      "upstreamSha256": "f8a58723a8329ffc0b93610b9f843da8070219d5497f4e0e170ca90473955a7a",
+      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "adaptation": null
+    },
+    {
+      "path": "microservices/deploy/chart/values.yaml",
+      "sourceRevision": "9a8c48319",
+      "upstreamSha256": "915365619256e835c878ad98641a961131a43868ba16a285be740bc3ca93d40e",
+      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "adaptation": "Template chart name/version or selected support inventory, repository and health path; no Registry/payment deployment selected."
+    },
+    {
+      "path": "microservices/deploy/images/service.Dockerfile.template",
+      "sourceRevision": "9a8c48319",
+      "upstreamSha256": "21e35903ec5bfc2abb6ae834210f1bea8a542818d314b95b61f01759834ae4b5",
+      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "adaptation": null
+    },
+    {
+      "path": "microservices/deploy/release-simulator.Dockerfile",
+      "sourceRevision": "9a8c48319",
+      "upstreamSha256": "34b93fc3b4b81db810fb8612bd63c6f40bfb721fa077fe27e0e48751691298e9",
+      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "adaptation": null
+    },
+    {
       "path": "microservices/gradlew",
       "upstreamSha256": "5c2215a6d57434a4bf7e96561cf72abaf0723da35ecd0e219f99818ad2434ead",
       "sourceRevision": "7e9e2797403566fef4db85b25f2535253a496361",
       "purpose": "Minimal independent service build, typed transport and retained profile/notification contracts.",
+      "adaptation": null
+    },
+    {
+      "path": "microservices/infra/guest/install-k3s.sh",
+      "sourceRevision": "9a8c48319",
+      "upstreamSha256": "0b026980e93635d7d0f73b520d6e217dfd3e61590d4227d331b7ac2a7000b1d6",
+      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "adaptation": null
+    },
+    {
+      "path": "microservices/infra/guest/k3s.service",
+      "sourceRevision": "9a8c48319",
+      "upstreamSha256": "8a45e6e6e49179bd5a50adb7ce48a9b23da2f02ffce722e5cb2ec6a7e28a1ed3",
+      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "adaptation": null
+    },
+    {
+      "path": "microservices/infra/guest/observe.py",
+      "sourceRevision": "9a8c48319",
+      "upstreamSha256": "33c529d1429189e5685562b56e2068a86faa15884bdf2aff40b40770bdee7bf4",
+      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "adaptation": null
+    },
+    {
+      "path": "microservices/infra/guest/resource-snapshot.py",
+      "sourceRevision": "9a8c48319",
+      "upstreamSha256": "53c24c3d6db3d49e6503f1b45f943bc28e21a6fd808b976acf0b60d891f27c09",
+      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "adaptation": null
+    },
+    {
+      "path": "microservices/infra/helm-version.json",
+      "sourceRevision": "9a8c48319",
+      "upstreamSha256": "03e2c791c57bdf4dcba5e160addd753cc5f997be81462a30ec14fcc6e12a6424",
+      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "adaptation": null
+    },
+    {
+      "path": "microservices/infra/terraform.tfrc",
+      "sourceRevision": "9a8c48319",
+      "upstreamSha256": "167a74c9a4c5fd0b7c3f7de4b116a0ebd369e3f8890c399e9eef0e57562ffd62",
+      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "adaptation": null
+    },
+    {
+      "path": "microservices/infra/terraform/.terraform.lock.hcl",
+      "sourceRevision": "9a8c48319",
+      "upstreamSha256": "2ad6d1356a0ee52d824cd85070bdd09406fd62e1476ac14f7d392aa45c2c6d27",
+      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "adaptation": null
+    },
+    {
+      "path": "microservices/infra/terraform/main.tf",
+      "sourceRevision": "9a8c48319",
+      "upstreamSha256": "79799c9d96969c2051b169587d4821a3fbf45d4513d58b36ddd846f2eaaffb54",
+      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "adaptation": null
+    },
+    {
+      "path": "microservices/infra/terraform/variables.tf",
+      "sourceRevision": "9a8c48319",
+      "upstreamSha256": "0e727d23a481c2a62ffa29f9542dc3468ace22ef738178e4916e1f0a4247e7d8",
+      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "adaptation": null
+    },
+    {
+      "path": "microservices/infra/versions.json",
+      "sourceRevision": "9a8c48319",
+      "upstreamSha256": "4acbfabfaaec114b6eb2f7e67c8f6ef6ecd00cb1dc5cf05957385f504fa1aba8",
+      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "adaptation": null
+    },
+    {
+      "path": "microservices/observability/compose.yaml",
+      "sourceRevision": "9a8c48319",
+      "upstreamSha256": "3a7a50d052a893d1ab59ff127b8f65238cb18e424c8aa736a41e772912dc63b4",
+      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "adaptation": null
+    },
+    {
+      "path": "microservices/observability/grafana/dashboards/services.json",
+      "sourceRevision": "9a8c48319",
+      "upstreamSha256": "e4ebf0bb5b5b8c9146fd713e141333b9e6ab1bd8512248b416b73083dad960e7",
+      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "adaptation": null
+    },
+    {
+      "path": "microservices/observability/grafana/provisioning/alerting/.gitkeep",
+      "sourceRevision": "9a8c48319",
+      "upstreamSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "adaptation": null
+    },
+    {
+      "path": "microservices/observability/grafana/provisioning/dashboards/services.yaml",
+      "sourceRevision": "9a8c48319",
+      "upstreamSha256": "32c5f91a72bcbaa9850ef1852588928838270ad8eb12fdb8cf24fdb34f45f0f0",
+      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "adaptation": null
+    },
+    {
+      "path": "microservices/observability/grafana/provisioning/datasources/prometheus.yaml",
+      "sourceRevision": "9a8c48319",
+      "upstreamSha256": "1109b7b5b54540f35bde5574c807ceaa39f916bd6475c350a217802f7665a8f5",
+      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "adaptation": null
+    },
+    {
+      "path": "microservices/observability/grafana/provisioning/plugins/.gitkeep",
+      "sourceRevision": "9a8c48319",
+      "upstreamSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "adaptation": null
+    },
+    {
+      "path": "microservices/runtime-status/Dockerfile",
+      "sourceRevision": "9a8c48319",
+      "upstreamSha256": "ba1998e5cbefd584439b4ae27d8c8c256265e85899cbbfd030b8025867aff83f",
+      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "adaptation": null
+    },
+    {
+      "path": "microservices/runtime-status/Dockerfile.dockerignore",
+      "sourceRevision": "9a8c48319",
+      "upstreamSha256": "db9c499652f62de5d8d52c3ce5c443de001df49389dd9ffd9900fad239046452",
+      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "adaptation": null
+    },
+    {
+      "path": "microservices/runtime-status/kubernetes.go",
+      "sourceRevision": "9a8c48319",
+      "upstreamSha256": "c3d45c3fd894ece92e19e763680f1d2da61399683b1095d8bf448ef6037d581d",
+      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "adaptation": null
+    },
+    {
+      "path": "microservices/runtime-status/kubernetes_test.go",
+      "sourceRevision": "9a8c48319",
+      "upstreamSha256": "30dcd75be3b1ae50ee01f5a935619c271fef9f910373d98b25871bb15e4b3086",
+      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
       "adaptation": null
     },
     {
@@ -2313,6 +2574,90 @@
       "adaptation": null
     },
     {
+      "path": "microservices/tools/cleanup-lab.sh",
+      "sourceRevision": "9a8c48319",
+      "upstreamSha256": "bd642a5572fb4f92cbebe0086905d53873ea55e84d159def8c3236ff9d7edd1a",
+      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "adaptation": null
+    },
+    {
+      "path": "microservices/tools/helm.sh",
+      "sourceRevision": "9a8c48319",
+      "upstreamSha256": "863459752eec8ce801fdf5f9df383ea78d643092ff18cc446a52ff2f191750cf",
+      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "adaptation": null
+    },
+    {
+      "path": "microservices/tools/host.py",
+      "sourceRevision": "9a8c48319",
+      "upstreamSha256": "7d7bfef3b4c31f8aecf65dcf9c036d2f9783f944e2f03d9312c5af3e5031a8aa",
+      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "adaptation": null
+    },
+    {
+      "path": "microservices/tools/lab.sh",
+      "sourceRevision": "9a8c48319",
+      "upstreamSha256": "8d85801ab4866344dd1c0395f9d892b160018d872c5706a1ab527acff66fb2b5",
+      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "adaptation": null
+    },
+    {
+      "path": "microservices/tools/mongo_replica.py",
+      "sourceRevision": "9a8c48319",
+      "upstreamSha256": "786fc55f04a88c74a2916145e4573a76416c4b3431327a2ed5bc60d2535a93a8",
+      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "adaptation": null
+    },
+    {
+      "path": "microservices/tools/open-terminals.sh",
+      "sourceRevision": "9a8c48319",
+      "upstreamSha256": "e1dd1adefe08e961b12c71d50dbe9749030284eb33f690fa43b9173a512dc25d",
+      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "adaptation": null
+    },
+    {
+      "path": "microservices/tools/render-deployment.py",
+      "sourceRevision": "9a8c48319",
+      "upstreamSha256": "f20e65041adb5022d595663780d5ecbb5368a6e40fabdf6513e3907248b7e64f",
+      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "adaptation": null
+    },
+    {
+      "path": "microservices/tools/runtime_config.py",
+      "sourceRevision": "9a8c48319",
+      "upstreamSha256": "d7f8eed332269940ba0e3ab6e383b1d7f504eba6a7d4434c0c2fd02b8e6a4007",
+      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "adaptation": null
+    },
+    {
+      "path": "microservices/tools/seed-mongo.py",
+      "sourceRevision": "9a8c48319",
+      "upstreamSha256": "ced3a4f350ab031847ace88006a567a97a7f75ec87b0ac3c67b16e6ccfeea372",
+      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "adaptation": null
+    },
+    {
+      "path": "microservices/tools/setup-host.sh",
+      "sourceRevision": "9a8c48319",
+      "upstreamSha256": "71af8ec8e99752aa5a85a570bd1c959dfa7ef2e08489c638d6d3e0f916451831",
+      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "adaptation": null
+    },
+    {
+      "path": "microservices/tools/terraform.sh",
+      "sourceRevision": "9a8c48319",
+      "upstreamSha256": "d98e25c3e2ee4588bbd57dc3e1b877c924754e256b43987221acb134613ef6f1",
+      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "adaptation": null
+    },
+    {
+      "path": "microservices/tools/test_runtime_config.py",
+      "sourceRevision": "9a8c48319",
+      "upstreamSha256": "42f9558d6e5d5aedbb0b33b48cee8150b05a743948b74e2acd7081379edd69aa",
+      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "adaptation": null
+    },
+    {
       "path": "microservices/tools/transport_usage.py",
       "upstreamSha256": "e217ce8e5ea36c1d0c1e9bc37a7ede7d259970c45b58e7bf9aff294d5a2fd778",
       "sourceRevision": "7e9e2797403566fef4db85b25f2535253a496361",
@@ -2324,6 +2669,20 @@
       "upstreamSha256": "63b6b5c4f5fc81a0fbf1cfa8b486d20de547c68cb9efa3bd6f7ebafd9f40104e",
       "sourceRevision": "7e9e2797403566fef4db85b25f2535253a496361",
       "purpose": "Minimal independent service build, typed transport and retained profile/notification contracts.",
+      "adaptation": null
+    },
+    {
+      "path": "microservices/tools/vm.py",
+      "sourceRevision": "9a8c48319",
+      "upstreamSha256": "8409a3a3de3536ff3bc32da10175c39a65f6f4fe1d0ea800720326cd6a2114aa",
+      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "adaptation": null
+    },
+    {
+      "path": "microservices/tools/workloads.py",
+      "sourceRevision": "9a8c48319",
+      "upstreamSha256": "aef5c3a090f37b9b6839d76aa43f9f9350a38236a88d62f38c354b89dd8087ac",
+      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
       "adaptation": null
     },
     {
@@ -3804,6 +4163,20 @@
       "adaptation": null
     },
     {
+      "path": "packaging/client-tools/forward-localhost.sh",
+      "sourceRevision": "9a8c48319",
+      "upstreamSha256": "4a313cf52ce3c479774182b7022f1e6794f3ebd03a204b5de80f6a9d3f0c4dfe",
+      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "adaptation": null
+    },
+    {
+      "path": "packaging/client-tools/remote-transport.sh",
+      "sourceRevision": "9a8c48319",
+      "upstreamSha256": "64855146ebd0b1b2b8b2eb087b6b222b3c63eb2e9de4ce12e9d55dcebb854616",
+      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "adaptation": null
+    },
+    {
       "path": "packaging/migrations/012-integration-indexes.js",
       "sourceRevision": "c7b2ba03254314a876a4b599a811d02e7592896f",
       "upstreamSha256": "13d7bd096bfedc203cc88eb6207cb3d2a3233e71d58578f9eed0510f35dec9f8",
@@ -3815,6 +4188,13 @@
       "upstreamSha256": "dd3e21c5cce162470f8594cf38b13217c5e56361c5cfe738d6f715de663a68e5",
       "sourceRevision": "7a1d375c8",
       "purpose": "Retained TLS/update signing, staged host requests and role notifications.",
+      "adaptation": null
+    },
+    {
+      "path": "packaging/scripts/image-content-fingerprint.sh",
+      "sourceRevision": "9a8c48319",
+      "upstreamSha256": "92bd04a5af26d7312cf2bad37168d50018969ad785b3da56633b8af9b0f4ce0d",
+      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
       "adaptation": null
     },
     {
@@ -4082,6 +4462,13 @@
       "sourceFrontendRevision": null
     },
     {
+      "path": "server/docker/conf/nginx/conf/http/update-status.prod.conf",
+      "sourceRevision": "9a8c48319",
+      "upstreamSha256": "65d3298f5faf0200631b301906ad4628510e6207398fa3d7e9e1bdec1cde91c1",
+      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "adaptation": null
+    },
+    {
       "path": "server/docker/conf/nginx/conf/stream/mongodb.conf",
       "sourceRevision": "bc9003efc252d37568c1fc0a13deeaa8f288e142",
       "upstreamSha256": "308c05b693426d2aaae8af4629f927a96b8190edad8e1a747597cbe0e91c8e43",
@@ -4186,6 +4573,20 @@
       "adaptation": null
     },
     {
+      "path": "server/docker/images/nginx/prod/Dockerfile",
+      "sourceRevision": "9a8c48319",
+      "upstreamSha256": "5f941eb040d428160d78147d95260cc003b86b31eb65c913ac81bcb3aa80f1f7",
+      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "adaptation": null
+    },
+    {
+      "path": "server/docker/images/nginx/prod/nginx-entrypoint.sh",
+      "sourceRevision": "9a8c48319",
+      "upstreamSha256": "ce4679878a4480ff145f7a3c1c86b2db958f7bcf7025091e4b1b3df7fb8b4a2c",
+      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "adaptation": null
+    },
+    {
       "path": "server/docker/images/nginx/runtime-status.sh",
       "upstreamSha256": "6afdbc48b386e516ff66f13e06d852f1738ab589132415d9562cebee5eec59e4",
       "purpose": "Selected native dev gateway, frontend watch/sync, availability lease, localization generator/audit or browser qualification support.",
@@ -4277,6 +4678,13 @@
       "adaptation": "Omit Registry state directories."
     },
     {
+      "path": "server/docker/images/release-simulator/Dockerfile",
+      "sourceRevision": "9a8c48319",
+      "upstreamSha256": "36e03b2d43be63dc16dcf28cc145ae9b5342e04958e140cb1debcbe7b4d19a60",
+      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
+      "adaptation": null
+    },
+    {
       "path": "server/docker/scripts/bootstrap_minio_seed.sh",
       "sourceRevision": "cfa26b923c515cc683ee329b38416d3e8f578d2a",
       "upstreamSha256": "0ff5792a51c627ca7f91f5d0f3471884630dd78c47499fd1b3f92ad32e645fad",
@@ -4317,6 +4725,13 @@
       "sourceRevision": "cfa26b923c515cc683ee329b38416d3e8f578d2a",
       "upstreamSha256": "f7d7a88bb0fb66c0fa2267ca3ef6a3aca74306d86f547ff9b73bdfd2a6655cf3",
       "purpose": "Reuse the existing development, isolated E2E, Mongo replica, media seed or configuration-key workflow unchanged.",
+      "adaptation": null
+    },
+    {
+      "path": "server/docker/scripts/start_release_simulator.sh",
+      "sourceRevision": "9a8c48319",
+      "upstreamSha256": "ad0f8061ea09ded85423e9b4b63361a28eb4fd5f418ee8238dcc20d2ff392d2c",
+      "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
       "adaptation": null
     },
     {
