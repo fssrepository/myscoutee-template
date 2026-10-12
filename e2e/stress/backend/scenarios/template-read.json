@@ -1,0 +1,56 @@
+{
+  "name": "Minimal retained read workload",
+  "mode": "prod",
+  "resetE2E": false,
+  "reuseContext": true,
+  "users": 6,
+  "rampUpMs": 0,
+  "durationMs": 60000,
+  "thinkTimeMs": 25,
+  "thinkTimeJitterMs": 0,
+  "thresholds": {
+    "errorRate": 0,
+    "p95Ms": 1000,
+    "p99Ms": 2000
+  },
+  "qaBranches": {
+    "supporting": [
+      "T-IDENTITY-001",
+      "T-PROFILE-001",
+      "T-CHAT-001",
+      "T-SMARTLIST-001",
+      "T-GUIDE-001",
+      "T-NOTIFICATION-001"
+    ]
+  },
+  "steps": [
+    {
+      "name": "configuration",
+      "collectionCase": "runtime/configuration"
+    },
+    {
+      "name": "members",
+      "collectionCase": "profile/demo-users"
+    },
+    {
+      "name": "profile",
+      "collectionCase": "profile/auth-me"
+    },
+    {
+      "name": "personal chat",
+      "collectionCase": "chat/seeded-conversation"
+    },
+    {
+      "name": "showcase",
+      "collectionCase": "showcase/cards"
+    },
+    {
+      "name": "documents",
+      "collectionCase": "content/documents"
+    },
+    {
+      "name": "notifications",
+      "collectionCase": "notifications/inbox"
+    }
+  ]
+}

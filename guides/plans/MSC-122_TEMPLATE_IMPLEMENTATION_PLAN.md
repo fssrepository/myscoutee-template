@@ -580,7 +580,17 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     local flows also pass after stopping E2E, including the same admin guides.
     See MSC122_TEMPLATE_LOCAL_UI_SUITE_20261011.json. OAuth remains HTTP-only.
 
-24. **Restore stress/performance tooling and measure a coherent build — PENDING.**
+24. **Restore stress/performance tooling and measure a coherent build — IN PROGRESS.**
+    The native backend load engine, ramp and comparator are selected unchanged;
+    its product fixture context is separate in the source owner. Two 60-second
+    runs of the minimal read workload (6 users, 15-second warmup) pass with zero
+    errors: 6769/6930 completed cases, p95 62.69/58.34 ms. Java peak CPU is
+    201.66/196.32% (about two cores); Mongo peak is 154.74/114.32%.
+    These are same-image baseline/repeatability observations, not a source or
+    before/after speed comparison. One prematurely stopped attempt is excluded
+    and its owned sessions were explicitly revoked before a full successful retry.
+    Browser/WebSocket stress selection remains pending. See
+    `MSC122_TEMPLATE_RELEASE_TOOLS_PERFORMANCE_20261012.json`.
     Reuse `e2e/stress/backend`, `e2e/stress/ui`, shared measurement helpers and
     microservice runtime probes. Select the minimal API/WebSocket/UI workload and
     small deterministic fixtures. Record revisions, data, warmup, concurrency,
@@ -685,6 +695,12 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     modify any Netcup host or resource under any circumstances.**
 
 28. **Complete signed releases and the updater — IN PROGRESS.**
+    The minimal client-tools archive now builds through the unchanged source
+    builder, using the selected manifest. Shared install/purge clients validate
+    the template identity and retain the original signature/SSH boundaries.
+    All 13 external deployment checks pass on the actual production-image
+    monolith (not VMware); only public content assertions are project-owned.
+    The host DEB lifecycle and recovery helpers still need completion in step27.
     Selected the unchanged native privileged updater, artifact signer/verifier,
     and strict five-image template policy. Source `prepare-release.py` now owns
     complete package/client-tool signatures plus matching signed update metadata;
@@ -712,7 +728,10 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     The five production images were published and pulled back with matching IDs.
     They remain private. The CI build failed because the pinned upstream MinIO
     image is unavailable; an identical cached amd64 image is preserved in GHCR,
-    but its CI/public access is not configured. See the production/Pages evidence.
+    but its CI/public access is not configured. The second workflow still returns
+    403 after repository association; this needs the package Actions access or
+    visibility setting. No broad personal token was installed as a CI secret.
+    See the production/Pages and release-tools evidence.
     This failure and the DEB release remain open artifact gates.
     Use the established release/build commands from CI rather than duplicating
     packaging logic. Prepare `v1.0.0`, DEB/client-tools/signatures/checksums and

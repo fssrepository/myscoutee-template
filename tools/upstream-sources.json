@@ -85,6 +85,27 @@
       "adaptation": null
     },
     {
+      "path": "e2e/stress/backend/compare.mjs",
+      "sourceRevision": "07900770b89bed410b48a0e320b5e56bc4f65c31",
+      "upstreamSha256": "c468c76554bd353742b60282a65a8a60e0ba215b89697502fabf346e15d9a3ab",
+      "purpose": "Native shared client packaging, external deployment checks or load measurement engine. Product context/data selected separately.",
+      "adaptation": null
+    },
+    {
+      "path": "e2e/stress/backend/ramp.mjs",
+      "sourceRevision": "07900770b89bed410b48a0e320b5e56bc4f65c31",
+      "upstreamSha256": "417884881805f32d97bc2a9fe7de01051f83e59eada8c7a1cfc5199d59965c02",
+      "purpose": "Native shared client packaging, external deployment checks or load measurement engine. Product context/data selected separately.",
+      "adaptation": null
+    },
+    {
+      "path": "e2e/stress/backend/run.mjs",
+      "sourceRevision": "07900770b89bed410b48a0e320b5e56bc4f65c31",
+      "upstreamSha256": "4cd1e1bc87562d7986be1be509b5c87dba9a5292af51d2958296b7ca58ecaaae",
+      "purpose": "Native shared client packaging, external deployment checks or load measurement engine. Product context/data selected separately.",
+      "adaptation": null
+    },
+    {
       "path": "frontend/.gitignore",
       "upstreamSha256": "181eb92cb98992d947fac0ca0dce6742d91933665211d03406a1f35366ab17ca",
       "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
@@ -4226,6 +4247,34 @@
       "adaptation": null
     },
     {
+      "path": "packaging/client-tools/install.env.example",
+      "sourceRevision": "b81c7363cda3755be2d657f34c267fb8f88be47d",
+      "upstreamSha256": "afcc24e354bb07326d8e87277708051aa143278fe062a076228e17343670364c",
+      "purpose": "Shared release client installation/verification; template selects its own package identity and public content contract.",
+      "adaptation": "Template default remote artifact path."
+    },
+    {
+      "path": "packaging/client-tools/install.sh",
+      "sourceRevision": "b81c7363cda3755be2d657f34c267fb8f88be47d",
+      "upstreamSha256": "122a7f371ecf9bd6db67599bec149570c942267216be68570ce60396eeeff0bc",
+      "purpose": "Shared release client installation/verification; template selects its own package identity and public content contract.",
+      "adaptation": null
+    },
+    {
+      "path": "packaging/client-tools/prepare-debian13-minimal.sh",
+      "sourceRevision": "b81c7363cda3755be2d657f34c267fb8f88be47d",
+      "upstreamSha256": "186d201d6cd8355121f65088dada7966e8f756993f0b083d6958f3887bea2ace",
+      "purpose": "Shared release client installation/verification; template selects its own package identity and public content contract.",
+      "adaptation": null
+    },
+    {
+      "path": "packaging/client-tools/purge.sh",
+      "sourceRevision": "b81c7363cda3755be2d657f34c267fb8f88be47d",
+      "upstreamSha256": "41992587c9b813ed04443ab3677247c92f238fe03ec20262d3694c9ce0313517",
+      "purpose": "Shared release client installation/verification; template selects its own package identity and public content contract.",
+      "adaptation": null
+    },
+    {
       "path": "packaging/client-tools/remote-transport.sh",
       "sourceRevision": "9a8c48319",
       "upstreamSha256": "64855146ebd0b1b2b8b2eb087b6b222b3c63eb2e9de4ce12e9d55dcebb854616",
@@ -4258,6 +4307,13 @@
       "upstreamSha256": "44d46642e028038b0cf71a4beaaa1522ef5c1a5e0ab878936f67942ce7430976",
       "sourceRevision": "7385fa358f3c051427cea62cf8212d2257d5138b",
       "purpose": "Shared production build, complete release signatures, privileged update boundary or browser qualification support.",
+      "adaptation": null
+    },
+    {
+      "path": "packaging/release/package-client-tools.sh",
+      "sourceRevision": "07900770b89bed410b48a0e320b5e56bc4f65c31",
+      "upstreamSha256": "f82da207274446bbeaf30909a5f9e29805f1d59c9b60b3550a11d465ee6bceed",
+      "purpose": "Native shared client packaging, external deployment checks or load measurement engine. Product context/data selected separately.",
       "adaptation": null
     },
     {
@@ -4331,6 +4387,13 @@
       "adaptation": null
     },
     {
+      "path": "packaging/tests/deployment-http-test.mjs",
+      "sourceRevision": "b81c7363cda3755be2d657f34c267fb8f88be47d",
+      "upstreamSha256": "c1b976225229e00176aca7f2c65479715d3bd3c8dfedd018ff679e09be51b474",
+      "purpose": "Shared release client installation/verification; template selects its own package identity and public content contract.",
+      "adaptation": null
+    },
+    {
       "path": "packaging/tests/integration-indexes-test.py",
       "sourceRevision": "399f450abba8e90196002399df067c05b72d08e3",
       "upstreamSha256": "63446e382a080912bdb64f031051be0c988778fc4bb53333e4cc91b04b4954e4",
@@ -4356,6 +4419,41 @@
       "upstreamSha256": "c6fedacccf78d7f516510827ae32d99cfffd280db543731e3b566967a1482ae5",
       "sourceRevision": "7385fa358f3c051427cea62cf8212d2257d5138b",
       "purpose": "Shared production build, complete release signatures, privileged update boundary or browser qualification support.",
+      "adaptation": null
+    },
+    {
+      "path": "packaging/verify-deployment/browser-smoke.mjs",
+      "sourceRevision": "b81c7363cda3755be2d657f34c267fb8f88be47d",
+      "upstreamSha256": "5a1e346a8b5182c594a92f66398b338072fdae6785bf0b44e397202ed22f5485",
+      "purpose": "Shared release client installation/verification; template selects its own package identity and public content contract.",
+      "adaptation": null
+    },
+    {
+      "path": "packaging/verify-deployment/checks.mjs",
+      "sourceRevision": "07900770b89bed410b48a0e320b5e56bc4f65c31",
+      "upstreamSha256": "19be702f0a65265a7ccee47abb95b2958f051c2c78e19ff1d566e37361f3384a",
+      "purpose": "Native shared client packaging, external deployment checks or load measurement engine. Product context/data selected separately.",
+      "adaptation": null
+    },
+    {
+      "path": "packaging/verify-deployment/lib/assertions.mjs",
+      "sourceRevision": "b81c7363cda3755be2d657f34c267fb8f88be47d",
+      "upstreamSha256": "176c5b875a12cff77d25c03e70646e6e6429a15e2b56825d02b0bde0e5178a48",
+      "purpose": "Shared release client installation/verification; template selects its own package identity and public content contract.",
+      "adaptation": null
+    },
+    {
+      "path": "packaging/verify-deployment/lib/http.mjs",
+      "sourceRevision": "b81c7363cda3755be2d657f34c267fb8f88be47d",
+      "upstreamSha256": "a642db6f6f5a573e67fd71938b5ba3faf03b034d41f2a8670de88625d61b4c57",
+      "purpose": "Shared release client installation/verification; template selects its own package identity and public content contract.",
+      "adaptation": null
+    },
+    {
+      "path": "packaging/verify-deployment/run.mjs",
+      "sourceRevision": "b81c7363cda3755be2d657f34c267fb8f88be47d",
+      "upstreamSha256": "47a84ce680aa7ad10616cfc6bfd99271ce57e977e4fee0100013f2a6780a9566",
+      "purpose": "Shared release client installation/verification; template selects its own package identity and public content contract.",
       "adaptation": null
     },
     {
