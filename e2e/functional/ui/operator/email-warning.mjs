@@ -8,6 +8,8 @@ import {launchChromeBrowser} from '../lib/chrome-cdp.mjs';
 assert.equal(process.env.E2E_EMAIL_PROVIDER_STUB,'true','Start the documented local provider receiver and select its endpoint first.');
 const baseUrl=process.env.E2E_SERVER_BASE_URL??'https://127.0.0.1';
 const capture=process.env.E2E_EMAIL_CAPTURE??'.e2e-artifacts/functional/email/received.jsonl';
+const confirmationTransport=process.env.E2E_EMAIL_UNSUBSCRIBE_TRANSPORT??'browser';
+assert(['browser','http'].includes(confirmationTransport));
 const fixture=await stageOperatorConfigurationFixture(baseUrl);
 const email=`template-warning-${randomUUID()}@example.invalid`;
 const recipientHash=createHash('sha256').update(email).digest('hex');
@@ -38,11 +40,19 @@ try{
  const endpoint=baseUrl+'/api/public/email/unsubscribe';
  const post=(path,value)=>fetch(endpoint+path,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({token:value})});
  let response=await post('/status',token);assert.equal(response.status,200);assert.equal((await response.json()).unsubscribed,false);
- browser=await launchChromeBrowser({baseUrl});page=await browser.newPage();
- await page.navigate(link);await page.waitFor('confirmation ready',()=>page.evaluate(()=>document.querySelector('#confirm')?.disabled===false));
- assert.equal(JSON.parse(await fixture.query(`JSON.stringify(db.emailUnsubscriptions.countDocuments({_id:${JSON.stringify(recipientHash)}}))`)),0,'Opening the link does not unsubscribe');
- await page.clickVisible('#confirm');await page.waitForText('You have unsubscribed');
- await page.navigate(link);await page.waitForText('You have unsubscribed');
+ if(confirmationTransport==='browser'){
+  browser=await launchChromeBrowser({baseUrl});page=await browser.newPage();
+  await page.navigate(link);await page.waitFor('confirmation ready',()=>page.evaluate(()=>document.querySelector('#confirm')?.disabled===false));
+  assert.equal(JSON.parse(await fixture.query(`JSON.stringify(db.emailUnsubscriptions.countDocuments({_id:${JSON.stringify(recipientHash)}}))`)),0,'Opening the link does not unsubscribe');
+  await page.clickVisible('#confirm');await page.waitForText('You have unsubscribed');
+  await page.navigate(link);await page.waitForText('You have unsubscribed');
+ }else{
+  // Split-service contract qualification reuses the same fixture/owner requests.
+  // The already-qualified browser interaction is not replayed for a transport check.
+  const landing=await fetch(endpoint);assert.equal(landing.status,200);assert((await landing.text()).includes('id="confirm"'));
+  assert.equal(JSON.parse(await fixture.query(`JSON.stringify(db.emailUnsubscriptions.countDocuments({_id:${JSON.stringify(recipientHash)}}))`)),0,'Reading confirmation does not unsubscribe');
+  const confirmed=await post('',token);assert.equal(confirmed.status,200);
+ }
  response=await post('/status',token);assert.equal((await response.json()).unsubscribed,true);
  response=await post('',token);assert.equal(response.status,200,'Repeated confirmation is idempotent');
  response=await post('',token.slice(0,-6)+'abcdef');assert.equal(response.status,400,'Tampered tokens are rejected');
@@ -54,10 +64,10 @@ try{
  const current=await fixture.readEmail();await fixture.saveEmail({...current,expectedRevision:current.revision,enabled:false,credential:'',clearCredential:false});
  const index=JSON.parse(await fixture.query("JSON.stringify(db.accountDeletionWarnings.getIndexes().map(i=>i.name))"));
  for(const name of ['account_warning_retry_due','account_warning_stale_claim','account_warning_user'])assert(index.includes(name));
- console.log('PASS warning scheduler → local provider → anonymous confirmation/reload → suppressed next episode; encrypted/masked credentials and cleanup index.');
+ console.log(`PASS warning scheduler → local provider → anonymous ${confirmationTransport} confirmation/status → suppressed next episode; encrypted/masked credentials and cleanup index.`);
 }finally{
  if(page)await page.close();if(browser)await browser.close();
  try{
-  await fixture.query(`(()=>{db.notificationRuleConfigs.replaceOne({_id:EJSON.parse(${JSON.stringify(before)})._id},EJSON.parse(${JSON.stringify(before)}));db.accountDeletionWarnings.deleteMany({userId:{$in:${JSON.stringify(fixture.ids)}}});db.emailUnsubscriptions.deleteOne({_id:${JSON.stringify(recipientHash)}});return {restored:true};})()`);
+  await fixture.query(`(()=>{db.notificationRuleConfigs.replaceOne({_id:EJSON.parse(${JSON.stringify(before)},{relaxed:false})._id},EJSON.parse(${JSON.stringify(before)},{relaxed:false}));db.accountDeletionWarnings.deleteMany({userId:{$in:${JSON.stringify(fixture.ids)}}});db.emailUnsubscriptions.deleteOne({_id:${JSON.stringify(recipientHash)}});return {restored:true};})()`);
  }finally{await fixture.close();await rm(backup);}
 }

@@ -56,7 +56,7 @@ export async function stageOperatorConfigurationFixture(baseUrl){
    // Restore through the owning endpoint first so its in-memory settings/public caches agree.
    const response=await fetch(baseUrl+'/api/operator/configuration',{method:'PUT',headers,body:JSON.stringify(restore)});assert.equal(response.status,200,'Restore the original operator settings through their owner');
   }finally{
-   try{await fixture.query(`(()=>{const original=EJSON.parse(${JSON.stringify(snapshot)});db.deploymentConfigurations.replaceOne({_id:original.configuration._id},original.configuration);db.appSettings.replaceOne({_id:original.settings._id},original.settings);if(original.email)db.operatorEmailConfigurations.replaceOne({_id:'global'},original.email,{upsert:true});else db.operatorEmailConfigurations.deleteOne({_id:'global'});return {restored:true};})()`);}
+   try{await fixture.query(`(()=>{const original=EJSON.parse(${JSON.stringify(snapshot)},{relaxed:false});db.deploymentConfigurations.replaceOne({_id:original.configuration._id},original.configuration);db.appSettings.replaceOne({_id:original.settings._id},original.settings);if(original.email)db.operatorEmailConfigurations.replaceOne({_id:'global'},original.email,{upsert:true});else db.operatorEmailConfigurations.deleteOne({_id:'global'});return {restored:true};})()`);}
    finally{try{await sessions.close();}finally{await fixture.close();}}
   }
   await rm(backup);return {restored:true};

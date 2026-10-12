@@ -3,6 +3,8 @@
 
 Uses a unique disposable database; never imports into application databases.
 The existing workload transport provides KVM access; no runtime is started.
+MYSCOUTEE_TEST_SEED_ROOT optionally selects another source repository while
+keeping this repository's runtime transport.
 """
 import base64
 import os
@@ -13,7 +15,7 @@ import sys
 import uuid
 
 ROOT = Path(__file__).resolve().parents[2]
-SOURCE = ROOT / 'server/docker/conf/mongodb'
+SOURCE = Path(os.environ.get('MYSCOUTEE_TEST_SEED_ROOT', ROOT)) / 'server/docker/conf/mongodb'
 identifier = 'qa_seed_preservation_' + uuid.uuid4().hex
 files = ['mongo_import.sh', 'mongo-seed-policy.inc',
          'myscoutee_db/appSettings.json', 'myscoutee_db/deploymentConfigurations.json']

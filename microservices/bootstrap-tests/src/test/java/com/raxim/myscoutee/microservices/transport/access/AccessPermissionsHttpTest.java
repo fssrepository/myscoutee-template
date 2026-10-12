@@ -111,6 +111,24 @@ class AccessPermissionsHttpTest {
         var failed = request(path, body.replace("asset\"", "fail\""), TOKEN, null, "REAL", "application/json", "POST");
         assertEquals(503, failed.statusCode()); assertFalse(failed.body().contains("private"));
     }
+    @Test void mediaCookieChecksItsReadPolicyWithoutAcquiringAccountAuthority() {
+        var owner = server.getBean(AccessPermissions.class);
+        when(owner.can("media.read", "viewer", "viewer", "private/documents/owner/chat/file"))
+                .thenReturn(false);
+        when(owner.can("media.read", "viewer", "viewer", "private/documents/viewer/chat/file"))
+                .thenReturn(true);
+        for (var mode : MongoSessionMode.values()) {
+            MongoSessionModeContext.set(mode);
+            SecurityContextHolder.getContext().setAuthentication(UsernamePasswordAuthenticationToken.authenticated(
+                    "viewer", null, List.of(new SimpleGrantedAuthority("MEDIA"))));
+            assertFalse(remote.can("media.read", "viewer", "viewer", "private/documents/owner/chat/file"));
+            assertTrue(remote.can("media.read", "viewer", "viewer", "private/documents/viewer/chat/file"));
+            assertThrows(org.springframework.security.access.AccessDeniedException.class,
+                    () -> remote.canCurrentActorEditProfile("viewer"));
+            assertThrows(org.springframework.security.access.AccessDeniedException.class,
+                    () -> remote.can("media.read", "other", "other", "private/documents/other/chat/file"));
+        }
+    }
     private static HttpResponse<String> request(String path, String body, String token, String proof, String mode, String contentType, String method) throws Exception {
         var builder = HttpRequest.newBuilder(origin.resolve(path)).timeout(Duration.ofSeconds(5))
                 .header("X-MyScoutee-Session-Mode", mode).header("Content-Type", contentType);

@@ -14,7 +14,7 @@
     "lastSenderId": "100000000000000000000002",
     "unread": 1,
     "revision": 1,
-    "dateIso": "2026-10-11T00:00:00Z"
+    "dateIso": "2026-10-11T00:00:01Z"
   },
   {
     "_id": "chat-owner-copy:1e8284a3-d465-38c9-a68e-f188989c1774",
@@ -31,6 +31,6 @@
     "lastSenderId": "100000000000000000000002",
     "unread": 1,
     "revision": 1,
-    "dateIso": "2026-10-11T00:00:00Z"
+    "dateIso": "2026-10-11T00:00:01Z"
   }
 ]

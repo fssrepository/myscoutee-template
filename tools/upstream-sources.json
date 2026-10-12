@@ -5,6 +5,20 @@
   "status": "File selection/provenance inventory reconciled on 2026-10-12. Implementation and qualification completion are tracked only by the numbered implementation plan.",
   "files": [
     {
+      "path": ".vscode/launch.json",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "upstreamSha256": "dfeacdd156ec5a3e69230ef3de33961335888da8856862952946c79851bab30b",
+      "purpose": "Native Java launch/attach and lightweight IDE settings; automatic builds remain disabled to preserve the existing runtime resource rule.",
+      "adaptation": null
+    },
+    {
+      "path": ".vscode/settings.json",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "upstreamSha256": "075065fd3735e8d8ec708d3bd54a11b0e45c9ee6f12682a03327b3bbdab46260",
+      "purpose": "Native Java launch/attach and lightweight IDE settings; automatic builds remain disabled to preserve the existing runtime resource rule.",
+      "adaptation": null
+    },
+    {
       "path": "e2e/functional/backend/chat/call/chat-call-mls.test.mjs",
       "sourceRevision": "415888834dbb1429b08cd6e2cee97b8f63ea67c3",
       "upstreamSha256": "ebd09003d85171f1d42de1bf71e29a7a3589fa9e6e0de7fd085b283369ff3092",
@@ -304,6 +318,49 @@
       "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
+      "path": "frontend/src/app/entry/components/entry-page.component.html",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
+      "upstreamSha256": "c795876283d0ae0ddab7bc47d329c7ed43df3c4caf24ec19f410d57608ce4700",
+      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
+      "adaptation": "Retained template selection of this native owner: minimal profile/role controls, image-only media surface, or product-independent shell/entry. No new alternate service or component engine. See templateOwnedFeatures for the selected consumers.",
+      "upstreamPath": "frontend/src/app/entry/components/entry-page/entry-page.component.html"
+    },
+    {
+      "path": "frontend/src/app/entry/components/entry-page.component.scss",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
+      "upstreamSha256": "2e4a8e0cb30f211f7d97f4ad84f0cce7926f2cd0361a4b9cacb77e7e848c4e76",
+      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
+      "adaptation": "Retained template selection of this native owner: minimal profile/role controls, image-only media surface, or product-independent shell/entry. No new alternate service or component engine. See templateOwnedFeatures for the selected consumers.",
+      "upstreamPath": "frontend/src/app/entry/components/entry-page/entry-page.component.scss"
+    },
+    {
+      "path": "frontend/src/app/entry/components/entry-page.component.ts",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
+      "upstreamSha256": "ac11645d55949fab2971e7cd7fe3a6a3a07759689554c4ce2138705bac06e55b",
+      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
+      "adaptation": "Retained template selection of this native owner: minimal profile/role controls, image-only media surface, or product-independent shell/entry. No new alternate service or component engine. See templateOwnedFeatures for the selected consumers.",
+      "upstreamPath": "frontend/src/app/entry/components/entry-page/entry-page.component.ts"
+    },
+    {
+      "path": "frontend/src/app/home/components/home-header/home-header.component.scss",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
+      "upstreamSha256": "eb1b8839ed6ef8789056c01097d415ae91c742859dfe91e007a277ae087b8d44",
+      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
+      "adaptation": null
+    },
+    {
+      "path": "frontend/src/app/home/components/home-header/home-header.component.ts",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
+      "upstreamSha256": "4638c41cf526ae98a60fec46b906153476eb93efcb55575bb86d38b3f6025d7b",
+      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
+      "adaptation": null
+    },
+    {
       "path": "frontend/src/app/home/shared/_home-page-frame.scss",
       "upstreamSha256": "8416bdf49a8c51af598a7aa309ac4eda0596c28f5f3ec7385385e8cff72e5a8a",
       "sourceRevision": "5a639775e",
@@ -362,6 +419,30 @@
       "purpose": "Native configured email UI/adapters or non-forwarding QA provider receiver.",
       "adaptation": "Unchanged selection.",
       "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
+    },
+    {
+      "path": "frontend/src/app/operator/components/operator-page/operator-page.component.html",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
+      "upstreamSha256": "3492cee554d74c5b49be77b31c3f6945ff924a3cfeb219f3e4ca7f5c29344694",
+      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
+      "adaptation": "Retained template selection of this native owner: minimal profile/role controls, image-only media surface, or product-independent shell/entry. No new alternate service or component engine. See templateOwnedFeatures for the selected consumers."
+    },
+    {
+      "path": "frontend/src/app/operator/components/operator-page/operator-page.component.scss",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
+      "upstreamSha256": "46b993b01e8ba156a998d2de163e8947e778999864528fe9f8e85a27e5aa6c4c",
+      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
+      "adaptation": "Retained template selection of this native owner: minimal profile/role controls, image-only media surface, or product-independent shell/entry. No new alternate service or component engine. See templateOwnedFeatures for the selected consumers."
+    },
+    {
+      "path": "frontend/src/app/operator/components/operator-page/operator-page.component.ts",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
+      "upstreamSha256": "764dfb3cb482cdfb35c69870bd57f5a0e166c631814329246684bcfa6dab2c7c",
+      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
+      "adaptation": "Retained template selection of this native owner: minimal profile/role controls, image-only media surface, or product-independent shell/entry. No new alternate service or component engine. See templateOwnedFeatures for the selected consumers."
     },
     {
       "path": "frontend/src/app/profile/components/integration-settings-popup/integration-access-button.component.scss",
@@ -428,12 +509,52 @@
       "adaptation": null
     },
     {
+      "path": "frontend/src/app/profile/components/profile-editor/profile-editor.component.html",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
+      "upstreamSha256": "9ed2ff4c2bdc7391091b2f50a81875a31ced970f67b1d091e24c0e18770996aa",
+      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
+      "adaptation": "Retained template selection of this native owner: minimal profile/role controls, image-only media surface, or product-independent shell/entry. No new alternate service or component engine. See templateOwnedFeatures for the selected consumers."
+    },
+    {
+      "path": "frontend/src/app/profile/components/profile-editor/profile-editor.component.scss",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
+      "upstreamSha256": "34b3d99b49e055a19cda745f3145c81bd130b5ad3f674b8404a7c84cf21d73bb",
+      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
+      "adaptation": "Retained template selection of this native owner: minimal profile/role controls, image-only media surface, or product-independent shell/entry. No new alternate service or component engine. See templateOwnedFeatures for the selected consumers."
+    },
+    {
       "path": "frontend/src/app/profile/components/profile-editor/profile-editor.component.ts",
       "upstreamSha256": "928d327051d1f113a474603fff07a85229dbba5dad0bb5c8d8722223d0b8df39",
       "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
       "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
       "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
       "adaptation": "Compose the selected template profile, chat, notification and guide owners; retain native contracts and persistence while omitting unselected product dependencies."
+    },
+    {
+      "path": "frontend/src/app/profile/components/settings-popups/settings-popups.component.html",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
+      "upstreamSha256": "077d454885147d1d5ee8fecd51c3a574bd8d5b971b90637e9c3b04e074094f4a",
+      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
+      "adaptation": "Retained template selection of this native owner: minimal profile/role controls, image-only media surface, or product-independent shell/entry. No new alternate service or component engine. See templateOwnedFeatures for the selected consumers."
+    },
+    {
+      "path": "frontend/src/app/profile/components/settings-popups/settings-popups.component.scss",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
+      "upstreamSha256": "185f1bd23a4b83e324051c74f3774b75125be6f369eca23f4cdac89b8f10c730",
+      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
+      "adaptation": null
+    },
+    {
+      "path": "frontend/src/app/profile/components/settings-popups/settings-popups.component.ts",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
+      "upstreamSha256": "56cfc9e6a610d5b387c00e182ef65c7512af9291372f9927bffd7feff54c2b32",
+      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
+      "adaptation": "Retained template selection of this native owner: minimal profile/role controls, image-only media surface, or product-independent shell/entry. No new alternate service or component engine. See templateOwnedFeatures for the selected consumers."
     },
     {
       "path": "frontend/src/app/shared/core/README.md",
@@ -678,6 +799,14 @@
       "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
+      "path": "frontend/src/app/shared/core/base/services/media/media.service.ts",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
+      "upstreamSha256": "b581b740440ac6b17819e7431bc3325066986dd9b2e0858802645dd34fccb124",
+      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
+      "adaptation": "Retained template selection of this native owner: minimal profile/role controls, image-only media surface, or product-independent shell/entry. No new alternate service or component engine. See templateOwnedFeatures for the selected consumers."
+    },
+    {
       "path": "frontend/src/app/shared/core/base/services/notifications/firebase-messaging.service.spec.ts",
       "upstreamSha256": "d5ff94b17618085c2a22074146010d7d6ab775e0a6ee531ce8f0ffa72f6638e2",
       "purpose": "Native frontend domain organization, isolated test setup and retained identity/notification regressions.",
@@ -816,6 +945,22 @@
       "sourceFrontendRevision": "1af20e0b"
     },
     {
+      "path": "frontend/src/app/shared/core/common/demo-failover.spec.ts",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
+      "upstreamSha256": "369c1dd9a5f349badd993a222ca78e97744ad069668b1755b7ae40d352021beb",
+      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
+      "adaptation": "Same availability/image/runtime contract with template-owned runtime path, cache identity or fixtures; no product-domain import."
+    },
+    {
+      "path": "frontend/src/app/shared/core/common/demo-failover.ts",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
+      "upstreamSha256": "2ac4ac210cd3d1108e8660e1aa84f325b263713824fe04eb7a38b3cf789155bf",
+      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
+      "adaptation": "Same availability/image/runtime contract with template-owned runtime path, cache identity or fixtures; no product-domain import."
+    },
+    {
       "path": "frontend/src/app/shared/core/common/deployment-privacy-token.resolver.ts",
       "upstreamSha256": "889073e76290c2f5be533360c189235fc2d454094f8111195e3550fb8e3eda68",
       "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
@@ -840,6 +985,14 @@
       "sourceFrontendRevision": "1af20e0b"
     },
     {
+      "path": "frontend/src/app/shared/core/common/image-urls.ts",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
+      "upstreamSha256": "38baea3c741897b5fbc9b6cd76b6a8e5ddfee7fd05c61a30154f7f381a92f977",
+      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
+      "adaptation": "Same availability/image/runtime contract with template-owned runtime path, cache identity or fixtures; no product-domain import."
+    },
+    {
       "path": "frontend/src/app/shared/core/common/public-media.ts",
       "upstreamSha256": "8c83a4f89eee67dc4359e9bedf8a34ce6732805db757ea5971eb85a51bfcc9a0",
       "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
@@ -854,6 +1007,14 @@
       "adaptation": null,
       "sourceRevision": "e3eff359c",
       "sourceFrontendRevision": "1af20e0b"
+    },
+    {
+      "path": "frontend/src/app/shared/core/common/runtime-status.spec.ts",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
+      "upstreamSha256": "b9297ea3598dad2ffb490ef4c83ab2456cc0b8d01b66ae6937d3f67e0988d3b0",
+      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
+      "adaptation": "Same availability/image/runtime contract with template-owned runtime path, cache identity or fixtures; no product-domain import."
     },
     {
       "path": "frontend/src/app/shared/core/common/secure-random.ts",
@@ -1040,6 +1201,14 @@
       "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af"
     },
     {
+      "path": "frontend/src/app/shared/core/http/interceptors/platform/connectivity.interceptor.ts",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
+      "upstreamSha256": "3d7f0b6916de770b9f66ab444576a9e571fecc3229740dfc1211287df83796fb",
+      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
+      "adaptation": null
+    },
+    {
       "path": "frontend/src/app/shared/core/http/services/accounts/device-registrations.service.ts",
       "upstreamSha256": "ed44d377b9d10a4b542356d32b30d9e064e97b4768392a370415d558d9386872",
       "purpose": "Selected Angular build/runtime, session, Firebase, localization, deployment branding or focused authentication tests needed by the minimal frontend.",
@@ -1094,6 +1263,14 @@
       "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
       "purpose": "Selected native API/MCP settings, local persistence, consent route and contextual guides for the minimal template.",
       "adaptation": "Retain native API/MCP contracts, stores and adapter behavior; omit affiliate/payment/product fields and text. Compose member entry/guide contexts with the minimal shell. Operator configuration record contains deployment settings only."
+    },
+    {
+      "path": "frontend/src/app/shared/core/http/services/media/media.service.ts",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
+      "upstreamSha256": "68e477fec371514d98e3061e02a197380c92a2f0dc99b74953de2e29b209af3e",
+      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
+      "adaptation": "Retained template selection of this native owner: minimal profile/role controls, image-only media surface, or product-independent shell/entry. No new alternate service or component engine. See templateOwnedFeatures for the selected consumers."
     },
     {
       "path": "frontend/src/app/shared/core/http/services/notifications/notifications.service.ts",
@@ -1428,6 +1605,14 @@
       "adaptation": "Retain native API/MCP contracts, stores and adapter behavior; omit affiliate/payment/product fields and text. Compose member entry/guide contexts with the minimal shell. Operator configuration record contains deployment settings only."
     },
     {
+      "path": "frontend/src/app/shared/core/local/source/repositories/media/media.repository.ts",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
+      "upstreamSha256": "cfa74ea60c94f2f0dc298c3173d29f8ce861cfdeed6b3ab4ce5d3406deb251d4",
+      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
+      "adaptation": null
+    },
+    {
       "path": "frontend/src/app/shared/core/local/source/repositories/notifications/notifications.repository.ts",
       "upstreamSha256": "ff8cd821c504aef92e93e4e8d031d53fa23ada0150ff2ec1208262a42c2ebff1",
       "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
@@ -1516,12 +1701,28 @@
       "adaptation": "Retain native API/MCP contracts, stores and adapter behavior; omit affiliate/payment/product fields and text. Compose member entry/guide contexts with the minimal shell. Operator configuration record contains deployment settings only."
     },
     {
+      "path": "frontend/src/app/shared/core/local/source/services/media/media.service.ts",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
+      "upstreamSha256": "ca52c11eaab6121c76ad245ae5d859aa6f45bcdbbc6adc0fc73f566ec0414a1d",
+      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
+      "adaptation": "Retained template selection of this native owner: minimal profile/role controls, image-only media surface, or product-independent shell/entry. No new alternate service or component engine. See templateOwnedFeatures for the selected consumers."
+    },
+    {
       "path": "frontend/src/app/shared/core/local/source/services/notifications/notifications.service.ts",
       "upstreamSha256": "4c4eceb81aa5513434e3b6a883666cd47483d965bacf2a473da9ddb0877239c0",
       "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
       "sourceFrontendRevision": "90289af09c6fe6bb6821a28c554b564bb2a903af",
       "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
       "adaptation": "Retain native paging, delta synchronization, read/mute state, request-generation guards and persistence. Omit workspace/community projections and absent-domain navigation; route personal chat targets into the template chat page."
+    },
+    {
+      "path": "frontend/src/app/shared/core/local/source/services/notifications/role-notifications.service.ts",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
+      "upstreamSha256": "b6faf52f238ce594d449e86fef63d94e22d391b0a266528c66302e71f01bc513",
+      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
+      "adaptation": "Retained template selection of this native owner: minimal profile/role controls, image-only media surface, or product-independent shell/entry. No new alternate service or component engine. See templateOwnedFeatures for the selected consumers."
     },
     {
       "path": "frontend/src/app/shared/core/local/source/services/operator/operator-configuration.service.ts",
@@ -1749,6 +1950,14 @@
       "adaptation": "Retain native paging, delta synchronization, read/mute state, request-generation guards and persistence. Omit workspace/community projections and absent-domain navigation; route personal chat targets into the template chat page."
     },
     {
+      "path": "frontend/src/app/shared/ui/components/side-menu/_navigator-avatar.scss",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
+      "upstreamSha256": "c0351f447ee377abe615f38da4d62fff158f803188c45ca4d3eee53ed1cecb11",
+      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
+      "adaptation": null
+    },
+    {
       "path": "frontend/src/app/shared/ui/context/stores/app/app-context-store.utils.ts",
       "upstreamSha256": "fce254896ba4307ee1b2ae2c418e18b2aa09a48cc0d24b66a2ce8759ec4b3b65",
       "purpose": "Native minimal entry, profile, consent, geographic location, document display or localization dependency.",
@@ -1847,6 +2056,14 @@
       "adaptation": null
     },
     {
+      "path": "frontend/src/app/shared/ui/context/stores/profile/profile.store.ts",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
+      "upstreamSha256": "816bbc5b52c3ca821a3e3ecbec7ead3aa4d2404f5838e83e3aaa44640294410f",
+      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
+      "adaptation": "Retained template selection of this native owner: minimal profile/role controls, image-only media surface, or product-independent shell/entry. No new alternate service or component engine. See templateOwnedFeatures for the selected consumers."
+    },
+    {
       "path": "frontend/src/app/shared/ui/context/stores/profile/user-profile.store.ts",
       "upstreamSha256": "c6f1d77f9ddf205ea4cf7efabcb32dafaac96079c5bfff417db428d376c0e75a",
       "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
@@ -1871,6 +2088,14 @@
       "sourceFrontendRevision": "5fbf3e62"
     },
     {
+      "path": "frontend/src/app/shared/ui/converters/chat/activity-chat-single-row.converter.ts",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
+      "upstreamSha256": "bf5311e96b6eb58f9a4a13e77a4c229a09dbe9665a74774f91df6bc9e452465d",
+      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
+      "adaptation": "Retained template selection of this native owner: minimal profile/role controls, image-only media surface, or product-independent shell/entry. No new alternate service or component engine. See templateOwnedFeatures for the selected consumers."
+    },
+    {
       "path": "frontend/src/app/shared/ui/converters/chat/chat-message-menu.converter.spec.ts",
       "sourceRevision": "415888834dbb1429b08cd6e2cee97b8f63ea67c3",
       "sourceFrontendRevision": "d6cd39c15ba6735dfc3714bef72f106e1d661dc1",
@@ -1887,6 +2112,14 @@
       "adaptation": null
     },
     {
+      "path": "frontend/src/app/shared/ui/converters/notification/notification-single-row.converter.spec.ts",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
+      "upstreamSha256": "80f34be46f2499b3f4790d1c1779c782b0dd7335957d4a6a47998142cd4cb9aa",
+      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
+      "adaptation": "Retained template selection of this native owner: minimal profile/role controls, image-only media surface, or product-independent shell/entry. No new alternate service or component engine. See templateOwnedFeatures for the selected consumers."
+    },
+    {
       "path": "frontend/src/app/shared/ui/converters/notification/notification-single-row.converter.ts",
       "upstreamSha256": "afe0ee457090bde0d6e37cbdb0610624c0200d33ec78d39b44db5a5aaca75070",
       "sourceRevision": "215ee5eac3aeb0fdf8469bf7c26fcfae47e42584",
@@ -1894,6 +2127,14 @@
       "purpose": "Minimal template notification, contextual guide and retained profile/chat integration.",
       "adaptation": "Retain native paging, delta synchronization, read/mute state, request-generation guards and persistence. Omit workspace/community projections and absent-domain navigation; route personal chat targets into the template chat page.",
       "templateSelectionNote": "2026-10-12: omit admin Reports/Support chat/Feedback and member report/feedback UI, associated presentation stores, guide contexts and notification links. Retain backend/local contracts pending source-first modularization in plan step 5."
+    },
+    {
+      "path": "frontend/src/app/shared/ui/converters/profile/profile-header-card.converter.ts",
+      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
+      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
+      "upstreamSha256": "c73d22d0bdeb7696f902935b09cd26cf961273675612b41a98cb26f522839c73",
+      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
+      "adaptation": "Retained template selection of this native owner: minimal profile/role controls, image-only media surface, or product-independent shell/entry. No new alternate service or component engine. See templateOwnedFeatures for the selected consumers."
     },
     {
       "path": "frontend/src/assets/i18n/en.json",
@@ -2221,7 +2462,7 @@
       "upstreamSha256": "ff3e7715ecb42036a3f04b77d1d71188ce8a60826a6b8505e925f6d641a1c796",
       "sourceRevision": "3a477f3e96b9f39004fc6c02a61cad2830dcb08e",
       "purpose": "Canonical WebSocket authentication and selected service transport renewal.",
-      "adaptation": "Compile only retained HTTP/bootstrap tests and their canonical source dependencies."
+      "adaptation": "Compile only retained HTTP/bootstrap tests and their canonical source dependencies. Retain the native EmailLinks binding/contract test and its EmailProperties input for provider deletion."
     },
     {
       "path": "microservices/bootstrap-tests/src/test/java/com/raxim/myscoutee/microservices/bootstrap/ManagementAccessTest.java",
@@ -2232,8 +2473,8 @@
     },
     {
       "path": "microservices/bootstrap-tests/src/test/java/com/raxim/myscoutee/microservices/transport/access/AccessPermissionsHttpTest.java",
-      "upstreamSha256": "1f3df94fdb03aad4d4a642c82764d5ee5b5ba362e2cdbc1685b64a59233f6fcc",
-      "sourceRevision": "7e9e2797403566fef4db85b25f2535253a496361",
+      "upstreamSha256": "9a333eb0e124c252fe085b07d53490474168ee4de02ae48211369d8397d17a16",
+      "sourceRevision": "cfa6c2cb368cdbaf187634886f9a8fce381e3dad",
       "purpose": "Minimal independent service build, typed transport and retained profile/notification contracts.",
       "adaptation": "Exercise retained chat-message edit permission instead of the omitted asset-edit product policy."
     },
@@ -2256,6 +2497,13 @@
       "upstreamSha256": "33cdc563df361c5f4c25d0b049fabb13b8bde25d3c63ae56f9aca50afcc8c144",
       "sourceRevision": "7e9e2797403566fef4db85b25f2535253a496361",
       "purpose": "Minimal independent service build, typed transport and retained profile/notification contracts.",
+      "adaptation": null
+    },
+    {
+      "path": "microservices/bootstrap-tests/src/test/java/com/raxim/myscoutee/microservices/transport/email/EmailLinksHttpTest.java",
+      "sourceRevision": "cfa6c2cb368cdbaf187634886f9a8fce381e3dad",
+      "upstreamSha256": "88ab929a3be924c9c2fe1c8967db61f6b716745e5b1ab317852f4dd3efead053",
+      "purpose": "Native EmailLinks transport required by the retained provider-deletion callback in the identity assembly.",
       "adaptation": null
     },
     {
@@ -2750,15 +2998,23 @@
     },
     {
       "path": "microservices/tools/test_runtime_config.py",
-      "sourceRevision": "9a8c48319",
-      "upstreamSha256": "42f9558d6e5d5aedbb0b33b48cee8150b05a743948b74e2acd7081379edd69aa",
+      "sourceRevision": "cfa6c2cb368cdbaf187634886f9a8fce381e3dad",
+      "upstreamSha256": "bac2cd3e7a5edfedfbbe1b34ecc50a664a64a7826cf5633455b3547d09d3c7d7",
       "purpose": "Selected native KVM lifecycle, chart, monitoring, runtime status, owned image packaging or local release simulator framework.",
-      "adaptation": null
+      "adaptation": null,
+      "sourceWorkingTree": true
+    },
+    {
+      "path": "microservices/tools/test_transport_usage.py",
+      "purpose": "Canonical annotation-driven policy transport selection and media read authorization regression coverage.",
+      "adaptation": null,
+      "sourceRevision": "cfa6c2cb368cdbaf187634886f9a8fce381e3dad",
+      "upstreamSha256": "6930c75c57b8151c693d07d0d5364a1d630f0f06890758da1c84ff5983d935d4"
     },
     {
       "path": "microservices/tools/transport_usage.py",
-      "upstreamSha256": "e217ce8e5ea36c1d0c1e9bc37a7ede7d259970c45b58e7bf9aff294d5a2fd778",
-      "sourceRevision": "7e9e2797403566fef4db85b25f2535253a496361",
+      "upstreamSha256": "ee7b74561c00ffaca9135b270bc32734c160e12ce0f32bf6031b31c5f3107806",
+      "sourceRevision": "cfa6c2cb368cdbaf187634886f9a8fce381e3dad",
       "purpose": "Minimal independent service build, typed transport and retained profile/notification contracts.",
       "adaptation": null
     },
@@ -2785,10 +3041,10 @@
     },
     {
       "path": "microservices/transport/bindings.json",
-      "upstreamSha256": "a9ba6bf35565cd695f3e9ab4cfe05a3c98831e9e06099ab5c89de41e10dae107",
-      "sourceRevision": "7e9e2797403566fef4db85b25f2535253a496361",
+      "upstreamSha256": "2de290b3268d5a1078c9a37961fa11ecad514bb85b7a0d7c2a8fb1d34570a7f7",
+      "sourceRevision": "cfa6c2cb368cdbaf187634886f9a8fce381e3dad",
       "purpose": "Minimal independent service build, typed transport and retained profile/notification contracts.",
-      "adaptation": "Select only APIs/operations needed by the four minimal assemblies; omit community, Registry, payments and removed admin feature bindings."
+      "adaptation": "Select only APIs/operations needed by the four minimal assemblies; omit community, Registry, payments and removed admin feature bindings. Retain the native EmailLinks binding/contract test and its EmailProperties input for provider deletion."
     },
     {
       "path": "microservices/transport/contracts/access/access-permissions-v1.openapi.json",
@@ -2896,6 +3152,13 @@
       "adaptation": null
     },
     {
+      "path": "microservices/transport/contracts/email/email-links-v1.openapi.json",
+      "sourceRevision": "cfa6c2cb368cdbaf187634886f9a8fce381e3dad",
+      "upstreamSha256": "ab4cb6ea2ecd6abafa77139ac1629edf9631c6b092847d3f1f8ffa6e43685303",
+      "purpose": "Native EmailLinks transport required by the retained provider-deletion callback in the identity assembly.",
+      "adaptation": null
+    },
+    {
       "path": "microservices/transport/contracts/email/email-rendering-v1.openapi.json",
       "upstreamSha256": "a97e2b4da863874741b65ccf69d1590f3db2b011a1ba57a92742c9399caa4e23",
       "sourceRevision": "7e9e2797403566fef4db85b25f2535253a496361",
@@ -2914,7 +3177,7 @@
       "upstreamSha256": "7262ab184347157cb8ad261378632469e3df3cc698f288ce73f8fd8a8347761b",
       "sourceRevision": "7e9e2797403566fef4db85b25f2535253a496361",
       "purpose": "Minimal independent service build, typed transport and retained profile/notification contracts.",
-      "adaptation": "Select the retained typed endpoint paths and referenced schemas; omit unselected product operations."
+      "adaptation": "Select the retained typed endpoint paths and referenced schemas; omit unselected product operations. Retain the native EmailLinks binding/contract test and its EmailProperties input for provider deletion."
     },
     {
       "path": "microservices/transport/contracts/help/help-privacy-v1.openapi.json",
@@ -3051,8 +3314,8 @@
     },
     {
       "path": "microservices/transport/src/main/java/com/raxim/myscoutee/microservices/transport/access/RemoteAccessPermissions.java",
-      "upstreamSha256": "575287e61d7e36e4e2c14f7ae2a213600d59ef5f43bc5dd4fc74d7738c508a49",
-      "sourceRevision": "7e9e2797403566fef4db85b25f2535253a496361",
+      "upstreamSha256": "cdf04b74a01f1c86d0c7bd2dc0db9e028a7186e568ba38ff4c2785349dcbd0c6",
+      "sourceRevision": "cfa6c2cb368cdbaf187634886f9a8fce381e3dad",
       "purpose": "Minimal independent service build, typed transport and retained profile/notification contracts.",
       "adaptation": "Select only APIs/operations needed by the four minimal assemblies; omit community, Registry, payments and removed admin feature bindings."
     },
@@ -3554,6 +3817,34 @@
       "adaptation": null
     },
     {
+      "path": "microservices/transport/src/main/java/com/raxim/myscoutee/microservices/transport/email/EmailLinksClientConfiguration.java",
+      "sourceRevision": "cfa6c2cb368cdbaf187634886f9a8fce381e3dad",
+      "upstreamSha256": "4ea9862a2c3048f3951650921130ffb675aaaf1d8c008e9bdcc3a93d0f1c0b5b",
+      "purpose": "Native EmailLinks transport required by the retained provider-deletion callback in the identity assembly.",
+      "adaptation": null
+    },
+    {
+      "path": "microservices/transport/src/main/java/com/raxim/myscoutee/microservices/transport/email/EmailLinksEndpoint.java",
+      "sourceRevision": "cfa6c2cb368cdbaf187634886f9a8fce381e3dad",
+      "upstreamSha256": "db0b250bdeebdfe6ce4e2f2ff127b469a3cd0259aee690e1d53ad01791475b1f",
+      "purpose": "Native EmailLinks transport required by the retained provider-deletion callback in the identity assembly.",
+      "adaptation": null
+    },
+    {
+      "path": "microservices/transport/src/main/java/com/raxim/myscoutee/microservices/transport/email/EmailLinksProtocol.java",
+      "sourceRevision": "cfa6c2cb368cdbaf187634886f9a8fce381e3dad",
+      "upstreamSha256": "76ade63a9660801afc7f31bae03f66d219c031bde3b423a7e68eee59423d114b",
+      "purpose": "Native EmailLinks transport required by the retained provider-deletion callback in the identity assembly.",
+      "adaptation": null
+    },
+    {
+      "path": "microservices/transport/src/main/java/com/raxim/myscoutee/microservices/transport/email/EmailLinksServerConfiguration.java",
+      "sourceRevision": "cfa6c2cb368cdbaf187634886f9a8fce381e3dad",
+      "upstreamSha256": "a91ce4c7e3a49cde3124e17c80aaa9c2c06fa929a30f93f771bbb39941a3c931",
+      "purpose": "Native EmailLinks transport required by the retained provider-deletion callback in the identity assembly.",
+      "adaptation": null
+    },
+    {
       "path": "microservices/transport/src/main/java/com/raxim/myscoutee/microservices/transport/email/EmailRenderingClientConfiguration.java",
       "upstreamSha256": "5c08711d1607ab239d98ef3a56ff0cabb4ccc801013aa71f1bd38a8232ad464c",
       "sourceRevision": "7e9e2797403566fef4db85b25f2535253a496361",
@@ -3607,6 +3898,13 @@
       "upstreamSha256": "6a4415c6438d9d67ab03bf3c4aee767d268048f870d3c20f27c8dfce1ead8b08",
       "sourceRevision": "7e9e2797403566fef4db85b25f2535253a496361",
       "purpose": "Minimal independent service build, typed transport and retained profile/notification contracts.",
+      "adaptation": null
+    },
+    {
+      "path": "microservices/transport/src/main/java/com/raxim/myscoutee/microservices/transport/email/RemoteEmailLinks.java",
+      "sourceRevision": "cfa6c2cb368cdbaf187634886f9a8fce381e3dad",
+      "upstreamSha256": "058157798f889a77b77dafe7ddcf38e12465fc0e4206e97036685935c80e446f",
+      "purpose": "Native EmailLinks transport required by the retained provider-deletion callback in the identity assembly.",
       "adaptation": null
     },
     {
@@ -4689,10 +4987,11 @@
     },
     {
       "path": "packaging/tests/mongo_test_runtime.py",
-      "sourceRevision": "399f450abba8e90196002399df067c05b72d08e3",
-      "upstreamSha256": "cfee6b104ffac42d22478b5f94c0482be9aba0e8e960ff0a5f6dc8bc409f215b",
+      "sourceRevision": "cfa6c2cb368cdbaf187634886f9a8fce381e3dad",
+      "upstreamSha256": "f66b7db9dfa42931380fab85bca2d471e324991b0b9788cb6e7f47b273b2423c",
       "purpose": "Native Mongo schema tests against the one already-running configured deployment.",
-      "adaptation": null
+      "adaptation": null,
+      "sourceWorkingTree": true
     },
     {
       "path": "packaging/tests/numeric-ownership-policy-test.sh",
@@ -4735,6 +5034,14 @@
       "upstreamSha256": "85d4a1992b4e04576eb77133fd60c137f3def5d775c96c55b23b4c41e11b4f49",
       "purpose": "Complete canonical index/reset regression, including ordered keys and declared collation options.",
       "adaptation": null
+    },
+    {
+      "path": "packaging/tests/seed-singleton-preservation-test.py",
+      "purpose": "Native/template singleton reimport preservation check using a disposable database on the existing monolith or KVM Mongo.",
+      "adaptation": null,
+      "sourceRevision": "cfa6c2cb368cdbaf187634886f9a8fce381e3dad",
+      "upstreamSha256": "95aada01e57a0207b20072e28a0c9b2ff85f04de3c4c8d5bf11ebb94b2f95b2e",
+      "sourceWorkingTree": true
     },
     {
       "path": "packaging/tests/tls-worker-test.sh",
@@ -4890,15 +5197,15 @@
     },
     {
       "path": "server/docker/conf/mongodb/mongo-seed-policy.inc",
-      "upstreamSha256": "6fb1d484a31099f6b86c01aa2fcf0ede0496f3efc361321e0015779ec31a20e9",
-      "sourceRevision": "37f5f708e",
+      "upstreamSha256": "ccd0c5883d15c54f93f890cd7f7d1c2f445136bb0d6dfa6a6342412dcb6863d2",
+      "sourceRevision": "cfa6c2cb368cdbaf187634886f9a8fce381e3dad",
       "purpose": "Native minimal integration storage, lifecycle and migration ownership.",
-      "adaptation": "Select minimal collection/index policy, including token/client/grant runtime indexes without seed rows; retain schema-5 insert-only configuration. Omit product versions, payment, Registry, affinity, community, subscriptions and webhook indexes. Selected the qualified core without Reports, Feedback or Support mutations; shared identity/chat models and required lifecycle remain."
+      "adaptation": "Select minimal collection/index policy, including token/client/grant runtime indexes without seed rows; retain schema-5 insert-only configuration and saved administrator settings. Omit product versions, payment, Registry, affinity, community, subscriptions and webhook indexes. Selected the qualified core without Reports, Feedback or Support mutations; shared identity/chat models and required lifecycle remain."
     },
     {
       "path": "server/docker/conf/mongodb/mongo_import.sh",
-      "sourceRevision": "0d23e240cd95695ac5621ae0a4cd18bce45f48db",
-      "upstreamSha256": "d05eb9c538b66f8506d173ea29c1efc4fc7a16ed93b33cb9a38dc752ead8e008",
+      "sourceRevision": "cfa6c2cb368cdbaf187634886f9a8fce381e3dad",
+      "upstreamSha256": "19d68bf8e059edc5ba56e090c8da9ab3ebde37f95f27ec3ab9a717c2a8788465",
       "purpose": "Shared native seed import engine, also used by MyScoutee without a template fork.",
       "adaptation": null
     },
@@ -5410,7 +5717,7 @@
       "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac",
       "upstreamSha256": "939c31c9f8590263a8755a9ff26341d3a0a198fdc4e83ffab9aec67274d3ffd9",
       "purpose": "Native durable notification delivery, inbox and chat transport support for the minimal application.",
-      "adaptation": "Retain native notification limits and account-purge window bounds without the product affinity catalog; configure purge days through users.account-purge-window-days (default 30, native allowed range 1–365)."
+      "adaptation": "Retain native notification limits and account-purge window bounds without the product affinity catalog; configure purge days through users.account-purge-window-days (default 30, native allowed range 1\u2013365)."
     },
     {
       "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/common/config/WebSecurityConfig.java",
@@ -5960,6 +6267,13 @@
       "adaptation": "Select the existing authenticated feedback/report routes in addition to retained minimal profile endpoints. Selected the qualified core without Reports, Feedback or Support mutations; shared identity/chat models and required lifecycle remain."
     },
     {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/controller/FacebookDataDeletionController.java",
+      "sourceRevision": "cfa6c2cb368cdbaf187634886f9a8fce381e3dad",
+      "upstreamSha256": "45198e078c1a69898ef320b3097f010f2b54ce602eb6f4ad194963dfd8e468b6",
+      "purpose": "Native signed provider-deletion callback and public confirmation status, using the retained account lifecycle.",
+      "adaptation": null
+    },
+    {
       "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/document/AccountPurgeJob.java",
       "upstreamSha256": "4d5fbbdcce67366101a8f8738f37601d08a554d0aa95c859ea35849b2ac63e40",
       "purpose": "Native member, consent, session, account deletion or personal chat model, including its required read interfaces.",
@@ -6101,10 +6415,11 @@
     },
     {
       "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/security/firebase/FirebaseFilter.java",
-      "sourceRevision": "3a477f3e96b9f39004fc6c02a61cad2830dcb08e",
-      "upstreamSha256": "6fe8e885064ba6929fc41e8985be7b7f07f0a5308b29f34fa847d8ee0988ced5",
-      "purpose": "Canonical WebSocket authentication and selected service transport renewal.",
-      "adaptation": null
+      "sourceRevision": "cfa6c2cb368cdbaf187634886f9a8fce381e3dad",
+      "upstreamSha256": "ce9929fd7b72d53dc504bf30af8cc0b47191bdadc30666f36a946e68d5cabb5d",
+      "purpose": "Native public-document and signed-provider callback session boundary; focused regression coverage in both repositories.",
+      "adaptation": null,
+      "sourceWorkingTree": true
     },
     {
       "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/security/firebase/FirebaseService.java",
@@ -6217,6 +6532,13 @@
       "sourceRevision": "bc9003efc252d37568c1fc0a13deeaa8f288e142",
       "upstreamSha256": "0a89a12b5307ad31b33cf4e97bc05ede780cddfa90197182e2ae60a77e65f673",
       "purpose": "Native five-day pre-purge account warning and its required configured email provider, rendering, unsubscribe and isolated tests. Promotional campaign/outbox/task models are not selected.",
+      "adaptation": null
+    },
+    {
+      "path": "server/projects/profile/src/main/java/com/raxim/myscoutee/domain/accounts/service/FacebookDataDeletionService.java",
+      "sourceRevision": "cfa6c2cb368cdbaf187634886f9a8fce381e3dad",
+      "upstreamSha256": "7ce9bb53a7e9e82f04c9b3c17aad691db550afa41eb2dc7e0a1ae1dbacb9fb25",
+      "purpose": "Native signed provider-deletion callback and public confirmation status, using the retained account lifecycle.",
       "adaptation": null
     },
     {
@@ -7843,7 +8165,8 @@
       "upstreamSha256": "8e13e8890f4346effb697f7f41bad3bfd8c894b6f509fe614cc0e312eeb56665",
       "purpose": "Use the native application profile selection, authentication session limit and STUN/configuration settings.",
       "adaptation": "Select implemented generic settings; API and update configuration will accompany their selected owners. Registry and payment configuration are omitted.",
-      "sourceRevision": "cfa26b923c515cc683ee329b38416d3e8f578d2a"
+      "sourceRevision": "cfa6c2cb368cdbaf187634886f9a8fce381e3dad",
+      "sourceWorkingTree": true
     },
     {
       "path": "server/projects/profile/src/main/resources/mongo-domain-types.properties",
@@ -7904,10 +8227,11 @@
     },
     {
       "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/accounts/security/firebase/FirebaseFilterPublicDocumentsTest.java",
-      "purpose": "Native regression coverage for public document reads after member logout; protected writes remain session-checked.",
-      "upstreamSha256": "fd27ff9046c2cd8d346dea0c2be5ee9d032db2411964b64b5ba50a1ce50a35b4",
+      "purpose": "Native public-document and signed-provider callback session boundary; focused regression coverage in both repositories.",
+      "upstreamSha256": "f141788b51f697d75cf085b031c2f12ae3a822f7da8916c03cb9bb88dc454bd3",
       "adaptation": null,
-      "sourceRevision": "2ab74dd8e8206652a42e52769e63db41aaae07ac"
+      "sourceRevision": "cfa6c2cb368cdbaf187634886f9a8fce381e3dad",
+      "sourceWorkingTree": true
     },
     {
       "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/accounts/security/firebase/FirebaseFilterWebSocketTest.java",
@@ -7954,6 +8278,13 @@
       "upstreamSha256": "279b059d91f3ac61ce176f4f576059fb0fa46ba52cd776f63be4e5c946face71",
       "purpose": "Native five-day pre-purge account warning and its required configured email provider, rendering, unsubscribe and isolated tests. Promotional campaign/outbox/task models are not selected.",
       "adaptation": "Use the retained deployment-scoped JobAudience instead of the unselected product GroupTestSupport fixture."
+    },
+    {
+      "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/accounts/service/FacebookDataDeletionServiceTest.java",
+      "sourceRevision": "cfa6c2cb368cdbaf187634886f9a8fce381e3dad",
+      "upstreamSha256": "21a265f0d9c94b218dfb10b3e2128d2f4e1e590054a289d3b5bb608c7682734a",
+      "purpose": "Native signed provider-deletion callback and public confirmation status, using the retained account lifecycle.",
+      "adaptation": null
     },
     {
       "path": "server/projects/profile/src/test/java/com/raxim/myscoutee/domain/accounts/service/HomeUserProfileServiceTest.java",
@@ -8353,247 +8684,6 @@
       "upstreamSha256": "4a513c43fc48a7ea877be3ee7052e0ec33cd01551125df83230aa1a2389d0a02",
       "purpose": "Shared release input/environment verification, exact artifact selection and existing Mongo index upgrade; project data stays selected separately.",
       "adaptation": null
-    },
-    {
-      "path": "frontend/src/app/home/components/home-header/home-header.component.scss",
-      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
-      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
-      "upstreamSha256": "eb1b8839ed6ef8789056c01097d415ae91c742859dfe91e007a277ae087b8d44",
-      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
-      "adaptation": null
-    },
-    {
-      "path": "frontend/src/app/home/components/home-header/home-header.component.ts",
-      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
-      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
-      "upstreamSha256": "4638c41cf526ae98a60fec46b906153476eb93efcb55575bb86d38b3f6025d7b",
-      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
-      "adaptation": null
-    },
-    {
-      "path": "frontend/src/app/entry/components/entry-page.component.html",
-      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
-      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
-      "upstreamSha256": "c795876283d0ae0ddab7bc47d329c7ed43df3c4caf24ec19f410d57608ce4700",
-      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
-      "adaptation": "Retained template selection of this native owner: minimal profile/role controls, image-only media surface, or product-independent shell/entry. No new alternate service or component engine. See templateOwnedFeatures for the selected consumers.",
-      "upstreamPath": "frontend/src/app/entry/components/entry-page/entry-page.component.html"
-    },
-    {
-      "path": "frontend/src/app/entry/components/entry-page.component.ts",
-      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
-      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
-      "upstreamSha256": "ac11645d55949fab2971e7cd7fe3a6a3a07759689554c4ce2138705bac06e55b",
-      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
-      "adaptation": "Retained template selection of this native owner: minimal profile/role controls, image-only media surface, or product-independent shell/entry. No new alternate service or component engine. See templateOwnedFeatures for the selected consumers.",
-      "upstreamPath": "frontend/src/app/entry/components/entry-page/entry-page.component.ts"
-    },
-    {
-      "path": "frontend/src/app/entry/components/entry-page.component.scss",
-      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
-      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
-      "upstreamSha256": "2e4a8e0cb30f211f7d97f4ad84f0cce7926f2cd0361a4b9cacb77e7e848c4e76",
-      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
-      "adaptation": "Retained template selection of this native owner: minimal profile/role controls, image-only media surface, or product-independent shell/entry. No new alternate service or component engine. See templateOwnedFeatures for the selected consumers.",
-      "upstreamPath": "frontend/src/app/entry/components/entry-page/entry-page.component.scss"
-    },
-    {
-      "path": "frontend/src/app/profile/components/settings-popups/settings-popups.component.html",
-      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
-      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
-      "upstreamSha256": "077d454885147d1d5ee8fecd51c3a574bd8d5b971b90637e9c3b04e074094f4a",
-      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
-      "adaptation": "Retained template selection of this native owner: minimal profile/role controls, image-only media surface, or product-independent shell/entry. No new alternate service or component engine. See templateOwnedFeatures for the selected consumers."
-    },
-    {
-      "path": "frontend/src/app/profile/components/settings-popups/settings-popups.component.ts",
-      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
-      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
-      "upstreamSha256": "56cfc9e6a610d5b387c00e182ef65c7512af9291372f9927bffd7feff54c2b32",
-      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
-      "adaptation": "Retained template selection of this native owner: minimal profile/role controls, image-only media surface, or product-independent shell/entry. No new alternate service or component engine. See templateOwnedFeatures for the selected consumers."
-    },
-    {
-      "path": "frontend/src/app/profile/components/settings-popups/settings-popups.component.scss",
-      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
-      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
-      "upstreamSha256": "185f1bd23a4b83e324051c74f3774b75125be6f369eca23f4cdac89b8f10c730",
-      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
-      "adaptation": null
-    },
-    {
-      "path": "frontend/src/app/profile/components/profile-editor/profile-editor.component.scss",
-      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
-      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
-      "upstreamSha256": "34b3d99b49e055a19cda745f3145c81bd130b5ad3f674b8404a7c84cf21d73bb",
-      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
-      "adaptation": "Retained template selection of this native owner: minimal profile/role controls, image-only media surface, or product-independent shell/entry. No new alternate service or component engine. See templateOwnedFeatures for the selected consumers."
-    },
-    {
-      "path": "frontend/src/app/profile/components/profile-editor/profile-editor.component.html",
-      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
-      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
-      "upstreamSha256": "9ed2ff4c2bdc7391091b2f50a81875a31ced970f67b1d091e24c0e18770996aa",
-      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
-      "adaptation": "Retained template selection of this native owner: minimal profile/role controls, image-only media surface, or product-independent shell/entry. No new alternate service or component engine. See templateOwnedFeatures for the selected consumers."
-    },
-    {
-      "path": "frontend/src/app/operator/components/operator-page/operator-page.component.html",
-      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
-      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
-      "upstreamSha256": "3492cee554d74c5b49be77b31c3f6945ff924a3cfeb219f3e4ca7f5c29344694",
-      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
-      "adaptation": "Retained template selection of this native owner: minimal profile/role controls, image-only media surface, or product-independent shell/entry. No new alternate service or component engine. See templateOwnedFeatures for the selected consumers."
-    },
-    {
-      "path": "frontend/src/app/operator/components/operator-page/operator-page.component.ts",
-      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
-      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
-      "upstreamSha256": "764dfb3cb482cdfb35c69870bd57f5a0e166c631814329246684bcfa6dab2c7c",
-      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
-      "adaptation": "Retained template selection of this native owner: minimal profile/role controls, image-only media surface, or product-independent shell/entry. No new alternate service or component engine. See templateOwnedFeatures for the selected consumers."
-    },
-    {
-      "path": "frontend/src/app/operator/components/operator-page/operator-page.component.scss",
-      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
-      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
-      "upstreamSha256": "46b993b01e8ba156a998d2de163e8947e778999864528fe9f8e85a27e5aa6c4c",
-      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
-      "adaptation": "Retained template selection of this native owner: minimal profile/role controls, image-only media surface, or product-independent shell/entry. No new alternate service or component engine. See templateOwnedFeatures for the selected consumers."
-    },
-    {
-      "path": "frontend/src/app/shared/core/base/services/media/media.service.ts",
-      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
-      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
-      "upstreamSha256": "b581b740440ac6b17819e7431bc3325066986dd9b2e0858802645dd34fccb124",
-      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
-      "adaptation": "Retained template selection of this native owner: minimal profile/role controls, image-only media surface, or product-independent shell/entry. No new alternate service or component engine. See templateOwnedFeatures for the selected consumers."
-    },
-    {
-      "path": "frontend/src/app/shared/core/local/source/services/notifications/role-notifications.service.ts",
-      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
-      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
-      "upstreamSha256": "b6faf52f238ce594d449e86fef63d94e22d391b0a266528c66302e71f01bc513",
-      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
-      "adaptation": "Retained template selection of this native owner: minimal profile/role controls, image-only media surface, or product-independent shell/entry. No new alternate service or component engine. See templateOwnedFeatures for the selected consumers."
-    },
-    {
-      "path": "frontend/src/app/shared/core/local/source/services/media/media.service.ts",
-      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
-      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
-      "upstreamSha256": "ca52c11eaab6121c76ad245ae5d859aa6f45bcdbbc6adc0fc73f566ec0414a1d",
-      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
-      "adaptation": "Retained template selection of this native owner: minimal profile/role controls, image-only media surface, or product-independent shell/entry. No new alternate service or component engine. See templateOwnedFeatures for the selected consumers."
-    },
-    {
-      "path": "frontend/src/app/shared/core/local/source/repositories/media/media.repository.ts",
-      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
-      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
-      "upstreamSha256": "cfa74ea60c94f2f0dc298c3173d29f8ce861cfdeed6b3ab4ce5d3406deb251d4",
-      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
-      "adaptation": null
-    },
-    {
-      "path": "frontend/src/app/shared/core/common/image-urls.ts",
-      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
-      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
-      "upstreamSha256": "38baea3c741897b5fbc9b6cd76b6a8e5ddfee7fd05c61a30154f7f381a92f977",
-      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
-      "adaptation": "Same availability/image/runtime contract with template-owned runtime path, cache identity or fixtures; no product-domain import."
-    },
-    {
-      "path": "frontend/src/app/shared/core/common/demo-failover.spec.ts",
-      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
-      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
-      "upstreamSha256": "369c1dd9a5f349badd993a222ca78e97744ad069668b1755b7ae40d352021beb",
-      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
-      "adaptation": "Same availability/image/runtime contract with template-owned runtime path, cache identity or fixtures; no product-domain import."
-    },
-    {
-      "path": "frontend/src/app/shared/core/common/demo-failover.ts",
-      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
-      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
-      "upstreamSha256": "2ac4ac210cd3d1108e8660e1aa84f325b263713824fe04eb7a38b3cf789155bf",
-      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
-      "adaptation": "Same availability/image/runtime contract with template-owned runtime path, cache identity or fixtures; no product-domain import."
-    },
-    {
-      "path": "frontend/src/app/shared/core/common/runtime-status.spec.ts",
-      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
-      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
-      "upstreamSha256": "b9297ea3598dad2ffb490ef4c83ab2456cc0b8d01b66ae6937d3f67e0988d3b0",
-      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
-      "adaptation": "Same availability/image/runtime contract with template-owned runtime path, cache identity or fixtures; no product-domain import."
-    },
-    {
-      "path": "frontend/src/app/shared/core/http/services/media/media.service.ts",
-      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
-      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
-      "upstreamSha256": "68e477fec371514d98e3061e02a197380c92a2f0dc99b74953de2e29b209af3e",
-      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
-      "adaptation": "Retained template selection of this native owner: minimal profile/role controls, image-only media surface, or product-independent shell/entry. No new alternate service or component engine. See templateOwnedFeatures for the selected consumers."
-    },
-    {
-      "path": "frontend/src/app/shared/core/http/interceptors/platform/connectivity.interceptor.ts",
-      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
-      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
-      "upstreamSha256": "3d7f0b6916de770b9f66ab444576a9e571fecc3229740dfc1211287df83796fb",
-      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
-      "adaptation": null
-    },
-    {
-      "path": "frontend/src/app/shared/ui/converters/profile/profile-header-card.converter.ts",
-      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
-      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
-      "upstreamSha256": "c73d22d0bdeb7696f902935b09cd26cf961273675612b41a98cb26f522839c73",
-      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
-      "adaptation": "Retained template selection of this native owner: minimal profile/role controls, image-only media surface, or product-independent shell/entry. No new alternate service or component engine. See templateOwnedFeatures for the selected consumers."
-    },
-    {
-      "path": "frontend/src/app/shared/ui/converters/chat/activity-chat-single-row.converter.ts",
-      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
-      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
-      "upstreamSha256": "bf5311e96b6eb58f9a4a13e77a4c229a09dbe9665a74774f91df6bc9e452465d",
-      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
-      "adaptation": "Retained template selection of this native owner: minimal profile/role controls, image-only media surface, or product-independent shell/entry. No new alternate service or component engine. See templateOwnedFeatures for the selected consumers."
-    },
-    {
-      "path": "frontend/src/app/shared/ui/converters/notification/notification-single-row.converter.spec.ts",
-      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
-      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
-      "upstreamSha256": "80f34be46f2499b3f4790d1c1779c782b0dd7335957d4a6a47998142cd4cb9aa",
-      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
-      "adaptation": "Retained template selection of this native owner: minimal profile/role controls, image-only media surface, or product-independent shell/entry. No new alternate service or component engine. See templateOwnedFeatures for the selected consumers."
-    },
-    {
-      "path": "frontend/src/app/shared/ui/context/stores/profile/profile.store.ts",
-      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
-      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
-      "upstreamSha256": "816bbc5b52c3ca821a3e3ecbec7ead3aa4d2404f5838e83e3aaa44640294410f",
-      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
-      "adaptation": "Retained template selection of this native owner: minimal profile/role controls, image-only media surface, or product-independent shell/entry. No new alternate service or component engine. See templateOwnedFeatures for the selected consumers."
-    },
-    {
-      "path": "frontend/src/app/shared/ui/components/side-menu/_navigator-avatar.scss",
-      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
-      "sourceFrontendRevision": "7c3d212640800c9b6547b854368e02c923971514",
-      "upstreamSha256": "c0351f447ee377abe615f38da4d62fff158f803188c45ca4d3eee53ed1cecb11",
-      "purpose": "Retained native frontend owner; provenance reconciled against actual source paths.",
-      "adaptation": null
-    },
-    {
-      "path": ".vscode/launch.json",
-      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
-      "upstreamSha256": "dfeacdd156ec5a3e69230ef3de33961335888da8856862952946c79851bab30b",
-      "purpose": "Native Java launch/attach and lightweight IDE settings; automatic builds remain disabled to preserve the existing runtime resource rule.",
-      "adaptation": null
-    },
-    {
-      "path": ".vscode/settings.json",
-      "sourceRevision": "3f17c29dcef03811fb8b733a4122d6cb4e5e7d2e",
-      "upstreamSha256": "075065fd3735e8d8ec708d3bd54a11b0e45c9ee6f12682a03327b3bbdab46260",
-      "purpose": "Native Java launch/attach and lightweight IDE settings; automatic builds remain disabled to preserve the existing runtime resource rule.",
-      "adaptation": null
     }
   ],
   "templateOwnedFeatures": [
@@ -8745,13 +8835,12 @@
   ],
   "inventoryReview": {
     "date": "2026-10-12",
-    "sourceEntries": 1193,
-    "javaFilesCovered": 370,
+    "sourceEntries": 1205,
+    "javaFilesCovered": 365,
     "frontendTsHtmlScssFilesCovered": 266,
     "unresolvedInternalJavaImports": 0,
     "assemblyAudit": "Existing microservices/tools/audit-assemblies.py; all twelve domains assigned to four owners.",
     "optionalInjection": "ProfileStatusWork.SupportMessages is @Autowired(required=false); nonempty retained support work fails without its owner and is not acknowledged. Other unbound injected API candidate sets are empty.",
-    "missingSelectedCapability": "Native FacebookDataDeletionController/Service not yet selected; config/security/DTO declarations alone do not implement the callback. Explicit task9.5.",
     "infrastructureConfiguration": {
       "seed": "mongo-seed-policy.inc and db_init.js",
       "localStore": "AppMemorySchema: users/contacts/chat/notifications/help/showcase; native IndexedDB engine",

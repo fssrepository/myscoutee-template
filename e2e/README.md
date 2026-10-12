@@ -105,3 +105,17 @@ For local VMware qualification use the existing SSH fixture transport only on
 `demo_db`; preserve the native and template installations' separate data.
 Shut down the VMware VM before starting the E2E stack. The same memory boundary
 applies to DEV and KVM: only one application deployment runs at a time.
+
+## Focused consent and outbox qualification
+
+`tools/run-backend-junit.sh embedded --tests '*ConsentRevisionRolloverPersistenceTest'`
+exercises the existing session-routed Mongo consent owners. The matching frontend
+entry cases are in `entry-page-consent.spec.ts`.
+
+With only the owned template KVM running, use
+`MYSCOUTEE_TEST_MONGO_TARGET=kvm python3 packaging/tests/push-outbox-runtime-test.py`.
+It uses the existing typed provider transport and a local receiver, verifies
+collapse, operation IDs and failure/restart/retry in REAL and DEMO, then restores
+the worker environment and rules. It refuses unowned pending outbox work and
+never sends to Firebase. Its private recovery snapshot remains under
+`.e2e-artifacts/fixtures` until cleanup completes.

@@ -77,7 +77,9 @@ class FirebaseFilterPublicDocumentsTest {
     @ValueSource(strings = {"/privacy/consents", "/api/privacy/consents", "/help/active/credentials",
             "/api/help/active/credentials", "/help/active", "/api/help/active", "/terms/active",
             "/api/terms/active", "/privacy/active", "/api/privacy/active", "/explanation/active",
-            "/api/explanation/active"})
+            "/api/explanation/active", "/auth/facebook/data-deletion/status",
+            "/api/auth/facebook/data-deletion/status", "/auth/facebook/data-deletion/credentials",
+            "/api/auth/facebook/data-deletion/credentials"})
     void publicReadExceptionDoesNotAdmitConsentWritesOrAdjacentRequests(String path) throws Exception {
         var sessions = mock(UserLoginSessionService.class);
         when(sessions.isCurrentUserEnrolled()).thenReturn(true);
@@ -91,6 +93,29 @@ class FirebaseFilterPublicDocumentsTest {
 
         assertThat(response.getStatus()).isEqualTo(401);
         verify(chain, never()).doFilter(request, response);
+    }
+
+    @ParameterizedTest
+    @ValueSource(strings = {"/auth/facebook/data-deletion", "/api/auth/facebook/data-deletion",
+            "/auth/facebook/data-deletion/status", "/api/auth/facebook/data-deletion/status"})
+    void providerDeletionDoesNotRequireAnAppSession(String path) throws Exception {
+        var users = mock(FirebaseService.class);
+        var sessions = mock(UserLoginSessionService.class);
+        var properties = new ConfigProperties();
+        properties.setFirebaseEnabled(false);
+        properties.setMemberUser("member@example.invalid");
+        when(users.loadUserByUsername(anyString(), any(), anyString()))
+                .thenReturn(new FirebasePrincipal("member", null, "U"));
+        when(sessions.isCurrentUserEnrolled()).thenReturn(true);
+        var request = new MockHttpServletRequest(path.endsWith("/status") ? "GET" : "POST", path);
+        var response = new MockHttpServletResponse();
+        var chain = mock(FilterChain.class);
+
+        filter(users, sessions, properties).doFilter(request, response, chain);
+
+        assertThat(response.getStatus()).isEqualTo(200);
+        verifyNoInteractions(users, sessions);
+        verify(chain).doFilter(request, response);
     }
 
     private void authenticateMember() {

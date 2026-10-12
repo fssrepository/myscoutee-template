@@ -225,10 +225,16 @@ public class FirebaseFilter extends OncePerRequestFilter {
                 && switch (requestUri) {
                     case "/help/active", "/privacy/active", "/terms/active", "/explanation/active",
                             "/api/help/active", "/api/privacy/active", "/api/terms/active",
-                            "/api/explanation/active" -> true;
+                            "/api/explanation/active", "/auth/facebook/data-deletion/status",
+                            "/api/auth/facebook/data-deletion/status" -> true;
                     default -> false;
                 };
-        return publicDocumentRead
+        // Meta authenticates this callback with signed_request in its owning
+        // service; it never has a browser login session or Firebase bearer token.
+        boolean signedProviderCallback = request != null && "POST".equals(request.getMethod())
+                && (requestUri.equals("/auth/facebook/data-deletion")
+                        || requestUri.equals("/api/auth/facebook/data-deletion"));
+        return publicDocumentRead || signedProviderCallback
                 || requestUri.matches("/(?:api/)?mcp/oauth/(?:metadata|resource|token|register)")
                 || requestUri.equals("/health")
                 || requestUri.equals("/api/health")

@@ -19,6 +19,9 @@ def uses_api(source, qualified):
     if re.search(r'\bimport\s+' + re.escape(qualified) + r'\s*;', source):
         spellings.append(simple)
     for name in spellings:
+        # Runtime method-policy annotations require the same owner/client bean.
+        if re.search(r'@' + re.escape(name) + r'\s*(?:\(|$)', source, flags=re.M):
+            return True
         if re.search(r'(?<![\w.])' + re.escape(name) + r'\s*\.\s*class\b', source):
             return True
         pattern = (r'(?<![\w.])' + re.escape(name)

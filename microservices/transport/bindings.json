@@ -235,6 +235,10 @@
           "method": "POST",
           "path": "/_internal/v1/access/permissions/requires-authenticated-actor"
         }
+      ],
+      "consumerApis": [
+        "com.raxim.myscoutee.domain.access.api.RequiresPolicy",
+        "com.raxim.myscoutee.domain.access.api.RequiresPolicies"
       ]
     },
     {
@@ -529,6 +533,14 @@
           "path": "/_internal/v1/chat/chat-queries/querymessagespage_3"
         }
       ]
+    },
+    {
+      "domain": "email",
+      "api": "EmailLinks",
+      "package": "email",
+      "configuration": "EmailLinks",
+      "propertyPrefix": "email-links",
+      "credential": "emailLinksToken"
     }
   ],
   "localBindings": [

@@ -160,7 +160,18 @@ public final class RemoteAccessPermissions extends RemoteReadTransport implement
         if (bytes.length > AccessPermissionsProtocol.MAX_REQUEST_BYTES) throw new IllegalArgumentException("Request exceeds limit");
         var authentication = SecurityContextHolder.getContext().getAuthentication();
         Map<String, String> headers = Map.of();
-        if (authentication != null && authentication.isAuthenticated()
+        // Media cookies are validated by the public authorization owner, but confer
+        // no account authority. Query the existing explicit-identity read policy;
+        // do not promote this credential into an account delegation.
+        boolean mediaRead = AccessPermissionsProtocol.CAN.equals(path)
+                && query instanceof AccessPermissionsProtocol.CanQuery decision
+                && "media.read".equals(decision.policyKey())
+                && authentication != null && authentication.isAuthenticated()
+                && authentication.getPrincipal() instanceof String mediaUser
+                && mediaUser.equals(decision.actorUserId()) && mediaUser.equals(decision.subjectUserId())
+                && authentication.getAuthorities().size() == 1
+                && authentication.getAuthorities().iterator().next().getAuthority().equals("MEDIA");
+        if (!mediaRead && authentication != null && authentication.isAuthenticated()
                 && !(authentication instanceof org.springframework.security.authentication.AnonymousAuthenticationToken)
                 && !(authentication instanceof com.raxim.myscoutee.microservices.transport.common.InternalReadCredentialFilter.ServiceAuthentication)) {
             headers = Map.of(ActorDelegation.HEADER, signer.issueForCurrent(AccessPermissionsProtocol.AUDIENCE, "POST", path, bytes));

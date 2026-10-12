@@ -1,0 +1,141 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "MyScoutee internal email link origin",
+    "version": "1.0.0",
+    "description": "Reads the existing EmailLinks.getBaseUrl() value from the email owner. Only this public URL is serialized; provider/API-key, sender, branding and scheduling configuration are excluded. Native null and blank values remain distinguishable from service failure. Both session modes use the canonical configured value. Bounded 16 KiB response, no fallback URL or automatic retries."
+  },
+  "paths": {
+    "/_internal/v1/email/base-url": {
+      "get": {
+        "operationId": "readEmailBaseUrl",
+        "security": [
+          {
+            "chatDirectoryRead": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "X-MyScoutee-Session-Mode",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REAL",
+                "DEMO"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Configured link origin, including native null/blank values",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "INVALID_SESSION_MODE or INVALID_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "UNAUTHORIZED: absent, duplicate or wrong read credential",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN: credential does not authorize another path or method",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Email configuration owner unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "chatDirectoryRead": {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "Dedicated internal group-media read credential of at least 256 random bits. Never distribute to browsers or put in URLs."
+      }
+    },
+    "schemas": {
+      "Result": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "resolved"
+        ],
+        "properties": {
+          "resolved": {
+            "const": true
+          },
+          "baseUrl": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "code"
+        ],
+        "properties": {
+          "code": {
+            "type": "string",
+            "enum": [
+              "INVALID_SESSION_MODE",
+              "UNAUTHORIZED",
+              "FORBIDDEN",
+              "EMAIL_LINKS_UNAVAILABLE"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

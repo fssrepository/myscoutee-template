@@ -1,0 +1,324 @@
+{
+  "target": "template-kvm",
+  "run": "qa-push-81cea42973644f0492b940920b99641e",
+  "provider": "local typed FirebasePushDelivery receiver",
+  "checks": {
+    "collapseAndOperationId": true,
+    "failedAttemptPersistsRetry": true,
+    "sameDurableItemsAfterRestart": true,
+    "completedOperationReplayDoesNotSendAgain": true,
+    "realDemoIsolation": true
+  },
+  "attempts": [
+    {
+      "topic": "qa-push-81cea42973644f0492b940920b99641e-REAL-collapse",
+      "attempt": 1,
+      "payload": {
+        "token": null,
+        "topic": "qa-push-81cea42973644f0492b940920b99641e-REAL-collapse",
+        "data": {
+          "url": "/home",
+          "recipientScope": "topic:qa-push-81cea42973644f0492b940920b99641e-REAL-collapse",
+          "type": "qa-push",
+          "productBrandingRevision": "0",
+          "productLogoUrl": "assets/logo/heart.webp",
+          "badge": "assets/logo/heart.webp",
+          "entityType": "qa",
+          "notification_title_key": "notification.kind.qa-push.title",
+          "fixture": "qa-push-81cea42973644f0492b940920b99641e",
+          "topicThreshold": "1",
+          "notification_message_key": "notification.kind.qa-push.message",
+          "body": "Owned test notification",
+          "productName": "MyScoutee",
+          "icon": "assets/logo/heart.webp",
+          "tag": "qa-push-81cea42973644f0492b940920b99641e-REAL-collapse",
+          "title": "Local outbox qualification",
+          "entityId": "qa-push-81cea42973644f0492b940920b99641e-REAL-collapse"
+        },
+        "webPush": {
+          "title": "Local outbox qualification",
+          "body": "Owned test notification",
+          "icon": "assets/logo/heart.webp",
+          "badge": "assets/logo/heart.webp",
+          "tag": "qa-push-81cea42973644f0492b940920b99641e-REAL-collapse",
+          "timestampMillis": 1791810750445,
+          "urgency": "normal",
+          "link": "/home"
+        }
+      },
+      "mode": "REAL"
+    },
+    {
+      "topic": "qa-push-81cea42973644f0492b940920b99641e-DEMO-collapse",
+      "attempt": 1,
+      "payload": {
+        "token": null,
+        "topic": "qa-push-81cea42973644f0492b940920b99641e-DEMO-collapse",
+        "data": {
+          "url": "/home",
+          "recipientScope": "topic:qa-push-81cea42973644f0492b940920b99641e-DEMO-collapse",
+          "type": "qa-push",
+          "productBrandingRevision": "0",
+          "productLogoUrl": "assets/logo/heart.webp",
+          "badge": "assets/logo/heart.webp",
+          "entityType": "qa",
+          "notification_title_key": "notification.kind.qa-push.title",
+          "fixture": "qa-push-81cea42973644f0492b940920b99641e",
+          "topicThreshold": "1",
+          "notification_message_key": "notification.kind.qa-push.message",
+          "body": "Owned test notification",
+          "productName": "MyScoutee",
+          "icon": "assets/logo/heart.webp",
+          "tag": "qa-push-81cea42973644f0492b940920b99641e-DEMO-collapse",
+          "title": "Local outbox qualification",
+          "entityId": "qa-push-81cea42973644f0492b940920b99641e-DEMO-collapse"
+        },
+        "webPush": {
+          "title": "Local outbox qualification",
+          "body": "Owned test notification",
+          "icon": "assets/logo/heart.webp",
+          "badge": "assets/logo/heart.webp",
+          "tag": "qa-push-81cea42973644f0492b940920b99641e-DEMO-collapse",
+          "timestampMillis": 1791810750464,
+          "urgency": "normal",
+          "link": "/home"
+        }
+      },
+      "mode": "DEMO"
+    },
+    {
+      "topic": "qa-push-81cea42973644f0492b940920b99641e-REAL-once",
+      "attempt": 1,
+      "payload": {
+        "token": null,
+        "topic": "qa-push-81cea42973644f0492b940920b99641e-REAL-once",
+        "data": {
+          "url": "/home",
+          "recipientScope": "topic:qa-push-81cea42973644f0492b940920b99641e-REAL-once",
+          "type": "qa-push",
+          "productBrandingRevision": "0",
+          "productLogoUrl": "assets/logo/heart.webp",
+          "badge": "assets/logo/heart.webp",
+          "entityType": "qa",
+          "notification_title_key": "notification.kind.qa-push.title",
+          "fixture": "qa-push-81cea42973644f0492b940920b99641e",
+          "topicThreshold": "1",
+          "notification_message_key": "notification.kind.qa-push.message",
+          "body": "Owned test notification",
+          "productName": "MyScoutee",
+          "icon": "assets/logo/heart.webp",
+          "tag": "qa-push-81cea42973644f0492b940920b99641e-REAL-once",
+          "title": "Local outbox qualification",
+          "entityId": "qa-push-81cea42973644f0492b940920b99641e-REAL-once"
+        },
+        "webPush": {
+          "title": "Local outbox qualification",
+          "body": "Owned test notification",
+          "icon": "assets/logo/heart.webp",
+          "badge": "assets/logo/heart.webp",
+          "tag": "qa-push-81cea42973644f0492b940920b99641e-REAL-once",
+          "timestampMillis": 1791810750491,
+          "urgency": "normal",
+          "link": "/home"
+        }
+      },
+      "mode": "REAL"
+    },
+    {
+      "topic": "qa-push-81cea42973644f0492b940920b99641e-DEMO-once",
+      "attempt": 1,
+      "payload": {
+        "token": null,
+        "topic": "qa-push-81cea42973644f0492b940920b99641e-DEMO-once",
+        "data": {
+          "url": "/home",
+          "recipientScope": "topic:qa-push-81cea42973644f0492b940920b99641e-DEMO-once",
+          "type": "qa-push",
+          "productBrandingRevision": "0",
+          "productLogoUrl": "assets/logo/heart.webp",
+          "badge": "assets/logo/heart.webp",
+          "entityType": "qa",
+          "notification_title_key": "notification.kind.qa-push.title",
+          "fixture": "qa-push-81cea42973644f0492b940920b99641e",
+          "topicThreshold": "1",
+          "notification_message_key": "notification.kind.qa-push.message",
+          "body": "Owned test notification",
+          "productName": "MyScoutee",
+          "icon": "assets/logo/heart.webp",
+          "tag": "qa-push-81cea42973644f0492b940920b99641e-DEMO-once",
+          "title": "Local outbox qualification",
+          "entityId": "qa-push-81cea42973644f0492b940920b99641e-DEMO-once"
+        },
+        "webPush": {
+          "title": "Local outbox qualification",
+          "body": "Owned test notification",
+          "icon": "assets/logo/heart.webp",
+          "badge": "assets/logo/heart.webp",
+          "tag": "qa-push-81cea42973644f0492b940920b99641e-DEMO-once",
+          "timestampMillis": 1791810750491,
+          "urgency": "normal",
+          "link": "/home"
+        }
+      },
+      "mode": "DEMO"
+    },
+    {
+      "topic": "qa-push-81cea42973644f0492b940920b99641e-REAL-collapse",
+      "attempt": 2,
+      "payload": {
+        "token": null,
+        "topic": "qa-push-81cea42973644f0492b940920b99641e-REAL-collapse",
+        "data": {
+          "recipientScope": "topic:qa-push-81cea42973644f0492b940920b99641e-REAL-collapse",
+          "type": "qa-push",
+          "productBrandingRevision": "0",
+          "productLogoUrl": "assets/logo/heart.webp",
+          "badge": "assets/logo/heart.webp",
+          "entityType": "qa",
+          "notification_title_key": "notification.kind.qa-push.title",
+          "fixture": "qa-push-81cea42973644f0492b940920b99641e",
+          "topicThreshold": "1",
+          "notification_message_key": "notification.kind.qa-push.message",
+          "body": "Owned test notification",
+          "productName": "MyScoutee",
+          "icon": "assets/logo/heart.webp",
+          "tag": "qa-push-81cea42973644f0492b940920b99641e-REAL-collapse",
+          "title": "Local outbox qualification",
+          "entityId": "qa-push-81cea42973644f0492b940920b99641e-REAL-collapse",
+          "url": "/home"
+        },
+        "webPush": {
+          "title": "Local outbox qualification",
+          "body": "Owned test notification",
+          "icon": "assets/logo/heart.webp",
+          "badge": "assets/logo/heart.webp",
+          "tag": "qa-push-81cea42973644f0492b940920b99641e-REAL-collapse",
+          "timestampMillis": 1791810763197,
+          "urgency": "normal",
+          "link": "/home"
+        }
+      },
+      "mode": "REAL"
+    },
+    {
+      "topic": "qa-push-81cea42973644f0492b940920b99641e-DEMO-collapse",
+      "attempt": 2,
+      "payload": {
+        "token": null,
+        "topic": "qa-push-81cea42973644f0492b940920b99641e-DEMO-collapse",
+        "data": {
+          "recipientScope": "topic:qa-push-81cea42973644f0492b940920b99641e-DEMO-collapse",
+          "type": "qa-push",
+          "productBrandingRevision": "0",
+          "productLogoUrl": "assets/logo/heart.webp",
+          "badge": "assets/logo/heart.webp",
+          "entityType": "qa",
+          "notification_title_key": "notification.kind.qa-push.title",
+          "fixture": "qa-push-81cea42973644f0492b940920b99641e",
+          "topicThreshold": "1",
+          "notification_message_key": "notification.kind.qa-push.message",
+          "body": "Owned test notification",
+          "productName": "MyScoutee",
+          "icon": "assets/logo/heart.webp",
+          "tag": "qa-push-81cea42973644f0492b940920b99641e-DEMO-collapse",
+          "title": "Local outbox qualification",
+          "entityId": "qa-push-81cea42973644f0492b940920b99641e-DEMO-collapse",
+          "url": "/home"
+        },
+        "webPush": {
+          "title": "Local outbox qualification",
+          "body": "Owned test notification",
+          "icon": "assets/logo/heart.webp",
+          "badge": "assets/logo/heart.webp",
+          "tag": "qa-push-81cea42973644f0492b940920b99641e-DEMO-collapse",
+          "timestampMillis": 1791810763188,
+          "urgency": "normal",
+          "link": "/home"
+        }
+      },
+      "mode": "DEMO"
+    },
+    {
+      "topic": "qa-push-81cea42973644f0492b940920b99641e-REAL-once",
+      "attempt": 2,
+      "payload": {
+        "token": null,
+        "topic": "qa-push-81cea42973644f0492b940920b99641e-REAL-once",
+        "data": {
+          "recipientScope": "topic:qa-push-81cea42973644f0492b940920b99641e-REAL-once",
+          "type": "qa-push",
+          "productBrandingRevision": "0",
+          "productLogoUrl": "assets/logo/heart.webp",
+          "badge": "assets/logo/heart.webp",
+          "entityType": "qa",
+          "notification_title_key": "notification.kind.qa-push.title",
+          "fixture": "qa-push-81cea42973644f0492b940920b99641e",
+          "topicThreshold": "1",
+          "notification_message_key": "notification.kind.qa-push.message",
+          "body": "Owned test notification",
+          "productName": "MyScoutee",
+          "icon": "assets/logo/heart.webp",
+          "tag": "qa-push-81cea42973644f0492b940920b99641e-REAL-once",
+          "title": "Local outbox qualification",
+          "entityId": "qa-push-81cea42973644f0492b940920b99641e-REAL-once",
+          "url": "/home"
+        },
+        "webPush": {
+          "title": "Local outbox qualification",
+          "body": "Owned test notification",
+          "icon": "assets/logo/heart.webp",
+          "badge": "assets/logo/heart.webp",
+          "tag": "qa-push-81cea42973644f0492b940920b99641e-REAL-once",
+          "timestampMillis": 1791810763230,
+          "urgency": "normal",
+          "link": "/home"
+        }
+      },
+      "mode": "REAL"
+    },
+    {
+      "topic": "qa-push-81cea42973644f0492b940920b99641e-DEMO-once",
+      "attempt": 2,
+      "payload": {
+        "token": null,
+        "topic": "qa-push-81cea42973644f0492b940920b99641e-DEMO-once",
+        "data": {
+          "recipientScope": "topic:qa-push-81cea42973644f0492b940920b99641e-DEMO-once",
+          "type": "qa-push",
+          "productBrandingRevision": "0",
+          "productLogoUrl": "assets/logo/heart.webp",
+          "badge": "assets/logo/heart.webp",
+          "entityType": "qa",
+          "notification_title_key": "notification.kind.qa-push.title",
+          "fixture": "qa-push-81cea42973644f0492b940920b99641e",
+          "topicThreshold": "1",
+          "notification_message_key": "notification.kind.qa-push.message",
+          "body": "Owned test notification",
+          "productName": "MyScoutee",
+          "icon": "assets/logo/heart.webp",
+          "tag": "qa-push-81cea42973644f0492b940920b99641e-DEMO-once",
+          "title": "Local outbox qualification",
+          "entityId": "qa-push-81cea42973644f0492b940920b99641e-DEMO-once",
+          "url": "/home"
+        },
+        "webPush": {
+          "title": "Local outbox qualification",
+          "body": "Owned test notification",
+          "icon": "assets/logo/heart.webp",
+          "badge": "assets/logo/heart.webp",
+          "tag": "qa-push-81cea42973644f0492b940920b99641e-DEMO-once",
+          "timestampMillis": 1791810763234,
+          "urgency": "normal",
+          "link": "/home"
+        }
+      },
+      "mode": "DEMO"
+    }
+  ],
+  "cleanup": true,
+  "task": "11.4",
+  "status": "DONE",
+  "date": "2026-10-12",
+  "templateRevision": "b183b83ce4cc102853dd9687e11abf09b501d4fd",
+  "scope": "Deployed KVM worker and MongoDB; local typed delivery receiver. Live FCM activation/browser push remains in the separate live-provider checklist."
+}

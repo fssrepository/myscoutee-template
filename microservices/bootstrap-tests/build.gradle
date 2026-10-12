@@ -27,6 +27,7 @@ sourceSets.test.java {
     include 'com/raxim/myscoutee/domain/localization/service/DBMessageSource.java'
     include 'com/raxim/myscoutee/domain/localization/document/**'
     include 'com/raxim/myscoutee/domain/localization/repository/**'
+    include 'com/raxim/myscoutee/domain/email/config/EmailProperties.java'
 }
 
 dependencies {

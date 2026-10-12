@@ -1,5 +1,6 @@
 """Project isolation checks; no host/VM/database mutations."""
 import copy
+import json
 from pathlib import Path
 import tempfile
 import unittest
@@ -10,6 +11,10 @@ import workloads
 
 
 class RuntimeConfigTest(unittest.TestCase):
+    def test_runtime_reports_the_product_release_version(self):
+        package = json.loads((Path(__file__).resolve().parents[2] / 'frontend/package.json').read_text())
+        self.assertEqual(runtime.CONFIG['environment']['MYSCOUTEE_VERSION'], package['version'])
+
     def test_state_cannot_escape_or_select_an_absolute_host_path(self):
         for value in ('/var/lib/libvirt', '../other', 'lab/../../other', ''):
             with self.subTest(value=value):

@@ -39,7 +39,7 @@
         "src/app/shared/ui/context/ui.providers.ts": "52463f8c15db9acbaa3c143a89a543cd8adf258fc9958b4bfc235795493a1aca"
       }
     },
-    "postQualificationEdits": "Task checklist, source inventory, unchanged native IDE settings and version metadata only; no new application behavior or repeat runtime-suite claim."
+    "postQualificationEdits": "Checklist, provenance, IDE/version metadata; subsequent seed-preservation and chat timestamp changes have separate task-7.3 evidence. The recorded UI runs are not repeated or claimed for later edits."
   },
   "runtime": {
     "baseUrl": "https://127.0.0.1",
