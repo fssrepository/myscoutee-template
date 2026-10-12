@@ -1,5 +1,5 @@
 [submodule "frontend"]
 	path = frontend
-	url = ./tools/sources/frontend.bundle
+	url = https://github.com/fssrepository/myscoutee-template-frontend.git
 	branch = master
 	update = checkout
