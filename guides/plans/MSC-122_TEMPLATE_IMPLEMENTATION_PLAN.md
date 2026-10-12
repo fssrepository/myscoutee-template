@@ -8,6 +8,26 @@ It continues the source-separation work documented in
 Update this file as work progresses; keep detailed test results in
 [`../qualification/evidence`](../qualification/evidence).
 
+## Live execution pointer — 2026-10-12, 11:40 CEST
+
+**Current numbered gate: 14 — frontend foundation and HTTP/local behavior.**
+The retained UI corrections also exercise steps 15–20. This is not a claim that
+all earlier numbered requirements or all of steps 15–20 are complete. Every
+numbered item and its existing subrequirements below remain in force.
+
+| Order now authorized by the user | Exact current status |
+| --- | --- |
+| 14, with retained surfaces from 15–20 | DEV/HTTP loading checks passed for member/admin/operator profiles and saves; chat uses the native line indicator. Landing layout passed at 320/393/768/1440 px. Automatic local failover, lists, chat and persisted local messages passed. The expanded local role-change/reload check exposed a bootstrap-mode defect; repair and retest remain open. |
+| 21–24 | Next: selected tests, mini functional E2E and matched stress measurement on the corrected source. Earlier recorded PASS results remain historical and do not qualify this new batch. |
+| 25 | Then repeat KVM qualification, serially after stopping the monolith. |
+| 26 | Verify the matching production Docker artifacts before installed testing. |
+| 27 | VMware is deferred until the user starts the guest after the KVM repeat. Do not reinstall DEBs during the current DEV correction pass. |
+| 28–31 | Signed release, publication, documentation/PDF and final acceptance remain open. Final Git squashing/tagging uses `[MSC-122]` and force-with-lease as authorized; DEBs are uploaded by the user. |
+
+This pointer changes execution order only. No requirement in steps 1–31 is
+removed, silently marked passed, or replaced by this summary. Read each item's
+remaining gates and its linked evidence when reaching it.
+
 ## Delivery contract
 
 Deliver a complete, standalone, minimal counterpart of `myscoutee-backend` from
@@ -789,10 +809,11 @@ administrators, social links, payment, Firebase, email; omit payment only.
     seed selections and deployment paths at the existing MyScoutee owners first
     when their current inputs cannot already express the template. Copy the
     qualified shared helper, rather than forking its complete implementation.
-    **Current execution order (user instruction, 2026-10-12): local VMware
-    testing is now authorized using the existing guest. Preserve its current
-    MyScoutee deployment before switching stacks. Continue independent release,
-    documentation and final checks; provide the template browser URL afterwards.**
+    **Current execution order (latest user instruction, 2026-10-12): finish
+    DEV/frontend-local qualification, run mini E2E and stress, then repeat KVM.
+    VMware follows when the user starts the existing guest. Its installation,
+    backup/restore and browser acceptance requirements remain open and unchanged.
+    Preserve its MyScoutee deployment before switching stacks.**
     Perform installation qualification only on a local VMware Debian VM: fresh
     install, restart, backup/restore and data-preserving removal. Reuse the existing
     installation workflow and prepare this same VMware deployment for the final
@@ -874,6 +895,15 @@ administrators, social links, payment, Firebase, email; omit payment only.
     delegate unfinished functional testing to the user.
 
 ## Current continuation point
+
+**Resume at step 14 using the live execution pointer at the top of this file.**
+The current DEV correction batch is newer than the qualification results below.
+Close the local role-change/reload defect and retained loading checks first, then
+continue with 21–24, 25, 26 and the user-started VMware gate in 27. The earlier
+results below remain evidence for their named revisions, not an automatic PASS
+for the corrected working tree.
+
+### Previous qualified baseline
 
 Template KVM Helm 6 passed the 17 backend cases, personal-chat lifecycle,
 two consecutive audio/video calls (including a 35-second call across delegated
