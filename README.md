@@ -17,7 +17,7 @@ The active, numbered work plan is
 [`MSC-122 Template Implementation Plan`](guides/plans/MSC-122_TEMPLATE_IMPLEMENTATION_PLAN.md).
 It tracks the complete minimal framework, including frontend local/HTTP,
 dev/prod/E2E, functional and stress tests, KVM, installation, signed updates and
-GitHub release/image/Pages publication. The initial release version is **1.0.0**.
+GitHub release/image/Pages publication. The initial release version is **1.4.0**.
 
 **Current status:** the minimal local/HTTP frontend, monolith and four-service KVM
 application are implemented. Automated checks cover identity/consent, visual

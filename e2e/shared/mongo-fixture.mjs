@@ -18,6 +18,18 @@ export async function runE2eMongo(ctx, evalScript) {
     ?? process.env.MONGO_E2E_DATABASE
     ?? 'e2e_db';
   const transport = process.env.E2E_MONGO_TRANSPORT ?? 'docker';
+  if (transport === 'ssh') {
+    // Installed local-VM qualification uses the same fixture through the
+    // release client's SSH transport. The helper permits DEMO data only.
+    const helper = fileURLToPath(new URL('./mongo-fixture-ssh.sh', import.meta.url));
+    const execution = execFileAsync('bash', [helper, dbName], {
+      timeout: Number(process.env.E2E_FIXTURE_TIMEOUT_MS ?? 30000),
+      maxBuffer: 1024 * 1024
+    });
+    execution.child.stdin.on('error', error => { if (error.code !== 'EPIPE') execution.child.kill(); });
+    execution.child.stdin.end(evalScript);
+    return execution;
+  }
   if (transport === 'kvm') {
     // The owned lab helper validates the namespace and permits its DEMO DB only.
     // Send fixture code through stdin, never credentials or a second DB server.
@@ -39,7 +51,7 @@ export async function runE2eMongo(ctx, evalScript) {
       child.stdin.end(evalScript);
     });
   }
-  if (transport !== 'docker') throw new Error('E2E_MONGO_TRANSPORT must be docker or kvm.');
+  if (transport !== 'docker') throw new Error('E2E_MONGO_TRANSPORT must be docker, kvm or ssh.');
   if (process.env.E2E_MONGO_USE_CONTAINER_CREDENTIALS === 'true') {
     // Production-image qualification has generated credentials. Resolve those
     // inside the explicitly selected container; never copy them into host args

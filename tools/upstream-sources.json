@@ -22,10 +22,10 @@
     },
     {
       "path": "e2e/functional/ui/lib/chrome-cdp.mjs",
-      "upstreamSha256": "f6b8545f62c8bfd6b7ac272c60c7c158038cbc002d22e84c086ceff3dca43d08",
-      "purpose": "Native fixture-only generated-credential and TLS support, qualified against disposable production images.",
+      "upstreamSha256": "f95718c2a4b781082166045e04731039a8d7fc02c75fd73ff85296a9845d3f1a",
+      "purpose": "Attach existing UI flow tests to the versioned launcher visible browser sessions under explicit user full-flow delegation.",
       "adaptation": null,
-      "sourceRevision": "77e461e9aac502c808f6826d258c01d96b6fa744",
+      "sourceRevision": "2751ea8616ab249dbd61c467cf19d5b72e8a2788",
       "sourceFrontendRevision": null
     },
     {
@@ -58,9 +58,9 @@
     },
     {
       "path": "e2e/shared/mongo-fixture.mjs",
-      "sourceRevision": "77e461e9aac502c808f6826d258c01d96b6fa744",
-      "upstreamSha256": "e63166a409ae5d7842164285cc5dac454db6f1ba061ad90d1961e5b08cd35b13",
-      "purpose": "Native fixture-only generated-credential and TLS support, qualified against disposable production images.",
+      "sourceRevision": "f9a911166ee6de4206dd6be343a50ed820c8544d",
+      "upstreamSha256": "850911e3f47a5dff21616e65e8e45b10989bd49444e8bf3df48608f5eed67a85",
+      "purpose": "Existing release-client SSH transport for owned DEMO fixtures on the authorized local VMware guest; no production database.",
       "adaptation": null
     },
     {
@@ -4291,15 +4291,15 @@
     {
       "path": "packaging/compose/docker-compose.production.yml",
       "upstreamSha256": "52ce3058990d7a13017852fd41dfff27313bd45b26ce68d4a05b5abc8d4e7f69",
-      "sourceRevision": "7385fa358f3c051427cea62cf8212d2257d5138b",
-      "purpose": "Selected production deployment data.",
-      "adaptation": "Retain identity/chat framework, nginx, MongoDB, Redis, MinIO, MCP and STUN; project-owned images, host paths and repository; omit product Registry/payment configuration."
+      "sourceRevision": "bca195a1736a05995a046849c20c8b32bc56e508",
+      "purpose": "Complete DEV-to-installed runtime input coverage and exact release JAR selection.",
+      "adaptation": "Selected template services, paths and version; retains the native production input and STUN contracts."
     },
     {
       "path": "packaging/debian/postinst",
-      "sourceRevision": "8ceb635bc2860029699faef48210c503e9826b99",
-      "upstreamSha256": "46ea1b2f792bac52f60cef01295b7038a9b772db67aba38f47d9732acfba4707",
-      "purpose": "Shared package lifecycle, artifact audit, selected host operations or their focused regression checks.",
+      "sourceRevision": "aa2371c94bca3ba351e50e77821888fcb4e076d0",
+      "upstreamSha256": "31563a4cefab4ddc302c36ab5fb1f551934c501e982738a84a9913b01a6049a5",
+      "purpose": "Shared release input/environment verification, exact artifact selection and existing Mongo index upgrade; project data stays selected separately.",
       "adaptation": null
     },
     {
@@ -4339,23 +4339,23 @@
     },
     {
       "path": "packaging/release/build-production.sh",
-      "upstreamSha256": "44d46642e028038b0cf71a4beaaa1522ef5c1a5e0ab878936f67942ce7430976",
-      "sourceRevision": "7385fa358f3c051427cea62cf8212d2257d5138b",
-      "purpose": "Shared production build, complete release signatures, privileged update boundary or browser qualification support.",
+      "upstreamSha256": "2086922250cc735a147ead7b8e0df1960c2ffbc0dd9a1fec4d720715b7ed7eda",
+      "sourceRevision": "aa2371c94bca3ba351e50e77821888fcb4e076d0",
+      "purpose": "Shared release input/environment verification, exact artifact selection and existing Mongo index upgrade; project data stays selected separately.",
       "adaptation": null
     },
     {
       "path": "packaging/release/package-client-tools.sh",
-      "sourceRevision": "07900770b89bed410b48a0e320b5e56bc4f65c31",
-      "upstreamSha256": "f82da207274446bbeaf30909a5f9e29805f1d59c9b60b3550a11d465ee6bceed",
-      "purpose": "Native shared client packaging, external deployment checks or load measurement engine. Product context/data selected separately.",
+      "sourceRevision": "aa2371c94bca3ba351e50e77821888fcb4e076d0",
+      "upstreamSha256": "cd070840ef58ff86bd9a10f2bb91c62031f7f1bade05454d072b56a952ecfd62",
+      "purpose": "Shared release input/environment verification, exact artifact selection and existing Mongo index upgrade; project data stays selected separately.",
       "adaptation": null
     },
     {
       "path": "packaging/release/package-production.sh",
-      "sourceRevision": "25bd81ff4fce8e3f89d43efcee7a4713b7392fe9",
-      "upstreamSha256": "f9b4664809c7122389cd92d6bc0695087607c5c4a50a6973a6b4ad2423e3f872",
-      "purpose": "Shared package lifecycle, artifact audit, selected host operations or their focused regression checks.",
+      "sourceRevision": "aa2371c94bca3ba351e50e77821888fcb4e076d0",
+      "upstreamSha256": "a36a5a492c319a08722ced7ed4679080047ab228963b8e1084e8da903fbb159b",
+      "purpose": "Shared release input/environment verification, exact artifact selection and existing Mongo index upgrade; project data stays selected separately.",
       "adaptation": null
     },
     {
@@ -4584,9 +4584,9 @@
     },
     {
       "path": "packaging/tests/install-policy-test.py",
-      "sourceRevision": "8ceb635bc2860029699faef48210c503e9826b99",
-      "upstreamSha256": "76b728deb5c06903065448af4bf04cdacee2c0d22c1e4b9d8cae6cbdbc2efe84",
-      "purpose": "Shared package lifecycle, artifact audit, selected host operations or their focused regression checks.",
+      "sourceRevision": "aa2371c94bca3ba351e50e77821888fcb4e076d0",
+      "upstreamSha256": "a46b576c2c482a99c28f99299faeba5aa1e6b4584bb47db8b90dc1fd70eba9af",
+      "purpose": "Shared release input/environment verification, exact artifact selection and existing Mongo index upgrade; project data stays selected separately.",
       "adaptation": null
     },
     {
@@ -4675,18 +4675,18 @@
     },
     {
       "path": "server/docker-compose-dev.yml",
-      "upstreamSha256": "89eb73f98a2e30086455f66547987d596df662bf04f7fcd0ec71b0b9bee72984",
-      "purpose": "Selected native dev gateway, frontend watch/sync, availability lease, localization generator/audit or browser qualification support.",
-      "adaptation": "Template-owned service composition, retained routes, localization selection or product audit inventory.",
-      "sourceRevision": "bd81ab0c1",
+      "upstreamSha256": "0bd9f88d976c0bffeb15232c116ad202f14c69102f7f3ab2472c7d2e37e2808a",
+      "purpose": "Complete DEV-to-installed runtime input coverage and exact release JAR selection.",
+      "adaptation": "Retained template services, project identity/version and selected indexes only; DEV/PROD/E2E configuration probes verify the same wiring contract.",
+      "sourceRevision": "aa2371c94bca3ba351e50e77821888fcb4e076d0",
       "sourceFrontendRevision": null
     },
     {
       "path": "server/docker-compose-prod.yml",
-      "sourceRevision": "7385fa358f3c051427cea62cf8212d2257d5138b",
-      "upstreamSha256": "11a8066baaa120353b3052419bc32570fa3fd7f0ee595663ec46b1c4828e185a",
-      "purpose": "Selected production deployment data.",
-      "adaptation": "Retain identity/chat framework, nginx, MongoDB, Redis, MinIO, MCP and STUN; project-owned images, host paths and repository; omit product Registry/payment configuration."
+      "sourceRevision": "aa2371c94bca3ba351e50e77821888fcb4e076d0",
+      "upstreamSha256": "6499c71dc69b0d0342407bcac05297de77ec18ab85c7e9eb39793f02b781ba10",
+      "purpose": "Complete DEV-to-installed runtime input coverage and exact release JAR selection.",
+      "adaptation": "Retained template services, project identity/version and selected indexes only; DEV/PROD/E2E configuration probes verify the same wiring contract."
     },
     {
       "path": "server/docker-compose-stun.yml",
@@ -4697,10 +4697,10 @@
     },
     {
       "path": "server/docker-compose.e2e.yml",
-      "sourceRevision": "094af314889106cd193a4058110312c40dee9ebc",
-      "upstreamSha256": "8a9378ec8e05980d6db09b5315a89698e9cdd8ffa3d0c1daa4f16d5200eeb84b",
+      "sourceRevision": "aa2371c94bca3ba351e50e77821888fcb4e076d0",
+      "upstreamSha256": "8b45237257a27de4c32b2d3d7d4f59d47b13834db103d118ea8560c1dd0e5363",
       "purpose": "Native e2e application/backing-service composition.",
-      "adaptation": "Retain selected Mongo, Redis, MinIO, Java, nginx, MCP and STUN services with template-owned image/container/project/volume identity. Disposable e2e_db and E2E-only credentials; built artifacts, no source mounts/watchers. Registry/payment excluded."
+      "adaptation": "Retained template services, project identity/version and selected indexes only; DEV/PROD/E2E configuration probes verify the same wiring contract."
     },
     {
       "path": "server/docker-compose.replicaset.yml",
@@ -4725,10 +4725,10 @@
     },
     {
       "path": "server/docker/conf/mongodb/db_init.js",
-      "sourceRevision": "37f5f708e",
-      "upstreamSha256": "0088d14b5968ab50a8e60d40f9493cac02096570b78e36c1886b21a0ae0a0c3c",
+      "sourceRevision": "aa2371c94bca3ba351e50e77821888fcb4e076d0",
+      "upstreamSha256": "9739cabd17c859468182531418a451d834651ef10bc4dbd3f92846813eda2b81",
       "purpose": "Native minimal integration storage, lifecycle and migration ownership.",
-      "adaptation": "Select retained account/chat/help/notification/platform/integration collections and indexes; omit product collections and unused host-tier index. Selected the qualified core without Reports, Feedback or Support mutations; shared identity/chat models and required lifecycle remain."
+      "adaptation": "Retained template services, project identity/version and selected indexes only; DEV/PROD/E2E configuration probes verify the same wiring contract."
     },
     {
       "path": "server/docker/conf/mongodb/demo_db/i18n_bundles.json",
@@ -5099,10 +5099,10 @@
     },
     {
       "path": "server/docker/images/profilemanagement/e2e/Dockerfile",
-      "sourceRevision": "cfa26b923c515cc683ee329b38416d3e8f578d2a",
-      "upstreamSha256": "c08532eb41da92aa0ce8ec9e1e6771acfe113a78edfd981ab9db0cc86bd88292",
+      "sourceRevision": "aa2371c94bca3ba351e50e77821888fcb4e076d0",
+      "upstreamSha256": "8725582d3c8e400b4e80e165a467772efff564da0b5248888fd18bd15da6a5c2",
       "purpose": "Native production-style E2E build and runtime.",
-      "adaptation": "Supply the template version as a build argument and isolate its Docker build cache; omit Registry directories."
+      "adaptation": "Retained template services, project identity/version and selected indexes only; DEV/PROD/E2E configuration probes verify the same wiring contract."
     },
     {
       "path": "server/docker/images/profilemanagement/e2e/Dockerfile.dockerignore",
@@ -5120,10 +5120,10 @@
     },
     {
       "path": "server/docker/images/profilemanagement/prod/Dockerfile",
-      "sourceRevision": "cfa26b923c515cc683ee329b38416d3e8f578d2a",
-      "upstreamSha256": "719c8bc0175cfefe042f94aad96d6dc05a156072f70a5b24b8d4b8415eca8488",
-      "purpose": "Native non-root production/media runtime and update directories.",
-      "adaptation": "Omit Registry state directories."
+      "sourceRevision": "aa2371c94bca3ba351e50e77821888fcb4e076d0",
+      "upstreamSha256": "c6998730800094755c284a40d4ae19f5f1f5df1742db2bd921cf7d8a8cca40b1",
+      "purpose": "Complete DEV-to-installed runtime input coverage and exact release JAR selection.",
+      "adaptation": "Retained template services, project identity/version and selected indexes only; DEV/PROD/E2E configuration probes verify the same wiring contract."
     },
     {
       "path": "server/docker/images/release-simulator/Dockerfile",
@@ -8237,9 +8237,58 @@
     },
     {
       "path": "tools/seeds/check-system-seed-parity.py",
-      "sourceRevision": "8ceb635bc2860029699faef48210c503e9826b99",
-      "upstreamSha256": "26ade836f4c05f858ec6c6558a307e3960e7ee92bf3239530108c605cb8a7885",
-      "purpose": "Shared package lifecycle, artifact audit, selected host operations or their focused regression checks.",
+      "sourceRevision": "aa2371c94bca3ba351e50e77821888fcb4e076d0",
+      "upstreamSha256": "4a513c43fc48a7ea877be3ee7052e0ec33cd01551125df83230aa1a2389d0a02",
+      "purpose": "Shared release input/environment verification, exact artifact selection and existing Mongo index upgrade; project data stays selected separately.",
+      "adaptation": null
+    },
+    {
+      "path": "e2e/shared/mongo-fixture-ssh.sh",
+      "sourceRevision": "f9a911166ee6de4206dd6be343a50ed820c8544d",
+      "upstreamSha256": "5e59b73825ea5e21cfa581292764911715a1ea1dcacef94740ca859670b06aa6",
+      "adaptation": null,
+      "purpose": "Existing release-client SSH transport for owned DEMO fixtures on the authorized local VMware guest; no production database."
+    },
+    {
+      "path": "guides/qa/tools/open-checkpoint-browser-sessions.mjs",
+      "sourceRevision": "f9a911166ee6de4206dd6be343a50ed820c8544d",
+      "upstreamSha256": "9927a3e7ea1c68fc31410ff93d53f16b45aae476c804cc7a3defe7f1a500dd10",
+      "adaptation": null,
+      "purpose": "Existing versioned launcher for user-requested visible deployment entry windows; selected anonymous sessions only."
+    },
+    {
+      "path": "guides/qa/tools/hold-chrome-geolocation.mjs",
+      "sourceRevision": "f9a911166ee6de4206dd6be343a50ed820c8544d",
+      "upstreamSha256": "07bec7d529ac17f31b5886c10b99166ce851df70bbd5bffaf6d930383a2c1b14",
+      "adaptation": null,
+      "purpose": "Existing versioned launcher for user-requested visible deployment entry windows; selected anonymous sessions only."
+    },
+    {
+      "path": "packaging/tests/deployment-input-parity-test.py",
+      "sourceRevision": "aa2371c94bca3ba351e50e77821888fcb4e076d0",
+      "upstreamSha256": "4f067e1d3d972935617c2af8a75b6f59523bf29140a010e30324cbe803cead8e",
+      "purpose": "Shared release input/environment verification, exact artifact selection and existing Mongo index upgrade; project data stays selected separately.",
+      "adaptation": null
+    },
+    {
+      "path": "packaging/migrations/015-runtime-index-parity.js",
+      "sourceRevision": "aa2371c94bca3ba351e50e77821888fcb4e076d0",
+      "upstreamSha256": "4b147d6c11f3437dab5a89b8533f91ab6edc70d1533d7b3dac69e5e5f764a656",
+      "purpose": "Shared release input/environment verification, exact artifact selection and existing Mongo index upgrade; project data stays selected separately.",
+      "adaptation": null
+    },
+    {
+      "path": "packaging/tests/runtime-index-parity-test.mjs",
+      "sourceRevision": "aa2371c94bca3ba351e50e77821888fcb4e076d0",
+      "upstreamSha256": "7d2b988252fd92e341a6889edbbb26b1595dce9bcca5ea3305e316af14c66dc1",
+      "purpose": "Shared release input/environment verification, exact artifact selection and existing Mongo index upgrade; project data stays selected separately.",
+      "adaptation": null
+    },
+    {
+      "path": "e2e/functional/ui/lib/chrome-cdp.test.mjs",
+      "sourceRevision": "2751ea8616ab249dbd61c467cf19d5b72e8a2788",
+      "upstreamSha256": "d9f46a6ed8a443a8a26c6592decc055b25fa90b16bbf7130beae25af91c803b8",
+      "purpose": "Attach existing UI flow tests to the versioned launcher visible browser sessions under explicit user full-flow delegation.",
       "adaptation": null
     }
   ],

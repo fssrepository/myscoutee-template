@@ -7,13 +7,13 @@
   "frontendNodePort": 30080,
   "localPort": 18080,
   "dependencies": {
-    "frontend": "myscoutee-template-service-frontend:1.0.0",
+    "frontend": "myscoutee-template-service-frontend:1.4.0",
     "mongodb": "mongo:8.0.4",
     "redis": "redis:8.6.1-alpine",
-    "minio": "myscoutee-template-service-minio:1.0.0",
+    "minio": "myscoutee-template-service-minio:1.4.0",
     "stun": "coturn/coturn:4.18.0-r0-alpine",
-    "mcp": "myscoutee-template-service-mcp:1.0.0",
-    "release-simulator": "myscoutee-template-service-release-simulator:1.0.0"
+    "mcp": "myscoutee-template-service-mcp:1.4.0",
+    "release-simulator": "myscoutee-template-service-release-simulator:1.4.0"
   },
   "stunNodePort": 30478,
   "metricsNodePort": 30081,
@@ -32,10 +32,10 @@
   },
   "images": {
     "prefix": "myscoutee-template-service-",
-    "buildTag": "1.0.0",
-    "immutableVersion": "1.0.0",
-    "frontendBase": "myscoutee-template-frontend-runtime-base:1.0.0",
-    "nginxBase": "myscoutee-template-nginx:1.0.0-base",
+    "buildTag": "1.4.0",
+    "immutableVersion": "1.4.0",
+    "frontendBase": "myscoutee-template-frontend-runtime-base:1.4.0",
+    "nginxBase": "myscoutee-template-nginx:1.4.0-base",
     "supportSources": {
       "mcp": "mcp"
     }

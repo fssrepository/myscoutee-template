@@ -1,4 +1,4 @@
-ARG NGINX_BASE_IMAGE=myscoutee-nginx:1.3.0-base
+ARG NGINX_BASE_IMAGE=myscoutee-nginx:1.4.0-base
 FROM golang:1.26-bookworm AS runtime-status-builder
 WORKDIR /src
 COPY images/nginx/runtime-status/ ./

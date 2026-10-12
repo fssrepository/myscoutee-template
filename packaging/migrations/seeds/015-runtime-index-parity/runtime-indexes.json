@@ -1,0 +1,714 @@
+{
+  "indexes": [
+    {
+      "collection": "countryPartitions",
+      "key": {
+        "partitionKey": 1
+      },
+      "options": {
+        "name": "country_partition_key",
+        "unique": true
+      }
+    },
+    {
+      "collection": "countryPartitions",
+      "key": {
+        "countryCode": 1
+      },
+      "options": {
+        "name": "country_partition_code",
+        "unique": true,
+        "sparse": true
+      }
+    },
+    {
+      "collection": "countryPartitions",
+      "key": {
+        "geometry": "2dsphere"
+      },
+      "options": {
+        "name": "country_partition_geometry"
+      }
+    },
+    {
+      "collection": "accountDeletionWarnings",
+      "key": {
+        "status": 1,
+        "nextAttemptAtIso": 1,
+        "_id": 1
+      },
+      "options": {
+        "name": "account_warning_retry_due"
+      }
+    },
+    {
+      "collection": "accountDeletionWarnings",
+      "key": {
+        "status": 1,
+        "startedAtIso": 1
+      },
+      "options": {
+        "name": "account_warning_stale_claim"
+      }
+    },
+    {
+      "collection": "accountDeletionWarnings",
+      "key": {
+        "userId": 1
+      },
+      "options": {
+        "name": "account_warning_user"
+      }
+    },
+    {
+      "collection": "integrationTokens",
+      "key": {
+        "tokenHash": 1
+      },
+      "options": {
+        "name": "integration_token_hash",
+        "unique": true
+      }
+    },
+    {
+      "collection": "integrationTokens",
+      "key": {
+        "ownerUserId": 1,
+        "createdAtIso": -1
+      },
+      "options": {
+        "name": "integration_token_owner_created"
+      }
+    },
+    {
+      "collection": "mcpOAuthClients",
+      "key": {
+        "createdAt": 1
+      },
+      "options": {
+        "name": "createdAt"
+      }
+    },
+    {
+      "collection": "mcpOAuthClients",
+      "key": {
+        "expiresAt": 1
+      },
+      "options": {
+        "name": "expiresAt",
+        "expireAfterSeconds": 0
+      }
+    },
+    {
+      "collection": "mcpAuthorizations",
+      "key": {
+        "clientId": 1
+      },
+      "options": {
+        "name": "clientId"
+      }
+    },
+    {
+      "collection": "mcpAuthorizations",
+      "key": {
+        "accessHash": 1
+      },
+      "options": {
+        "name": "accessHash"
+      }
+    },
+    {
+      "collection": "mcpAuthorizations",
+      "key": {
+        "refreshHash": 1
+      },
+      "options": {
+        "name": "refreshHash"
+      }
+    },
+    {
+      "collection": "mcpAuthorizations",
+      "key": {
+        "expiresAt": 1
+      },
+      "options": {
+        "name": "expiresAt",
+        "expireAfterSeconds": 0
+      }
+    },
+    {
+      "collection": "integrationWebhookDeliveries",
+      "key": {
+        "protocol": 1,
+        "status": 1,
+        "ownerUserId": 1
+      },
+      "options": {
+        "name": "integration_delivery_protocol_status"
+      }
+    },
+    {
+      "collection": "integrationWebhookDeliveries",
+      "key": {
+        "status": 1,
+        "nextAttemptAtIso": 1,
+        "createdAtIso": 1
+      },
+      "options": {
+        "name": "integration_webhook_delivery_due"
+      }
+    },
+    {
+      "collection": "integrationWebhookDeliveries",
+      "key": {
+        "subscriptionId": 1,
+        "createdAtIso": -1
+      },
+      "options": {
+        "name": "integration_webhook_delivery_subscription"
+      }
+    },
+    {
+      "collection": "integrationWebhookDeliveries",
+      "key": {
+        "deleteAfter": 1
+      },
+      "options": {
+        "name": "deleteAfter",
+        "expireAfterSeconds": 0
+      }
+    },
+    {
+      "collection": "mcpEventSubscriptions",
+      "key": {
+        "ownerUserId": 1,
+        "name": 1,
+        "resourceId": 1,
+        "enabled": 1
+      },
+      "options": {
+        "name": "mcp_events_owner_event"
+      }
+    },
+    {
+      "collection": "mcpEventSubscriptions",
+      "key": {
+        "ownerUserId": 1,
+        "tokenId": 1,
+        "clientId": 1,
+        "callbackUrl": 1
+      },
+      "options": {
+        "name": "mcp_events_callback"
+      }
+    },
+    {
+      "collection": "mcpEventSubscriptions",
+      "key": {
+        "deleteAfter": 1
+      },
+      "options": {
+        "name": "deleteAfter",
+        "expireAfterSeconds": 0
+      }
+    },
+    {
+      "collection": "users",
+      "key": {
+        "syncKey": 1
+      },
+      "options": {
+        "name": "users_sync_key",
+        "unique": true,
+        "sparse": true
+      }
+    },
+    {
+      "collection": "users",
+      "key": {
+        "userId": 1
+      },
+      "options": {
+        "name": "users_user_id",
+        "unique": true
+      }
+    },
+    {
+      "collection": "users",
+      "key": {
+        "email": 1
+      },
+      "options": {
+        "name": "users_email",
+        "unique": true,
+        "sparse": true
+      }
+    },
+    {
+      "collection": "users",
+      "key": {
+        "partitionKey": 1
+      },
+      "options": {
+        "name": "users_partition_key",
+        "sparse": true
+      }
+    },
+    {
+      "collection": "users",
+      "key": {
+        "profileStatus": 1
+      },
+      "options": {
+        "name": "users_profile_status"
+      }
+    },
+    {
+      "collection": "users",
+      "key": {
+        "profileStatus": 1,
+        "deletedAtIso": 1
+      },
+      "options": {
+        "name": "users_profile_status_deleted"
+      }
+    },
+    {
+      "collection": "users",
+      "key": {
+        "name": 1,
+        "userId": 1
+      },
+      "options": {
+        "name": "users_name_user_id",
+        "collation": {
+          "locale": "en",
+          "strength": 2
+        }
+      }
+    },
+    {
+      "collection": "appSettings",
+      "key": {
+        "settingsKey": 1
+      },
+      "options": {
+        "name": "app_settings_key",
+        "unique": true
+      }
+    },
+    {
+      "collection": "notificationRuleConfigs",
+      "key": {
+        "syncKey": 1
+      },
+      "options": {
+        "name": "notification_rule_config_sync_key",
+        "unique": true,
+        "sparse": true
+      }
+    },
+    {
+      "collection": "userNotifications",
+      "key": {
+        "syncKey": 1
+      },
+      "options": {
+        "name": "user_notifications_sync_key",
+        "unique": true,
+        "sparse": true
+      }
+    },
+    {
+      "collection": "userNotifications",
+      "key": {
+        "recipientUserId": 1,
+        "readAtIso": 1,
+        "createdDate": -1,
+        "_id": -1
+      },
+      "options": {
+        "name": "user_notifications_recipient_read_created"
+      }
+    },
+    {
+      "collection": "userNotifications",
+      "key": {
+        "recipientUserId": 1,
+        "createdDate": -1,
+        "_id": -1
+      },
+      "options": {
+        "name": "user_notifications_recipient_created"
+      }
+    },
+    {
+      "collection": "userNotifications",
+      "key": {
+        "sourceType": 1,
+        "sourceId": 1,
+        "createdDate": -1
+      },
+      "options": {
+        "name": "user_notifications_source_created"
+      }
+    },
+    {
+      "collection": "userNotifications",
+      "key": {
+        "recipientUserId": 1,
+        "kind": 1,
+        "sourceType": 1,
+        "sourceId": 1,
+        "readAtIso": 1
+      },
+      "options": {
+        "name": "user_notifications_recipient_kind_source"
+      }
+    },
+    {
+      "collection": "accessPolicyDefinitions",
+      "key": {
+        "syncKey": 1
+      },
+      "options": {
+        "name": "access_policy_definition_sync_key",
+        "unique": true,
+        "sparse": true
+      }
+    },
+    {
+      "collection": "accessPolicyDefinitions",
+      "key": {
+        "policyKey": 1
+      },
+      "options": {
+        "name": "access_policy_definition_key",
+        "unique": true
+      }
+    },
+    {
+      "collection": "accessGrants",
+      "key": {
+        "syncKey": 1
+      },
+      "options": {
+        "name": "access_grant_sync_key",
+        "unique": true,
+        "sparse": true
+      }
+    },
+    {
+      "collection": "accessGrants",
+      "key": {
+        "subjectUserId": 1,
+        "permission": 1,
+        "resourceType": 1,
+        "resourceId": 1
+      },
+      "options": {
+        "name": "access_grant_subject_permission_resource"
+      }
+    },
+    {
+      "collection": "accessGrants",
+      "key": {
+        "resourceType": 1,
+        "resourceId": 1,
+        "permission": 1
+      },
+      "options": {
+        "name": "access_grant_resource_permission"
+      }
+    },
+    {
+      "collection": "chats",
+      "key": {
+        "ownerUserId": 1,
+        "id": 1
+      },
+      "options": {
+        "name": "chat_owner_public_id",
+        "unique": true
+      }
+    },
+    {
+      "collection": "chats",
+      "key": {
+        "id": 1
+      },
+      "options": {
+        "name": "chat_public_id_lookup"
+      }
+    },
+    {
+      "collection": "chats",
+      "key": {
+        "ownerUserId": 1,
+        "dateIso": -1
+      },
+      "options": {
+        "name": "chat_owner_date"
+      }
+    },
+    {
+      "collection": "chats",
+      "key": {
+        "memberIds": 1,
+        "dateIso": -1
+      },
+      "options": {
+        "name": "chat_member_date"
+      }
+    },
+    {
+      "collection": "chats",
+      "key": {
+        "channelType": 1,
+        "dateIso": -1
+      },
+      "options": {
+        "name": "chat_channel_date"
+      }
+    },
+    {
+      "collection": "chatMessages",
+      "key": {
+        "chatId": 1,
+        "id": 1
+      },
+      "options": {
+        "name": "chat_message_lookup",
+        "unique": true
+      }
+    },
+    {
+      "collection": "chatMessages",
+      "key": {
+        "chatId": 1,
+        "sentAtIso": -1,
+        "id": -1
+      },
+      "options": {
+        "name": "chat_message_page_desc"
+      }
+    },
+    {
+      "collection": "chatMessages",
+      "key": {
+        "messageSenderUserIds": 1,
+        "sentAtIso": -1
+      },
+      "options": {
+        "name": "chat_message_sender_date"
+      }
+    },
+    {
+      "collection": "chatMessages",
+      "key": {
+        "messageReadByUserIds": 1,
+        "sentAtIso": -1
+      },
+      "options": {
+        "name": "chat_message_reader_date"
+      }
+    },
+    {
+      "collection": "chatMessages",
+      "key": {
+        "messageReactionUserIds": 1,
+        "sentAtIso": -1
+      },
+      "options": {
+        "name": "chat_message_reaction_date"
+      }
+    },
+    {
+      "collection": "chatMessages",
+      "key": {
+        "messageAttachmentKeys": 1,
+        "sentAtIso": -1
+      },
+      "options": {
+        "name": "chat_message_attachment_date"
+      }
+    },
+    {
+      "collection": "chatMessages",
+      "key": {
+        "pollVoterUserIds": 1,
+        "sentAtIso": -1
+      },
+      "options": {
+        "name": "chat_poll_voter_date"
+      }
+    },
+    {
+      "collection": "chatMessages",
+      "key": {
+        "sentAtIso": 1,
+        "senderAvatar.id": 1,
+        "deletedAtIso": 1
+      },
+      "options": {
+        "name": "chat_message_qmau_window"
+      }
+    },
+    {
+      "collection": "privacyConsents",
+      "key": {
+        "userId": 1,
+        "revisionId": 1
+      },
+      "options": {
+        "name": "privacy_consent_user_revision",
+        "unique": true
+      }
+    },
+    {
+      "collection": "privacyConsents",
+      "key": {
+        "userId": 1
+      },
+      "options": {
+        "name": "privacy_consent_user"
+      }
+    },
+    {
+      "collection": "privacyConsents",
+      "key": {
+        "revisionId": 1
+      },
+      "options": {
+        "name": "privacy_consent_revision"
+      }
+    },
+    {
+      "collection": "i18n_bundles",
+      "key": {
+        "lang": 1
+      },
+      "options": {
+        "name": "i18n_bundles_lang",
+        "unique": true
+      }
+    },
+    {
+      "collection": "i18n_messages",
+      "key": {
+        "key": 1,
+        "lang": 1
+      },
+      "options": {
+        "name": "i18n_messages_key_lang",
+        "unique": true
+      }
+    },
+    {
+      "collection": "notificationRuleConfigs",
+      "key": {
+        "baseGroupId": 1,
+        "ruleKey": 1
+      },
+      "options": {
+        "name": "notification_rule_group_key",
+        "unique": true
+      }
+    },
+    {
+      "collection": "helpCenterRevisions",
+      "key": {
+        "baseGroupId": 1,
+        "documentType": 1,
+        "lang": 1,
+        "contextKey": 1,
+        "version": -1
+      },
+      "options": {
+        "name": "help_revision_group_document_lang_context_version",
+        "unique": true
+      }
+    },
+    {
+      "collection": "helpCenterRevisions",
+      "key": {
+        "baseGroupId": 1,
+        "documentType": 1,
+        "lang": 1,
+        "contextKey": 1,
+        "active": 1,
+        "version": -1
+      },
+      "options": {
+        "name": "help_revision_group_document_lang_context_active"
+      }
+    },
+    {
+      "collection": "helpCenterRevisions",
+      "key": {
+        "documentType": 1
+      },
+      "options": {
+        "name": "help_revision_document_type"
+      }
+    },
+    {
+      "collection": "helpCenterRevisions",
+      "key": {
+        "lang": 1
+      },
+      "options": {
+        "name": "help_revision_lang"
+      }
+    },
+    {
+      "collection": "helpCenterRevisions",
+      "key": {
+        "contextKey": 1
+      },
+      "options": {
+        "name": "help_revision_context_key"
+      }
+    },
+    {
+      "collection": "helpCenterRevisions",
+      "key": {
+        "active": 1
+      },
+      "options": {
+        "name": "help_revision_active"
+      }
+    },
+    {
+      "collection": "helpCenterGuideFields",
+      "key": {
+        "screenKey": 1,
+        "id": 1
+      },
+      "options": {
+        "name": "help_guide_field_screen_id",
+        "unique": true
+      }
+    },
+    {
+      "collection": "helpCenterGuideFields",
+      "key": {
+        "screenKey": 1,
+        "order": 1
+      },
+      "options": {
+        "name": "help_guide_field_screen_order"
+      }
+    }
+  ],
+  "retiredIndexes": [
+    {
+      "collection": "notificationRuleConfigs",
+      "name": "notification_rule_config_rule_key"
+    },
+    {
+      "collection": "helpCenterRevisions",
+      "name": "help_revision_document_lang_context_version"
+    }
+  ]
+}

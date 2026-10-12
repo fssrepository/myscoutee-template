@@ -4,7 +4,7 @@ set -euo pipefail
 # Build only the small client archive. No DEB, images or application build.
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd -- "${SCRIPT_DIR}/../.." && pwd)"
-VERSION="${MYSCOUTEE_VERSION:-1.3.0}"
+VERSION="${MYSCOUTEE_VERSION:-1.4.0}"
 DIST_DIR="${MYSCOUTEE_DIST_DIR:-${REPO_ROOT}/packaging/dist}"
 if [[ ! "${VERSION}" =~ ^(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)(-qa\.[1-9][0-9]*)?$ ]]; then
   echo "MYSCOUTEE_VERSION must be a SemVer core or QA prerelease." >&2

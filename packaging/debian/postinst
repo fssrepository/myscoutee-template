@@ -344,10 +344,9 @@ ensure_generated_secret() {
 }
 
 ensure_mongo_seed_allow_list() {
-  local file current updated required_collections collection
+  local file current updated
 
   file="${PACKAGE_ETC}/${PACKAGE_NAME}.env"
-  required_collections="$(jq -r '.requiredMongoCollections | join(",")' "$INSTALL_POLICY")"
   current="$(read_env_file_value MONGO_IMPORT_ALLOWED_COLLECTIONS_BY_DB "${file}" || true)"
 
   if [[ -z "${current}" ]]; then
@@ -355,18 +354,19 @@ ensure_mongo_seed_allow_list() {
     return 0
   fi
 
-  local -a required_collection_names=()
-  mapfile -t required_collection_names < <(jq -r '.requiredMongoCollections[]' "$INSTALL_POLICY")
-  for collection in "${required_collection_names[@]}"; do
-    if [[ "${current}" != *"${collection}"* ]]; then
-      updated="${current/notificationRuleConfigs/notificationRuleConfigs,${required_collections}}"
-      if [[ "${updated}" == "${current}" ]]; then
-        updated="${current};production_db:${required_collections}"
-      fi
-      upsert_env_value "${file}" MONGO_IMPORT_ALLOWED_COLLECTIONS_BY_DB "${updated}"
-      return 0
-    fi
-  done
+  # Check exact collection names in the production rule. A name in demo_db (or
+  # a longer collection name) does not make that input available in production.
+  updated="$(jq -r --arg current "$current" '
+    ($current | split(";")) as $rules
+    | ([$rules[] | select(startswith("production_db:"))
+        | ltrimstr("production_db:") | split(",")[] | select(length > 0)]
+       + .requiredMongoCollections | unique | join(",")) as $collections
+    | ([$rules[] | select(length > 0 and (startswith("production_db:") | not))]
+       + ["production_db:" + $collections]) | join(";")
+  ' "$INSTALL_POLICY")"
+  if [[ "$updated" != "$current" ]]; then
+    upsert_env_value "$file" MONGO_IMPORT_ALLOWED_COLLECTIONS_BY_DB "$updated"
+  fi
 }
 
 normalize_packaged_image_values() {

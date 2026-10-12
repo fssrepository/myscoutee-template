@@ -13,7 +13,7 @@ services:
     extends:
       file: docker-compose.replicaset.yml
       service: mongodb
-    image: ${MONGODB_E2E_IMAGE:-myscoutee-template-mongodb:1.0.0-e2e}
+    image: ${MONGODB_E2E_IMAGE:-myscoutee-template-mongodb:1.4.0-e2e}
     build:
       context: docker/images/mongodb/e2e
       dockerfile: Dockerfile
@@ -66,7 +66,7 @@ services:
       retries: 30
       start_period: 2s
   minio:
-    image: ${MINIO_E2E_IMAGE:-myscoutee-template-minio:1.0.0-e2e}
+    image: ${MINIO_E2E_IMAGE:-myscoutee-template-minio:1.4.0-e2e}
     build:
       context: .
       dockerfile: docker/images/minio/Dockerfile
@@ -102,23 +102,23 @@ services:
     extends:
       file: docker-compose.replicaset.yml
       service: profilemanagement
-    image: ${MYSCOUTEE_E2E_IMAGE:-myscoutee-template-api:1.0.0-e2e}
+    image: ${MYSCOUTEE_E2E_IMAGE:-myscoutee-template-api:1.4.0-e2e}
     build:
       context: .
       dockerfile: docker/images/profilemanagement/e2e/Dockerfile
       args:
-        MYSCOUTEE_VERSION: ${MYSCOUTEE_VERSION:-1.0.0}
+        MYSCOUTEE_VERSION: ${MYSCOUTEE_VERSION:-1.4.0}
     container_name: myscoutee-template-e2e-profilemanagement
     hostname: profilemanagement
     environment:
       EMAIL_BASE_URL: ${EMAIL_BASE_URL:-https://127.0.0.1}
       EMAIL_ACCOUNT_WARNING_CHECK_DELAY_MS: ${EMAIL_ACCOUNT_WARNING_CHECK_DELAY_MS:-60000}
-      SENDGRID_ENDPOINT: ${SENDGRID_ENDPOINT:-https://api.sendgrid.com/v3/mail/send}
+      EMAIL_SENDGRID_ENDPOINT: ${EMAIL_SENDGRID_ENDPOINT:-https://api.sendgrid.com/v3/mail/send}
       SPRING_PROFILES_ACTIVE: prod
       SPRING_DEVTOOLS_RESTART_ENABLED: 'false'
       SPRING_DEVTOOLS_ADD_PROPERTIES: 'false'
       E2E_MODE: 'true'
-      MYSCOUTEE_VERSION: ${MYSCOUTEE_VERSION:-1.0.0}
+      MYSCOUTEE_VERSION: ${MYSCOUTEE_VERSION:-1.4.0}
       MONGO_APP_USERNAME: guest
       MONGO_APP_PASSWORD: guest
       MONGODB_HOST: mongodb
@@ -183,7 +183,7 @@ services:
       start_period: 20s
     stop_grace_period: 30s
   nginx:
-    image: ${NGINX_E2E_IMAGE:-myscoutee-template-nginx:1.0.0-e2e}
+    image: ${NGINX_E2E_IMAGE:-myscoutee-template-nginx:1.4.0-e2e}
     build:
       context: docker/images/nginx/e2e
       dockerfile: Dockerfile
@@ -216,7 +216,7 @@ services:
       retries: 30
       start_period: 5s
   mcp:
-    image: ${MCP_E2E_IMAGE:-myscoutee-template-mcp:1.0.0-e2e}
+    image: ${MCP_E2E_IMAGE:-myscoutee-template-mcp:1.4.0-e2e}
     build:
       context: ../mcp
       dockerfile: Dockerfile

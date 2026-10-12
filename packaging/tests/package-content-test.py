@@ -8,9 +8,10 @@ import tarfile
 import tempfile
 
 ROOT = Path(__file__).resolve().parents[2]
-artifact = Path(sys.argv[1]) if len(sys.argv)>1 else ROOT/'packaging/dist/myscoutee-template_1.0.0_amd64.deb'
+version = (ROOT/'VERSION').read_text().strip()
+artifact = Path(sys.argv[1]) if len(sys.argv)>1 else ROOT/f'packaging/dist/{version}/myscoutee-template_{version}_amd64.deb'
 fields = subprocess.check_output(['dpkg-deb','-f',str(artifact),'Package','Version','Architecture'],text=True)
-assert fields == 'Package: myscoutee-template\nVersion: 1.0.0\nArchitecture: amd64\n',fields
+assert fields == f'Package: myscoutee-template\nVersion: {version}\nArchitecture: amd64\n',fields
 prefix='./opt/myscoutee-template/'
 wanted=['packaging/IMAGE-MANIFEST.json','packaging/scripts/release-project.json',
         'packaging/templates/install-policy.json','packaging/scripts/release-system-seeds.json',
@@ -41,7 +42,7 @@ assert seed_names=={'accessPolicyDefinitions','appSettings','countryPartitions',
 release_seeds=json.loads(content['packaging/scripts/release-system-seeds.json'])
 assert {row['collection'] for row in release_seeds}=={'notificationRuleConfigs','countryPartitions','i18n_messages','i18n_bundles'}
 manifest=json.loads(content['packaging/IMAGE-MANIFEST.json'])
-assert manifest['releaseVersion']=='1.0.0' and manifest['bundled'] is True
+assert manifest['releaseVersion']==version and manifest['bundled'] is True
 assert len(manifest['images'])==5
 assert len([name for name in names if name.startswith(prefix+'images/') and name.endswith('.tar')])==5
 for row in manifest['images']:

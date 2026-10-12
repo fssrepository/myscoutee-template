@@ -1,5 +1,5 @@
 import { spawn } from 'node:child_process';
-import { mkdtemp, rm } from 'node:fs/promises';
+import { mkdtemp, readFile, rm } from 'node:fs/promises';
 import net from 'node:net';
 import os from 'node:os';
 import path from 'node:path';
@@ -12,8 +12,31 @@ const DEFAULT_CHROME_CANDIDATES = [
   '/usr/bin/chromium',
   '/usr/bin/chromium-browser'
 ];
+const attachedManagedPorts = new Set();
 
 export async function launchChromeBrowser(options = {}) {
+  // Explicit full-flow delegation can reuse visible sessions prepared by the
+  // versioned checkpoint launcher. Their process/profile lifecycle stays there.
+  const manifestPath = process.env.E2E_MANAGED_BROWSER_MANIFEST;
+  if (manifestPath) {
+    const manifest = JSON.parse(await readFile(manifestPath, 'utf8'));
+    assert(manifest.headless === false, 'Managed full-flow testing requires visible launcher sessions');
+    const session = manifest.sessions?.find(item => !attachedManagedPorts.has(item.devToolsPort));
+    assert(session && Number.isInteger(session.devToolsPort), 'Prepare enough managed browser sessions with the checkpoint launcher');
+    assert(options.fakeMediaStream !== true || session.fakeMediaStream === true,
+      'Prepare the managed call session with its configured fake media device');
+    const browser = new ChromeBrowser({ remotePort: session.devToolsPort,
+      baseUrl: options.baseUrl, defaultViewport: options.viewport });
+    attachedManagedPorts.add(session.devToolsPort);
+    browser.detachManagedSession = () => attachedManagedPorts.delete(session.devToolsPort);
+    try {
+      await browser.waitUntilReady();
+      return browser;
+    } catch (error) {
+      await browser.close();
+      throw error;
+    }
+  }
   const chromePath = options.chromePath || process.env.E2E_CHROME_BIN || await findChromeExecutable();
   const remotePort = options.remotePort || await getOpenPort();
   const userDataDir = options.userDataDir || await mkdtemp(path.join(os.tmpdir(), 'myscoutee-ui-e2e-'));
@@ -68,7 +91,7 @@ export class ChromeBrowser {
   async waitUntilReady(timeoutMs = 12000) {
     const deadline = Date.now() + timeoutMs;
     while (Date.now() < deadline) {
-      if (this.child.exitCode !== null) {
+      if (this.child && this.child.exitCode !== null) {
         throw new Error(`Chrome exited before DevTools was ready (code ${this.child.exitCode})`);
       }
       try {
@@ -113,6 +136,10 @@ export class ChromeBrowser {
   }
 
   async close() {
+    if (!this.child) {
+      this.detachManagedSession?.();
+      return; // Attached managed browser belongs to the launcher.
+    }
     if (this.child.exitCode === null) {
       this.child.kill('SIGTERM');
       await Promise.race([

@@ -34,7 +34,8 @@ for path, value in [('unknown', True), ('ownedDirectories', [{'path': '/tmp/fore
 functions = '\n'.join(re.search(r'^' + name + r'\(\) \{\n.*?^\}', source,
                                re.M | re.S).group() for name in [
     'generate_secret', 'generate_guid', 'generate_policy_secret',
-    'install_generated_secrets_file', 'read_env_file_value', 'upsert_env_value', 'ensure_generated_secret'])
+    'install_generated_secrets_file', 'read_env_file_value', 'upsert_env_value', 'ensure_generated_secret',
+    'ensure_mongo_seed_allow_list'])
 with tempfile.TemporaryDirectory() as directory:
     root = Path(directory)
     (root / 'etc').mkdir()
@@ -60,4 +61,28 @@ with tempfile.TemporaryDirectory() as directory:
         subprocess.run(['bash', '-euc', 'source "$1/functions.sh"; ensure_generated_secret "$1/etc/myscoutee.secrets.env" MONGO_APP_PASSWORD replacement',
                         'test', directory], check=True)
         assert target.read_bytes() == before, 'upgrade replaced an existing credential'
+    # An older deployment may have the names in another database, multiple
+    # production rules, or similarly named collections. None proves coverage.
+    (root / 'policy.json').write_text(json.dumps(minimal))
+    for current in ['', 'demo_db:helpCenterRevisions;production_db:custom',
+                    'production_db:helpCenterRevisionsArchive',
+                    'demo_db:*;production_db:custom;production_db:other',
+                    'e2e_db:*;demo_db:*']:
+        target = root / 'etc/myscoutee.env'
+        target.write_text('CUSTOM=retained\nMONGO_IMPORT_ALLOWED_COLLECTIONS_BY_DB=' + current + '\n')
+        command = ['bash', '-euc', 'source "$1/functions.sh"; INSTALL_POLICY="$1/policy.json"; ensure_mongo_seed_allow_list', 'test', directory]
+        subprocess.run(command, check=True)
+        values = dict(line.split('=', 1) for line in target.read_text().splitlines() if line)
+        assert values['CUSTOM'] == 'retained'
+        rules = values['MONGO_IMPORT_ALLOWED_COLLECTIONS_BY_DB'].split(';')
+        production = [rule.split(':', 1)[1] for rule in rules if rule.startswith('production_db:')]
+        assert len(production) == 1 and 'helpCenterRevisions' in production[0].split(',')
+        for rule in current.split(';'):
+            if rule and not rule.startswith('production_db:'):
+                assert rule in rules, 'upgrade changed another database rule'
+            elif rule:
+                assert set(rule.split(':', 1)[1].split(',')).issubset(production[0].split(','))
+        before = target.read_bytes()
+        subprocess.run(command, check=True)
+        assert target.read_bytes() == before, 'second upgrade changed the import rules'
 print('PASS: native/minimal install selections, safe policy fields, generated secrets and credential preservation.')

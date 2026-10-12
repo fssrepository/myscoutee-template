@@ -92,12 +92,37 @@
   "scope": {
     "netcup": "Forbidden; not accessed",
     "githubActions": "Not requested; repository workflows removed; local build/test/sign/publication only",
-    "vmware": "192.168.153.129; existing MyScoutee 1.3.0 stopped and preserved; new template databases only"
+    "vmware": "User requires current native MyScoutee qualification first, then template on fresh isolated database/media; visible browser at each VMware/monolith/KVM deployment."
   },
   "limitations": [
     "DEB installation, installed restart/backup/restore/update not yet qualified",
     "GitHub release not yet published",
     "UI stress selection pending",
     "GHCR images require authentication"
-  ]
+  ],
+  "publication": {
+    "templateSourcePushed": "8bc98dc",
+    "actionsEnabled": false,
+    "pagesSource": {
+      "build_type": "legacy",
+      "branch": "gh-pages",
+      "path": "/",
+      "nojekyll": true
+    },
+    "pagesLocalBuildId": "287f277b3c30-20261012042951",
+    "pagesLiveBuildIdVerified": "287f277b3c30-20261012042951",
+    "pagesBranchCommit": "844cd3d1614f5fa94141e4b5dcb9686175edccb0",
+    "debUpload": "Reserved to the user; no DEB uploaded",
+    "release": "Prepare non-DEB assets in a draft; publication waits for user-provided matching DEB"
+  },
+  "devInstalledAudit": {
+    "status": "environment-wiring-and-disposable-Mongo-index-tests-passed; 1.4.0 artifacts and installed tests pending",
+    "sourceRevision": "2751ea8616ab249dbd61c467cf19d5b72e8a2788",
+    "report": "MSC122_DEV_INSTALLED_PARITY_20261012.md",
+    "supersedesPreviouslyPreparedDeb": true,
+    "reason": "Carry corrected installer import-rule handling, exact JAR build input and portable installed timezone mounts into the release.",
+    "templateIndexCount": 67,
+    "indexRegressionLog": "/tmp/msc122-template-runtime-index-parity.log"
+  },
+  "nextReleaseVersion": "1.4.0"
 }

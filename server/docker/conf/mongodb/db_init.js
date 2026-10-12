@@ -123,10 +123,6 @@ Array.from(new Set(configuredDatabases)).forEach(databaseName => {
     { syncKey: 1 },
     { name: 'notification_rule_config_sync_key', unique: true, sparse: true }
   );
-  portalDb.notificationRuleConfigs.createIndex(
-    { ruleKey: 1 },
-    { name: 'notification_rule_config_rule_key', unique: true }
-  );
   portalDb.userNotifications.createIndex(
     { syncKey: 1 },
     { name: 'user_notifications_sync_key', unique: true, sparse: true }
@@ -239,6 +235,23 @@ Array.from(new Set(configuredDatabases)).forEach(databaseName => {
     { key: 1, lang: 1 },
     { name: 'i18n_messages_key_lang', unique: true }
   );
+
+  // Existing import/runtime indexes also belong to fresh database initialization.
+  portalDb.notificationRuleConfigs.createIndex({"baseGroupId":1,"ruleKey":1}, {"name":"notification_rule_group_key","unique":true});
+  portalDb.helpCenterRevisions.createIndex({"baseGroupId":1,"documentType":1,"lang":1,"contextKey":1,"version":-1}, {"name":"help_revision_group_document_lang_context_version","unique":true});
+  portalDb.helpCenterRevisions.createIndex({"baseGroupId":1,"documentType":1,"lang":1,"contextKey":1,"active":1,"version":-1}, {"name":"help_revision_group_document_lang_context_active"});
+  portalDb.helpCenterRevisions.createIndex({"documentType":1}, {"name":"help_revision_document_type"});
+  portalDb.helpCenterRevisions.createIndex({"lang":1}, {"name":"help_revision_lang"});
+  portalDb.helpCenterRevisions.createIndex({"contextKey":1}, {"name":"help_revision_context_key"});
+  portalDb.helpCenterRevisions.createIndex({"active":1}, {"name":"help_revision_active"});
+  portalDb.helpCenterGuideFields.createIndex({"screenKey":1,"id":1}, {"name":"help_guide_field_screen_id","unique":true});
+  portalDb.helpCenterGuideFields.createIndex({"screenKey":1,"order":1}, {"name":"help_guide_field_screen_order"});
+  if (portalDb.notificationRuleConfigs.getIndexes().some(index => index.name === 'notification_rule_config_rule_key')) {
+    portalDb.notificationRuleConfigs.dropIndex('notification_rule_config_rule_key');
+  }
+  if (portalDb.helpCenterRevisions.getIndexes().some(index => index.name === 'help_revision_document_lang_context_version')) {
+    portalDb.helpCenterRevisions.dropIndex('help_revision_document_lang_context_version');
+  }
 
   if (!portalDb.getUser(appUsername)) {
     portalDb.createUser({

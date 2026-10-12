@@ -80,5 +80,5 @@ email:
   reply-to: ${EMAIL_REPLY_TO:support@template.local}
   base-url: ${EMAIL_BASE_URL:http://localhost}
   sendgrid:
-    api-key: ${SENDGRID_API_KEY:}
-    endpoint: ${SENDGRID_ENDPOINT:https://api.sendgrid.com/v3/mail/send}
+    api-key: ${EMAIL_SENDGRID_API_KEY:}
+    endpoint: ${EMAIL_SENDGRID_ENDPOINT:https://api.sendgrid.com/v3/mail/send}

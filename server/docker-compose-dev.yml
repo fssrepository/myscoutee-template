@@ -1,10 +1,18 @@
-# Selected native dev services. Full template composition is in progress; see the numbered implementation plan.
+# Template development services; start only on explicit request.
 networks:
   myscoutee:
     driver: bridge
 services:
+  stun:
+    extends:
+      file: docker-compose-stun.yml
+      service: stun
+    container_name: myscoutee-template-dev-stun
+    networks:
+      - myscoutee
+
   mcp:
-    image: ${MCP_DEV_IMAGE:-myscoutee-template-mcp:1.0.0-dev}
+    image: ${MCP_DEV_IMAGE:-myscoutee-template-mcp:1.4.0-dev}
     build:
       context: ../mcp
       dockerfile: Dockerfile
@@ -41,8 +49,6 @@ services:
     env_file:
     - docker-dev.env
     environment:
-      CHAT_CALL_STUN_URLS: ${CHAT_CALL_STUN_URLS:-}
-      CHAT_CALL_STUN_PORT: ${CHAT_CALL_STUN_PORT:-3478}
       MONGO_INITDB_DATABASE: ${MONGO_DEMO_DATABASE}
       MONGO_APP_DATABASE: ${MONGO_DEMO_DATABASE}
       MONGO_SEED_DIRECTORY: demo_db
@@ -56,7 +62,7 @@ services:
     networks:
     - myscoutee
   mongodb-sync:
-    image: ${MONGODB_SYNC_IMAGE:-myscoutee-template-mongodb-sync:1.0.0-dev}
+    image: ${MONGODB_SYNC_IMAGE:-myscoutee-template-mongodb-sync:1.4.0-dev}
     pull_policy: build
     build:
       context: .
@@ -96,7 +102,7 @@ services:
     networks:
     - myscoutee
   minio:
-    image: ${MINIO_DEV_IMAGE:-myscoutee-template-minio:1.0.0-dev}
+    image: ${MINIO_DEV_IMAGE:-myscoutee-template-minio:1.4.0-dev}
     pull_policy: build
     build:
       context: .
@@ -131,7 +137,7 @@ services:
     extends:
       file: docker-compose.replicaset.yml
       service: profilemanagement
-    image: ${MYSCOUTEE_DEV_IMAGE:-myscoutee-template-api:1.0.0-dev}
+    image: ${MYSCOUTEE_DEV_IMAGE:-myscoutee-template-api:1.4.0-dev}
     pull_policy: build
     build:
       context: .
@@ -150,7 +156,7 @@ services:
     - /bin/sh /workspace/docker/scripts/ensure_operator_configuration_master_key.sh && exec bash /workspace/docker/scripts/start_profilemanagement_dev.sh
     environment:
       EMAIL_BASE_URL: ${EMAIL_BASE_URL:-http://localhost}
-      SENDGRID_ENDPOINT: ${SENDGRID_ENDPOINT:-https://api.sendgrid.com/v3/mail/send}
+      EMAIL_SENDGRID_ENDPOINT: ${EMAIL_SENDGRID_ENDPOINT:-https://api.sendgrid.com/v3/mail/send}
       MYSCOUTEE_RUNTIME_STATUS_ENABLED: 'true'
       MYSCOUTEE_RUNTIME_STATUS_URL: http://nginx:9081/internal/runtime-status
       MYSCOUTEE_RUNTIME_STATUS_TOKEN_FILE: /run/myscoutee-runtime-status/token
@@ -165,6 +171,8 @@ services:
       SPRING_DATA_REDIS_HOST: redis
       SPRING_DATA_REDIS_PORT: '6379'
       CHAT_STREAM_BLOCK_MS: ${CHAT_STREAM_BLOCK_MS:-10000}
+      CHAT_CALL_STUN_URLS: ${CHAT_CALL_STUN_URLS:-}
+      CHAT_CALL_STUN_PORT: ${CHAT_CALL_STUN_PORT:-3478}
       USERS_DELETED_ACCOUNT_PURGE_DELAY_MS: ${USERS_DELETED_ACCOUNT_PURGE_DELAY_MS:-60000}
       FIREBASE_ENABLED: 'false'
       AUTH_MAX_ACTIVE_SESSIONS: ${AUTH_MAX_ACTIVE_SESSIONS:--1}
@@ -178,7 +186,7 @@ services:
       MEDIA_OBJECT_STORE_PATH_STYLE: 'true'
       TZ: ${CONTAINER_TIMEZONE:-Europe/Brussels}
       JAVA_TOOL_OPTIONS: --enable-native-access=ALL-UNNAMED
-      MYSCOUTEE_VERSION: ${MYSCOUTEE_VERSION:-1.0.0}
+      MYSCOUTEE_VERSION: ${MYSCOUTEE_VERSION:-1.4.0}
     ports:
     - 127.0.0.1:${PROFILEMANAGEMENT_DEBUG_PORT:-5005}:${PROFILEMANAGEMENT_DEBUG_PORT:-5005}
     volumes:
@@ -206,7 +214,7 @@ services:
       runtime-directories:
         condition: service_completed_successfully
   frontend-sync:
-    image: ${FRONTEND_SYNC_IMAGE:-myscoutee-template-frontend-sync:1.0.0-dev}
+    image: ${FRONTEND_SYNC_IMAGE:-myscoutee-template-frontend-sync:1.4.0-dev}
     pull_policy: build
     build:
       context: .
@@ -221,7 +229,7 @@ services:
       bash -c "rm -f /workspace/nginx-html/.frontend-ready;
       exec bash /scripts/frontend_auto_watch.sh"
     environment:
-      MYSCOUTEE_VERSION: ${MYSCOUTEE_VERSION:-1.0.0}
+      MYSCOUTEE_VERSION: ${MYSCOUTEE_VERSION:-1.4.0}
       FRONTEND_ROOT: /workspace/frontend
       FRONTEND_SOURCE_DIR: /workspace/frontend/dev
       FRONTEND_BUILD_CONFIGURATION: dev
@@ -250,13 +258,13 @@ services:
   nginx:
     container_name: myscoutee-template-dev-nginx
     hostname: nginx
-    image: ${NGINX_IMAGE:-myscoutee-template-nginx:1.0.0-dev}
+    image: ${NGINX_IMAGE:-myscoutee-template-nginx:1.4.0-dev}
     pull_policy: build
     build:
       context: docker
       dockerfile: images/nginx/dev/Dockerfile
       args:
-        NGINX_BASE_IMAGE: ${NGINX_BASE_IMAGE:-myscoutee-template-nginx:1.0.0-base}
+        NGINX_BASE_IMAGE: ${NGINX_BASE_IMAGE:-myscoutee-template-nginx:1.4.0-base}
         TZ: ${CONTAINER_TIMEZONE:-Europe/Brussels}
     environment:
       MYSCOUTEE_RUNTIME_STATUS_TOKEN_FILE: /run/myscoutee-runtime-status/token
@@ -286,7 +294,7 @@ services:
       frontend-sync:
         condition: service_started
   runtime-directories:
-    image: ${MYSCOUTEE_DEV_IMAGE:-myscoutee-template-api:1.0.0-dev}
+    image: ${MYSCOUTEE_DEV_IMAGE:-myscoutee-template-api:1.4.0-dev}
     user: 0:0
     network_mode: none
     restart: 'no'

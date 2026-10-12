@@ -6,11 +6,11 @@
 <div class="cover-title-block"><div class="cover-kicker">Start, extend, test and operate</div>
 <h1>Developer and Operator Guide</h1><p class="cover-lead">Identity, a visual SmartList and ordinary chat, using the same development and deployment foundations as MyScoutee.</p></div>
 <div class="cover-meta"><div><strong>Document ID</strong><span>T-START-001</span></div>
-<div><strong>Document version</strong><span>1.0.0</span></div><div><strong>Software version</strong><span>1.0.0</span></div>
+<div><strong>Document version</strong><span>1.4.0</span></div><div><strong>Software version</strong><span>1.4.0</span></div>
 <div><strong>Released</strong><span>2026-10-12</span></div><div><strong>Status</strong><span>Implementation qualification in progress</span></div></div></section>
 <section class="document-control" id="control"><h2>Document control</h2>
 <p>This HTML file is the canonical manual. Generate the single stable PDF path with <code>node guides/manuals/build-manuals.mjs T-START-001</code>. Git records revisions; PDF filenames do not contain a changing version. The document is not evidence of an installed or published release.</p>
-<p>The numbered plan in <code>guides/plans/MSC-122_TEMPLATE_IMPLEMENTATION_PLAN.md</code> and the QA evidence identify passed, failed and pending gates. Local VMware installation is deferred to the next attended session. Netcup is outside the authorized work: do not connect to or change it.</p></section>
+<p>The numbered plan in <code>guides/plans/MSC-122_TEMPLATE_IMPLEMENTATION_PLAN.md</code> and the QA evidence identify passed, failed and pending gates. Local VMware installation qualification is in progress. Netcup is outside the authorized work: do not connect to or change it.</p></section>
 <nav class="toc"><h2>Contents</h2><ol>
 <li><a href="#selection">Framework and domain selection</a></li><li><a href="#checkout">Checkout and frontend ownership</a></li>
 <li><a href="#development">Local and HTTP development</a></li><li><a href="#testing">Automated qualification</a></li>
@@ -24,6 +24,11 @@
 <section id="checkout"><h2>2. Checkout and frontend ownership</h2>
 <p>The backend is the parent repository. <code>frontend</code> remains its own local Git submodule. Its exact source commit is carried in <code>tools/sources/frontend.bundle</code>, a standard Git transport archive. Run <code>tools/bootstrap-submodules.sh</code> after cloning the parent; it verifies the bundle against the gitlink and initializes the frontend locally. The frontend's <code>components</code> submodule is fetched at its recorded commit from <code>https://github.com/fssrepository/myscoutee-components.git</code>.</p>
 <p>Commit frontend changes first, run <code>tools/sync-local-frontend.sh</code>, and commit the updated gitlink and bundle together in the parent. The bootstrap refuses a dirty frontend. To redirect the frontend later, first publish its recorded commit to the new repository, then run <code>git submodule set-url frontend &lt;repository-url&gt;</code> and <code>git submodule sync -- frontend</code>. Commit that URL and remove the unused bundle; the same bootstrap command will use ordinary Git.</p>
+<pre>git clone https://github.com/fssrepository/myscoutee-template.git
+cd myscoutee-template
+bash tools/bootstrap-submodules.sh
+cp server/.env.example server/.env
+npm --prefix frontend ci</pre>
 <p>Use the checked-in Gradle wrapper and frontend lockfile. The development environment uses Java 25, Node 24, Docker Compose and a supported Chrome/Chromium. Install frontend dependencies with <code>npm ci</code> in <code>frontend</code> after initializing components. Never copy local credentials, generated databases or build caches into Git.</p></section>
 <section id="development"><h2>3. Local and HTTP development</h2>
 <p>Browser-local mode uses IndexedDB and the selected four-person seed. In <code>frontend</code>, run <code>npm run start:local</code> and open <code>http://127.0.0.1:4200</code>. It is a UI/data-adapter environment, not a backend or live WebRTC deployment.</p>
@@ -33,7 +38,13 @@
 <section id="testing"><h2>4. Automated qualification</h2>
 <p><code>tools/run-backend-junit.sh standard</code> runs the selected Java unit tests with isolated outputs. Use its <code>--tests</code> filter for a focused change; embedded Mongo checks use the separate <code>embedded</code> group. Frontend tests use <code>npm test -- --watch=false</code>. Do not rerun every suite after each small edit.</p>
 <p><code>e2e/README.md</code> defines the disposable E2E composition, certificate trust, fixture variables and serial runners. Run <code>node e2e/functional/backend/run.mjs</code> for the retained API contracts and <code>node e2e/functional/ui/run.mjs --fail-fast</code> for browser flows. <code>--case</code> selects one matching flow. Each fixture owns its actors and removes them afterward; it must not reset production data or another user's sessions.</p>
-<p>Record actual build revisions, image IDs, environment and fixture scope. Browser-local success does not qualify HTTP, and a healthy container does not prove a working user flow. Compare CPU and latency using identical workloads and limits after a coherent change batch. Stress-tool selection and a repeatable template baseline remain explicit plan items.</p></section>
+<p>Record actual build revisions, image IDs, environment and fixture scope. Browser-local success does not qualify HTTP, and a healthy container does not prove a working user flow. Compare CPU and latency using identical workloads and limits after a coherent change batch. The seven-case read workload has a six-user, 60-second baseline and repeat with zero errors. Throughput was 112.84 and 114.92 completed collection cases/second; p95 was 62.69 and 58.34 ms. These are repeatability results, not an improvement claim against MyScoutee. Browser/WebSocket load measurements remain pending.</p>
+<pre>export E2E_NATIVE_DEMO_SESSIONS=true E2E_SKIP_E2E_RESET=true
+export E2E_STRESS_BASE_URL=https://localhost
+export NODE_EXTRA_CA_CERTS=/path/to/local-ca.pem
+node e2e/stress/backend/run.mjs --scenario template-read --duration-ms 15000
+node e2e/stress/backend/run.mjs --scenario template-read --record</pre>
+<p>See <code>e2e/stress/README.md</code> for matched comparisons and the separate KVM CPU measurements.</p></section>
 <section id="kvm"><h2>5. KVM and monitoring</h2>
 <p>The template owns a separate VM named <code>myscoutee-template</code>, with four vCPUs and 6 GiB RAM. Its private keys, disks and Terraform state live outside Git under <code>~/.local/state/myscoutee-template/microservices</code>. Host-boot autostart is disabled. The namespace contains four JVM owners:</p>
 <table><thead><tr><th>Owner</th><th>Selected domains</th></tr></thead><tbody>
@@ -63,8 +74,40 @@ python3 microservices/tools/vm.py stop</pre>
 <p>Canonical Java implementations remain in <code>server/projects/profile</code>. Add a domain's contracts and implementation there, then select its owner in <code>microservices/assemblies.json</code>. Cross-owner calls use the existing typed transport and authority protocol. Do not copy the monolith into each service.</p>
 <p>Frontend contracts, services and repositories follow domain folders across base, HTTP and local adapters. Extend the existing component/store/repository owner, preserving observable local/HTTP behavior. Shared visual controls belong to the existing components submodule. <code>tools/upstream-sources.json</code> records the source revisions and deliberate adaptations needed for future upgrades.</p></section>
 <section id="operations"><h2>8. Installed operation and releases</h2>
-<p>The target is a versioned Debian package and immutable Docker images, signed update metadata, client installation tools and a static Pages build. Packaging, installed backup/restore, update interruption/rollback and actual publication are still under qualification. Use the numbered plan rather than assuming these gates passed because local or KVM tests passed.</p>
-<p>DEB qualification will run on a local VMware Debian VM in the next attended session. Keep its evidence separate from KVM. Test fresh installation, restart, backup/restore and data-preserving removal. Do not mark the deferred VMware check as successful.</p>
-<p>A release must include the matching signed update metadata beside its DEB, with package and client-tool hashes and a separately trusted public-key fingerprint. Private signing keys and deployment secrets stay outside the repository and package. The updater must reject missing or changed metadata; a signature-verification test alone does not prove an installed update.</p>
-<p>Before release acceptance, reproduce a clean checkout with both submodules, build the retained runtime, verify the exact artifacts, and record the remaining external-provider or installed-host limits. The final user smoke check is login plus opening SmartList and chat; detailed automatic qualification remains the project's responsibility.</p></section>
+<p>The Debian package is <code>myscoutee-template</code>, version 1.4.0. It contains the five managed images, selected system/demo seeds, systemd units and common host helpers. MongoDB, Redis and STUN use the pinned upstream images. Package files live under <code>/opt/myscoutee-template</code>, deployment configuration under <code>/etc/myscoutee-template</code>, state under <code>/var/lib/myscoutee-template</code>, and backups under <code>/var/backups/myscoutee-template</code>.</p>
+<p>The shared installer generates fresh MongoDB/MinIO credentials, an encryption master key and a deployment-local Operator login. Existing credentials, keys and manual TLS files are preserved. Firebase starts disabled; enabling it requires the deployment service-account file selected by Compose. The installer never creates a Registry identity or imports payment configuration.</p>
+<p>Host-script tests cover package identity, image selection, generated secrets, TLS preservation, update ingress, purge isolation and failed/successful restore orchestration using disposable files and command doubles. The production images passed real HTTP and browser checks. These are separate from actual DEB installation: <strong>local VMware installation, installed update/rollback and recovery remain untested until the attended session.</strong> Netcup must not be used.</p>
+<h3>Verify and install</h3>
+<p>Download the DEB, client-tools archive, signed release manifest, <code>myscoutee-update.json</code>, public key and checksums from the versioned GitHub release. Do not mix assets from different builds. Unpack the client tools, copy <code>install.env.example</code> to a private <code>install.env</code>, and set the local VMware address plus release-verification paths. Keep <code>ALLOW_UNSIGNED_LOCAL_PACKAGE=false</code>.</p>
+<pre>chmod 0600 install.env
+./verify-release.sh ./myscoutee-template_1.4.0_amd64.deb \
+  ./myscoutee-template-release_1.4.0.json ./release-public.pem \
+  sha256:74255e852bf3720b81b990d0568f5b567124d6fb12335063f0309ccb522c5c03
+./install.sh ./myscoutee-template_1.4.0_amd64.deb</pre>
+<p>Confirm the complete fingerprint through an independent trusted channel; a public key downloaded beside an artifact does not establish its authenticity. The current release authority is for this template distribution. A derived project must establish its own release signing key.</p>
+<p>The client invokes package-owned host qualification. Check public transport separately from the client machine:</p>
+<pre>NODE_EXTRA_CA_CERTS=/path/to/local-ca.pem node verify-deployment/run.mjs \
+  --url https://your-local-vm --expected-version 1.4.0 --demo-session</pre>
+<h3>Operate and recover</h3>
+<pre>sudo systemctl start myscoutee-template.service
+sudo /opt/myscoutee-template/packaging/scripts/status-production.sh
+sudo /opt/myscoutee-template/packaging/scripts/qualify-deployment.sh check \
+  --expected-version 1.4.0
+sudo systemctl stop myscoutee-template.service</pre>
+<p>TLS requests and renewal use the retained privileged worker and systemd units. Configure the public URL, certificate and Firebase provider through the existing Operator/deployment workflow. The initial localhost certificate is for bootstrap, not public certificate-chain qualification.</p>
+<pre>sudo env MONGO_DATABASE=production_db MYSCOUTEE_BACKUP_REQUIRE_COMPLETE=true \
+  /opt/myscoutee-template/packaging/scripts/backup-production.sh</pre>
+<p>A complete backup contains MongoDB, configuration, the matching configuration encryption key and MinIO media. It contains secrets and remains mode 0600. Test restoration on the disposable VMware deployment before relying on it. Restore is explicitly destructive and requires the matching database/key pair:</p>
+<pre>sudo env CONFIRM_RESTORE=true MONGO_DATABASE=production_db \
+  RESTORE_CONFIG=true RESTORE_MINIO=true \
+  /opt/myscoutee-template/packaging/scripts/restore-production.sh \
+  /var/backups/myscoutee-template/&lt;backup-name&gt;.tar.gz</pre>
+<p>A failed MongoDB replacement leaves the backend stopped and does not activate the backup encryption key. Ordinary package removal retains deployment data and TLS material. Explicit purge removes this package's state and managed images; external backup archives remain.</p>
+<h3>Build and sign another release</h3>
+<p>Use <code>packaging/release/build-production.sh</code> followed by <code>BUILD_ARTIFACTS=false bash packaging/release/package-production.sh</code>. The existing managed-image policy, install defaults, recovery extension, host checks and release-seed selection own project-specific choices. The template does not install development/test scripts. Do not copy an entire product domain to satisfy a packaging input.</p>
+<p>The original pinned MinIO upstream tag became unavailable. An identical amd64 base is preserved at <code>ghcr.io/fssrepository/myscoutee-minio-base</code>, digest <code>sha256:52dfd5c0bbd38d3219f2058c7af216d9f9a27a994b7b5baad09bbd38866015ff</code>. Building from it requires registry access. The five managed images have been published privately and pulled back with matching image IDs. Builds, tests, signing and publication run locally; GitHub Actions is not required. Registry authentication is required for these private images.</p>
+<p><code>prepare-release.py</code> takes an existing private key, the actual DEB and client archive. It signs both, creates matching signed update metadata, verifies signatures and hashes, and records the exact upload set in <code>RELEASE.json</code>. Publish the complete set together; never publish a lone DEB. Private keys belong outside the repository and deployment host. The updater retains strict package/image/version/key checks; installed update and rollback qualification is still pending.</p>
+<p>Build Pages locally with <code>MYSCOUTEE_VERSION=1.4.0 npm --prefix frontend run build:github</code>. Publish the contents of <code>frontend/docs</code> to the dedicated <code>gh-pages</code> branch, with an empty <code>.nojekyll</code> file at its root. Pages uses that branch; repository GitHub Actions is disabled. Build, test and signing credentials stay on the development machine.</p>
+<p>GitHub Pages is published at <a href="https://fssrepository.github.io/myscoutee-template/">fssrepository.github.io/myscoutee-template/</a>. All fourteen selected local UI flows passed on its real base path. It is the browser-local demonstration, with a version badge; it does not provide an HTTP backend or live calls.</p>
+</section>
 </article></body></html>

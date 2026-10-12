@@ -76,7 +76,7 @@ Reuse `guides/qa/tools/email-provider-stub.py`; it records disposable fixture
 mail and never forwards it. Bind it to the host's Docker bridge address (for
 example `172.17.0.1`) on port `18991`, with its `--output` set to
 `.e2e-artifacts/functional/email/received.jsonl`. Start E2E with
-`SENDGRID_ENDPOINT=http://172.17.0.1:18991/v3/mail/send` and, for this focused
+`EMAIL_SENDGRID_ENDPOINT=http://172.17.0.1:18991/v3/mail/send` and, for this focused
 scheduler test, `EMAIL_ACCOUNT_WARNING_CHECK_DELAY_MS=1000`. Keep the normal
 60000ms tick outside this test. Use the usual isolated E2E variables above.
 
@@ -91,3 +91,17 @@ The second test restores its owned actors, warning schedule, email configuration
 and suppression rows. Captured email bodies and opaque unsubscribe links stay in
 ignored private files. Stop the receiver and E2E stack afterward. This proves
 the configured protocol path with the local receiver, not external email delivery.
+
+## Visible installed qualification
+
+After explicit user delegation of the full flow, use the versioned
+`guides/qa/tools/open-checkpoint-browser-sessions.mjs` launcher and set
+`E2E_MANAGED_BROWSER_MANIFEST` to its manifest in
+`/tmp/myscoutee-qa-browser-sessions/`. The existing UI scripts then attach to
+those visible windows. Two-user chat uses two configured isolated sessions;
+call sessions require the configured fake media device. Teardown closes test
+tabs but leaves the launcher-owned windows and profiles intact.
+For local VMware qualification use the existing SSH fixture transport only on
+`demo_db`; preserve the native and template installations' separate data.
+Shut down the VMware VM before starting the E2E stack. The same memory boundary
+applies to DEV and KVM: only one application deployment runs at a time.

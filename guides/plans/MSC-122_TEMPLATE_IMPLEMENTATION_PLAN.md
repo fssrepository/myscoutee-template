@@ -1,6 +1,6 @@
 # MSC-122 — Complete Minimal Template Implementation Plan
 
-Updated: 2026-10-12. Initial release version: **1.0.0**.
+Updated: 2026-10-12. Release version: **1.4.0** (aligned with native MyScoutee by user instruction).
 
 This is the active, numbered implementation checklist for `myscoutee-template`.
 It continues the source-separation work documented in
@@ -147,8 +147,8 @@ deep-link behavior. A working `local` build alone does not close frontend work.
 
 3. **Establish repository and version consistency — IN PROGRESS.**
    Preserve the existing backend/frontend/components topology. `VERSION` is now
-   `1.0.0`; propagate that version through the native build stamping, frontend
-   badge, JAR, DEB, image tags, release metadata and Git tag `v1.0.0`. Retain
+   `1.4.0`; propagate that version through the native build stamping, frontend
+   badge, JAR, DEB, image tags, release metadata and Git tag `v1.4.0`. Retain
    attribution and licensing. Verify a clean checkout/submodule initialization.
    Portable frontend initialization now uses `tools/bootstrap-submodules.sh`
    and one stable Git bundle at the exact gitlink. Its components still use the
@@ -663,6 +663,9 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     that gate, stop MyScoutee and install the template with its own fresh database
     and media directories. Never use the original MyScoutee database as template
     test data. Leave the qualified template accessible at its browser URL.**
+    Compare the installed environment against DEV before the next installation:
+    audit all runtime inputs, Mongo seeds/import rules, image assets, mounts and
+    configuration together; do not patch one omitted file per failed start.
     The host implementation is now selected: shared Debian lifecycle, systemd,
     fresh credentials, TLS, status, image verification, seed migration, backup/
     restore and purge. Native install/host/recovery policy was separated at
@@ -671,7 +674,7 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     production catalogs, five bundled managed images and seven Compose services.
     Native package-content, Registry recovery, update ingress, TLS, bootstrap and
     seed-parity checks pass. Template command-double lifecycle tests pass without
-    touching a deployment. The user subsequently authorized local VMware qualification; use the existing local guest, preserve its MyScoutee installation and leave the template available for browser review.
+    touching a deployment. The user subsequently authorized local VMware qualification; use the existing local guest, preserve its MyScoutee installation and leave the template available for browser review. Open a visible browser at each VMware, monolith and KVM deployment check, as requested. After VMware qualification, shut down the VMware VM itself before starting E2E; those environments must never run together.
 
     Concrete source-reuse gap identified: the existing update worker hard-codes
     the MyScoutee package name/path, installed service and image inventory
@@ -743,8 +746,13 @@ deep-link behavior. A working `local` build alone does not close frontend work.
     preserved byte-for-byte in GHCR; authenticated local builds can use it.
     The earlier unrequested Actions attempt received 403; retain that historical
     evidence, but it is not a required workflow or an open template gate.
-    Prepare `v1.0.0` and publish the complete signed DEB/client-tools/update
-    metadata/checksum set only after verification. Validate published artifacts
+    Prepare `v1.4.0` and upload the verified client-tools/update metadata/
+    signature/checksum set to a draft release. The user will upload the DEB
+    personally (2026-10-12 instruction); do not upload any DEB.
+    The user also authorized an intermediate native MyScoutee GitHub release
+    after the current deployment checks, followed by another after the remaining
+    manual QA. Apply the same user-uploaded DEB and draft-release boundary there. Keep the release
+    draft until the matching DEB is present and verified. Validate published artifacts
     separately from source tests. Document registry authentication requirements.
 
 30. **Finish developer/operator documentation and the single PDF — IN PROGRESS.**
