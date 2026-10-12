@@ -34,12 +34,16 @@ jobs:
           touch server/.env.secrets
           test "$(cat VERSION)" = "$(node -p "require('./frontend/package.json').version")"
           echo "MYSCOUTEE_VERSION=$(cat VERSION)" >> "$GITHUB_ENV"
-      - name: Build the versioned production inventory
-        run: bash packaging/release/build-production.sh
       - name: Authenticate to the repository container registry
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: printf '%s' "$GH_TOKEN" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
+      - name: Build the versioned production inventory
+        env:
+          # Exact upstream amd64 config/layers, preserved after upstream removal.
+          # Package is linked to this repository; the job uses GITHUB_TOKEN.
+          MINIO_BASE_IMAGE: ghcr.io/fssrepository/myscoutee-minio-base@sha256:52dfd5c0bbd38d3219f2058c7af216d9f9a27a994b7b5baad09bbd38866015ff
+        run: bash packaging/release/build-production.sh
       - name: Publish and verify the exact image identities
         run: bash packaging/release/publish-images.sh
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
