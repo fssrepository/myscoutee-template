@@ -31,7 +31,14 @@ const requiredCollections = [
 const appUsername = process.env.MONGO_APP_USERNAME || 'guest';
 const appPassword = process.env.MONGO_APP_PASSWORD || 'guest';
 
-const configuredDatabases = [
+// The installer reuses this complete initializer after rebuilding Explore.
+// A reset must never initialize or alter another database alongside demo_db.
+const resetDatabase = process.env.MONGO_RESET_DATABASE;
+if (resetDatabase !== undefined && (resetDatabase !== 'demo_db'
+    || process.env.MONGO_REAL_DATABASE === resetDatabase)) {
+  throw new Error('Rejected Mongo initializer reset target');
+}
+const configuredDatabases = resetDatabase ? [resetDatabase] : [
   'demo_db',
   'myscoutee_db',
   process.env.MONGO_INITDB_DATABASE,

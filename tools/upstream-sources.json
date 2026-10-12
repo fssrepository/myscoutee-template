@@ -29,6 +29,13 @@
       "sourceFrontendRevision": null
     },
     {
+      "path": "e2e/functional/ui/lib/chrome-cdp.test.mjs",
+      "sourceRevision": "2751ea8616ab249dbd61c467cf19d5b72e8a2788",
+      "upstreamSha256": "d9f46a6ed8a443a8a26c6592decc055b25fa90b16bbf7130beae25af91c803b8",
+      "purpose": "Attach existing UI flow tests to the versioned launcher visible browser sessions under explicit user full-flow delegation.",
+      "adaptation": null
+    },
+    {
       "path": "e2e/shared/assertions.mjs",
       "upstreamSha256": "bc1c6a63d53da22dcea84a3385b6864c3975c605f99504ff83ab2fea484f3c03",
       "sourceRevision": "d48270b99f6f77e930b609c1391023392a715c3c",
@@ -55,6 +62,13 @@
       "upstreamSha256": "d8b3dffaecfd88e479b5565216e3f2c7ec85ac18285a5f0a984066cb5a4946bc",
       "purpose": "Native authorized MCP/admin read path or credential-safe E2E diagnostics.",
       "adaptation": null
+    },
+    {
+      "path": "e2e/shared/mongo-fixture-ssh.sh",
+      "sourceRevision": "f9a911166ee6de4206dd6be343a50ed820c8544d",
+      "upstreamSha256": "5e59b73825ea5e21cfa581292764911715a1ea1dcacef94740ca859670b06aa6",
+      "adaptation": null,
+      "purpose": "Existing release-client SSH transport for owned DEMO fixtures on the authorized local VMware guest; no production database."
     },
     {
       "path": "e2e/shared/mongo-fixture.mjs",
@@ -2045,6 +2059,20 @@
       "upstreamSha256": "1d8cac9bf542ea7bfc709805c1c67ac5ecaa69ae655994651aacee8ab7f07984",
       "purpose": "Native configured email UI/adapters or non-forwarding QA provider receiver.",
       "adaptation": "Unchanged selection."
+    },
+    {
+      "path": "guides/qa/tools/hold-chrome-geolocation.mjs",
+      "sourceRevision": "f9a911166ee6de4206dd6be343a50ed820c8544d",
+      "upstreamSha256": "07bec7d529ac17f31b5886c10b99166ce851df70bbd5bffaf6d930383a2c1b14",
+      "adaptation": null,
+      "purpose": "Existing versioned launcher for user-requested visible deployment entry windows; selected anonymous sessions only."
+    },
+    {
+      "path": "guides/qa/tools/open-checkpoint-browser-sessions.mjs",
+      "sourceRevision": "f9a911166ee6de4206dd6be343a50ed820c8544d",
+      "upstreamSha256": "9927a3e7ea1c68fc31410ff93d53f16b45aae476c804cc7a3defe7f1a500dd10",
+      "adaptation": null,
+      "purpose": "Existing versioned launcher for user-requested visible deployment entry windows; selected anonymous sessions only."
     },
     {
       "path": "guides/qa/tools/operator-update-release-server.py",
@@ -4324,6 +4352,13 @@
       "adaptation": "Select the eight indexes for tokens, public OAuth clients and grants; omit product subscriptions and deliveries. Keep the native ordered migration runner and number."
     },
     {
+      "path": "packaging/migrations/015-runtime-index-parity.js",
+      "sourceRevision": "aa2371c94bca3ba351e50e77821888fcb4e076d0",
+      "upstreamSha256": "4b147d6c11f3437dab5a89b8533f91ab6edc70d1533d7b3dac69e5e5f764a656",
+      "purpose": "Shared release input/environment verification, exact artifact selection and existing Mongo index upgrade; project data stays selected separately.",
+      "adaptation": null
+    },
+    {
       "path": "packaging/release/audit-nested-archive.py",
       "sourceRevision": "8ceb635bc2860029699faef48210c503e9826b99",
       "upstreamSha256": "c03d45636b9a47cb39d50c4f0ae732446eea8193282723c6f22c9fcadb227f4f",
@@ -4493,9 +4528,9 @@
     },
     {
       "path": "packaging/scripts/reset-demo-state.sh",
-      "sourceRevision": "8ceb635bc2860029699faef48210c503e9826b99",
-      "upstreamSha256": "f31424e85ce314418ec8adf646f88b77451e9e1bf1e78b82d814ec809ab9b4cc",
-      "purpose": "Shared package lifecycle, artifact audit, selected host operations or their focused regression checks.",
+      "sourceRevision": "12104715f834eed5af8d7b5a700528151d59f457",
+      "upstreamSha256": "8aebc9e8179dcae222f4074bc3c95daf64fd07607a551af63be6c2dc89ab4b8c",
+      "purpose": "Complete canonical initialization and selected-seed validation after packaged demo reset.",
       "adaptation": null
     },
     {
@@ -4576,10 +4611,31 @@
       "adaptation": null
     },
     {
+      "path": "packaging/tests/demo-reset-seed-test.mjs",
+      "sourceRevision": "12104715f834eed5af8d7b5a700528151d59f457",
+      "upstreamSha256": "90469a91833776b0199c582a3124c71cb7a443df9d8681fcd3b30759f56c9bdf",
+      "purpose": "Complete canonical initialization and selected-seed validation after packaged demo reset.",
+      "adaptation": null
+    },
+    {
+      "path": "packaging/tests/demo-reset-test.sh",
+      "sourceRevision": "12104715f834eed5af8d7b5a700528151d59f457",
+      "upstreamSha256": "629611145b7cde717151e188502e605ae707a98f7a6eca354846475334a1ca81",
+      "purpose": "Complete canonical initialization and selected-seed validation after packaged demo reset.",
+      "adaptation": null
+    },
+    {
       "path": "packaging/tests/deployment-http-test.mjs",
       "sourceRevision": "b81c7363cda3755be2d657f34c267fb8f88be47d",
       "upstreamSha256": "c1b976225229e00176aca7f2c65479715d3bd3c8dfedd018ff679e09be51b474",
       "purpose": "Shared release client installation/verification; template selects its own package identity and public content contract.",
+      "adaptation": null
+    },
+    {
+      "path": "packaging/tests/deployment-input-parity-test.py",
+      "sourceRevision": "aa2371c94bca3ba351e50e77821888fcb4e076d0",
+      "upstreamSha256": "4f067e1d3d972935617c2af8a75b6f59523bf29140a010e30324cbe803cead8e",
+      "purpose": "Shared release input/environment verification, exact artifact selection and existing Mongo index upgrade; project data stays selected separately.",
       "adaptation": null
     },
     {
@@ -4622,6 +4678,13 @@
       "upstreamSha256": "c6fedacccf78d7f516510827ae32d99cfffd280db543731e3b566967a1482ae5",
       "sourceRevision": "7385fa358f3c051427cea62cf8212d2257d5138b",
       "purpose": "Shared production build, complete release signatures, privileged update boundary or browser qualification support.",
+      "adaptation": null
+    },
+    {
+      "path": "packaging/tests/runtime-index-parity-test.mjs",
+      "sourceRevision": "12104715f834eed5af8d7b5a700528151d59f457",
+      "upstreamSha256": "1e8c03a6752e9af00685310f08e184f9f2f914d14f15d2f863d1a24e1f6307cf",
+      "purpose": "Complete canonical initialization and selected-seed validation after packaged demo reset.",
       "adaptation": null
     },
     {
@@ -4725,10 +4788,10 @@
     },
     {
       "path": "server/docker/conf/mongodb/db_init.js",
-      "sourceRevision": "aa2371c94bca3ba351e50e77821888fcb4e076d0",
-      "upstreamSha256": "9739cabd17c859468182531418a451d834651ef10bc4dbd3f92846813eda2b81",
-      "purpose": "Native minimal integration storage, lifecycle and migration ownership.",
-      "adaptation": "Retained template services, project identity/version and selected indexes only; DEV/PROD/E2E configuration probes verify the same wiring contract."
+      "sourceRevision": "12104715f834eed5af8d7b5a700528151d59f457",
+      "upstreamSha256": "8316b547963ae5a26a3299459b9f3504d48d574f96451c820718ccb41fd7b7d4",
+      "purpose": "Complete canonical initialization and selected-seed validation after packaged demo reset.",
+      "adaptation": "Retained template collection and index selection; shared guarded demo-reset database selector."
     },
     {
       "path": "server/docker/conf/mongodb/demo_db/i18n_bundles.json",
@@ -8240,55 +8303,6 @@
       "sourceRevision": "aa2371c94bca3ba351e50e77821888fcb4e076d0",
       "upstreamSha256": "4a513c43fc48a7ea877be3ee7052e0ec33cd01551125df83230aa1a2389d0a02",
       "purpose": "Shared release input/environment verification, exact artifact selection and existing Mongo index upgrade; project data stays selected separately.",
-      "adaptation": null
-    },
-    {
-      "path": "e2e/shared/mongo-fixture-ssh.sh",
-      "sourceRevision": "f9a911166ee6de4206dd6be343a50ed820c8544d",
-      "upstreamSha256": "5e59b73825ea5e21cfa581292764911715a1ea1dcacef94740ca859670b06aa6",
-      "adaptation": null,
-      "purpose": "Existing release-client SSH transport for owned DEMO fixtures on the authorized local VMware guest; no production database."
-    },
-    {
-      "path": "guides/qa/tools/open-checkpoint-browser-sessions.mjs",
-      "sourceRevision": "f9a911166ee6de4206dd6be343a50ed820c8544d",
-      "upstreamSha256": "9927a3e7ea1c68fc31410ff93d53f16b45aae476c804cc7a3defe7f1a500dd10",
-      "adaptation": null,
-      "purpose": "Existing versioned launcher for user-requested visible deployment entry windows; selected anonymous sessions only."
-    },
-    {
-      "path": "guides/qa/tools/hold-chrome-geolocation.mjs",
-      "sourceRevision": "f9a911166ee6de4206dd6be343a50ed820c8544d",
-      "upstreamSha256": "07bec7d529ac17f31b5886c10b99166ce851df70bbd5bffaf6d930383a2c1b14",
-      "adaptation": null,
-      "purpose": "Existing versioned launcher for user-requested visible deployment entry windows; selected anonymous sessions only."
-    },
-    {
-      "path": "packaging/tests/deployment-input-parity-test.py",
-      "sourceRevision": "aa2371c94bca3ba351e50e77821888fcb4e076d0",
-      "upstreamSha256": "4f067e1d3d972935617c2af8a75b6f59523bf29140a010e30324cbe803cead8e",
-      "purpose": "Shared release input/environment verification, exact artifact selection and existing Mongo index upgrade; project data stays selected separately.",
-      "adaptation": null
-    },
-    {
-      "path": "packaging/migrations/015-runtime-index-parity.js",
-      "sourceRevision": "aa2371c94bca3ba351e50e77821888fcb4e076d0",
-      "upstreamSha256": "4b147d6c11f3437dab5a89b8533f91ab6edc70d1533d7b3dac69e5e5f764a656",
-      "purpose": "Shared release input/environment verification, exact artifact selection and existing Mongo index upgrade; project data stays selected separately.",
-      "adaptation": null
-    },
-    {
-      "path": "packaging/tests/runtime-index-parity-test.mjs",
-      "sourceRevision": "aa2371c94bca3ba351e50e77821888fcb4e076d0",
-      "upstreamSha256": "7d2b988252fd92e341a6889edbbb26b1595dce9bcca5ea3305e316af14c66dc1",
-      "purpose": "Shared release input/environment verification, exact artifact selection and existing Mongo index upgrade; project data stays selected separately.",
-      "adaptation": null
-    },
-    {
-      "path": "e2e/functional/ui/lib/chrome-cdp.test.mjs",
-      "sourceRevision": "2751ea8616ab249dbd61c467cf19d5b72e8a2788",
-      "upstreamSha256": "d9f46a6ed8a443a8a26c6592decc055b25fa90b16bbf7130beae25af91c803b8",
-      "purpose": "Attach existing UI flow tests to the versioned launcher visible browser sessions under explicit user full-flow delegation.",
       "adaptation": null
     }
   ],

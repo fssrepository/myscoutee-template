@@ -24,6 +24,28 @@ for (const row of fresh) assert.deepEqual(row, expected.get(id(row)), 'Fresh ind
 for (const row of definitions(read('server/docker/conf/mongodb/mongo-seed-policy.inc'))) {
   assert.deepEqual(row, expected.get(id(row)), 'DEV/import index differs: ' + id(row));
 }
+// Exercise the actual initializer's database selection, not only its static
+// definitions: installed reset must build every index on demo_db and nowhere else.
+function initialize(environment) {
+  const selected = [], indexes = [];
+  const collection = name => ({createIndex(key, options) {indexes.push(name + '/' + options.name);}, getIndexes:()=>[]});
+  const database = new Proxy({getCollectionNames:()=>[], createCollection() {}, getUser:()=>({user:'existing'})},
+    {get:(target,name)=>name in target ? target[name] : collection(name)});
+  vm.runInNewContext(read('server/docker/conf/mongodb/db_init.js'), {
+    process:{env:environment}, db:{getSiblingDB(name) {selected.push(name); return database;}}
+  });
+  return {selected,indexes};
+}
+const reset = initialize({MONGO_RESET_DATABASE:'demo_db', MONGO_REAL_DATABASE:'production_db',
+  MONGO_APP_DATABASE:'production_db', MONGO_INITDB_DATABASE:'production_db', MONGO_E2E_DATABASE:'e2e_db'});
+assert.deepEqual(reset.selected,['demo_db']);
+assert.deepEqual(new Set(reset.indexes), new Set(expected.keys()));
+for (const environment of [{MONGO_RESET_DATABASE:'production_db'}, {MONGO_RESET_DATABASE:''},
+  {MONGO_RESET_DATABASE:'demo_db',MONGO_REAL_DATABASE:'demo_db'}]) {
+  assert.throws(()=>initialize(environment),/Rejected Mongo initializer reset target/);
+}
+assert.deepEqual(initialize({MONGO_APP_DATABASE:'production_db',MONGO_E2E_DATABASE:'e2e_db'}).selected,
+  ['demo_db','myscoutee_db','production_db','e2e_db']);
 if (!process.argv.includes('--print-script')) {
   console.log(`PASS: all ${expected.size} fresh/runtime/upgrade index definitions agree.`);
 } else {
@@ -32,6 +54,12 @@ const catalog=${JSON.stringify(catalog)};
 const prefix='qa_runtime_indexes_'+new ObjectId().toHexString();
 const target=db.getSiblingDB(prefix);
 function check(value,message){if(!value)throw Error(message);}
+function initializeReset() {
+ const process={env:{MONGO_RESET_DATABASE:'demo_db',MONGO_REAL_DATABASE:'production_db',
+  MONGO_APP_USERNAME:prefix,MONGO_APP_PASSWORD:prefix}};
+ const db={getSiblingDB(name){check(name==='demo_db','initializer selected a non-demo database');return target;}};
+ ${read('server/docker/conf/mongodb/db_init.js')}
+}
 const pinnedCatalog=JSON.stringify(catalog);
 function migrate(db){
  const require=()=>({readFileSync:()=>pinnedCatalog});
@@ -49,6 +77,11 @@ try {
  const before=EJSON.stringify(target.notificationRuleConfigs.find().toArray());
  migrate(target);migrate(target);
  check(before===EJSON.stringify(target.notificationRuleConfigs.find().toArray()),'operator data changed');
+ // Reproduce the installed reset gap, then apply the actual canonical source.
+ // Only this unique test database is reachable through initializeReset().
+ target.countryPartitions.dropIndexes();
+ initializeReset();initializeReset();
+ check(before===EJSON.stringify(target.notificationRuleConfigs.find().toArray()),'initializer changed existing documents');
  for(const row of catalog.indexes){
   const actual=target.getCollection(row.collection).getIndexes().find(index=>index.name===row.options.name);
   check(actual&&JSON.stringify(actual.key)===JSON.stringify(row.key),'missing/key mismatch '+row.options.name);
@@ -64,7 +97,7 @@ try {
  const plan=target.notificationRuleConfigs.find({baseGroupId:'work',ruleKey:'retained'}).explain('executionStats');
  check(plan.executionStats.totalDocsExamined===1,'scoped query does not examine exactly one document');
  check(JSON.stringify(plan.queryPlanner.winningPlan).includes('notification_rule_group_key'),'scoped lookup lost its index');
- print('PASS: '+catalog.indexes.length+' indexes; upgrade repeated; operator data retained; scoped inserts; duplicate rejection; indexed lookup examines one document.');
-} finally {target.dropDatabase();}
+ print('PASS: '+catalog.indexes.length+' indexes; upgrade and reset initialization repeated; operator data retained; scoped inserts; duplicate rejection; indexed lookup examines one document.');
+} finally {if(target.getUser(prefix))target.dropUser(prefix);target.dropDatabase();}
 `);
 }

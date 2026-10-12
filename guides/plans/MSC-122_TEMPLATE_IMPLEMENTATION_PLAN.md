@@ -90,6 +90,20 @@ deep-link behavior. A working `local` build alone does not close frontend work.
 
 ## Status and working rules
 
+- **Open deployment blocker (2026-10-12):** complete the native and template
+  [environment parity checklist](../../../myscoutee-backend/guides/qualification/ENVIRONMENT_PARITY_CHECKLIST.md).
+  The installed native demo reset loses 29 canonical indexes; retained production
+  catalogs and the template's copied event-dependent reset oracle also require
+  review/correction. Source-file parity is not a passed deployment. Deliver fixes
+  through versioned installation/upgrade paths, never direct database repair.
+  Netcup remains prohibited; use local VMware, then E2E/KVM/monolith serially.
+
+- **Queued user follow-up (2026-10-12):** after the complete deployment/input
+  audit and corrections, repair the local frontend submodule's remote/tracking
+  setup so ordinary VS Code Git push works. Inspect the existing bundle/sync
+  workflow first; retain the local submodule contract and do not create an
+  unrequested hosted frontend repository.
+
 - `DONE`: implemented and checked at the stated boundary, with evidence.
 - `IN PROGRESS`: some code exists; the step's acceptance conditions are not all proven.
 - `PENDING`: not completed. An earlier component test is not proof of this step.

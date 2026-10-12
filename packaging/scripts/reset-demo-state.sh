@@ -183,6 +183,20 @@ demoDb.createUser({
   -e "MONGO_IMPORT_REPLACE_COLLECTIONS=true" \
   mongodb /docker-entrypoint-initdb.d/mongo_import.sh >/dev/null
 
+# Import can recreate collections. Replay the canonical initializer afterwards,
+# scoped to Explore, so reset has every fresh-install index rather than only the
+# importer's collection-specific subset. A failed index build keeps the marker.
+"${COMPOSE_SCRIPT}" exec -T \
+  -e "MONGO_RESET_DATABASE=${demo_database}" \
+  -e "MONGO_REAL_DATABASE=${real_database}" \
+  mongodb sh -eu -c '
+mongosh --quiet \
+  --username "$MONGO_INITDB_ROOT_USERNAME" \
+  --password "$MONGO_INITDB_ROOT_PASSWORD" \
+  --authenticationDatabase admin \
+  admin /docker-entrypoint-initdb.d/db_init.js >/dev/null
+'
+
 "${COMPOSE_SCRIPT}" exec -T \
   -e "MONGO_RESET_DATABASE=${demo_database}" \
   mongodb sh -eu -c '
@@ -193,14 +207,38 @@ mongosh --quiet \
   "$MONGO_RESET_DATABASE" \
   --eval '\''
 const userCount = db.users.countDocuments({});
-const eventCount = db.events.countDocuments({});
+// Check every packaged collection, including empty baselines. The package
+// selects the product data; this shared reset must not require native events
+// in a project that intentionally has only sample cards and chat.
+const fs = require("fs");
+const directory = "/docker-entrypoint-initdb.d/demo_db";
+const files = fs.readdirSync(directory).filter(name => name.endsWith(".json")).sort();
+if (files.length === 0) throw new Error("No packaged Explore seed files");
+const expectedByCollection = {};
+for (const file of files) {
+  const name = file.slice(0, -5);
+  const collection = name === "adminUsers" ? "users" : name;
+  const rows = EJSON.parse(fs.readFileSync(directory + "/" + file, "utf8"));
+  if (!Array.isArray(rows) || rows.some(row => row._id == null)) {
+    throw new Error("Invalid Explore seed file: " + file);
+  }
+  if (!expectedByCollection[collection]) expectedByCollection[collection] = new Map();
+  for (const row of rows) expectedByCollection[collection].set(EJSON.stringify(row._id), row._id);
+}
+for (const [name, identifiers] of Object.entries(expectedByCollection)) {
+  const collection = db.getCollection(name);
+  const expected = identifiers.size;
+  if (collection.countDocuments({}) !== expected
+      || (expected > 0 && collection.countDocuments({_id: {$in: [...identifiers.values()]}}) !== expected)) {
+    throw new Error("Incomplete Explore seed collection: " + name);
+  }
+}
 const externalImageCount = db.users.countDocuments({
   images: { $elemMatch: { $regex: /^https?:\/\//i } }
 });
-if (userCount < 1 || eventCount < 1 || externalImageCount !== 0) {
+if (userCount < 1 || externalImageCount !== 0) {
   throw new Error(
     "invalid Explore seed: users=" + userCount
-      + ", events=" + eventCount
       + ", externalImages=" + externalImageCount
   );
 }
