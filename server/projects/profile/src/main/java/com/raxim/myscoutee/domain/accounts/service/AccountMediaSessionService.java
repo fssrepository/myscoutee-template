@@ -14,9 +14,10 @@ public class AccountMediaSessionService implements AccountMediaSessions {
     private final MongoTemplate mongo;
     public AccountMediaSessionService(MongoTemplate mongo) { this.mongo = mongo; }
     @Override
-    public boolean acceptsMediaToken(String userId, String tokenHash) {
-        return mongo.exists(Query.query(Criteria.where("_id").is(userId)
-                .and("activeSessions").elemMatch(Criteria.where("mediaTokenHash").is(tokenHash))), UserSessionState.class);
+    public Optional<String> authenticateMediaToken(String userId, String tokenHash) {
+        if (!mongo.exists(Query.query(Criteria.where("_id").is(userId)
+                .and("activeSessions").elemMatch(Criteria.where("mediaTokenHash").is(tokenHash))), UserSessionState.class)) return Optional.empty();
+        return Optional.of(userId);
     }
     @Override
     public Optional<MediaToken> mediaToken(String userId, String sessionId) {

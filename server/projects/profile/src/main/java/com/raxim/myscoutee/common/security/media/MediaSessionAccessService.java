@@ -47,9 +47,10 @@ public class MediaSessionAccessService implements MediaSessionAccess {
             return null;
         }
         // The primary-key lookup stays bounded by the user's two active sessions.
-        boolean active = sessions.acceptsMediaToken(userId, hash(value));
-        return active ? UsernamePasswordAuthenticationToken.authenticated(userId, null,
-                List.of(new SimpleGrantedAuthority("MEDIA"))) : null;
+        return sessions.authenticateMediaToken(userId, hash(value))
+                .map(profileId -> UsernamePasswordAuthenticationToken.authenticated(profileId, null,
+                        List.of(new SimpleGrantedAuthority("MEDIA"))))
+                .orElse(null);
     }
 
     public void issueForProfileRead(HttpServletRequest request, HttpServletResponse response, Authentication authentication) {

@@ -14,6 +14,9 @@ mongo_import_script="${MONGO_IMPORT_SCRIPT:-${seed_root}/mongo_import.sh}"
 debounce_seconds="${MONGODB_SEED_SYNC_DEBOUNCE_SECONDS:-1}"
 reconcile_seconds="${MONGODB_SEED_SYNC_RECONCILE_SECONDS:-2}"
 max_reconcile_passes="${MONGODB_SEED_SYNC_MAX_RECONCILE_PASSES:-0}"
+ready_file="${MONGODB_SEED_SYNC_READY_FILE:-/tmp/mongodb-seed-sync.ready}"
+rm -f -- "${ready_file}"
+trap 'rm -f -- "${ready_file}"' EXIT
 # This state belongs to this watcher. Startup still imports the complete seed,
 # so no on-disk cache needs to survive a process restart.
 declare -A fingerprints=()
@@ -229,6 +232,11 @@ while IFS= read -r -d '' file && IFS= read -r -d '' fingerprint; do
     unset 'content_hashes[${file}]'
   fi
 done < <(seed_file_fingerprints)
+until reconcile_changed_files; do
+  log "Initial seed reconciliation failed; backend readiness remains blocked."
+  sleep 2
+done
+: > "${ready_file}"
 log "Initial seed import completed for ${target_database}."
 
 reconcile_pass=0

@@ -19798,5 +19798,77 @@
     "key": "loading.profile",
     "lang": "hu",
     "value": "Profil betöltése"
+  },
+  {
+    "_id": "i18n-message-en-admin-jobs-rule-media-deletion",
+    "key": "admin.jobs.rule.media.deletion",
+    "lang": "en",
+    "value": "Delete queued media"
+  },
+  {
+    "_id": "i18n-message-en-admin-jobs-rule-media-deletion-description",
+    "key": "admin.jobs.rule.media.deletion.description",
+    "lang": "en",
+    "value": "Deletes queued media objects in bounded batches. Failed deletions are retried; the storage bucket is never scanned."
+  },
+  {
+    "_id": "i18n-message-en-media-deletion-started",
+    "key": "media.deletion.started",
+    "lang": "en",
+    "value": "Processing queued media deletions."
+  },
+  {
+    "_id": "i18n-message-en-media-deletion-completed",
+    "key": "media.deletion.completed",
+    "lang": "en",
+    "value": "Queued media deletions processed."
+  },
+  {
+    "_id": "i18n-message-en-media-deletion-storage-failed",
+    "key": "media.deletion.storage.failed",
+    "lang": "en",
+    "value": "Some deletions failed. Transient failures are retried up to three attempts; permanent failures remain marked as failed."
+  },
+  {
+    "_id": "i18n-message-en-media-deletion-failed",
+    "key": "media.deletion.failed",
+    "lang": "en",
+    "value": "Media deletion failed. The queued items remain available for retry."
+  },
+  {
+    "_id": "i18n-message-hu-admin-jobs-rule-media-deletion",
+    "key": "admin.jobs.rule.media.deletion",
+    "lang": "hu",
+    "value": "Sorba állított média törlése"
+  },
+  {
+    "_id": "i18n-message-hu-admin-jobs-rule-media-deletion-description",
+    "key": "admin.jobs.rule.media.deletion.description",
+    "lang": "hu",
+    "value": "A törlésre váró médiaelemek feldolgozása korlátozott méretű kötegekben. A sikertelen törléseket újrapróbálja; a teljes tárhelyet nem járja be."
+  },
+  {
+    "_id": "i18n-message-hu-media-deletion-started",
+    "key": "media.deletion.started",
+    "lang": "hu",
+    "value": "A törlésre váró médiaelemek feldolgozása."
+  },
+  {
+    "_id": "i18n-message-hu-media-deletion-completed",
+    "key": "media.deletion.completed",
+    "lang": "hu",
+    "value": "A törlésre váró médiaelemek feldolgozva."
+  },
+  {
+    "_id": "i18n-message-hu-media-deletion-storage-failed",
+    "key": "media.deletion.storage.failed",
+    "lang": "hu",
+    "value": "Néhány törlés sikertelen. Az átmeneti hibáknál legfeljebb három próbálkozás történik; a végleges hibák sikertelen állapotban maradnak."
+  },
+  {
+    "_id": "i18n-message-hu-media-deletion-failed",
+    "key": "media.deletion.failed",
+    "lang": "hu",
+    "value": "A médiatörlés sikertelen. A várakozó tételek megmaradtak az újrapróbáláshoz."
   }
 ]

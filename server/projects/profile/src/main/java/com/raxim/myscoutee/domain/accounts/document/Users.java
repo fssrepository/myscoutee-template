@@ -603,32 +603,7 @@ public class Users implements com.raxim.myscoutee.domain.accounts.api.WorkspaceP
             UserEventFeedbackCountersRecord eventFeedback,
             Integer adminJobs,
             Integer adminMetrics,
-            Integer notifications,
-            Integer serviceFeedbackPending) implements com.raxim.myscoutee.domain.accounts.api.WorkspaceProfile.ActivityCounts {
-        public UserActivitiesRecord(
-                Integer game,
-                Integer chats,
-                Integer invitations,
-                Integer events,
-                Integer hosting,
-                Integer cars,
-                Integer accommodation,
-                Integer supplies,
-                Integer tickets,
-                Integer contacts,
-                Integer feedback,
-                UserChatCountersRecord chat,
-                UserEventCountersRecord event,
-                UserAssetCountersRecord asset,
-                UserEventFeedbackCountersRecord eventFeedback,
-                Integer adminJobs,
-                Integer adminMetrics,
-                Integer notifications) {
-            this(game, chats, invitations, events, hosting, cars, accommodation, supplies, tickets,
-                    contacts, feedback, chat, event, asset, eventFeedback, adminJobs, adminMetrics,
-                    notifications, 0);
-        }
-
+            Integer notifications) implements com.raxim.myscoutee.domain.accounts.api.WorkspaceProfile.ActivityCounts {
         public UserActivitiesRecord(
                 Integer game,
                 Integer chats,

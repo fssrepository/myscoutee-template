@@ -541,6 +541,16 @@
       "configuration": "EmailLinks",
       "propertyPrefix": "email-links",
       "credential": "emailLinksToken"
+    },
+    {
+      "domain": "media",
+      "api": "MediaDeletionQueue",
+      "package": "media",
+      "configuration": "MediaDeletionQueue",
+      "propertyPrefix": "media-deletion",
+      "credential": "mediaDeletionToken",
+      "credentialProperty": "command-token",
+      "producerDomains": []
     }
   ],
   "localBindings": [

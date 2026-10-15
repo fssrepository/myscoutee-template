@@ -414,5 +414,16 @@
       403,
       503
     ]
+  ],
+  [
+    "media/media-deletion-v1",
+    "media-deletion",
+    [
+      200,
+      400,
+      401,
+      403,
+      503
+    ]
   ]
 ]

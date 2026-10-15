@@ -42,6 +42,7 @@ cat > "${TEST_ROOT}/fake-import.sh" <<'EOF'
 #!/usr/bin/env bash
 set -euo pipefail
 if [[ -z "${MONGO_IMPORT_SINGLE_FILE:-}" ]]; then
+  [[ ! -e "${MONGODB_SEED_SYNC_READY_FILE}" ]]
   printf 'initial\n' >> "${TEST_IMPORT_LOG}"
   if [[ "${TEST_INITIAL_CHANGE:-false}" == true ]]; then
     printf '[{"version":"v2"}]\n' > "${TEST_ROOT}/seed/demo_db/chats.json"
@@ -80,6 +81,9 @@ chmod 0755 "${TEST_ROOT}/bin/"* "${TEST_ROOT}/fake-import.sh"
 export PATH="${TEST_ROOT}/bin:${PATH}"
 export TEST_ROOT
 export TEST_IMPORT_LOG="${TEST_ROOT}/imports.log"
+export MONGODB_SEED_SYNC_READY_FILE="${TEST_ROOT}/ready"
+# A retained marker must not release the backend during a new startup import.
+touch "${MONGODB_SEED_SYNC_READY_FILE}"
 
 MONGODB_SEED_ROOT="${TEST_ROOT}/seed" \
 MONGO_IMPORT_SCRIPT="${TEST_ROOT}/fake-import.sh" \
@@ -94,6 +98,7 @@ for _ in $(seq 1 50); do
   sleep 0.1
 done
 grep -q 'Initial seed import completed' "${TEST_ROOT}/watcher.log"
+[[ -f "${MONGODB_SEED_SYNC_READY_FILE}" ]]
 
 printf '[{"version":"v2"}]\n' > "${TEST_ROOT}/seed/demo_db/i18n_messages.json"
 printf '[{"version":"v2"}]\n' > "${TEST_ROOT}/seed/demo_db/i18n_bundles.json"
@@ -153,6 +158,7 @@ start_watcher() {
 finish_watcher() {
   wait "${WATCHER_PID}"
   WATCHER_PID=""
+  [[ ! -e "${MONGODB_SEED_SYNC_READY_FILE}" ]]
 }
 
 # Idle passes must neither read seed content nor start a stat process per file.

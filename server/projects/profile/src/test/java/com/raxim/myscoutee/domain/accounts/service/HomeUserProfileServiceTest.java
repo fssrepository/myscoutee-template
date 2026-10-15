@@ -19,7 +19,6 @@ import com.raxim.myscoutee.domain.access.api.AccessPermissions;
 import com.raxim.myscoutee.domain.access.config.RegionSecurityProperties;
 import com.raxim.myscoutee.domain.platform.api.CountryDirectory;
 import com.raxim.myscoutee.domain.notifications.api.NotificationJobs;
-import com.raxim.myscoutee.domain.notifications.api.NotificationReads;
 import com.raxim.myscoutee.domain.administration.api.OperationalTelemetry;
 import com.raxim.myscoutee.common.dto.SharedDtos.LocationCoordinatesDto;
 
@@ -34,14 +33,13 @@ class HomeUserProfileServiceTest {
     private final OperationalTelemetry telemetry = mock(OperationalTelemetry.class);
     private final ProfileStatusWork statusWork = mock(ProfileStatusWork.class);
     private final NotificationJobs jobs = mock(NotificationJobs.class);
-    private final NotificationReads notifications = mock(NotificationReads.class);
     private HomeUserProfileService service;
 
     @BeforeEach void setup() {
         var lifecycle = new AccountLifecycleService(users, actions, selected, statusWork, access, telemetry,
                 mock(com.raxim.myscoutee.domain.platform.api.JobAudience.class), Optional.of(jobs));
         service = new HomeUserProfileService(selected, users, access, countries, region, lifecycle,
-                telemetry, statusWork, jobs, notifications);
+                telemetry, statusWork, jobs);
     }
 
     @AfterEach void clearSecurity() { SecurityContextHolder.clearContext(); }

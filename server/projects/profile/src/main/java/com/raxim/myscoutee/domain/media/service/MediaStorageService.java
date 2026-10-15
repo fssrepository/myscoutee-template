@@ -234,7 +234,7 @@ public class MediaStorageService implements com.raxim.myscoutee.domain.media.api
         }
         try {
             String objectKey = String.join("/",
-                    uploadNamespace(normalizedEntityId),
+                    "documents".equals(normalizedMediaKind) ? "private" : uploadNamespace(normalizedEntityId),
                     normalizedMediaKind,
                     normalizedOwnerId,
                     StringUtils.hasText(normalizedEntityId) ? normalizedEntityId : "shared",

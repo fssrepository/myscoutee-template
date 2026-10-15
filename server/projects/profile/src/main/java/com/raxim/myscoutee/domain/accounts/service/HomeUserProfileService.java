@@ -24,7 +24,6 @@ import com.raxim.myscoutee.domain.platform.api.CountryDirectory;
 import com.raxim.myscoutee.domain.platform.api.JobGroupContext;
 import com.raxim.myscoutee.domain.administration.api.OperationalTelemetry;
 import com.raxim.myscoutee.domain.notifications.api.NotificationJobs;
-import com.raxim.myscoutee.domain.notifications.api.NotificationReads;
 import com.raxim.myscoutee.common.dto.SharedDtos.LocationCoordinatesDto;
 
 @Service
@@ -41,18 +40,17 @@ public class HomeUserProfileService implements ProfileReadState {
     private final OperationalTelemetry adminTelemetryService;
     private final ProfileStatusWork profileStatusWork;
     private final NotificationJobs notificationRuleRegistryService;
-    private final NotificationReads notifications;
 
     public HomeUserProfileService(SelectedProfile selectedProfile, UsersRepository usersRepository,
             AccessPermissions accessControlService, CountryDirectory countryPartitionService,
             RegionSecurityProperties regionSecurityProperties, AccountLifecycleService lifecycle,
             OperationalTelemetry adminTelemetryService, ProfileStatusWork profileStatusWork,
-            NotificationJobs notificationRuleRegistryService, NotificationReads notifications) {
+            NotificationJobs notificationRuleRegistryService) {
         this.selectedProfile = selectedProfile; this.usersRepository = usersRepository;
         this.accessControlService = accessControlService; this.countryPartitionService = countryPartitionService;
         this.regionSecurityProperties = regionSecurityProperties; this.lifecycle = lifecycle;
         this.adminTelemetryService = adminTelemetryService; this.profileStatusWork = profileStatusWork;
-        this.notificationRuleRegistryService = notificationRuleRegistryService; this.notifications = notifications;
+        this.notificationRuleRegistryService = notificationRuleRegistryService;
     }
 
     public UserByIdResponseDto queryUserById(String requestedUserId) {
@@ -116,9 +114,7 @@ public class HomeUserProfileService implements ProfileReadState {
     public UserRealtimeLongPollResponseDto queryRealtimeSnapshot(UserRealtimeLongPollRequestDto request) {
         Users user = findUser(resolveSelectedUserId(request == null ? null : request.userId()));
         if (user == null) return null;
-        UserMenuCountersDto stored = buildMenuCounters(user);
-        UserMenuCountersDto counters = new UserMenuCountersDto(stored.chats(), stored.chat(),
-                notifications.currentUnreadCount(user.getUserId()));
+        UserMenuCountersDto counters = buildMenuCounters(user);
         String cursor = user.getUserId().replace(":", "%3A") + ":" + counters.chats() + ":" + counters.notifications()
                 + ":" + counters.chat().supportCases() + ":" + safeText(user.getProfileStatus());
         return new UserRealtimeLongPollResponseDto(user.getUserId(), safeText(user.getProfileStatus()),

@@ -92,6 +92,26 @@ public class S3CompatibleMediaObjectStoreClient implements MediaObjectStoreClien
                 .build());
     }
 
+    @Override
+    public java.util.List<DeleteFailure> deleteObjects(String bucket, java.util.List<String> keys) {
+        if (!isEnabled()) throw new IllegalStateException("Media storage is unavailable");
+        if (keys.isEmpty()) return java.util.List.of();
+        if (keys.size() > 1000) throw new IllegalArgumentException("Media delete batch exceeds storage limit");
+        var objects = keys.stream().map(key -> software.amazon.awssdk.services.s3.model.ObjectIdentifier.builder().key(key).build()).toList();
+        try {
+            var result = s3Client.deleteObjects(software.amazon.awssdk.services.s3.model.DeleteObjectsRequest.builder()
+                    .bucket(bucket).delete(software.amazon.awssdk.services.s3.model.Delete.builder().objects(objects).quiet(true).build())
+                    .overrideConfiguration(config -> config.apiCallTimeout(java.time.Duration.ofSeconds(20))
+                            .addPlugin(client -> client.overrideConfiguration(overrides -> overrides.retryStrategy(strategy -> strategy.maxAttempts(1)))))
+                    .build());
+            return result.errors().stream().filter(error -> !"NoSuchKey".equals(error.code()))
+                    .map(error -> new DeleteFailure(error.key(), error.code())).toList();
+        } catch (S3Exception failure) {
+            String code = failure.awsErrorDetails() == null ? "HTTP_" + failure.statusCode() : failure.awsErrorDetails().errorCode();
+            return keys.stream().map(key -> new DeleteFailure(key, code)).toList();
+        }
+    }
+
     private static S3Client createClient(MediaStorageProperties storageProperties) {
         if (storageProperties == null || !storageProperties.isEnabled() || !StringUtils.hasText(safeText(storageProperties.getBucket()))) {
             return null;

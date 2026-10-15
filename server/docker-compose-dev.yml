@@ -74,6 +74,12 @@ services:
     - docker-dev.env
     command:
     - /usr/local/bin/mongodb-seed-sync
+    healthcheck:
+      test: ["CMD", "test", "-f", "/tmp/mongodb-seed-sync.ready"]
+      interval: 2s
+      timeout: 2s
+      retries: 180
+      start_period: 30s
     environment:
       MONGO_APP_DATABASE: ${MONGO_DEMO_DATABASE}
       MONGO_DEMO_DATABASE: ${MONGO_DEMO_DATABASE}
@@ -202,6 +208,8 @@ services:
     depends_on:
       mongodb:
         condition: service_started
+      mongodb-sync:
+        condition: service_healthy
       redis:
         condition: service_started
       minio:
