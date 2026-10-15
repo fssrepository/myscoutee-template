@@ -41,7 +41,8 @@ class McpAuthorizationServiceTest {
             mock(MongoTemplate.class)));
     final McpOAuthClientsRepository registrations = mock(McpOAuthClientsRepository.class);
     final com.raxim.myscoutee.domain.platform.config.ConfigProperties config = new com.raxim.myscoutee.domain.platform.config.ConfigProperties();
-    final McpAuthorizationService service = new McpAuthorizationService(keys,  tokens,  grants, new com.raxim.myscoutee.domain.accounts.service.ProfileDirectoryService(users),  Optional.empty(), endpoint, registrations, config);
+    final ScheduledMongoSessionRunner databases = mock(ScheduledMongoSessionRunner.class);
+    final McpAuthorizationService service = new McpAuthorizationService(keys,  tokens,  grants, new com.raxim.myscoutee.domain.accounts.service.ProfileDirectoryService(users),  Optional.empty(), endpoint, registrations, config, databases);
     final String id = UUID.randomUUID().toString(), verifier = "x".repeat(43);
     IntegrationToken client;
     @BeforeEach void setup() {
@@ -193,6 +194,38 @@ class McpAuthorizationServiceTest {
         client.setRevokedAtIso(Instant.now().toString());
         assertThat(service.activeSubscriptionGrant("grant", "owner", id, id)).isFalse();
     }
+    @Test void sharedDatabaseWorkerAcceptsDemoGrantWithoutRelaxingRequestRealmOrRevocation() {
+        config.setMcpDemoEnabled(true);
+        var grant = new McpAuthorization(); grant.id = "grant"; grant.kind = "grant";
+        grant.ownerUserId = "owner"; grant.clientId = id;
+        when(grants.activeGrant("grant", "owner", id, service.resource())).thenReturn(grant);
+        MongoSessionModeContext.set(MongoSessionMode.DEMO);
+        new ScheduledMongoSessionRunner("demo_db", "demo_db").runAcrossConfiguredDatabases(() -> {
+            assertThat(MongoSessionModeContext.currentMode()).isEqualTo(MongoSessionMode.REAL);
+            assertThat(service.activeSubscriptionGrant("grant", "owner", id, id)).isFalse();
+            assertThatThrownBy(() -> service.context("owner", request())).hasMessageContaining("access_denied");
+            assertThat(service.activeDeliveryGrant("grant", "owner", id, id)).isTrue();
+            assertThat(service.activeDeliveryGrant("grant", "owner", "foreign-token", id)).isFalse();
+            client.setRevokedAtIso(Instant.now().toString());
+            assertThat(service.activeDeliveryGrant("grant", "owner", id, id)).isFalse();
+        });
+        assertThat(MongoSessionModeContext.currentMode()).isEqualTo(MongoSessionMode.DEMO);
+    }
+    @Test void distinctDatabaseWorkersCannotUseGrantsOutsideTheConfiguredMcpRealm() {
+        when(databases.hasDistinctDemoDatabase()).thenReturn(true);
+        var grant = new McpAuthorization(); grant.id = "grant"; grant.kind = "grant";
+        grant.ownerUserId = "owner"; grant.clientId = id;
+        when(grants.activeGrant("grant", "owner", id, service.resource())).thenReturn(grant);
+        for (boolean demo : List.of(false, true)) {
+            config.setMcpDemoEnabled(demo);
+            for (MongoSessionMode mode : MongoSessionMode.values()) {
+                MongoSessionModeContext.set(mode);
+                assertThat(service.activeDeliveryGrant("grant", "owner", id, id))
+                        .as("demo enabled %s, worker %s", demo, mode)
+                        .isEqualTo(mode == (demo ? MongoSessionMode.DEMO : MongoSessionMode.REAL));
+            }
+        }
+    }
     @Test void sharedDcrRegistrationKeepsTwoUnrelatedUsersGrantsAndRevocationIndependent() {
         String publicId = publicClient();
         client.setOauthClientId(publicId);
@@ -299,6 +332,7 @@ class McpAuthorizationServiceTest {
             context.registerBean(IntegrationPublicEndpointResolver.class, () -> endpoint);
             context.registerBean(McpOAuthClientsRepository.class, () -> registrations);
             context.registerBean(com.raxim.myscoutee.domain.platform.api.RuntimeConfiguration.class, () -> config);
+            context.registerBean(ScheduledMongoSessionRunner.class, () -> databases);
             context.register(McpAuthorizationService.class);
             context.refresh();
             var personal = context.getBean(McpAuthorizationService.class);

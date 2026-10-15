@@ -313,3 +313,18 @@ role qualification remain separate gates. The previous
 [admin UI](../qualification/evidence/MSC122_TEMPLATE_ADMIN_UI_20261011.json) and
 [first UI removal](../qualification/evidence/MSC122_TEMPLATE_MINIMAL_ADMIN_UI_20261012.json)
 records are historical; they do not describe the final backend selection.
+
+## Upstream central Feedback review — 2026-10-15
+
+The upstream central Feedback domain, evaluation forms, collections, product
+translations and transport adapters are N/A to the minimal template: those
+product capabilities are intentionally excluded. This review adds no template
+runtime PASS and starts no template stack. Shared guide-introduction behavior
+remains owned by T-CONTENT-002; record any applicable MSC-116 introduction fixes
+there for later template verification.
+
+MSC-116 introduction correction: `guide-options.ts` now gives the temporary
+landing.guide context priority over the pending consent popup. T-CONTENT-002
+must verify a fresh visitor sees the launcher introduction (1/1), not the consent
+tour; all dismissal routes preserve pending consent and do not repeat after
+reload. Template runtime verification is NOT RUN.

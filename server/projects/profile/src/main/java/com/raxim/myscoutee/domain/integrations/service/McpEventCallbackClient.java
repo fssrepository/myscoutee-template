@@ -157,6 +157,11 @@ public class McpEventCallbackClient {
                     || uri.getFragment() != null || (uri.getPort() != -1 && uri.getPort() != 443))
                 throw new IllegalArgumentException();
             String host = uri.getHost();
+            // Reject integer, short, octal-looking and hexadecimal IPv4 forms;
+            // parsers/resolvers disagree about which destination they identify.
+            boolean numericV4 = host.matches("(?i)(?:0x[0-9a-f]+|[0-9]+)(?:\\.(?:0x[0-9a-f]+|[0-9]+))*");
+            if (numericV4 && !host.matches("(?:0|[1-9][0-9]{0,2})(?:\\.(?:0|[1-9][0-9]{0,2})){3}"))
+                throw new IllegalArgumentException();
             if (host.contains(":") || host.matches("[0-9.]+")) {
                 try { if (!publicAddress(InetAddress.getByName(host))) throw new IllegalArgumentException(); }
                 catch (UnknownHostException error) { throw new IllegalArgumentException(); }

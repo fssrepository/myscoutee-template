@@ -15,9 +15,68 @@ import re
 import shutil
 import ssl
 import subprocess
+import tempfile
+import importlib.util
 from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parents[3]
+
+
+def origin(value):
+    url = urlsplit(value)
+    if (url.scheme != 'https' or not url.hostname or url.username or url.password
+            or url.path not in ('', '/') or url.query or url.fragment):
+        raise ValueError('Use an HTTPS origin without credentials or a path.')
+    return value.rstrip('/')
+
+
+def digest(path):
+    value = hashlib.sha256()
+    with path.open('rb') as source:
+        for chunk in iter(lambda: source.read(1024 * 1024), b''):
+            value.update(chunk)
+    return 'sha256:' + value.hexdigest()
+
+
+def prepare_notification(args):
+    """Build an inert signed QA package for release-discovery/notification tests only."""
+    if not re.fullmatch(r'(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)-qa\.[1-9]\d*', args.version):
+        raise ValueError('Notification fixtures require a canonical QA prerelease version.')
+    if args.release.exists() or args.root.exists():
+        raise ValueError('Use new release and catalog directories; never replace retained releases.')
+    key = args.key.resolve(strict=True)
+    if args.key.is_symlink() or key.stat().st_mode & 0o077 or key.is_relative_to(ROOT):
+        raise ValueError('Use a protected external QA signing key.')
+    project = json.loads((ROOT / 'packaging/scripts/release-project.json').read_text())['packageName']
+    if not re.fullmatch(r'[a-z0-9][a-z0-9+.-]+', project):
+        raise ValueError('Invalid release project package name.')
+    args.release.mkdir(parents=True, mode=0o700)
+    with tempfile.TemporaryDirectory(prefix='notification-release-') as work:
+        package = Path(work) / 'package'
+        control = package / 'DEBIAN'
+        control.mkdir(parents=True)
+        control.chmod(0o755)
+        (control / 'control').write_text('Package: ' + project + '\nVersion: ' + args.version.replace('-', '~')
+            + '\nArchitecture: all\nMaintainer: MyScoutee QA <qa@myscoutee.invalid>\n'
+            + 'Description: Inert notification fixture; cannot be installed\n')
+        (control / 'preinst').write_text('#!/bin/sh\necho "Notification fixture cannot be installed" >&2\nexit 1\n')
+        (control / 'preinst').chmod(0o755)
+        deb = args.release / (project + '_' + args.version + '_all.deb')
+        subprocess.run(['dpkg-deb', '--root-owner-group', '--build', str(package), str(deb)], check=True)
+        client_tools = args.release / (project + '-client-tools_' + args.version + '.tar.gz')
+        subprocess.run(['bash', str(ROOT / 'packaging/release/package-client-tools.sh')], check=True,
+            env={**os.environ, 'MYSCOUTEE_VERSION': args.version, 'MYSCOUTEE_DIST_DIR': str(args.release.resolve())})
+        spec = importlib.util.spec_from_file_location('release_bundle', ROOT / 'packaging/release/prepare-release.py')
+        bundle = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(bundle)
+        bundle.prepare_release(deb, client_tools, key, 'v' + args.version,
+            args.installed_version, args.version, args.repository, 'qa')
+    (args.release / 'NOTIFICATION-FIXTURE.json').write_text(json.dumps({
+        'purpose': 'Release discovery and role notification only', 'installable': False,
+        'version': args.version, 'applicationImagesBuilt': False}) + '\n')
+    args.release = [args.release]
+    args.copy_assets = True
+    prepare(args)
 
 
 def origin(value):
@@ -169,6 +228,14 @@ def main():
     prepare_parser.add_argument('--release', type=Path, action='append', required=True)
     prepare_parser.add_argument('--key', type=Path, required=True)
     prepare_parser.add_argument('--copy-assets', action='store_true', help='Copy packages into the fixture and use portable relative asset paths.')
+    notification_parser = commands.add_parser('prepare-notification', help='Signed inert QA package; never installs or builds application images.')
+    notification_parser.add_argument('--root', type=Path, required=True)
+    notification_parser.add_argument('--release', type=Path, required=True)
+    notification_parser.add_argument('--origin', required=True)
+    notification_parser.add_argument('--repository', default='fssrepository/myscoutee')
+    notification_parser.add_argument('--key', type=Path, required=True)
+    notification_parser.add_argument('--version', required=True)
+    notification_parser.add_argument('--installed-version', required=True)
     serve_parser = commands.add_parser('serve')
     serve_parser.add_argument('--root', type=Path, required=True)
     serve_parser.add_argument('--bind', default='127.0.0.1')
@@ -179,7 +246,7 @@ def main():
     if args.action == 'serve' and args.fail_package_after_bytes is not None and args.fail_package_after_bytes < 1:
         parser.error('Failure cutoff must be a positive byte count.')
     try:
-        prepare(args) if args.action == 'prepare' else serve(args)
+        {'prepare': prepare, 'prepare-notification': prepare_notification, 'serve': serve}[args.action](args)
     except (ValueError, OSError, subprocess.CalledProcessError) as error:
         parser.error(str(error))
 

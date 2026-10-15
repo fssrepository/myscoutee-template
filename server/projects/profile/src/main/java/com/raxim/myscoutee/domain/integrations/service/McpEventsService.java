@@ -114,6 +114,7 @@ public class McpEventsService {
         // Recheck after network I/O; a revocation during verification cannot activate a subscription.
         owner = requirePrincipal(client);
         requireResource(owner, request.name(), resource);
+        boolean activating = existing == null || !existing.enabled || !existing.expiresAt.isAfter(Instant.now());
         var value = existing == null ? new McpEventSubscription() : existing;
         if (existing == null || !value.enabled || !value.expiresAt.isAfter(Instant.now())
                 || !Objects.equals(value.grantId, client.grantId()))
@@ -131,8 +132,17 @@ public class McpEventsService {
         value.deleteAfter = value.expiresAt.plusSeconds(7 * 86400L);
         boolean truncated = value.truncated;
         value.truncated = false;
-        subscriptions.save(value);
+        saveSubscription(value, activating);
         return new Subscribed(id, value.expiresAt.toString(), null, truncated);
+    }
+
+    private synchronized void saveSubscription(McpEventSubscription value, boolean activating) {
+        // Verification runs outside this short persistence section. Concurrent
+        // completions must not both take the final slot observed before HTTPS I/O.
+        if (activating && subscriptions.countByOwnerUserIdAndEnabledTrueAndExpiresAtAfter(
+                value.ownerUserId, Instant.now()) >= 100)
+            throw new ProtocolException(-32013, "Event subscription limit reached", "subscriptions");
+        subscriptions.save(value);
     }
 
     public Map<String, Object> unsubscribe(AuthenticatedIntegrationClient client, Request request) {
@@ -190,12 +200,17 @@ public class McpEventsService {
     }
 
     private WorkspaceProfile requirePrincipal(AuthenticatedIntegrationClient client) {
+        return requirePrincipal(client, false);
+    }
+    private WorkspaceProfile requirePrincipal(AuthenticatedIntegrationClient client, boolean backgroundDelivery) {
         if (client == null || !IntegrationTokenService.MCP_SCOPE.equals(client.scope()) || client.grantId() == null) throw denied();
         WorkspaceProfile owner = users.findByUserId(client.ownerUserId()).orElseThrow(McpEventsService::denied);
         try { roles.requireActive(owner); } catch (ResponseStatusException error) { throw denied(); }
         var access = owner.getIntegrationAccess() == null ? IntegrationAccess.initial() : owner.getIntegrationAccess();
         if (access.effective(client.tokenId(), true) != IntegrationAccess.Mode.FULL
-                || !oauth.activeSubscriptionGrant(client.grantId(), client.ownerUserId(), client.tokenId(), client.clientId())) throw denied();
+                || !(backgroundDelivery
+                    ? oauth.activeDeliveryGrant(client.grantId(), client.ownerUserId(), client.tokenId(), client.clientId())
+                    : oauth.activeSubscriptionGrant(client.grantId(), client.ownerUserId(), client.tokenId(), client.clientId()))) throw denied();
         if (hasGroup(owner)) {
             try {
                 workspaces.orElseThrow(McpEventsService::denied).requireProfile(owner.getUserId(), owner);
@@ -280,7 +295,7 @@ public class McpEventsService {
                 || !subscription.resourceId.equals(delivery.getResourceExternalId())) return 410;
         try {
             WorkspaceProfile owner = requirePrincipal(new AuthenticatedIntegrationClient(subscription.ownerUserId, subscription.tokenId,
-                    subscription.clientId, IntegrationTokenService.MCP_SCOPE, IntegrationAccess.Mode.FULL, subscription.grantId));
+                    subscription.clientId, IntegrationTokenService.MCP_SCOPE, IntegrationAccess.Mode.FULL, subscription.grantId), true);
             requireResource(owner, subscription.name, subscription.resourceId);
         } catch (ProtocolException denied) { return 410; }
         String secret = crypto.decrypt(purpose(subscription.id), subscription.secret);

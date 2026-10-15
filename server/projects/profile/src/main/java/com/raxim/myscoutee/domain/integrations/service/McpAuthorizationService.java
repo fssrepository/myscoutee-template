@@ -26,6 +26,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 import com.raxim.myscoutee.common.config.mongo.MongoSessionMode;
 import com.raxim.myscoutee.common.config.mongo.MongoSessionModeContext;
+import com.raxim.myscoutee.common.config.mongo.ScheduledMongoSessionRunner;
 import com.raxim.myscoutee.domain.integrations.document.IntegrationToken;
 import com.raxim.myscoutee.domain.integrations.dto.IntegrationAccess;
 import com.raxim.myscoutee.domain.integrations.document.McpAuthorization;
@@ -46,15 +47,17 @@ public class McpAuthorizationService {
     private final IntegrationPublicEndpointResolver endpoint;
     private final McpOAuthClientsRepository registrations;
     private final RuntimeConfiguration config;
+    private final ScheduledMongoSessionRunner databases;
     private final SecureRandom random = new SecureRandom();
 
     public McpAuthorizationService(IntegrationTokenService keys, IntegrationTokensRepository tokens,
             McpAuthorizationRepository grants, ProfileDirectory users, Optional<McpWorkspaceAccess> workspaces,
             IntegrationPublicEndpointResolver endpoint, McpOAuthClientsRepository registrations,
-            RuntimeConfiguration config) {
+            RuntimeConfiguration config, ScheduledMongoSessionRunner databases) {
         this.keys = keys; this.tokens = tokens; this.grants = grants; this.users = users;
         this.workspaces = workspaces; this.endpoint = endpoint;
         this.registrations = registrations; this.config = config;
+        this.databases = databases;
     }
     public String origin() {
         URI api = URI.create(endpoint.resolve());
@@ -230,6 +233,14 @@ public class McpAuthorizationService {
     /** Long-lived subscriptions survive access-token refresh, but never their authorizing grant. */
     public boolean activeSubscriptionGrant(String grantId, String owner, String tokenId, String clientId) {
         if (!realmMatches()) return false;
+        return subscriptionGrantMatches(grantId, owner, tokenId, clientId);
+    }
+    /** Shared databases have one REAL worker pass, including grants issued in DEMO mode. */
+    public boolean activeDeliveryGrant(String grantId, String owner, String tokenId, String clientId) {
+        if (!realmMatches() && databases.hasDistinctDemoDatabase()) return false;
+        return subscriptionGrantMatches(grantId, owner, tokenId, clientId);
+    }
+    private boolean subscriptionGrantMatches(String grantId, String owner, String tokenId, String clientId) {
         var grant = grants.activeGrant(grantId, owner, clientId, resource());
         // Keep the same established manual-client token binding as normal OAuth requests.
         var connection = grant == null ? null : grantConnection(grant);

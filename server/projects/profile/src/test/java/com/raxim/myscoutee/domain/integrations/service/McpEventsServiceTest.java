@@ -49,11 +49,47 @@ class McpEventsServiceTest {
         owner.setIntegrationAccess(new IntegrationAccess(1, IntegrationAccess.Mode.FULL, Map.of("token-a", IntegrationAccess.Mode.FULL)));
         when(users.findByUserId("alice")).thenReturn(Optional.of(owner));
         when(oauth.activeSubscriptionGrant("grant-a", "alice", "token-a", "shared-chatgpt")).thenReturn(true);
+        when(oauth.activeDeliveryGrant("grant-a", "alice", "token-a", "shared-chatgpt")).thenReturn(true);
         when(crypto.encrypt(anyString(), anyString())).thenReturn(new EncryptedSecret());
         when(subscriptions.save(any())).thenAnswer(invocation -> invocation.getArgument(0));
         when(callbacks.send(anyString(), anyString(), anyString(), any(), anyString(), isNull(), eq(true)))
                 .thenAnswer(invocation -> new McpEventCallbackClient.Response(200,
                         json.writeValueAsBytes(Map.of("challenge", json.readTree((byte[]) invocation.getArgument(3)).path("challenge").asText()))));
+    }
+
+    @Test @org.junit.jupiter.api.Timeout(10)
+    void concurrentVerifiedSubscriptionsCannotBothTakeTheLastProfileSlot() throws Exception {
+        var count = new java.util.concurrent.atomic.AtomicInteger(99);
+        var verified = new java.util.concurrent.CyclicBarrier(2);
+        when(subscriptions.countByOwnerUserIdAndEnabledTrueAndExpiresAtAfter(eq("alice"), any()))
+                .thenAnswer(invocation -> (long) count.get());
+        when(subscriptions.save(any())).thenAnswer(invocation -> {
+            count.incrementAndGet(); return invocation.getArgument(0);
+        });
+        when(callbacks.send(anyString(), anyString(), anyString(), any(), anyString(), isNull(), eq(true)))
+                .thenAnswer(invocation -> {
+                    verified.await(5, java.util.concurrent.TimeUnit.SECONDS);
+                    return new McpEventCallbackClient.Response(200, json.writeValueAsBytes(Map.of("challenge",
+                            json.readTree((byte[]) invocation.getArgument(3)).path("challenge").asText())));
+                });
+        var second = new Request(request(null).name(), request(null).arguments(),
+                new Delivery("webhook", "https://callback.example/chat-b", secret), null, null);
+        try (var workers = java.util.concurrent.Executors.newFixedThreadPool(2)) {
+            var results = workers.invokeAll(List.<java.util.concurrent.Callable<Boolean>>of(
+                    () -> admitted(request(null)), () -> admitted(second)));
+            assertThat(List.of(results.get(0).get(), results.get(1).get())).containsExactlyInAnyOrder(true, false);
+        }
+        assertThat(count.get()).isEqualTo(100);
+        verify(subscriptions, times(1)).save(any());
+    }
+
+    private boolean admitted(Request input) {
+        try { service.subscribe(client, input); return true; }
+        catch (McpEventsService.ProtocolException error) {
+            assertThat(error.failure.code()).isEqualTo(-32013);
+            assertThat(error.failure.data()).containsEntry("limit", "subscriptions");
+            return false;
+        }
     }
 
     @Test void twoUsersOfTheSameRegisteredClientHaveDifferentSubscriptionIdentities() {
@@ -127,9 +163,32 @@ class McpEventsServiceTest {
         delivery.setOwnerUserId("alice"); delivery.setEventType("operator.attention"); delivery.setResourceExternalId("node");
         assertThat(service.deliver(delivery)).isEqualTo(410);
         sub.expiresAt = Instant.now().plusSeconds(3600);
-        when(oauth.activeSubscriptionGrant("grant-a", "alice", "token-a", "shared-chatgpt")).thenReturn(false);
+        when(oauth.activeDeliveryGrant("grant-a", "alice", "token-a", "shared-chatgpt")).thenReturn(false);
         assertThat(service.deliver(delivery)).isEqualTo(410);
         verifyNoInteractions(callbacks);
+    }
+    @Test void backgroundDeliveryUsesItsGrantCheckAndStillRequiresFullAccess() throws Exception {
+        var sub = new McpEventSubscription(); sub.id = "sub"; sub.enabled = true;
+        sub.expiresAt = Instant.now().plusSeconds(3600); sub.generation = "g";
+        sub.ownerUserId = "alice"; sub.tokenId = "token-a"; sub.clientId = "shared-chatgpt";
+        sub.grantId = "grant-a"; sub.name = "operator.attention"; sub.resourceId = "node";
+        sub.callbackUrl = "https://callback.example/chat-a"; sub.secret = new EncryptedSecret();
+        when(subscriptions.findById("sub")).thenReturn(Optional.of(sub));
+        when(oauth.activeSubscriptionGrant("grant-a", "alice", "token-a", "shared-chatgpt")).thenReturn(false);
+        when(crypto.decrypt("mcp-events/sub", sub.secret)).thenReturn(secret);
+        when(callbacks.send(eq(sub.callbackUrl), eq("sub"), eq("event-id"), any(), eq(secret), isNull(), eq(false), isNull()))
+                .thenReturn(new McpEventCallbackClient.Response(200, new byte[0]));
+        var delivery = new IntegrationWebhookDelivery(); delivery.setId("event-id");
+        delivery.setSubscriptionId("sub"); delivery.setSubscriptionGeneration("g");
+        delivery.setOwnerUserId("alice"); delivery.setEventType("operator.attention");
+        delivery.setResourceExternalId("node"); delivery.setPayloadJson("{}");
+        assertThat(service.deliver(delivery)).isEqualTo(200);
+        verify(oauth).activeDeliveryGrant("grant-a", "alice", "token-a", "shared-chatgpt");
+        verify(oauth, never()).activeSubscriptionGrant(anyString(), anyString(), anyString(), anyString());
+        owner.setIntegrationAccess(IntegrationAccess.initial());
+        assertThat(service.deliver(delivery)).isEqualTo(410);
+        verify(callbacks).send(eq(sub.callbackUrl), eq("sub"), eq("event-id"), any(), eq(secret), isNull(), eq(false), isNull());
+        verifyNoMoreInteractions(callbacks);
     }
     @Test void readPackCannotSubscribeAndRoleRevocationStopsDelivery() throws Exception {
         var read = client.withAccess(IntegrationAccess.Mode.READ);
