@@ -17697,7 +17697,7 @@
     "_id": "i18n-message-en-chat-call-accept-audio",
     "key": "chat.call.accept.audio",
     "lang": "en",
-    "value": "Join with audio"
+    "value": "Join call"
   },
   {
     "_id": "i18n-message-en-chat-call-accept-video",
@@ -17763,13 +17763,13 @@
     "_id": "i18n-message-en-chat-call-error-browser",
     "key": "chat.call.error.browser",
     "lang": "en",
-    "value": "Calls require HTTPS or localhost and a browser supporting WebRTC."
+    "value": "WebRTC unavailable.\nUse HTTPS or localhost."
   },
   {
     "_id": "i18n-message-en-chat-call-error-direct",
     "key": "chat.call.error.direct",
     "lang": "en",
-    "value": "A direct connection could not be established with a participant. Check the network or firewall. Media is never relayed through the server."
+    "value": "Connection failed.\nRejoin the call."
   },
   {
     "_id": "i18n-message-en-chat-call-error-media",
@@ -17781,19 +17781,19 @@
     "_id": "i18n-message-en-chat-call-error-node",
     "key": "chat.call.error.node",
     "lang": "en",
-    "value": "The selected connection discovery node is unavailable."
+    "value": "STUN unavailable.\nTry again later."
   },
   {
     "_id": "i18n-message-en-chat-call-error-secure",
     "key": "chat.call.error.secure",
     "lang": "en",
-    "value": "A secure connection could not be established with a participant. Leave and join again."
+    "value": "Secure link failed.\nRejoin the call."
   },
   {
     "_id": "i18n-message-en-chat-call-error-signaling",
     "key": "chat.call.error.signaling",
     "lang": "en",
-    "value": "Call coordination is unavailable. You can leave and try joining again."
+    "value": "Connection lost.\nRejoin the call."
   },
   {
     "_id": "i18n-message-en-chat-call-follow-speakers",
@@ -17835,7 +17835,7 @@
     "_id": "i18n-message-en-chat-call-notice-declined",
     "key": "chat.call.notice.declined",
     "lang": "en",
-    "value": "A participant declined the invitation."
+    "value": "Invitation\ndeclined."
   },
   {
     "_id": "i18n-message-en-chat-call-open",
@@ -18009,13 +18009,13 @@
     "_id": "i18n-message-en-guide-chat-call-call-accept-description",
     "key": "guide.chat.call.call-accept.description",
     "lang": "en",
-    "value": "Join this call with your microphone. Your camera starts off and can be enabled later."
+    "value": "Join with your microphone and camera off. Turn them on inside the call when you are ready."
   },
   {
     "_id": "i18n-message-en-guide-chat-call-call-accept-label",
     "key": "guide.chat.call.call-accept.label",
     "lang": "en",
-    "value": "Join with audio"
+    "value": "Join the call"
   },
   {
     "_id": "i18n-message-en-guide-chat-call-call-admin-mute-description",
@@ -18081,7 +18081,7 @@
     "_id": "i18n-message-en-guide-chat-call-call-microphone-description",
     "key": "guide.chat.call.call-microphone.description",
     "lang": "en",
-    "value": "Choose whether others can hear you. This does not mute incoming sound. The red button and your tile show when you are muted."
+    "value": "Your microphone starts muted. Turn it on when you want others to hear you. This does not mute incoming sound."
   },
   {
     "_id": "i18n-message-en-guide-chat-call-call-microphone-label",
@@ -18429,7 +18429,7 @@
     "_id": "i18n-message-hu-chat-call-accept-audio",
     "key": "chat.call.accept.audio",
     "lang": "hu",
-    "value": "Csatlakozás hanggal"
+    "value": "Csatlakozás a híváshoz"
   },
   {
     "_id": "i18n-message-hu-chat-call-accept-video",
@@ -18495,13 +18495,13 @@
     "_id": "i18n-message-hu-chat-call-error-browser",
     "key": "chat.call.error.browser",
     "lang": "hu",
-    "value": "A híváshoz HTTPS vagy localhost és WebRTC-t támogató böngésző szükséges."
+    "value": "WebRTC nem elérhető.\nHTTPS szükséges."
   },
   {
     "_id": "i18n-message-hu-chat-call-error-direct",
     "key": "chat.call.error.direct",
     "lang": "hu",
-    "value": "Egy résztvevővel nem sikerült közvetlen kapcsolatot létrehozni. Ellenőrizd a hálózatot vagy a tűzfalat. A média sosem kerül a szerveren át továbbításra."
+    "value": "Kapcsolati hiba.\nLépj be újra."
   },
   {
     "_id": "i18n-message-hu-chat-call-error-media",
@@ -18513,19 +18513,19 @@
     "_id": "i18n-message-hu-chat-call-error-node",
     "key": "chat.call.error.node",
     "lang": "hu",
-    "value": "A kiválasztott kapcsolatfelderítő node nem érhető el."
+    "value": "STUN nem elérhető.\nPróbáld meg később."
   },
   {
     "_id": "i18n-message-hu-chat-call-error-secure",
     "key": "chat.call.error.secure",
     "lang": "hu",
-    "value": "Egy résztvevővel nem sikerült biztonságos kapcsolatot létrehozni. Lépj ki, majd csatlakozz újra."
+    "value": "Titkosítási hiba.\nLépj be újra."
   },
   {
     "_id": "i18n-message-hu-chat-call-error-signaling",
     "key": "chat.call.error.signaling",
     "lang": "hu",
-    "value": "A hívásszervezés nem érhető el. Lépj ki, majd próbálj újra csatlakozni."
+    "value": "Kapcsolati hiba.\nLépj be újra."
   },
   {
     "_id": "i18n-message-hu-chat-call-follow-speakers",
@@ -18567,7 +18567,7 @@
     "_id": "i18n-message-hu-chat-call-notice-declined",
     "key": "chat.call.notice.declined",
     "lang": "hu",
-    "value": "Egy résztvevő elutasította a meghívást."
+    "value": "Meghívás\nelutasítva."
   },
   {
     "_id": "i18n-message-hu-chat-call-open",
@@ -18741,13 +18741,13 @@
     "_id": "i18n-message-hu-guide-chat-call-call-accept-description",
     "key": "guide.chat.call.call-accept.description",
     "lang": "hu",
-    "value": "Csatlakozz a híváshoz mikrofonnal. A kamerád kezdetben ki van kapcsolva, később bekapcsolhatod."
+    "value": "Kikapcsolt mikrofonnal és kamerával csatlakozol. A hívásban te kapcsolhatod be őket, amikor szeretnéd."
   },
   {
     "_id": "i18n-message-hu-guide-chat-call-call-accept-label",
     "key": "guide.chat.call.call-accept.label",
     "lang": "hu",
-    "value": "Csatlakozás hanggal"
+    "value": "Csatlakozás a híváshoz"
   },
   {
     "_id": "i18n-message-hu-guide-chat-call-call-admin-mute-description",
@@ -18813,7 +18813,7 @@
     "_id": "i18n-message-hu-guide-chat-call-call-microphone-description",
     "key": "guide.chat.call.call-microphone.description",
     "lang": "hu",
-    "value": "Állítsd be, halljanak-e téged a többiek. Ez nem némítja a bejövő hangot. Némításkor a gomb és a saját csempéd is piros jelzést kap."
+    "value": "A mikrofonod kezdetben néma. Kapcsold be, amikor szeretnéd, hogy halljanak. Ez nem némítja a bejövő hangot."
   },
   {
     "_id": "i18n-message-hu-guide-chat-call-call-microphone-label",
@@ -19371,7 +19371,7 @@
     "_id": "i18n-message-en-guide-chats-chat-call-description",
     "key": "guide.chats.chat-call.description",
     "lang": "en",
-    "value": "The green phone opens an audio call immediately. Turn on your camera inside the call if you want. A red crossed phone means calling is unavailable."
+    "value": "The green phone opens a call with your microphone and camera off. Turn them on inside the call. A red crossed phone means calling is unavailable."
   },
   {
     "_id": "i18n-message-en-guide-chats-chat-call-label",
@@ -19587,7 +19587,7 @@
     "_id": "i18n-message-hu-guide-chats-chat-call-description",
     "key": "guide.chats.chat-call.description",
     "lang": "hu",
-    "value": "A zöld telefon rögtön hanghívást nyit. A kamerát a hívásban kapcsolhatod be. A piros áthúzott telefon azt jelzi, hogy a hívás most nem érhető el."
+    "value": "A zöld telefon kikapcsolt mikrofonnal és kamerával nyit hívást. Ezeket a hívásban kapcsolhatod be. A piros áthúzott telefon elérhetetlen hívást jelez."
   },
   {
     "_id": "i18n-message-hu-guide-chats-chat-call-label",
