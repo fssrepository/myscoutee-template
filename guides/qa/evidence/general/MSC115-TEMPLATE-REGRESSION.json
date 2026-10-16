@@ -1,0 +1,275 @@
+{
+  "checkpoint": "MSC115-TEMPLATE-REGRESSION",
+  "checklist": "../../checklists/general/MSC115-TEMPLATE-REGRESSION.md",
+  "status": "NOT RUN",
+  "execution": "Separate template QA per explicit user instruction on2026-10-15. Propagation remains required; template runtime checks do not block MSC-115 development closure. Do not repeat the completed template baseline.",
+  "items": [
+    {
+      "id": "calendar",
+      "scope": "Retained calendar palette, density, ellipsis and cell sizing changes; supported item/cell activation.",
+      "source_evidence": "../../../../../myscoutee-backend/guides/qa/evidence/work-community/MSC115-step40-45-services-20261014.json",
+      "next": "Reconcile affected retained consumers and exact source/template revisions before the batch.",
+      "template_result": "NOT RUN",
+      "checklist_block": "TPL-CALENDAR",
+      "applicabilityReview": {
+        "date": "2026-10-15",
+        "owner": "myscoutee-template/frontend/src/app/member/components/showcase/showcase.component.ts and .html",
+        "result": "Four caller-owned palette values retained. Density configuration is commented out; no item/cell selection output is bound. Test palette/layout delta; density/navigation UI checks are N/A for this consumer, not missing product functionality. Runtime remains NOT RUN."
+      }
+    },
+    {
+      "id": "empty-error-card",
+      "scope": "Shared empty-state extraction: ordinary empty list/start placement and centered error card.",
+      "source_components_revision": "b4e04b8",
+      "template_frontend_revision": "881640a",
+      "template_revision": "5efc5f6",
+      "propagation": "DONE",
+      "source_result": "14 focused frontend tests and source HTTP/browser checks passed; see linked source evidence.",
+      "source_evidence": "../../../../../myscoutee-backend/guides/qa/evidence/work-community/MSC115-step40-45-services-20261014.json",
+      "template_result": "NOT RUN",
+      "checklist_block": "TPL-ERROR"
+    },
+    {
+      "id": "frequency-badge-colours",
+      "scope": "Shared frequency palette and optional SingleRow badge palette. Compare schedule choice and list badge; retain existing menu surfaces.",
+      "source_components_revision": "4e97783",
+      "source_frontend_revision": "3bc3f2df",
+      "template_frontend_revision": "b6c246d",
+      "template_revision": "4720cb4",
+      "propagation": "DONE",
+      "source_result": "Two focused Cases popup tests passed. HTTP browser showed Monthly amber, Quarterly violet, Yearly gold with computed CSS and screenshot.",
+      "source_evidence": "/tmp/msc115-20261014/frequency-badge-colours.json",
+      "template_result": "NOT RUN",
+      "checklist_block": "TPL-PALETTES",
+      "applicabilityReview": "Product Cases schedule UI is omitted. Establish an actual retained frequency consumer before UI execution; otherwise record UI N/A and credit shared component proof separately."
+    },
+    {
+      "id": "msc115-command-version-audit",
+      "scope": "Schedule/service/announcement/campaign command version guards; business-domain-only. Work-specific seed counter ordering and campaign assertions.",
+      "source_evidence": "../../../../../myscoutee-backend/guides/qa/evidence/work-community/MSC115-step40-45-services-20261014.json",
+      "template_result": "N/A: these Work/Community business services are omitted; no shared implementation change."
+    },
+    {
+      "id": "smart-list-empty-read-error",
+      "scope": "SmartList emptyError input reuses shared centered error card; no false empty header or reload on error-only updates.",
+      "source_components_revision": "7e4acf1",
+      "source_frontend_revision": "2dc725bc",
+      "template_frontend_revision": "45b9437",
+      "template_revision": "3143cd5",
+      "propagation": "DONE",
+      "source_result": "10 shared and3 popup tests PASS; HTTP503/retry browser proof.",
+      "source_evidence": "../../../../../myscoutee-backend/guides/qa/evidence/work-community/MSC115-step40-45-services-20261014.json",
+      "template_result": "NOT RUN: collected for prescribed campaign batch.",
+      "checklist_block": "TPL-ERROR"
+    },
+    {
+      "id": "chat-lazy-load-errors",
+      "scope": "Retained template chat: configured request timeout, propagated HTTP failures, centered SmartList error and shared persistent red failure indicator. Community entry and EventChatPopupStore are omitted.",
+      "propagation": "DONE",
+      "source_result": "10 shared and15 app/local tests PASS. Real no-response HTTP request timed out at3008ms; error appeared81ms after overdue red line; no synthetic error response. Late200, offline/online and successful reopen verified.",
+      "source_evidence": "../../../../../myscoutee-backend/guides/qa/evidence/work-community/MSC115-step40-45-services-20261014.json",
+      "template_result": "NOT RUN: collected for checkpoint119; no template-only rerun required before that batch.",
+      "source_components_revision": "c7dd484",
+      "source_frontend_revision": "5a95e287",
+      "template_components_revision": "c7dd484",
+      "template_frontend_revision": "0e70445",
+      "checks": [
+        "Normal HTTP and local chat open immediately; lazy message loading and the configured local delay remain inside the popup.",
+        "Leave the real message request unanswered until its configured timeout: centered localized error appears without an extra delay and the red header indicator remains. Do not substitute HTTP500/503 for this timeout test.",
+        "While the failed popup remains open, offline is grey; returning online restores the red failure state. Check the actual connectivity state and computed colour.",
+        "A late successful response after timeout does not clear the error or reopen a closed popup; a new successful open clears the error and red indicator.",
+        "No chat-read error is appended to the source channel list or shown in a separate notice dialog; verify EN/HU text.",
+        "Spot-check another retained SmartList consumer: failure indicator survives completion; abort/close is not a failure; retry restores normal state."
+      ],
+      "checklist_block": "TPL-ERROR"
+    },
+    {
+      "id": "media-deletion-queue",
+      "scope": "Generic media-owned deletion collection, bounded batch worker, microservice transport, root job configuration and EN/HU job labels propagated. Community attachment handoff and product AdminNotificationService are omitted in template.",
+      "propagation": "DONE in working tree; backend batch not yet committed.",
+      "source_result": "24 focused backend tests,8 transport tests and19 contract response validations PASS; source runtime deletion and AppAdmin job history observed. Split-runtime validation remains in campaign115–117.",
+      "checks": [
+        "Verify root job configuration and localized labels through the retained template job surfaces; use existing supported manual/scheduled entry points.",
+        "Queue exact managed keys, including image variants; repeated enqueue stays idempotent and does not scan buckets.",
+        "Process at most the configured batch size; delete successful entries and retry only failed keys. Already missing objects count as success.",
+        "Verify retry classification, attempt counter and terminal failure after at most3 total attempts; failed status/error remain inspectable, including expired final leases.",
+        "Verify retained media transport ownership and REAL/DEMO isolation, contract validation and no transport/SDK hidden retries.",
+        "Verify job history reflects actual deleted/failed work and no duplicate processing across claims; restore disposable queue objects."
+      ],
+      "source_evidence": "../../../../../myscoutee-backend/guides/qa/evidence/work-community/MSC115-step40-45-services-20261014.json",
+      "template_result": "NOT RUN: collected for checkpoint119.",
+      "checklist_block": "TPL-MEDIA",
+      "executionNote": "Use retained backend job configuration/history. Do not assume a template admin jobs UI exists. Reconcile historical working-tree propagation note with current revisions before runtime checks."
+    },
+    {
+      "id": "payment-receipt-presentation",
+      "scope": "Receipt payer signal/currency picker and history amount, status/method badges and view-style direction filter.",
+      "source_result": "25 focused frontend tests, compiled-output regression, i18n seed audit and paired HTTP/UI checks PASS.",
+      "source_evidence": "../../../../../myscoutee-backend/guides/qa/evidence/work-community/MSC115-step40-45-services-20261014.json",
+      "template_result": "N/A: template omits these business popups; shared FormFlow/AppMenu/SingleRow unchanged."
+    },
+    {
+      "id": "subevent-compact-view-selector",
+      "scope": "Keep the event mode label; use existing AppMenu compact view trigger and a single control row. Mingle reuses Standard/Tournament minimum lane allocation; Publish green; context action labels retained when no date-range field is present.",
+      "source_result": "PASS: existing converter tests8/8; actual HTTP browser Publish green and full toolbar labels without date-range field. Toolbar right-aligned at320/390/500/1024px, one row without overflow. Two one-minute Mingle rounds retain separate timeline rows.",
+      "source_evidence": "../../../../../myscoutee-backend/guides/qa/evidence/work-community/MSC115-step40-45-services-20261014.json",
+      "template_result": "N/A: template omits EventSubeventDefinitionsPanel; shared AppMenu unchanged."
+    },
+    {
+      "id": "popup-content-toolbar-alignment",
+      "scope": "Shared Popup mobile end-group honors existing AppMenu actionSizing=content; only fill-sized labelled actions expand to full width.",
+      "propagation": "DONE",
+      "source_result": "PASS: real participant popup at320/390/500/1024px; all3 buttons share one row, right edge equals toolbar inner edge within0.02px; no overflow. Existing watcher compiled and synced; frontend-sync remains running.",
+      "checks": [
+        "Verify a retained popup with end-aligned inline content-sized actions on narrow mobile and desktop: right alignment, visible labels and no wrapping/overflow.",
+        "Verify explicit fill-sized labelled actions still expand across the available mobile toolbar width.",
+        "Verify a start-side date/filter plus end-side compact actions retain their separate alignment."
+      ],
+      "source_evidence": "../../../../../myscoutee-backend/guides/qa/evidence/work-community/MSC115-step40-45-services-20261014.json",
+      "template_result": "NOT RUN: queued for checkpoint119; Event menus themselves are omitted from template.",
+      "source_components_revision": "a16b829",
+      "template_components_revision": "a16b829",
+      "source_frontend_revision": "fd6ca9e8",
+      "template_frontend_revision": "73eeb12",
+      "checklist_block": "TPL-POPUP"
+    },
+    {
+      "id": "notification-contextual-row-palettes",
+      "scope": "Shared SingleRow gold/rose palettes and contextual avatar styling; service-feedback menu action definition. Business service-feedback flow omitted from template.",
+      "source_components_revision": "ad51dca",
+      "template_components_revision": "ad51dca",
+      "propagation": "DONE via same origin commit; duplicate local cherry-pick reconciled.",
+      "source_result": "25 focused tests PASS; actual gold service and rose Mingle notification rows and Feedback navigation verified.",
+      "checks": [
+        "Retained template notifications render/read correctly with existing icons and colors.",
+        "Existing non-palette SingleRow consumers retain layout and unread/read styling."
+      ],
+      "template_result": "NOT RUN: prescribed campaign batch.",
+      "checklist_block": "TPL-PALETTES"
+    },
+    {
+      "id": "guide-context-and-continuity",
+      "scope": "Retained guide foreground ownership, loaded opening, stable step popup/shade/launcher, meaningful targets instead of Close-only tours, repeated-card conditional menu targets and short mobile compact layout.",
+      "propagation": "DONE via canonical origin commits; no cherry-pick copies.",
+      "source_evidence": "../../../../../myscoutee-backend/guides/qa/evidence/work-community/MSC115-guides-20261015/summary.json",
+      "template_result": "NOT RUN for final batch: separately queued by user on2026-10-15. Earlier six focused template tests passed before repeated-menu-owner and final short-viewport changes.",
+      "checks": [
+        "Spot-check retained local/HTTP guide opening and three step transitions, including an opened menu: guide launcher/popup/shade remain visible.",
+        "Verify only-Close resolves through existing no-guide feedback; retained image controls keep meaningful steps.",
+        "Check repeated menu owners where retained template data exposes conditional actions; no business action is invoked by guide navigation.",
+        "Check short mobile guide placement with existing compact layout."
+      ],
+      "source_frontend_revision": "84e58edaeb36db78672df60b74ee8fd665528e2b",
+      "template_frontend_revision": "849f4ac6c1cf9bc64a540a164d07f34fab74bc7f",
+      "source_components_revision": "65f5283234167d923662433b138ffc288bda0c84",
+      "template_components_revision": "65f5283234167d923662433b138ffc288bda0c84",
+      "checklist_block": "TPL-GUIDE"
+    },
+    {
+      "id": "infocard-contextual-palettes",
+      "checklist_block": "TPL-PALETTES",
+      "scope": "MSC-116 shared InfoCard green/amber/slate/violet static and interactive badge tokens; slate menu tokens. Retained rendering only, desktop/mobile and applicable local/HTTP. Omitted product feedback flows are N/A.",
+      "source_campaign": "MSC-116",
+      "source_evidence": "../../matrices/TEMPLATE_QA_MATRIX.csv",
+      "template_ledger_row": "T-SMARTLIST-001",
+      "propagation": "Recorded as propagated in the existing template ledger on 2026-10-15; exact source/template revisions or dirty hashes must be reconciled before execution.",
+      "template_result": "NOT RUN: existing ledger follow-up collected here; no test executed during checklist preparation."
+    },
+    {
+      "id": "role-oauth-consent-routing",
+      "checklist_block": "TPL-OAUTH",
+      "scope": "MSC-116 retained member/admin/operator OAuth consent route and query preservation, login return, role home/privacy consent and refusal gates, including bootstrap operator denial.",
+      "source_campaign": "MSC-116",
+      "source_evidence": "../../matrices/TEMPLATE_QA_MATRIX.csv",
+      "template_ledger_row": "T-INTEGRATION-009",
+      "propagation": "Recorded as propagated in the existing template ledger on 2026-10-15; exact source/template revisions or dirty hashes must be reconciled before execution.",
+      "template_result": "NOT RUN: existing ledger follow-up collected here; no test executed during checklist preparation."
+    },
+    {
+      "id": "events-delivery-realm",
+      "checklist_block": "TPL-EVENTS",
+      "scope": "MSC-116 signed operator.attention delivery with aliased REAL/DEMO databases and isolation with distinct databases; request realm and revocation checks. Retain template dispatcher ownership of all RETRY rows; source-only scheduler-test correction is N/A.",
+      "source_campaign": "MSC-116",
+      "source_evidence": "../../matrices/TEMPLATE_QA_MATRIX.csv",
+      "template_ledger_row": "T-INTEGRATION-008",
+      "propagation": "Recorded as propagated in the existing template ledger on 2026-10-15; exact source/template revisions or dirty hashes must be reconciled before execution.",
+      "template_result": "NOT RUN: existing ledger follow-up collected here; no test executed during checklist preparation."
+    },
+    {
+      "id": "subscription-admission-limit",
+      "checklist_block": "TPL-EVENTS",
+      "scope": "MSC-116 serialized post-verification subscription admission: concurrent 99-to-100 final slot, refresh at capacity and propagated callback-limiter regression.",
+      "source_campaign": "MSC-116",
+      "source_evidence": "../../matrices/TEMPLATE_QA_MATRIX.csv",
+      "template_ledger_row": "T-INTEGRATION-008",
+      "propagation": "Recorded as propagated in the existing template ledger on 2026-10-15; exact source/template revisions or dirty hashes must be reconciled before execution.",
+      "template_result": "NOT RUN: existing ledger follow-up collected here; no test executed during checklist preparation."
+    },
+    {
+      "id": "callback-ipv4-validation",
+      "checklist_block": "TPL-EVENTS",
+      "scope": "MSC-116 strict canonical numeric IPv4 validation; reject short, integer, leading-zero and hexadecimal forms. Credit matching focused template tests before scheduling any rerun.",
+      "source_campaign": "MSC-116",
+      "source_evidence": "../../matrices/TEMPLATE_QA_MATRIX.csv",
+      "template_ledger_row": "T-INTEGRATION-008",
+      "propagation": "Recorded as propagated in the existing template ledger on 2026-10-15; exact source/template revisions or dirty hashes must be reconciled before execution.",
+      "template_result": "NOT RUN: existing ledger follow-up collected here; no test executed during checklist preparation."
+    },
+    {
+      "id": "operator-release-discovery",
+      "checklist_block": "TPL-RELEASE-NOTICE",
+      "scope": "MSC-116 template-aware prepare-notification replay tool: project packageName, existing signing/client-tools, protected external QA key, signed inert artifact release discovery and operator notification only. Never install this artifact; do not repeat qualified update/install flows.",
+      "source_campaign": "MSC-116",
+      "source_evidence": "../../matrices/TEMPLATE_QA_MATRIX.csv",
+      "template_ledger_row": "T-OPERATOR-003",
+      "propagation": "Recorded as propagated in the existing template ledger on 2026-10-15; exact source/template revisions or dirty hashes must be reconciled before execution.",
+      "template_result": "NOT RUN: existing ledger follow-up collected here; no test executed during checklist preparation."
+    },
+    {
+      "id": "msc117-call-tile-errors-avatar",
+      "scope": "Per-tile top error/red border, 60px profile avatar/initials, dots below frame, microphone/camera initially off, typed pre-join MLS message handling and authenticated early peer offers.",
+      "propagation": "DONE in source/template working trees, including EN/HU generated seed catalogs.",
+      "source_evidence": "MSC117-20261016/summary.json",
+      "source_result": "Source final focused follow-up PASS: 42/42 connections; 390x844 actual failed peer uses two-line ellipsis/red frame, no avatar overlap. MLS lifetime/handshake regression PASS.",
+      "template_result": "NOT RUN. Shared call owner and EN/HU catalogs propagated; only these changed boundaries belong to separate template QA. Preserve existing call-series credit."
+    },
+    {
+      "id": "msc118-desktop-notification-snap",
+      "scope": "Shared Activity-derived first-group marker visibility and generic owned snap targets; one-column notification card-grid.",
+      "propagation": "DONE in components worktrees: source frontend/components, sibling myscoutee-components and template frontend/components; same existing base revision 257ff297.",
+      "source_evidence": "MSC118-20261016/shared-smart-list-group-snap.json",
+      "source_result": "Watcher compilation and compiled runtime transitions PASS. Earlier negative-margin browser evidence superseded; final shared rendering not rerun at user request.",
+      "template_result": "NOT RUN",
+      "checks": [
+        "Sticky header stays visible; first repeated marker uses existing scrollable state across resize.",
+        "Notification and Activity use existing card-grid snap behavior; explicit no-marker/no-sticky cases remain intact."
+      ],
+      "dirtySha256": {
+        "ts": "aef698771c34a2f65f99e5e4b63a7f221918aa9cd758f92b18b2522df46763d9",
+        "html": "d9edd6d94d7ddf30e040ef4b4b32c31c2d09c8be058148a6e609d610790034e5",
+        "scss": "ccd2479d97790e2b5aef024470f3caf570ad5cff875bd02b25be324f779d367e"
+      }
+    }
+  ],
+  "sourceCampaignRouting": {
+    "updated": "2026-10-15",
+    "campaigns": [
+      "MSC-115",
+      "MSC-116",
+      "MSC-117",
+      "MSC-118",
+      "MSC-119"
+    ],
+    "rule": "Collect new shared fixes here; template runtime is executed only in this separate checkpoint, never inside source development campaigns. Preserve existing pending items and accepted template baseline.",
+    "acceptedCallEvidence": "myscoutee-template/guides/qualification/evidence/MSC122_TEMPLATE_CHAT_PARITY_20261012.json and MSC122_TEMPLATE_KVM_20261012.json; repeat/long-call evidence credited, removed CALL-01 not reopened.",
+    "newCallOrRoleRetest": "Only after a relevant new source fix; no speculative blanket retest queued.",
+    "live": "Physical devices, external networks and actual providers are routed outside development QA."
+  },
+  "checklistPreparation": {
+    "date": "2026-10-15",
+    "scope": "Expanded the existing checklist to 32 numbered steps; documentation and read-only source/ledger review only. No runtime, fixture, browser or test execution.",
+    "evidenceCreditRule": "Per explicit user instruction, do not repeat completed tests. Credit matching template evidence first and execute only an uncovered boundary changed by a collected fix. Historical NOT RUN or an unrelated newer revision alone does not justify replay.",
+    "templateLedger": "../../matrices/TEMPLATE_QA_MATRIX.csv",
+    "executionStatusChanged": false
+  }
+}

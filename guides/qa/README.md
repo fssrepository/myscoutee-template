@@ -328,3 +328,7 @@ landing.guide context priority over the pending consent popup. T-CONTENT-002
 must verify a fresh visitor sees the launcher introduction (1/1), not the consent
 tour; all dismissal routes preserve pending consent and do not repeat after
 reload. Template runtime verification is NOT RUN.
+
+## Collected upstream regression
+
+The existing [MSC115-TEMPLATE-REGRESSION checklist](checklists/general/MSC115-TEMPLATE-REGRESSION.md) and [record](evidence/general/MSC115-TEMPLATE-REGRESSION.json) now belong to this QA ledger. Moved from MyScoutee on 2026-10-16; execution remains NOT RUN. No template test is authorized by this move.
