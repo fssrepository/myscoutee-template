@@ -18417,7 +18417,7 @@
     "_id": "i18n-message-hu-animals-nature",
     "key": "Animals & nature",
     "lang": "hu",
-    "value": "Animals & nature"
+    "value": "Állatok és természet"
   },
   {
     "_id": "i18n-message-hu-cancel-reply",
@@ -18735,7 +18735,7 @@
     "_id": "i18n-message-hu-food-drink",
     "key": "Food & drink",
     "lang": "hu",
-    "value": "Food & drink"
+    "value": "Ételek és italok"
   },
   {
     "_id": "i18n-message-hu-guide-chat-call-call-accept-description",
@@ -19107,7 +19107,7 @@
     "_id": "i18n-message-hu-smileys-people",
     "key": "Smileys & people",
     "lang": "hu",
-    "value": "Smileys & people"
+    "value": "Hangulatjelek és emberek"
   },
   {
     "_id": "i18n-message-hu-symbols",
@@ -19119,7 +19119,7 @@
     "_id": "i18n-message-hu-travel-places",
     "key": "Travel & places",
     "lang": "hu",
-    "value": "Travel & places"
+    "value": "Utazás és helyek"
   },
   {
     "_id": "i18n-message-hu-unpin",
@@ -19894,5 +19894,461 @@
     "key": "admin.jobs.rule.notification.outbox.description",
     "lang": "hu",
     "value": "Kiküldi a sorban álló alkalmazáson belüli és push értesítéseket."
+  },
+  {
+    "_id": "i18n-message-en-admin-profile",
+    "key": "admin.profile",
+    "lang": "en",
+    "value": "Admin profile"
+  },
+  {
+    "_id": "i18n-message-en-admin-workspace",
+    "key": "admin.workspace",
+    "lang": "en",
+    "value": "Admin workspace"
+  },
+  {
+    "_id": "i18n-message-en-close-privacy-popup",
+    "key": "close.privacy.popup",
+    "lang": "en",
+    "value": "Close privacy popup"
+  },
+  {
+    "_id": "i18n-message-en-close-terms-popup",
+    "key": "close.terms.popup",
+    "lang": "en",
+    "value": "Close terms popup"
+  },
+  {
+    "_id": "i18n-message-en-confirmation-mute-notification-alerts",
+    "key": "confirmation.mute.notification.alerts",
+    "lang": "en",
+    "value": "Mute notification alerts?"
+  },
+  {
+    "_id": "i18n-message-en-confirmation-unmute-notification-alerts",
+    "key": "confirmation.unmute.notification.alerts",
+    "lang": "en",
+    "value": "Unmute notification alerts?"
+  },
+  {
+    "_id": "i18n-message-en-open-chat",
+    "key": "open.chat",
+    "lang": "en",
+    "value": "Open chat"
+  },
+  {
+    "_id": "i18n-message-en-open-help",
+    "key": "open.help",
+    "lang": "en",
+    "value": "Open help"
+  },
+  {
+    "_id": "i18n-message-en-open-settings-menu",
+    "key": "open.settings.menu",
+    "lang": "en",
+    "value": "Open settings menu"
+  },
+  {
+    "_id": "i18n-message-en-reactivate-account-question",
+    "key": "reactivate.account.question",
+    "lang": "en",
+    "value": "Reactivate account?"
+  },
+  {
+    "_id": "i18n-message-en-turn-explanations-off",
+    "key": "turn.explanations.off",
+    "lang": "en",
+    "value": "Turn explanations off"
+  },
+  {
+    "_id": "i18n-message-en-turn-explanations-on",
+    "key": "turn.explanations.on",
+    "lang": "en",
+    "value": "Turn explanations on"
+  },
+  {
+    "_id": "i18n-message-en-ui-1-new-notification",
+    "key": "ui.1.new.notification",
+    "lang": "en",
+    "value": "1 new notification"
+  },
+  {
+    "_id": "i18n-message-en-ui-all-notifications",
+    "key": "ui.all.notifications",
+    "lang": "en",
+    "value": "All notifications"
+  },
+  {
+    "_id": "i18n-message-en-ui-close-chat-popup",
+    "key": "ui.close.chat.popup",
+    "lang": "en",
+    "value": "Close chat popup"
+  },
+  {
+    "_id": "i18n-message-en-ui-close-help-popup",
+    "key": "ui.close.help.popup",
+    "lang": "en",
+    "value": "Close help popup"
+  },
+  {
+    "_id": "i18n-message-en-ui-close-notifications",
+    "key": "ui.close.notifications",
+    "lang": "en",
+    "value": "Close notifications"
+  },
+  {
+    "_id": "i18n-message-en-ui-close-reactions",
+    "key": "ui.close.reactions",
+    "lang": "en",
+    "value": "Close reactions"
+  },
+  {
+    "_id": "i18n-message-en-ui-demo-user-selector",
+    "key": "ui.demo.user.selector",
+    "lang": "en",
+    "value": "Demo user selector"
+  },
+  {
+    "_id": "i18n-message-en-ui-filter-demo-users",
+    "key": "ui.filter.demo.users",
+    "lang": "en",
+    "value": "Filter demo users"
+  },
+  {
+    "_id": "i18n-message-en-ui-help-content-is-not-available-right-now",
+    "key": "ui.help.content.is.not.available.right.now",
+    "lang": "en",
+    "value": "Help content is not available right now."
+  },
+  {
+    "_id": "i18n-message-en-ui-loading-explanation",
+    "key": "ui.loading.explanation",
+    "lang": "en",
+    "value": "Loading explanation"
+  },
+  {
+    "_id": "i18n-message-en-ui-loading-help-content",
+    "key": "ui.loading.help.content",
+    "lang": "en",
+    "value": "Loading help content"
+  },
+  {
+    "_id": "i18n-message-en-ui-message-reactions",
+    "key": "ui.message.reactions",
+    "lang": "en",
+    "value": "Message reactions"
+  },
+  {
+    "_id": "i18n-message-en-ui-mute-alerts",
+    "key": "ui.mute.alerts",
+    "lang": "en",
+    "value": "Mute alerts"
+  },
+  {
+    "_id": "i18n-message-en-ui-mute-notification-alerts",
+    "key": "ui.mute.notification.alerts",
+    "lang": "en",
+    "value": "Mute notification alerts"
+  },
+  {
+    "_id": "i18n-message-en-ui-new-messages-and-updates-will-appear-here",
+    "key": "ui.new.messages.and.updates.will.appear.here",
+    "lang": "en",
+    "value": "New messages and updates will appear here."
+  },
+  {
+    "_id": "i18n-message-en-ui-new-notifications-will-still-be-counted-and-saved-but-the-floating-al",
+    "key": "ui.new.notifications.will.still.be.counted.and.saved.but.the.floating.alert.button.will.stay.hidden.until.you.unmute.it",
+    "lang": "en",
+    "value": "New notifications will still be counted and saved, but the floating alert button will stay hidden until you unmute it."
+  },
+  {
+    "_id": "i18n-message-en-ui-no-notifications",
+    "key": "ui.no.notifications",
+    "lang": "en",
+    "value": "No notifications"
+  },
+  {
+    "_id": "i18n-message-en-ui-notification-update-failed",
+    "key": "ui.notification.update.failed",
+    "lang": "en",
+    "value": "Notification update failed"
+  },
+  {
+    "_id": "i18n-message-en-ui-open-new-demo-profile",
+    "key": "ui.open.new.demo.profile",
+    "lang": "en",
+    "value": "Open new demo profile"
+  },
+  {
+    "_id": "i18n-message-en-ui-open-pinned-messages",
+    "key": "ui.open.pinned.messages",
+    "lang": "en",
+    "value": "Open pinned messages"
+  },
+  {
+    "_id": "i18n-message-en-ui-open-profile-status-selector",
+    "key": "ui.open.profile.status.selector",
+    "lang": "en",
+    "value": "Open profile status selector"
+  },
+  {
+    "_id": "i18n-message-en-ui-operator-profile",
+    "key": "ui.operator.profile",
+    "lang": "en",
+    "value": "Operator profile"
+  },
+  {
+    "_id": "i18n-message-en-ui-the-floating-alert-button-can-appear-again-when-a-new-notification-ar",
+    "key": "ui.the.floating.alert.button.can.appear.again.when.a.new.notification.arrives",
+    "lang": "en",
+    "value": "The floating alert button can appear again when a new notification arrives."
+  },
+  {
+    "_id": "i18n-message-en-ui-unable-to-reactivate-account",
+    "key": "ui.unable.to.reactivate.account",
+    "lang": "en",
+    "value": "Unable to reactivate account."
+  },
+  {
+    "_id": "i18n-message-en-ui-unmute-alerts",
+    "key": "ui.unmute.alerts",
+    "lang": "en",
+    "value": "Unmute alerts"
+  },
+  {
+    "_id": "i18n-message-en-ui-unmute-notification-alerts",
+    "key": "ui.unmute.notification.alerts",
+    "lang": "en",
+    "value": "Unmute notification alerts"
+  },
+  {
+    "_id": "i18n-message-hu-admin-profile",
+    "key": "admin.profile",
+    "lang": "hu",
+    "value": "Admin profil"
+  },
+  {
+    "_id": "i18n-message-hu-admin-workspace",
+    "key": "admin.workspace",
+    "lang": "hu",
+    "value": "Admin munkatér"
+  },
+  {
+    "_id": "i18n-message-hu-close-privacy-popup",
+    "key": "close.privacy.popup",
+    "lang": "hu",
+    "value": "Adatvédelmi ablak bezárása"
+  },
+  {
+    "_id": "i18n-message-hu-close-terms-popup",
+    "key": "close.terms.popup",
+    "lang": "hu",
+    "value": "Feltételek ablak bezárása"
+  },
+  {
+    "_id": "i18n-message-hu-confirmation-mute-notification-alerts",
+    "key": "confirmation.mute.notification.alerts",
+    "lang": "hu",
+    "value": "Elnémítod az értesítési jelzéseket?"
+  },
+  {
+    "_id": "i18n-message-hu-confirmation-unmute-notification-alerts",
+    "key": "confirmation.unmute.notification.alerts",
+    "lang": "hu",
+    "value": "Visszakapcsolod az értesítési jelzéseket?"
+  },
+  {
+    "_id": "i18n-message-hu-open-chat",
+    "key": "open.chat",
+    "lang": "hu",
+    "value": "Csevegés megnyitása"
+  },
+  {
+    "_id": "i18n-message-hu-open-help",
+    "key": "open.help",
+    "lang": "hu",
+    "value": "Segítség megnyitása"
+  },
+  {
+    "_id": "i18n-message-hu-open-settings-menu",
+    "key": "open.settings.menu",
+    "lang": "hu",
+    "value": "Beállítások menü megnyitása"
+  },
+  {
+    "_id": "i18n-message-hu-reactivate-account-question",
+    "key": "reactivate.account.question",
+    "lang": "hu",
+    "value": "Fiók újraaktiválása?"
+  },
+  {
+    "_id": "i18n-message-hu-turn-explanations-off",
+    "key": "turn.explanations.off",
+    "lang": "hu",
+    "value": "Magyarázatok kikapcsolása"
+  },
+  {
+    "_id": "i18n-message-hu-turn-explanations-on",
+    "key": "turn.explanations.on",
+    "lang": "hu",
+    "value": "Magyarázatok bekapcsolása"
+  },
+  {
+    "_id": "i18n-message-hu-ui-1-new-notification",
+    "key": "ui.1.new.notification",
+    "lang": "hu",
+    "value": "1 új értesítés"
+  },
+  {
+    "_id": "i18n-message-hu-ui-all-notifications",
+    "key": "ui.all.notifications",
+    "lang": "hu",
+    "value": "Összes értesítés"
+  },
+  {
+    "_id": "i18n-message-hu-ui-close-chat-popup",
+    "key": "ui.close.chat.popup",
+    "lang": "hu",
+    "value": "Csevegőablak bezárása"
+  },
+  {
+    "_id": "i18n-message-hu-ui-close-help-popup",
+    "key": "ui.close.help.popup",
+    "lang": "hu",
+    "value": "Súgóablak bezárása"
+  },
+  {
+    "_id": "i18n-message-hu-ui-close-notifications",
+    "key": "ui.close.notifications",
+    "lang": "hu",
+    "value": "Értesítések bezárása"
+  },
+  {
+    "_id": "i18n-message-hu-ui-close-reactions",
+    "key": "ui.close.reactions",
+    "lang": "hu",
+    "value": "Reakciók bezárása"
+  },
+  {
+    "_id": "i18n-message-hu-ui-demo-user-selector",
+    "key": "ui.demo.user.selector",
+    "lang": "hu",
+    "value": "Demófelhasználó kiválasztása"
+  },
+  {
+    "_id": "i18n-message-hu-ui-filter-demo-users",
+    "key": "ui.filter.demo.users",
+    "lang": "hu",
+    "value": "Demófelhasználók szűrése"
+  },
+  {
+    "_id": "i18n-message-hu-ui-help-content-is-not-available-right-now",
+    "key": "ui.help.content.is.not.available.right.now",
+    "lang": "hu",
+    "value": "A súgótartalom most nem érhető el."
+  },
+  {
+    "_id": "i18n-message-hu-ui-loading-explanation",
+    "key": "ui.loading.explanation",
+    "lang": "hu",
+    "value": "Magyarázat betöltése"
+  },
+  {
+    "_id": "i18n-message-hu-ui-loading-help-content",
+    "key": "ui.loading.help.content",
+    "lang": "hu",
+    "value": "Súgótartalom betöltése"
+  },
+  {
+    "_id": "i18n-message-hu-ui-message-reactions",
+    "key": "ui.message.reactions",
+    "lang": "hu",
+    "value": "Üzenetreakciók"
+  },
+  {
+    "_id": "i18n-message-hu-ui-mute-alerts",
+    "key": "ui.mute.alerts",
+    "lang": "hu",
+    "value": "Értesítési jelzések némítása"
+  },
+  {
+    "_id": "i18n-message-hu-ui-mute-notification-alerts",
+    "key": "ui.mute.notification.alerts",
+    "lang": "hu",
+    "value": "Értesítési jelzések némítása"
+  },
+  {
+    "_id": "i18n-message-hu-ui-new-messages-and-updates-will-appear-here",
+    "key": "ui.new.messages.and.updates.will.appear.here",
+    "lang": "hu",
+    "value": "Itt jelennek majd meg az új üzenetek és frissítések."
+  },
+  {
+    "_id": "i18n-message-hu-ui-new-notifications-will-still-be-counted-and-saved-but-the-floating-al",
+    "key": "ui.new.notifications.will.still.be.counted.and.saved.but.the.floating.alert.button.will.stay.hidden.until.you.unmute.it",
+    "lang": "hu",
+    "value": "Az új értesítéseket továbbra is számoljuk és mentjük, de a lebegő értesítési gomb rejtve marad, amíg újra be nem kapcsolod."
+  },
+  {
+    "_id": "i18n-message-hu-ui-no-notifications",
+    "key": "ui.no.notifications",
+    "lang": "hu",
+    "value": "Nincsenek értesítések"
+  },
+  {
+    "_id": "i18n-message-hu-ui-notification-update-failed",
+    "key": "ui.notification.update.failed",
+    "lang": "hu",
+    "value": "Nem sikerült frissíteni az értesítést"
+  },
+  {
+    "_id": "i18n-message-hu-ui-open-new-demo-profile",
+    "key": "ui.open.new.demo.profile",
+    "lang": "hu",
+    "value": "Új demóprofil megnyitása"
+  },
+  {
+    "_id": "i18n-message-hu-ui-open-pinned-messages",
+    "key": "ui.open.pinned.messages",
+    "lang": "hu",
+    "value": "Rögzített üzenetek megnyitása"
+  },
+  {
+    "_id": "i18n-message-hu-ui-open-profile-status-selector",
+    "key": "ui.open.profile.status.selector",
+    "lang": "hu",
+    "value": "Profilállapot kiválasztása"
+  },
+  {
+    "_id": "i18n-message-hu-ui-operator-profile",
+    "key": "ui.operator.profile",
+    "lang": "hu",
+    "value": "Operátorprofil"
+  },
+  {
+    "_id": "i18n-message-hu-ui-the-floating-alert-button-can-appear-again-when-a-new-notification-ar",
+    "key": "ui.the.floating.alert.button.can.appear.again.when.a.new.notification.arrives",
+    "lang": "hu",
+    "value": "Új értesítés érkezésekor ismét megjelenhet a lebegő értesítési gomb."
+  },
+  {
+    "_id": "i18n-message-hu-ui-unable-to-reactivate-account",
+    "key": "ui.unable.to.reactivate.account",
+    "lang": "hu",
+    "value": "Nem sikerült újraaktiválni a fiókot."
+  },
+  {
+    "_id": "i18n-message-hu-ui-unmute-alerts",
+    "key": "ui.unmute.alerts",
+    "lang": "hu",
+    "value": "Értesítési jelzések visszakapcsolása"
+  },
+  {
+    "_id": "i18n-message-hu-ui-unmute-notification-alerts",
+    "key": "ui.unmute.notification.alerts",
+    "lang": "hu",
+    "value": "Értesítési jelzések visszakapcsolása"
   }
 ]

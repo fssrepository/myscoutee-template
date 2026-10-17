@@ -5,8 +5,9 @@ It includes member, administrator and operator interfaces, identity and consent,
 profiles, SmartList, chat and calls, notifications, guides and API/MCP integration.
 
 [Live demo](https://fssrepository.github.io/myscoutee-template-frontend/) ·
-[Download 1.4.0](https://github.com/fssrepository/myscoutee-template/releases/tag/v1.4.0) ·
-[Frontend](https://github.com/fssrepository/myscoutee-template-frontend)
+[Download 1.4.1](https://github.com/fssrepository/myscoutee-template/releases/tag/v1.4.1) ·
+[Frontend](https://github.com/fssrepository/myscoutee-template-frontend) ·
+[1.4.1 release notes](guides/releases/v1.4.1.md)
 
 Angular supports browser-local and HTTP modes. The Java backend runs as a
 monolith or four services in the KVM lab. Debian installation, signed updates,

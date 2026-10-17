@@ -205,6 +205,7 @@ def audit_environments():
 def print_mongo_audit():
     """Emit read-only mongosh inventory; differences require ownership review."""
     catalog = json.loads((ROOT / 'packaging/migrations/seeds/015-runtime-index-parity/runtime-indexes.json').read_text())
+    catalog['indexes'] += json.loads((ROOT / 'packaging/migrations/seeds/018-media-worker-index/runtime-indexes.json').read_text())['indexes']
     print('const catalog=' + json.dumps(catalog) + ';')
     print(r'''
 function canonical(value) {

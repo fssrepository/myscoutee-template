@@ -1,0 +1,9 @@
+{
+  "indexes": [
+    {
+      "collection": "mediaDeletions",
+      "key": { "baseGroupId": 1, "status": 1, "nextAttemptAt": 1, "_id": 1 },
+      "options": { "name": "media_deletion_due_v1" }
+    }
+  ]
+}

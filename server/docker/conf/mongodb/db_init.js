@@ -16,6 +16,7 @@ const requiredCollections = [
   "i18n_bundles",
   "i18n_messages",
   "notificationOutbox",
+  "mediaDeletions",
   "notificationRuleConfigs",
   "privacyConsents",
   "userFriendships",
@@ -244,6 +245,7 @@ Array.from(new Set(configuredDatabases)).forEach(databaseName => {
   );
 
   // Existing import/runtime indexes also belong to fresh database initialization.
+  portalDb.mediaDeletions.createIndex({"baseGroupId":1,"status":1,"nextAttemptAt":1,"_id":1}, {"name":"media_deletion_due_v1"});
   portalDb.notificationRuleConfigs.createIndex({"baseGroupId":1,"ruleKey":1}, {"name":"notification_rule_group_key","unique":true});
   portalDb.helpCenterRevisions.createIndex({"baseGroupId":1,"documentType":1,"lang":1,"contextKey":1,"version":-1}, {"name":"help_revision_group_document_lang_context_version","unique":true});
   portalDb.helpCenterRevisions.createIndex({"baseGroupId":1,"documentType":1,"lang":1,"contextKey":1,"active":1,"version":-1}, {"name":"help_revision_group_document_lang_context_active"});

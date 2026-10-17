@@ -1,4 +1,14 @@
-# Template release 1.4.0
+# Template release 1.4.1
+
+The signed 1.4.1 candidate is installed and verified on VMware; its five images
+are published. See [release notes](../../guides/releases/v1.4.1.md) and
+[artifact evidence](../../guides/qualification/evidence/RELEASE_1.4.1_20261017.json).
+The owner’s DEB upload is published; signatures, all nine asset identities and
+canonical public update discovery are verified. Use
+`MYSCOUTEE_VERSION=1.4.1` and a fresh output directory with the existing builders.
+The compatibility baseline is 1.4.0.
+
+## Previous 1.4.0 release and tooling
 
 The existing production builder and Debian lifecycle are selected from MyScoutee.
 Project choices are data or small project-owned checks/recovery extensions:
