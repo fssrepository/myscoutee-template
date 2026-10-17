@@ -96,7 +96,7 @@ class IntegrationCallbackPersistenceTest {
                 var profiles = mock(ProfileDirectory.class); doReturn(Optional.of(profile)).when(profiles).findByUserId("operator");
                 var roles = mock(IntegrationRoleAccessService.class); when(roles.operator(profile)).thenReturn(true);
                 var oauth = mock(McpAuthorizationService.class);
-                when(oauth.activeSubscriptionGrant("grant", "operator", "token", "client")).thenReturn(true);
+                when(oauth.activeDeliveryGrant("grant", "operator", "token", "client")).thenReturn(true);
                 var crypto = mock(SecretEncryption.class); when(crypto.decrypt(anyString(), any())).thenReturn(secret);
                 var events = new McpEventsService(subscriptions, profiles, Optional.empty(), oauth, crypto, callbacks,
                         new com.raxim.myscoutee.common.config.JsonConfig().objectMapper(), mongo, roles);
@@ -136,7 +136,7 @@ class IntegrationCallbackPersistenceTest {
                         assertThat(deliveries.count()).isEqualTo(1); assertThat(received).hasSize(2);
                         // Authorization changes after queueing must stop the existing callback.
                         resumed.enqueueRoleAttention(new RoleAttention("notification-2", "operator", "release-available", List.of("operator")));
-                        when(oauth.activeSubscriptionGrant("grant", "operator", "token", "client")).thenReturn(false);
+                        when(oauth.activeDeliveryGrant("grant", "operator", "token", "client")).thenReturn(false);
                         resumed.deliverPending();
                         await().atMost(Duration.ofSeconds(10)).untilAsserted(() -> assertThat(deliveries.findAll())
                                 .anySatisfy(row -> { assertThat(row.getStatus()).isEqualTo("FAILED"); assertThat(row.getLastError()).isEqualTo("http_410"); }));

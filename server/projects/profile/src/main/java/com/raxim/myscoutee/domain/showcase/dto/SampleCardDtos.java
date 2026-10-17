@@ -4,6 +4,6 @@ import java.util.List;
 
 public final class SampleCardDtos {
     private SampleCardDtos() {}
-    public record Card(String id, String title, String description, String imageUrl, String palette, String dateIso) {}
+    public record Card(String id, String title, String description, String imageUrl, String palette, String dateIso, String endDateIso) {}
     public record Page(List<Card> items, long total) {}
 }

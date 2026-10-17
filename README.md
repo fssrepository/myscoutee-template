@@ -39,6 +39,14 @@ and calls require an HTTP backend. Use one compiler/stack at a time.
 | Project and roadmap | [GitHub Project](https://github.com/users/fssrepository/projects/6) · [Roadmap](https://github.com/fssrepository/myscoutee-roadmap) |
 | Delivery progress | [Numbered checklist](guides/plans/MSC-122_TEMPLATE_IMPLEMENTATION_PLAN.md) |
 
+## QA and measured usage
+
+Template regression **1–32 PASS / CLOSED** on October 17, including call/notification
+deltas and cleanup. [Evidence](guides/qa/evidence/general/MSC115-TEMPLATE-REGRESSION.json)
+retains the tested scope. [Usage and effort](https://github.com/users/fssrepository/projects/6)
+records **1,304,324,997 tokens** through October 17, 07:51:53 UTC. The published
+1.4.0 installer verification remains historical; no new installer is claimed.
+
 ## License and credit
 
 Original code and documentation: [CC BY 4.0](LICENSE). When sharing, credit

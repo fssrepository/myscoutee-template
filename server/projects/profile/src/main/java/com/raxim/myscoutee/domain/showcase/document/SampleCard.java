@@ -5,4 +5,4 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 /** A small project-owned example, independent of MyScoutee product models. */
 @Document(collection = "sampleCards")
-public record SampleCard(@Id String id, String title, String description, String imageUrl, String palette, String dateIso) {}
+public record SampleCard(@Id String id, String title, String description, String imageUrl, String palette, String dateIso, String endDateIso) {}

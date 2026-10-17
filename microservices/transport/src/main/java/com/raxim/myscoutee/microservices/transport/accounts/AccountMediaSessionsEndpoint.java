@@ -30,7 +30,7 @@ public final class AccountMediaSessionsEndpoint {
                         .with(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES).with(DeserializationFeature.FAIL_ON_TRAILING_TOKENS).readValue(bytes);
             } catch (RuntimeException invalid) { throw new ReadQueryBodies.RejectedQuery(400, "INVALID_REQUEST"); }
             if (!AccountMediaSessionsProtocol.valid(command)) throw new ReadQueryBodies.RejectedQuery(400, "INVALID_REQUEST");
-            return response(200, new AccountMediaSessionsProtocol.Decision(owner.acceptsMediaToken(command.userId(), command.tokenHash())));
+            return response(200, new AccountMediaSessionsProtocol.Authentication(owner.authenticateMediaToken(command.userId(), command.tokenHash()).orElse(null)));
         } catch (ReadQueryBodies.RejectedQuery invalid) { return response(invalid.status(), new AccountMediaSessionsProtocol.Error(invalid.code())); }
         catch (RuntimeException unavailable) { return response(503, new AccountMediaSessionsProtocol.Error("MEDIA_SESSION_UNAVAILABLE")); }
     }

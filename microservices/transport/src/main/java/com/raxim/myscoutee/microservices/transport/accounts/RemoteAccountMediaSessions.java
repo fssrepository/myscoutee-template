@@ -19,11 +19,13 @@ public final class RemoteAccountMediaSessions extends RemoteReadTransport implem
             Duration requestTimeout, ObjectMapper mapper, MeterRegistry metrics, ActorDelegation.Signer signer) {
         super(origin, token, allowHttp, connectTimeout, requestTimeout, mapper, metrics); this.mapper = mapper; this.signer = signer;
     }
-    @Override public boolean acceptsMediaToken(String userId, String tokenHash) {
+    @Override public Optional<String> authenticateMediaToken(String userId, String tokenHash) {
         var command = new AccountMediaSessionsProtocol.Check(userId, tokenHash);
-        return exchange(AccountMediaSessionsProtocol.ACCEPTS, encode(command, AccountMediaSessionsProtocol.valid(command)),
-                new TypeReference<AccountMediaSessionsProtocol.Decision>() {}, "media-sessions.accepts",
-                AccountMediaSessionsProtocol.MAX_RESPONSE_BYTES, value -> value.value() != null).value();
+        var result = exchange(AccountMediaSessionsProtocol.ACCEPTS, encode(command, AccountMediaSessionsProtocol.valid(command)),
+                new TypeReference<AccountMediaSessionsProtocol.Authentication>() {}, "media-sessions.accepts",
+                AccountMediaSessionsProtocol.MAX_RESPONSE_BYTES, value -> value.profileId() == null
+                        || (!value.profileId().isBlank() && value.profileId().length() <= 512));
+        return Optional.ofNullable(result.profileId());
     }
     @Override public Optional<MediaToken> mediaToken(String userId, String sessionId) {
         var command = new AccountMediaSessionsProtocol.Session(userId, sessionId);

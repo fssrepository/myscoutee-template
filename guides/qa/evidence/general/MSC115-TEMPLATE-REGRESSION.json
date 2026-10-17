@@ -1,20 +1,41 @@
 {
   "checkpoint": "MSC115-TEMPLATE-REGRESSION",
   "checklist": "../../checklists/general/MSC115-TEMPLATE-REGRESSION.md",
-  "status": "NOT RUN",
+  "status": "PASS / CLOSED",
   "execution": "Separate template QA per explicit user instruction on2026-10-15. Propagation remains required; template runtime checks do not block MSC-115 development closure. Do not repeat the completed template baseline.",
   "items": [
     {
       "id": "calendar",
       "scope": "Retained calendar palette, density, ellipsis and cell sizing changes; supported item/cell activation.",
       "source_evidence": "../../../../../myscoutee-backend/guides/qa/evidence/work-community/MSC115-step40-45-services-20261014.json",
-      "next": "Reconcile affected retained consumers and exact source/template revisions before the batch.",
-      "template_result": "NOT RUN",
+      "next": "Closed; retain evidence without replay.",
+      "template_result": "PASS: points 7–8 complete. Local/HTTP palette/layout and long-label week two-line ellipsis/month containment verified at 1280/390px. Inactive cells have default cursor, no button role or tabindex in both modes/views/sizes. Density/selection UI N/A under existing configuration evidence. All owned fixture rows removed and both stores verified clean.",
       "checklist_block": "TPL-CALENDAR",
       "applicabilityReview": {
         "date": "2026-10-15",
         "owner": "myscoutee-template/frontend/src/app/member/components/showcase/showcase.component.ts and .html",
         "result": "Four caller-owned palette values retained. Density configuration is commented out; no item/cell selection output is bound. Test palette/layout delta; density/navigation UI checks are N/A for this consumer, not missing product functionality. Runtime remains NOT RUN."
+      },
+      "evidence": [
+        ".e2e-artifacts/template-regression-calendar-http-focused.log",
+        ".e2e-artifacts/template-regression-calendar-local-focused.log",
+        ".e2e-artifacts/template-regression-calendar-local-mobile-week.log",
+        ".e2e-artifacts/functional/template-regression/calendar-long-http-week-390.png",
+        ".e2e-artifacts/functional/template-regression/calendar-long-local-week-390.png",
+        ".e2e-artifacts/functional/template-regression/calendar-applicability.json"
+      ],
+      "verifiedRevisions": {
+        "sourceBackend": "fda7f12d6a44d864367027812410ded53765b4ba",
+        "sourceFrontend": "958c9d12bfdb423d6383f9925b6fa435a7594c2f",
+        "templateBackend": "90d3d63f5655e351b75d18d5b68f7961451abe39",
+        "templateFrontend": "0e475a2f7c04f486b8474dec08ea4ffa7160cf22",
+        "templateComponents": "03cc620c58b4964795e8e186cce1eaa4e0c8e2e0"
+      },
+      "verifiedFilesSha256": {
+        "frontend/src/app/member/components/showcase/showcase.component.ts": "2a4dbab8e96104c9542eebea5991903a20162701828f831e35f94d40c33dbafb",
+        "frontend/src/app/member/components/showcase/showcase.component.html": "3abf16e1dca0550f650613ad6448278f48b4bc0b51e48c28972fb2bfbbd775a6",
+        "frontend/src/app/shared/core/local/seed/data/sample-cards.json": "407a22c0df74073c7ba0726221d6dfc4fc5e9e5f59a0f91afdac4ae25c3087fb",
+        "server/docker/conf/mongodb/demo_db/sampleCards.json": "ee1bdb8c899e05eaf7a08123494e280c0dc97f26cbe1c04c1cea819ab6aae26e"
       }
     },
     {
@@ -26,8 +47,16 @@
       "propagation": "DONE",
       "source_result": "14 focused frontend tests and source HTTP/browser checks passed; see linked source evidence.",
       "source_evidence": "../../../../../myscoutee-backend/guides/qa/evidence/work-community/MSC115-step40-45-services-20261014.json",
-      "template_result": "NOT RUN",
-      "checklist_block": "TPL-ERROR"
+      "template_result": "PASS: checklist 9–12 complete. Retained local normal chat proof credited. HTTP ordinary empty versus centered role=alert read-error, EN/HU text, computed red/grey gradients through native offline/online, late-response rejection, successful retry and closed-popup late reply verified. Close alone leaves source list normal. Existing shared SmartList 10 focused tests passed, including error-only input changes without reload or false empty header. All owned actors/chats/messages cleaned (zero remaining).",
+      "checklist_block": "TPL-ERROR",
+      "evidence": [
+        ".e2e-artifacts/template-regression-http-errors-remainder-pass.log",
+        ".e2e-artifacts/template-regression-http-errors-hu.log",
+        ".e2e-artifacts/template-regression-empty-state-tests-components.log",
+        ".e2e-artifacts/functional/template-regression/local-errors.json"
+      ],
+      "next": "Closed; shared component proof covers the conditional additional-consumer requirement.",
+      "repeatedChecks": "The combined chat journey was rerun for the missing observations; popup opening, real timeout, offline/online transition and successful reopening were repeated. These runs are not presented as new independent completed cases."
     },
     {
       "id": "frequency-badge-colours",
@@ -39,9 +68,10 @@
       "propagation": "DONE",
       "source_result": "Two focused Cases popup tests passed. HTTP browser showed Monthly amber, Quarterly violet, Yearly gold with computed CSS and screenshot.",
       "source_evidence": "/tmp/msc115-20261014/frequency-badge-colours.json",
-      "template_result": "NOT RUN",
+      "template_result": "UI N/A: no schedule-frequency consumer exists under frontend/src/app (frequencyBadge/frequency-badge/schedule-frequency/Monthly/Quarterly/Yearly audit). Cases schedule UI is omitted. Existing source component proof remains credited; the retained SlotsInput owner is byte-identical to the source frontend/components owner, with Monthly amber, Quarterly violet and Yearly gold unchanged.",
       "checklist_block": "TPL-PALETTES",
-      "applicabilityReview": "Product Cases schedule UI is omitted. Establish an actual retained frequency consumer before UI execution; otherwise record UI N/A and credit shared component proof separately."
+      "applicabilityReview": "Product Cases schedule UI is omitted. Establish an actual retained frequency consumer before UI execution; otherwise record UI N/A and credit shared component proof separately.",
+      "next": "Closed for retained UI; no artificial schedule screen introduced."
     },
     {
       "id": "msc115-command-version-audit",
@@ -59,8 +89,16 @@
       "propagation": "DONE",
       "source_result": "10 shared and3 popup tests PASS; HTTP503/retry browser proof.",
       "source_evidence": "../../../../../myscoutee-backend/guides/qa/evidence/work-community/MSC115-step40-45-services-20261014.json",
-      "template_result": "NOT RUN: collected for prescribed campaign batch.",
-      "checklist_block": "TPL-ERROR"
+      "template_result": "PASS: checklist 9–12 complete. Retained local normal chat proof credited. HTTP ordinary empty versus centered role=alert read-error, EN/HU text, computed red/grey gradients through native offline/online, late-response rejection, successful retry and closed-popup late reply verified. Close alone leaves source list normal. Existing shared SmartList 10 focused tests passed, including error-only input changes without reload or false empty header. All owned actors/chats/messages cleaned (zero remaining).",
+      "checklist_block": "TPL-ERROR",
+      "evidence": [
+        ".e2e-artifacts/template-regression-http-errors-remainder-pass.log",
+        ".e2e-artifacts/template-regression-http-errors-hu.log",
+        ".e2e-artifacts/template-regression-empty-state-tests-components.log",
+        ".e2e-artifacts/functional/template-regression/local-errors.json"
+      ],
+      "next": "Closed; shared component proof covers the conditional additional-consumer requirement.",
+      "repeatedChecks": "The combined chat journey was rerun for the missing observations; popup opening, real timeout, offline/online transition and successful reopening were repeated. These runs are not presented as new independent completed cases."
     },
     {
       "id": "chat-lazy-load-errors",
@@ -68,7 +106,7 @@
       "propagation": "DONE",
       "source_result": "10 shared and15 app/local tests PASS. Real no-response HTTP request timed out at3008ms; error appeared81ms after overdue red line; no synthetic error response. Late200, offline/online and successful reopen verified.",
       "source_evidence": "../../../../../myscoutee-backend/guides/qa/evidence/work-community/MSC115-step40-45-services-20261014.json",
-      "template_result": "NOT RUN: collected for checkpoint119; no template-only rerun required before that batch.",
+      "template_result": "PASS: checklist 9–12 complete. Retained local normal chat proof credited. HTTP ordinary empty versus centered role=alert read-error, EN/HU text, computed red/grey gradients through native offline/online, late-response rejection, successful retry and closed-popup late reply verified. Close alone leaves source list normal. Existing shared SmartList 10 focused tests passed, including error-only input changes without reload or false empty header. All owned actors/chats/messages cleaned (zero remaining).",
       "source_components_revision": "c7dd484",
       "source_frontend_revision": "5a95e287",
       "template_components_revision": "c7dd484",
@@ -81,7 +119,15 @@
         "No chat-read error is appended to the source channel list or shown in a separate notice dialog; verify EN/HU text.",
         "Spot-check another retained SmartList consumer: failure indicator survives completion; abort/close is not a failure; retry restores normal state."
       ],
-      "checklist_block": "TPL-ERROR"
+      "checklist_block": "TPL-ERROR",
+      "evidence": [
+        ".e2e-artifacts/template-regression-http-errors-remainder-pass.log",
+        ".e2e-artifacts/template-regression-http-errors-hu.log",
+        ".e2e-artifacts/template-regression-empty-state-tests-components.log",
+        ".e2e-artifacts/functional/template-regression/local-errors.json"
+      ],
+      "next": "Closed; shared component proof covers the conditional additional-consumer requirement.",
+      "repeatedChecks": "The combined chat journey was rerun for the missing observations; popup opening, real timeout, offline/online transition and successful reopening were repeated. These runs are not presented as new independent completed cases."
     },
     {
       "id": "media-deletion-queue",
@@ -97,9 +143,24 @@
         "Verify job history reflects actual deleted/failed work and no duplicate processing across claims; restore disposable queue objects."
       ],
       "source_evidence": "../../../../../myscoutee-backend/guides/qa/evidence/work-community/MSC115-step40-45-services-20261014.json",
-      "template_result": "NOT RUN: collected for checkpoint119.",
+      "template_result": "PASS: points20–22 functional boundaries. Monolith/KVM enqueue,105-key100+5 batches, actual four-object deletion, expiry/retry outcome and REAL/DEMO isolation verified; owned data removed. The missing media producer binding was repaired. KVM canonical seed was permanently refreshed through its native seeder; runtime job configuration is retained. The original temporary-rule run is worker proof only, not installation proof. Current EN/HU catalogs include every retained job label/description. A newly built/installed DEB is outside this regression result.",
       "checklist_block": "TPL-MEDIA",
-      "executionNote": "Use retained backend job configuration/history. Do not assume a template admin jobs UI exists. Reconcile historical working-tree propagation note with current revisions before runtime checks."
+      "executionNote": "Use retained backend job configuration/history. Do not assume a template admin jobs UI exists. Reconcile historical working-tree propagation note with current revisions before runtime checks.",
+      "evidence": [
+        ".e2e-artifacts/functional/template-regression/media-monolith.json",
+        ".e2e-artifacts/functional/template-regression/media-kvm.json",
+        ".e2e-artifacts/functional/template-regression/media-enqueue-kvm.json",
+        ".e2e-artifacts/functional/template-regression/media-session-kvm.json",
+        ".e2e-artifacts/template-regression-seed-refresh-native.log"
+      ],
+      "verifiedRevisions": {
+        "templateBackend": "90d3d63f5655e351b75d18d5b68f7961451abe39",
+        "templateFrontend": "0e475a2f7c04f486b8474dec08ea4ffa7160cf22",
+        "templateComponents": "03cc620c58b4964795e8e186cce1eaa4e0c8e2e0",
+        "sourceBackend": "fda7f12d6a44d864367027812410ded53765b4ba",
+        "sourceFrontend": "958c9d12bfdb423d6383f9925b6fa435a7594c2f"
+      },
+      "next": "None for this selected delta."
     },
     {
       "id": "payment-receipt-presentation",
@@ -126,12 +187,21 @@
         "Verify a start-side date/filter plus end-side compact actions retain their separate alignment."
       ],
       "source_evidence": "../../../../../myscoutee-backend/guides/qa/evidence/work-community/MSC115-step40-45-services-20261014.json",
-      "template_result": "NOT RUN: queued for checkpoint119; Event menus themselves are omitted from template.",
+      "template_result": "N/A: point16. No retained template consumer configures a labelled content-width popup end toolbar. Existing shared owner matches the qualified source implementation; omitted event menus were not fabricated.",
       "source_components_revision": "a16b829",
       "template_components_revision": "a16b829",
       "source_frontend_revision": "fd6ca9e8",
       "template_frontend_revision": "73eeb12",
-      "checklist_block": "TPL-POPUP"
+      "checklist_block": "TPL-POPUP",
+      "evidence": [],
+      "verifiedRevisions": {
+        "templateBackend": "90d3d63f5655e351b75d18d5b68f7961451abe39",
+        "templateFrontend": "0e475a2f7c04f486b8474dec08ea4ffa7160cf22",
+        "templateComponents": "03cc620c58b4964795e8e186cce1eaa4e0c8e2e0",
+        "sourceBackend": "fda7f12d6a44d864367027812410ded53765b4ba",
+        "sourceFrontend": "958c9d12bfdb423d6383f9925b6fa435a7594c2f"
+      },
+      "next": "None for this selected delta."
     },
     {
       "id": "notification-contextual-row-palettes",
@@ -144,15 +214,27 @@
         "Retained template notifications render/read correctly with existing icons and colors.",
         "Existing non-palette SingleRow consumers retain layout and unread/read styling."
       ],
-      "template_result": "NOT RUN: prescribed campaign batch.",
-      "checklist_block": "TPL-PALETTES"
+      "template_result": "PASS: point14. Existing contextual icon/avatar and read/unread rendering verified in HTTP/local at1280/390. Unused source palette consumers remain N/A.",
+      "checklist_block": "TPL-PALETTES",
+      "evidence": [
+        ".e2e-artifacts/functional/template-regression/notification-palettes.json",
+        ".e2e-artifacts/functional/template-regression/notification-palettes-local.json"
+      ],
+      "verifiedRevisions": {
+        "templateBackend": "90d3d63f5655e351b75d18d5b68f7961451abe39",
+        "templateFrontend": "0e475a2f7c04f486b8474dec08ea4ffa7160cf22",
+        "templateComponents": "03cc620c58b4964795e8e186cce1eaa4e0c8e2e0",
+        "sourceBackend": "fda7f12d6a44d864367027812410ded53765b4ba",
+        "sourceFrontend": "958c9d12bfdb423d6383f9925b6fa435a7594c2f"
+      },
+      "next": "None for this selected delta."
     },
     {
       "id": "guide-context-and-continuity",
       "scope": "Retained guide foreground ownership, loaded opening, stable step popup/shade/launcher, meaningful targets instead of Close-only tours, repeated-card conditional menu targets and short mobile compact layout.",
       "propagation": "DONE via canonical origin commits; no cherry-pick copies.",
       "source_evidence": "../../../../../myscoutee-backend/guides/qa/evidence/work-community/MSC115-guides-20261015/summary.json",
-      "template_result": "NOT RUN for final batch: separately queued by user on2026-10-15. Earlier six focused template tests passed before repeated-menu-owner and final short-viewport changes.",
+      "template_result": "PASS: points17–19. Existing three-transition guide proof credited; native image-preview guide verified in HTTP/local. Compact EN/HU at390x560 completed, including the focused HU/local continuation. Unused onlyClose/conditional consumers use existing focused component proof.",
       "checks": [
         "Spot-check retained local/HTTP guide opening and three step transitions, including an opened menu: guide launcher/popup/shade remain visible.",
         "Verify only-Close resolves through existing no-guide feedback; retained image controls keep meaningful steps.",
@@ -163,7 +245,20 @@
       "template_frontend_revision": "849f4ac6c1cf9bc64a540a164d07f34fab74bc7f",
       "source_components_revision": "65f5283234167d923662433b138ffc288bda0c84",
       "template_components_revision": "65f5283234167d923662433b138ffc288bda0c84",
-      "checklist_block": "TPL-GUIDE"
+      "checklist_block": "TPL-GUIDE",
+      "evidence": [
+        ".e2e-artifacts/functional/template-regression/guide-image.json",
+        ".e2e-artifacts/functional/template-regression/guide-compact.json",
+        ".e2e-artifacts/functional/template-regression/guide-compact-local-hu.json"
+      ],
+      "verifiedRevisions": {
+        "templateBackend": "90d3d63f5655e351b75d18d5b68f7961451abe39",
+        "templateFrontend": "0e475a2f7c04f486b8474dec08ea4ffa7160cf22",
+        "templateComponents": "03cc620c58b4964795e8e186cce1eaa4e0c8e2e0",
+        "sourceBackend": "fda7f12d6a44d864367027812410ded53765b4ba",
+        "sourceFrontend": "958c9d12bfdb423d6383f9925b6fa435a7594c2f"
+      },
+      "next": "None for this selected delta."
     },
     {
       "id": "infocard-contextual-palettes",
@@ -173,7 +268,18 @@
       "source_evidence": "../../matrices/TEMPLATE_QA_MATRIX.csv",
       "template_ledger_row": "T-SMARTLIST-001",
       "propagation": "Recorded as propagated in the existing template ledger on 2026-10-15; exact source/template revisions or dirty hashes must be reconciled before execution.",
-      "template_result": "NOT RUN: existing ledger follow-up collected here; no test executed during checklist preparation."
+      "template_result": "PASS / consumer N/A: point15. Native slate privacy action verified in HTTP/local desktop/mobile. Showcase InfoCard has no configured badges or action-menu consumer; those variants are N/A.",
+      "evidence": [
+        ".e2e-artifacts/functional/template-regression/slate-palette.json"
+      ],
+      "verifiedRevisions": {
+        "templateBackend": "90d3d63f5655e351b75d18d5b68f7961451abe39",
+        "templateFrontend": "0e475a2f7c04f486b8474dec08ea4ffa7160cf22",
+        "templateComponents": "03cc620c58b4964795e8e186cce1eaa4e0c8e2e0",
+        "sourceBackend": "fda7f12d6a44d864367027812410ded53765b4ba",
+        "sourceFrontend": "958c9d12bfdb423d6383f9925b6fa435a7594c2f"
+      },
+      "next": "None for this selected delta."
     },
     {
       "id": "role-oauth-consent-routing",
@@ -183,7 +289,26 @@
       "source_evidence": "../../matrices/TEMPLATE_QA_MATRIX.csv",
       "template_ledger_row": "T-INTEGRATION-009",
       "propagation": "Recorded as propagated in the existing template ledger on 2026-10-15; exact source/template revisions or dirty hashes must be reconciled before execution.",
-      "template_result": "NOT RUN: existing ledger follow-up collected here; no test executed during checklist preparation."
+      "template_result": "PASS: points23–24. HTTP member/admin/operator context, exact decoded OAuth query, required-login return, role home and persisted privacy gates completed. Operator selector incorrectly discarded the return URL; fixed to use existing finishEntry;15 focused entry tests and focused operator browser retest pass. Four HTTP profile refusal states pass; six actual-guard tests cover local profile states/bootstrap denial. Local route/query/login return passes for all roles; actual local OAuth context/consent is N/A because the existing adapter has no implementation.",
+      "evidence": [
+        ".e2e-artifacts/functional/template-regression/http-roles.json",
+        ".e2e-artifacts/functional/template-regression/http-roles-member.json",
+        ".e2e-artifacts/functional/template-regression/http-roles-admin.json",
+        ".e2e-artifacts/functional/template-regression/http-roles-operator.json",
+        ".e2e-artifacts/functional/template-regression/http-roles-operator-login-retest.json",
+        ".e2e-artifacts/functional/template-regression/local-roles.json",
+        ".e2e-artifacts/functional/template-regression/http-refusal-gates.json",
+        ".e2e-artifacts/template-regression-entry-operator-return.log",
+        ".e2e-artifacts/template-regression-refusal-route-guards.log"
+      ],
+      "verifiedRevisions": {
+        "templateBackend": "90d3d63f5655e351b75d18d5b68f7961451abe39",
+        "templateFrontend": "0e475a2f7c04f486b8474dec08ea4ffa7160cf22",
+        "templateComponents": "03cc620c58b4964795e8e186cce1eaa4e0c8e2e0",
+        "sourceBackend": "fda7f12d6a44d864367027812410ded53765b4ba",
+        "sourceFrontend": "958c9d12bfdb423d6383f9925b6fa435a7594c2f"
+      },
+      "next": "None for this selected delta."
     },
     {
       "id": "events-delivery-realm",
@@ -193,7 +318,19 @@
       "source_evidence": "../../matrices/TEMPLATE_QA_MATRIX.csv",
       "template_ledger_row": "T-INTEGRATION-008",
       "propagation": "Recorded as propagated in the existing template ledger on 2026-10-15; exact source/template revisions or dirty hashes must be reconciled before execution.",
-      "template_result": "NOT RUN: existing ledger follow-up collected here; no test executed during checklist preparation."
+      "template_result": "PASS, existing focused proof credited: point25. Current McpAuthorizationServiceTest passes shared-database worker delivery without weakening request realm/revocation, and distinct-database realm isolation. Existing IntegrationCallbackPersistenceTest verifies signed operator.attention payload with real embedded Mongo and an owned HTTP receiver, persisted retry/restart and revoked-authority410 denial. Transport forwarding in that embedded test is explicit; no production callback/DNS policy was changed. Point26: template dispatcher retains all due RETRY ownership; product-only throttled-RETRY scheduler change is N/A.",
+      "evidence": [
+        ".e2e-artifacts/template-regression-events-auth.log",
+        ".e2e-artifacts/template-regression-callback-embedded-retest.log"
+      ],
+      "verifiedRevisions": {
+        "templateBackend": "90d3d63f5655e351b75d18d5b68f7961451abe39",
+        "templateFrontend": "0e475a2f7c04f486b8474dec08ea4ffa7160cf22",
+        "templateComponents": "03cc620c58b4964795e8e186cce1eaa4e0c8e2e0",
+        "sourceBackend": "fda7f12d6a44d864367027812410ded53765b4ba",
+        "sourceFrontend": "958c9d12bfdb423d6383f9925b6fa435a7594c2f"
+      },
+      "next": "None for this selected delta."
     },
     {
       "id": "subscription-admission-limit",
@@ -203,7 +340,18 @@
       "source_evidence": "../../matrices/TEMPLATE_QA_MATRIX.csv",
       "template_ledger_row": "T-INTEGRATION-008",
       "propagation": "Recorded as propagated in the existing template ledger on 2026-10-15; exact source/template revisions or dirty hashes must be reconciled before execution.",
-      "template_result": "NOT RUN: existing ledger follow-up collected here; no test executed during checklist preparation."
+      "template_result": "PASS, existing current focused proof credited: point27. Concurrent verified99-to100 admission grants exactly one final slot; refresh at100 remains valid. Callback concurrency/rate/burst regressions pass. No new load campaign executed.",
+      "evidence": [
+        ".e2e-artifacts/template-regression-events-auth.log"
+      ],
+      "verifiedRevisions": {
+        "templateBackend": "90d3d63f5655e351b75d18d5b68f7961451abe39",
+        "templateFrontend": "0e475a2f7c04f486b8474dec08ea4ffa7160cf22",
+        "templateComponents": "03cc620c58b4964795e8e186cce1eaa4e0c8e2e0",
+        "sourceBackend": "fda7f12d6a44d864367027812410ded53765b4ba",
+        "sourceFrontend": "958c9d12bfdb423d6383f9925b6fa435a7594c2f"
+      },
+      "next": "None for this selected delta."
     },
     {
       "id": "callback-ipv4-validation",
@@ -213,7 +361,18 @@
       "source_evidence": "../../matrices/TEMPLATE_QA_MATRIX.csv",
       "template_ledger_row": "T-INTEGRATION-008",
       "propagation": "Recorded as propagated in the existing template ledger on 2026-10-15; exact source/template revisions or dirty hashes must be reconciled before execution.",
-      "template_result": "NOT RUN: existing ledger follow-up collected here; no test executed during checklist preparation."
+      "template_result": "PASS, existing current focused proof credited: point28. callbacksNeverOptIntoLocalDevExceptionsOrRedirectCredentials covers short, integer, leading-zero and hexadecimal numeric IPv4 rejection; full SSRF matrix was not replayed.",
+      "evidence": [
+        ".e2e-artifacts/template-regression-junit.log"
+      ],
+      "verifiedRevisions": {
+        "templateBackend": "90d3d63f5655e351b75d18d5b68f7961451abe39",
+        "templateFrontend": "0e475a2f7c04f486b8474dec08ea4ffa7160cf22",
+        "templateComponents": "03cc620c58b4964795e8e186cce1eaa4e0c8e2e0",
+        "sourceBackend": "fda7f12d6a44d864367027812410ded53765b4ba",
+        "sourceFrontend": "958c9d12bfdb423d6383f9925b6fa435a7594c2f"
+      },
+      "next": "None for this selected delta."
     },
     {
       "id": "operator-release-discovery",
@@ -223,7 +382,20 @@
       "source_evidence": "../../matrices/TEMPLATE_QA_MATRIX.csv",
       "template_ledger_row": "T-OPERATOR-003",
       "propagation": "Recorded as propagated in the existing template ledger on 2026-10-15; exact source/template revisions or dirty hashes must be reconciled before execution.",
-      "template_result": "NOT RUN: existing ledger follow-up collected here; no test executed during checklist preparation."
+      "template_result": "PASS: points29–30. Existing protected-key prepared inert1.4.1-qa.117 artifact retained. Real backend discovered and verified the signed local HTTPS catalog; native operator UI showed its version and persisted release notification. No update approval/install request occurred. Outbox drained normally; original backend configuration and operator fixture restored.",
+      "evidence": [
+        ".e2e-artifacts/functional/template-regression/release-notice.json",
+        ".e2e-artifacts/functional/template-regression/release-notice.png",
+        ".e2e-artifacts/template-regression-release-prepare.log"
+      ],
+      "verifiedRevisions": {
+        "templateBackend": "90d3d63f5655e351b75d18d5b68f7961451abe39",
+        "templateFrontend": "0e475a2f7c04f486b8474dec08ea4ffa7160cf22",
+        "templateComponents": "03cc620c58b4964795e8e186cce1eaa4e0c8e2e0",
+        "sourceBackend": "fda7f12d6a44d864367027812410ded53765b4ba",
+        "sourceFrontend": "958c9d12bfdb423d6383f9925b6fa435a7594c2f"
+      },
+      "next": "None for this selected delta."
     },
     {
       "id": "msc117-call-tile-errors-avatar",
@@ -231,7 +403,21 @@
       "propagation": "DONE in source/template working trees, including EN/HU generated seed catalogs.",
       "source_evidence": "MSC117-20261016/summary.json",
       "source_result": "Source final focused follow-up PASS: 42/42 connections; 390x844 actual failed peer uses two-line ellipsis/red frame, no avatar overlap. MLS lifetime/handshake regression PASS.",
-      "template_result": "NOT RUN. Shared call owner and EN/HU catalogs propagated; only these changed boundaries belong to separate template QA. Preserve existing call-series credit."
+      "template_result": "PASS: collected delta closed in point31 without reopening the accepted call series. One three-session native HTTP call verifies initially disabled microphone/camera,60px loaded photo and monogram, actual failed-peer red frames with translated two-line ellipsis and no avatar overlap at1280/390; real pagination dots below frames at800x400. Invalid SDP is injected only at the native browser negotiation boundary; application state is not patched. Current native WASM pre-join application-message test passes, then accepts authenticated current-epoch text. Earlier two-party RTP/repeated-call/KVM evidence remains credited.",
+      "evidence": [
+        ".e2e-artifacts/functional/template-regression/call-tiles.json",
+        ".e2e-artifacts/functional/template-regression/call-tiles-1280.png",
+        ".e2e-artifacts/functional/template-regression/call-tiles-390.png",
+        ".e2e-artifacts/template-regression-mls-prejoin.log"
+      ],
+      "verifiedRevisions": {
+        "templateBackend": "90d3d63f5655e351b75d18d5b68f7961451abe39",
+        "templateFrontend": "0e475a2f7c04f486b8474dec08ea4ffa7160cf22",
+        "templateComponents": "03cc620c58b4964795e8e186cce1eaa4e0c8e2e0",
+        "sourceBackend": "fda7f12d6a44d864367027812410ded53765b4ba",
+        "sourceFrontend": "958c9d12bfdb423d6383f9925b6fa435a7594c2f"
+      },
+      "next": "None for this selected delta."
     },
     {
       "id": "msc118-desktop-notification-snap",
@@ -239,7 +425,7 @@
       "propagation": "DONE in components worktrees: source frontend/components, sibling myscoutee-components and template frontend/components; same existing base revision 257ff297.",
       "source_evidence": "MSC118-20261016/shared-smart-list-group-snap.json",
       "source_result": "Watcher compilation and compiled runtime transitions PASS. Earlier negative-margin browser evidence superseded; final shared rendering not rerun at user request.",
-      "template_result": "NOT RUN",
+      "template_result": "PASS: collected delta closed in point31. Earlier HTTP one-column/sticky/owned-row snap checks credited. New HTTP/local resize checks show first repeated marker absent without overflow, present with overflow, and absent after growing again. Real wheel movement preserves sticky header. Actual call-list consumer explicitly disables both markers and sticky header; its changed rendering remains intact. Product Activity consumer is absent; no screen was added.",
       "checks": [
         "Sticky header stays visible; first repeated marker uses existing scrollable state across resize.",
         "Notification and Activity use existing card-grid snap behavior; explicit no-marker/no-sticky cases remain intact."
@@ -248,7 +434,21 @@
         "ts": "aef698771c34a2f65f99e5e4b63a7f221918aa9cd758f92b18b2522df46763d9",
         "html": "d9edd6d94d7ddf30e040ef4b4b32c31c2d09c8be058148a6e609d610790034e5",
         "scss": "ccd2479d97790e2b5aef024470f3caf570ad5cff875bd02b25be324f779d367e"
-      }
+      },
+      "evidence": [
+        ".e2e-artifacts/functional/template-regression/http-notifications.json",
+        ".e2e-artifacts/functional/template-regression/http-notification-resize-remainder.json",
+        ".e2e-artifacts/functional/template-regression/http-notification-resize-scroll-only.json",
+        ".e2e-artifacts/functional/template-regression/local-notification-resize-remainder.json"
+      ],
+      "verifiedRevisions": {
+        "templateBackend": "90d3d63f5655e351b75d18d5b68f7961451abe39",
+        "templateFrontend": "0e475a2f7c04f486b8474dec08ea4ffa7160cf22",
+        "templateComponents": "03cc620c58b4964795e8e186cce1eaa4e0c8e2e0",
+        "sourceBackend": "fda7f12d6a44d864367027812410ded53765b4ba",
+        "sourceFrontend": "958c9d12bfdb423d6383f9925b6fa435a7594c2f"
+      },
+      "next": "None for this selected delta."
     }
   ],
   "sourceCampaignRouting": {
@@ -271,5 +471,98 @@
     "evidenceCreditRule": "Per explicit user instruction, do not repeat completed tests. Credit matching template evidence first and execute only an uncovered boundary changed by a collected fix. Historical NOT RUN or an unrelated newer revision alone does not justify replay.",
     "templateLedger": "../../matrices/TEMPLATE_QA_MATRIX.csv",
     "executionStatusChanged": false
+  },
+  "executionProgress": {
+    "completedPoints": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32
+    ],
+    "preparationPoints": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "runtimePoints": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      14,
+      15,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      30
+    ],
+    "currentPoint": null,
+    "next": "None. All selected regression deltas are closed; accepted baseline was not reopened."
+  },
+  "verifiedFilesSha256": {
+    "frontend/src/app/entry/components/entry-page.component.ts": "fae41f92debde4ea72944cb8ddf0f9db5db395815414af0acbee8465858926f2",
+    "frontend/src/app/app.routes.ts": "0e7f514b2c3825f5a07d20e71d72993e7cc3c1d8f2b2ce9503baf89b4c8d9b78",
+    "frontend/src/app/shared/ui/components/chat-call-popup/chat-call-popup.component.ts": "b6e578af26882d838c9ab4725dcfc9632a9053a3e2c3a0d6ab708f2117b36127",
+    "frontend/components/src/lib/ui/components/core/smart-list/smart-list.component.ts": "aef698771c34a2f65f99e5e4b63a7f221918aa9cd758f92b18b2522df46763d9",
+    "frontend/components/src/lib/ui/components/core/smart-list/smart-list.component.html": "d9edd6d94d7ddf30e040ef4b4b32c31c2d09c8be058148a6e609d610790034e5",
+    "frontend/components/src/lib/ui/components/core/smart-list/smart-list.component.scss": "896c40e796705c1c146d413a207cd8e0e05d4c5f368364c5d48c065da7f256da",
+    "microservices/transport/bindings.json": "311b89a58a3d1622f384c8fd87eee6c1695675ae9a50c8b87e1c8d476cb18f02",
+    "server/docker/conf/mongodb/demo_db/notificationRuleConfigs.json": "783420ac13031f1f1af6cb763f4289b72c4e624e4b71494c479e95ea40d286c3",
+    "server/docker/conf/mongodb/demo_db/i18n_messages.json": "dca588fcef1374683e2c570109a76df7f14ba6202ac46d7441ff293b86429ed7"
+  },
+  "closedVerificationAtUtc": "2026-10-17T07:45:27.883050+00:00",
+  "cleanup": {
+    "closedAtUtc": "2026-10-17T07:46:29.100769+00:00",
+    "ownedMongoUsers": 0,
+    "ownedMongoChats": 0,
+    "releaseNotifications": 0,
+    "releaseOutbox": 0,
+    "localFixtureRows": 0,
+    "releaseFixtureServerStopped": true,
+    "managedBrowserSessionsClosed": true,
+    "localServeStopped": true,
+    "kvmRunning": false,
+    "frontendSyncRestored": true,
+    "qaBackendAndNginxStopped": true,
+    "initialSupportServicesRetained": true,
+    "canonicalRuntimeSeedsRetained": true
   }
 }

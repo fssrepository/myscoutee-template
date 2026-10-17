@@ -8,7 +8,7 @@ const base=process.env.E2E_SERVER_BASE_URL;
 assert(base && ['kvm','docker'].includes(process.env.E2E_MONGO_TRANSPORT));
 const fixture=await stageChatFixture(), sessions=nativeDemoSessions(base);
 const key=`private/documents/${fixture.ids[0]}/qa-private/owned.txt`,url='/api/media/private?key='+key;
-const evidence={task:'12.4',target:process.env.E2E_MONGO_TRANSPORT==='kvm'?'template-kvm':'template-monolith',checks:{}};
+const evidence={task:process.argv.includes('--sessions-only')?'regression-22-media-sessions':'12.4',target:process.env.E2E_MONGO_TRANSPORT==='kvm'?'template-kvm':'template-monolith',checks:{}};
 function object(action){
  const code=`import sys,shlex,os,subprocess
 sys.path.insert(0,'microservices/tools')
@@ -48,6 +48,7 @@ try{
  assert.match(own.headers.get('cache-control'),/no-store/);assert.match(own.headers.get('content-disposition'),/attachment/);
  await request(url,cookies[1],403);
  evidence.checks.ownerAllowedUnrelatedViewerAndAnonymousDenied=true;
+ if(!process.argv.includes('--sessions-only')){
  const legacy=await request('/api/media/public?key='+encodeURIComponent(key),{},307);assert.equal(legacy.headers.get('location'),url);
  evidence.checks.legacyPublicRouteCannotBypassAuthorization=true;
  const messageId='qa-private-'+fixture.ids[0];
@@ -73,10 +74,11 @@ try{
  }
  await request('/api/auth/eligibility?latitude=91&longitude=13',{},400);
  evidence.checks.disabledLocationPolicyAndInvalidCoordinates=true;
+ }
  await sessions.close();sessionsClosed=true;
  await request(url,cookies[0],401);
  evidence.checks.logoutRevokesMediaCredential=true;
- console.log('DONE private-media authorization/revocation, live EN/HU switching, disabled location policy.');
+ console.log(process.argv.includes('--sessions-only')?'DONE changed media-session transport: owner access, unrelated/anonymous denial, logout revocation.':'DONE private-media authorization/revocation, live EN/HU switching, disabled location policy.');
 }finally{
  try{if(!sessionsClosed)await sessions.close();}finally{try{object('cleanup');}finally{await fixture.close();}}
  evidence.cleanup=true;

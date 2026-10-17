@@ -1,0 +1,20 @@
+import assert from 'node:assert/strict';
+import {writeFile} from 'node:fs/promises';
+import {launchChromeBrowser} from '../lib/chrome-cdp.mjs';
+import {enter} from './assert.mjs';
+const result={point:19,samples:[]};
+try{for(const language of (process.argv.includes('--local-hu')?['hu']:['en','hu']))for(const [mode,baseUrl] of (process.argv.includes('--local-hu')?[['local','http://127.0.0.1:4200']]:[['http','https://127.0.0.1'],['local','http://127.0.0.1:4200']])){
+ const browser=await launchChromeBrowser({baseUrl});let page;
+ try{page=await browser.newPage();await page.connection.send('Page.bringToFront');await page.connection.send('Emulation.setUserAgentOverride',{userAgent:await page.evaluate(()=>navigator.userAgent),acceptLanguage:language==='hu'?'hu-HU,hu':'en-US,en'});await enter(page);await page.setViewport({width:390,height:560});
+ await page.waitForSelector('.user-selector-menu [data-guide-item="navigator-avatar"]:not([disabled])');await page.clickVisible('.user-selector-menu [data-guide-item="navigator-avatar"]:not([disabled])');await page.clickVisible('[data-guide-field="navigation-profile"]');await page.waitForSelector('app-profile-editor [data-control-id="name"] input');
+ await page.clickVisible('app-profile-editor [data-guide-field="profile-photo"]');await page.waitForSelector('app-profile-editor [data-guide-field="image-preview"]');
+ await page.waitFor('foreground image popup ready',()=>page.evaluate(()=>{const p=[...document.querySelectorAll('.ui-popup')].find(n=>n.querySelector('[data-guide-field="image-preview"]'));return p&&p.getBoundingClientRect().height>200&&!p.closest('[inert]')}));await new Promise(r=>setTimeout(r,400));await page.clickVisible('app-explanation-launcher .explanation-guide-menu button');try{await page.waitForSelector('.explanation-guide-overlay__progress');}catch(e){result.failureDom=await page.evaluate(()=>({text:document.body.innerText.slice(-6000),html:document.querySelector('app-explanation-guide-overlay')?.outerHTML}));throw e;}
+ await page.waitFor('visible compact card',()=>page.evaluate(()=>{const n=document.querySelector('.explanation-guide-overlay__card');return n&&getComputedStyle(n).visibility==='visible'}));
+ await page.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r))));
+ const sample=await page.evaluate(({mode,language})=>{const c=document.querySelector('.explanation-guide-overlay__card'),r=c.getBoundingClientRect();return {mode,language,text:c.innerText,compact:c.classList.contains('explanation-guide-overlay__card--compact'),rect:r.toJSON(),viewport:{width:innerWidth,height:innerHeight},overflow:c.scrollWidth>c.clientWidth,fonts:[...c.querySelectorAll('h3,p')].map(n=>({size:parseFloat(getComputedStyle(n).fontSize),height:n.clientHeight,scroll:n.scrollHeight})),controls:[...c.querySelectorAll('button')].map(n=>({text:n.innerText,disabled:n.disabled,rect:n.getBoundingClientRect().toJSON()}))};},{mode,language});
+ result.samples.push(sample);assert.ok(sample.compact);assert.ok(!sample.overflow);assert.ok(sample.rect.x>=0&&sample.rect.y>=0&&sample.rect.right<=390&&sample.rect.bottom<=560);assert.ok(sample.fonts.every(n=>n.size>=12&&n.scroll<=n.height+1));assert.ok(sample.controls.length>=3&&sample.controls.every(n=>n.rect.width>0&&n.rect.height>0&&n.rect.left>=0&&n.rect.right<=390&&n.rect.top>=0&&n.rect.bottom<=560));assert.match(sample.text,language==='hu'?/kiválasztott kép/i:/selected photo/i);
+ const capture=await page.connection.send('Page.captureScreenshot',{format:'png',captureBeyondViewport:false,fromSurface:false});await writeFile('.e2e-artifacts/functional/template-regression/guide-compact-'+mode+'-'+language+'.png',Buffer.from(capture.data,'base64'));
+ await page.clickVisible('.explanation-guide-overlay__close');
+ }finally{if(page)await page.close();await browser.close();}
+}result.status='PASS';}catch(error){result.status='FAIL';result.error=error.stack;process.exitCode=1;}
+await writeFile('.e2e-artifacts/functional/template-regression/guide-compact'+(process.argv.includes('--local-hu')?'-local-hu':'')+'.json',JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result));

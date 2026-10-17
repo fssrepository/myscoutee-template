@@ -130,6 +130,7 @@ class McpEventsServiceTest {
         verify(subscriptions, never()).save(any());
     }
     @Test void refreshRotatesKeysAndRestartedServiceUsesPersistedVerification() throws Exception {
+        when(subscriptions.countByOwnerUserIdAndEnabledTrueAndExpiresAtAfter(eq("alice"), any())).thenReturn(100L);
         var existing = new McpEventSubscription(); existing.id = McpEventsService.identity(client, request(null));
         existing.enabled = true; existing.grantId = "grant-a"; existing.generation = "generation"; existing.expiresAt = Instant.now().plusSeconds(3600);
         existing.secretHash = "old"; existing.secret = new EncryptedSecret();

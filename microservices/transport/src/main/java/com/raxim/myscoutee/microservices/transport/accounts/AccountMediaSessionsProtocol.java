@@ -12,6 +12,7 @@ public final class AccountMediaSessionsProtocol {
     public record Session(String userId, String sessionId) {}
     public record Replacement(String userId, String sessionId, String tokenHash) {}
     public record Decision(Boolean value) {}
+    public record Authentication(String profileId) {}
     public record Token(Boolean found, String hash) {}
     public record Error(String code) {}
     private static boolean id(String value) { return value != null && !value.isBlank() && value.length() <= 512; }

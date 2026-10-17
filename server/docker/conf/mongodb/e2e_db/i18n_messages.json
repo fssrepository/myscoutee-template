@@ -19798,5 +19798,101 @@
     "key": "loading.profile",
     "lang": "hu",
     "value": "Profil betöltése"
+  },
+  {
+    "_id": "i18n-message-en-admin-jobs-rule-media-deletion",
+    "key": "admin.jobs.rule.media.deletion",
+    "lang": "en",
+    "value": "Delete queued media"
+  },
+  {
+    "_id": "i18n-message-en-admin-jobs-rule-media-deletion-description",
+    "key": "admin.jobs.rule.media.deletion.description",
+    "lang": "en",
+    "value": "Deletes queued media files from storage and retries failed deletions."
+  },
+  {
+    "_id": "i18n-message-hu-admin-jobs-rule-media-deletion",
+    "key": "admin.jobs.rule.media.deletion",
+    "lang": "hu",
+    "value": "Várakozó médiafájlok törlése"
+  },
+  {
+    "_id": "i18n-message-hu-admin-jobs-rule-media-deletion-description",
+    "key": "admin.jobs.rule.media.deletion.description",
+    "lang": "hu",
+    "value": "Törli a várakozó médiafájlokat a tárhelyről, és újrapróbálja a sikertelen törléseket."
+  },
+  {
+    "_id": "i18n-message-en-admin-jobs-rule-account-purge",
+    "key": "admin.jobs.rule.account.purge",
+    "lang": "en",
+    "value": "Finalize deleted accounts"
+  },
+  {
+    "_id": "i18n-message-en-admin-jobs-rule-account-purge-description",
+    "key": "admin.jobs.rule.account.purge.description",
+    "lang": "en",
+    "value": "Permanently removes account activity and private media after the deletion grace period."
+  },
+  {
+    "_id": "i18n-message-en-admin-jobs-rule-integration-webhooks",
+    "key": "admin.jobs.rule.integration-webhooks",
+    "lang": "en",
+    "value": "Integration callbacks"
+  },
+  {
+    "_id": "i18n-message-en-admin-jobs-rule-integration-webhooks-description",
+    "key": "admin.jobs.rule.integration-webhooks.description",
+    "lang": "en",
+    "value": "Runs only for the selected base group."
+  },
+  {
+    "_id": "i18n-message-en-admin-jobs-rule-notification-outbox",
+    "key": "admin.jobs.rule.notification.outbox",
+    "lang": "en",
+    "value": "Send notifications"
+  },
+  {
+    "_id": "i18n-message-en-admin-jobs-rule-notification-outbox-description",
+    "key": "admin.jobs.rule.notification.outbox.description",
+    "lang": "en",
+    "value": "Sends queued in-app and push notifications."
+  },
+  {
+    "_id": "i18n-message-hu-admin-jobs-rule-account-purge",
+    "key": "admin.jobs.rule.account.purge",
+    "lang": "hu",
+    "value": "Törölt fiókok véglegesítése"
+  },
+  {
+    "_id": "i18n-message-hu-admin-jobs-rule-account-purge-description",
+    "key": "admin.jobs.rule.account.purge.description",
+    "lang": "hu",
+    "value": "A törlési türelmi idő után végleg eltávolítja a fiók aktivitását és privát médiáját."
+  },
+  {
+    "_id": "i18n-message-hu-admin-jobs-rule-integration-webhooks",
+    "key": "admin.jobs.rule.integration-webhooks",
+    "lang": "hu",
+    "value": "Integrációs visszahívások"
+  },
+  {
+    "_id": "i18n-message-hu-admin-jobs-rule-integration-webhooks-description",
+    "key": "admin.jobs.rule.integration-webhooks.description",
+    "lang": "hu",
+    "value": "Csak a kiválasztott alapcsoporthoz tartozó adatokat dolgozza fel."
+  },
+  {
+    "_id": "i18n-message-hu-admin-jobs-rule-notification-outbox",
+    "key": "admin.jobs.rule.notification.outbox",
+    "lang": "hu",
+    "value": "Értesítések kiküldése"
+  },
+  {
+    "_id": "i18n-message-hu-admin-jobs-rule-notification-outbox-description",
+    "key": "admin.jobs.rule.notification.outbox.description",
+    "lang": "hu",
+    "value": "Kiküldi a sorban álló alkalmazáson belüli és push értesítéseket."
   }
 ]

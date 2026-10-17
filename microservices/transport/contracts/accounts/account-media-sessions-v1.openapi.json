@@ -43,7 +43,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Decision"
+                  "$ref": "#/components/schemas/Authentication"
                 }
               }
             }
@@ -463,6 +463,23 @@
         },
         "required": [
           "code"
+        ]
+      },
+      "Authentication": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "profileId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1,
+            "maxLength": 512
+          }
+        },
+        "required": [
+          "profileId"
         ]
       }
     }

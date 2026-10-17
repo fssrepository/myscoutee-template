@@ -77,8 +77,8 @@ class AccountMediaSessionsHttpTest {
     @Test void checksAndSignedSessionOperationsKeepNativeResultsInEachRealm() throws Exception {
         for (var mode : MongoSessionMode.values()) {
             MongoSessionModeContext.set(mode); SecurityContextHolder.clearContext();
-            assertTrue(remote.acceptsMediaToken("selected", HASH));
-            assertFalse(remote.acceptsMediaToken("selected", "b".repeat(64)));
+            assertEquals(Optional.of("group:work:selected"), remote.authenticateMediaToken("selected", HASH));
+            assertEquals(Optional.empty(), remote.authenticateMediaToken("selected", "b".repeat(64)));
             actor();
             assertEquals(HASH, remote.mediaToken("selected", "session").orElseThrow().hash());
             assertNull(remote.mediaToken("selected", "fresh").orElseThrow().hash());
@@ -148,9 +148,9 @@ class AccountMediaSessionsHttpTest {
         }
         @Bean AccountMediaSessions sessions() {
             return new AccountMediaSessions() {
-                public boolean acceptsMediaToken(String userId, String hash) {
+                public Optional<String> authenticateMediaToken(String userId, String hash) {
                     calls.incrementAndGet(); assertEquals("selected", userId);
-                    return HASH.equals(hash);
+                    return HASH.equals(hash) ? Optional.of("group:work:selected") : Optional.empty();
                 }
                 public Optional<MediaToken> mediaToken(String userId, String sessionId) {
                     calls.incrementAndGet(); assertEquals("selected", userId);
