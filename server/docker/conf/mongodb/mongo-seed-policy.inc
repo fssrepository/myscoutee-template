@@ -71,6 +71,12 @@ ensure_collection_indexes() {
   local collection_name="$2"
 
   case "${collection_name}" in
+    mediaDeletions)
+      mongosh --host "${mongo_host}" --port "${mongo_port}" \
+        --username "${mongo_username}" --password "${mongo_password}" \
+        --authenticationDatabase "${target_db}" --quiet "${target_db}" \
+        --eval "db.getCollection('mediaDeletions').createIndex({baseGroupId:1,status:1,nextAttemptAt:1,_id:1},{name:'media_deletion_due_v1'});" >/dev/null
+      ;;
     accountDeletionWarnings)
       mongosh \
         --host "${mongo_host}" \

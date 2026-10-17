@@ -168,5 +168,46 @@
     "createdUser": "notification-registry",
     "updatedDate": "2026-05-31T00:00:00.000Z",
     "updatedUser": "notification-registry"
+  },
+  {
+    "_id": "notification-rule-media-deletion",
+    "syncKey": "notification-rule-media-deletion",
+    "ruleKey": "media-deletion",
+    "label": "admin.jobs.rule.media.deletion",
+    "category": "admin.jobs.category.scheduled",
+    "description": "admin.jobs.rule.media.deletion.description",
+    "actionKey": "media-deletion",
+    "triggerKind": "scheduled_process",
+    "enabled": true,
+    "manualRunEnabled": true,
+    "adminManageable": true,
+    "priority": 261,
+    "channels": {
+      "pushEnabled": false,
+      "emailEnabled": false,
+      "inAppEnabled": false,
+      "supportChatEnabled": false
+    },
+    "timing": {
+      "mode": "interval",
+      "intervalMinutes": 1,
+      "intervalSeconds": 60,
+      "intervalAmount": 1,
+      "intervalUnit": "minutes",
+      "month": null,
+      "dayOfMonth": null,
+      "time": null,
+      "timezone": "UTC",
+      "cronExpression": "0 * * * * ?"
+    },
+    "scheduleSlots": [],
+    "parameters": [],
+    "message": {},
+    "runState": {},
+    "runHistory": [],
+    "createdDate": "2026-05-31T00:00:00.000Z",
+    "createdUser": "notification-registry",
+    "updatedDate": "2026-05-31T00:00:00.000Z",
+    "updatedUser": "notification-registry"
   }
 ]

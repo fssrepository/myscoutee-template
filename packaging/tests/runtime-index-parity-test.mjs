@@ -8,7 +8,18 @@ import vm from 'node:vm';
 const root = new URL('../../', import.meta.url);
 const read = name => fs.readFileSync(new URL(name, root), 'utf8');
 const catalog = JSON.parse(read('packaging/migrations/seeds/015-runtime-index-parity/runtime-indexes.json'));
+catalog.indexes.push(...JSON.parse(read('packaging/migrations/seeds/018-media-worker-index/runtime-indexes.json')).indexes);
 const migration = read('packaging/migrations/015-runtime-index-parity.js');
+const mediaMigration = read('packaging/migrations/018-media-worker-index.js');
+const mediaCatalog = JSON.parse(read('packaging/migrations/seeds/018-media-worker-index/runtime-indexes.json'));
+const migrated = [];
+for (let attempt = 0; attempt < 2; attempt++) vm.runInNewContext(mediaMigration, {
+  require: () => ({ readFileSync: () => JSON.stringify(mediaCatalog) }),
+  process: { env: { MYSCOUTEE_MIGRATION_SEED_DIRECTORY: '/pinned' } },
+  db: { getCollection: collection => ({ createIndex: (key, options) => migrated.push({ collection, key, options }) }) },
+  print() {}
+});
+assert.deepEqual(JSON.parse(JSON.stringify(migrated)), [...mediaCatalog.indexes, ...mediaCatalog.indexes]);
 const id = row => row.collection + '/' + row.options.name;
 function definitions(source) {
   return [...source.matchAll(/(?:portalDb\.(\w+)|db\.getCollection\('([^']+)'\))\.createIndex\(([\s\S]*?)\);/g)]

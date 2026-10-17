@@ -1,0 +1,190 @@
+{
+  "task": "MSC-123",
+  "date": "2026-10-17",
+  "version": "1.4.1",
+  "source": {
+    "version": "1.4.1",
+    "backendBuildSource": "a9b7e69a337e92c0fef55620c45ee1e097c71b0b",
+    "backendJarSha256": "sha256:8de273c9046468b1554540de5c06803d3688c713c93607c6a1ab0d35f03ae32b",
+    "frontendSource": "a28c76a0d73e2efedd570881b5b32291b64c3277",
+    "frontendBuildId": "1.4.1-a28c76a0d",
+    "componentsSource": "ce3a0c3e821f63b27a0c3d6408720c0e390b795e",
+    "componentsPackage": "@fssrepository/myscoutee-components@1.4.1",
+    "backendSourceCleanAtBuild": true,
+    "frontendSourceCleanAtBuild": true
+  },
+  "artifact": {
+    "tag": "v1.4.1",
+    "version": "1.4.1",
+    "channel": "stable",
+    "repository": "fssrepository/myscoutee-template",
+    "artifactSha256": "sha256:9459fcb8d5325500a6299107ddbdef3293eadd8dfe9faae2d4cc9facbf1250d3",
+    "trustedPublicKeySpkiSha256": "sha256:74255e852bf3720b81b990d0568f5b567124d6fb12335063f0309ccb522c5c03",
+    "upload": [
+      "myscoutee-template_1.4.1_amd64.deb",
+      "myscoutee-template-client-tools_1.4.1.tar.gz",
+      "myscoutee-template-release_1.4.1.json",
+      "myscoutee-update.json",
+      "release-public.pem",
+      "myscoutee-template_1.4.1_amd64.deb.sha256",
+      "myscoutee-template-client-tools_1.4.1.tar.gz.sha256"
+    ],
+    "privateKeyPublished": false,
+    "artifactSignaturesVerified": true,
+    "updateManifestSignatureVerified": true
+  },
+  "publishedImages": {
+    "version": "1.4.1",
+    "images": [
+      {
+        "service": "nginx-base",
+        "reference": "ghcr.io/fssrepository/myscoutee-template-nginx:1.4.1-base",
+        "imageId": "sha256:45c0bb9de7a903d626100397a6826a728464a8c1d6a91e4cb643db1a4f9202c7",
+        "digest": "ghcr.io/fssrepository/myscoutee-template-nginx@sha256:fb6a0855e824b2f33a35a7b97f4b70b49da2e34972abf3dd9e14dc9346b5bd3f"
+      },
+      {
+        "service": "nginx",
+        "reference": "ghcr.io/fssrepository/myscoutee-template-nginx:1.4.1-prod",
+        "imageId": "sha256:2975f989d3f5fd776ba22e7426643a9e08c8a9365c500bb22b2e6c9e440cd553",
+        "digest": "ghcr.io/fssrepository/myscoutee-template-nginx@sha256:6c30fce1c87c9a5de979e86155c3bc43f23c15c265bce48e8faabeaabee5c036"
+      },
+      {
+        "service": "profilemanagement",
+        "reference": "ghcr.io/fssrepository/myscoutee-template-api:1.4.1-prod",
+        "imageId": "sha256:17eeb9c8619c84d6731bc3752fe727b0ed17391536076ab5e2596cbae6d6fc4b",
+        "digest": "ghcr.io/fssrepository/myscoutee-template-api@sha256:b78febf6dbdfa285c271f1a47e17480cbfaa1669082b8fc95a94f57b1f2caabb"
+      },
+      {
+        "service": "minio",
+        "reference": "ghcr.io/fssrepository/myscoutee-template-minio:1.4.1-prod",
+        "imageId": "sha256:3edf30950d7f2548f2eb72ba0b00522cf7d30e75ed01b3ca5bc5859871efde2d",
+        "digest": "ghcr.io/fssrepository/myscoutee-template-minio@sha256:43c9a6169408b8ffe1219ecfec6a7d65b9cf52d87e71df8c613bbafd6da8537a"
+      },
+      {
+        "service": "mcp",
+        "reference": "ghcr.io/fssrepository/myscoutee-template-mcp:1.4.1-prod",
+        "imageId": "sha256:4a29d6a23ffdecefcfc7df145566be3de991feefadfba475f001335e241b97a1",
+        "digest": "ghcr.io/fssrepository/myscoutee-template-mcp@sha256:7cef2dc38a988d9a1f767716f6bbb24525a0b87913822ad8d3d4b27592114268"
+      }
+    ]
+  },
+  "verification": {
+    "templateTests": 137,
+    "templateTestFiles": 9,
+    "componentsTests": 9,
+    "seedBaselines": 15,
+    "i18nMessages": 3392,
+    "runtimeIndexes": 68,
+    "actualDebFiles": 98,
+    "actualDebControlFiles": 5,
+    "artifactSignaturesVerified": true,
+    "updateCatalogSignatureVerified": true,
+    "vmwareReceiptMatchesCandidate": true,
+    "healthyServices": 7,
+    "externalChecks": {
+      "passed": 13,
+      "failed": 0,
+      "skipped": 0
+    },
+    "browserSmoke": {
+      "target": "VMware 192.168.153.129",
+      "version": "1.4.1",
+      "startedAt": "2026-10-17T13:59:20.363Z",
+      "checks": [
+        "Alex Morgan: real backend login, selector closed, session survives reload; browser consent accepted",
+        "Alex: entry, consent and reload",
+        "SmartList four cards, images, day/week/month and reload passed on this candidate",
+        "Sam Taylor: real backend login, selector closed, session survives reload; browser consent accepted",
+        "Sam: entry, consent and reload",
+        "Chat send, peer delivery and one message per client",
+        "Chat message survives reload",
+        "Test message unsent on both clients",
+        "Sam: logout and protected-route redirect",
+        "Alex: logout and protected-route redirect",
+        "No browser exceptions, Angular errors or failed resources"
+      ],
+      "status": "DONE",
+      "completedAt": "2026-10-17T13:59:27.456Z"
+    },
+    "completePreUpgradeBackup": true
+  },
+  "scopeLimits": [
+    "No KVM/monolith campaign replay",
+    "No new load or real-provider/device campaign",
+    "Netcup not executed"
+  ],
+  "logHashes": {
+    "templateFocusedTests": "sha256:ab62f7f6f93bcef39016c21bccce3db50b99313a4cf366a9fbf84da86b7e04ff",
+    "componentsTestsBuild": "sha256:2dbb72ddb3bab9f1ffed87ef961c32e19583db14ffa588ae4130abfa37941f72",
+    "packageBuild": "sha256:87362f34b124273dfa8c5e4fa66c4a35c9b66e52b60bfc5468c2561d9461837a",
+    "actualDebAudit": "sha256:e7d76d170c168b1835c8396beb8afb982aa540739c708c6210484f79917988f2",
+    "vmwareInstall": "sha256:ef9becd9bd8c8bdb41be07b4e7e30559db6a17e6244776a002f7b33858ae73d0",
+    "externalChecks": "sha256:824f51c7e39da8c17f4d5655a53952589e8133fb82810d6ad37a9af9c352d50e",
+    "browserSmoke": "sha256:feba5c7f23fd1947cf9a9eba32713ae9507b6202f21baaa653f4e5d186f6d08c"
+  },
+  "githubRelease": {
+    "id": 415834245,
+    "url": "https://github.com/fssrepository/myscoutee-template/releases/tag/v1.4.1",
+    "draft": false,
+    "supportingAssets": [
+      {
+        "name": "container-images.json",
+        "size": 1790,
+        "digest": "sha256:b25a3e9a2516189c83131d959feec28466a710588051d5319734d14d695eebaf"
+      },
+      {
+        "name": "myscoutee-template-client-tools_1.4.1.tar.gz",
+        "size": 33440,
+        "digest": "sha256:34046b9313186f19c8433466b92a67e03d7c67e090d0dfd0fb507d139162552d"
+      },
+      {
+        "name": "myscoutee-template-client-tools_1.4.1.tar.gz.sha256",
+        "size": 111,
+        "digest": "sha256:b84d043157e76530f6c368d4b5f12311992b1b5829d4cfc071f0671b4d863f19"
+      },
+      {
+        "name": "myscoutee-template-release_1.4.1.json",
+        "size": 824,
+        "digest": "sha256:4ce7f881c184e49ea31fb28f0d342ec74aefc8f71785184557423b9d0b6b9a3c"
+      },
+      {
+        "name": "myscoutee-template_1.4.1_amd64.deb.sha256",
+        "size": 101,
+        "digest": "sha256:c9078bdb04518fb0417793fc93bd0277340cd351f1cd00882d370996d155df41"
+      },
+      {
+        "name": "myscoutee-update.json",
+        "size": 1404,
+        "digest": "sha256:6fac139461e597d5de78aa6c569e40500012205b777ab9da619cdb9ce6f147a4"
+      },
+      {
+        "name": "release-public.pem",
+        "size": 113,
+        "digest": "sha256:8d184110f5fdec1a0b79cb02bfa59c8389088dd041955e3a04c18a90ec5e55c3"
+      },
+      {
+        "name": "source-artifacts.json",
+        "size": 503,
+        "digest": "sha256:a3107ca0ab5b96f3243234863e0b59c9440301cb5a1d983dfaf5cd08e49e4965"
+      }
+    ],
+    "manualDebUploadPending": false
+  },
+  "publicationVerification": {
+    "releaseId": 415834245,
+    "tag": "v1.4.1",
+    "draft": false,
+    "url": "https://github.com/fssrepository/myscoutee-template/releases/tag/v1.4.1",
+    "ownerDebUploadVerified": true,
+    "artifactSha256": "sha256:9459fcb8d5325500a6299107ddbdef3293eadd8dfe9faae2d4cc9facbf1250d3",
+    "assetCount": 9,
+    "allAssetSizesAndDigestsMatch": true,
+    "downloadedMetadataMatchesLocal": true,
+    "artifactSignaturesVerified": true,
+    "updateCatalogSignatureVerified": true,
+    "trustedPublicKeySpkiSha256": "sha256:74255e852bf3720b81b990d0568f5b567124d6fb12335063f0309ccb522c5c03",
+    "canonicalLatestDiscovery": true,
+    "canonicalArtifactDownloadStatus": 206,
+    "installedUpdaterUiRetested": false
+  }
+}

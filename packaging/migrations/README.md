@@ -7,6 +7,8 @@ by hand to bypass a failed deployment.
 
 - `012-integration-indexes`: retained API/MCP indexes.
 - `015-runtime-index-parity`: the complete selected 67-index template contract.
+- `018-media-worker-index`: the retained media worker's due index, also created
+  by fresh initialization and the import owner; existing records are preserved.
 - `017-retained-guide-controls`: current native profile/chat guide identifiers and
   the landing guide introduction; customized or disabled text is preserved.
 - `016-release-catalog-parity`: the selected help/guide production inputs. The
