@@ -94,7 +94,7 @@ class I18nServiceTest {
     }
 
     @Test
-    void returnsPayloadEvenWhenEditorVersionHasNotChanged() {
+    void omitsPayloadWhenTheCompleteCatalogVersionMatches() {
         I18nMessageRepository messageRepository =
                 org.mockito.Mockito.mock(I18nMessageRepository.class);
         I18nBundleRepository bundleRepository =
@@ -112,7 +112,40 @@ class I18nServiceTest {
 
         assertThat(response.lang()).isEqualTo("en");
         assertThat(response.version()).isEqualTo("2026.07.29.en.46");
-        assertThat(response.data()).isEmpty();
+        assertThat(response.data()).isNull();
+        verify(messageRepository).findAll();
+    }
+
+    @Test
+    void differentVersionComponentsWithTheSameFinalNumberStillReturnPayload() {
+        var messages = org.mockito.Mockito.mock(I18nMessageRepository.class);
+        var bundles = org.mockito.Mockito.mock(I18nBundleRepository.class);
+        when(bundles.findAll()).thenReturn(List.of(bundle("en", "2026.10.21.4")));
+        when(messages.findAll()).thenReturn(List.of(message("en", "greeting", "Hello")));
+        var service = new I18nService(messages, bundles);
+        for (String client : List.of("2026.10.20.4", "2026.9.21.4", "2025.10.21.4", "4")) {
+            assertThat(service.getBundle("en", null, client).data()).containsEntry("greeting", "Hello");
+        }
+        assertThat(service.getBundle("en", null, null).data()).containsEntry("greeting", "Hello");
+        assertThat(service.getBundle("en", null, "2026.10.21.4").data()).isNull();
+        verify(messages).findAll();
+    }
+
+    @Test
+    void aPublishedVersionAdvanceTransfersEditsAndDeletedKeys() {
+        var messages = org.mockito.Mockito.mock(I18nMessageRepository.class);
+        var bundles = org.mockito.Mockito.mock(I18nBundleRepository.class);
+        when(bundles.findAll()).thenReturn(List.of(bundle("en", "2026.10.21.4")));
+        when(messages.findAll()).thenReturn(List.of(message("en", "greeting", "Before"), message("en", "deleted", "Old")));
+        var service = new I18nService(messages, bundles);
+        assertThat(service.getBundle("en", null, "2026.10.21.3").data()).containsKey("deleted");
+        when(bundles.findAll()).thenReturn(List.of(bundle("en", "2026.10.21.5")));
+        when(messages.findAll()).thenReturn(List.of(message("en", "greeting", "After")));
+        service.refreshCache();
+        var updated = service.getBundle("en", null, "2026.10.21.4");
+        assertThat(updated.version()).isEqualTo("2026.10.21.5");
+        assertThat(updated.data()).containsEntry("greeting", "After").doesNotContainKey("deleted");
+        assertThat(service.getBundle("en", null, updated.version()).data()).isNull();
     }
 
     @Test
@@ -145,19 +178,19 @@ class I18nServiceTest {
     }
 
     @Test
-    void messageEditsAndDeletesRefreshWithoutChangingTheBundleVersion() {
+    void cacheRefreshStillObservesMessageEditsAndDeletesIndependentlyOfClientRevalidation() {
         var messages = org.mockito.Mockito.mock(I18nMessageRepository.class);
         var bundles = org.mockito.Mockito.mock(I18nBundleRepository.class);
         when(bundles.findAll()).thenReturn(List.of(bundle("en", "v1")));
         when(messages.findAll()).thenReturn(List.of(message("en", "key", "Before")));
         var service = new I18nService(messages, bundles);
-        assertThat(service.getBundle("en", null, "v1").data()).containsEntry("key", "Before");
+        assertThat(service.getBundle("en", null, null).data()).containsEntry("key", "Before");
         when(messages.findAll()).thenReturn(List.of(message("en", "key", "After")));
         service.refreshCache();
-        assertThat(service.getBundle("en", null, "v1").data()).containsEntry("key", "After");
+        assertThat(service.getBundle("en", null, null).data()).containsEntry("key", "After");
         when(messages.findAll()).thenReturn(List.of());
         service.refreshCache();
-        assertThat(service.getBundle("en", null, "v1").data()).doesNotContainKey("key");
+        assertThat(service.getBundle("en", null, null).data()).doesNotContainKey("key");
     }
 
     private static I18nBundle bundle(String lang, String version) {

@@ -81,9 +81,11 @@ public class I18nService implements com.raxim.myscoutee.domain.localization.api.
 
         String latestVersion = bundle.version();
 
-        // Bundle versions are editor metadata, not content validators: a message can be
-        // edited or deleted independently. Return the cached payload even for an equal
-        // version so existing clients cannot retain an obsolete translation indefinitely.
+        // Every published catalog change advances its full dotted version. Compare
+        // the entire value; equal final components alone do not identify a catalog.
+        if (latestVersion.equals(safeText(currentVersion, ""))) {
+            return new I18nBundleResponseDto(selectedLang, latestVersion, null);
+        }
         return new I18nBundleResponseDto(selectedLang, latestVersion, bundle.messages());
     }
 

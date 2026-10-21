@@ -2574,12 +2574,6 @@
     "value": "Open"
   },
   {
-    "_id": "i18n-message-en-close-demo-user-popup",
-    "key": "close.demo.user.popup",
-    "lang": "en",
-    "value": "Close demo user popup"
-  },
-  {
     "_id": "i18n-message-en-stats-domain-profiles",
     "key": "stats.domain.profiles",
     "lang": "en",
@@ -2698,12 +2692,6 @@
     "key": "guide.admin.payment-simulator.close.label",
     "lang": "en",
     "value": "Close"
-  },
-  {
-    "_id": "i18n-message-en-loading-terms-content",
-    "key": "loading.terms.content",
-    "lang": "en",
-    "value": "Loading terms content"
   },
   {
     "_id": "i18n-message-en-stage-status-scheduled",
@@ -2982,22 +2970,10 @@
     "value": "Details"
   },
   {
-    "_id": "i18n-message-en-privacy-content-is-not-available-right-now",
-    "key": "privacy.content.is.not.available.right.now",
-    "lang": "en",
-    "value": "Privacy content is not available right now."
-  },
-  {
     "_id": "i18n-message-en-guide-admin-navigation-notifications-label",
     "key": "guide.admin.navigation.notifications.label",
     "lang": "en",
     "value": "Notifications"
-  },
-  {
-    "_id": "i18n-message-en-preparing-demo-data",
-    "key": "preparing.demo.data",
-    "lang": "en",
-    "value": "Preparing demo data"
   },
   {
     "_id": "i18n-message-en-guide-admin-article-edit-article-save-label",
@@ -3018,34 +2994,16 @@
     "value": "Configured"
   },
   {
-    "_id": "i18n-message-en-accept-and-continue",
-    "key": "accept.and.continue",
-    "lang": "en",
-    "value": "Accept and continue"
-  },
-  {
     "_id": "i18n-message-en-hide-password",
     "key": "hide.password",
     "lang": "en",
     "value": "Hide password"
   },
   {
-    "_id": "i18n-message-en-usage-terms",
-    "key": "usage.terms",
-    "lang": "en",
-    "value": "Usage terms"
-  },
-  {
     "_id": "i18n-message-en-operator-revenue-delivery-pending",
     "key": "operator.revenue.delivery.pending",
     "lang": "en",
     "value": "Pending"
-  },
-  {
-    "_id": "i18n-message-en-terms-are-not-available",
-    "key": "terms.are.not.available",
-    "lang": "en",
-    "value": "Terms are not available"
   },
   {
     "_id": "i18n-message-en-guide-admin-parameter-history-close-label",
@@ -3088,12 +3046,6 @@
     "key": "guide.community.home.card-actions:publish.label",
     "lang": "en",
     "value": "Publish"
-  },
-  {
-    "_id": "i18n-message-en-preparing-demo-selector",
-    "key": "preparing.demo.selector",
-    "lang": "en",
-    "value": "Preparing demo selector"
   },
   {
     "_id": "i18n-message-en-admin-jobs-day",
@@ -3276,12 +3228,6 @@
     "value": "Close"
   },
   {
-    "_id": "i18n-message-en-no-demo-users-available",
-    "key": "no.demo.users.available",
-    "lang": "en",
-    "value": "No demo users available."
-  },
-  {
     "_id": "i18n-message-en-chat-call-me",
     "key": "chat.call.me",
     "lang": "en",
@@ -3436,12 +3382,6 @@
     "key": "payment.status.expired",
     "lang": "en",
     "value": "Expired"
-  },
-  {
-    "_id": "i18n-message-en-opening-demo-session",
-    "key": "opening.demo.session",
-    "lang": "en",
-    "value": "Opening demo session"
   },
   {
     "_id": "i18n-message-en-notification-source-asset",
@@ -3786,12 +3726,6 @@
     "value": "Close"
   },
   {
-    "_id": "i18n-message-en-preparing-demo-session",
-    "key": "preparing.demo.session",
-    "lang": "en",
-    "value": "Preparing demo session"
-  },
-  {
     "_id": "i18n-message-en-operator-measurements-delivery-pending",
     "key": "operator.measurements.delivery.pending",
     "lang": "en",
@@ -3838,12 +3772,6 @@
     "key": "guide.operator.home.configuration.label",
     "lang": "en",
     "value": "Configuration"
-  },
-  {
-    "_id": "i18n-message-en-demo-session-ready",
-    "key": "demo.session.ready",
-    "lang": "en",
-    "value": "Demo session ready"
   },
   {
     "_id": "i18n-message-en-case-status-open",
@@ -3948,12 +3876,6 @@
     "value": "Actions"
   },
   {
-    "_id": "i18n-message-en-help-is-not-available",
-    "key": "help.is.not.available",
-    "lang": "en",
-    "value": "Help is not available"
-  },
-  {
     "_id": "i18n-message-en-landing-preview-badge",
     "key": "landing.preview.badge",
     "lang": "en",
@@ -4032,12 +3954,6 @@
     "value": "Route"
   },
   {
-    "_id": "i18n-message-en-unable-to-load-demo-users-right-now",
-    "key": "unable.to.load.demo.users.right.now",
-    "lang": "en",
-    "value": "Unable to load demo users right now."
-  },
-  {
     "_id": "i18n-message-en-guide-profile-editor-values-label",
     "key": "guide.profile.editor.values.label",
     "lang": "en",
@@ -4104,12 +4020,6 @@
     "value": "Close"
   },
   {
-    "_id": "i18n-message-en-privacy-is-not-available",
-    "key": "privacy.is.not.available",
-    "lang": "en",
-    "value": "Privacy is not available"
-  },
-  {
     "_id": "i18n-message-en-announcement-status-published",
     "key": "announcement.status.published",
     "lang": "en",
@@ -4128,22 +4038,10 @@
     "value": "Enter a password with at least 6 characters."
   },
   {
-    "_id": "i18n-message-en-selector-unavailable",
-    "key": "selector.unavailable",
-    "lang": "en",
-    "value": "Selector unavailable"
-  },
-  {
     "_id": "i18n-message-en-stats-kpi-matching",
     "key": "stats.kpi.matching",
     "lang": "en",
     "value": "Matching"
-  },
-  {
-    "_id": "i18n-message-en-loading-privacy-content",
-    "key": "loading.privacy.content",
-    "lang": "en",
-    "value": "Loading privacy content"
   },
   {
     "_id": "i18n-message-en-case-status-active",
@@ -4318,12 +4216,6 @@
     "key": "profile.languages",
     "lang": "en",
     "value": "Languages"
-  },
-  {
-    "_id": "i18n-message-en-gdpr-consent",
-    "key": "gdpr.consent",
-    "lang": "en",
-    "value": "GDPR consent"
   },
   {
     "_id": "i18n-message-en-operator-community-announcement-severity-success",
@@ -4548,12 +4440,6 @@
     "value": "Parameters"
   },
   {
-    "_id": "i18n-message-en-retry-demo-selector",
-    "key": "retry.demo.selector",
-    "lang": "en",
-    "value": "Retry demo selector"
-  },
-  {
     "_id": "i18n-message-en-guide-activities-rates-primary-chats-label",
     "key": "guide.activities.rates.primary.chats.label",
     "lang": "en",
@@ -4590,22 +4476,10 @@
     "value": "Close"
   },
   {
-    "_id": "i18n-message-en-demo-data-loading-progress",
-    "key": "demo.data.loading.progress",
-    "lang": "en",
-    "value": "Demo data loading progress"
-  },
-  {
     "_id": "i18n-message-en-magyar",
     "key": "magyar",
     "lang": "en",
     "value": "Magyar"
-  },
-  {
-    "_id": "i18n-message-en-terms-content-is-not-available-right-now",
-    "key": "terms.content.is.not.available.right.now.",
-    "lang": "en",
-    "value": "Terms content is not available right now."
   },
   {
     "_id": "i18n-message-en-admin-params-group-worker",
@@ -4770,12 +4644,6 @@
     "value": "Available"
   },
   {
-    "_id": "i18n-message-en-privacy-first",
-    "key": "privacy.first",
-    "lang": "en",
-    "value": "Privacy first"
-  },
-  {
     "_id": "i18n-message-en-notification-source-scheduled",
     "key": "notification.source.scheduled",
     "lang": "en",
@@ -4800,22 +4668,10 @@
     "value": "Member"
   },
   {
-    "_id": "i18n-message-en-privacy-choices-could-not-be-saved",
-    "key": "privacy.choices.could.not.be.saved",
-    "lang": "en",
-    "value": "Privacy choices could not be saved."
-  },
-  {
     "_id": "i18n-message-en-profile-gender",
     "key": "profile.gender",
     "lang": "en",
     "value": "Gender"
-  },
-  {
-    "_id": "i18n-message-en-opening-demo-session-1qf23n",
-    "key": "opening.demo.session.1qf23n",
-    "lang": "en",
-    "value": "Opening demo session..."
   },
   {
     "_id": "i18n-message-en-password-strength-weak",
@@ -5052,12 +4908,6 @@
     "value": "Asset"
   },
   {
-    "_id": "i18n-message-en-terms-of-service",
-    "key": "terms.of.service",
-    "lang": "en",
-    "value": "Terms of service"
-  },
-  {
     "_id": "i18n-message-en-guide-community-task-editor-save-label",
     "key": "guide.community.task.editor.save.label",
     "lang": "en",
@@ -5262,12 +5112,6 @@
     "value": "Messages"
   },
   {
-    "_id": "i18n-message-en-no-network",
-    "key": "no.network",
-    "lang": "en",
-    "value": "No network"
-  },
-  {
     "_id": "i18n-message-en-guide-community-case-quotations-card-actions-view-label",
     "key": "guide.community.case.quotations.card-actions:view.label",
     "lang": "en",
@@ -5320,12 +5164,6 @@
     "key": "groups.required",
     "lang": "en",
     "value": "Required"
-  },
-  {
-    "_id": "i18n-message-en-auto-selected",
-    "key": "auto.selected",
-    "lang": "en",
-    "value": "Auto selected"
   },
   {
     "_id": "i18n-message-en-asset-borrow-pay",
@@ -7908,12 +7746,6 @@
     "value": "Megnyitás"
   },
   {
-    "_id": "i18n-message-hu-close-demo-user-popup",
-    "key": "close.demo.user.popup",
-    "lang": "hu",
-    "value": "Demo felhasználói ablak bezárása"
-  },
-  {
     "_id": "i18n-message-hu-stats-domain-profiles",
     "key": "stats.domain.profiles",
     "lang": "hu",
@@ -8032,12 +7864,6 @@
     "key": "guide.admin.payment-simulator.close.label",
     "lang": "hu",
     "value": "Bezárás"
-  },
-  {
-    "_id": "i18n-message-hu-loading-terms-content",
-    "key": "loading.terms.content",
-    "lang": "hu",
-    "value": "Feltételek betöltése"
   },
   {
     "_id": "i18n-message-hu-stage-status-scheduled",
@@ -8316,22 +8142,10 @@
     "value": "Részletek"
   },
   {
-    "_id": "i18n-message-hu-privacy-content-is-not-available-right-now",
-    "key": "privacy.content.is.not.available.right.now",
-    "lang": "hu",
-    "value": "Az adatvédelmi tartalom most nem érhető el."
-  },
-  {
     "_id": "i18n-message-hu-guide-admin-navigation-notifications-label",
     "key": "guide.admin.navigation.notifications.label",
     "lang": "hu",
     "value": "Értesítések"
-  },
-  {
-    "_id": "i18n-message-hu-preparing-demo-data",
-    "key": "preparing.demo.data",
-    "lang": "hu",
-    "value": "Demo adatok előkészítése"
   },
   {
     "_id": "i18n-message-hu-guide-admin-article-edit-article-save-label",
@@ -8352,34 +8166,16 @@
     "value": "Konfigurálva"
   },
   {
-    "_id": "i18n-message-hu-accept-and-continue",
-    "key": "accept.and.continue",
-    "lang": "hu",
-    "value": "Elfogadás és folytatás"
-  },
-  {
     "_id": "i18n-message-hu-hide-password",
     "key": "hide.password",
     "lang": "hu",
     "value": "Jelszó elrejtése"
   },
   {
-    "_id": "i18n-message-hu-usage-terms",
-    "key": "usage.terms",
-    "lang": "hu",
-    "value": "Használati feltételek"
-  },
-  {
     "_id": "i18n-message-hu-operator-revenue-delivery-pending",
     "key": "operator.revenue.delivery.pending",
     "lang": "hu",
     "value": "Függőben"
-  },
-  {
-    "_id": "i18n-message-hu-terms-are-not-available",
-    "key": "terms.are.not.available",
-    "lang": "hu",
-    "value": "A feltételek nem érhetők el"
   },
   {
     "_id": "i18n-message-hu-guide-admin-parameter-history-close-label",
@@ -8422,12 +8218,6 @@
     "key": "guide.community.home.card-actions:publish.label",
     "lang": "hu",
     "value": "Közzététel"
-  },
-  {
-    "_id": "i18n-message-hu-preparing-demo-selector",
-    "key": "preparing.demo.selector",
-    "lang": "hu",
-    "value": "Demo választó előkészítése"
   },
   {
     "_id": "i18n-message-hu-admin-jobs-day",
@@ -8610,12 +8400,6 @@
     "value": "Bezárás"
   },
   {
-    "_id": "i18n-message-hu-no-demo-users-available",
-    "key": "no.demo.users.available",
-    "lang": "hu",
-    "value": "Nincs elérhető demo felhasználó."
-  },
-  {
     "_id": "i18n-message-hu-chat-call-me",
     "key": "chat.call.me",
     "lang": "hu",
@@ -8770,12 +8554,6 @@
     "key": "payment.status.expired",
     "lang": "hu",
     "value": "Lejárt"
-  },
-  {
-    "_id": "i18n-message-hu-opening-demo-session",
-    "key": "opening.demo.session",
-    "lang": "hu",
-    "value": "Demo munkamenet megnyitása"
   },
   {
     "_id": "i18n-message-hu-notification-source-asset",
@@ -9120,12 +8898,6 @@
     "value": "Bezárás"
   },
   {
-    "_id": "i18n-message-hu-preparing-demo-session",
-    "key": "preparing.demo.session",
-    "lang": "hu",
-    "value": "Demo munkamenet előkészítése"
-  },
-  {
     "_id": "i18n-message-hu-operator-measurements-delivery-pending",
     "key": "operator.measurements.delivery.pending",
     "lang": "hu",
@@ -9172,12 +8944,6 @@
     "key": "guide.operator.home.configuration.label",
     "lang": "hu",
     "value": "Beállítások"
-  },
-  {
-    "_id": "i18n-message-hu-demo-session-ready",
-    "key": "demo.session.ready",
-    "lang": "hu",
-    "value": "Demo munkamenet kész"
   },
   {
     "_id": "i18n-message-hu-case-status-open",
@@ -9282,12 +9048,6 @@
     "value": "Műveletek"
   },
   {
-    "_id": "i18n-message-hu-help-is-not-available",
-    "key": "help.is.not.available",
-    "lang": "hu",
-    "value": "A segítség nem érhető el"
-  },
-  {
     "_id": "i18n-message-hu-landing-preview-badge",
     "key": "landing.preview.badge",
     "lang": "hu",
@@ -9366,12 +9126,6 @@
     "value": "Útvonal"
   },
   {
-    "_id": "i18n-message-hu-unable-to-load-demo-users-right-now",
-    "key": "unable.to.load.demo.users.right.now",
-    "lang": "hu",
-    "value": "Most nem lehet betölteni a demo felhasználókat."
-  },
-  {
     "_id": "i18n-message-hu-guide-profile-editor-values-label",
     "key": "guide.profile.editor.values.label",
     "lang": "hu",
@@ -9438,12 +9192,6 @@
     "value": "Bezárás"
   },
   {
-    "_id": "i18n-message-hu-privacy-is-not-available",
-    "key": "privacy.is.not.available",
-    "lang": "hu",
-    "value": "Az adatvédelem nem érhető el"
-  },
-  {
     "_id": "i18n-message-hu-announcement-status-published",
     "key": "announcement.status.published",
     "lang": "hu",
@@ -9462,22 +9210,10 @@
     "value": "Adj meg legalább 6 karakteres jelszót."
   },
   {
-    "_id": "i18n-message-hu-selector-unavailable",
-    "key": "selector.unavailable",
-    "lang": "hu",
-    "value": "A választó nem érhető el"
-  },
-  {
     "_id": "i18n-message-hu-stats-kpi-matching",
     "key": "stats.kpi.matching",
     "lang": "hu",
     "value": "Párosítás"
-  },
-  {
-    "_id": "i18n-message-hu-loading-privacy-content",
-    "key": "loading.privacy.content",
-    "lang": "hu",
-    "value": "Adatvédelmi tartalom betöltése"
   },
   {
     "_id": "i18n-message-hu-case-status-active",
@@ -9652,12 +9388,6 @@
     "key": "profile.languages",
     "lang": "hu",
     "value": "Nyelvek"
-  },
-  {
-    "_id": "i18n-message-hu-gdpr-consent",
-    "key": "gdpr.consent",
-    "lang": "hu",
-    "value": "GDPR hozzájárulás"
   },
   {
     "_id": "i18n-message-hu-operator-community-announcement-severity-success",
@@ -9882,12 +9612,6 @@
     "value": "Paraméterek"
   },
   {
-    "_id": "i18n-message-hu-retry-demo-selector",
-    "key": "retry.demo.selector",
-    "lang": "hu",
-    "value": "Demo választó újrapróbálása"
-  },
-  {
     "_id": "i18n-message-hu-guide-activities-rates-primary-chats-label",
     "key": "guide.activities.rates.primary.chats.label",
     "lang": "hu",
@@ -9924,22 +9648,10 @@
     "value": "Bezárás"
   },
   {
-    "_id": "i18n-message-hu-demo-data-loading-progress",
-    "key": "demo.data.loading.progress",
-    "lang": "hu",
-    "value": "Demo adatok betöltésének állapota"
-  },
-  {
     "_id": "i18n-message-hu-magyar",
     "key": "magyar",
     "lang": "hu",
     "value": "Magyar"
-  },
-  {
-    "_id": "i18n-message-hu-terms-content-is-not-available-right-now",
-    "key": "terms.content.is.not.available.right.now.",
-    "lang": "hu",
-    "value": "A feltételek tartalma jelenleg nem érhető el."
   },
   {
     "_id": "i18n-message-hu-admin-params-group-worker",
@@ -10104,12 +9816,6 @@
     "value": "Elérhető"
   },
   {
-    "_id": "i18n-message-hu-privacy-first",
-    "key": "privacy.first",
-    "lang": "hu",
-    "value": "Első az adatvédelem"
-  },
-  {
     "_id": "i18n-message-hu-notification-source-scheduled",
     "key": "notification.source.scheduled",
     "lang": "hu",
@@ -10134,22 +9840,10 @@
     "value": "Tag"
   },
   {
-    "_id": "i18n-message-hu-privacy-choices-could-not-be-saved",
-    "key": "privacy.choices.could.not.be.saved",
-    "lang": "hu",
-    "value": "Nem sikerült menteni az adatvédelmi választásokat."
-  },
-  {
     "_id": "i18n-message-hu-profile-gender",
     "key": "profile.gender",
     "lang": "hu",
     "value": "Nem"
-  },
-  {
-    "_id": "i18n-message-hu-opening-demo-session-1qf23n",
-    "key": "opening.demo.session.1qf23n",
-    "lang": "hu",
-    "value": "Demo munkamenet megnyitása..."
   },
   {
     "_id": "i18n-message-hu-password-strength-weak",
@@ -10386,12 +10080,6 @@
     "value": "Eszköz"
   },
   {
-    "_id": "i18n-message-hu-terms-of-service",
-    "key": "terms.of.service",
-    "lang": "hu",
-    "value": "Felhasználási feltételek"
-  },
-  {
     "_id": "i18n-message-hu-guide-community-task-editor-save-label",
     "key": "guide.community.task.editor.save.label",
     "lang": "hu",
@@ -10596,12 +10284,6 @@
     "value": "Üzenetek"
   },
   {
-    "_id": "i18n-message-hu-no-network",
-    "key": "no.network",
-    "lang": "hu",
-    "value": "Nincs hálózat"
-  },
-  {
     "_id": "i18n-message-hu-guide-community-case-quotations-card-actions-view-label",
     "key": "guide.community.case.quotations.card-actions:view.label",
     "lang": "hu",
@@ -10654,12 +10336,6 @@
     "key": "groups.required",
     "lang": "hu",
     "value": "Kötelező"
-  },
-  {
-    "_id": "i18n-message-hu-auto-selected",
-    "key": "auto.selected",
-    "lang": "hu",
-    "value": "Automatikusan kiválasztva"
   },
   {
     "_id": "i18n-message-hu-asset-borrow-pay",
@@ -19908,18 +19584,6 @@
     "value": "Admin workspace"
   },
   {
-    "_id": "i18n-message-en-close-privacy-popup",
-    "key": "close.privacy.popup",
-    "lang": "en",
-    "value": "Close privacy popup"
-  },
-  {
-    "_id": "i18n-message-en-close-terms-popup",
-    "key": "close.terms.popup",
-    "lang": "en",
-    "value": "Close terms popup"
-  },
-  {
     "_id": "i18n-message-en-confirmation-mute-notification-alerts",
     "key": "confirmation.mute.notification.alerts",
     "lang": "en",
@@ -19968,124 +19632,10 @@
     "value": "Turn explanations on"
   },
   {
-    "_id": "i18n-message-en-ui-1-new-notification",
-    "key": "ui.1.new.notification",
-    "lang": "en",
-    "value": "1 new notification"
-  },
-  {
-    "_id": "i18n-message-en-ui-all-notifications",
-    "key": "ui.all.notifications",
-    "lang": "en",
-    "value": "All notifications"
-  },
-  {
-    "_id": "i18n-message-en-ui-close-chat-popup",
-    "key": "ui.close.chat.popup",
-    "lang": "en",
-    "value": "Close chat popup"
-  },
-  {
-    "_id": "i18n-message-en-ui-close-help-popup",
-    "key": "ui.close.help.popup",
-    "lang": "en",
-    "value": "Close help popup"
-  },
-  {
-    "_id": "i18n-message-en-ui-close-notifications",
-    "key": "ui.close.notifications",
-    "lang": "en",
-    "value": "Close notifications"
-  },
-  {
-    "_id": "i18n-message-en-ui-close-reactions",
-    "key": "ui.close.reactions",
-    "lang": "en",
-    "value": "Close reactions"
-  },
-  {
-    "_id": "i18n-message-en-ui-demo-user-selector",
-    "key": "ui.demo.user.selector",
-    "lang": "en",
-    "value": "Demo user selector"
-  },
-  {
-    "_id": "i18n-message-en-ui-filter-demo-users",
-    "key": "ui.filter.demo.users",
-    "lang": "en",
-    "value": "Filter demo users"
-  },
-  {
-    "_id": "i18n-message-en-ui-help-content-is-not-available-right-now",
-    "key": "ui.help.content.is.not.available.right.now",
-    "lang": "en",
-    "value": "Help content is not available right now."
-  },
-  {
     "_id": "i18n-message-en-ui-loading-explanation",
     "key": "ui.loading.explanation",
     "lang": "en",
     "value": "Loading explanation"
-  },
-  {
-    "_id": "i18n-message-en-ui-loading-help-content",
-    "key": "ui.loading.help.content",
-    "lang": "en",
-    "value": "Loading help content"
-  },
-  {
-    "_id": "i18n-message-en-ui-message-reactions",
-    "key": "ui.message.reactions",
-    "lang": "en",
-    "value": "Message reactions"
-  },
-  {
-    "_id": "i18n-message-en-ui-mute-alerts",
-    "key": "ui.mute.alerts",
-    "lang": "en",
-    "value": "Mute alerts"
-  },
-  {
-    "_id": "i18n-message-en-ui-mute-notification-alerts",
-    "key": "ui.mute.notification.alerts",
-    "lang": "en",
-    "value": "Mute notification alerts"
-  },
-  {
-    "_id": "i18n-message-en-ui-new-messages-and-updates-will-appear-here",
-    "key": "ui.new.messages.and.updates.will.appear.here",
-    "lang": "en",
-    "value": "New messages and updates will appear here."
-  },
-  {
-    "_id": "i18n-message-en-ui-new-notifications-will-still-be-counted-and-saved-but-the-floating-al",
-    "key": "ui.new.notifications.will.still.be.counted.and.saved.but.the.floating.alert.button.will.stay.hidden.until.you.unmute.it",
-    "lang": "en",
-    "value": "New notifications will still be counted and saved, but the floating alert button will stay hidden until you unmute it."
-  },
-  {
-    "_id": "i18n-message-en-ui-no-notifications",
-    "key": "ui.no.notifications",
-    "lang": "en",
-    "value": "No notifications"
-  },
-  {
-    "_id": "i18n-message-en-ui-notification-update-failed",
-    "key": "ui.notification.update.failed",
-    "lang": "en",
-    "value": "Notification update failed"
-  },
-  {
-    "_id": "i18n-message-en-ui-open-new-demo-profile",
-    "key": "ui.open.new.demo.profile",
-    "lang": "en",
-    "value": "Open new demo profile"
-  },
-  {
-    "_id": "i18n-message-en-ui-open-pinned-messages",
-    "key": "ui.open.pinned.messages",
-    "lang": "en",
-    "value": "Open pinned messages"
   },
   {
     "_id": "i18n-message-en-ui-open-profile-status-selector",
@@ -20100,30 +19650,6 @@
     "value": "Operator profile"
   },
   {
-    "_id": "i18n-message-en-ui-the-floating-alert-button-can-appear-again-when-a-new-notification-ar",
-    "key": "ui.the.floating.alert.button.can.appear.again.when.a.new.notification.arrives",
-    "lang": "en",
-    "value": "The floating alert button can appear again when a new notification arrives."
-  },
-  {
-    "_id": "i18n-message-en-ui-unable-to-reactivate-account",
-    "key": "ui.unable.to.reactivate.account",
-    "lang": "en",
-    "value": "Unable to reactivate account."
-  },
-  {
-    "_id": "i18n-message-en-ui-unmute-alerts",
-    "key": "ui.unmute.alerts",
-    "lang": "en",
-    "value": "Unmute alerts"
-  },
-  {
-    "_id": "i18n-message-en-ui-unmute-notification-alerts",
-    "key": "ui.unmute.notification.alerts",
-    "lang": "en",
-    "value": "Unmute notification alerts"
-  },
-  {
     "_id": "i18n-message-hu-admin-profile",
     "key": "admin.profile",
     "lang": "hu",
@@ -20134,18 +19660,6 @@
     "key": "admin.workspace",
     "lang": "hu",
     "value": "Admin munkatér"
-  },
-  {
-    "_id": "i18n-message-hu-close-privacy-popup",
-    "key": "close.privacy.popup",
-    "lang": "hu",
-    "value": "Adatvédelmi ablak bezárása"
-  },
-  {
-    "_id": "i18n-message-hu-close-terms-popup",
-    "key": "close.terms.popup",
-    "lang": "hu",
-    "value": "Feltételek ablak bezárása"
   },
   {
     "_id": "i18n-message-hu-confirmation-mute-notification-alerts",
@@ -20196,124 +19710,10 @@
     "value": "Magyarázatok bekapcsolása"
   },
   {
-    "_id": "i18n-message-hu-ui-1-new-notification",
-    "key": "ui.1.new.notification",
-    "lang": "hu",
-    "value": "1 új értesítés"
-  },
-  {
-    "_id": "i18n-message-hu-ui-all-notifications",
-    "key": "ui.all.notifications",
-    "lang": "hu",
-    "value": "Összes értesítés"
-  },
-  {
-    "_id": "i18n-message-hu-ui-close-chat-popup",
-    "key": "ui.close.chat.popup",
-    "lang": "hu",
-    "value": "Csevegőablak bezárása"
-  },
-  {
-    "_id": "i18n-message-hu-ui-close-help-popup",
-    "key": "ui.close.help.popup",
-    "lang": "hu",
-    "value": "Súgóablak bezárása"
-  },
-  {
-    "_id": "i18n-message-hu-ui-close-notifications",
-    "key": "ui.close.notifications",
-    "lang": "hu",
-    "value": "Értesítések bezárása"
-  },
-  {
-    "_id": "i18n-message-hu-ui-close-reactions",
-    "key": "ui.close.reactions",
-    "lang": "hu",
-    "value": "Reakciók bezárása"
-  },
-  {
-    "_id": "i18n-message-hu-ui-demo-user-selector",
-    "key": "ui.demo.user.selector",
-    "lang": "hu",
-    "value": "Demófelhasználó kiválasztása"
-  },
-  {
-    "_id": "i18n-message-hu-ui-filter-demo-users",
-    "key": "ui.filter.demo.users",
-    "lang": "hu",
-    "value": "Demófelhasználók szűrése"
-  },
-  {
-    "_id": "i18n-message-hu-ui-help-content-is-not-available-right-now",
-    "key": "ui.help.content.is.not.available.right.now",
-    "lang": "hu",
-    "value": "A súgótartalom most nem érhető el."
-  },
-  {
     "_id": "i18n-message-hu-ui-loading-explanation",
     "key": "ui.loading.explanation",
     "lang": "hu",
     "value": "Magyarázat betöltése"
-  },
-  {
-    "_id": "i18n-message-hu-ui-loading-help-content",
-    "key": "ui.loading.help.content",
-    "lang": "hu",
-    "value": "Súgótartalom betöltése"
-  },
-  {
-    "_id": "i18n-message-hu-ui-message-reactions",
-    "key": "ui.message.reactions",
-    "lang": "hu",
-    "value": "Üzenetreakciók"
-  },
-  {
-    "_id": "i18n-message-hu-ui-mute-alerts",
-    "key": "ui.mute.alerts",
-    "lang": "hu",
-    "value": "Értesítési jelzések némítása"
-  },
-  {
-    "_id": "i18n-message-hu-ui-mute-notification-alerts",
-    "key": "ui.mute.notification.alerts",
-    "lang": "hu",
-    "value": "Értesítési jelzések némítása"
-  },
-  {
-    "_id": "i18n-message-hu-ui-new-messages-and-updates-will-appear-here",
-    "key": "ui.new.messages.and.updates.will.appear.here",
-    "lang": "hu",
-    "value": "Itt jelennek majd meg az új üzenetek és frissítések."
-  },
-  {
-    "_id": "i18n-message-hu-ui-new-notifications-will-still-be-counted-and-saved-but-the-floating-al",
-    "key": "ui.new.notifications.will.still.be.counted.and.saved.but.the.floating.alert.button.will.stay.hidden.until.you.unmute.it",
-    "lang": "hu",
-    "value": "Az új értesítéseket továbbra is számoljuk és mentjük, de a lebegő értesítési gomb rejtve marad, amíg újra be nem kapcsolod."
-  },
-  {
-    "_id": "i18n-message-hu-ui-no-notifications",
-    "key": "ui.no.notifications",
-    "lang": "hu",
-    "value": "Nincsenek értesítések"
-  },
-  {
-    "_id": "i18n-message-hu-ui-notification-update-failed",
-    "key": "ui.notification.update.failed",
-    "lang": "hu",
-    "value": "Nem sikerült frissíteni az értesítést"
-  },
-  {
-    "_id": "i18n-message-hu-ui-open-new-demo-profile",
-    "key": "ui.open.new.demo.profile",
-    "lang": "hu",
-    "value": "Új demóprofil megnyitása"
-  },
-  {
-    "_id": "i18n-message-hu-ui-open-pinned-messages",
-    "key": "ui.open.pinned.messages",
-    "lang": "hu",
-    "value": "Rögzített üzenetek megnyitása"
   },
   {
     "_id": "i18n-message-hu-ui-open-profile-status-selector",
@@ -20328,27 +19728,2067 @@
     "value": "Operátorprofil"
   },
   {
-    "_id": "i18n-message-hu-ui-the-floating-alert-button-can-appear-again-when-a-new-notification-ar",
-    "key": "ui.the.floating.alert.button.can.appear.again.when.a.new.notification.arrives",
-    "lang": "hu",
-    "value": "Új értesítés érkezésekor ismét megjelenhet a lebegő értesítési gomb."
+    "_id": "i18n-message-en-accordion-empty-description",
+    "key": "accordion.empty.description",
+    "lang": "en",
+    "value": "Nothing here yet"
   },
   {
-    "_id": "i18n-message-hu-ui-unable-to-reactivate-account",
-    "key": "ui.unable.to.reactivate.account",
+    "_id": "i18n-message-en-account-reactivate-error",
+    "key": "account.reactivate.error",
+    "lang": "en",
+    "value": "Unable to reactivate account."
+  },
+  {
+    "_id": "i18n-message-en-admin-api-denied",
+    "key": "admin.api.denied",
+    "lang": "en",
+    "value": "An administrator account is required."
+  },
+  {
+    "_id": "i18n-message-en-admin-role-label",
+    "key": "admin.role.label",
+    "lang": "en",
+    "value": "Admin"
+  },
+  {
+    "_id": "i18n-message-en-calendar-period-next-aria",
+    "key": "calendar.period.next.aria",
+    "lang": "en",
+    "value": "Next period"
+  },
+  {
+    "_id": "i18n-message-en-calendar-period-previous-aria",
+    "key": "calendar.period.previous.aria",
+    "lang": "en",
+    "value": "Previous period"
+  },
+  {
+    "_id": "i18n-message-en-carousel-next-aria",
+    "key": "carousel.next.aria",
+    "lang": "en",
+    "value": "Next item"
+  },
+  {
+    "_id": "i18n-message-en-carousel-previous-aria",
+    "key": "carousel.previous.aria",
+    "lang": "en",
+    "value": "Previous item"
+  },
+  {
+    "_id": "i18n-message-en-chat-emoji-search",
+    "key": "chat.emoji.search",
+    "lang": "en",
+    "value": "Search emoji"
+  },
+  {
+    "_id": "i18n-message-en-chat-emoji-suggestions-aria",
+    "key": "chat.emoji.suggestions.aria",
+    "lang": "en",
+    "value": "Emoji suggestions"
+  },
+  {
+    "_id": "i18n-message-en-chat-message-actions-aria",
+    "key": "chat.message.actions.aria",
+    "lang": "en",
+    "value": "More message actions"
+  },
+  {
+    "_id": "i18n-message-en-chat-message-compose-placeholder",
+    "key": "chat.message.compose.placeholder",
+    "lang": "en",
+    "value": "Write message"
+  },
+  {
+    "_id": "i18n-message-en-chat-message-edit-cancel-aria",
+    "key": "chat.message.edit.cancel.aria",
+    "lang": "en",
+    "value": "Cancel edit"
+  },
+  {
+    "_id": "i18n-message-en-chat-message-send-aria",
+    "key": "chat.message.send.aria",
+    "lang": "en",
+    "value": "Send message"
+  },
+  {
+    "_id": "i18n-message-en-chat-pin-message-aria",
+    "key": "chat.pin.message.aria",
+    "lang": "en",
+    "value": "Pinned message"
+  },
+  {
+    "_id": "i18n-message-en-chat-pins-close-aria",
+    "key": "chat.pins.close.aria",
+    "lang": "en",
+    "value": "Close pinned messages"
+  },
+  {
+    "_id": "i18n-message-en-chat-pins-open-aria",
+    "key": "chat.pins.open.aria",
+    "lang": "en",
+    "value": "Open pinned messages"
+  },
+  {
+    "_id": "i18n-message-en-chat-pins-title",
+    "key": "chat.pins.title",
+    "lang": "en",
+    "value": "Pinned messages"
+  },
+  {
+    "_id": "i18n-message-en-chat-popup-close-aria",
+    "key": "chat.popup.close.aria",
+    "lang": "en",
+    "value": "Close chat popup"
+  },
+  {
+    "_id": "i18n-message-en-chat-reaction-action",
+    "key": "chat.reaction.action",
+    "lang": "en",
+    "value": "React"
+  },
+  {
+    "_id": "i18n-message-en-chat-reactions-close-aria",
+    "key": "chat.reactions.close.aria",
+    "lang": "en",
+    "value": "Close reactions"
+  },
+  {
+    "_id": "i18n-message-en-chat-reactions-title",
+    "key": "chat.reactions.title",
+    "lang": "en",
+    "value": "Message reactions"
+  },
+  {
+    "_id": "i18n-message-en-chat-reply-action",
+    "key": "chat.reply.action",
+    "lang": "en",
+    "value": "Reply"
+  },
+  {
+    "_id": "i18n-message-en-chat-reply-cancel-aria",
+    "key": "chat.reply.cancel.aria",
+    "lang": "en",
+    "value": "Cancel reply"
+  },
+  {
+    "_id": "i18n-message-en-chat-reply-open-aria",
+    "key": "chat.reply.open.aria",
+    "lang": "en",
+    "value": "Open replied message"
+  },
+  {
+    "_id": "i18n-message-en-close-menu",
+    "key": "close.menu",
+    "lang": "en",
+    "value": "Close menu"
+  },
+  {
+    "_id": "i18n-message-en-connected",
+    "key": "connected",
+    "lang": "en",
+    "value": "Connected"
+  },
+  {
+    "_id": "i18n-message-en-delete-account-question",
+    "key": "delete.account.question",
+    "lang": "en",
+    "value": "Delete account?"
+  },
+  {
+    "_id": "i18n-message-en-delete-account-y7v8g3",
+    "key": "delete.account",
+    "lang": "en",
+    "value": "Delete account"
+  },
+  {
+    "_id": "i18n-message-en-demo-bootstrap-loading",
+    "key": "demo.bootstrap.loading",
+    "lang": "en",
+    "value": "Preparing demo data"
+  },
+  {
+    "_id": "i18n-message-en-demo-bootstrap-progress-aria",
+    "key": "demo.bootstrap.progress.aria",
+    "lang": "en",
+    "value": "Demo data loading progress"
+  },
+  {
+    "_id": "i18n-message-en-demo-profile-create-aria",
+    "key": "demo.profile.create.aria",
+    "lang": "en",
+    "value": "Open new demo profile"
+  },
+  {
+    "_id": "i18n-message-en-demo-seed-admin-users-preparing",
+    "key": "demo.seed.admin.users.preparing",
+    "lang": "en",
+    "value": "Preparing admin users"
+  },
+  {
+    "_id": "i18n-message-en-demo-seed-chats-loading",
+    "key": "demo.seed.chats.loading",
+    "lang": "en",
+    "value": "Loading chats"
+  },
+  {
+    "_id": "i18n-message-en-demo-seed-database-syncing",
+    "key": "demo.seed.database.syncing",
+    "lang": "en",
+    "value": "Syncing demo IndexedDB"
+  },
+  {
+    "_id": "i18n-message-en-demo-seed-help-preparing",
+    "key": "demo.seed.help.preparing",
+    "lang": "en",
+    "value": "Preparing help content"
+  },
+  {
+    "_id": "i18n-message-en-demo-seed-threads-preparing",
+    "key": "demo.seed.threads.preparing",
+    "lang": "en",
+    "value": "Preparing chat threads"
+  },
+  {
+    "_id": "i18n-message-en-demo-seed-users-preparing",
+    "key": "demo.seed.users.preparing",
+    "lang": "en",
+    "value": "Preparing demo users"
+  },
+  {
+    "_id": "i18n-message-en-demo-selector-aria",
+    "key": "demo.selector.aria",
+    "lang": "en",
+    "value": "Demo user selector"
+  },
+  {
+    "_id": "i18n-message-en-demo-selector-close",
+    "key": "demo.selector.close",
+    "lang": "en",
+    "value": "Close demo user popup"
+  },
+  {
+    "_id": "i18n-message-en-demo-selector-empty-description",
+    "key": "demo.selector.empty.description",
+    "lang": "en",
+    "value": "No demo users available."
+  },
+  {
+    "_id": "i18n-message-en-demo-selector-filter-aria",
+    "key": "demo.selector.filter.aria",
+    "lang": "en",
+    "value": "Filter demo users"
+  },
+  {
+    "_id": "i18n-message-en-demo-selector-load-error",
+    "key": "demo.selector.load.error",
+    "lang": "en",
+    "value": "Unable to load demo users right now."
+  },
+  {
+    "_id": "i18n-message-en-demo-selector-loading-title",
+    "key": "demo.selector.loading.title",
+    "lang": "en",
+    "value": "Preparing demo selector"
+  },
+  {
+    "_id": "i18n-message-en-demo-selector-retry",
+    "key": "demo.selector.retry",
+    "lang": "en",
+    "value": "Retry demo selector"
+  },
+  {
+    "_id": "i18n-message-en-demo-selector-role-show-aria",
+    "key": "demo.selector.role.show.aria",
+    "lang": "en",
+    "value": "Show {role} demo users"
+  },
+  {
+    "_id": "i18n-message-en-demo-selector-selection-automatic",
+    "key": "demo.selector.selection.automatic",
+    "lang": "en",
+    "value": "Auto selected"
+  },
+  {
+    "_id": "i18n-message-en-demo-selector-unavailable-title",
+    "key": "demo.selector.unavailable.title",
+    "lang": "en",
+    "value": "Selector unavailable"
+  },
+  {
+    "_id": "i18n-message-en-demo-session-opening-description",
+    "key": "demo.session.opening.description",
+    "lang": "en",
+    "value": "Opening demo session..."
+  },
+  {
+    "_id": "i18n-message-en-demo-session-opening-title",
+    "key": "demo.session.opening.title",
+    "lang": "en",
+    "value": "Opening demo session"
+  },
+  {
+    "_id": "i18n-message-en-demo-session-preparing",
+    "key": "demo.session.preparing",
+    "lang": "en",
+    "value": "Preparing demo session"
+  },
+  {
+    "_id": "i18n-message-en-demo-session-ready-title",
+    "key": "demo.session.ready.title",
+    "lang": "en",
+    "value": "Demo session ready"
+  },
+  {
+    "_id": "i18n-message-en-demo-users-loading",
+    "key": "demo.users.loading",
+    "lang": "en",
+    "value": "Loading {role} demo users"
+  },
+  {
+    "_id": "i18n-message-en-document-title",
+    "key": "document.title",
+    "lang": "en",
+    "value": "Document"
+  },
+  {
+    "_id": "i18n-message-en-event-watchlist-add-action",
+    "key": "event.watchlist.add.action",
+    "lang": "en",
+    "value": "Add to watchlist"
+  },
+  {
+    "_id": "i18n-message-en-event-watchlist-remove-action",
+    "key": "event.watchlist.remove.action",
+    "lang": "en",
+    "value": "Remove from watchlist"
+  },
+  {
+    "_id": "i18n-message-en-feedback-list-title",
+    "key": "feedback.list.title",
+    "lang": "en",
+    "value": "Feedback"
+  },
+  {
+    "_id": "i18n-message-en-form-empty-description",
+    "key": "form.empty.description",
+    "lang": "en",
+    "value": "No form available"
+  },
+  {
+    "_id": "i18n-message-en-form-loading",
+    "key": "form.loading",
+    "lang": "en",
+    "value": "Loading form"
+  },
+  {
+    "_id": "i18n-message-en-form-step-previous-aria",
+    "key": "form.step.previous.aria",
+    "lang": "en",
+    "value": "Previous step"
+  },
+  {
+    "_id": "i18n-message-en-form-step-required-description",
+    "key": "form.step.required.description",
+    "lang": "en",
+    "value": "Complete required fields before continuing"
+  },
+  {
+    "_id": "i18n-message-en-form-steps-aria",
+    "key": "form.steps.aria",
+    "lang": "en",
+    "value": "Form steps"
+  },
+  {
+    "_id": "i18n-message-en-form-steps-navigation-aria",
+    "key": "form.steps.navigation.aria",
+    "lang": "en",
+    "value": "Form step navigation"
+  },
+  {
+    "_id": "i18n-message-en-form-summary-title",
+    "key": "form.summary.title",
+    "lang": "en",
+    "value": "Overview"
+  },
+  {
+    "_id": "i18n-message-en-game-profile-load-failed-title",
+    "key": "game.profile.load.failed.title",
+    "lang": "en",
+    "value": "Profile failed to load"
+  },
+  {
+    "_id": "i18n-message-en-gender-woman",
+    "key": "gender.woman",
+    "lang": "en",
+    "value": "Woman"
+  },
+  {
+    "_id": "i18n-message-en-help-document-loading",
+    "key": "help.document.loading",
+    "lang": "en",
+    "value": "Loading help content"
+  },
+  {
+    "_id": "i18n-message-en-help-document-unavailable-description",
+    "key": "help.document.unavailable.description",
+    "lang": "en",
+    "value": "Help content is not available right now."
+  },
+  {
+    "_id": "i18n-message-en-help-document-unavailable-title",
+    "key": "help.document.unavailable.title",
+    "lang": "en",
+    "value": "Help is not available"
+  },
+  {
+    "_id": "i18n-message-en-help-popup-close-aria",
+    "key": "help.popup.close.aria",
+    "lang": "en",
+    "value": "Close help popup"
+  },
+  {
+    "_id": "i18n-message-en-menu-back-aria",
+    "key": "menu.back.aria",
+    "lang": "en",
+    "value": "Back to menu"
+  },
+  {
+    "_id": "i18n-message-en-menu-open-aria",
+    "key": "menu.open.aria",
+    "lang": "en",
+    "value": "Open menu"
+  },
+  {
+    "_id": "i18n-message-en-menu-search-clear-aria",
+    "key": "menu.search.clear.aria",
+    "lang": "en",
+    "value": "Clear search"
+  },
+  {
+    "_id": "i18n-message-en-menu-search-empty",
+    "key": "menu.search.empty",
+    "lang": "en",
+    "value": "No matches"
+  },
+  {
+    "_id": "i18n-message-en-menu-search-placeholder",
+    "key": "menu.search.placeholder",
+    "lang": "en",
+    "value": "Search"
+  },
+  {
+    "_id": "i18n-message-en-menu-tabs-aria",
+    "key": "menu.tabs.aria",
+    "lang": "en",
+    "value": "Menu tabs"
+  },
+  {
+    "_id": "i18n-message-en-menu-user-close-aria",
+    "key": "menu.user.close.aria",
+    "lang": "en",
+    "value": "Close user menu"
+  },
+  {
+    "_id": "i18n-message-en-menu-user-open-aria",
+    "key": "menu.user.open.aria",
+    "lang": "en",
+    "value": "Open user menu"
+  },
+  {
+    "_id": "i18n-message-en-network-offline",
+    "key": "network.offline",
+    "lang": "en",
+    "value": "No network"
+  },
+  {
+    "_id": "i18n-message-en-next-step",
+    "key": "next.step",
+    "lang": "en",
+    "value": "Next step"
+  },
+  {
+    "_id": "i18n-message-en-no-items",
+    "key": "no.items",
+    "lang": "en",
+    "value": "No items"
+  },
+  {
+    "_id": "i18n-message-en-not-set",
+    "key": "not.set",
+    "lang": "en",
+    "value": "Not set"
+  },
+  {
+    "_id": "i18n-message-en-notifications-alerts-mute-action",
+    "key": "notifications.alerts.mute.action",
+    "lang": "en",
+    "value": "Mute alerts"
+  },
+  {
+    "_id": "i18n-message-en-notifications-alerts-mute-aria",
+    "key": "notifications.alerts.mute.aria",
+    "lang": "en",
+    "value": "Mute notification alerts"
+  },
+  {
+    "_id": "i18n-message-en-notifications-alerts-mute-description",
+    "key": "notifications.alerts.mute.description",
+    "lang": "en",
+    "value": "New notifications will still be counted and saved, but the floating alert button will stay hidden until you unmute it."
+  },
+  {
+    "_id": "i18n-message-en-notifications-alerts-unmute-action",
+    "key": "notifications.alerts.unmute.action",
+    "lang": "en",
+    "value": "Unmute alerts"
+  },
+  {
+    "_id": "i18n-message-en-notifications-alerts-unmute-aria",
+    "key": "notifications.alerts.unmute.aria",
+    "lang": "en",
+    "value": "Unmute notification alerts"
+  },
+  {
+    "_id": "i18n-message-en-notifications-alerts-unmute-description",
+    "key": "notifications.alerts.unmute.description",
+    "lang": "en",
+    "value": "The floating alert button can appear again when a new notification arrives."
+  },
+  {
+    "_id": "i18n-message-en-notifications-badge-single",
+    "key": "notifications.badge.single",
+    "lang": "en",
+    "value": "1 new notification"
+  },
+  {
+    "_id": "i18n-message-en-notifications-close-aria",
+    "key": "notifications.close.aria",
+    "lang": "en",
+    "value": "Close notifications"
+  },
+  {
+    "_id": "i18n-message-en-notifications-empty-description",
+    "key": "notifications.empty.description",
+    "lang": "en",
+    "value": "New messages and updates will appear here."
+  },
+  {
+    "_id": "i18n-message-en-notifications-empty-title",
+    "key": "notifications.empty.title",
+    "lang": "en",
+    "value": "No notifications"
+  },
+  {
+    "_id": "i18n-message-en-notifications-filter-all-label",
+    "key": "notifications.filter.all.label",
+    "lang": "en",
+    "value": "All notifications"
+  },
+  {
+    "_id": "i18n-message-en-notifications-unread-count",
+    "key": "notifications.unread.count",
+    "lang": "en",
+    "value": "{count} new notifications"
+  },
+  {
+    "_id": "i18n-message-en-notifications-update-error-title",
+    "key": "notifications.update.error.title",
+    "lang": "en",
+    "value": "Notification update failed"
+  },
+  {
+    "_id": "i18n-message-en-open-image-editor",
+    "key": "open.image.editor",
+    "lang": "en",
+    "value": "Open image editor"
+  },
+  {
+    "_id": "i18n-message-en-pagination-next-aria",
+    "key": "pagination.next.aria",
+    "lang": "en",
+    "value": "Next page"
+  },
+  {
+    "_id": "i18n-message-en-pagination-previous-aria",
+    "key": "pagination.previous.aria",
+    "lang": "en",
+    "value": "Previous page"
+  },
+  {
+    "_id": "i18n-message-en-pair-cards-resize-aria",
+    "key": "pair.cards.resize.aria",
+    "lang": "en",
+    "value": "Resize pair cards"
+  },
+  {
+    "_id": "i18n-message-en-pets",
+    "key": "pets",
+    "lang": "en",
+    "value": "Pets"
+  },
+  {
+    "_id": "i18n-message-en-privacy-consent-accept",
+    "key": "privacy.consent.accept",
+    "lang": "en",
+    "value": "Accept and continue"
+  },
+  {
+    "_id": "i18n-message-en-privacy-consent-aria",
+    "key": "privacy.consent.aria",
+    "lang": "en",
+    "value": "GDPR consent"
+  },
+  {
+    "_id": "i18n-message-en-privacy-document-loading",
+    "key": "privacy.document.loading",
+    "lang": "en",
+    "value": "Loading privacy content"
+  },
+  {
+    "_id": "i18n-message-en-privacy-document-title",
+    "key": "privacy.document.title",
+    "lang": "en",
+    "value": "Privacy first"
+  },
+  {
+    "_id": "i18n-message-en-privacy-document-unavailable-description",
+    "key": "privacy.document.unavailable.description",
+    "lang": "en",
+    "value": "Privacy content is not available right now."
+  },
+  {
+    "_id": "i18n-message-en-privacy-document-unavailable-title",
+    "key": "privacy.document.unavailable.title",
+    "lang": "en",
+    "value": "Privacy is not available"
+  },
+  {
+    "_id": "i18n-message-en-privacy-popup-close",
+    "key": "privacy.popup.close",
+    "lang": "en",
+    "value": "Close privacy popup"
+  },
+  {
+    "_id": "i18n-message-en-privacy-preferences-approve",
+    "key": "privacy.preferences.approve",
+    "lang": "en",
+    "value": "Approve privacy"
+  },
+  {
+    "_id": "i18n-message-en-privacy-preferences-save",
+    "key": "privacy.preferences.save",
+    "lang": "en",
+    "value": "Save choices"
+  },
+  {
+    "_id": "i18n-message-en-privacy-preferences-save-error",
+    "key": "privacy.preferences.save.error",
+    "lang": "en",
+    "value": "Privacy choices could not be saved."
+  },
+  {
+    "_id": "i18n-message-en-privacy-preferences-save-success",
+    "key": "privacy.preferences.save.success",
+    "lang": "en",
+    "value": "Privacy choices saved."
+  },
+  {
+    "_id": "i18n-message-en-profile-photo-select-aria",
+    "key": "profile.photo.select.aria",
+    "lang": "en",
+    "value": "Select profile image"
+  },
+  {
+    "_id": "i18n-message-en-profile-related-label",
+    "key": "profile.related.label",
+    "lang": "en",
+    "value": "Related profile"
+  },
+  {
+    "_id": "i18n-message-en-profile-related-open-aria",
+    "key": "profile.related.open.aria",
+    "lang": "en",
+    "value": "View related profile"
+  },
+  {
+    "_id": "i18n-message-en-profile-status-select-aria",
+    "key": "profile.status.select.aria",
+    "lang": "en",
+    "value": "Open profile status selector"
+  },
+  {
+    "_id": "i18n-message-en-read-more",
+    "key": "read.more",
+    "lang": "en",
+    "value": "Read more"
+  },
+  {
+    "_id": "i18n-message-en-relevant",
+    "key": "relevant",
+    "lang": "en",
+    "value": "Relevant"
+  },
+  {
+    "_id": "i18n-message-en-route-empty-description",
+    "key": "route.empty.description",
+    "lang": "en",
+    "value": "No route set yet."
+  },
+  {
+    "_id": "i18n-message-en-route-map-open-aria",
+    "key": "route.map.open.aria",
+    "lang": "en",
+    "value": "Open multistep route on map"
+  },
+  {
+    "_id": "i18n-message-en-route-save-aria",
+    "key": "route.save.aria",
+    "lang": "en",
+    "value": "Save route"
+  },
+  {
+    "_id": "i18n-message-en-route-setup-open-action",
+    "key": "route.setup.open.action",
+    "lang": "en",
+    "value": "Open Route Setup"
+  },
+  {
+    "_id": "i18n-message-en-route-stop-add-aria",
+    "key": "route.stop.add.aria",
+    "lang": "en",
+    "value": "Add route stop"
+  },
+  {
+    "_id": "i18n-message-en-route-stop-delete-aria",
+    "key": "route.stop.delete.aria",
+    "lang": "en",
+    "value": "Delete route stop"
+  },
+  {
+    "_id": "i18n-message-en-route-stop-drag-aria",
+    "key": "route.stop.drag.aria",
+    "lang": "en",
+    "value": "Drag route stop"
+  },
+  {
+    "_id": "i18n-message-en-route-stop-map-aria",
+    "key": "route.stop.map.aria",
+    "lang": "en",
+    "value": "Open stop on map"
+  },
+  {
+    "_id": "i18n-message-en-route-stops-title",
+    "key": "route.stops.title",
+    "lang": "en",
+    "value": "Route Stops"
+  },
+  {
+    "_id": "i18n-message-en-save-profile",
+    "key": "save.profile",
+    "lang": "en",
+    "value": "Save profile"
+  },
+  {
+    "_id": "i18n-message-en-schedule-add-aria",
+    "key": "schedule.add.aria",
+    "lang": "en",
+    "value": "Add schedule"
+  },
+  {
+    "_id": "i18n-message-en-schedule-add-description",
+    "key": "schedule.add.description",
+    "lang": "en",
+    "value": "Create a base slot start rule."
+  },
+  {
+    "_id": "i18n-message-en-schedule-add-title",
+    "key": "schedule.add.title",
+    "lang": "en",
+    "value": "Add Schedule"
+  },
+  {
+    "_id": "i18n-message-en-schedule-close-aria",
+    "key": "schedule.close.aria",
+    "lang": "en",
+    "value": "Close schedule setup"
+  },
+  {
+    "_id": "i18n-message-en-schedule-edit-description",
+    "key": "schedule.edit.description",
+    "lang": "en",
+    "value": "Update the selected base slot start rule."
+  },
+  {
+    "_id": "i18n-message-en-schedule-edit-title",
+    "key": "schedule.edit.title",
+    "lang": "en",
+    "value": "Edit Schedule"
+  },
+  {
+    "_id": "i18n-message-en-schedule-save-aria",
+    "key": "schedule.save.aria",
+    "lang": "en",
+    "value": "Save schedule"
+  },
+  {
+    "_id": "i18n-message-en-schedule-start-from",
+    "key": "schedule.start.from",
+    "lang": "en",
+    "value": "Start from"
+  },
+  {
+    "_id": "i18n-message-en-schedule-start-time",
+    "key": "schedule.start.time",
+    "lang": "en",
+    "value": "Start time"
+  },
+  {
+    "_id": "i18n-message-en-slots-base-add-aria",
+    "key": "slots.base.add.aria",
+    "lang": "en",
+    "value": "Add base slot"
+  },
+  {
+    "_id": "i18n-message-en-slots-disabled-description",
+    "key": "slots.disabled.description",
+    "lang": "en",
+    "value": "Use the main date range without slot schedules."
+  },
+  {
+    "_id": "i18n-message-en-slots-empty-description",
+    "key": "slots.empty.description",
+    "lang": "en",
+    "value": "No slots yet. Use + to create the first one."
+  },
+  {
+    "_id": "i18n-message-en-slots-subtitle",
+    "key": "slots.subtitle",
+    "lang": "en",
+    "value": "Base schedule and date-specific overrides."
+  },
+  {
+    "_id": "i18n-message-en-slots-time-pending",
+    "key": "slots.time.pending",
+    "lang": "en",
+    "value": "Time pending"
+  },
+  {
+    "_id": "i18n-message-en-slots-title",
+    "key": "slots.title",
+    "lang": "en",
+    "value": "Slots"
+  },
+  {
+    "_id": "i18n-message-en-slots-toggle-aria",
+    "key": "slots.toggle.aria",
+    "lang": "en",
+    "value": "Toggle slots"
+  },
+  {
+    "_id": "i18n-message-en-source-link",
+    "key": "source.link",
+    "lang": "en",
+    "value": "Source link"
+  },
+  {
+    "_id": "i18n-message-en-sympathy",
+    "key": "sympathy",
+    "lang": "en",
+    "value": "Sympathy"
+  },
+  {
+    "_id": "i18n-message-en-terms-document-aria",
+    "key": "terms.document.aria",
+    "lang": "en",
+    "value": "Terms of service"
+  },
+  {
+    "_id": "i18n-message-en-terms-document-loading",
+    "key": "terms.document.loading",
+    "lang": "en",
+    "value": "Loading terms content"
+  },
+  {
+    "_id": "i18n-message-en-terms-document-title",
+    "key": "terms.document.title",
+    "lang": "en",
+    "value": "Usage terms"
+  },
+  {
+    "_id": "i18n-message-en-terms-document-unavailable-description",
+    "key": "terms.document.unavailable.description",
+    "lang": "en",
+    "value": "Terms content is not available right now."
+  },
+  {
+    "_id": "i18n-message-en-terms-document-unavailable-title",
+    "key": "terms.document.unavailable.title",
+    "lang": "en",
+    "value": "Terms are not available"
+  },
+  {
+    "_id": "i18n-message-en-terms-popup-close",
+    "key": "terms.popup.close",
+    "lang": "en",
+    "value": "Close terms popup"
+  },
+  {
+    "_id": "i18n-message-en-ui-animals-nature",
+    "key": "ui.animals.nature",
+    "lang": "en",
+    "value": "Animals & nature"
+  },
+  {
+    "_id": "i18n-message-en-ui-food-drink",
+    "key": "ui.food.drink",
+    "lang": "en",
+    "value": "Food & drink"
+  },
+  {
+    "_id": "i18n-message-en-ui-smileys-people",
+    "key": "ui.smileys.people",
+    "lang": "en",
+    "value": "Smileys & people"
+  },
+  {
+    "_id": "i18n-message-en-ui-travel-places",
+    "key": "ui.travel.places",
+    "lang": "en",
+    "value": "Travel & places"
+  },
+  {
+    "_id": "i18n-message-en-unconnected",
+    "key": "unconnected",
+    "lang": "en",
+    "value": "Unconnected"
+  },
+  {
+    "_id": "i18n-message-en-updates",
+    "key": "updates",
+    "lang": "en",
+    "value": "Updates"
+  },
+  {
+    "_id": "i18n-message-hu-accordion-empty-description",
+    "key": "accordion.empty.description",
+    "lang": "hu",
+    "value": "Itt még nincs semmi"
+  },
+  {
+    "_id": "i18n-message-hu-account-reactivate-error",
+    "key": "account.reactivate.error",
     "lang": "hu",
     "value": "Nem sikerült újraaktiválni a fiókot."
   },
   {
-    "_id": "i18n-message-hu-ui-unmute-alerts",
-    "key": "ui.unmute.alerts",
+    "_id": "i18n-message-hu-admin-api-denied",
+    "key": "admin.api.denied",
+    "lang": "hu",
+    "value": "Adminisztrátori fiók szükséges."
+  },
+  {
+    "_id": "i18n-message-hu-admin-role-label",
+    "key": "admin.role.label",
+    "lang": "hu",
+    "value": "Adminisztrátor"
+  },
+  {
+    "_id": "i18n-message-hu-calendar-period-next-aria",
+    "key": "calendar.period.next.aria",
+    "lang": "hu",
+    "value": "Következő időszak"
+  },
+  {
+    "_id": "i18n-message-hu-calendar-period-previous-aria",
+    "key": "calendar.period.previous.aria",
+    "lang": "hu",
+    "value": "Előző időszak"
+  },
+  {
+    "_id": "i18n-message-hu-carousel-next-aria",
+    "key": "carousel.next.aria",
+    "lang": "hu",
+    "value": "Következő elem"
+  },
+  {
+    "_id": "i18n-message-hu-carousel-previous-aria",
+    "key": "carousel.previous.aria",
+    "lang": "hu",
+    "value": "Előző elem"
+  },
+  {
+    "_id": "i18n-message-hu-chat-emoji-search",
+    "key": "chat.emoji.search",
+    "lang": "hu",
+    "value": "Emoji keresése"
+  },
+  {
+    "_id": "i18n-message-hu-chat-emoji-suggestions-aria",
+    "key": "chat.emoji.suggestions.aria",
+    "lang": "hu",
+    "value": "Emojijavaslatok"
+  },
+  {
+    "_id": "i18n-message-hu-chat-message-actions-aria",
+    "key": "chat.message.actions.aria",
+    "lang": "hu",
+    "value": "További üzenetműveletek"
+  },
+  {
+    "_id": "i18n-message-hu-chat-message-compose-placeholder",
+    "key": "chat.message.compose.placeholder",
+    "lang": "hu",
+    "value": "Üzenet írása"
+  },
+  {
+    "_id": "i18n-message-hu-chat-message-edit-cancel-aria",
+    "key": "chat.message.edit.cancel.aria",
+    "lang": "hu",
+    "value": "Szerkesztés megszakítása"
+  },
+  {
+    "_id": "i18n-message-hu-chat-message-send-aria",
+    "key": "chat.message.send.aria",
+    "lang": "hu",
+    "value": "Üzenet küldése"
+  },
+  {
+    "_id": "i18n-message-hu-chat-pin-message-aria",
+    "key": "chat.pin.message.aria",
+    "lang": "hu",
+    "value": "Rögzített üzenet"
+  },
+  {
+    "_id": "i18n-message-hu-chat-pins-close-aria",
+    "key": "chat.pins.close.aria",
+    "lang": "hu",
+    "value": "Rögzített üzenetek bezárása"
+  },
+  {
+    "_id": "i18n-message-hu-chat-pins-open-aria",
+    "key": "chat.pins.open.aria",
+    "lang": "hu",
+    "value": "Rögzített üzenetek megnyitása"
+  },
+  {
+    "_id": "i18n-message-hu-chat-pins-title",
+    "key": "chat.pins.title",
+    "lang": "hu",
+    "value": "Rögzített üzenetek"
+  },
+  {
+    "_id": "i18n-message-hu-chat-popup-close-aria",
+    "key": "chat.popup.close.aria",
+    "lang": "hu",
+    "value": "Csevegőablak bezárása"
+  },
+  {
+    "_id": "i18n-message-hu-chat-reaction-action",
+    "key": "chat.reaction.action",
+    "lang": "hu",
+    "value": "Reakció"
+  },
+  {
+    "_id": "i18n-message-hu-chat-reactions-close-aria",
+    "key": "chat.reactions.close.aria",
+    "lang": "hu",
+    "value": "Reakciók bezárása"
+  },
+  {
+    "_id": "i18n-message-hu-chat-reactions-title",
+    "key": "chat.reactions.title",
+    "lang": "hu",
+    "value": "Üzenetreakciók"
+  },
+  {
+    "_id": "i18n-message-hu-chat-reply-action",
+    "key": "chat.reply.action",
+    "lang": "hu",
+    "value": "Válasz"
+  },
+  {
+    "_id": "i18n-message-hu-chat-reply-cancel-aria",
+    "key": "chat.reply.cancel.aria",
+    "lang": "hu",
+    "value": "Válasz megszakítása"
+  },
+  {
+    "_id": "i18n-message-hu-chat-reply-open-aria",
+    "key": "chat.reply.open.aria",
+    "lang": "hu",
+    "value": "Megválaszolt üzenet megnyitása"
+  },
+  {
+    "_id": "i18n-message-hu-close-menu",
+    "key": "close.menu",
+    "lang": "hu",
+    "value": "Menü bezárása"
+  },
+  {
+    "_id": "i18n-message-hu-connected",
+    "key": "connected",
+    "lang": "hu",
+    "value": "Kapcsolódva"
+  },
+  {
+    "_id": "i18n-message-hu-delete-account-question",
+    "key": "delete.account.question",
+    "lang": "hu",
+    "value": "Törlöd a fiókot?"
+  },
+  {
+    "_id": "i18n-message-hu-delete-account-y7v8g3",
+    "key": "delete.account",
+    "lang": "hu",
+    "value": "Fiók törlése"
+  },
+  {
+    "_id": "i18n-message-hu-demo-bootstrap-loading",
+    "key": "demo.bootstrap.loading",
+    "lang": "hu",
+    "value": "Demo adatok előkészítése"
+  },
+  {
+    "_id": "i18n-message-hu-demo-bootstrap-progress-aria",
+    "key": "demo.bootstrap.progress.aria",
+    "lang": "hu",
+    "value": "Demo adatok betöltésének állapota"
+  },
+  {
+    "_id": "i18n-message-hu-demo-profile-create-aria",
+    "key": "demo.profile.create.aria",
+    "lang": "hu",
+    "value": "Új demóprofil megnyitása"
+  },
+  {
+    "_id": "i18n-message-hu-demo-seed-admin-users-preparing",
+    "key": "demo.seed.admin.users.preparing",
+    "lang": "hu",
+    "value": "Adminisztrátorok előkészítése"
+  },
+  {
+    "_id": "i18n-message-hu-demo-seed-chats-loading",
+    "key": "demo.seed.chats.loading",
+    "lang": "hu",
+    "value": "Csevegések betöltése"
+  },
+  {
+    "_id": "i18n-message-hu-demo-seed-database-syncing",
+    "key": "demo.seed.database.syncing",
+    "lang": "hu",
+    "value": "Demo IndexedDB szinkronizálása"
+  },
+  {
+    "_id": "i18n-message-hu-demo-seed-help-preparing",
+    "key": "demo.seed.help.preparing",
+    "lang": "hu",
+    "value": "Súgótartalom előkészítése"
+  },
+  {
+    "_id": "i18n-message-hu-demo-seed-threads-preparing",
+    "key": "demo.seed.threads.preparing",
+    "lang": "hu",
+    "value": "Csevegésszálak előkészítése"
+  },
+  {
+    "_id": "i18n-message-hu-demo-seed-users-preparing",
+    "key": "demo.seed.users.preparing",
+    "lang": "hu",
+    "value": "Demo felhasználók előkészítése"
+  },
+  {
+    "_id": "i18n-message-hu-demo-selector-aria",
+    "key": "demo.selector.aria",
+    "lang": "hu",
+    "value": "Demófelhasználó kiválasztása"
+  },
+  {
+    "_id": "i18n-message-hu-demo-selector-close",
+    "key": "demo.selector.close",
+    "lang": "hu",
+    "value": "Demo felhasználói ablak bezárása"
+  },
+  {
+    "_id": "i18n-message-hu-demo-selector-empty-description",
+    "key": "demo.selector.empty.description",
+    "lang": "hu",
+    "value": "Nincs elérhető demo felhasználó."
+  },
+  {
+    "_id": "i18n-message-hu-demo-selector-filter-aria",
+    "key": "demo.selector.filter.aria",
+    "lang": "hu",
+    "value": "Demófelhasználók szűrése"
+  },
+  {
+    "_id": "i18n-message-hu-demo-selector-load-error",
+    "key": "demo.selector.load.error",
+    "lang": "hu",
+    "value": "Most nem lehet betölteni a demo felhasználókat."
+  },
+  {
+    "_id": "i18n-message-hu-demo-selector-loading-title",
+    "key": "demo.selector.loading.title",
+    "lang": "hu",
+    "value": "Demo választó előkészítése"
+  },
+  {
+    "_id": "i18n-message-hu-demo-selector-retry",
+    "key": "demo.selector.retry",
+    "lang": "hu",
+    "value": "Demo választó újrapróbálása"
+  },
+  {
+    "_id": "i18n-message-hu-demo-selector-role-show-aria",
+    "key": "demo.selector.role.show.aria",
+    "lang": "hu",
+    "value": "{role} demófelhasználók megjelenítése"
+  },
+  {
+    "_id": "i18n-message-hu-demo-selector-selection-automatic",
+    "key": "demo.selector.selection.automatic",
+    "lang": "hu",
+    "value": "Automatikusan kiválasztva"
+  },
+  {
+    "_id": "i18n-message-hu-demo-selector-unavailable-title",
+    "key": "demo.selector.unavailable.title",
+    "lang": "hu",
+    "value": "A választó nem érhető el"
+  },
+  {
+    "_id": "i18n-message-hu-demo-session-opening-description",
+    "key": "demo.session.opening.description",
+    "lang": "hu",
+    "value": "Demo munkamenet megnyitása..."
+  },
+  {
+    "_id": "i18n-message-hu-demo-session-opening-title",
+    "key": "demo.session.opening.title",
+    "lang": "hu",
+    "value": "Demo munkamenet megnyitása"
+  },
+  {
+    "_id": "i18n-message-hu-demo-session-preparing",
+    "key": "demo.session.preparing",
+    "lang": "hu",
+    "value": "Demo munkamenet előkészítése"
+  },
+  {
+    "_id": "i18n-message-hu-demo-session-ready-title",
+    "key": "demo.session.ready.title",
+    "lang": "hu",
+    "value": "Demo munkamenet kész"
+  },
+  {
+    "_id": "i18n-message-hu-demo-users-loading",
+    "key": "demo.users.loading",
+    "lang": "hu",
+    "value": "{role} bemutatófelhasználók betöltése"
+  },
+  {
+    "_id": "i18n-message-hu-document-title",
+    "key": "document.title",
+    "lang": "hu",
+    "value": "Dokumentum"
+  },
+  {
+    "_id": "i18n-message-hu-event-watchlist-add-action",
+    "key": "event.watchlist.add.action",
+    "lang": "hu",
+    "value": "Figyelőlistára vétel"
+  },
+  {
+    "_id": "i18n-message-hu-event-watchlist-remove-action",
+    "key": "event.watchlist.remove.action",
+    "lang": "hu",
+    "value": "Eltávolítás a figyelőlistáról"
+  },
+  {
+    "_id": "i18n-message-hu-feedback-list-title",
+    "key": "feedback.list.title",
+    "lang": "hu",
+    "value": "Visszajelzések"
+  },
+  {
+    "_id": "i18n-message-hu-form-empty-description",
+    "key": "form.empty.description",
+    "lang": "hu",
+    "value": "Nem érhető el űrlap"
+  },
+  {
+    "_id": "i18n-message-hu-form-loading",
+    "key": "form.loading",
+    "lang": "hu",
+    "value": "Űrlap betöltése"
+  },
+  {
+    "_id": "i18n-message-hu-form-step-previous-aria",
+    "key": "form.step.previous.aria",
+    "lang": "hu",
+    "value": "Előző lépés"
+  },
+  {
+    "_id": "i18n-message-hu-form-step-required-description",
+    "key": "form.step.required.description",
+    "lang": "hu",
+    "value": "A folytatás előtt töltsd ki a kötelező mezőket"
+  },
+  {
+    "_id": "i18n-message-hu-form-steps-aria",
+    "key": "form.steps.aria",
+    "lang": "hu",
+    "value": "Űrlap lépései"
+  },
+  {
+    "_id": "i18n-message-hu-form-steps-navigation-aria",
+    "key": "form.steps.navigation.aria",
+    "lang": "hu",
+    "value": "Űrlaplépések közötti navigáció"
+  },
+  {
+    "_id": "i18n-message-hu-form-summary-title",
+    "key": "form.summary.title",
+    "lang": "hu",
+    "value": "Összegzés"
+  },
+  {
+    "_id": "i18n-message-hu-game-profile-load-failed-title",
+    "key": "game.profile.load.failed.title",
+    "lang": "hu",
+    "value": "Nem sikerült betölteni a profilodat"
+  },
+  {
+    "_id": "i18n-message-hu-gender-woman",
+    "key": "gender.woman",
+    "lang": "hu",
+    "value": "Nő"
+  },
+  {
+    "_id": "i18n-message-hu-help-document-loading",
+    "key": "help.document.loading",
+    "lang": "hu",
+    "value": "Súgótartalom betöltése"
+  },
+  {
+    "_id": "i18n-message-hu-help-document-unavailable-description",
+    "key": "help.document.unavailable.description",
+    "lang": "hu",
+    "value": "A súgótartalom most nem érhető el."
+  },
+  {
+    "_id": "i18n-message-hu-help-document-unavailable-title",
+    "key": "help.document.unavailable.title",
+    "lang": "hu",
+    "value": "A segítség nem érhető el"
+  },
+  {
+    "_id": "i18n-message-hu-help-popup-close-aria",
+    "key": "help.popup.close.aria",
+    "lang": "hu",
+    "value": "Súgóablak bezárása"
+  },
+  {
+    "_id": "i18n-message-hu-menu-back-aria",
+    "key": "menu.back.aria",
+    "lang": "hu",
+    "value": "Vissza a menühöz"
+  },
+  {
+    "_id": "i18n-message-hu-menu-open-aria",
+    "key": "menu.open.aria",
+    "lang": "hu",
+    "value": "Menü megnyitása"
+  },
+  {
+    "_id": "i18n-message-hu-menu-search-clear-aria",
+    "key": "menu.search.clear.aria",
+    "lang": "hu",
+    "value": "Keresés törlése"
+  },
+  {
+    "_id": "i18n-message-hu-menu-search-empty",
+    "key": "menu.search.empty",
+    "lang": "hu",
+    "value": "Nincs találat"
+  },
+  {
+    "_id": "i18n-message-hu-menu-search-placeholder",
+    "key": "menu.search.placeholder",
+    "lang": "hu",
+    "value": "Keresés"
+  },
+  {
+    "_id": "i18n-message-hu-menu-tabs-aria",
+    "key": "menu.tabs.aria",
+    "lang": "hu",
+    "value": "Menülapok"
+  },
+  {
+    "_id": "i18n-message-hu-menu-user-close-aria",
+    "key": "menu.user.close.aria",
+    "lang": "hu",
+    "value": "Felhasználói menü bezárása"
+  },
+  {
+    "_id": "i18n-message-hu-menu-user-open-aria",
+    "key": "menu.user.open.aria",
+    "lang": "hu",
+    "value": "Felhasználói menü megnyitása"
+  },
+  {
+    "_id": "i18n-message-hu-network-offline",
+    "key": "network.offline",
+    "lang": "hu",
+    "value": "Nincs hálózat"
+  },
+  {
+    "_id": "i18n-message-hu-next-step",
+    "key": "next.step",
+    "lang": "hu",
+    "value": "Következő lépés"
+  },
+  {
+    "_id": "i18n-message-hu-no-items",
+    "key": "no.items",
+    "lang": "hu",
+    "value": "Nincs elem"
+  },
+  {
+    "_id": "i18n-message-hu-not-set",
+    "key": "not.set",
+    "lang": "hu",
+    "value": "Nincs beállítva"
+  },
+  {
+    "_id": "i18n-message-hu-notifications-alerts-mute-action",
+    "key": "notifications.alerts.mute.action",
+    "lang": "hu",
+    "value": "Értesítési jelzések némítása"
+  },
+  {
+    "_id": "i18n-message-hu-notifications-alerts-mute-aria",
+    "key": "notifications.alerts.mute.aria",
+    "lang": "hu",
+    "value": "Értesítési jelzések némítása"
+  },
+  {
+    "_id": "i18n-message-hu-notifications-alerts-mute-description",
+    "key": "notifications.alerts.mute.description",
+    "lang": "hu",
+    "value": "Az új értesítéseket továbbra is számoljuk és mentjük, de a lebegő értesítési gomb rejtve marad, amíg újra be nem kapcsolod."
+  },
+  {
+    "_id": "i18n-message-hu-notifications-alerts-unmute-action",
+    "key": "notifications.alerts.unmute.action",
     "lang": "hu",
     "value": "Értesítési jelzések visszakapcsolása"
   },
   {
-    "_id": "i18n-message-hu-ui-unmute-notification-alerts",
-    "key": "ui.unmute.notification.alerts",
+    "_id": "i18n-message-hu-notifications-alerts-unmute-aria",
+    "key": "notifications.alerts.unmute.aria",
     "lang": "hu",
     "value": "Értesítési jelzések visszakapcsolása"
+  },
+  {
+    "_id": "i18n-message-hu-notifications-alerts-unmute-description",
+    "key": "notifications.alerts.unmute.description",
+    "lang": "hu",
+    "value": "Új értesítés érkezésekor ismét megjelenhet a lebegő értesítési gomb."
+  },
+  {
+    "_id": "i18n-message-hu-notifications-badge-single",
+    "key": "notifications.badge.single",
+    "lang": "hu",
+    "value": "1 új értesítés"
+  },
+  {
+    "_id": "i18n-message-hu-notifications-close-aria",
+    "key": "notifications.close.aria",
+    "lang": "hu",
+    "value": "Értesítések bezárása"
+  },
+  {
+    "_id": "i18n-message-hu-notifications-empty-description",
+    "key": "notifications.empty.description",
+    "lang": "hu",
+    "value": "Itt jelennek majd meg az új üzenetek és frissítések."
+  },
+  {
+    "_id": "i18n-message-hu-notifications-empty-title",
+    "key": "notifications.empty.title",
+    "lang": "hu",
+    "value": "Nincsenek értesítések"
+  },
+  {
+    "_id": "i18n-message-hu-notifications-filter-all-label",
+    "key": "notifications.filter.all.label",
+    "lang": "hu",
+    "value": "Összes értesítés"
+  },
+  {
+    "_id": "i18n-message-hu-notifications-unread-count",
+    "key": "notifications.unread.count",
+    "lang": "hu",
+    "value": "{count} új értesítés"
+  },
+  {
+    "_id": "i18n-message-hu-notifications-update-error-title",
+    "key": "notifications.update.error.title",
+    "lang": "hu",
+    "value": "Nem sikerült frissíteni az értesítést"
+  },
+  {
+    "_id": "i18n-message-hu-open-image-editor",
+    "key": "open.image.editor",
+    "lang": "hu",
+    "value": "Képszerkesztő megnyitása"
+  },
+  {
+    "_id": "i18n-message-hu-pagination-next-aria",
+    "key": "pagination.next.aria",
+    "lang": "hu",
+    "value": "Következő oldal"
+  },
+  {
+    "_id": "i18n-message-hu-pagination-previous-aria",
+    "key": "pagination.previous.aria",
+    "lang": "hu",
+    "value": "Előző oldal"
+  },
+  {
+    "_id": "i18n-message-hu-pair-cards-resize-aria",
+    "key": "pair.cards.resize.aria",
+    "lang": "hu",
+    "value": "Páros kártyák mérete"
+  },
+  {
+    "_id": "i18n-message-hu-pets",
+    "key": "pets",
+    "lang": "hu",
+    "value": "Háziállatok"
+  },
+  {
+    "_id": "i18n-message-hu-privacy-consent-accept",
+    "key": "privacy.consent.accept",
+    "lang": "hu",
+    "value": "Elfogadás és folytatás"
+  },
+  {
+    "_id": "i18n-message-hu-privacy-consent-aria",
+    "key": "privacy.consent.aria",
+    "lang": "hu",
+    "value": "GDPR hozzájárulás"
+  },
+  {
+    "_id": "i18n-message-hu-privacy-document-loading",
+    "key": "privacy.document.loading",
+    "lang": "hu",
+    "value": "Adatvédelmi tartalom betöltése"
+  },
+  {
+    "_id": "i18n-message-hu-privacy-document-title",
+    "key": "privacy.document.title",
+    "lang": "hu",
+    "value": "Első az adatvédelem"
+  },
+  {
+    "_id": "i18n-message-hu-privacy-document-unavailable-description",
+    "key": "privacy.document.unavailable.description",
+    "lang": "hu",
+    "value": "Az adatvédelmi tartalom most nem érhető el."
+  },
+  {
+    "_id": "i18n-message-hu-privacy-document-unavailable-title",
+    "key": "privacy.document.unavailable.title",
+    "lang": "hu",
+    "value": "Az adatvédelem nem érhető el"
+  },
+  {
+    "_id": "i18n-message-hu-privacy-popup-close",
+    "key": "privacy.popup.close",
+    "lang": "hu",
+    "value": "Adatvédelmi ablak bezárása"
+  },
+  {
+    "_id": "i18n-message-hu-privacy-preferences-approve",
+    "key": "privacy.preferences.approve",
+    "lang": "hu",
+    "value": "Adatvédelem elfogadása"
+  },
+  {
+    "_id": "i18n-message-hu-privacy-preferences-save",
+    "key": "privacy.preferences.save",
+    "lang": "hu",
+    "value": "Választások mentése"
+  },
+  {
+    "_id": "i18n-message-hu-privacy-preferences-save-error",
+    "key": "privacy.preferences.save.error",
+    "lang": "hu",
+    "value": "Nem sikerült menteni az adatvédelmi választásokat."
+  },
+  {
+    "_id": "i18n-message-hu-privacy-preferences-save-success",
+    "key": "privacy.preferences.save.success",
+    "lang": "hu",
+    "value": "Adatvédelmi választások mentve."
+  },
+  {
+    "_id": "i18n-message-hu-profile-photo-select-aria",
+    "key": "profile.photo.select.aria",
+    "lang": "hu",
+    "value": "Profilkép kiválasztása"
+  },
+  {
+    "_id": "i18n-message-hu-profile-related-label",
+    "key": "profile.related.label",
+    "lang": "hu",
+    "value": "Kapcsolódó profil"
+  },
+  {
+    "_id": "i18n-message-hu-profile-related-open-aria",
+    "key": "profile.related.open.aria",
+    "lang": "hu",
+    "value": "Kapcsolódó profil megtekintése"
+  },
+  {
+    "_id": "i18n-message-hu-profile-status-select-aria",
+    "key": "profile.status.select.aria",
+    "lang": "hu",
+    "value": "Profilállapot kiválasztása"
+  },
+  {
+    "_id": "i18n-message-hu-read-more",
+    "key": "read.more",
+    "lang": "hu",
+    "value": "Tovább olvasom"
+  },
+  {
+    "_id": "i18n-message-hu-relevant",
+    "key": "relevant",
+    "lang": "hu",
+    "value": "Releváns"
+  },
+  {
+    "_id": "i18n-message-hu-route-empty-description",
+    "key": "route.empty.description",
+    "lang": "hu",
+    "value": "Még nincs beállítva útvonal."
+  },
+  {
+    "_id": "i18n-message-hu-route-map-open-aria",
+    "key": "route.map.open.aria",
+    "lang": "hu",
+    "value": "Több megállós útvonal megnyitása a térképen"
+  },
+  {
+    "_id": "i18n-message-hu-route-save-aria",
+    "key": "route.save.aria",
+    "lang": "hu",
+    "value": "Útvonal mentése"
+  },
+  {
+    "_id": "i18n-message-hu-route-setup-open-action",
+    "key": "route.setup.open.action",
+    "lang": "hu",
+    "value": "Útvonal beállításának megnyitása"
+  },
+  {
+    "_id": "i18n-message-hu-route-stop-add-aria",
+    "key": "route.stop.add.aria",
+    "lang": "hu",
+    "value": "Megálló hozzáadása"
+  },
+  {
+    "_id": "i18n-message-hu-route-stop-delete-aria",
+    "key": "route.stop.delete.aria",
+    "lang": "hu",
+    "value": "Megálló törlése"
+  },
+  {
+    "_id": "i18n-message-hu-route-stop-drag-aria",
+    "key": "route.stop.drag.aria",
+    "lang": "hu",
+    "value": "Megálló áthúzása"
+  },
+  {
+    "_id": "i18n-message-hu-route-stop-map-aria",
+    "key": "route.stop.map.aria",
+    "lang": "hu",
+    "value": "Megálló megnyitása a térképen"
+  },
+  {
+    "_id": "i18n-message-hu-route-stops-title",
+    "key": "route.stops.title",
+    "lang": "hu",
+    "value": "Útvonal megállói"
+  },
+  {
+    "_id": "i18n-message-hu-save-profile",
+    "key": "save.profile",
+    "lang": "hu",
+    "value": "Profil mentése"
+  },
+  {
+    "_id": "i18n-message-hu-schedule-add-aria",
+    "key": "schedule.add.aria",
+    "lang": "hu",
+    "value": "Ütemezés hozzáadása"
+  },
+  {
+    "_id": "i18n-message-hu-schedule-add-description",
+    "key": "schedule.add.description",
+    "lang": "hu",
+    "value": "Hozz létre kezdési szabályt egy alapidősávhoz."
+  },
+  {
+    "_id": "i18n-message-hu-schedule-add-title",
+    "key": "schedule.add.title",
+    "lang": "hu",
+    "value": "Ütemezés hozzáadása"
+  },
+  {
+    "_id": "i18n-message-hu-schedule-close-aria",
+    "key": "schedule.close.aria",
+    "lang": "hu",
+    "value": "Ütemezésbeállítás bezárása"
+  },
+  {
+    "_id": "i18n-message-hu-schedule-edit-description",
+    "key": "schedule.edit.description",
+    "lang": "hu",
+    "value": "Módosítsd a kiválasztott alapidősáv kezdési szabályát."
+  },
+  {
+    "_id": "i18n-message-hu-schedule-edit-title",
+    "key": "schedule.edit.title",
+    "lang": "hu",
+    "value": "Ütemezés szerkesztése"
+  },
+  {
+    "_id": "i18n-message-hu-schedule-save-aria",
+    "key": "schedule.save.aria",
+    "lang": "hu",
+    "value": "Ütemezés mentése"
+  },
+  {
+    "_id": "i18n-message-hu-schedule-start-from",
+    "key": "schedule.start.from",
+    "lang": "hu",
+    "value": "Kezdés ettől"
+  },
+  {
+    "_id": "i18n-message-hu-schedule-start-time",
+    "key": "schedule.start.time",
+    "lang": "hu",
+    "value": "Kezdési idő"
+  },
+  {
+    "_id": "i18n-message-hu-slots-base-add-aria",
+    "key": "slots.base.add.aria",
+    "lang": "hu",
+    "value": "Alapidősáv hozzáadása"
+  },
+  {
+    "_id": "i18n-message-hu-slots-disabled-description",
+    "key": "slots.disabled.description",
+    "lang": "hu",
+    "value": "Időpontok helyett a fő dátumtartomány használata."
+  },
+  {
+    "_id": "i18n-message-hu-slots-empty-description",
+    "key": "slots.empty.description",
+    "lang": "hu",
+    "value": "Még nincs idősáv. A + gombbal hozd létre az elsőt."
+  },
+  {
+    "_id": "i18n-message-hu-slots-subtitle",
+    "key": "slots.subtitle",
+    "lang": "hu",
+    "value": "Alapütemezés és dátumspecifikus felülírások."
+  },
+  {
+    "_id": "i18n-message-hu-slots-time-pending",
+    "key": "slots.time.pending",
+    "lang": "hu",
+    "value": "Az időpont függőben"
+  },
+  {
+    "_id": "i18n-message-hu-slots-title",
+    "key": "slots.title",
+    "lang": "hu",
+    "value": "Idősávok"
+  },
+  {
+    "_id": "i18n-message-hu-slots-toggle-aria",
+    "key": "slots.toggle.aria",
+    "lang": "hu",
+    "value": "Idősávok be- vagy kikapcsolása"
+  },
+  {
+    "_id": "i18n-message-hu-source-link",
+    "key": "source.link",
+    "lang": "hu",
+    "value": "Forráshivatkozás"
+  },
+  {
+    "_id": "i18n-message-hu-sympathy",
+    "key": "sympathy",
+    "lang": "hu",
+    "value": "Szimpátia"
+  },
+  {
+    "_id": "i18n-message-hu-terms-document-aria",
+    "key": "terms.document.aria",
+    "lang": "hu",
+    "value": "Felhasználási feltételek"
+  },
+  {
+    "_id": "i18n-message-hu-terms-document-loading",
+    "key": "terms.document.loading",
+    "lang": "hu",
+    "value": "Feltételek betöltése"
+  },
+  {
+    "_id": "i18n-message-hu-terms-document-title",
+    "key": "terms.document.title",
+    "lang": "hu",
+    "value": "Használati feltételek"
+  },
+  {
+    "_id": "i18n-message-hu-terms-document-unavailable-description",
+    "key": "terms.document.unavailable.description",
+    "lang": "hu",
+    "value": "A feltételek tartalma jelenleg nem érhető el."
+  },
+  {
+    "_id": "i18n-message-hu-terms-document-unavailable-title",
+    "key": "terms.document.unavailable.title",
+    "lang": "hu",
+    "value": "A feltételek nem érhetők el"
+  },
+  {
+    "_id": "i18n-message-hu-terms-popup-close",
+    "key": "terms.popup.close",
+    "lang": "hu",
+    "value": "Feltételek ablak bezárása"
+  },
+  {
+    "_id": "i18n-message-hu-ui-animals-nature",
+    "key": "ui.animals.nature",
+    "lang": "hu",
+    "value": "Állatok és természet"
+  },
+  {
+    "_id": "i18n-message-hu-ui-food-drink",
+    "key": "ui.food.drink",
+    "lang": "hu",
+    "value": "Ételek és italok"
+  },
+  {
+    "_id": "i18n-message-hu-ui-smileys-people",
+    "key": "ui.smileys.people",
+    "lang": "hu",
+    "value": "Hangulatjelek és emberek"
+  },
+  {
+    "_id": "i18n-message-hu-ui-travel-places",
+    "key": "ui.travel.places",
+    "lang": "hu",
+    "value": "Utazás és helyek"
+  },
+  {
+    "_id": "i18n-message-hu-unconnected",
+    "key": "unconnected",
+    "lang": "hu",
+    "value": "Nincs kapcsolat"
+  },
+  {
+    "_id": "i18n-message-hu-updates",
+    "key": "updates",
+    "lang": "hu",
+    "value": "Frissítések"
+  },
+  {
+    "_id": "i18n-message-en-accordion-selection-clear-aria",
+    "key": "accordion.selection.clear.aria",
+    "lang": "en",
+    "value": "Deselect {title}"
+  },
+  {
+    "_id": "i18n-message-en-accordion-selection-set-aria",
+    "key": "accordion.selection.set.aria",
+    "lang": "en",
+    "value": "Select {title}"
+  },
+  {
+    "_id": "i18n-message-en-account-delete-error",
+    "key": "account.delete.error",
+    "lang": "en",
+    "value": "Unable to delete account."
+  },
+  {
+    "_id": "i18n-message-en-account-logout-error",
+    "key": "account.logout.error",
+    "lang": "en",
+    "value": "Unable to log out."
+  },
+  {
+    "_id": "i18n-message-en-content-load-error-title",
+    "key": "content.load.error.title",
+    "lang": "en",
+    "value": "Unable to load content"
+  },
+  {
+    "_id": "i18n-message-en-demo-session-open-error",
+    "key": "demo.session.open.error",
+    "lang": "en",
+    "value": "Unable to open selected demo user."
+  },
+  {
+    "_id": "i18n-message-en-entry-user-open-error",
+    "key": "entry.user.open.error",
+    "lang": "en",
+    "value": "Unable to open selected user."
+  },
+  {
+    "_id": "i18n-message-en-navigation-account-aria",
+    "key": "navigation.account.aria",
+    "lang": "en",
+    "value": "Account"
+  },
+  {
+    "_id": "i18n-message-hu-accordion-selection-clear-aria",
+    "key": "accordion.selection.clear.aria",
+    "lang": "hu",
+    "value": "{title} kijelölésének megszüntetése"
+  },
+  {
+    "_id": "i18n-message-hu-accordion-selection-set-aria",
+    "key": "accordion.selection.set.aria",
+    "lang": "hu",
+    "value": "{title} kijelölése"
+  },
+  {
+    "_id": "i18n-message-hu-account-delete-error",
+    "key": "account.delete.error",
+    "lang": "hu",
+    "value": "Nem sikerült törölni a fiókot."
+  },
+  {
+    "_id": "i18n-message-hu-account-logout-error",
+    "key": "account.logout.error",
+    "lang": "hu",
+    "value": "Nem sikerült kijelentkezni."
+  },
+  {
+    "_id": "i18n-message-hu-content-load-error-title",
+    "key": "content.load.error.title",
+    "lang": "hu",
+    "value": "Nem sikerült betölteni a tartalmat"
+  },
+  {
+    "_id": "i18n-message-hu-demo-session-open-error",
+    "key": "demo.session.open.error",
+    "lang": "hu",
+    "value": "Nem sikerült megnyitni a kiválasztott demófelhasználót."
+  },
+  {
+    "_id": "i18n-message-hu-entry-user-open-error",
+    "key": "entry.user.open.error",
+    "lang": "hu",
+    "value": "Nem sikerült megnyitni a kiválasztott felhasználót."
+  },
+  {
+    "_id": "i18n-message-hu-navigation-account-aria",
+    "key": "navigation.account.aria",
+    "lang": "hu",
+    "value": "Fiók"
+  },
+  {
+    "_id": "i18n-message-en-account-deletion-retention-warning",
+    "key": "account.deletion.retention.warning",
+    "lang": "en",
+    "value": "You can reactivate within 30 days. After that, the account is permanently purged."
+  },
+  {
+    "_id": "i18n-message-en-chat-pins-empty",
+    "key": "chat.pins.empty",
+    "lang": "en",
+    "value": "No pinned messages"
+  },
+  {
+    "_id": "i18n-message-en-notifications-open-aria",
+    "key": "notifications.open.aria",
+    "lang": "en",
+    "value": "Open notifications"
+  },
+  {
+    "_id": "i18n-message-en-notifications-open-count-aria",
+    "key": "notifications.open.count.aria",
+    "lang": "en",
+    "value": "Open notifications, {count} new"
+  },
+  {
+    "_id": "i18n-message-en-notifications-open-muted-aria",
+    "key": "notifications.open.muted.aria",
+    "lang": "en",
+    "value": "Open notifications, alerts muted"
+  },
+  {
+    "_id": "i18n-message-en-notifications-open-muted-count-aria",
+    "key": "notifications.open.muted.count.aria",
+    "lang": "en",
+    "value": "Open notifications, {count} new, alerts muted"
+  },
+  {
+    "_id": "i18n-message-en-operator-workspace-title",
+    "key": "operator.workspace.title",
+    "lang": "en",
+    "value": "Operator workspace"
+  },
+  {
+    "_id": "i18n-message-hu-account-deletion-retention-warning",
+    "key": "account.deletion.retention.warning",
+    "lang": "hu",
+    "value": "A fiókot 30 napon belül újraaktiválhatod. Ezután a fiók véglegesen törlődik."
+  },
+  {
+    "_id": "i18n-message-hu-chat-pins-empty",
+    "key": "chat.pins.empty",
+    "lang": "hu",
+    "value": "Nincsenek kitűzött üzenetek"
+  },
+  {
+    "_id": "i18n-message-hu-notifications-open-aria",
+    "key": "notifications.open.aria",
+    "lang": "hu",
+    "value": "Értesítések megnyitása"
+  },
+  {
+    "_id": "i18n-message-hu-notifications-open-count-aria",
+    "key": "notifications.open.count.aria",
+    "lang": "hu",
+    "value": "Értesítések megnyitása, {count} új"
+  },
+  {
+    "_id": "i18n-message-hu-notifications-open-muted-aria",
+    "key": "notifications.open.muted.aria",
+    "lang": "hu",
+    "value": "Értesítések megnyitása, a jelzések némítva"
+  },
+  {
+    "_id": "i18n-message-hu-notifications-open-muted-count-aria",
+    "key": "notifications.open.muted.count.aria",
+    "lang": "hu",
+    "value": "Értesítések megnyitása, {count} új, a jelzések némítva"
+  },
+  {
+    "_id": "i18n-message-hu-operator-workspace-title",
+    "key": "operator.workspace.title",
+    "lang": "hu",
+    "value": "Operátori munkaterület"
   }
 ]

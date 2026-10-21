@@ -1,0 +1,938 @@
+[
+  {
+    "from": "no.network",
+    "target": {
+      "_id": "i18n-message-en-network-offline",
+      "key": "network.offline",
+      "lang": "en",
+      "value": "No network"
+    }
+  },
+  {
+    "from": "gdpr.consent",
+    "target": {
+      "_id": "i18n-message-en-privacy-consent-aria",
+      "key": "privacy.consent.aria",
+      "lang": "en",
+      "value": "GDPR consent"
+    }
+  },
+  {
+    "from": "close.privacy.popup",
+    "target": {
+      "_id": "i18n-message-en-privacy-popup-close",
+      "key": "privacy.popup.close",
+      "lang": "en",
+      "value": "Close privacy popup"
+    }
+  },
+  {
+    "from": "privacy.first",
+    "target": {
+      "_id": "i18n-message-en-privacy-document-title",
+      "key": "privacy.document.title",
+      "lang": "en",
+      "value": "Privacy first"
+    }
+  },
+  {
+    "from": "loading.privacy.content",
+    "target": {
+      "_id": "i18n-message-en-privacy-document-loading",
+      "key": "privacy.document.loading",
+      "lang": "en",
+      "value": "Loading privacy content"
+    }
+  },
+  {
+    "from": "privacy.is.not.available",
+    "target": {
+      "_id": "i18n-message-en-privacy-document-unavailable-title",
+      "key": "privacy.document.unavailable.title",
+      "lang": "en",
+      "value": "Privacy is not available"
+    }
+  },
+  {
+    "from": "privacy.content.is.not.available.right.now",
+    "target": {
+      "_id": "i18n-message-en-privacy-document-unavailable-description",
+      "key": "privacy.document.unavailable.description",
+      "lang": "en",
+      "value": "Privacy content is not available right now."
+    }
+  },
+  {
+    "from": "terms.of.service",
+    "target": {
+      "_id": "i18n-message-en-terms-document-aria",
+      "key": "terms.document.aria",
+      "lang": "en",
+      "value": "Terms of service"
+    }
+  },
+  {
+    "from": "close.terms.popup",
+    "target": {
+      "_id": "i18n-message-en-terms-popup-close",
+      "key": "terms.popup.close",
+      "lang": "en",
+      "value": "Close terms popup"
+    }
+  },
+  {
+    "from": "usage.terms",
+    "target": {
+      "_id": "i18n-message-en-terms-document-title",
+      "key": "terms.document.title",
+      "lang": "en",
+      "value": "Usage terms"
+    }
+  },
+  {
+    "from": "loading.terms.content",
+    "target": {
+      "_id": "i18n-message-en-terms-document-loading",
+      "key": "terms.document.loading",
+      "lang": "en",
+      "value": "Loading terms content"
+    }
+  },
+  {
+    "from": "terms.are.not.available",
+    "target": {
+      "_id": "i18n-message-en-terms-document-unavailable-title",
+      "key": "terms.document.unavailable.title",
+      "lang": "en",
+      "value": "Terms are not available"
+    }
+  },
+  {
+    "from": "terms.content.is.not.available.right.now.",
+    "target": {
+      "_id": "i18n-message-en-terms-document-unavailable-description",
+      "key": "terms.document.unavailable.description",
+      "lang": "en",
+      "value": "Terms content is not available right now."
+    }
+  },
+  {
+    "from": "privacy.choices.could.not.be.saved",
+    "target": {
+      "_id": "i18n-message-en-privacy-preferences-save-error",
+      "key": "privacy.preferences.save.error",
+      "lang": "en",
+      "value": "Privacy choices could not be saved."
+    }
+  },
+  {
+    "from": "accept.and.continue",
+    "target": {
+      "_id": "i18n-message-en-privacy-consent-accept",
+      "key": "privacy.consent.accept",
+      "lang": "en",
+      "value": "Accept and continue"
+    }
+  },
+  {
+    "from": "opening.demo.session",
+    "target": {
+      "_id": "i18n-message-en-demo-session-opening-title",
+      "key": "demo.session.opening.title",
+      "lang": "en",
+      "value": "Opening demo session"
+    }
+  },
+  {
+    "from": "opening.demo.session.1qf23n",
+    "target": {
+      "_id": "i18n-message-en-demo-session-opening-description",
+      "key": "demo.session.opening.description",
+      "lang": "en",
+      "value": "Opening demo session..."
+    }
+  },
+  {
+    "from": "preparing.demo.selector",
+    "target": {
+      "_id": "i18n-message-en-demo-selector-loading-title",
+      "key": "demo.selector.loading.title",
+      "lang": "en",
+      "value": "Preparing demo selector"
+    }
+  },
+  {
+    "from": "auto.selected",
+    "target": {
+      "_id": "i18n-message-en-demo-selector-selection-automatic",
+      "key": "demo.selector.selection.automatic",
+      "lang": "en",
+      "value": "Auto selected"
+    }
+  },
+  {
+    "from": "demo.data.loading.progress",
+    "target": {
+      "_id": "i18n-message-en-demo-bootstrap-progress-aria",
+      "key": "demo.bootstrap.progress.aria",
+      "lang": "en",
+      "value": "Demo data loading progress"
+    }
+  },
+  {
+    "from": "selector.unavailable",
+    "target": {
+      "_id": "i18n-message-en-demo-selector-unavailable-title",
+      "key": "demo.selector.unavailable.title",
+      "lang": "en",
+      "value": "Selector unavailable"
+    }
+  },
+  {
+    "from": "no.demo.users.available",
+    "target": {
+      "_id": "i18n-message-en-demo-selector-empty-description",
+      "key": "demo.selector.empty.description",
+      "lang": "en",
+      "value": "No demo users available."
+    }
+  },
+  {
+    "from": "preparing.demo.data",
+    "target": {
+      "_id": "i18n-message-en-demo-bootstrap-loading",
+      "key": "demo.bootstrap.loading",
+      "lang": "en",
+      "value": "Preparing demo data"
+    }
+  },
+  {
+    "from": "ui.demo.user.selector",
+    "target": {
+      "_id": "i18n-message-en-demo-selector-aria",
+      "key": "demo.selector.aria",
+      "lang": "en",
+      "value": "Demo user selector"
+    }
+  },
+  {
+    "from": "close.demo.user.popup",
+    "target": {
+      "_id": "i18n-message-en-demo-selector-close",
+      "key": "demo.selector.close",
+      "lang": "en",
+      "value": "Close demo user popup"
+    }
+  },
+  {
+    "from": "ui.open.new.demo.profile",
+    "target": {
+      "_id": "i18n-message-en-demo-profile-create-aria",
+      "key": "demo.profile.create.aria",
+      "lang": "en",
+      "value": "Open new demo profile"
+    }
+  },
+  {
+    "from": "ui.filter.demo.users",
+    "target": {
+      "_id": "i18n-message-en-demo-selector-filter-aria",
+      "key": "demo.selector.filter.aria",
+      "lang": "en",
+      "value": "Filter demo users"
+    }
+  },
+  {
+    "from": "retry.demo.selector",
+    "target": {
+      "_id": "i18n-message-en-demo-selector-retry",
+      "key": "demo.selector.retry",
+      "lang": "en",
+      "value": "Retry demo selector"
+    }
+  },
+  {
+    "from": "unable.to.load.demo.users.right.now",
+    "target": {
+      "_id": "i18n-message-en-demo-selector-load-error",
+      "key": "demo.selector.load.error",
+      "lang": "en",
+      "value": "Unable to load demo users right now."
+    }
+  },
+  {
+    "from": "preparing.demo.session",
+    "target": {
+      "_id": "i18n-message-en-demo-session-preparing",
+      "key": "demo.session.preparing",
+      "lang": "en",
+      "value": "Preparing demo session"
+    }
+  },
+  {
+    "from": "demo.session.ready",
+    "target": {
+      "_id": "i18n-message-en-demo-session-ready-title",
+      "key": "demo.session.ready.title",
+      "lang": "en",
+      "value": "Demo session ready"
+    }
+  },
+  {
+    "from": "ui.loading.help.content",
+    "target": {
+      "_id": "i18n-message-en-help-document-loading",
+      "key": "help.document.loading",
+      "lang": "en",
+      "value": "Loading help content"
+    }
+  },
+  {
+    "from": "help.is.not.available",
+    "target": {
+      "_id": "i18n-message-en-help-document-unavailable-title",
+      "key": "help.document.unavailable.title",
+      "lang": "en",
+      "value": "Help is not available"
+    }
+  },
+  {
+    "from": "ui.help.content.is.not.available.right.now",
+    "target": {
+      "_id": "i18n-message-en-help-document-unavailable-description",
+      "key": "help.document.unavailable.description",
+      "lang": "en",
+      "value": "Help content is not available right now."
+    }
+  },
+  {
+    "from": "ui.close.chat.popup",
+    "target": {
+      "_id": "i18n-message-en-chat-popup-close-aria",
+      "key": "chat.popup.close.aria",
+      "lang": "en",
+      "value": "Close chat popup"
+    }
+  },
+  {
+    "from": "ui.message.reactions",
+    "target": {
+      "_id": "i18n-message-en-chat-reactions-title",
+      "key": "chat.reactions.title",
+      "lang": "en",
+      "value": "Message reactions"
+    }
+  },
+  {
+    "from": "ui.close.reactions",
+    "target": {
+      "_id": "i18n-message-en-chat-reactions-close-aria",
+      "key": "chat.reactions.close.aria",
+      "lang": "en",
+      "value": "Close reactions"
+    }
+  },
+  {
+    "from": "ui.open.pinned.messages",
+    "target": {
+      "_id": "i18n-message-en-chat-pins-open-aria",
+      "key": "chat.pins.open.aria",
+      "lang": "en",
+      "value": "Open pinned messages"
+    }
+  },
+  {
+    "from": "ui.close.help.popup",
+    "target": {
+      "_id": "i18n-message-en-help-popup-close-aria",
+      "key": "help.popup.close.aria",
+      "lang": "en",
+      "value": "Close help popup"
+    }
+  },
+  {
+    "from": "ui.no.notifications",
+    "target": {
+      "_id": "i18n-message-en-notifications-empty-title",
+      "key": "notifications.empty.title",
+      "lang": "en",
+      "value": "No notifications"
+    }
+  },
+  {
+    "from": "ui.new.messages.and.updates.will.appear.here",
+    "target": {
+      "_id": "i18n-message-en-notifications-empty-description",
+      "key": "notifications.empty.description",
+      "lang": "en",
+      "value": "New messages and updates will appear here."
+    }
+  },
+  {
+    "from": "ui.1.new.notification",
+    "target": {
+      "_id": "i18n-message-en-notifications-badge-single",
+      "key": "notifications.badge.single",
+      "lang": "en",
+      "value": "1 new notification"
+    }
+  },
+  {
+    "from": "ui.close.notifications",
+    "target": {
+      "_id": "i18n-message-en-notifications-close-aria",
+      "key": "notifications.close.aria",
+      "lang": "en",
+      "value": "Close notifications"
+    }
+  },
+  {
+    "from": "ui.unmute.notification.alerts",
+    "target": {
+      "_id": "i18n-message-en-notifications-alerts-unmute-aria",
+      "key": "notifications.alerts.unmute.aria",
+      "lang": "en",
+      "value": "Unmute notification alerts"
+    }
+  },
+  {
+    "from": "ui.mute.notification.alerts",
+    "target": {
+      "_id": "i18n-message-en-notifications-alerts-mute-aria",
+      "key": "notifications.alerts.mute.aria",
+      "lang": "en",
+      "value": "Mute notification alerts"
+    }
+  },
+  {
+    "from": "ui.all.notifications",
+    "target": {
+      "_id": "i18n-message-en-notifications-filter-all-label",
+      "key": "notifications.filter.all.label",
+      "lang": "en",
+      "value": "All notifications"
+    }
+  },
+  {
+    "from": "ui.new.notifications.will.still.be.counted.and.saved.but.the.floating.alert.button.will.stay.hidden.until.you.unmute.it",
+    "target": {
+      "_id": "i18n-message-en-notifications-alerts-mute-description",
+      "key": "notifications.alerts.mute.description",
+      "lang": "en",
+      "value": "New notifications will still be counted and saved, but the floating alert button will stay hidden until you unmute it."
+    }
+  },
+  {
+    "from": "ui.the.floating.alert.button.can.appear.again.when.a.new.notification.arrives",
+    "target": {
+      "_id": "i18n-message-en-notifications-alerts-unmute-description",
+      "key": "notifications.alerts.unmute.description",
+      "lang": "en",
+      "value": "The floating alert button can appear again when a new notification arrives."
+    }
+  },
+  {
+    "from": "ui.mute.alerts",
+    "target": {
+      "_id": "i18n-message-en-notifications-alerts-mute-action",
+      "key": "notifications.alerts.mute.action",
+      "lang": "en",
+      "value": "Mute alerts"
+    }
+  },
+  {
+    "from": "ui.unmute.alerts",
+    "target": {
+      "_id": "i18n-message-en-notifications-alerts-unmute-action",
+      "key": "notifications.alerts.unmute.action",
+      "lang": "en",
+      "value": "Unmute alerts"
+    }
+  },
+  {
+    "from": "ui.notification.update.failed",
+    "target": {
+      "_id": "i18n-message-en-notifications-update-error-title",
+      "key": "notifications.update.error.title",
+      "lang": "en",
+      "value": "Notification update failed"
+    }
+  },
+  {
+    "from": "ui.unable.to.reactivate.account",
+    "target": {
+      "_id": "i18n-message-en-account-reactivate-error",
+      "key": "account.reactivate.error",
+      "lang": "en",
+      "value": "Unable to reactivate account."
+    }
+  },
+  {
+    "from": "no.network",
+    "target": {
+      "_id": "i18n-message-hu-network-offline",
+      "key": "network.offline",
+      "lang": "hu",
+      "value": "Nincs hálózat"
+    }
+  },
+  {
+    "from": "gdpr.consent",
+    "target": {
+      "_id": "i18n-message-hu-privacy-consent-aria",
+      "key": "privacy.consent.aria",
+      "lang": "hu",
+      "value": "GDPR hozzájárulás"
+    }
+  },
+  {
+    "from": "close.privacy.popup",
+    "target": {
+      "_id": "i18n-message-hu-privacy-popup-close",
+      "key": "privacy.popup.close",
+      "lang": "hu",
+      "value": "Adatvédelmi ablak bezárása"
+    }
+  },
+  {
+    "from": "privacy.first",
+    "target": {
+      "_id": "i18n-message-hu-privacy-document-title",
+      "key": "privacy.document.title",
+      "lang": "hu",
+      "value": "Első az adatvédelem"
+    }
+  },
+  {
+    "from": "loading.privacy.content",
+    "target": {
+      "_id": "i18n-message-hu-privacy-document-loading",
+      "key": "privacy.document.loading",
+      "lang": "hu",
+      "value": "Adatvédelmi tartalom betöltése"
+    }
+  },
+  {
+    "from": "privacy.is.not.available",
+    "target": {
+      "_id": "i18n-message-hu-privacy-document-unavailable-title",
+      "key": "privacy.document.unavailable.title",
+      "lang": "hu",
+      "value": "Az adatvédelem nem érhető el"
+    }
+  },
+  {
+    "from": "privacy.content.is.not.available.right.now",
+    "target": {
+      "_id": "i18n-message-hu-privacy-document-unavailable-description",
+      "key": "privacy.document.unavailable.description",
+      "lang": "hu",
+      "value": "Az adatvédelmi tartalom most nem érhető el."
+    }
+  },
+  {
+    "from": "terms.of.service",
+    "target": {
+      "_id": "i18n-message-hu-terms-document-aria",
+      "key": "terms.document.aria",
+      "lang": "hu",
+      "value": "Felhasználási feltételek"
+    }
+  },
+  {
+    "from": "close.terms.popup",
+    "target": {
+      "_id": "i18n-message-hu-terms-popup-close",
+      "key": "terms.popup.close",
+      "lang": "hu",
+      "value": "Feltételek ablak bezárása"
+    }
+  },
+  {
+    "from": "usage.terms",
+    "target": {
+      "_id": "i18n-message-hu-terms-document-title",
+      "key": "terms.document.title",
+      "lang": "hu",
+      "value": "Használati feltételek"
+    }
+  },
+  {
+    "from": "loading.terms.content",
+    "target": {
+      "_id": "i18n-message-hu-terms-document-loading",
+      "key": "terms.document.loading",
+      "lang": "hu",
+      "value": "Feltételek betöltése"
+    }
+  },
+  {
+    "from": "terms.are.not.available",
+    "target": {
+      "_id": "i18n-message-hu-terms-document-unavailable-title",
+      "key": "terms.document.unavailable.title",
+      "lang": "hu",
+      "value": "A feltételek nem érhetők el"
+    }
+  },
+  {
+    "from": "terms.content.is.not.available.right.now.",
+    "target": {
+      "_id": "i18n-message-hu-terms-document-unavailable-description",
+      "key": "terms.document.unavailable.description",
+      "lang": "hu",
+      "value": "A feltételek tartalma jelenleg nem érhető el."
+    }
+  },
+  {
+    "from": "privacy.choices.could.not.be.saved",
+    "target": {
+      "_id": "i18n-message-hu-privacy-preferences-save-error",
+      "key": "privacy.preferences.save.error",
+      "lang": "hu",
+      "value": "Nem sikerült menteni az adatvédelmi választásokat."
+    }
+  },
+  {
+    "from": "accept.and.continue",
+    "target": {
+      "_id": "i18n-message-hu-privacy-consent-accept",
+      "key": "privacy.consent.accept",
+      "lang": "hu",
+      "value": "Elfogadás és folytatás"
+    }
+  },
+  {
+    "from": "opening.demo.session",
+    "target": {
+      "_id": "i18n-message-hu-demo-session-opening-title",
+      "key": "demo.session.opening.title",
+      "lang": "hu",
+      "value": "Demo munkamenet megnyitása"
+    }
+  },
+  {
+    "from": "opening.demo.session.1qf23n",
+    "target": {
+      "_id": "i18n-message-hu-demo-session-opening-description",
+      "key": "demo.session.opening.description",
+      "lang": "hu",
+      "value": "Demo munkamenet megnyitása..."
+    }
+  },
+  {
+    "from": "preparing.demo.selector",
+    "target": {
+      "_id": "i18n-message-hu-demo-selector-loading-title",
+      "key": "demo.selector.loading.title",
+      "lang": "hu",
+      "value": "Demo választó előkészítése"
+    }
+  },
+  {
+    "from": "auto.selected",
+    "target": {
+      "_id": "i18n-message-hu-demo-selector-selection-automatic",
+      "key": "demo.selector.selection.automatic",
+      "lang": "hu",
+      "value": "Automatikusan kiválasztva"
+    }
+  },
+  {
+    "from": "demo.data.loading.progress",
+    "target": {
+      "_id": "i18n-message-hu-demo-bootstrap-progress-aria",
+      "key": "demo.bootstrap.progress.aria",
+      "lang": "hu",
+      "value": "Demo adatok betöltésének állapota"
+    }
+  },
+  {
+    "from": "selector.unavailable",
+    "target": {
+      "_id": "i18n-message-hu-demo-selector-unavailable-title",
+      "key": "demo.selector.unavailable.title",
+      "lang": "hu",
+      "value": "A választó nem érhető el"
+    }
+  },
+  {
+    "from": "no.demo.users.available",
+    "target": {
+      "_id": "i18n-message-hu-demo-selector-empty-description",
+      "key": "demo.selector.empty.description",
+      "lang": "hu",
+      "value": "Nincs elérhető demo felhasználó."
+    }
+  },
+  {
+    "from": "preparing.demo.data",
+    "target": {
+      "_id": "i18n-message-hu-demo-bootstrap-loading",
+      "key": "demo.bootstrap.loading",
+      "lang": "hu",
+      "value": "Demo adatok előkészítése"
+    }
+  },
+  {
+    "from": "ui.demo.user.selector",
+    "target": {
+      "_id": "i18n-message-hu-demo-selector-aria",
+      "key": "demo.selector.aria",
+      "lang": "hu",
+      "value": "Demófelhasználó kiválasztása"
+    }
+  },
+  {
+    "from": "close.demo.user.popup",
+    "target": {
+      "_id": "i18n-message-hu-demo-selector-close",
+      "key": "demo.selector.close",
+      "lang": "hu",
+      "value": "Demo felhasználói ablak bezárása"
+    }
+  },
+  {
+    "from": "ui.open.new.demo.profile",
+    "target": {
+      "_id": "i18n-message-hu-demo-profile-create-aria",
+      "key": "demo.profile.create.aria",
+      "lang": "hu",
+      "value": "Új demóprofil megnyitása"
+    }
+  },
+  {
+    "from": "ui.filter.demo.users",
+    "target": {
+      "_id": "i18n-message-hu-demo-selector-filter-aria",
+      "key": "demo.selector.filter.aria",
+      "lang": "hu",
+      "value": "Demófelhasználók szűrése"
+    }
+  },
+  {
+    "from": "retry.demo.selector",
+    "target": {
+      "_id": "i18n-message-hu-demo-selector-retry",
+      "key": "demo.selector.retry",
+      "lang": "hu",
+      "value": "Demo választó újrapróbálása"
+    }
+  },
+  {
+    "from": "unable.to.load.demo.users.right.now",
+    "target": {
+      "_id": "i18n-message-hu-demo-selector-load-error",
+      "key": "demo.selector.load.error",
+      "lang": "hu",
+      "value": "Most nem lehet betölteni a demo felhasználókat."
+    }
+  },
+  {
+    "from": "preparing.demo.session",
+    "target": {
+      "_id": "i18n-message-hu-demo-session-preparing",
+      "key": "demo.session.preparing",
+      "lang": "hu",
+      "value": "Demo munkamenet előkészítése"
+    }
+  },
+  {
+    "from": "demo.session.ready",
+    "target": {
+      "_id": "i18n-message-hu-demo-session-ready-title",
+      "key": "demo.session.ready.title",
+      "lang": "hu",
+      "value": "Demo munkamenet kész"
+    }
+  },
+  {
+    "from": "ui.loading.help.content",
+    "target": {
+      "_id": "i18n-message-hu-help-document-loading",
+      "key": "help.document.loading",
+      "lang": "hu",
+      "value": "Súgótartalom betöltése"
+    }
+  },
+  {
+    "from": "help.is.not.available",
+    "target": {
+      "_id": "i18n-message-hu-help-document-unavailable-title",
+      "key": "help.document.unavailable.title",
+      "lang": "hu",
+      "value": "A segítség nem érhető el"
+    }
+  },
+  {
+    "from": "ui.help.content.is.not.available.right.now",
+    "target": {
+      "_id": "i18n-message-hu-help-document-unavailable-description",
+      "key": "help.document.unavailable.description",
+      "lang": "hu",
+      "value": "A súgótartalom most nem érhető el."
+    }
+  },
+  {
+    "from": "ui.close.chat.popup",
+    "target": {
+      "_id": "i18n-message-hu-chat-popup-close-aria",
+      "key": "chat.popup.close.aria",
+      "lang": "hu",
+      "value": "Csevegőablak bezárása"
+    }
+  },
+  {
+    "from": "ui.message.reactions",
+    "target": {
+      "_id": "i18n-message-hu-chat-reactions-title",
+      "key": "chat.reactions.title",
+      "lang": "hu",
+      "value": "Üzenetreakciók"
+    }
+  },
+  {
+    "from": "ui.close.reactions",
+    "target": {
+      "_id": "i18n-message-hu-chat-reactions-close-aria",
+      "key": "chat.reactions.close.aria",
+      "lang": "hu",
+      "value": "Reakciók bezárása"
+    }
+  },
+  {
+    "from": "ui.open.pinned.messages",
+    "target": {
+      "_id": "i18n-message-hu-chat-pins-open-aria",
+      "key": "chat.pins.open.aria",
+      "lang": "hu",
+      "value": "Rögzített üzenetek megnyitása"
+    }
+  },
+  {
+    "from": "ui.close.help.popup",
+    "target": {
+      "_id": "i18n-message-hu-help-popup-close-aria",
+      "key": "help.popup.close.aria",
+      "lang": "hu",
+      "value": "Súgóablak bezárása"
+    }
+  },
+  {
+    "from": "ui.no.notifications",
+    "target": {
+      "_id": "i18n-message-hu-notifications-empty-title",
+      "key": "notifications.empty.title",
+      "lang": "hu",
+      "value": "Nincsenek értesítések"
+    }
+  },
+  {
+    "from": "ui.new.messages.and.updates.will.appear.here",
+    "target": {
+      "_id": "i18n-message-hu-notifications-empty-description",
+      "key": "notifications.empty.description",
+      "lang": "hu",
+      "value": "Itt jelennek majd meg az új üzenetek és frissítések."
+    }
+  },
+  {
+    "from": "ui.1.new.notification",
+    "target": {
+      "_id": "i18n-message-hu-notifications-badge-single",
+      "key": "notifications.badge.single",
+      "lang": "hu",
+      "value": "1 új értesítés"
+    }
+  },
+  {
+    "from": "ui.close.notifications",
+    "target": {
+      "_id": "i18n-message-hu-notifications-close-aria",
+      "key": "notifications.close.aria",
+      "lang": "hu",
+      "value": "Értesítések bezárása"
+    }
+  },
+  {
+    "from": "ui.unmute.notification.alerts",
+    "target": {
+      "_id": "i18n-message-hu-notifications-alerts-unmute-aria",
+      "key": "notifications.alerts.unmute.aria",
+      "lang": "hu",
+      "value": "Értesítési jelzések visszakapcsolása"
+    }
+  },
+  {
+    "from": "ui.mute.notification.alerts",
+    "target": {
+      "_id": "i18n-message-hu-notifications-alerts-mute-aria",
+      "key": "notifications.alerts.mute.aria",
+      "lang": "hu",
+      "value": "Értesítési jelzések némítása"
+    }
+  },
+  {
+    "from": "ui.all.notifications",
+    "target": {
+      "_id": "i18n-message-hu-notifications-filter-all-label",
+      "key": "notifications.filter.all.label",
+      "lang": "hu",
+      "value": "Összes értesítés"
+    }
+  },
+  {
+    "from": "ui.new.notifications.will.still.be.counted.and.saved.but.the.floating.alert.button.will.stay.hidden.until.you.unmute.it",
+    "target": {
+      "_id": "i18n-message-hu-notifications-alerts-mute-description",
+      "key": "notifications.alerts.mute.description",
+      "lang": "hu",
+      "value": "Az új értesítéseket továbbra is számoljuk és mentjük, de a lebegő értesítési gomb rejtve marad, amíg újra be nem kapcsolod."
+    }
+  },
+  {
+    "from": "ui.the.floating.alert.button.can.appear.again.when.a.new.notification.arrives",
+    "target": {
+      "_id": "i18n-message-hu-notifications-alerts-unmute-description",
+      "key": "notifications.alerts.unmute.description",
+      "lang": "hu",
+      "value": "Új értesítés érkezésekor ismét megjelenhet a lebegő értesítési gomb."
+    }
+  },
+  {
+    "from": "ui.mute.alerts",
+    "target": {
+      "_id": "i18n-message-hu-notifications-alerts-mute-action",
+      "key": "notifications.alerts.mute.action",
+      "lang": "hu",
+      "value": "Értesítési jelzések némítása"
+    }
+  },
+  {
+    "from": "ui.unmute.alerts",
+    "target": {
+      "_id": "i18n-message-hu-notifications-alerts-unmute-action",
+      "key": "notifications.alerts.unmute.action",
+      "lang": "hu",
+      "value": "Értesítési jelzések visszakapcsolása"
+    }
+  },
+  {
+    "from": "ui.notification.update.failed",
+    "target": {
+      "_id": "i18n-message-hu-notifications-update-error-title",
+      "key": "notifications.update.error.title",
+      "lang": "hu",
+      "value": "Nem sikerült frissíteni az értesítést"
+    }
+  },
+  {
+    "from": "ui.unable.to.reactivate.account",
+    "target": {
+      "_id": "i18n-message-hu-account-reactivate-error",
+      "key": "account.reactivate.error",
+      "lang": "hu",
+      "value": "Nem sikerült újraaktiválni a fiókot."
+    }
+  }
+]

@@ -1,4 +1,8 @@
-# Template release 1.4.1
+# Template release 1.4.5
+
+The current compatible source/image release is **1.4.5**: updated API/nginx, own EN/HU catalogs, migration 019 and standalone build. [Release notes](../../guides/releases/v1.4.5.md). The signed Debian baseline remains 1.4.1.
+
+## Signed template release 1.4.1
 
 The signed 1.4.1 candidate is installed and verified on VMware; its five images
 are published. See [release notes](../../guides/releases/v1.4.1.md) and
