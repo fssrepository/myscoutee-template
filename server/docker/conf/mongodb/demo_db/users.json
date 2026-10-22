@@ -9,12 +9,12 @@
     "initials": "AM",
     "email": "member1@template.local",
     "profileStatus": "public",
-    "city": "Berlin",
+    "city": "Budapest",
     "locationCoordinates": {
-      "latitude": 52.52,
-      "longitude": 13.405
+      "latitude": 47.4979,
+      "longitude": 19.0402
     },
-    "partitionKey": "country:de",
+    "partitionKey": "country:hu",
     "images": [
       "/media/public?key=images/demo-profiles/b29df68956f3fe15e04558de/photo-01/large.webp"
     ],
@@ -69,12 +69,12 @@
     "initials": "TA",
     "email": "admin@template.local",
     "profileStatus": "public",
-    "city": "Berlin",
+    "city": "Madrid",
     "locationCoordinates": {
-      "latitude": 52.52,
-      "longitude": 13.405
+      "latitude": 40.4168,
+      "longitude": -3.7038
     },
-    "partitionKey": "country:de",
+    "partitionKey": "country:es",
     "images": [
       "/media/public?key=images/demo-profiles/1d7d3545ba5e0f1d63918589/photo-01/large.webp",
       "/media/public?key=images/demo-profiles/1d7d3545ba5e0f1d63918589/photo-02/large.webp"
@@ -101,12 +101,12 @@
     "initials": "TO",
     "email": "operator@template.local",
     "profileStatus": "public",
-    "city": "Berlin",
+    "city": "London",
     "locationCoordinates": {
-      "latitude": 52.52,
-      "longitude": 13.405
+      "latitude": 51.5074,
+      "longitude": -0.1278
     },
-    "partitionKey": "country:de",
+    "partitionKey": "country:gb",
     "images": [
       "/media/public?key=images/demo-profiles/7822c5f99eff99d63abe8933/photo-01/large.webp",
       "/media/public?key=images/demo-profiles/7822c5f99eff99d63abe8933/photo-02/large.webp"

@@ -104,7 +104,7 @@ public class ChatWebSocketSessionRegistry implements com.raxim.myscoutee.domain.
             return;
         }
         List<SessionRef> sessionRefs = List.copyOf(sessions.values());
-        Map<String, String> payloadCache = new LinkedHashMap<>();
+        PayloadCache payloadCache = new PayloadCache();
         List<Future<?>> futures = new ArrayList<>(sessionRefs.size());
         for (SessionRef sessionRef : sessionRefs) {
             futures.add(broadcastExecutor.submit(() -> broadcastToSession(event, sessionRef, payloadCache)));
@@ -121,7 +121,7 @@ public class ChatWebSocketSessionRegistry implements com.raxim.myscoutee.domain.
         }
     }
 
-    private void broadcastToSession(ChatStreamEvent event, SessionRef sessionRef, Map<String, String> payloadCache) {
+    private void broadcastToSession(ChatStreamEvent event, SessionRef sessionRef, PayloadCache payloadCache) {
         if (event == null || sessionRef == null) {
             return;
         }
@@ -171,14 +171,19 @@ public class ChatWebSocketSessionRegistry implements com.raxim.myscoutee.domain.
         }
     }
 
-    private String payloadFor(ChatStreamEvent event, String userId, Map<String, String> payloadCache) throws IOException {
+    private static final class PayloadCache {
+        private final Object lock = new Object();
+        private final Map<String, String> values = new LinkedHashMap<>();
+    }
+
+    private String payloadFor(ChatStreamEvent event, String userId, PayloadCache payloadCache) throws IOException {
         String cacheKey = payloadCacheKey(event, userId);
-        synchronized (payloadCache) {
-            String payload = payloadCache.get(cacheKey);
+        synchronized (payloadCache.lock) {
+            String payload = payloadCache.values.get(cacheKey);
             if (payload == null) {
                 ChatSocketEventDto socketEvent = event.toSocketEvent(userId);
                 payload = objectMapper.writeValueAsString(socketEvent);
-                payloadCache.put(cacheKey, payload);
+                payloadCache.values.put(cacheKey, payload);
             }
             return payload;
         }

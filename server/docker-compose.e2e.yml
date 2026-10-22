@@ -7,7 +7,14 @@ volumes:
   mongodb-data: null
   minio-data: null
   operator-configuration: null
+  nginx-state: {}
   runtime-status-credentials: {}
+secrets:
+  github-packages:
+    file: ${MYSCOUTEE_GITHUB_PACKAGES_PROPERTIES:-${HOME}/.gradle/gradle.properties}
+  npmrc:
+    file: ${NPM_CONFIG_USERCONFIG:-${HOME}/.npmrc}
+
 services:
   mongodb:
     extends:
@@ -106,6 +113,8 @@ services:
     build:
       context: .
       dockerfile: docker/images/profilemanagement/e2e/Dockerfile
+      secrets:
+        - github-packages
       args:
         MYSCOUTEE_VERSION: ${MYSCOUTEE_VERSION:-1.4.0}
     container_name: myscoutee-template-e2e-profilemanagement
@@ -154,6 +163,7 @@ services:
       MYSCOUTEE_RUNTIME_STATUS_ENABLED: 'true'
       MYSCOUTEE_RUNTIME_STATUS_URL: http://nginx:9081/internal/runtime-status
       MYSCOUTEE_RUNTIME_STATUS_TOKEN_FILE: /run/myscoutee-runtime-status/token
+      AUTH_REGION_SECURITY_ENABLED: ${AUTH_REGION_SECURITY_ENABLED:-true}
     volumes:
     - operator-configuration:/etc/myscoutee/configuration
     - runtime-status-credentials:/run/myscoutee-runtime-status:ro
@@ -187,16 +197,21 @@ services:
     build:
       context: docker/images/nginx/e2e
       dockerfile: Dockerfile
+      secrets:
+        - npmrc
       additional_contexts:
         frontend-source: ../frontend
-        nginx-config: ./docker/conf/nginx
-        nginx-runtime: ./docker/images/nginx/runtime-status
+        nginx-config: ../config/nginx
+        nginx-partitions: ./docker/conf/mongodb/e2e_db
     container_name: myscoutee-template-e2e-nginx
     hostname: nginx
     environment:
+      AUTH_REGION_SECURITY_ENABLED: ${AUTH_REGION_SECURITY_ENABLED:-true}
       MYSCOUTEE_RUNTIME_STATUS_TOKEN_FILE: /run/myscoutee-runtime-status/token
     volumes:
     - runtime-status-credentials:/run/myscoutee-runtime-status
+    - nginx-state:/var/lib/nginx/myscoutee
+    - ../config/nginx/operator:/etc/nginx/myscoutee-operator:ro
     ports:
     - ${E2E_BIND_ADDRESS:-127.0.0.1}:${E2E_HTTP_PORT:-80}:80
     - ${E2E_BIND_ADDRESS:-127.0.0.1}:443:443
@@ -218,8 +233,8 @@ services:
   mcp:
     image: ${MCP_E2E_IMAGE:-myscoutee-template-mcp:1.4.0-e2e}
     build:
-      context: ../mcp
-      dockerfile: Dockerfile
+      context: ../config/mcp
+      dockerfile: ../../server/docker/images/mcp/Dockerfile
     container_name: myscoutee-template-e2e-mcp
     hostname: mcp
     restart: 'no'

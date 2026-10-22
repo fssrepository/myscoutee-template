@@ -1,0 +1,225 @@
+{
+  "schemaVersion": 1,
+  "releaseProject": "release-project.json",
+  "applicationContainer": "myscoutee-template",
+  "service": "myscoutee-template.service",
+  "mongoContainer": "mongodb",
+  "minioContainer": "minio",
+  "mediaAlias": "myscoutee",
+  "mediaBucket": "myscoutee-media",
+  "database": "production_db",
+  "registryTlsDirectory": "/etc/myscoutee-registry/tls",
+  "registryNginxContainer": "myscoutee-registry-nginx-1",
+  "probes": [
+    {
+      "id": "APP-ANON-configuration",
+      "target": "app",
+      "path": "/api/operator/configuration",
+      "allowed": [
+        401,
+        403
+      ]
+    },
+    {
+      "id": "APP-ANON-tls",
+      "target": "app",
+      "path": "/api/operator/configuration/tls",
+      "allowed": [
+        401,
+        403
+      ]
+    },
+    {
+      "id": "APP-ANON-updates",
+      "target": "app",
+      "path": "/api/operator/updates",
+      "allowed": [
+        401,
+        403
+      ]
+    },
+    {
+      "id": "APP-INVALID-TOKEN",
+      "target": "app",
+      "path": "/api/operator/configuration",
+      "allowed": [
+        401,
+        403
+      ],
+      "headers": {
+        "Authorization": "OperatorBootstrap qualification-invalid"
+      }
+    },
+    {
+      "id": "APP-EXPOSURE-/.env",
+      "target": "app",
+      "path": "/.env",
+      "allowed": [
+        401,
+        403,
+        404
+      ],
+      "exposure": true
+    },
+    {
+      "id": "APP-EXPOSURE-/.git/config",
+      "target": "app",
+      "path": "/.git/config",
+      "allowed": [
+        401,
+        403,
+        404
+      ],
+      "exposure": true
+    },
+    {
+      "id": "APP-EXPOSURE-/actuator/env",
+      "target": "app",
+      "path": "/actuator/env",
+      "allowed": [
+        401,
+        403,
+        404
+      ],
+      "exposure": true
+    },
+    {
+      "id": "APP-EXPOSURE-/actuator/heapdump",
+      "target": "app",
+      "path": "/actuator/heapdump",
+      "allowed": [
+        401,
+        403,
+        404
+      ],
+      "exposure": true
+    },
+    {
+      "id": "APP-EXPOSURE-/api/actuator/env",
+      "target": "app",
+      "path": "/api/actuator/env",
+      "allowed": [
+        401,
+        403,
+        404
+      ],
+      "exposure": true
+    },
+    {
+      "id": "APP-EXPOSURE-/api/actuator/heapdump",
+      "target": "app",
+      "path": "/api/actuator/heapdump",
+      "allowed": [
+        401,
+        403,
+        404
+      ],
+      "exposure": true
+    },
+    {
+      "id": "REG-UNSIGNED-/v1/mau/batches",
+      "target": "registry",
+      "path": "/v1/mau/batches",
+      "allowed": [
+        400,
+        401,
+        403
+      ],
+      "method": "POST",
+      "headers": {
+        "Content-Type": "application/json"
+      }
+    },
+    {
+      "id": "REG-UNSIGNED-/v1/revenue/batches",
+      "target": "registry",
+      "path": "/v1/revenue/batches",
+      "allowed": [
+        400,
+        401,
+        403
+      ],
+      "method": "POST",
+      "headers": {
+        "Content-Type": "application/json"
+      }
+    },
+    {
+      "id": "REG-UNSIGNED-/v1/deployments/register",
+      "target": "registry",
+      "path": "/v1/deployments/register",
+      "allowed": [
+        400,
+        401,
+        403
+      ],
+      "method": "POST",
+      "headers": {
+        "Content-Type": "application/json"
+      }
+    },
+    {
+      "id": "REG-CANONICAL-PATH",
+      "target": "registry",
+      "path": "/v1/deployments/%72egister",
+      "allowed": [
+        400
+      ],
+      "method": "POST",
+      "headers": {
+        "Content-Type": "application/json"
+      }
+    },
+    {
+      "id": "REG-EXPOSURE-/.env",
+      "target": "registry",
+      "path": "/.env",
+      "allowed": [
+        401,
+        403,
+        404
+      ]
+    },
+    {
+      "id": "REG-EXPOSURE-/.git/config",
+      "target": "registry",
+      "path": "/.git/config",
+      "allowed": [
+        401,
+        403,
+        404
+      ]
+    },
+    {
+      "id": "REG-EXPOSURE-/debug/pprof/",
+      "target": "registry",
+      "path": "/debug/pprof/",
+      "allowed": [
+        401,
+        403,
+        404
+      ]
+    },
+    {
+      "id": "REG-EXPOSURE-/metrics",
+      "target": "registry",
+      "path": "/metrics",
+      "allowed": [
+        401,
+        403,
+        404
+      ]
+    }
+  ],
+  "ports": [
+    22,
+    80,
+    443,
+    6379,
+    8080,
+    9000,
+    18082,
+    18444,
+    27017
+  ]
+}

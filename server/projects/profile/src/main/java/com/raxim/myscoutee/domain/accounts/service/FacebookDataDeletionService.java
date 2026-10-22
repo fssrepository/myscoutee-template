@@ -54,7 +54,7 @@ public class FacebookDataDeletionService {
         String facebookUserId = safeText(payload.userId());
         String confirmationCode = confirmationCode(facebookUserId);
         Optional<Users> userByFacebookId = usersRepository.findFirstByFacebookId(facebookUserId);
-        Users user = userByFacebookId == null ? null : userByFacebookId.orElse(null);
+        Users user = userByFacebookId.orElse(null);
         if (user != null && StringUtils.hasText(user.getId())) {
             lifecycle.scheduleUserDeletionByUserId(user.getId(), "facebook-data-deletion");
         }

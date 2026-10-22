@@ -24,7 +24,7 @@ Path('/data/catalog/index.json').write_text(json.dumps({
     'repository': repository, 'paths': {}, 'releases': []}) + '\n')
 PY
 fi
-set -- python3 /workspace/guides/qa/tools/operator-update-release-server.py serve \
+set -- python3 /workspace/tests/qa/categories/Operator/tools/operator-update-release-server.py serve \
   --root /data/catalog --bind 0.0.0.0 \
   --certificate /data/tls/certificate.pem --tls-key /data/tls/private-key.pem
 if [ -n "${RELEASE_SIMULATOR_FAIL_PACKAGE_AFTER_BYTES:-}" ]; then

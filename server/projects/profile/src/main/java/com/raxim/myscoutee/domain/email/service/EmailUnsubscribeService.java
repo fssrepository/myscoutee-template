@@ -56,7 +56,7 @@ public class EmailUnsubscribeService {
                 || base.getRawUserInfo() != null || base.getRawQuery() != null || base.getRawFragment() != null) {
             throw new IllegalStateException("Email public base URL is invalid.");
         }
-        return base.toString().replaceAll("/+$", "");
+        return base.toString().transform(edgeText -> org.springframework.util.StringUtils.trimTrailingCharacter(edgeText, '/'));
     }
 
     public boolean status(String token) {

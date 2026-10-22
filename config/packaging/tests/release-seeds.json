@@ -1,0 +1,173 @@
+{
+  "schemaVersion": 1,
+  "minimalCollections": [
+    "notificationRuleConfigs",
+    "countryPartitions",
+    "i18n_messages",
+    "i18n_bundles"
+  ],
+  "forbiddenReadFragments": [],
+  "retainedCollections": [],
+  "inventory": {
+    "shared": [
+      "accessPolicyDefinitions",
+      "countryPartitions",
+      "helpCenterGuideFields",
+      "helpCenterRevisions",
+      "i18n_bundles",
+      "i18n_messages"
+    ],
+    "configured": [
+      "appSettings",
+      "deploymentConfigurations",
+      "notificationRuleConfigs"
+    ],
+    "runtime": [],
+    "demoOnlyRuntime": [
+      "chatMessages",
+      "chats",
+      "contactChatAccess",
+      "sampleCards",
+      "userNotifications",
+      "users"
+    ]
+  },
+  "parity": {
+    "comparisons": [
+      {
+        "source": "demo_db",
+        "target": "myscoutee_db",
+        "collections": [
+          "accessPolicyDefinitions",
+          "countryPartitions",
+          "helpCenterGuideFields",
+          "helpCenterRevisions",
+          "i18n_bundles",
+          "i18n_messages"
+        ],
+        "byId": false
+      },
+      {
+        "source": "demo_db",
+        "target": "e2e_db",
+        "collections": [
+          "accessPolicyDefinitions",
+          "countryPartitions",
+          "helpCenterGuideFields",
+          "helpCenterRevisions",
+          "i18n_bundles",
+          "i18n_messages"
+        ],
+        "byId": false
+      },
+      {
+        "source": "demo_db",
+        "target": "e2e_db",
+        "collections": [
+          "chatMessages",
+          "chats",
+          "contactChatAccess",
+          "sampleCards",
+          "userNotifications",
+          "users"
+        ],
+        "byId": false
+      }
+    ],
+    "configurations": [
+      {
+        "source": "demo_db",
+        "target": "myscoutee_db",
+        "collection": "appSettings",
+        "set": {
+          "adminEmails": []
+        }
+      },
+      {
+        "source": "demo_db",
+        "target": "myscoutee_db",
+        "collection": "deploymentConfigurations",
+        "set": {
+          "integration.publicBaseUrl": null
+        }
+      },
+      {
+        "source": "demo_db",
+        "target": "myscoutee_db",
+        "collection": "notificationRuleConfigs"
+      },
+      {
+        "source": "demo_db",
+        "target": "e2e_db",
+        "collection": "appSettings"
+      },
+      {
+        "source": "demo_db",
+        "target": "e2e_db",
+        "collection": "deploymentConfigurations"
+      },
+      {
+        "source": "demo_db",
+        "target": "e2e_db",
+        "collection": "notificationRuleConfigs"
+      }
+    ],
+    "expectedCollections": [],
+    "fieldsContain": [],
+    "emptyCollections": {
+      "myscoutee_db": [
+        "chatMessages",
+        "chats",
+        "contactChatAccess",
+        "sampleCards",
+        "userNotifications",
+        "users",
+        "adminUsers"
+      ]
+    },
+    "recordSets": [],
+    "references": [],
+    "schemaVersions": [
+      {
+        "collection": "deploymentConfigurations",
+        "field": "schemaVersion",
+        "value": 5
+      }
+    ],
+    "chatFixtures": {
+      "environments": [
+        "demo_db",
+        "e2e_db"
+      ],
+      "channelType": "contact",
+      "localDirectory": "frontend/src/app/shared/core/local/seed/data",
+      "localCollections": {
+        "users": "users",
+        "chats": "chats",
+        "chatMessages": "chatMessages",
+        "contactChatAccess": "contactChatAccess",
+        "userNotifications": "notifications",
+        "sampleCards": "sample-cards"
+      },
+      "media": {
+        "publicPrefix": "/media/public?",
+        "queryKey": "key",
+        "directory": "server/docker/conf/minio/media",
+        "assetPrefix": "assets/",
+        "assetDirectory": "frontend/src"
+      }
+    },
+    "localBranding": {
+      "path": "frontend/src/app/shared/core/local/seed/data/deployment-configuration.json",
+      "collection": "deploymentConfigurations",
+      "field": "branding",
+      "keys": [
+        "productName",
+        "homeLabel",
+        "logoUrl",
+        "logoCharacterIndex",
+        "revision"
+      ]
+    }
+  }
+}

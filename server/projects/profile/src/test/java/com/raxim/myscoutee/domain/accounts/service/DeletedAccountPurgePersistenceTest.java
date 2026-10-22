@@ -127,7 +127,7 @@ class DeletedAccountPurgePersistenceTest {
 
     private DeletedAccountPurgeService worker(UsersRepository users, AccountPurgeJobsRepository jobs,
             ChatPrivacyService chat, MediaCleanup media, MongoTemplate mongo) {
-        var worker = new DeletedAccountPurgeService(users, chat, jobs, media, mongo, null);
+        var worker = new DeletedAccountPurgeService(users, chat, jobs, media, mongo, null, null, null, null, null);
         var scheduling = mock(NotificationJobs.class);
         doAnswer(call -> { JobGroupContext.run(null, call.getArgument(1, Runnable.class)); return null; })
                 .when(scheduling).forEachGroup(eq(NotificationJobs.RULE_ACCOUNT_PURGE), any(Runnable.class));

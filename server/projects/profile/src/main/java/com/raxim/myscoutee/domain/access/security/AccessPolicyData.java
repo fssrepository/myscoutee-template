@@ -1,10 +1,8 @@
 package com.raxim.myscoutee.domain.access.security;
 
 import com.raxim.myscoutee.domain.access.api.AccessGrantEffect;
-public interface AccessPolicyData {
-    boolean canAccessChat(String chatId, String actorUserId);
+public interface AccessPolicyData extends com.raxim.myscoutee.domain.access.api.AccessPolicyFacts {
 
-    boolean canManageSupportChat(String chatId, String actorUserId);
 
     boolean hasExplicitGrant(
             String subjectUserId,

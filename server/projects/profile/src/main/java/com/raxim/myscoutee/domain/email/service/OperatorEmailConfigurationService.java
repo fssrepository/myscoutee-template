@@ -53,7 +53,7 @@ public class OperatorEmailConfigurationService implements com.raxim.myscoutee.do
         if (before.revision() != request.expectedRevision()) throw conflict();
         String id = text(request.providerId()), from = text(request.fromEmail()), name = text(request.fromName());
         if (!id.isEmpty() && providers.stream().noneMatch(p -> p.configurationDescriptor() != null && p.providerKey().equals(id))) throw invalid();
-        if (name.length() > 100 || from.length() > 254 || (!from.isEmpty() && !from.matches("[^\\s@]+@[^\\s@]+\\.[^\\s@]+"))) throw invalid();
+        if (name.length() > 100 || from.length() > 254 || (!from.isEmpty() && !from.matches("[^\\s@]++@[^\\s@][^\\s@.]*+\\.[^\\s@]++"))) throw invalid();
         String secret = text(request.credential());
         if (secret.length() > 4096 || secret.contains("\n") || secret.contains("\r")) throw invalid();
         EncryptedSecret credential = request.clearCredential() || !id.equals(before.providerId()) ? null : before.credential();

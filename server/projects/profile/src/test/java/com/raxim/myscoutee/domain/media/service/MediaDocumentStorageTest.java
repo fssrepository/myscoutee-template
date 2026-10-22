@@ -29,7 +29,7 @@ class MediaDocumentStorageTest {
         assertThat(url).startsWith("/api/media/private?key=private/documents/group-work-author/campaign-draft/");
         String key = url.substring(url.indexOf("key=") + 4);
         verify(objects).putObject(properties.getBucket(), key, "text/plain", bytes);
-        when(objects.getObject(properties.getBucket(), key)).thenReturn(new MediaObjectStoreClient.StoredObject(bytes, "text/plain"));
+        when(objects.getObject(properties.getBucket(), key)).thenReturn(new com.raxim.myscoutee.domain.media.api.MediaStorage.StoredMediaObject(bytes, "text/plain"));
         assertThat(storage.loadPublicObject(key).bytes()).isEqualTo(bytes);
     }
 
@@ -46,7 +46,7 @@ class MediaDocumentStorageTest {
         when(objects.isEnabled()).thenReturn(true);
         String key = "private/documents/author/draft/existing.txt";
         byte[] bytes = new byte[10 * 1024 * 1024 + 1];
-        when(objects.getObject(properties.getBucket(), key)).thenReturn(new MediaObjectStoreClient.StoredObject(bytes, "text/plain"));
+        when(objects.getObject(properties.getBucket(), key)).thenReturn(new com.raxim.myscoutee.domain.media.api.MediaStorage.StoredMediaObject(bytes, "text/plain"));
         assertThat(storage.loadPublicObject(key).bytes()).isSameAs(bytes);
     }
 }

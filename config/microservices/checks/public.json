@@ -1,0 +1,45 @@
+{
+  "cases": [
+    [
+      "/api/deployment/configuration",
+      200
+    ],
+    [
+      "/api/health",
+      200
+    ],
+    [
+      "/api/auth/demo-users",
+      200
+    ],
+    [
+      "/api/help/active?lang=en",
+      200
+    ],
+    [
+      "/api/privacy/active?lang=en",
+      200
+    ],
+    [
+      "/api/terms/active?lang=en",
+      200
+    ],
+    [
+      "/api/i18n/bundle?lang=en",
+      200
+    ],
+    [
+      "/api/auth/me",
+      403
+    ],
+    [
+      "/api/_internal/v1/accounts/selected-profile",
+      404
+    ],
+    [
+      "/health",
+      404
+    ]
+  ],
+  "landingCatalog": null
+}

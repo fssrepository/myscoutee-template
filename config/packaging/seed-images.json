@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "kinds": {
+    "asset": {
+      "directory": "server/docker/conf/minio/media/images/demo-assets/{key}/v1",
+      "variants": [
+        {
+          "name": "large",
+          "width": 1280,
+          "height": 720,
+          "quality": 82
+        },
+        {
+          "name": "medium",
+          "width": 640,
+          "height": 360,
+          "quality": 78
+        },
+        {
+          "name": "small",
+          "width": 128,
+          "height": 72,
+          "quality": 72
+        }
+      ]
+    },
+    "event": {
+      "directory": "server/docker/conf/minio/media/images/demo-events/{key}/v1",
+      "variants": [
+        {
+          "name": "large",
+          "width": 1280,
+          "height": 720,
+          "quality": 82
+        },
+        {
+          "name": "medium",
+          "width": 640,
+          "height": 360,
+          "quality": 78
+        },
+        {
+          "name": "small",
+          "width": 128,
+          "height": 72,
+          "quality": 72
+        }
+      ]
+    },
+    "profile": {
+      "directory": "server/docker/conf/minio/media/images/demo-profiles/{key}/photo-01",
+      "variants": [
+        {
+          "name": "large",
+          "width": 960,
+          "height": 1280,
+          "quality": 82
+        },
+        {
+          "name": "medium",
+          "width": 480,
+          "height": 640,
+          "quality": 78
+        },
+        {
+          "name": "small",
+          "width": 96,
+          "height": 128,
+          "quality": 72
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "indexManifests": [
+    {
+      "path": "config/packaging/migrations/seeds/015-runtime-index-parity/runtime-indexes.json"
+    },
+    {
+      "path": "config/packaging/migrations/seeds/018-media-worker-index/runtime-indexes.json"
+    }
+  ],
+  "preflightTests": [
+    "runtime-index-parity-test.mjs",
+    "release-catalog-parity-test.mjs"
+  ]
+}

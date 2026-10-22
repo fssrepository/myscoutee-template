@@ -21,7 +21,7 @@ class IntegrationSettingsServiceTest {
     final UsersRepository users = mock(UsersRepository.class);
     final IntegrationPublicEndpointResolver endpoint = mock(IntegrationPublicEndpointResolver.class);
     final IntegrationSettingsService service = new IntegrationSettingsService(tokens, mcp,
-            new com.raxim.myscoutee.domain.accounts.service.ProfileDirectoryService(users), endpoint);
+            new com.raxim.myscoutee.domain.accounts.service.ProfileDirectoryService(users, null), endpoint, null);
 
     Users owner(long revision) {
         var owner = new Users(); owner.setUserId("owner");
@@ -98,7 +98,7 @@ class IntegrationSettingsServiceTest {
             var beans = context.getBeanFactory();
             beans.registerSingleton("tokens", tokens);
             beans.registerSingleton("mcp", mcp);
-            beans.registerSingleton("profiles", new com.raxim.myscoutee.domain.accounts.service.ProfileDirectoryService(users));
+            beans.registerSingleton("profiles", new com.raxim.myscoutee.domain.accounts.service.ProfileDirectoryService(users, null));
             beans.registerSingleton("endpoint", endpoint);
             beans.registerSingleton("access", new com.raxim.myscoutee.domain.accounts.service.AccountIntegrationAccessService(users));
             context.register(IntegrationSettingsService.class);

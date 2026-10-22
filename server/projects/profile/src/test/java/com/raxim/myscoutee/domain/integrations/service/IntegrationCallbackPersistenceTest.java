@@ -149,7 +149,7 @@ class IntegrationCallbackPersistenceTest {
 
     private IntegrationWebhookService worker(MongoTemplate mongo, McpEventsService events) {
         var repositories = new MongoRepositoryFactory(mongo);
-        var worker = new IntegrationWebhookService(repositories.getRepository(IntegrationWebhookDeliveriesRepository.class), mongo, 1, 10);
+        var worker = new IntegrationWebhookService(repositories.getRepository(IntegrationWebhookDeliveriesRepository.class), mongo, 1, 10, null, null, null, null, null);
         var databases = mock(ScheduledMongoSessionRunner.class);
         doAnswer(call -> { call.getArgument(0, Runnable.class).run(); return null; }).when(databases).runAcrossConfiguredDatabases(any());
         var rules = mock(NotificationJobs.class);

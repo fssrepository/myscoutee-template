@@ -29,6 +29,28 @@ class FirebaseFilterPublicDocumentsTest {
     @AfterEach void clearAuthentication() { SecurityContextHolder.clearContext(); }
 
     @ParameterizedTest
+    @ValueSource(strings = {"POST", "PUT", "PATCH", "DELETE"})
+    void evenValidMediaCookieAuthorityCannotAuthorizeUnsafeMethods(String method) throws Exception {
+        var media = mock(com.raxim.myscoutee.domain.media.api.MediaSessionAccess.class);
+        var authority = org.springframework.security.authentication.UsernamePasswordAuthenticationToken.authenticated(
+                "viewer", null, java.util.List.of(new org.springframework.security.core.authority.SimpleGrantedAuthority("MEDIA")));
+        when(media.authenticate(any())).thenReturn(authority);
+        var users = mock(FirebaseService.class);
+        var sessions = mock(UserLoginSessionService.class);
+        var filter = new FirebaseFilter(users, new ConfigProperties(), mock(FirebaseTokenVerifier.class), sessions, media);
+        var request = new MockHttpServletRequest(method, "/api/media/private");
+        request.setCookies(new jakarta.servlet.http.Cookie("myscoutee_media_session", "valid-for-read-only"));
+        var response = new MockHttpServletResponse();
+        var chain = mock(FilterChain.class);
+
+        filter.doFilter(request, response, chain);
+
+        assertThat(response.getStatus()).isEqualTo(401);
+        verify(chain, never()).doFilter(request, response);
+        verifyNoInteractions(users, sessions);
+    }
+
+    @ParameterizedTest
     @ValueSource(strings = {"/help/active", "/privacy/active", "/terms/active", "/explanation/active",
             "/api/help/active", "/api/privacy/active", "/api/terms/active", "/api/explanation/active"})
     void anonymousPublicDocumentDoesNotImpersonateLoggedOutDevMember(String path) throws Exception {

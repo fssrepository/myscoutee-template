@@ -1,0 +1,9 @@
+{
+  "id": "template",
+  "privateDirectories": ["server/data"],
+  "modules": {
+    "backend": "server/projects/profile",
+    "frontend": "frontend",
+    "microservices": "."
+  }
+}

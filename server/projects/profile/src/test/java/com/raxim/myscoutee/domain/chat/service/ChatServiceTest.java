@@ -98,7 +98,7 @@ class ChatServiceTest {
                 profileDirectory(), homeUserProfileService,
                 chatStreamPublisher, chatPushNotificationService, userNotificationService,
                 adminTelemetryService, adminMenuCounterService, accessControlService,
-                new ChatMapper(), new ChatMessageMapper(profileDirectory()));
+                new ChatMapper(), new ChatMessageMapper(profileDirectory()), null, null, null);
         org.springframework.test.util.ReflectionTestUtils.setField(service, "chatCounters",
                 new com.raxim.myscoutee.domain.accounts.service.AccountChatCounterService(mongoTemplate));
         org.springframework.test.util.ReflectionTestUtils.setField(service, "selectedProfile", selectedProfile);
@@ -591,7 +591,7 @@ class ChatServiceTest {
     }
 
     private com.raxim.myscoutee.domain.accounts.service.ProfileDirectoryService profileDirectory() {
-        var owner = new com.raxim.myscoutee.domain.accounts.service.ProfileDirectoryService(usersRepository);
+        var owner = new com.raxim.myscoutee.domain.accounts.service.ProfileDirectoryService(usersRepository, null);
         org.springframework.test.util.ReflectionTestUtils.setField(owner, "mongo", mongoTemplate);
         return owner;
     }

@@ -35,7 +35,7 @@ public class IntegrationPublicEndpointResolver {
     private static String requirePublicBaseUrl(String value) {
         String normalized = value == null
                 ? ""
-                : value.trim().replaceAll("/+$", "");
+                : value.trim().transform(edgeText -> org.springframework.util.StringUtils.trimTrailingCharacter(edgeText, '/'));
         try {
             URI uri = URI.create(normalized);
             String scheme = uri.getScheme();

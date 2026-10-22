@@ -15,7 +15,8 @@ COPY gradle/ ./gradle/
 COPY projects/profile/build.gradle ./projects/profile/build.gradle
 COPY projects/profile/src/main/ ./projects/profile/src/main/
 
-RUN --mount=type=cache,id=myscoutee-template-e2e-gradle,target=/root/.gradle \
+RUN --mount=type=secret,id=github-packages,target=/root/.gradle/gradle.properties,required=true \
+    --mount=type=cache,id=myscoutee-template-e2e-gradle,target=/root/.gradle \
     ./gradlew \
       --no-daemon \
       --project-cache-dir /tmp/myscoutee-project-cache \

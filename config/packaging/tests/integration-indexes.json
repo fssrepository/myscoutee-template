@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "collections": [
+    "integrationTokens",
+    "mcpOAuthClients",
+    "mcpAuthorizations"
+  ],
+  "indexCount": 8,
+  "ttlIndexes": [
+    [
+      1,
+      "expiresAt"
+    ],
+    [
+      2,
+      "expiresAt"
+    ]
+  ],
+  "rejectUnselectedCollections": true
+}

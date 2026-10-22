@@ -47,6 +47,7 @@ public class ChatCallSignalingService {
     private final ChatService chats;
     private final ChatWebSocketSessionRegistry sessions;
     private final List<StunNode> nodes;
+    private final SecureRandom random = new SecureRandom();
     private final String healthHost;
     private final int healthPort;
     private final int publicPort;
@@ -185,7 +186,8 @@ public class ChatCallSignalingService {
 
     private List<StunNode> nodesFor(WebSocketSession session) {
         if (!nodes.isEmpty()) return nodes;
-        String host = session.getUri() == null ? "localhost" : session.getUri().getHost();
+        var uri = session.getUri();
+        String host = uri == null ? "localhost" : uri.getHost();
         if (host == null || !host.matches("[A-Za-z0-9.\\[\\]:-]+")) throw new IllegalArgumentException("Invalid STUN host.");
         if (host.contains(":") && !host.startsWith("[")) host = "[" + host + "]";
         return List.of(new StunNode("owned-0", "MyScoutee", List.of("stun:" + host + ":" + publicPort)));
@@ -207,7 +209,7 @@ public class ChatCallSignalingService {
     }
 
     private boolean probeStun() {
-        byte[] transaction = new byte[12]; new SecureRandom().nextBytes(transaction);
+        byte[] transaction = new byte[12]; random.nextBytes(transaction);
         byte[] request = ByteBuffer.allocate(20).putShort((short) 1).putShort((short) 0).putInt(0x2112a442).put(transaction).array();
         try (var socket = new DatagramSocket()) {
             socket.setSoTimeout(800);

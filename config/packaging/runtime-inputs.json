@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "files": [
+    "backup-production.sh",
+    "deployment-diagnostics.sh",
+    "ensure-operator-bootstrap.sh",
+    "ensure-operator-configuration-key.sh",
+    "host-project-checks.sh",
+    "image-content-fingerprint.sh",
+    "migrate-production-data.sh",
+    "migration-settings.json",
+    "myscoutee-compose.sh",
+    "myscoutee-safe-copy.py",
+    "myscoutee-tls-worker.sh",
+    "myscoutee-update-worker.sh",
+    "qualify-deployment.sh",
+    "record-installed-package.sh",
+    "recovery-project.sh",
+    "release-project.sh",
+    "release-system-seeds.json",
+    "reset-demo-state.sh",
+    "restart-update-stack.sh",
+    "restore-production.sh",
+    "run-data-migrations.js",
+    "smoke-mongo-compatibility.sh",
+    "start-production.sh",
+    "status-production.sh",
+    "stop-production.sh",
+    "sync-i18n-seeds.sh",
+    "sync-release-system-seeds.js",
+    "update-status-server.py"
+  ],
+  "projectSources": {
+    "host-project-checks.sh": "config/packaging/host-project-checks.sh",
+    "release-system-seeds.json": "config/packaging/release/release-system-seeds.json",
+    "migration-settings.json": "config/packaging/release/settings.json"
+  },
+  "packageSources": {
+    "recovery-project.sh": "runtime/recovery/recovery-project-none.sh"
+  }
+}

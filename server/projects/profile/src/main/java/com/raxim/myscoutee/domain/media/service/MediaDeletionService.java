@@ -36,6 +36,8 @@ public class MediaDeletionService {
         var now = Instant.now();
         var bulk = mongo.bulkOps(BulkOperations.BulkMode.UNORDERED, MediaDeletion.class);
         for (var item : keys) {
+            // Stable persisted receipt/counter identity; never a password, signature or integrity proof.
+            @SuppressWarnings("java:S4790")
             String id = org.springframework.util.DigestUtils.md5DigestAsHex((String.valueOf(group) + "\n" + item).getBytes(StandardCharsets.UTF_8));
             bulk.upsert(Query.query(Criteria.where("_id").is(id)), new Update().setOnInsert("baseGroupId", group)
                     .setOnInsert("key", item).setOnInsert("createdAt", now).setOnInsert("nextAttemptAt", now).setOnInsert("attempts", 0)

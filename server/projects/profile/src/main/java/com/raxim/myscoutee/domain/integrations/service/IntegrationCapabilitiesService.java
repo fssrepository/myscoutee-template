@@ -30,7 +30,7 @@ public class IntegrationCapabilitiesService {
 
     public IntegrationConnectDto describe(Authentication authentication) {
         var profile = profile(authentication);
-        var client = (AuthenticatedIntegrationClient) authentication.getDetails();
+        var client = clientDetails(authentication);
         String profileId = profile.getUserId();
         if (roles.privileged(profile)) {
             return new IntegrationConnectDto(true, IntegrationTokenService.MAX_BATCH_SIZE,
@@ -47,7 +47,7 @@ public class IntegrationCapabilitiesService {
 
     public String requireRead(Authentication authentication, String domain) {
         String actor = requireWrite(authentication, domain);
-        if (!((AuthenticatedIntegrationClient) authentication.getDetails()).accessMode().allowsRead())
+        if (!clientDetails(authentication).accessMode().allowsRead())
             throw new ResponseStatusException(HttpStatus.FORBIDDEN, "Read or Full integration access is required.");
         return actor;
     }
@@ -63,15 +63,21 @@ public class IntegrationCapabilitiesService {
 
     public AuthenticatedIntegrationClient requireClient(Authentication authentication) {
         profile(authentication);
-        return (AuthenticatedIntegrationClient) authentication.getDetails();
+        return clientDetails(authentication);
     }
 
     public String requireRoleRead(Authentication authentication, String role) {
         var profile = profile(authentication);
-        var client = (AuthenticatedIntegrationClient) authentication.getDetails();
+        var client = clientDetails(authentication);
         if (!client.accessMode().allowsRead() || !("admin".equals(role) ? roles.admin(profile) : roles.operator(profile)))
             throw new ResponseStatusException(HttpStatus.FORBIDDEN);
         return profile.getUserId();
+    }
+
+    private AuthenticatedIntegrationClient clientDetails(Authentication authentication) {
+        if (authentication != null && authentication.getDetails() instanceof AuthenticatedIntegrationClient client)
+            return client;
+        throw new ResponseStatusException(HttpStatus.UNAUTHORIZED);
     }
 
     private WorkspaceProfile profile(Authentication authentication) {

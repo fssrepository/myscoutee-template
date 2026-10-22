@@ -2,6 +2,7 @@ plugins {
     id 'java'
     alias(libs.plugins.spring.boot)
     alias(libs.plugins.dependency.management)
+    id 'jacoco'
 }
 
 group = 'com.raxim'
@@ -9,7 +10,7 @@ version = System.getenv('MYSCOUTEE_VERSION') ?: rootProject.file('../VERSION').t
 
 // Reuse the canonical isolated JUnit output layout; tests never reload dev.
 def junitTasks = ['test', 'standardTest', 'embeddedTest', 'integrationTest',
-                  'testClasses', 'compileTestJava', 'processTestResources', 'check']
+                  'testClasses', 'compileTestJava', 'processTestResources', 'jacocoTestReport', 'check']
 def isolatedJUnit = providers.gradleProperty('isolatedJUnit').map { it.toBoolean() }
     .orElse(gradle.startParameter.taskNames.any { junitTasks.contains(it.tokenize(':').last()) })
 if (isolatedJUnit.get()) {
@@ -22,8 +23,39 @@ java {
 
 repositories { mavenCentral() }
 apply from: rootProject.file('gradle/dependency-policy.gradle')
+apply from: rootProject.file('gradle/base-dependencies.gradle')
 
 dependencies {
+    implementation 'com.raxim.myscoutee.base:access-api'
+    implementation 'com.raxim.myscoutee.base:accounts-api'
+    implementation 'com.raxim.myscoutee.base:administration-api'
+    implementation 'com.raxim.myscoutee.base:chat-api'
+    implementation 'com.raxim.myscoutee.base:common-api'
+    implementation 'com.raxim.myscoutee.base:email-api'
+    implementation 'com.raxim.myscoutee.base:help-api'
+    implementation 'com.raxim.myscoutee.base:integrations-api'
+    implementation 'com.raxim.myscoutee.base:localization-api'
+    implementation 'com.raxim.myscoutee.base:media-api'
+    implementation 'com.raxim.myscoutee.base:notifications-api'
+    implementation 'com.raxim.myscoutee.base:platform-api'
+    implementation 'com.raxim.myscoutee.base:access'
+    implementation 'com.raxim.myscoutee.base:accounts'
+    implementation 'com.raxim.myscoutee.base:administration'
+    implementation 'com.raxim.myscoutee.base:chat'
+    implementation 'com.raxim.myscoutee.base:common-core'
+    implementation 'com.raxim.myscoutee.base:common-mongo'
+    implementation 'com.raxim.myscoutee.base:common-redis'
+    implementation 'com.raxim.myscoutee.base:common-security'
+    implementation 'com.raxim.myscoutee.base:common-session-web'
+    implementation 'com.raxim.myscoutee.base:email'
+    implementation 'com.raxim.myscoutee.base:help'
+    implementation 'com.raxim.myscoutee.base:integrations'
+    implementation 'com.raxim.myscoutee.base:localization'
+    implementation 'com.raxim.myscoutee.base:media'
+    implementation 'com.raxim.myscoutee.base:notifications'
+    implementation 'com.raxim.myscoutee.base:platform-business'
+	compileOnly libs.lombok
+	annotationProcessor libs.lombok
     implementation libs.firebase
     implementation libs.s3
     implementation libs.s3.http
@@ -46,7 +78,17 @@ dependencies {
 
 tasks.withType(JavaCompile).configureEach { options.compilerArgs += ['-parameters'] }
 tasks.named('jar') { enabled = false }
-tasks.named('test') { useJUnitPlatform { excludeTags 'qualification', 'integration' } }
+tasks.named('test') {
+    useJUnitPlatform { excludeTags 'qualification', 'integration' }
+    finalizedBy tasks.named('jacocoTestReport')
+}
+tasks.named('jacocoTestReport') {
+    dependsOn tasks.named('test')
+    reports {
+        xml.required = true
+        xml.outputLocation = layout.buildDirectory.file('reports/jacoco.xml')
+    }
+}
 ['standard', 'embedded', 'integration'].each { level ->
     tasks.register("${level}Test", Test) {
         group = 'verification'
@@ -54,4 +96,10 @@ tasks.named('test') { useJUnitPlatform { excludeTags 'qualification', 'integrati
         classpath = sourceSets.test.runtimeClasspath
         useJUnitPlatform { includeTags level; excludeTags 'qualification' }
     }
+}
+
+// Distributed adapters remain outside the monolith's source/task graph.
+sourceSets.main.java {
+    exclude 'com/raxim/myscoutee/domain/*/transport/src/**'
+    exclude 'com/raxim/myscoutee/common/microservices/**'
 }

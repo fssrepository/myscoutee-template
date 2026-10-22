@@ -20,11 +20,11 @@ import jakarta.annotation.PreDestroy;
 /** Selected native role-attention producer and durable MCP callback worker. */
 @Service
 public class IntegrationWebhookService implements com.raxim.myscoutee.domain.integrations.api.RoleAttentionEvents {
-    @org.springframework.beans.factory.annotation.Autowired private com.raxim.myscoutee.domain.accounts.api.AccountJobScopes accountJobScopes;
-    @org.springframework.beans.factory.annotation.Autowired private com.raxim.myscoutee.domain.notifications.api.NotificationJobs groupRules;
-    @org.springframework.beans.factory.annotation.Autowired private com.raxim.myscoutee.domain.platform.api.JobAudience jobGroupScope;
-    @org.springframework.beans.factory.annotation.Autowired private com.raxim.myscoutee.common.config.mongo.ScheduledMongoSessionRunner groupDatabases;
-    @org.springframework.beans.factory.annotation.Autowired private McpEventsService mcpEvents;
+    private final com.raxim.myscoutee.domain.accounts.api.AccountJobScopes accountJobScopes;
+    private final com.raxim.myscoutee.domain.notifications.api.NotificationJobs groupRules;
+    private final com.raxim.myscoutee.domain.platform.api.JobAudience jobGroupScope;
+    private final com.raxim.myscoutee.common.config.mongo.ScheduledMongoSessionRunner groupDatabases;
+    private final McpEventsService mcpEvents;
     private static final List<Long> RETRY_SECONDS = List.of(5L, 30L);
     private static final String STATUS_PENDING = "PENDING", STATUS_RETRY = "RETRY", STATUS_SENDING = "SENDING", STATUS_SENT = "SENT", STATUS_FAILED = "FAILED";
     private final IntegrationWebhookDeliveriesRepository deliveriesRepository;
@@ -36,7 +36,18 @@ public class IntegrationWebhookService implements com.raxim.myscoutee.domain.int
     public IntegrationWebhookService(IntegrationWebhookDeliveriesRepository deliveriesRepository,
             MongoTemplate mongoTemplate,
             @Value("${integration.webhook.max-worker-count:100}") int maxWorkerCount,
-            @Value("${integration.webhook.delivery-batch-size:100}") int deliveryBatchSize) {
+            @Value("${integration.webhook.delivery-batch-size:100}") int deliveryBatchSize,
+            com.raxim.myscoutee.domain.accounts.api.AccountJobScopes accountJobScopes,
+            com.raxim.myscoutee.domain.notifications.api.NotificationJobs groupRules,
+            com.raxim.myscoutee.domain.platform.api.JobAudience jobGroupScope,
+            com.raxim.myscoutee.common.config.mongo.ScheduledMongoSessionRunner groupDatabases,
+            McpEventsService mcpEvents) {
+        this.accountJobScopes = accountJobScopes;
+        this.groupRules = groupRules;
+        this.jobGroupScope = jobGroupScope;
+        this.groupDatabases = groupDatabases;
+        this.mcpEvents = mcpEvents;
+
         this.deliveriesRepository = deliveriesRepository;
         this.mongoTemplate = mongoTemplate;
         int effectiveMaxWorkerCount = Math.max(1, Math.min(maxWorkerCount, 100));

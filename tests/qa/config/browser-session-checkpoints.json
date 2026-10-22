@@ -1,0 +1,193 @@
+{
+  "defaults": {
+    "storageScope": "http",
+    "bootstrapEntryConsent": false,
+    "ignoreCertificateErrors": true,
+    "screenWidth": 1400,
+    "screenHeight": 950,
+    "sessionKind": "demo",
+    "targetUrl": "http://localhost/game",
+    "entryUrl": "http://localhost/entry?redirect=%2Fgame",
+    "geolocation": {
+      "latitude": 30.2672,
+      "longitude": -97.7431,
+      "accuracy": 10
+    }
+  },
+  "launcher": {
+    "projectRoot": "../../..",
+    "runtimeNamespace": "myscoutee-qa-browser-sessions",
+    "chromeBinary": "/opt/google/chrome/chrome",
+    "fixtureHarness": {
+      "default": "server/docker/scripts/manual-qa-checkpoints/manual-qa-checkpoints-docker.sh"
+    }
+  },
+  "application": {
+    "storage": {
+      "session": "myscoutee.{scope}.session.v1",
+      "activeUser": "myscoutee.{scope}.demo.active-user.v1",
+      "consent": "myscoutee.{scope}.entry.gdpr-consent.v1",
+      "operatorPrefix": "myscoutee.{scope}.operator-bootstrap"
+    },
+    "routes": {
+      "login": "/api/auth/session/login",
+      "logout": "/api/auth/me/logout",
+      "identity": "/api/auth/me?userId=",
+      "workspaces": "/api/groups/workspaces?userId=",
+      "realtime": "/api/auth/me/realtime/long-poll",
+      "operatorLogin": "/api/auth/operator-bootstrap",
+      "operatorPage": "/operator"
+    },
+    "headers": {
+      "sessionId": "X-App-Session-Id",
+      "sessionKind": "X-App-Session-Kind",
+      "userId": "X-Demo-User-Id"
+    },
+    "selectors": {
+      "operatorPage": "app-operator-page",
+      "consentActions": ".document-viewer-actions",
+      "consentButton": "button:not([disabled])",
+      "guide": "app-explanation-popup .ui-popup",
+      "guideClose": "button.ui-popup__close:not([disabled])"
+    },
+    "fixture": {
+      "executable": "bash",
+      "readyAction": "ready",
+      "prepareAction": "prepare",
+      "browserScenario": "browser-sessions",
+      "userIdsEnvironment": "MANUAL_QA_BROWSER_USER_IDS",
+      "deploymentReadyPhase": "baseline-ready",
+      "defaultAuthenticationMode": "firebase",
+      "authenticationReadyFields": {
+        "firebase": "firebaseActive",
+        "demo": "firebaseActive"
+      }
+    }
+  },
+  "checkpoints": {
+    "MSC122-TEMPLATE-VMWARE": {
+      "entryUrl": "https://192.168.153.129/entry",
+      "targetUrl": "https://192.168.153.129/entry",
+      "preserveOtherSessions": true,
+      "geolocationPermission": "prompt",
+      "layout": {
+        "columns": 2
+      },
+      "sessions": [
+        {
+          "actor": "template-vmware",
+          "expectedName": "Template vmware entry",
+          "sessionKind": "anonymous",
+          "fakeMediaStream": true
+        },
+        {
+          "actor": "template-vmware-peer",
+          "expectedName": "Template vmware entry peer",
+          "sessionKind": "anonymous",
+          "fakeMediaStream": true
+        }
+      ]
+    },
+    "MSC122-TEMPLATE-MONOLITH": {
+      "entryUrl": "https://127.0.0.1/entry",
+      "targetUrl": "https://127.0.0.1/entry",
+      "preserveOtherSessions": true,
+      "geolocationPermission": "granted",
+      "layout": {
+        "columns": 2
+      },
+      "sessions": [
+        {
+          "actor": "template-monolith",
+          "expectedName": "Template monolith entry",
+          "sessionKind": "anonymous",
+          "fakeMediaStream": true
+        },
+        {
+          "actor": "template-monolith-peer",
+          "expectedName": "Template monolith entry peer",
+          "sessionKind": "anonymous",
+          "fakeMediaStream": true
+        }
+      ],
+      "geolocation": {
+        "latitude": 52.52,
+        "longitude": 13.405,
+        "accuracy": 10
+      }
+    },
+    "MSC122-TEMPLATE-KVM": {
+      "entryUrl": "http://localhost:18080/entry",
+      "targetUrl": "http://localhost:18080/entry",
+      "preserveOtherSessions": true,
+      "geolocationPermission": "granted",
+      "geolocation": {
+        "latitude": 52.52,
+        "longitude": 13.405,
+        "accuracy": 10
+      },
+      "layout": {
+        "columns": 2
+      },
+      "sessions": [
+        {
+          "actor": "template-kvm",
+          "expectedName": "Template kvm entry",
+          "sessionKind": "anonymous",
+          "fakeMediaStream": true
+        },
+        {
+          "actor": "template-kvm-peer",
+          "expectedName": "Template kvm entry peer",
+          "sessionKind": "anonymous",
+          "fakeMediaStream": true
+        }
+      ]
+    },
+    "MSC122-TEMPLATE-DEV-RETAINED-UI": {
+      "entryUrl": "https://localhost/entry",
+      "targetUrl": "https://localhost/entry",
+      "preserveOtherSessions": true,
+      "geolocationPermission": "granted",
+      "layout": {
+        "columns": 1
+      },
+      "sessions": [
+        {
+          "actor": "template-dev-retained-ui",
+          "expectedName": "Template retained UI qualification",
+          "sessionKind": "anonymous",
+          "fakeMediaStream": true
+        }
+      ],
+      "geolocation": {
+        "latitude": 52.52,
+        "longitude": 13.405,
+        "accuracy": 10
+      }
+    },
+    "MSC122-TEMPLATE-PAGES-ARTIFACT": {
+      "entryUrl": "http://127.0.0.1:18888/myscoutee-template/entry",
+      "targetUrl": "http://127.0.0.1:18888/myscoutee-template/entry",
+      "storageScope": "demo",
+      "bootstrapEntryConsent": false,
+      "preserveOtherSessions": true,
+      "geolocationPermission": "granted",
+      "geolocation": {
+        "latitude": 52.52,
+        "longitude": 13.405,
+        "accuracy": 10
+      },
+      "layout": {
+        "columns": 1
+      },
+      "sessions": [
+        {
+          "actor": "template-pages-artifact",
+          "expectedName": "Template Pages artifact",
+          "sessionKind": "anonymous"
+        }
+      ]
+    }
+  }
+}

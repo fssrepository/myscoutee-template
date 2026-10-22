@@ -14,8 +14,8 @@ services:
   mcp:
     image: ${MCP_DEV_IMAGE:-myscoutee-template-mcp:1.4.0-dev}
     build:
-      context: ../mcp
-      dockerfile: Dockerfile
+      context: ../config/mcp
+      dockerfile: ../../server/docker/images/mcp/Dockerfile
     container_name: myscoutee-template-dev-mcp
     hostname: mcp
     restart: "no"
@@ -162,6 +162,7 @@ services:
       MYSCOUTEE_RUNTIME_STATUS_ENABLED: 'true'
       MYSCOUTEE_RUNTIME_STATUS_URL: http://nginx:9081/internal/runtime-status
       MYSCOUTEE_RUNTIME_STATUS_TOKEN_FILE: /run/myscoutee-runtime-status/token
+      AUTH_REGION_SECURITY_ENABLED: ${AUTH_REGION_SECURITY_ENABLED:-true}
       GRADLE_USER_HOME: /workspace/.gradle-docker
       PROFILEMANAGEMENT_HOT_RELOAD: ${PROFILEMANAGEMENT_HOT_RELOAD:-true}
       PROFILEMANAGEMENT_DEBUG_PORT: ${PROFILEMANAGEMENT_DEBUG_PORT:-5005}
@@ -194,6 +195,7 @@ services:
     volumes:
     - runtime-status-credentials:/run/myscoutee-runtime-status:ro
     - ./:/workspace
+    - ${MYSCOUTEE_GITHUB_PACKAGES_PROPERTIES:-${HOME}/.gradle/gradle.properties}:/workspace/.gradle-docker/gradle.properties:ro
     - /etc/localtime:/etc/localtime:ro
     networks:
     - myscoutee
@@ -265,10 +267,13 @@ services:
     build:
       context: docker
       dockerfile: images/nginx/dev/Dockerfile
+      additional_contexts:
+        nginx-config: ../config/nginx
       args:
-        NGINX_BASE_IMAGE: ${NGINX_BASE_IMAGE:-myscoutee-template-nginx:1.4.0-base}
+        NGINX_BASE_IMAGE: ${NGINX_BASE_IMAGE:-ghcr.io/fssrepository/myscoutee-nginx:1.5.0@sha256:7ec3ba085e30314d5536401ac22e14064d30a5461bfc1a9ccbe0e6340b6c6c24}
         TZ: ${CONTAINER_TIMEZONE:-Europe/Brussels}
     environment:
+      AUTH_REGION_SECURITY_ENABLED: ${AUTH_REGION_SECURITY_ENABLED:-true}
       MYSCOUTEE_RUNTIME_STATUS_TOKEN_FILE: /run/myscoutee-runtime-status/token
       TZ: ${CONTAINER_TIMEZONE:-Europe/Brussels}
     ports:
@@ -276,10 +281,12 @@ services:
     - 127.0.0.1:${HTTPS_PORT:-443}:443
     volumes:
     - runtime-status-credentials:/run/myscoutee-runtime-status
-    - ./docker/conf/nginx/conf/http:/etc/nginx/dev-templates:ro
+    - nginx-state:/var/lib/nginx/myscoutee
+    - ../config/nginx/operator:/etc/nginx/myscoutee-operator:ro
+    - ../config/nginx/http:/etc/nginx/dev-templates:ro
     - ./docker/images/nginx/dev/nginx-entrypoint.sh:/scripts/nginx-entrypoint.sh:ro
-    - ./docker/conf/nginx/conf/stream:/etc/nginx/stream_conf.d
-    - ./docker/conf/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    - ../config/nginx/stream:/etc/nginx/stream_conf.d
+    - ../config/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
     - ./docker/conf/nginx/app/myscoutee:/usr/share/nginx/html:ro
     - ./docker/conf/nginx/keys:/etc/nginx/keys
     - ./data/certbot/conf:/etc/letsencrypt
@@ -311,5 +318,6 @@ services:
     - ./docker/scripts/prepare_dev_runtime_directories.sh:/prepare-runtime-directories.sh:ro
     container_name: myscoutee-template-dev-runtime-directories
 volumes:
+  nginx-state: {}
   runtime-status-credentials: {}
 name: myscoutee-template-dev

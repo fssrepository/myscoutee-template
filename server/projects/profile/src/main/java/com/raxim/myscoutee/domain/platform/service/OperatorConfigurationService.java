@@ -76,7 +76,7 @@ public class OperatorConfigurationService implements com.raxim.myscoutee.domain.
     private static final Pattern ADMIN_EMAIL_PATTERN =
             Pattern.compile("^[^\\s@]+@[^\\s@]+$");
     private static final Pattern PRIVACY_CONTACT_EMAIL_PATTERN =
-            Pattern.compile("^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$");
+            Pattern.compile("^[^\\s@]++@[^\\s@][^\\s@.]*+\\.[^\\s@]++$");
     private static final Pattern SOCIAL_PROVIDER_PATTERN =
             Pattern.compile("^[a-z0-9][a-z0-9._-]*$");
 
@@ -463,6 +463,9 @@ public class OperatorConfigurationService implements com.raxim.myscoutee.domain.
             Instant testedAt) {
         DeploymentConfiguration.Firebase firebase =
                 configuration.getFirebase();
+        if (firebase == null) {
+            return configuration;
+        }
         long revision = firebaseRevision(firebase);
         boolean attempted;
         if (request.kind()
@@ -643,7 +646,8 @@ public class OperatorConfigurationService implements com.raxim.myscoutee.domain.
                     "Logo character index must be -1 or identify a Unicode "
                             + "character in the product name.");
         }
-        String logoUrl = validateLogoUrl(request.logoUrl());
+        String logoUrl = optionalTrimmed(request.logoUrl(), "Logo URL", LOGO_URL_MAX);
+        validateLogoUrl(logoUrl);
 
         DeploymentConfiguration.Branding branding = configuration.getBranding();
         branding.setProductName(productName);
@@ -963,12 +967,11 @@ public class OperatorConfigurationService implements com.raxim.myscoutee.domain.
                 : Math.max(0L, firebase.getRevision());
     }
 
-    private String validateLogoUrl(String value) {
-        String logoUrl = optionalTrimmed(value, "Logo URL", LOGO_URL_MAX);
+    private void validateLogoUrl(String logoUrl) {
         if (!StringUtils.hasText(logoUrl)
                 || DEFAULT_LOGO_WEBP.equals(logoUrl)
                 || DEFAULT_LOGO_PNG.equals(logoUrl)) {
-            return logoUrl;
+            return;
         }
         try {
             URI uri = URI.create(logoUrl);
@@ -983,7 +986,6 @@ public class OperatorConfigurationService implements com.raxim.myscoutee.domain.
                         "Logo URL must be a persisted /media/public?key= reference "
                                 + "returned by the media upload flow.");
             }
-            return logoUrl;
         } catch (IllegalArgumentException exception) {
             throw badRequest(
                     "Logo URL must be a valid persisted media reference.");
