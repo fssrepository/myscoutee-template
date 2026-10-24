@@ -91,7 +91,7 @@ public class UserNotificationMapper {
                         : Math.max(1L, notification.getRevision()));
     }
 
-    private String firstNonBlank(String... values) {
+    public static String firstNonBlank(String... values) {
         if (values == null) {
             return null;
         }
@@ -103,11 +103,11 @@ public class UserNotificationMapper {
         return null;
     }
 
-    private String safeText(String value) {
+    public static String safeText(String value) {
         return value == null ? "" : value.trim();
     }
 
-    private String nullableText(String value) {
+    public static String nullableText(String value) {
         String normalized = safeText(value);
         return StringUtils.hasText(normalized) ? normalized : null;
     }

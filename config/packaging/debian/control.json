@@ -1,0 +1,4 @@
+{
+  "schemaVersion": 1,
+  "Description": "Minimal application framework production bundle\n Production packaging metadata for the template Docker deployment.\n The package is expected to install the application bundle, systemd unit,\n and operational helper scripts. Docker is a package dependency; optional\n server convenience tools remain recommendations."
+}

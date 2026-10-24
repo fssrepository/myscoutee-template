@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "volumes": [
+    {
+      "environment": "MYSCOUTEE_NGINX_STATE_VOLUME",
+      "default": "myscoutee-template-nginx-state-v1"
+    }
+  ]
+}

@@ -19,7 +19,7 @@ RUN install -d -o myscoutee -g myscoutee \
       /var/lib/myscoutee/update/requests \
       /var/lib/myscoutee/update/jobs
 
-ARG MYSCOUTEE_VERSION=1.4.0
+ARG MYSCOUTEE_VERSION=1.5.0
 COPY --chown=myscoutee:myscoutee profile-${MYSCOUTEE_VERSION}.jar /app/spring-boot-application.jar
 
 USER ${MYSCOUTEE_API_UID}:${MYSCOUTEE_API_GID}

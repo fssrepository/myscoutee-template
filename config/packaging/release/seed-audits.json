@@ -1,0 +1,8 @@
+[
+  {
+    "file": "helpCenterRevisions.json",
+    "policy": "seed-audits/helpCenterRevisions.jq",
+    "optional": false,
+    "error": "Template privacy documents must contain active English/Hungarian content."
+  }
+]

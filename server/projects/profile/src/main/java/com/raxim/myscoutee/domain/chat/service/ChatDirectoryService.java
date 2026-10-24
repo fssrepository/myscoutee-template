@@ -11,7 +11,7 @@ import com.raxim.myscoutee.domain.chat.repository.ChatsRepository;
 
 @Service
 public class ChatDirectoryService implements ChatDirectory {
-    @org.springframework.beans.factory.annotation.Autowired private org.springframework.data.mongodb.core.MongoTemplate mongo;
+    private final org.springframework.data.mongodb.core.MongoTemplate mongo;
     @Override public String unreadVersion(String owner) {
         Query query = Query.query(Criteria.where("ownerUserId").is(owner).and("unread").gt(0).and("lastSenderId").ne(owner))
                 .with(Sort.by(Sort.Direction.DESC, "dateIso")).limit(1);
@@ -20,7 +20,10 @@ public class ChatDirectoryService implements ChatDirectory {
         return row == null ? "" : row.getString("dateIso");
     }
     private final ChatsRepository chats;
-    public ChatDirectoryService(ChatsRepository chats) { this.chats = chats; }
+    public ChatDirectoryService(ChatsRepository chats,
+            org.springframework.data.mongodb.core.MongoTemplate mongo) {
+        this.mongo = mongo;
+ this.chats = chats; }
     @Override public Optional<com.raxim.myscoutee.domain.chat.document.Chat> findByOwnerUserIdAndChatId(String owner, String chat) { return chats.findByOwnerUserIdAndChatId(owner, chat); }
     @Override public List<com.raxim.myscoutee.domain.chat.document.Chat> findByChatId(String chat) { return chats.findByChatId(chat); }
     public java.util.Map<String, Integer> supportCaseCounts(String baseGroupId) {

@@ -1,0 +1,22 @@
+{
+  "readRoutes": [
+    [
+      "identity",
+      "/api/auth/me"
+    ],
+    [
+      "identity",
+      "/api/auth/me/profile-ext?userId={user}"
+    ]
+  ],
+  "publicDocuments": {
+    "documents": [
+      "help",
+      "privacy",
+      "terms",
+      "explanation"
+    ],
+    "language": "en",
+    "contextKey": "profile.editor"
+  }
+}

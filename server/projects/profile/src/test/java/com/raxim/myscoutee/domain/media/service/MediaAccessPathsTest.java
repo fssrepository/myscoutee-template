@@ -8,6 +8,13 @@ import org.junit.jupiter.api.Test;
 @org.junit.jupiter.api.Tag("standard")
 class MediaAccessPathsTest {
     @Test
+    void storageSegmentsKeepStableNamesAndHandleLongPaddingWithoutRegexBacktracking() {
+        assertThat(MediaAccessPaths.storageSegment(null)).isEmpty();
+        assertThat(MediaAccessPaths.storageSegment("  --owner / resource--  ")).isEqualTo("owner-resource");
+        assertThat(MediaAccessPaths.storageSegment("owner.name_v1")).isEqualTo("owner.name_v1");
+        assertThat(MediaAccessPaths.storageSegment("-".repeat(100_000))).isEmpty();
+    }
+    @Test
     void managedImageCleanupRecognizesEveryCurrentUploadNamespace() {
         for (String prefix : new String[]{"images/", "private/images/", "public/demo/images/", "public/branding/images/"}) {
             String group = prefix + "owner/entity/upload";

@@ -79,6 +79,7 @@ public class ChatPolicyFacts {
             return false;
         }
         String normalizedActorUserId = normalizeId(actorUserId);
+        if (normalizedActorUserId == null) return false;
         if (normalizedActorUserId.equals(normalizeId(chat.getOwnerUserId()))) {
             return true;
         }

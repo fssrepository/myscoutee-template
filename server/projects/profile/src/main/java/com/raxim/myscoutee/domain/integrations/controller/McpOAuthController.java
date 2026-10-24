@@ -54,6 +54,7 @@ public class McpOAuthController {
     ResponseEntity<Map<String, String>> failure(ResponseStatusException error) {
         var response = ResponseEntity.status(error.getStatusCode()).cacheControl(CacheControl.noStore());
         if (error.getStatusCode().value() == 401) response.header("WWW-Authenticate", "Basic realm=\"MyScoutee MCP\"");
-        return response.body(Map.of("error", error.getReason() != null && error.getReason().matches("[a-z_]+") ? error.getReason() : "server_error"));
+        String reason = error.getReason();
+        return response.body(Map.of("error", reason != null && reason.matches("[a-z_]+") ? reason : "server_error"));
     }
 }

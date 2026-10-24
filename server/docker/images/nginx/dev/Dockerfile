@@ -1,22 +1,10 @@
-ARG NGINX_BASE_IMAGE=myscoutee-nginx:1.4.0-base
-FROM golang:1.26-bookworm AS runtime-status-builder
-WORKDIR /src
-COPY images/nginx/runtime-status/ ./
-RUN --network=none GOMAXPROCS=2 CGO_ENABLED=0 GOTOOLCHAIN=local GOPROXY=off go test -p=1 ./... && \
-    GOMAXPROCS=2 CGO_ENABLED=0 GOTOOLCHAIN=local GOPROXY=off go build -p=1 -trimpath -ldflags='-s -w' -o /runtime-status-receiver .
-
+ARG NGINX_BASE_IMAGE=ghcr.io/fssrepository/myscoutee-nginx:1.5.0@sha256:7ec3ba085e30314d5536401ac22e14064d30a5461bfc1a9ccbe0e6340b6c6c24
 FROM ${NGINX_BASE_IMAGE}
-COPY --from=runtime-status-builder /runtime-status-receiver /scripts/runtime-status-receiver
+COPY --from=nginx-config http/public-routes.map /etc/nginx/public-routes.map
+COPY conf/mongodb/myscoutee_db/countryPartitions.json /etc/nginx/countryPartitions.json
 
 ARG TZ=Europe/Brussels
 ENV TZ=${TZ}
 
-RUN apk add --no-cache dcron nano curl inotify-tools openssl tzdata jq &&\
-    ln -snf /usr/share/zoneinfo/${TZ} /etc/localtime &&\
-    echo "${TZ}" > /etc/timezone
-
-COPY images/nginx/dev/nginx-entrypoint.sh /scripts/nginx-entrypoint.sh
-COPY --chmod=0755 images/nginx/runtime-status.sh /scripts/runtime-status.sh
-RUN chmod +x /scripts/nginx-entrypoint.sh
 
 CMD ["bash", "-c", "/scripts/nginx-entrypoint.sh"]

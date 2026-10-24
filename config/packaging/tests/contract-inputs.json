@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "contracts": {
+    "host-lifecycle-test": {
+      "inputs": {
+        "packaging_templates__PACKAGE_NAME_env": "config/packaging/templates/{PACKAGE_NAME}.env"
+      }
+    },
+    "selected-release-catalog-parity-test": {
+      "inputs": {
+        "packaging_migrations_016_release_catalog_parity_js": "config/packaging/migrations/016-release-catalog-parity.js",
+        "migrations_seeds_016_release_catalog_parity": "config/packaging/migrations/seeds/016-release-catalog-parity/",
+        "packaging_migrations_017_retained_guide_controls_js": "config/packaging/migrations/017-retained-guide-controls.js",
+        "seeds_017_retained_guide_controls_guide_field_updates_json": "config/packaging/migrations/seeds/017-retained-guide-controls/guide-field-updates.json",
+        "mongodb_myscoutee_db_helpCenterGuideFields_json": "server/docker/conf/mongodb/myscoutee_db/helpCenterGuideFields.json",
+        "mongodb_myscoutee_db_helpCenterRevisions_json": "server/docker/conf/mongodb/myscoutee_db/helpCenterRevisions.json",
+        "conf_mongodb_myscoutee_db": "server/docker/conf/mongodb/myscoutee_db/"
+      }
+    },
+    "selected-runtime-index-parity-test": {
+      "inputs": {
+        "seeds_015_runtime_index_parity_runtime_indexes_json": "config/packaging/migrations/seeds/015-runtime-index-parity/runtime-indexes.json",
+        "seeds_018_media_worker_index_runtime_indexes_json": "config/packaging/migrations/seeds/018-media-worker-index/runtime-indexes.json",
+        "packaging_migrations_015_runtime_index_parity_js": "config/packaging/migrations/015-runtime-index-parity.js",
+        "packaging_migrations_018_media_worker_index_js": "config/packaging/migrations/018-media-worker-index.js",
+        "conf_mongodb_db_init_js": "server/docker/conf/mongodb/db_init.js",
+        "conf_mongodb_mongo_seed_policy_inc": "server/docker/conf/mongodb/mongo-seed-policy.inc"
+      }
+    },
+    "media-location-runtime-test": {
+      "inputs": {
+        "media_private_authorization_run_mjs": "tests/e2e/functional/backend/media/private-authorization/run.mjs"
+      }
+    },
+    "selected-migration-chain-test": {
+      "inputs": {
+        "packaging_migrations_seeds": "config/packaging/migrations/seeds"
+      }
+    }
+  }
+}

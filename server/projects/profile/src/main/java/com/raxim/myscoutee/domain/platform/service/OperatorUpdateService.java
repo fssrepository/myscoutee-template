@@ -769,7 +769,7 @@ public class OperatorUpdateService {
         try (DirectoryStream<Path> files = Files.newDirectoryStream(
                 rejectedDirectory,
                 "*-" + jobId + ".json")) {
-            for (Path ignored : files) {
+            if (files.iterator().hasNext()) {
                 Path stageStatus =
                         state.resolve("staging").resolve(jobId).resolve("status.json");
                 OperatorUpdateJobDto previous = isSafeRegularFile(stageStatus)

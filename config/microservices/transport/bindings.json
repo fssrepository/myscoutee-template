@@ -1,0 +1,584 @@
+{
+  "schemaVersion": 1,
+  "bindings": [
+    {
+      "domain": "localization",
+      "api": "TranslationBundles",
+      "package": "localization",
+      "configuration": "Localization",
+      "propertyPrefix": "localization",
+      "credential": "localizationToken"
+    },
+    {
+      "domain": "chat",
+      "api": "ChatMediaVisibility",
+      "package": "chat",
+      "configuration": "ChatMediaVisibility",
+      "propertyPrefix": "chat-media",
+      "credential": "chatMediaToken"
+    },
+    {
+      "domain": "chat",
+      "api": "ChatDirectory",
+      "package": "chat",
+      "configuration": "ChatDirectory",
+      "propertyPrefix": "chat-directory",
+      "credential": "chatDirectoryToken"
+    },
+    {
+      "domain": "notifications",
+      "api": "RoleNotifications",
+      "package": "notifications",
+      "configuration": "RoleNotifications",
+      "propertyPrefix": "role-notifications",
+      "credential": "roleNotificationsToken",
+      "credentialProperty": "command-token",
+      "producerDomains": [
+        "accounts",
+        "platform"
+      ]
+    },
+    {
+      "domain": "notifications",
+      "api": "NotificationDelivery",
+      "package": "notifications",
+      "configuration": "NotificationDelivery",
+      "propertyPrefix": "notification-delivery",
+      "credential": "notificationDeliveryToken",
+      "credentialProperty": "command-token"
+    },
+    {
+      "domain": "platform",
+      "api": "AdministratorSettings",
+      "package": "platform",
+      "configuration": "AdministratorSettings",
+      "propertyPrefix": "administrator-settings",
+      "credential": "administratorSettingsToken"
+    },
+    {
+      "domain": "platform",
+      "api": "DeploymentBranding",
+      "package": "platform",
+      "configuration": "DeploymentBranding",
+      "propertyPrefix": "deployment-branding",
+      "credential": "deploymentBrandingToken"
+    },
+    {
+      "domain": "email",
+      "api": "EmailRendering",
+      "package": "email",
+      "configuration": "EmailRendering",
+      "propertyPrefix": "email-rendering",
+      "credential": "emailRenderingToken"
+    },
+    {
+      "domain": "accounts",
+      "api": "ProfileSummaries",
+      "package": "accounts",
+      "configuration": "ProfileSummaries",
+      "propertyPrefix": "profile-summaries",
+      "credential": "profileSummariesToken",
+      "producerDomains": [
+        "administration",
+        "chat",
+        "community",
+        "events",
+        "affinity",
+        "content",
+        "operator"
+      ]
+    },
+    {
+      "domain": "platform",
+      "api": "AuthenticationMode",
+      "package": "platform",
+      "configuration": "AuthenticationMode",
+      "propertyPrefix": "authentication-mode",
+      "credential": "authenticationModeToken"
+    },
+    {
+      "domain": "platform",
+      "api": "OperatorNotificationSettings",
+      "package": "platform",
+      "configuration": "OperatorNotificationSettings",
+      "propertyPrefix": "operator-notification-settings",
+      "credential": "operatorNotificationSettingsToken"
+    },
+    {
+      "domain": "accounts",
+      "api": "SelectedProfile",
+      "package": "accounts",
+      "configuration": "SelectedProfile",
+      "propertyPrefix": "selected-profile",
+      "credential": "selectedProfileToken",
+      "actorOperations": [
+        {
+          "audience": "accounts:selected-profile",
+          "method": "POST",
+          "path": "/_internal/v1/accounts/selected-profile"
+        }
+      ]
+    },
+    {
+      "domain": "accounts",
+      "api": "ProfileReadState",
+      "package": "accounts",
+      "configuration": "ProfileReadState",
+      "propertyPrefix": "profile-read-state",
+      "credential": "profileReadStateToken",
+      "actorOperations": [
+        {
+          "audience": "accounts:profile-read-state",
+          "method": "POST",
+          "path": "/_internal/v1/accounts/profile-read-state/counters"
+        }
+      ]
+    },
+    {
+      "domain": "access",
+      "api": "AccessPermissions",
+      "providedApis": [
+        "ConsentAuthorization"
+      ],
+      "package": "access",
+      "configuration": "AccessPermissions",
+      "propertyPrefix": "access-permissions",
+      "credential": "accessPermissionsToken",
+      "actorOperations": [
+        {
+          "audience": "access:permissions",
+          "method": "POST",
+          "path": "/_internal/v1/access/permissions/can"
+        },
+        {
+          "audience": "access:permissions",
+          "method": "POST",
+          "path": "/_internal/v1/access/permissions/resolve-chat-actor-user-id"
+        },
+        {
+          "audience": "access:permissions",
+          "method": "POST",
+          "path": "/_internal/v1/access/permissions/can-current-actor-create-chat-message"
+        },
+        {
+          "audience": "access:permissions",
+          "method": "POST",
+          "path": "/_internal/v1/access/permissions/can-current-actor-edit-chat-message"
+        },
+        {
+          "audience": "access:permissions",
+          "method": "POST",
+          "path": "/_internal/v1/access/permissions/can-current-actor-delete-chat-message"
+        },
+        {
+          "audience": "access:permissions",
+          "method": "POST",
+          "path": "/_internal/v1/access/permissions/can-current-actor-pin-chat-message"
+        },
+        {
+          "audience": "access:permissions",
+          "method": "POST",
+          "path": "/_internal/v1/access/permissions/can-current-actor-manage-chat-reaction"
+        },
+        {
+          "audience": "access:permissions",
+          "method": "POST",
+          "path": "/_internal/v1/access/permissions/can-current-actor-add-chat-attachment"
+        },
+        {
+          "audience": "access:permissions",
+          "method": "POST",
+          "path": "/_internal/v1/access/permissions/can-current-actor-manage-support-chat"
+        },
+        {
+          "audience": "access:permissions",
+          "method": "POST",
+          "path": "/_internal/v1/access/permissions/can-current-actor-edit-profile"
+        },
+        {
+          "audience": "access:permissions",
+          "method": "POST",
+          "path": "/_internal/v1/access/permissions/can-current-actor-delete-profile"
+        },
+        {
+          "audience": "access:permissions",
+          "method": "POST",
+          "path": "/_internal/v1/access/permissions/can-current-actor-upload-media"
+        },
+        {
+          "audience": "access:permissions",
+          "method": "POST",
+          "path": "/_internal/v1/access/permissions/can-current-actor-import-media"
+        },
+        {
+          "audience": "access:permissions",
+          "method": "POST",
+          "path": "/_internal/v1/access/permissions/can-current-actor-submit-privacy-consent"
+        },
+        {
+          "audience": "access:permissions",
+          "method": "POST",
+          "path": "/_internal/v1/access/permissions/can-access-chat"
+        },
+        {
+          "audience": "access:permissions",
+          "method": "POST",
+          "path": "/_internal/v1/access/permissions/can-manage-support-chat"
+        },
+        {
+          "audience": "access:permissions",
+          "method": "POST",
+          "path": "/_internal/v1/access/permissions/has-explicit-grant"
+        },
+        {
+          "audience": "access:permissions",
+          "method": "POST",
+          "path": "/_internal/v1/access/permissions/requires-authenticated-actor"
+        }
+      ],
+      "consumerApis": [
+        "com.raxim.myscoutee.domain.access.api.RequiresPolicy",
+        "com.raxim.myscoutee.domain.access.api.RequiresPolicies"
+      ]
+    },
+    {
+      "domain": "accounts",
+      "api": "AccountDevices",
+      "package": "accounts",
+      "configuration": "AccountDevices",
+      "propertyPrefix": "account-devices",
+      "credential": "accountDevicesToken",
+      "credentialProperty": "command-token",
+      "producerDomains": [
+        "chat"
+      ],
+      "actorOperations": [
+        {
+          "audience": "accounts:account-devices",
+          "method": "POST",
+          "path": "/_internal/v1/accounts/devices/register"
+        },
+        {
+          "audience": "accounts:account-devices",
+          "method": "POST",
+          "path": "/_internal/v1/accounts/devices/remove"
+        }
+      ]
+    },
+    {
+      "domain": "notifications",
+      "api": "NotificationJobs",
+      "package": "notifications",
+      "configuration": "NotificationJobs",
+      "propertyPrefix": "notification-jobs",
+      "credential": "notificationJobsToken",
+      "credentialProperty": "command-token",
+      "producerDomains": [
+        "accounts",
+        "events",
+        "payments",
+        "affinity",
+        "administration",
+        "email",
+        "integrations",
+        "content",
+        "community",
+        "media"
+      ]
+    },
+    {
+      "domain": "administration",
+      "api": "OperationalTelemetry",
+      "package": "administration",
+      "configuration": "OperationalTelemetry",
+      "propertyPrefix": "operational-telemetry",
+      "credential": "operationalTelemetryToken",
+      "credentialProperty": "command-token",
+      "producerDomains": [
+        "accounts",
+        "affinity",
+        "assets",
+        "chat",
+        "content",
+        "events",
+        "groups",
+        "help",
+        "notifications"
+      ]
+    },
+    {
+      "domain": "chat",
+      "api": "ChatPrivacy",
+      "package": "chat",
+      "configuration": "ChatPrivacy",
+      "propertyPrefix": "chat-privacy",
+      "credential": "chatPrivacyToken",
+      "credentialProperty": "command-token",
+      "producerDomains": [
+        "accounts"
+      ]
+    },
+    {
+      "domain": "help",
+      "api": "HelpPrivacy",
+      "package": "help",
+      "configuration": "HelpPrivacy",
+      "propertyPrefix": "help-privacy",
+      "credential": "helpPrivacyToken",
+      "credentialProperty": "command-token",
+      "producerDomains": [
+        "accounts"
+      ]
+    },
+    {
+      "domain": "notifications",
+      "api": "NotificationPrivacy",
+      "package": "notifications",
+      "configuration": "NotificationPrivacy",
+      "propertyPrefix": "notification-privacy",
+      "credential": "notificationPrivacyToken",
+      "credentialProperty": "command-token",
+      "producerDomains": [
+        "accounts"
+      ]
+    },
+    {
+      "domain": "media",
+      "api": "MediaCleanup",
+      "package": "media",
+      "configuration": "MediaCleanup",
+      "propertyPrefix": "media-cleanup",
+      "credential": "mediaCleanupToken",
+      "credentialProperty": "command-token",
+      "producerDomains": [
+        "accounts",
+        "assets",
+        "chat",
+        "content",
+        "events",
+        "integrations"
+      ]
+    },
+    {
+      "domain": "accounts",
+      "api": "AccountMediaSessions",
+      "package": "accounts",
+      "configuration": "AccountMediaSessions",
+      "propertyPrefix": "account-media-sessions",
+      "credential": "accountMediaSessionsToken",
+      "credentialProperty": "command-token",
+      "producerDomains": [
+        "media"
+      ],
+      "consumerApis": [
+        "com.raxim.myscoutee.common.security.media.MediaSessionAccessService"
+      ],
+      "actorOperations": [
+        {
+          "audience": "accounts:media-sessions",
+          "method": "POST",
+          "path": "/_internal/v1/accounts/media-sessions/current"
+        },
+        {
+          "audience": "accounts:media-sessions",
+          "method": "POST",
+          "path": "/_internal/v1/accounts/media-sessions/replace"
+        }
+      ],
+      "consumerDomains": [
+        "media"
+      ]
+    },
+    {
+      "domain": "accounts",
+      "api": "ChatCounters",
+      "package": "accounts",
+      "configuration": "ChatCounters",
+      "propertyPrefix": "chat-counters",
+      "credential": "chatCountersToken",
+      "credentialProperty": "command-token",
+      "producerDomains": [
+        "chat"
+      ]
+    },
+    {
+      "domain": "accounts",
+      "api": "AccountNotifications",
+      "package": "accounts",
+      "configuration": "AccountNotifications",
+      "propertyPrefix": "account-notifications",
+      "credential": "accountNotificationsToken",
+      "credentialProperty": "command-token",
+      "producerDomains": [
+        "notifications"
+      ]
+    },
+    {
+      "domain": "platform",
+      "api": "FirebasePushDelivery",
+      "package": "platform",
+      "configuration": "FirebasePushDelivery",
+      "propertyPrefix": "firebase-push-delivery",
+      "credential": "firebasePushDeliveryToken",
+      "credentialProperty": "command-token",
+      "producerDomains": [
+        "notifications"
+      ]
+    },
+    {
+      "domain": "platform",
+      "api": "EmailSecrets",
+      "package": "platform",
+      "configuration": "EmailSecrets",
+      "propertyPrefix": "email-secrets",
+      "credential": "emailSecretsToken",
+      "credentialProperty": "command-token",
+      "producerDomains": [
+        "email"
+      ]
+    },
+    {
+      "domain": "integrations",
+      "api": "RoleAttentionEvents",
+      "package": "integrations",
+      "configuration": "RoleAttentionEvents",
+      "propertyPrefix": "role-attention-events",
+      "credential": "roleAttentionEventsToken",
+      "credentialProperty": "command-token",
+      "producerDomains": [
+        "notifications"
+      ]
+    },
+    {
+      "domain": "notifications",
+      "api": "NotificationReads",
+      "package": "notifications",
+      "configuration": "NotificationReads",
+      "propertyPrefix": "notification-reads",
+      "credential": "notificationReadsToken",
+      "credentialProperty": "read-token",
+      "producerDomains": [
+        "integrations",
+        "accounts"
+      ],
+      "actorOperations": [
+        {
+          "audience": "notifications:notification-reads",
+          "method": "POST",
+          "path": "/_internal/v1/notifications/notification-reads/page"
+        },
+        {
+          "audience": "notifications:notification-reads",
+          "method": "POST",
+          "path": "/_internal/v1/notifications/notification-reads/unread"
+        }
+      ]
+    },
+    {
+      "domain": "accounts",
+      "api": "AccountConsents",
+      "package": "accounts",
+      "configuration": "AccountConsents",
+      "propertyPrefix": "account-consents",
+      "credential": "accountConsentsToken",
+      "credentialProperty": "command-token",
+      "producerDomains": [
+        "help",
+        "operator"
+      ]
+    },
+    {
+      "domain": "email",
+      "api": "EmailSending",
+      "package": "email",
+      "configuration": "EmailSending",
+      "propertyPrefix": "email-sending",
+      "credential": "emailSendingToken",
+      "credentialProperty": "command-token",
+      "producerDomains": [
+        "accounts"
+      ]
+    },
+    {
+      "domain": "chat",
+      "api": "ChatQueries",
+      "package": "chat",
+      "configuration": "ChatQueries",
+      "propertyPrefix": "chat-queries",
+      "credential": "chatQueriesToken",
+      "credentialProperty": "command-token",
+      "producerDomains": [
+        "integrations"
+      ],
+      "actorOperations": [
+        {
+          "audience": "chat:chat-queries",
+          "method": "POST",
+          "path": "/_internal/v1/chat/chat-queries/querychatbyid_1"
+        },
+        {
+          "audience": "chat:chat-queries",
+          "method": "POST",
+          "path": "/_internal/v1/chat/chat-queries/querychatpage_1"
+        },
+        {
+          "audience": "chat:chat-queries",
+          "method": "POST",
+          "path": "/_internal/v1/chat/chat-queries/querymessagespage_1"
+        },
+        {
+          "audience": "chat:chat-queries",
+          "method": "POST",
+          "path": "/_internal/v1/chat/chat-queries/querymessagespage_2"
+        },
+        {
+          "audience": "chat:chat-queries",
+          "method": "POST",
+          "path": "/_internal/v1/chat/chat-queries/querymessagespage_3"
+        }
+      ]
+    },
+    {
+      "domain": "email",
+      "api": "EmailLinks",
+      "package": "email",
+      "configuration": "EmailLinks",
+      "propertyPrefix": "email-links",
+      "credential": "emailLinksToken"
+    },
+    {
+      "domain": "media",
+      "api": "MediaDeletionQueue",
+      "package": "media",
+      "configuration": "MediaDeletionQueue",
+      "propertyPrefix": "media-deletion",
+      "credential": "mediaDeletionToken",
+      "credentialProperty": "command-token",
+      "producerDomains": []
+    }
+  ],
+  "localBindings": [
+    {
+      "domain": "administration",
+      "api": "AdministratorClassification",
+      "configuration": "SharedProfilePoliciesConfiguration",
+      "reason": "Complete stateless classification is defined once in the canonical API; it has no owner database or runtime state."
+    },
+    {
+      "domain": "platform",
+      "api": "SchedulingPolicy",
+      "providedApis": [
+        "NotificationPolicy"
+      ],
+      "includeOwner": true,
+      "configuration": "SharedSchedulingConfiguration",
+      "reason": "The single canonical parameter reader uses ConfigurationCatalog and scoped JobGroupContext, with no persistence, workers or platform secrets. Reused in every consuming assembly; ConfigurationCatalog lists these consumer APIs for transport wiring."
+    },
+    {
+      "domain": "media",
+      "api": "MediaSessionAccess",
+      "configuration": "SharedMediaSessionConfiguration",
+      "reason": "The canonical HTTP cookie adapter uses native or remote account session operations; servlet request/response and Authentication never cross HTTP as serialized values. Media owner imports the same adapter through canonical MediaSessionConfiguration."
+    }
+  ]
+}

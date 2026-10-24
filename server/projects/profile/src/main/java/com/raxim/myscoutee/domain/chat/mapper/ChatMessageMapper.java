@@ -336,19 +336,19 @@ public class ChatMessageMapper {
         return "DU";
     }
 
-    private String resolveUserImageUrl(ProfileSummary user) {
+    public static String resolveUserImageUrl(ProfileSummary user) {
         if (user == null || user.getImages() == null) {
             return "";
         }
         return user.getImages().stream()
-                .map(this::safeText)
+                .map(ChatMessageMapper::chatText)
                 .filter(StringUtils::hasText)
                 .findFirst()
                 .orElse("");
     }
 
-    private String buildInitials(String value) {
-        String normalized = safeText(value);
+    public static String buildInitials(String value) {
+        String normalized = chatText(value);
         if (!StringUtils.hasText(normalized)) {
             return "CH";
         }
@@ -400,4 +400,7 @@ public class ChatMessageMapper {
     private String safeText(String value) {
         return value == null ? "" : value.trim();
     }
+
+    private static String chatText(String value) { return value == null ? "" : value.trim(); }
+
 }

@@ -25,4 +25,12 @@ server/docker/conf/nginx/keys/*
 /microservices/.gradle/
 
 # Build and publication artifacts; only qualification summaries are versioned.
-/packaging/dist/
+/build/
+
+# Project-specific microservices inputs and generated/private tool outputs.
+server/build/microservices/
+tools/microservices/__pycache__/
+config/microservices/**/*.local.env
+
+# Local client deployment credentials
+/config/packaging/client-tools/*.env

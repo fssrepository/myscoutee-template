@@ -44,7 +44,7 @@ class DeletedAccountPurgeServiceTest {
                 .thenReturn(List.of(user));
         when(jobs.findByUserId(user.getId())).thenReturn(Optional.of(job));
         when(jobs.save(any())).thenAnswer(call -> call.getArgument(0));
-        service = new DeletedAccountPurgeService(users, chat, jobs, media, mongo, null);
+        service = new DeletedAccountPurgeService(users, chat, jobs, media, mongo, null, null, null, null, null);
         service.setNotificationRuleRegistryService(scheduling);
         doAnswer(call -> { JobGroupContext.run(null, call.getArgument(1, Runnable.class)); return null; })
                 .when(scheduling).forEachGroup(eq(NotificationJobs.RULE_ACCOUNT_PURGE), any(Runnable.class));

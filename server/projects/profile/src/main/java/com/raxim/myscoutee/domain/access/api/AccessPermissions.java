@@ -2,7 +2,7 @@ package com.raxim.myscoutee.domain.access.api;
 
 import org.springframework.security.core.Authentication;
 
-public interface AccessPermissions extends ConsentAuthorization {
+public interface AccessPermissions extends ConsentAuthorization, com.raxim.myscoutee.domain.access.api.AccessPolicyFacts {
     boolean can(String policyKey, String actorUserId, String subjectUserId, String resourceId);
     String resolveChatActorUserId(String chatId, String profileId);
     boolean canCurrentActorCreateChatMessage(String userId, String chatId);
@@ -17,8 +17,6 @@ public interface AccessPermissions extends ConsentAuthorization {
     boolean canCurrentActorUploadMedia(String ownerUserId);
     boolean canCurrentActorImportMedia(String ownerUserId);
     boolean canCurrentActorSubmitPrivacyConsent(String userId);
-    boolean canAccessChat(String chatId, String actorUserId);
-    boolean canManageSupportChat(String chatId, String actorUserId);
     default String resolveActorUserId(Authentication authentication) {
         if (authentication == null || !authentication.isAuthenticated()) return null;
         Object principal = authentication.getPrincipal();

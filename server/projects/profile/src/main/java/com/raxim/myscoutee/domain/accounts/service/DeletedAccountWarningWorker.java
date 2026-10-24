@@ -31,8 +31,7 @@ import com.raxim.myscoutee.domain.email.api.EmailSending;
 /** A deletion episode has one durable delivery claim, independent of subsequent Job runs. */
 @Service
 public class DeletedAccountWarningWorker {
-    @org.springframework.beans.factory.annotation.Autowired
-    private com.raxim.myscoutee.domain.accounts.service.AccountJobQueries jobGroupScope;
+    private final com.raxim.myscoutee.domain.accounts.service.AccountJobQueries jobGroupScope;
 
     public static final String RULE = "account-deletion-warning";
     public static final int WARNING_DAYS = 5;
@@ -49,7 +48,10 @@ public class DeletedAccountWarningWorker {
     private final EmailRendering templates;
     public DeletedAccountWarningWorker(MongoTemplate mongo, SchedulingPolicy parameters,
             EmailSending email, NotificationJobs jobs, ScheduledMongoSessionRunner databases,
-            TranslationBundles i18n, EmailRendering templates) {
+            TranslationBundles i18n, EmailRendering templates,
+            com.raxim.myscoutee.domain.accounts.service.AccountJobQueries jobGroupScope) {
+        this.jobGroupScope = jobGroupScope;
+
         this.mongo = mongo; this.parameters = parameters; this.email = email; this.jobs = jobs; this.databases = databases;
         this.i18n = i18n; this.templates = templates;
     }

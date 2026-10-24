@@ -16,7 +16,7 @@ import com.raxim.myscoutee.domain.integrations.repository.IntegrationWebhookDeli
 class IntegrationWebhookServiceTest {
     final IntegrationWebhookDeliveriesRepository deliveries = mock(IntegrationWebhookDeliveriesRepository.class);
     final McpEventsService events = mock(McpEventsService.class);
-    final IntegrationWebhookService service = new IntegrationWebhookService(deliveries, mock(MongoTemplate.class), 1, 10);
+    final IntegrationWebhookService service = new IntegrationWebhookService(deliveries, mock(MongoTemplate.class), 1, 10, null, null, null, null, null);
     @BeforeEach void setup() { ReflectionTestUtils.setField(service, "mcpEvents", events); }
     @AfterEach void close() { service.shutdownDeliveryWorkers(); }
     private IntegrationWebhookDelivery pending() {

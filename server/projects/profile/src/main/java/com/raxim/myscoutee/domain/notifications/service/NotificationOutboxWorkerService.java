@@ -271,9 +271,8 @@ public class NotificationOutboxWorkerService {
             return;
         }
 
-        ExecutorService executorService = Executors.newFixedThreadPool(workerCount);
         MongoSessionMode sessionMode = MongoSessionModeContext.currentMode();
-        try {
+        try (ExecutorService executorService = Executors.newFixedThreadPool(workerCount)) {
             List<Future<?>> futures = new ArrayList<>();
             for (NotificationOutboxItem leased : leasedItems) {
                 futures.add(executorService.submit(
@@ -289,8 +288,6 @@ public class NotificationOutboxWorkerService {
                     LOGGER.warn("Notification outbox worker task failed.", exception);
                 }
             }
-        } finally {
-            executorService.shutdown();
         }
     }
 
@@ -397,7 +394,7 @@ public class NotificationOutboxWorkerService {
         long delayMs = platformParametersService == null
                 ? 60_000L
                 : platformParametersService.notificationOutboxPollDelayMs(60_000L);
-        if (lastScheduledPollAt != Instant.EPOCH
+        if (!Instant.EPOCH.equals(lastScheduledPollAt)
                 && effectiveNow.toEpochMilli() - lastScheduledPollAt.toEpochMilli() < delayMs) {
             return false;
         }

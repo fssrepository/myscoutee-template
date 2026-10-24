@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 1,
+  "tests": {
+    "account-purge-runtime-test.py": {
+      "owner": "package",
+      "path": "tests/consumer/mongo/retention/account-purge-runtime-test.py"
+    },
+    "compose-firebase-path-test.sh": {
+      "owner": "package",
+      "path": "tests/consumer/deployment/compose-firebase-path-test.sh"
+    },
+    "compose-project-migration-test.py": {
+      "owner": "package",
+      "path": "tests/consumer/deployment/compose-project-migration-test.py"
+    },
+    "demo-reset-seed-test.mjs": {
+      "owner": "package",
+      "path": "tests/consumer/runtime/demo-reset-seed-test.mjs"
+    },
+    "demo-reset-test.sh": {
+      "owner": "package",
+      "path": "tests/consumer/runtime/demo-reset-test.sh"
+    },
+    "deployment-http-test.mjs": {
+      "owner": "package",
+      "path": "tests/consumer/deployment/deployment-http-test.mjs"
+    },
+    "deployment-input-parity-test.py": {
+      "owner": "package",
+      "path": "tests/consumer/deployment/deployment-input-parity-test.py"
+    },
+    "host-lifecycle-test.py": {
+      "owner": "package",
+      "path": "tests/consumer/deployment/host-lifecycle-test.py"
+    },
+    "install-policy-test.py": {
+      "owner": "package",
+      "path": "tests/consumer/debian/install-policy-test.py"
+    },
+    "integration-indexes-test.py": {
+      "owner": "package",
+      "path": "tests/consumer/mongo/indexes/integration-indexes-test.py"
+    },
+    "media-deletion-runtime-test.py": {
+      "owner": "package",
+      "path": "tests/consumer/mongo/media/media-deletion-runtime-test.py"
+    },
+    "media-enqueue-runtime-test.py": {
+      "owner": "package",
+      "path": "tests/consumer/mongo/media/media-enqueue-runtime-test.py"
+    },
+    "media-location-runtime-test.py": {
+      "owner": "package",
+      "path": "tests/consumer/mongo/media/media-location-runtime-test.py"
+    },
+    "migration-chain-test.py": {
+      "owner": "package",
+      "path": "tests/consumer/mongo/release/selected-migration-chain-test.py"
+    },
+    "nginx-native-test.py": {
+      "owner": "package",
+      "path": "tests/consumer/deployment/nginx-native-test.py"
+    },
+    "numeric-ownership-policy-test.sh": {
+      "owner": "package",
+      "path": "tests/consumer/debian/numeric-ownership-policy-test.sh"
+    },
+    "package-content-test.py": {
+      "owner": "package",
+      "path": "tests/consumer/release/package-content-test.py"
+    },
+    "push-outbox-runtime-test.py": {
+      "owner": "package",
+      "path": "tests/consumer/mongo/retention/push-outbox-runtime-test.py"
+    },
+    "release-catalog-parity-test.mjs": {
+      "owner": "package",
+      "path": "tests/consumer/mongo/catalogs/selected-release-catalog-parity-test.mjs"
+    },
+    "release-seed-selection-test.mjs": {
+      "owner": "package",
+      "path": "tests/consumer/mongo/release/release-seed-selection-test.mjs"
+    },
+    "runtime-identity-migration-test.py": {
+      "owner": "package",
+      "path": "tests/consumer/debian/runtime-identity-migration-test.py"
+    },
+    "runtime-index-parity-test.mjs": {
+      "owner": "package",
+      "path": "tests/consumer/mongo/indexes/selected-runtime-index-parity-test.mjs"
+    },
+    "seed-singleton-preservation-test.py": {
+      "owner": "package",
+      "path": "tests/consumer/mongo/seed-singleton-preservation-test.py"
+    },
+    "tls-worker-test.sh": {
+      "owner": "package",
+      "path": "tests/consumer/runtime/tls-worker-test.sh"
+    },
+    "ui-translation-key-migration-test.mjs": {
+      "owner": "package",
+      "path": "tests/consumer/mongo/catalogs/ui-translation-key-migration-test.mjs"
+    },
+    "release-project-test.sh": {
+      "owner": "package",
+      "path": "tests/consumer/release/release-project-test.sh"
+    },
+    "update-worker-test.sh": {
+      "owner": "package",
+      "path": "tests/unit/update-worker-test.sh"
+    },
+    "debian-tls-lifecycle-test.sh": {
+      "owner": "package",
+      "path": "tests/consumer/debian/debian-tls-lifecycle-test.sh"
+    },
+    "image-content-fingerprint-test.sh": {
+      "owner": "package",
+      "path": "tests/unit/image-content-fingerprint-test.sh"
+    },
+    "seeded-media-test.py": {
+      "owner": "package",
+      "path": "tests/unit/seeded-media-test.py"
+    },
+    "update-status-server-test.py": {
+      "owner": "package",
+      "path": "tests/unit/update-status-server-test.py"
+    },
+    "i18n-runtime-seed-sync-test.sh": {
+      "owner": "package",
+      "path": "tests/consumer/runtime/i18n-runtime-seed-sync-test.sh"
+    },
+    "mongo-import-entrypoint-test.sh": {
+      "owner": "package",
+      "path": "tests/consumer/mongo/mongo-import-entrypoint-test.sh"
+    },
+    "dev-runtime-directories-test.py": {
+      "owner": "package",
+      "path": "tests/consumer/deployment/dev-runtime-directories-test.py"
+    },
+    "postinst-image-policy-test.sh": {
+      "owner": "package",
+      "path": "tests/consumer/debian/postinst-image-policy-test.sh"
+    }
+  }
+}

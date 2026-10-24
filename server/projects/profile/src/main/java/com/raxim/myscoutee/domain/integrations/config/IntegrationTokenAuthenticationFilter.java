@@ -26,20 +26,24 @@ import jakarta.servlet.http.HttpServletResponse;
 
 @Component
 public class IntegrationTokenAuthenticationFilter extends OncePerRequestFilter {
-    @org.springframework.beans.factory.annotation.Autowired private com.raxim.myscoutee.domain.accounts.api.ProfileAuthentication profileAuthentication;
+    private final com.raxim.myscoutee.domain.accounts.api.ProfileAuthentication profileAuthentication;
     private static final String BEARER_PREFIX = "Bearer ";
     public static final String CLIENT_ID_HEADER = "X-MyScoutee-Client-Id";
 
     private final IntegrationTokenService tokenService;
-    @org.springframework.beans.factory.annotation.Autowired
-    private org.springframework.beans.factory.ObjectProvider<com.raxim.myscoutee.domain.integrations.service.McpAuthorizationService> mcp;
+    private final org.springframework.beans.factory.ObjectProvider<com.raxim.myscoutee.domain.integrations.service.McpAuthorizationService> mcp;
 
     private final ProfileDirectory users;
     private final IntegrationRoleAccessService roles;
     private final java.util.Optional<McpWorkspaceAccess> workspaces;
 
     public IntegrationTokenAuthenticationFilter(IntegrationTokenService tokenService,
-            ProfileDirectory users, java.util.Optional<McpWorkspaceAccess> workspaces, IntegrationRoleAccessService roles) {
+            ProfileDirectory users, java.util.Optional<McpWorkspaceAccess> workspaces, IntegrationRoleAccessService roles,
+            com.raxim.myscoutee.domain.accounts.api.ProfileAuthentication profileAuthentication,
+            org.springframework.beans.factory.ObjectProvider<com.raxim.myscoutee.domain.integrations.service.McpAuthorizationService> mcp) {
+        this.profileAuthentication = profileAuthentication;
+        this.mcp = mcp;
+
         this.tokenService = tokenService;
         this.users = users;
         this.workspaces = workspaces;
@@ -78,6 +82,10 @@ public class IntegrationTokenAuthenticationFilter extends OncePerRequestFilter {
         // session's active group must never retarget a running integration.
         SecurityContextHolder.clearContext();
         var owner = users.findByUserId(client.ownerUserId()).orElse(null);
+        if (owner == null) {
+            response.sendError(HttpServletResponse.SC_UNAUTHORIZED);
+            return;
+        }
         try { roles.requireActive(owner); }
         catch (ResponseStatusException denied) {
             response.sendError(HttpServletResponse.SC_UNAUTHORIZED);
@@ -112,7 +120,7 @@ public class IntegrationTokenAuthenticationFilter extends OncePerRequestFilter {
 
     private String resolveClientAddress(HttpServletRequest request) {
         String directAddress = request == null ? null : request.getRemoteAddr();
-        if (!isTrustedProxyAddress(directAddress)) {
+        if (request == null || !isTrustedProxyAddress(directAddress)) {
             return directAddress;
         }
         String forwardedFor = request.getHeader("X-Forwarded-For");

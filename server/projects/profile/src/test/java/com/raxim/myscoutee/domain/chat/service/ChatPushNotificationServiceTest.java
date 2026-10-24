@@ -26,7 +26,7 @@ class ChatPushNotificationServiceTest {
         when(usersRepository.findByUserId("sender")).thenReturn(Optional.empty());
         when(sessionRegistry.isUserConnected("chat-1", "connected-viewer")).thenReturn(true);
         ChatPushNotificationService service = new ChatPushNotificationService(
-                new com.raxim.myscoutee.domain.accounts.service.ProfileDirectoryService(usersRepository),
+                new com.raxim.myscoutee.domain.accounts.service.ProfileDirectoryService(usersRepository, null),
                 notificationOutboxService,
                 sessionRegistry);
         Chat chat = new Chat();
@@ -73,7 +73,7 @@ class ChatPushNotificationServiceTest {
         NotificationOutboxService notificationOutboxService = org.mockito.Mockito.mock(NotificationOutboxService.class);
         ChatWebSocketSessionRegistry sessionRegistry = org.mockito.Mockito.mock(ChatWebSocketSessionRegistry.class);
         ChatPushNotificationService service = new ChatPushNotificationService(
-                new com.raxim.myscoutee.domain.accounts.service.ProfileDirectoryService(usersRepository),
+                new com.raxim.myscoutee.domain.accounts.service.ProfileDirectoryService(usersRepository, null),
                 notificationOutboxService,
                 sessionRegistry);
         Chat chat = new Chat();

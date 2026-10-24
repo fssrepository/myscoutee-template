@@ -115,6 +115,9 @@ public class FirebaseService implements com.raxim.myscoutee.domain.accounts.api.
     }
 
     public UserDetails loadUserByCredential(FirebaseCredential credential, String xLink, String currentPage) {
+        if (credential == null) {
+            throw new FirebaseTokenInvalidException("A verified Firebase credential is required.");
+        }
         String normalizedEmail = normalizeCredentialEmail(credential);
         boolean configuredAdmin = isAdminEmail(normalizedEmail);
         Users configuredAdminUser = configuredAdmin ? findUser(normalizedEmail) : null;
@@ -154,7 +157,7 @@ public class FirebaseService implements com.raxim.myscoutee.domain.accounts.api.
             return null;
         }
         java.util.Optional<Users> userById = usersRepository.findByUserId(normalizedUserId);
-        Users user = userById == null ? null : userById.orElse(null);
+        Users user = userById.orElse(null);
         if (user != null) {
             return user;
         }
@@ -167,14 +170,14 @@ public class FirebaseService implements com.raxim.myscoutee.domain.accounts.api.
             return null;
         }
         java.util.Optional<Users> userByEmail = usersRepository.findFirstByEmail(normalizedEmail);
-        return userByEmail == null ? null : userByEmail.orElse(null);
+        return userByEmail.orElse(null);
     }
 
     private Users findUserByProvider(FirebaseCredential credential) {
         String facebookId = normalizeProviderId(credential == null ? null : credential.getFacebookId());
         if (StringUtils.hasText(facebookId)) {
             java.util.Optional<Users> userByFacebookId = usersRepository.findFirstByFacebookId(facebookId);
-            Users user = userByFacebookId == null ? null : userByFacebookId.orElse(null);
+            Users user = userByFacebookId.orElse(null);
             if (user != null) {
                 return user;
             }
@@ -182,7 +185,7 @@ public class FirebaseService implements com.raxim.myscoutee.domain.accounts.api.
         String googleId = normalizeProviderId(credential == null ? null : credential.getGoogleId());
         if (StringUtils.hasText(googleId)) {
             java.util.Optional<Users> userByGoogleId = usersRepository.findFirstByGoogleId(googleId);
-            Users user = userByGoogleId == null ? null : userByGoogleId.orElse(null);
+            Users user = userByGoogleId.orElse(null);
             if (user != null) {
                 return user;
             }
@@ -190,7 +193,7 @@ public class FirebaseService implements com.raxim.myscoutee.domain.accounts.api.
         String firebaseUid = normalizeProviderId(credential == null ? null : credential.getUid());
         if (StringUtils.hasText(firebaseUid)) {
             java.util.Optional<Users> userByFirebaseUid = usersRepository.findFirstByFirebaseUid(firebaseUid);
-            return userByFirebaseUid == null ? null : userByFirebaseUid.orElse(null);
+            return userByFirebaseUid.orElse(null);
         }
         return null;
     }

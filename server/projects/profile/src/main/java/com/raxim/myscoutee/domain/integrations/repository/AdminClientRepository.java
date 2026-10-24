@@ -8,7 +8,12 @@ import org.springframework.data.domain.Sort;
 
 @Repository
 public class AdminClientRepository {
-    @org.springframework.beans.factory.annotation.Autowired private com.raxim.myscoutee.domain.chat.api.ChatDirectory chatDirectory;
+    private com.raxim.myscoutee.domain.chat.api.ChatDirectory chatDirectory;
+
+    @org.springframework.beans.factory.annotation.Autowired
+    void setChatDirectory(com.raxim.myscoutee.domain.chat.api.ChatDirectory chatDirectory) {
+        this.chatDirectory = chatDirectory;
+    }
     public String unreadVersion(String owner) {
         return chatDirectory.unreadVersion(owner);
     }

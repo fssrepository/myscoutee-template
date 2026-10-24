@@ -224,7 +224,7 @@ public class NotificationRuleRegistryService implements com.raxim.myscoutee.doma
         // Reject unchanged not-due schedules in memory. Positive admission still reads and claims current owner state.
         if (streamScheduling && !isScheduledRuleDue(scheduledCandidate(ruleKey), effectiveStartedAt)) return null;
         NotificationRuleConfig candidate = findRule(ruleKey).orElse(null);
-        if (!isScheduledRuleDue(candidate, effectiveStartedAt)) {
+        if (candidate == null || !isScheduledRuleDue(candidate, effectiveStartedAt)) {
             return null;
         }
         String expectedLastRunAtIso = candidate.getRunState() == null
@@ -611,7 +611,7 @@ public class NotificationRuleRegistryService implements com.raxim.myscoutee.doma
         return safeText(value)
                 .replaceAll("([a-z0-9])([A-Z])", "$1.$2")
                 .replaceAll("[^a-zA-Z0-9]+", ".")
-                .replaceAll("^\\.+|\\.+$", "")
+                .transform(edgeText -> org.springframework.util.StringUtils.trimLeadingCharacter(org.springframework.util.StringUtils.trimTrailingCharacter(edgeText, '.'), '.'))
                 .toLowerCase();
     }
 
@@ -833,7 +833,8 @@ public class NotificationRuleRegistryService implements com.raxim.myscoutee.doma
                 return occurrence.toInstant();
             }
             if ("monthly".equals(frequency)) {
-                int dayOfMonth = parseLocalDate(slot.getDate()) == null ? 1 : parseLocalDate(slot.getDate()).getDayOfMonth();
+                LocalDate slotDate = parseLocalDate(slot.getDate());
+                int dayOfMonth = slotDate == null ? 1 : slotDate.getDayOfMonth();
                 LocalDate date = safeDate(zonedNow.getYear(), zonedNow.getMonthValue(), dayOfMonth);
                 ZonedDateTime occurrence = ZonedDateTime.of(date, time, zoneId);
                 if (occurrence.isAfter(zonedNow)) {

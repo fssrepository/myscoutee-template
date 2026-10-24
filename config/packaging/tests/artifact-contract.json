@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "architecture": "amd64",
+  "artifactPattern": "build/packaging/dist/{version}/{package}_{version}_amd64.deb",
+  "forbiddenPrefixes": [
+    "./opt/myscoutee/"
+  ],
+  "forbiddenHelpers": [
+    "ensure-deployment-identity.sh",
+    "validate-registry-state.jq"
+  ],
+  "freshSecrets": 3,
+  "forbiddenEnvironmentPrefixes": [
+    "REGISTRY_",
+    "PAYMENT_",
+    "AFFINITY_"
+  ],
+  "productionCollections": [
+    "accessPolicyDefinitions",
+    "appSettings",
+    "countryPartitions",
+    "deploymentConfigurations",
+    "helpCenterGuideFields",
+    "helpCenterRevisions",
+    "i18n_bundles",
+    "i18n_messages",
+    "notificationRuleConfigs"
+  ],
+  "synchronizedCollections": [
+    "notificationRuleConfigs",
+    "countryPartitions",
+    "i18n_messages",
+    "i18n_bundles"
+  ],
+  "imageCount": 5,
+  "imageRepositoryPrefix": "myscoutee-template-",
+  "executableHelpers": [
+    "backup-production.sh",
+    "restore-production.sh",
+    "myscoutee-compose.sh",
+    "myscoutee-update-worker.sh",
+    "myscoutee-tls-worker.sh",
+    "qualify-deployment.sh",
+    "reset-demo-state.sh",
+    "migrate-production-data.sh"
+  ],
+  "sourceInputs": {
+    "packaging/scripts/release-project.json": "config/packaging/release-project.json",
+    "packaging/templates/install-policy.json": "config/packaging/templates/install-policy.json",
+    "packaging/scripts/release-system-seeds.json": "build/scripts/release-system-seeds.json",
+    "packaging/scripts/recovery-project.sh": "build/scripts/recovery-project.sh",
+    "packaging/scripts/sync-release-system-seeds.js": "build/scripts/sync-release-system-seeds.js"
+  }
+}

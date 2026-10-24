@@ -5,7 +5,7 @@ ARG E2E_RUNTIME_IMAGE=eclipse-temurin:25.0.2_10-jre-alpine
 
 FROM ${E2E_BUILD_IMAGE} AS builder
 
-ARG MYSCOUTEE_VERSION=1.4.0
+ARG MYSCOUTEE_VERSION=1.5.0
 ENV MYSCOUTEE_VERSION=${MYSCOUTEE_VERSION}
 
 WORKDIR /workspace
@@ -15,7 +15,8 @@ COPY gradle/ ./gradle/
 COPY projects/profile/build.gradle ./projects/profile/build.gradle
 COPY projects/profile/src/main/ ./projects/profile/src/main/
 
-RUN --mount=type=cache,id=myscoutee-template-e2e-gradle,target=/root/.gradle \
+RUN --mount=type=secret,id=github-packages,target=/root/.gradle/gradle.properties,required=true \
+    --mount=type=cache,id=myscoutee-template-e2e-gradle,target=/root/.gradle \
     ./gradlew \
       --no-daemon \
       --project-cache-dir /tmp/myscoutee-project-cache \

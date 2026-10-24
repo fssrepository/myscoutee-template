@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "input": "config/packaging/migrations/seeds/019-ui-translation-keys/key-renames.json",
+  "migration": "config/packaging/migrations/019-ui-translation-keys.js",
+  "languages": [
+    "en",
+    "hu"
+  ],
+  "perLanguageCount": 52,
+  "requiredTargetKey": "demo.selector.loading.title",
+  "successMessage": "PASS: semantic UI key migration matches both packaged catalogs."
+}

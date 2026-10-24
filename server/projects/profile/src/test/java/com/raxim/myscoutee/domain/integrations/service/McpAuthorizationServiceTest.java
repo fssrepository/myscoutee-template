@@ -42,7 +42,7 @@ class McpAuthorizationServiceTest {
     final McpOAuthClientsRepository registrations = mock(McpOAuthClientsRepository.class);
     final com.raxim.myscoutee.domain.platform.config.ConfigProperties config = new com.raxim.myscoutee.domain.platform.config.ConfigProperties();
     final ScheduledMongoSessionRunner databases = mock(ScheduledMongoSessionRunner.class);
-    final McpAuthorizationService service = new McpAuthorizationService(keys,  tokens,  grants, new com.raxim.myscoutee.domain.accounts.service.ProfileDirectoryService(users),  Optional.empty(), endpoint, registrations, config, databases);
+    final McpAuthorizationService service = new McpAuthorizationService(keys,  tokens,  grants, new com.raxim.myscoutee.domain.accounts.service.ProfileDirectoryService(users, null),  Optional.empty(), endpoint, registrations, config, databases);
     final String id = UUID.randomUUID().toString(), verifier = "x".repeat(43);
     IntegrationToken client;
     @BeforeEach void setup() {
@@ -327,7 +327,7 @@ class McpAuthorizationServiceTest {
             context.registerBean(IntegrationTokensRepository.class, () -> tokens);
             context.registerBean(McpAuthorizationRepository.class, () -> grants);
             context.registerBean(com.raxim.myscoutee.domain.accounts.api.ProfileDirectory.class,
-                    () -> new com.raxim.myscoutee.domain.accounts.service.ProfileDirectoryService(users));
+                    () -> new com.raxim.myscoutee.domain.accounts.service.ProfileDirectoryService(users, null));
             context.registerBean(MongoTemplate.class, () -> mock(MongoTemplate.class));
             context.registerBean(IntegrationPublicEndpointResolver.class, () -> endpoint);
             context.registerBean(McpOAuthClientsRepository.class, () -> registrations);

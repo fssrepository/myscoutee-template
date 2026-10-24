@@ -30,7 +30,7 @@ class DeletedAccountWarningWorkerTest {
     final OperatorEmailConfigurationService email = mock(OperatorEmailConfigurationService.class);
     final I18nService i18n = mock(I18nService.class);
     final DeletedAccountWarningWorker worker = new DeletedAccountWarningWorker(mongo, parameters, email,
-            mock(NotificationRuleRegistryService.class), mock(ScheduledMongoSessionRunner.class), i18n, new EmailTemplateRenderer());
+            mock(NotificationRuleRegistryService.class), mock(ScheduledMongoSessionRunner.class), i18n, new EmailTemplateRenderer(), null);
     final Instant now = Instant.parse("2026-09-22T12:00:00Z");
     final Users user = new Users();
     @BeforeEach void setup() {

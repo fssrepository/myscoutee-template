@@ -30,6 +30,19 @@ import com.raxim.myscoutee.domain.platform.repository.DeploymentConfigurationRep
 /** Exercises the retained deployment flow with a genuinely payment-free document. */
 @Tag("standard")
 class OperatorConfigurationServiceTest {
+    @Test
+    void contactEmailPatternsPreserveExistingAddressAcceptance() {
+        for (String field : List.of("PRIVACY_CONTACT_EMAIL_PATTERN")) {
+            var pattern = (java.util.regex.Pattern) org.springframework.test.util.ReflectionTestUtils
+                    .getField(OperatorConfigurationService.class, field);
+            for (String email : List.of("owner@example.test", "o+tag@a.b.c", "owner@.a.b", "owner@a.b."))
+                assertThat(pattern.matcher(email).matches()).as(email).isTrue();
+            for (String email : List.of("owner@example", "@example.test", "owner@.a", "owner@a.",
+                    "owner@@example.test", "owner name@example.test", "owner@example.test\n",
+                    "owner@" + "a".repeat(100_000)))
+                assertThat(pattern.matcher(email).matches()).as(field).isFalse();
+        }
+    }
     @TempDir Path directory;
     private DeploymentConfiguration configuration;
     private DeploymentConfigurationRepository repository;

@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "identity": "10002:10002",
+  "imageCounts": [
+    {
+      "version": "1.0.2",
+      "count": 5
+    },
+    {
+      "version": "1.3.0-qa.1",
+      "count": 5
+    }
+  ],
+  "clientServices": [
+    {
+      "name": "profilemanagement",
+      "container": "myscoutee-template",
+      "environment": "MYSCOUTEE_PRODUCTION_IMAGE"
+    }
+  ],
+  "repositoryPrefix": "myscoutee-template-"
+}

@@ -319,9 +319,8 @@ class OperatorUpdateServiceTest {
                         "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
                         true).items().getFirst());
         Files.createDirectories(properties.getStateDir().resolve("staging"));
-        properties.setStagingSafetyReserveBytes(
-                Files.getFileStore(properties.getStateDir())
-                        .getUsableSpace());
+        // The signed artifact is 10 bytes; the valid sum is Long.MAX_VALUE.
+        properties.setStagingSafetyReserveBytes(Long.MAX_VALUE - 10L);
         OperatorUpdateService service = new OperatorUpdateService(
                 networkService,
                 downloader,

@@ -64,7 +64,10 @@ class OperatorUpdateReleaseServiceTest {
         Files.write(source, raw);
         Path root = Path.of("").toAbsolutePath();
         while (!Files.isDirectory(root.resolve("packaging"))) root = root.getParent();
-        var signing = new ProcessBuilder("python3", root.resolve("packaging/release/sign-update-manifest.py").toString(),
+        Path packagingSource = Path.of(System.getenv().getOrDefault("MYSCOUTEE_PACKAGING_SOURCE",
+                root.resolve("../myscoutee-packaging").toString()));
+        var signing = new ProcessBuilder("python3", packagingSource.resolve("release/sign-update-manifest.py").toString(),
+                "--compatibility-policy", root.resolve("config/packaging/release/update-compatibility-policy.json").toString(),
                 "--private-key", privateKey.toString(), "--manifest", source.toString(), "--output", signed.toString())
                 .redirectErrorStream(true).start();
         String output = new String(signing.getInputStream().readAllBytes());

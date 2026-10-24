@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "packageName": "myscoutee-template",
+  "images": [
+    {
+      "service": "nginx-base",
+      "container": null,
+      "repository": "myscoutee-template-nginx",
+      "tagSuffix": "base",
+      "environment": "NGINX_BASE_IMAGE",
+      "sinceVersion": "1.0.0"
+    },
+    {
+      "service": "nginx",
+      "container": "nginx",
+      "repository": "myscoutee-template-nginx",
+      "tagSuffix": "prod",
+      "environment": "NGINX_PRODUCTION_IMAGE",
+      "sinceVersion": "1.0.0"
+    },
+    {
+      "service": "profilemanagement",
+      "container": "myscoutee-template",
+      "repository": "myscoutee-template-api",
+      "tagSuffix": "prod",
+      "environment": "MYSCOUTEE_PRODUCTION_IMAGE",
+      "sinceVersion": "1.0.0"
+    },
+    {
+      "service": "minio",
+      "container": "minio",
+      "repository": "myscoutee-template-minio",
+      "tagSuffix": "prod",
+      "environment": "MINIO_PRODUCTION_IMAGE",
+      "sinceVersion": "1.0.0"
+    },
+    {
+      "service": "mcp",
+      "container": "mcp",
+      "repository": "myscoutee-template-mcp",
+      "tagSuffix": "prod",
+      "environment": "MCP_IMAGE",
+      "sinceVersion": "1.0.0"
+    }
+  ],
+  "runtimeIdentity": {
+    "uid": 10002,
+    "gid": 10002
+  },
+  "clientTools": {
+    "serverDirectory": "/opt/myscoutee-template/server",
+    "stateDirectory": "/var/lib/myscoutee-template",
+    "installationPendingFile": "demo-reset-required",
+    "composeFiles": [
+      "docker-compose-prod.yml",
+      "docker-compose.replicaset.yml"
+    ],
+    "services": [
+      {
+        "name": "nginx",
+        "imageService": "nginx",
+        "stateDirectory": "temporary-frontend",
+        "frontendVersionFile": "/usr/share/nginx/html/app-version.json"
+      },
+      {
+        "name": "profilemanagement",
+        "imageService": "profilemanagement",
+        "allowStopped": true
+      },
+      {
+        "name": "mongodb",
+        "container": "mongodb",
+        "environment": "MONGO_IMAGE",
+        "labelService": "mongodb",
+        "sameUpstream": true
+      },
+      {
+        "name": "redis",
+        "container": "redis",
+        "environment": "REDIS_IMAGE",
+        "labelService": "redis",
+        "sameUpstream": true
+      },
+      {
+        "name": "minio",
+        "imageService": "minio"
+      }
+    ]
+  },
+  "hostTools": {
+    "startupFallbackVersion": "1.3.0",
+    "tls": {
+      "applicationUrlEnvironmentKeys": [
+        "EMAIL_BASE_URL",
+        "PAYMENT_SIMULATOR_PUBLIC_BASE_URL",
+        "PAYMENT_SIMULATOR_APPLICATION_BASE_URL"
+      ],
+      "localOrigins": [
+        "https://localhost",
+        "https://127.0.0.1",
+        "http://localhost:8080",
+        "http://127.0.0.1:8080"
+      ]
+    }
+  }
+}

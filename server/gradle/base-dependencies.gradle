@@ -1,0 +1,55 @@
+// Binary dependencies only: consuming applications never compile the base checkout.
+repositories {
+    exclusiveContent {
+        forRepository {
+            maven {
+                name = 'myscouteeBase'
+                url = providers.gradleProperty('myscouteeBaseRepository')
+                    .orElse(providers.environmentVariable('MYSCOUTEE_BASE_REPOSITORY'))
+                    .orElse('https://maven.pkg.github.com/fssrepository/myscoutee-base').get()
+                if (url.host == 'maven.pkg.github.com') {
+                    credentials {
+                        username = providers.gradleProperty('gpr.user').orElse(providers.environmentVariable('GITHUB_ACTOR')).orNull
+                        password = providers.gradleProperty('gpr.key').orElse(providers.environmentVariable('GITHUB_TOKEN')).orNull
+                    }
+                }
+            }
+        }
+        filter { includeGroup 'com.raxim.myscoutee.base' }
+    }
+}
+
+dependencies {
+    implementation platform("com.raxim.myscoutee.base:platform:${libs.versions.base.get()}")
+}
+
+// A pre-extraction build cache must not restore classes now owned by a library.
+tasks.withType(JavaCompile).configureEach {
+    inputs.property('myscouteeBaseClassOwnership', 3)
+}
+
+tasks.register('verifyBaseClassOwnership') {
+    group = 'verification'
+    description = 'Reject relocated base classes left in application compilation output.'
+    dependsOn tasks.named('classes')
+    doLast {
+        def duplicates = []
+        configurations.compileClasspath.resolvedConfiguration.resolvedArtifacts
+            .findAll { it.moduleVersion.id.group == 'com.raxim.myscoutee.base' && it.file.name.endsWith('.jar') }
+            .each { artifact ->
+                new java.util.zip.ZipFile(artifact.file).withCloseable { archive ->
+                    archive.entries().each { entry ->
+                        if (entry.name.endsWith('.class')) {
+                            sourceSets.main.output.classesDirs.each { directory ->
+                                if (new File(directory, entry.name).isFile()) duplicates.add(entry.name)
+                            }
+                        }
+                    }
+                }
+            }
+        if (duplicates) throw new GradleException('Classes owned by base remain in application output; clean the stale compilation output: ' + duplicates.unique().join(', '))
+    }
+}
+tasks.matching { it.name in ['bootJar', 'bootRun', 'test', 'standardTest', 'embeddedTest'] }.configureEach {
+    dependsOn tasks.named('verifyBaseClassOwnership')
+}

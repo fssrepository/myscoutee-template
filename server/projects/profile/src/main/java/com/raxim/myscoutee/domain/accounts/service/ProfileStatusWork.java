@@ -17,9 +17,12 @@ import com.raxim.myscoutee.domain.platform.api.JobGroupContext;
  * observers complete before support messages and the guarded work-marker removal. */
 @Service
 public class ProfileStatusWork {
-    @org.springframework.beans.factory.annotation.Autowired(required = false)
-    @org.springframework.context.annotation.Lazy
     private com.raxim.myscoutee.domain.chat.api.SupportMessages supportMessages;
+
+    @org.springframework.beans.factory.annotation.Autowired(required = false)
+    void setSupportMessages(@org.springframework.context.annotation.Lazy com.raxim.myscoutee.domain.chat.api.SupportMessages supportMessages) {
+        this.supportMessages = supportMessages;
+    }
     private final UsersRepository users;
     private final MongoTemplate mongo;
     private final List<ProfileStatusObserver> observers;

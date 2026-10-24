@@ -1,0 +1,13 @@
+{
+  "platform": "platform-business",
+  "accounts": "accounts",
+  "media": "media",
+  "integrations": "integrations",
+  "help": "help",
+  "localization": "localization",
+  "notifications": "notifications",
+  "chat": "chat",
+  "access": "access",
+  "administration": "administration",
+  "email": "email"
+}

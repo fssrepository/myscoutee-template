@@ -1,0 +1,26 @@
+{
+  "name": "myscoutee-template-packaging",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "client": "myscoutee-packaging client",
+    "client-tools": "myscoutee-packaging client-tools",
+    "release": "myscoutee-packaging release",
+    "prepare-runtime": "myscoutee-packaging prepare-runtime",
+    "runtime": "myscoutee-packaging runtime",
+    "test": "myscoutee-packaging test",
+    "verify": "myscoutee-packaging verify",
+    "verify-browser": "myscoutee-packaging verify-browser",
+    "seed-parity": "myscoutee-packaging seed-parity",
+    "development": "myscoutee-packaging development",
+    "qualification": "myscoutee-packaging qualification",
+    "qa-release": "myscoutee-packaging qa-release",
+    "seed-image-variants": "myscoutee-packaging seed-image-variants"
+  },
+  "devDependencies": {
+    "@fssrepository/myscoutee-packaging": "1.5.0"
+  }
+}

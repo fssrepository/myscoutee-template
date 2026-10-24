@@ -16,10 +16,10 @@ services:
     - myscoutee
     container_name: myscoutee-template-prod-stun
   mcp:
-    image: ${MCP_IMAGE:-myscoutee-template-mcp:1.4.0-prod}
+    image: ${MCP_IMAGE:-myscoutee-template-mcp:1.5.0-prod}
     build:
-      context: ../mcp
-      dockerfile: Dockerfile
+      context: ../config/mcp
+      dockerfile: ../../server/docker/images/mcp/Dockerfile
     container_name: myscoutee-template-prod-mcp
     hostname: mcp
     restart: unless-stopped
@@ -48,19 +48,21 @@ services:
   nginx:
     container_name: myscoutee-template-prod-nginx
     hostname: nginx
-    image: ${NGINX_PRODUCTION_IMAGE:-myscoutee-template-nginx:1.4.0-prod}
+    image: ${NGINX_PRODUCTION_IMAGE:-myscoutee-template-nginx:1.5.0-prod}
     pull_policy: build
     restart: unless-stopped
     build:
       context: docker
       dockerfile: images/nginx/prod/Dockerfile
       additional_contexts:
+        nginx-config: ../config/nginx
         frontend-prod: ../frontend/prod
       args:
-        NGINX_BASE_IMAGE: ${NGINX_BASE_IMAGE:-myscoutee-template-nginx:1.4.0-base}
+        NGINX_BASE_IMAGE: ${NGINX_BASE_IMAGE:-ghcr.io/fssrepository/myscoutee-nginx:1.5.0@sha256:7ec3ba085e30314d5536401ac22e14064d30a5461bfc1a9ccbe0e6340b6c6c24}
         TZ: ${CONTAINER_TIMEZONE:-Europe/Brussels}
     environment:
       MYSCOUTEE_RUNTIME_STATUS_TOKEN_FILE: /run/myscoutee-runtime-status/token
+      AUTH_REGION_SECURITY_ENABLED: ${AUTH_REGION_SECURITY_ENABLED:-true}
       TZ: ${CONTAINER_TIMEZONE:-Europe/Brussels}
       LETSENCRYPT_ENABLED: ${LETSENCRYPT_ENABLED:-false}
       DOMAIN: ${DOMAIN:-localhost}
@@ -72,6 +74,8 @@ services:
     - 127.0.0.1:27017:27017
     volumes:
     - runtime-status-credentials:/run/myscoutee-runtime-status
+    - nginx-state:/var/lib/nginx/myscoutee
+    - ../config/nginx/operator:/etc/nginx/myscoutee-operator:ro
     - ./docker/conf/nginx/keys:/etc/nginx/keys
     - ./data/certbot/conf:/etc/letsencrypt
     - ./data/certbot/www:/var/www/certbot
@@ -146,7 +150,7 @@ services:
       start_interval: 2s
       start_period: 10s
   minio:
-    image: ${MINIO_PRODUCTION_IMAGE:-myscoutee-template-minio:1.4.0-prod}
+    image: ${MINIO_PRODUCTION_IMAGE:-myscoutee-template-minio:1.5.0-prod}
     pull_policy: build
     build:
       context: .
@@ -181,14 +185,14 @@ services:
     extends:
       file: docker-compose.replicaset.yml
       service: profilemanagement
-    image: ${MYSCOUTEE_PRODUCTION_IMAGE:-myscoutee-template-api:1.4.0-prod}
+    image: ${MYSCOUTEE_PRODUCTION_IMAGE:-myscoutee-template-api:1.5.0-prod}
     pull_policy: build
     restart: unless-stopped
     build:
       context: projects/profile/build/libs
       dockerfile: ../../../../docker/images/profilemanagement/prod/Dockerfile
       args:
-        MYSCOUTEE_VERSION: ${MYSCOUTEE_VERSION:-1.4.0}
+        MYSCOUTEE_VERSION: ${MYSCOUTEE_VERSION:-1.5.0}
         MYSCOUTEE_API_UID: ${MYSCOUTEE_API_UID:-10002}
         MYSCOUTEE_API_GID: ${MYSCOUTEE_API_GID:-10002}
         TZ: ${CONTAINER_TIMEZONE:-Europe/Brussels}
@@ -203,7 +207,7 @@ services:
       CHAT_CALL_STUN_URLS: ${CHAT_CALL_STUN_URLS:-}
       CHAT_CALL_STUN_PORT: ${CHAT_CALL_STUN_PORT:-3478}
       SPRING_PROFILES_ACTIVE: prod
-      MYSCOUTEE_VERSION: ${MYSCOUTEE_VERSION:-1.4.0}
+      MYSCOUTEE_VERSION: ${MYSCOUTEE_VERSION:-1.5.0}
       MONGODB_HOST: mongodb
       MONGODB_DATABASE: ${MONGO_REAL_DATABASE}
       MONGODB_DEMO_DATABASE: ${MONGO_DEMO_DATABASE}
@@ -272,4 +276,5 @@ services:
     security_opt:
     - no-new-privileges:true
 volumes:
+  nginx-state: {}
   runtime-status-credentials: {}

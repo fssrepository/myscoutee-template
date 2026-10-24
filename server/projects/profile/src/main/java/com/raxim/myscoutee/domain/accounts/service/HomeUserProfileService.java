@@ -295,24 +295,7 @@ public class HomeUserProfileService implements ProfileReadState {
     }
 
     private String resolveProfileStatus(String status, String fallbackProfileStatus) {
-        String normalizedProfileStatus = safeText(fallbackProfileStatus);
-        if ("blocked".equals(normalizedProfileStatus)) {
-            return "blocked";
-        }
-        if (PROFILE_STATUS_ONBOARDING.equals(normalizedProfileStatus)) {
-            return PROFILE_STATUS_ONBOARDING;
-        }
-        return switch (safeText(status)) {
-            case "D" -> "deleted";
-            case "B" -> "blocked";
-            case "I" -> "inactive";
-            case "F" -> "friends only";
-            case "H" -> "host only";
-            case "A" -> "public";
-            default -> {
-                yield StringUtils.hasText(normalizedProfileStatus) ? normalizedProfileStatus : "public";
-            }
-        };
+        return ProfileStatusValues.resolveProfileStatus(status, fallbackProfileStatus);
     }
 
     private String resolveStatusCode(String profileStatus, String fallbackStatus) {
@@ -351,7 +334,7 @@ public class HomeUserProfileService implements ProfileReadState {
             DataIntegrityViolationException exception) {
         String normalizedEmail = normalizeUserEmail(
                 attemptedUser == null ? null : attemptedUser.getEmail());
-        if (!StringUtils.hasText(normalizedEmail)) {
+        if (attemptedUser == null || !StringUtils.hasText(normalizedEmail)) {
             return;
         }
         Users currentOwner = usersRepository.findFirstByEmail(normalizedEmail).orElse(null);

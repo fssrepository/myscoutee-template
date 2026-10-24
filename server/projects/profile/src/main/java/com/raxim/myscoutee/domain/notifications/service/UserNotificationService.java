@@ -510,23 +510,14 @@ public class UserNotificationService implements com.raxim.myscoutee.domain.notif
     }
 
     private String firstNonBlank(String... values) {
-        if (values == null) {
-            return null;
-        }
-        for (String value : values) {
-            if (StringUtils.hasText(value)) {
-                return value.trim();
-            }
-        }
-        return null;
+        return com.raxim.myscoutee.domain.notifications.mapper.UserNotificationMapper.firstNonBlank(values);
     }
 
     private String safeText(String value) {
-        return value == null ? "" : value.trim();
+        return com.raxim.myscoutee.domain.notifications.mapper.UserNotificationMapper.safeText(value);
     }
 
     private String nullableText(String value) {
-        String normalized = safeText(value);
-        return StringUtils.hasText(normalized) ? normalized : null;
+        return com.raxim.myscoutee.domain.notifications.mapper.UserNotificationMapper.nullableText(value);
     }
 }
