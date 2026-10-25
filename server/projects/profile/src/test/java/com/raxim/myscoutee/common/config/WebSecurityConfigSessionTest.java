@@ -25,8 +25,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.support.GenericWebApplicationContext;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
-import com.raxim.myscoutee.domain.platform.security.bootstrap.OperatorBootstrapAuthenticationService;
-import com.raxim.myscoutee.domain.accounts.security.firebase.FirebaseAuthenticationProvider;
 import com.raxim.myscoutee.domain.accounts.security.firebase.FirebaseService;
 import com.raxim.myscoutee.domain.accounts.security.firebase.FirebaseTokenVerifier;
 import com.raxim.myscoutee.domain.accounts.security.firebase.dto.FirebasePrincipal;
@@ -34,86 +32,46 @@ import com.raxim.myscoutee.common.config.mongo.DemoSessionRequestSupport;
 import com.raxim.myscoutee.domain.platform.config.ConfigProperties;
 
 @org.junit.jupiter.api.Tag("standard")
-class WebSecurityConfigBootstrapTest {
-    @Test
-    void browserCookiesCannotAuthenticateProtectedMutations() throws Exception {
+class WebSecurityConfigSessionTest {
+    @Test void loginIsPublicButOrdinaryRequestsRequireAnActiveSession() throws Exception {
         try (TestContext context = context(false, "")) {
-            for (String method : List.of("POST", "PUT", "PATCH", "DELETE")) {
-                context.mockMvc().perform(org.springframework.test.web.servlet.request.MockMvcRequestBuilders
-                                .request(org.springframework.http.HttpMethod.valueOf(method), "/admin/probe")
-                                .cookie(new jakarta.servlet.http.Cookie("JSESSIONID", "untrusted-session"),
-                                        new jakarta.servlet.http.Cookie("myscoutee_media_session", "untrusted-media"))
-                                .header("Origin", "https://foreign.example.invalid"))
-                        .andExpect(status().isForbidden());
+            context.mockMvc().perform(post("/auth/session/login").header("Authorization", "Bearer stale"))
+                    .andExpect(status().isOk());
+            for (String path : List.of("/auth/me", "/admin/probe", "/operator/probe")) {
+                context.mockMvc().perform(get(path).param("userId", "victim"))
+                        .andExpect(status().isUnauthorized());
+                context.mockMvc().perform(post(path).cookie(new jakarta.servlet.http.Cookie("JSESSIONID", "untrusted")))
+                        .andExpect(status().isUnauthorized());
             }
         }
     }
 
-    @Test
-    void bootstrapSecuresRealRequestsWhenFirebaseIsDisabled()
-            throws Exception {
-        try (TestContext context = context(true)) {
-            MockMvc mockMvc = context.mockMvc();
-
-            mockMvc.perform(post("/auth/operator-bootstrap"))
-                    .andExpect(status().isOk())
-                    .andExpect(content().string("bootstrap"));
-            mockMvc.perform(post("/auth/operator-bootstrap")
-                            .header(
-                                    "Authorization",
-                                    "OperatorBootstrap expired-token"))
-                    .andExpect(status().isOk())
-                    .andExpect(content().string("bootstrap"));
-            mockMvc.perform(get("/auth/me"))
-                    .andExpect(status().isForbidden());
-            mockMvc.perform(get("/admin/probe"))
-                    .andExpect(status().isForbidden());
-            mockMvc.perform(get("/auth/me")
-                            .header(
-                                    DemoSessionRequestSupport
-                                            .SESSION_KIND_HEADER,
-                                    "demo"))
-                    .andExpect(status().isOk())
-                    .andExpect(content().string("real-or-demo"));
-            mockMvc.perform(get("/operator/probe")
-                            .header(
-                                    "Authorization",
-                                    "OperatorBootstrap signed-token")
-                            .header(
-                                    "X-Forwarded-Proto",
-                                    "https"))
-                    .andExpect(status().isOk())
-                    .andExpect(content().string("operator"));
-        }
-    }
-
-    @Test
-    void localFirebaseDisabledModeRemainsOpenWithoutBootstrap()
-            throws Exception {
-        try (TestContext context = context(false)) {
-            context.mockMvc().perform(get("/auth/me"))
-                    .andExpect(status().isOk())
-                    .andExpect(content().string("real-or-demo"));
-        }
-    }
-
-    private TestContext context(boolean bootstrapConfigured) {
-        return context(bootstrapConfigured, "member1@myscoutee.local");
-    }
-
-    @Test
-    void productionWithoutFirebaseRejectsCallerSelectedIdentity() throws Exception {
-        for (boolean bootstrapConfigured : List.of(false, true)) {
-            try (TestContext context = context(bootstrapConfigured, "")) {
-                FirebaseService firebase = context.applicationContext().getBean(FirebaseService.class);
-                when(firebase.loadUserById("victim")).thenReturn(new FirebasePrincipal(
-                        "victim", "victim@example.invalid", List.of("U", "A"), null));
-                context.mockMvc().perform(get("/auth/me").param("userId", "victim"))
-                        .andExpect(status().isForbidden());
-                context.mockMvc().perform(get("/admin/probe").param("userId", "victim"))
-                        .andExpect(status().isForbidden());
-                org.mockito.Mockito.verify(firebase, org.mockito.Mockito.never()).loadUserById("victim");
+    @Test void oneCredentialFormatServesEveryRoleAndServerAuthoritiesControlAccess() throws Exception {
+        for (String role : List.of("U", "A", "O")) {
+            try (TestContext context = context(false, "")) {
+                var app = context.applicationContext();
+                var accounts = app.getBean(FirebaseService.class);
+                var sessions = app.getBean(com.raxim.myscoutee.domain.accounts.service.UserLoginSessionService.class);
+                var user = new com.raxim.myscoutee.domain.accounts.document.Users(); user.setUserId("account");
+                when(accounts.loadUserById("account")).thenReturn(new FirebasePrincipal("account", "account@example.invalid", List.of("U", role), user));
+                when(sessions.authenticateAccessToken("app-token")).thenReturn(new com.raxim.myscoutee.domain.accounts.security.session.AccountSessionCredential("account", "session", true));
+                context.mockMvc().perform(get("/auth/me").header("Authorization", "Bearer app-token")).andExpect(status().isOk());
+                context.mockMvc().perform(get("/admin/probe").header("Authorization", "Bearer app-token"))
+                        .andExpect(role.equals("A") ? status().isOk() : status().isForbidden());
+                context.mockMvc().perform(get("/operator/probe").header("Authorization", "Bearer app-token"))
+                        .andExpect(role.equals("O") ? status().isOk() : status().isForbidden());
+                context.mockMvc().perform(get("/auth/me").header("Authorization", "Bearer revoked"))
+                        .andExpect(status().isUnauthorized());
             }
+        }
+    }
+
+    @Test void explicitDevelopmentMemberFallbackStillWorks() throws Exception {
+        try (TestContext context = context(false, "member@example.invalid")) {
+            var account = new FirebasePrincipal("member", "member@example.invalid", "U");
+            when(context.applicationContext().getBean(FirebaseService.class).loadUserByUsername(
+                    org.mockito.ArgumentMatchers.anyString(), org.mockito.ArgumentMatchers.any(), org.mockito.ArgumentMatchers.anyString())).thenReturn(account);
+            context.mockMvc().perform(get("/auth/me")).andExpect(status().isOk());
         }
     }
 
@@ -125,18 +83,6 @@ class WebSecurityConfigBootstrapTest {
         ConfigProperties properties = new ConfigProperties();
         properties.setFirebaseEnabled(false);
         properties.setMemberUser(memberUser);
-        OperatorBootstrapAuthenticationService bootstrapService =
-                mock(OperatorBootstrapAuthenticationService.class);
-        when(bootstrapService.isConfigured())
-                .thenReturn(bootstrapConfigured);
-        UserDetails principal = new FirebasePrincipal(
-                "operator-id",
-                "operator@deployment.invalid",
-                List.of("U", "O"),
-                null);
-        when(bootstrapService.authenticateToken("signed-token"))
-                .thenReturn(principal);
-
         applicationContext.registerBean(
                 ConfigProperties.class,
                 () -> properties);
@@ -144,20 +90,11 @@ class WebSecurityConfigBootstrapTest {
                 FirebaseService.class,
                 () -> mock(FirebaseService.class));
         applicationContext.registerBean(
-                FirebaseAuthenticationProvider.class,
-                FirebaseAuthenticationProvider::new);
-        applicationContext.registerBean(
-                FirebaseTokenVerifier.class,
-                () -> mock(FirebaseTokenVerifier.class));
-        applicationContext.registerBean(
                 com.raxim.myscoutee.domain.accounts.service.UserLoginSessionService.class,
                 () -> mock(com.raxim.myscoutee.domain.accounts.service.UserLoginSessionService.class));
         applicationContext.registerBean(
                 com.raxim.myscoutee.common.security.media.MediaSessionAccessService.class,
                 () -> mock(com.raxim.myscoutee.common.security.media.MediaSessionAccessService.class));
-        applicationContext.registerBean(
-                OperatorBootstrapAuthenticationService.class,
-                () -> bootstrapService);
         applicationContext.registerBean(com.raxim.myscoutee.domain.accounts.service.ProfileAuthenticationService.class,
                 com.raxim.myscoutee.domain.accounts.service.ProfileAuthenticationService::new);
         applicationContext.registerBean(com.raxim.myscoutee.domain.integrations.config.IntegrationTokenAuthenticationFilter.class,
@@ -201,7 +138,7 @@ class WebSecurityConfigBootstrapTest {
 
     @RestController
     static class ProbeController {
-        @PostMapping("/auth/operator-bootstrap")
+        @PostMapping("/auth/session/login")
         String bootstrap() {
             return "bootstrap";
         }

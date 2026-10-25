@@ -170,7 +170,22 @@ npm install --prefix tests/e2e --save-dev --save-exact @fssrepository/myscoutee-
 Shared regression and packed-install checks run in `myscoutee-e2e` with `npm test`
 and `npm run test:package`. Existing application runner commands are unchanged.
 
-The current extraction uses the locally staged shared E2E npm artifact
-`myscoutee-e2e/build/repository/fssrepository-myscoutee-e2e-1.4.7-dev.1.tgz`.
-Build it with `npm pack --pack-destination build/repository` in that sibling
-checkout, then use the application lockfile. External publication is pending.
+The application consumes the released GitHub Packages E2E artifact at exact
+version `1.5.0`; `package-lock.json` pins its registry URL and integrity.
+
+For the already-running template KVM, the backend runner's existing mode selects
+the production security contract, including anonymous rejection before MVC:
+
+```sh
+E2E_SERVER_BASE_URL=http://127.0.0.1:18080 E2E_SERVER_MODE=kvm \
+E2E_DATABASE=template_demo E2E_MONGO_TRANSPORT=kvm \
+  node tests/e2e/functional/backend/run.mjs
+```
+
+MSC-128 verification on 24 October 2026: 19/19 backend cases passed on monolith
+and KVM; 14/14 native session/public-document checks passed on each, and the
+admin/retained-chat probe passed with fixture cleanup. KVM also passed 10/10
+public checks. All 12 KVM pods were ready. The production startup files match
+the served bytes in both environments; the common chunk transfers as 291,624
+gzip bytes after restoring the canonical nginx compression settings on KVM.
+Browser, VMware/full-DEB, physical-phone and Lighthouse checks remain separate.

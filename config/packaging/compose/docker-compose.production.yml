@@ -72,11 +72,6 @@ services:
     - /run/myscoutee-template-update-status:/run/myscoutee-update-status:ro
     networks:
     - myscoutee
-    depends_on:
-    - mcp
-    - mongodb
-    - redis
-    - profilemanagement
     healthcheck:
       test:
       - CMD-SHELL

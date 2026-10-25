@@ -1,15 +1,16 @@
 import assert from 'node:assert/strict';
 import {stageAdminFixture} from '../../ui/admin/fixture.mjs';
 import {nativeDemoSessions} from '@fssrepository/myscoutee-e2e/shared/native-demo-sessions.mjs';
+import {createHttpClient} from '@fssrepository/myscoutee-e2e/shared/http.mjs';
 const baseUrl=process.env.E2E_SERVER_BASE_URL??'http://localhost';
 const fixture=await stageAdminFixture(baseUrl),sessions=nativeDemoSessions(baseUrl),timings=[];
+const http=createHttpClient({baseUrl,headersForRequest:sessions.headersForRequest});
 const [reporter,target]=fixture.ids,admin=fixture.adminId;
 async function request(actor,path,method='GET',json,status=200){
- const url=baseUrl+'/api'+path,headers={'X-App-Session-Kind':'demo','X-Demo-User-Id':actor,'Content-Type':'application/json'};
- Object.assign(headers,await sessions.headersForRequest(method,url,{headers}));
- const start=performance.now(),response=await fetch(url,{method,headers,...(json===undefined?{}:{body:JSON.stringify(json)})});
- timings.push({method,path:path.split('?')[0].replaceAll(fixture.chatId,'<chat>').replaceAll(target,'<target>').replaceAll(reporter,'<reporter>'),ms:Math.round(performance.now()-start),status:response.status});
- assert.equal(response.status,status,path);const text=await response.text();return text?JSON.parse(text):null;
+ const headers={'X-App-Session-Kind':'demo','X-Demo-User-Id':actor};
+ const response=await http.request(method,'/api'+path,{headers,json,expectedStatus:status});
+ timings.push({method,path:path.split('?')[0].replaceAll(fixture.chatId,'<chat>').replaceAll(target,'<target>').replaceAll(reporter,'<reporter>'),ms:Math.round(response.durationMs),status:response.status});
+ return response.data;
 }
 try{
  const settings=await request(admin,'/admin/client-api/settings');

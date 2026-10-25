@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
   "build": {
-    "nginxNativeImage": "ghcr.io/fssrepository/myscoutee-nginx:1.5.0@sha256:7ec3ba085e30314d5536401ac22e14064d30a5461bfc1a9ccbe0e6340b6c6c24"
+    "nginxNativeImage": "ghcr.io/fssrepository/myscoutee-nginx:1.5.0@sha256:355b6b8b49e841a4954e795831c8a58b84bdf063a3bec6641fea50e6dbd28900"
   }
 }

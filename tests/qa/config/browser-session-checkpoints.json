@@ -27,7 +27,7 @@
       "session": "myscoutee.{scope}.session.v1",
       "activeUser": "myscoutee.{scope}.demo.active-user.v1",
       "consent": "myscoutee.{scope}.entry.gdpr-consent.v1",
-      "operatorPrefix": "myscoutee.{scope}.operator-bootstrap"
+      "accountSession": "myscoutee.{scope}.session.v1"
     },
     "routes": {
       "login": "/api/auth/session/login",
@@ -35,8 +35,7 @@
       "identity": "/api/auth/me?userId=",
       "workspaces": "/api/groups/workspaces?userId=",
       "realtime": "/api/auth/me/realtime/long-poll",
-      "operatorLogin": "/api/auth/operator-bootstrap",
-      "operatorPage": "/operator"
+            "operatorPage": "/operator"
     },
     "headers": {
       "sessionId": "X-App-Session-Id",

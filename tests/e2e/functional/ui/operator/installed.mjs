@@ -32,7 +32,7 @@ try {
   await page.fill('.firebase-auth-email-form input[name="password"]', password);
   await page.clickVisible('.firebase-auth-email-form button[type="submit"]');
   await page.waitForUrlPath('/operator', 45000);
-  assert(page.network.some(r => new URL(r.url).pathname === '/api/auth/operator-bootstrap' && r.status === 200));
+  assert(page.network.some(r => new URL(r.url).pathname === '/api/auth/session/login' && r.status === 200));
   evidence.bootstrapLogin = true;
   await page.clickVisible('.operator-actions [data-guide-item="configuration"]');
   const popup = 'app-operator-configuration-popup';

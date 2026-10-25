@@ -1,5 +1,7 @@
 package com.raxim.myscoutee.domain.accounts.security.firebase;
 
+import com.raxim.myscoutee.domain.accounts.security.session.AccountSessionFilter;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
@@ -25,7 +27,7 @@ import com.raxim.myscoutee.domain.platform.config.ConfigProperties;
 import jakarta.servlet.FilterChain;
 
 @Tag("standard")
-class FirebaseFilterPublicDocumentsTest {
+class AccountSessionFilterPublicDocumentsTest {
     @AfterEach void clearAuthentication() { SecurityContextHolder.clearContext(); }
 
     @ParameterizedTest
@@ -37,7 +39,7 @@ class FirebaseFilterPublicDocumentsTest {
         when(media.authenticate(any())).thenReturn(authority);
         var users = mock(FirebaseService.class);
         var sessions = mock(UserLoginSessionService.class);
-        var filter = new FirebaseFilter(users, new ConfigProperties(), mock(FirebaseTokenVerifier.class), sessions, media);
+        var filter = new AccountSessionFilter(users, new ConfigProperties(), sessions, media);
         var request = new MockHttpServletRequest(method, "/api/media/private");
         request.setCookies(new jakarta.servlet.http.Cookie("myscoutee_media_session", "valid-for-read-only"));
         var response = new MockHttpServletResponse();
@@ -146,8 +148,8 @@ class FirebaseFilterPublicDocumentsTest {
                 new FirebaseAuthenticationToken(principal, null, principal.getAuthorities()));
     }
 
-    private FirebaseFilter filter(FirebaseService users, UserLoginSessionService sessions, ConfigProperties properties) {
-        return new FirebaseFilter(users, properties, mock(FirebaseTokenVerifier.class), sessions,
+    private AccountSessionFilter filter(FirebaseService users, UserLoginSessionService sessions, ConfigProperties properties) {
+        return new AccountSessionFilter(users, properties, sessions,
                 mock(MediaSessionAccessService.class));
     }
 }

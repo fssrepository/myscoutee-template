@@ -40,12 +40,15 @@ import jakarta.validation.Valid;
 public class AuthController {
     private final HomeUserProfileService homeUserProfileService;
     private final UserLoginSessionService userLoginSessionService;
+    private final com.raxim.myscoutee.domain.accounts.service.AccountLoginService accountLoginService;
 
     public AuthController(
             HomeUserProfileService homeUserProfileService,
-            UserLoginSessionService userLoginSessionService) {
+            UserLoginSessionService userLoginSessionService,
+            com.raxim.myscoutee.domain.accounts.service.AccountLoginService accountLoginService) {
         this.homeUserProfileService = homeUserProfileService;
         this.userLoginSessionService = userLoginSessionService;
+        this.accountLoginService = accountLoginService;
     }
 
     @GetMapping("/demo-users")
@@ -138,12 +141,16 @@ public class AuthController {
             @RequestHeader(UserLoginSessionService.SESSION_ID_HEADER) String sessionId,
             @Valid @RequestBody UserSessionLoginRequestDto request,
             HttpServletRequest servletRequest) {
+        accountLoginService.authenticate(request, servletRequest);
         UserSessionLoginResponseDto response = userLoginSessionService.registerLogin(
                 sessionId,
                 request,
                 servletRequest);
+        response = userLoginSessionService.completeLogin(response, sessionId);
         return ResponseEntity
                 .status(response.accepted() ? HttpStatus.OK : HttpStatus.CONFLICT)
+                .cacheControl(org.springframework.http.CacheControl.noStore())
+                .header("Pragma", "no-cache")
                 .body(response);
     }
 

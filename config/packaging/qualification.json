@@ -47,7 +47,7 @@
         403
       ],
       "headers": {
-        "Authorization": "OperatorBootstrap qualification-invalid"
+        "Authorization": "Bearer qualification-invalid"
       }
     },
     {

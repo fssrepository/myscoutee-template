@@ -1,4 +1,7 @@
 import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
+
+const product = JSON.parse(await readFile(new URL('../../../../../config/mcp/product.json', import.meta.url), 'utf8'));
 
 // Actual MCP HTTP boundary. Metadata/headers follow the pinned native Go SDK.
 export async function mcpRequest(ctx, token, method, params = {}, expectedStatus = 200) {
@@ -29,7 +32,7 @@ function result(response) {
 export async function assertMcpTransport(ctx, token, role = 'member') {
   const publicDiscovery = result(await mcpRequest(ctx, null, 'server/discover'));
   assert.equal(publicDiscovery._meta['io.modelcontextprotocol/serverInfo'].name, 'myscoutee-template');
-  assert.equal(publicDiscovery._meta['io.modelcontextprotocol/serverInfo'].version, '1.0.0');
+  assert.equal(publicDiscovery._meta['io.modelcontextprotocol/serverInfo'].version, product.version);
   assert(!('events' in publicDiscovery.capabilities));
   assert.deepEqual(result(await mcpRequest(ctx, null, 'tools/list')).tools.map(x => x.name).sort(),
     ['list_help_topics', 'read_help_topic', 'search_help']);

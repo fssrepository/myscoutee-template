@@ -23,7 +23,6 @@
 "/api/auth/me/profile" 1;
 "/api/auth/me/profile-ext" 1;
 "/api/auth/me/realtime/long-poll" 1;
-"/api/auth/operator-bootstrap" 1;
 "/api/auth/session/login" 1;
 "/api/deployment/configuration" 1;
 "/api/deployment/configuration/firebase-config" 1;

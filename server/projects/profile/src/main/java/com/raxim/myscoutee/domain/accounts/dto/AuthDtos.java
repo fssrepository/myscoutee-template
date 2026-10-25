@@ -12,27 +12,21 @@ import jakarta.validation.constraints.Size;
 public final class AuthDtos {
     private AuthDtos() {}
 
-    public record OperatorBootstrapLoginRequestDto(
-            @NotBlank @Email @Size(max = 254) String email,
-            @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-            @NotBlank @Size(max = 512) String password) {
-    }
-
-    public record OperatorBootstrapLoginResponseDto(
-            String tokenType,
-            String accessToken,
-            String email,
-            String expiresAt) {
-    }
-
     public record UserLogoutRequestDto(
             String userId) {
     }
 
     public record UserSessionLoginRequestDto(
             @NotBlank @Size(max = 128) String attemptId,
-            @Size(max = 32) String provider) {
+            @Size(max = 32) String provider,
+            @Email @Size(max = 254) String email,
+            @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+            @Size(max = 512) String password) {
     }
+
+    public record AppSessionProfileDto(String id, String name, String email, String initials, String imageUrl) {}
+
+    public record AppSessionDto(String sessionId, String accessToken, String expiresAt, AppSessionProfileDto profile) {}
 
     public record UserSessionLoginResponseDto(
             boolean accepted,
@@ -40,7 +34,8 @@ public final class AuthDtos {
             String outcome,
             Integer activeSessionCount,
             Integer maxActiveSessions,
-            String message) {
+            String message,
+            AppSessionDto session) {
     }
 
     public record UserDeleteRequestDto(

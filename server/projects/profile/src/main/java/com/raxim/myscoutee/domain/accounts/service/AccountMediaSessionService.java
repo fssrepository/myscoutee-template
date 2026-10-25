@@ -15,8 +15,13 @@ public class AccountMediaSessionService implements AccountMediaSessions {
     public AccountMediaSessionService(MongoTemplate mongo) { this.mongo = mongo; }
     @Override
     public Optional<String> authenticateMediaToken(String userId, String tokenHash) {
+        Criteria active = Criteria.where("mediaTokenHash").is(tokenHash);
+        if (com.raxim.myscoutee.common.config.mongo.MongoSessionModeContext.currentMode()
+                != com.raxim.myscoutee.common.config.mongo.MongoSessionMode.DEMO) {
+            active.and("accessTokenExpiresAt").gt(java.time.Instant.now());
+        }
         if (!mongo.exists(Query.query(Criteria.where("_id").is(userId)
-                .and("activeSessions").elemMatch(Criteria.where("mediaTokenHash").is(tokenHash))), UserSessionState.class)) return Optional.empty();
+                .and("activeSessions").elemMatch(active)), UserSessionState.class)) return Optional.empty();
         return Optional.of(userId);
     }
     @Override

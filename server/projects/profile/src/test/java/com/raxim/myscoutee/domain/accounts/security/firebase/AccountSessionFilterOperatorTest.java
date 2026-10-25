@@ -1,5 +1,7 @@
 package com.raxim.myscoutee.domain.accounts.security.firebase;
 
+import com.raxim.myscoutee.domain.accounts.security.session.AccountSessionFilter;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.never;
@@ -23,7 +25,7 @@ import com.raxim.myscoutee.domain.accounts.service.UserLoginSessionService;
 import jakarta.servlet.FilterChain;
 
 @org.junit.jupiter.api.Tag("standard")
-class FirebaseFilterOperatorTest {
+class AccountSessionFilterOperatorTest {
     @Test void verifiedIntegrationClientDoesNotNeedItsOwnersBrowserSession() throws Exception {
         var sessions = mock(UserLoginSessionService.class);
         when(sessions.isCurrentUserEnrolled()).thenReturn(true);
@@ -32,7 +34,7 @@ class FirebaseFilterOperatorTest {
                 principal, null, principal.getAuthorities());
         authentication.setDetails(org.mockito.Mockito.mock(com.raxim.myscoutee.domain.integrations.api.IntegrationClientIdentity.class));
         SecurityContextHolder.getContext().setAuthentication(authentication);
-        var filter = new FirebaseFilter(mock(FirebaseService.class), new ConfigProperties(), mock(FirebaseTokenVerifier.class),
+        var filter = new AccountSessionFilter(mock(FirebaseService.class), new ConfigProperties(),
                 sessions, mock(com.raxim.myscoutee.common.security.media.MediaSessionAccessService.class));
         var request = new MockHttpServletRequest("POST", "/integrations/v1/connect");
         var response = new MockHttpServletResponse();var chain = mock(FilterChain.class);
@@ -48,7 +50,7 @@ class FirebaseFilterOperatorTest {
             when(sessions.isCurrentUserEnrolled()).thenReturn(true);
             var principal = new FirebasePrincipal("owner", null, role);
             SecurityContextHolder.getContext().setAuthentication(new FirebaseAuthenticationToken(principal, null, principal.getAuthorities()));
-            var filter = new FirebaseFilter(mock(FirebaseService.class), new ConfigProperties(), mock(FirebaseTokenVerifier.class),
+            var filter = new AccountSessionFilter(mock(FirebaseService.class), new ConfigProperties(),
                     sessions, mock(com.raxim.myscoutee.common.security.media.MediaSessionAccessService.class));
             var response = new MockHttpServletResponse();var chain = mock(FilterChain.class);
             filter.doFilter(new MockHttpServletRequest("POST", "/integrations/v1/connect"), response, chain);
@@ -68,10 +70,9 @@ class FirebaseFilterOperatorTest {
         ConfigProperties properties = new ConfigProperties();
         properties.setFirebaseEnabled(true);
         UserLoginSessionService sessionService = mock(UserLoginSessionService.class);
-        FirebaseFilter filter = new FirebaseFilter(
+        AccountSessionFilter filter = new AccountSessionFilter(
                 firebaseService,
                 properties,
-                mock(FirebaseTokenVerifier.class),
                 sessionService,
                 mock(com.raxim.myscoutee.common.security.media.MediaSessionAccessService.class));
         MockHttpServletRequest request = demoOperatorRequest();
@@ -94,10 +95,9 @@ class FirebaseFilterOperatorTest {
         ConfigProperties properties = new ConfigProperties();
         properties.setFirebaseEnabled(true);
         UserLoginSessionService sessionService = mock(UserLoginSessionService.class);
-        FirebaseFilter filter = new FirebaseFilter(
+        AccountSessionFilter filter = new AccountSessionFilter(
                 firebaseService,
                 properties,
-                mock(FirebaseTokenVerifier.class),
                 sessionService,
                 mock(com.raxim.myscoutee.common.security.media.MediaSessionAccessService.class));
         MockHttpServletRequest request =
@@ -128,10 +128,9 @@ class FirebaseFilterOperatorTest {
                     "member", "member@example.invalid", List.of("U"), null);
             SecurityContextHolder.getContext().setAuthentication(
                     new FirebaseAuthenticationToken(principal, null, principal.getAuthorities()));
-            FirebaseFilter filter = new FirebaseFilter(
+            AccountSessionFilter filter = new AccountSessionFilter(
                     mock(FirebaseService.class),
                     new ConfigProperties(),
-                    mock(FirebaseTokenVerifier.class),
                     sessionService,
                     mock(com.raxim.myscoutee.common.security.media.MediaSessionAccessService.class));
             MockHttpServletRequest request = new MockHttpServletRequest("GET", path);
@@ -164,10 +163,9 @@ class FirebaseFilterOperatorTest {
         properties.setMemberUser("member1@myscoutee.local");
         UserLoginSessionService sessionService = mock(UserLoginSessionService.class);
         when(sessionService.isCurrentUserEnrolled()).thenReturn(true);
-        FirebaseFilter filter = new FirebaseFilter(
+        AccountSessionFilter filter = new AccountSessionFilter(
                 firebaseService,
                 properties,
-                mock(FirebaseTokenVerifier.class),
                 sessionService,
                 mock(com.raxim.myscoutee.common.security.media.MediaSessionAccessService.class));
         MockHttpServletRequest request =
@@ -195,10 +193,9 @@ class FirebaseFilterOperatorTest {
         properties.setMemberUser("member1@myscoutee.local");
         UserLoginSessionService sessionService = mock(UserLoginSessionService.class);
         when(sessionService.isCurrentUserEnrolled()).thenReturn(true);
-        FirebaseFilter filter = new FirebaseFilter(
+        AccountSessionFilter filter = new AccountSessionFilter(
                 firebaseService,
                 properties,
-                mock(FirebaseTokenVerifier.class),
                 sessionService,
                 mock(com.raxim.myscoutee.common.security.media.MediaSessionAccessService.class));
         MockHttpServletRequest request =
@@ -232,11 +229,10 @@ class FirebaseFilterOperatorTest {
                 "operator@myscoutee.local",
                 List.of("U", "O"),
                 user);
-        when(firebaseService.loadDemoOperatorById("operator-demo-dev")).thenReturn(principal);
-        FirebaseFilter filter = new FirebaseFilter(
+        when(firebaseService.loadUserById("operator-demo-dev")).thenReturn(principal);
+        AccountSessionFilter filter = new AccountSessionFilter(
                 firebaseService,
                 properties,
-                mock(FirebaseTokenVerifier.class),
                 mock(UserLoginSessionService.class),
                 mock(com.raxim.myscoutee.common.security.media.MediaSessionAccessService.class));
         MockHttpServletRequest request = demoOperatorRequest();
@@ -268,10 +264,9 @@ class FirebaseFilterOperatorTest {
                         principal.getAuthorities());
         SecurityContextHolder.getContext().setAuthentication(
                 bootstrapAuthentication);
-        FirebaseFilter filter = new FirebaseFilter(
+        AccountSessionFilter filter = new AccountSessionFilter(
                 firebaseService,
                 properties,
-                mock(FirebaseTokenVerifier.class),
                 mock(UserLoginSessionService.class),
                 mock(com.raxim.myscoutee.common.security.media.MediaSessionAccessService.class));
         MockHttpServletRequest request = demoOperatorRequest();
@@ -313,10 +308,9 @@ class FirebaseFilterOperatorTest {
                 List.of("U"),
                 user);
         when(firebaseService.loadUserById("nova-social")).thenReturn(principal);
-        FirebaseFilter filter = new FirebaseFilter(
+        AccountSessionFilter filter = new AccountSessionFilter(
                 firebaseService,
                 properties,
-                mock(FirebaseTokenVerifier.class),
                 mock(UserLoginSessionService.class),
                 mock(com.raxim.myscoutee.common.security.media.MediaSessionAccessService.class));
         MockHttpServletRequest request =
@@ -343,22 +337,21 @@ class FirebaseFilterOperatorTest {
     }
 
     @Test
-    void bootstrapLoginIgnoresStaleFirebaseBearerCredential()
+    void sessionLoginDefersCredentialVerificationToLoginOwner()
             throws Exception {
         FirebaseService firebaseService = mock(FirebaseService.class);
         FirebaseTokenVerifier verifier = mock(FirebaseTokenVerifier.class);
         ConfigProperties properties = new ConfigProperties();
         properties.setFirebaseEnabled(true);
-        FirebaseFilter filter = new FirebaseFilter(
+        AccountSessionFilter filter = new AccountSessionFilter(
                 firebaseService,
                 properties,
-                verifier,
                 mock(UserLoginSessionService.class),
                 mock(com.raxim.myscoutee.common.security.media.MediaSessionAccessService.class));
         MockHttpServletRequest request =
                 new MockHttpServletRequest(
                         "POST",
-                        "/api/auth/operator-bootstrap");
+                        "/api/auth/session/login");
         request.addHeader("Authorization", "Bearer expired-firebase-token");
         MockHttpServletResponse response = new MockHttpServletResponse();
         FilterChain chain = mock(FilterChain.class);

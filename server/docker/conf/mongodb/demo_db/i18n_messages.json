@@ -312,16 +312,16 @@
     "value": "The installer operator email or password is incorrect."
   },
   {
-    "_id": "i18n-message-en-operator-bootstrap-auth-throttled",
-    "key": "operator.bootstrap.auth.throttled",
+    "_id": "i18n-message-en-auth-session-login-throttled",
+    "key": "auth.session.login.throttled",
     "lang": "en",
-    "value": "Too many operator sign-in attempts. Try again later."
+    "value": "Too many sign-in attempts. Try again later."
   },
   {
-    "_id": "i18n-message-en-operator-bootstrap-auth-failed",
-    "key": "operator.bootstrap.auth.failed",
+    "_id": "i18n-message-en-auth-session-login-failed",
+    "key": "auth.session.login.failed",
     "lang": "en",
-    "value": "The dedicated operator sign-in is temporarily unavailable."
+    "value": "Sign-in failed. Check your details and try again."
   },
   {
     "_id": "i18n-message-en-operator-bootstrap-auth-response-invalid",
@@ -5484,16 +5484,16 @@
     "value": "A telepítői operátori e-mail-cím vagy jelszó helytelen."
   },
   {
-    "_id": "i18n-message-hu-operator-bootstrap-auth-throttled",
-    "key": "operator.bootstrap.auth.throttled",
+    "_id": "i18n-message-hu-auth-session-login-throttled",
+    "key": "auth.session.login.throttled",
     "lang": "hu",
-    "value": "Túl sok operátori bejelentkezési kísérlet történt. Próbáld újra később."
+    "value": "Túl sok bejelentkezési kísérlet történt. Próbáld újra később."
   },
   {
-    "_id": "i18n-message-hu-operator-bootstrap-auth-failed",
-    "key": "operator.bootstrap.auth.failed",
+    "_id": "i18n-message-hu-auth-session-login-failed",
+    "key": "auth.session.login.failed",
     "lang": "hu",
-    "value": "A dedikált operátori bejelentkezés átmenetileg nem érhető el."
+    "value": "A bejelentkezés sikertelen. Ellenőrizd az adataidat, majd próbáld újra."
   },
   {
     "_id": "i18n-message-hu-operator-bootstrap-auth-response-invalid",
@@ -21790,5 +21790,41 @@
     "key": "operator.workspace.title",
     "lang": "hu",
     "value": "Operátori munkaterület"
+  },
+  {
+    "_id": "i18n-message-en-app-setup-open-browser",
+    "key": "app.setup.open.browser",
+    "lang": "en",
+    "value": "Open in external browser"
+  },
+  {
+    "_id": "i18n-message-en-app-setup-open-browser-help",
+    "key": "app.setup.open.browser.help",
+    "lang": "en",
+    "value": "Your location is needed for nearby people and events. Facebook/Instagram may block access; open this page in an external browser."
+  },
+  {
+    "_id": "i18n-message-hu-app-setup-open-browser",
+    "key": "app.setup.open.browser",
+    "lang": "hu",
+    "value": "Megnyitás külső böngészőben"
+  },
+  {
+    "_id": "i18n-message-hu-app-setup-open-browser-help",
+    "key": "app.setup.open.browser.help",
+    "lang": "hu",
+    "value": "A helyadat a közeli emberekhez és eseményekhez kell. A Facebook/Instagram böngészője blokkolhatja; nyisd meg külső böngészőben."
+  },
+  {
+    "_id": "i18n-message-en-explanation-loading-aria",
+    "key": "explanation.loading.aria",
+    "lang": "en",
+    "value": "Loading explanation"
+  },
+  {
+    "_id": "i18n-message-hu-explanation-loading-aria",
+    "key": "explanation.loading.aria",
+    "lang": "hu",
+    "value": "Magyarázat betöltése"
   }
 ]

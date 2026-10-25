@@ -37,10 +37,12 @@ import com.raxim.myscoutee.domain.notifications.api.NotificationDelivery.Notific
 import jakarta.servlet.http.HttpServletRequest;
 
 @Service
-public class UserLoginSessionService implements com.raxim.myscoutee.domain.accounts.api.BootstrapLoginAudit {
+public class UserLoginSessionService {
     public static final String SESSION_ID_HEADER = com.raxim.myscoutee.domain.accounts.api.AccountMediaSessions.SESSION_ID_HEADER;
 
     private static final int MAX_OPAQUE_ID_LENGTH = 128;
+    private static final java.security.SecureRandom RANDOM = new java.security.SecureRandom();
+    private static final java.time.Duration SESSION_TTL = java.time.Duration.ofHours(8);
     private static final String SECURITY_NOTIFICATION_TITLE_KEY =
             "notification.security.login.title";
     private static final String SECURITY_NEW_LOGIN_MESSAGE_KEY =
@@ -92,6 +94,13 @@ public class UserLoginSessionService implements com.raxim.myscoutee.domain.accou
 
         String nowIso = Instant.now().toString();
         ensureState(userId, nowIso);
+        if (com.raxim.myscoutee.common.config.mongo.MongoSessionModeContext.currentMode()
+                != com.raxim.myscoutee.common.config.mongo.MongoSessionMode.DEMO) {
+            mongoTemplate.updateFirst(Query.query(Criteria.where("_id").is(userId)),
+                    new Update().pull("activeSessions", new Document("$or", List.of(
+                            new Document("accessTokenExpiresAt", new Document("$lte", Instant.now())),
+                            new Document("accessTokenExpiresAt", new Document("$exists", false))))), UserSessionState.class);
+        }
         UserSessionState before = findState(userId);
         ActiveSession current = findActiveSession(before, sessionId);
         boolean existingSession = current != null;
@@ -104,6 +113,10 @@ public class UserLoginSessionService implements com.raxim.myscoutee.domain.accou
         } else {
             ActiveSession next = new ActiveSession();
             next.setSessionId(sessionId);
+            if (com.raxim.myscoutee.common.config.mongo.MongoSessionModeContext.currentMode()
+                    != com.raxim.myscoutee.common.config.mongo.MongoSessionMode.DEMO) {
+                next.setAccessTokenExpiresAt(Instant.now().plus(SESSION_TTL));
+            }
             next.setClientLabel(client.label());
             next.setProvider(provider);
             next.setCreatedAtIso(nowIso);
@@ -156,7 +169,10 @@ public class UserLoginSessionService implements com.raxim.myscoutee.domain.accou
 
     public boolean revokeCurrentSession(String requestedSessionId) {
         String userId = requiredCurrentUserId();
-        String sessionId = normalizeOpaqueId(requestedSessionId);
+        var authentication = SecurityContextHolder.getContext().getAuthentication();
+        String sessionId = authentication != null && authentication.getCredentials() instanceof
+                com.raxim.myscoutee.domain.accounts.security.session.AccountSessionCredential credential
+                ? credential.sessionId() : normalizeOpaqueId(requestedSessionId);
         if (!StringUtils.hasText(sessionId)) {
             return false;
         }
@@ -247,16 +263,6 @@ public class UserLoginSessionService implements com.raxim.myscoutee.domain.accou
         }
     }
 
-    public void recordBootstrapLogin(String verifiedEmail, HttpServletRequest request) {
-        var user = mongoTemplate.findOne(Query.query(Criteria.where("email").is(verifiedEmail)),
-                com.raxim.myscoutee.domain.accounts.document.Users.class);
-        if (user == null || !user.isOperator()) throw new ResponseStatusException(HttpStatus.FORBIDDEN, "Operator identity required.");
-        String attempt = java.util.UUID.randomUUID().toString();
-        UserLoginAudit audit = saveAudit(user.getUserId(), "bootstrap:" + attempt, attempt, "operator-bootstrap",
-                UserLoginAudit.OUTCOME_ACCEPTED, clientDescriptor(request), request, Instant.now().toString());
-        enqueueSecurityWarning(audit, true, "/operator");
-    }
-
     private void enqueueSecurityWarning(UserLoginAudit audit, boolean accepted) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String path = authentication != null && authentication.getAuthorities().stream().anyMatch(a -> "O".equals(a.getAuthority()))
@@ -308,7 +314,70 @@ public class UserLoginSessionService implements com.raxim.myscoutee.domain.accou
                 audit.getOutcome(),
                 activeCount,
                 maxActiveSessions,
-                accepted ? null : "The active-session limit has been reached.");
+                accepted ? null : "The active-session limit has been reached.", null);
+    }
+
+    public UserSessionLoginResponseDto completeLogin(UserSessionLoginResponseDto response, String sessionId) {
+        if (!response.accepted() || com.raxim.myscoutee.common.config.mongo.MongoSessionModeContext.currentMode()
+                == com.raxim.myscoutee.common.config.mongo.MongoSessionMode.DEMO) return response;
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (!(authentication.getPrincipal() instanceof FirebasePrincipal principal)) {
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Authenticated account is required.");
+        }
+        String userId = requiredCurrentUserId();
+        sessionId = requiredOpaqueId(sessionId, "Session id is required.");
+        byte[] nonce = new byte[32];
+        RANDOM.nextBytes(nonce);
+        var encoder = java.util.Base64.getUrlEncoder().withoutPadding();
+        String token = encoder.encodeToString(userId.getBytes(StandardCharsets.UTF_8)) + "."
+                + encoder.encodeToString(sessionId.getBytes(StandardCharsets.UTF_8)) + "."
+                + java.util.HexFormat.of().formatHex(nonce);
+        Instant expiresAt = Instant.now().plus(SESSION_TTL);
+        var update = mongoTemplate.updateFirst(
+                Query.query(Criteria.where("_id").is(userId).and("activeSessions.sessionId").is(sessionId)),
+                new Update().set("activeSessions.$.accessTokenHash", sha256(token))
+                        .set("activeSessions.$.accessTokenExpiresAt", expiresAt)
+                        .set("activeSessions.$.emailVerified", principal.isEmailVerified()),
+                UserSessionState.class);
+        if (update.getMatchedCount() != 1) {
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "App session is not active.");
+        }
+        var user = principal.getUser();
+        String name = user == null || !StringUtils.hasText(user.getName()) ? principal.getUsername() : user.getName();
+        String initials = user == null || !StringUtils.hasText(user.getInitials())
+                ? name.substring(0, 1).toUpperCase(Locale.ROOT) : user.getInitials();
+        var profile = new com.raxim.myscoutee.domain.accounts.dto.AuthDtos.AppSessionProfileDto(
+                userId, name, principal.getEmail() == null ? "" : principal.getEmail(), initials,
+                user == null || user.getImages() == null ? null : user.getImages().stream()
+                        .filter(StringUtils::hasText).findFirst().orElse(null));
+        var session = new com.raxim.myscoutee.domain.accounts.dto.AuthDtos.AppSessionDto(
+                sessionId, token, expiresAt.toString(), profile);
+        return new UserSessionLoginResponseDto(response.accepted(), response.existingSession(), response.outcome(),
+                response.activeSessionCount(), response.maxActiveSessions(), response.message(), session);
+    }
+
+    public com.raxim.myscoutee.domain.accounts.security.session.AccountSessionCredential authenticateAccessToken(String token) {
+        if (token == null || token.length() > 1024) return null;
+        String[] parts = token.split("\\.", -1);
+        if (parts.length != 3 || !parts[2].matches("[0-9a-f]{64}")) return null;
+        String userId;
+        String sessionId;
+        try {
+            var decoder = java.util.Base64.getUrlDecoder();
+            userId = safeText(new String(decoder.decode(parts[0]), StandardCharsets.UTF_8));
+            sessionId = normalizeOpaqueId(new String(decoder.decode(parts[1]), StandardCharsets.UTF_8));
+        } catch (IllegalArgumentException invalid) {
+            return null;
+        }
+        if (userId.isEmpty() || userId.length() > 256 || sessionId.isEmpty()) return null;
+        Criteria active = Criteria.where("sessionId").is(sessionId).and("accessTokenHash").is(sha256(token))
+                .and("accessTokenExpiresAt").gt(Instant.now());
+        Query query = Query.query(Criteria.where("_id").is(userId).and("activeSessions").elemMatch(active));
+        query.fields().elemMatch("activeSessions", active);
+        UserSessionState state = mongoTemplate.findOne(query, UserSessionState.class);
+        ActiveSession session = findActiveSession(state, sessionId);
+        return session == null ? null : new com.raxim.myscoutee.domain.accounts.security.session.AccountSessionCredential(
+                userId, sessionId, session.isEmailVerified());
     }
 
     private UserSessionState findState(String userId) {
@@ -337,6 +406,8 @@ public class UserLoginSessionService implements com.raxim.myscoutee.domain.accou
 
     private String requiredCurrentUserId() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication != null && authentication.getCredentials() instanceof
+                com.raxim.myscoutee.domain.accounts.security.session.AccountSessionCredential session) return session.userId();
         Object principal = authentication == null ? null : authentication.getPrincipal();
         String userId = principal instanceof FirebasePrincipal firebasePrincipal
                 ? safeText(firebasePrincipal.getUserId())
@@ -359,6 +430,7 @@ public class UserLoginSessionService implements com.raxim.myscoutee.domain.accou
             }
             return "firebase";
         }
+        if (credentials instanceof AccountLoginService.PasswordCredential) return "password";
         String normalized = safeText(requestedProvider).toLowerCase(Locale.ROOT);
         return switch (normalized) {
             case "google", "facebook", "email", "firebase", "demo" -> normalized;

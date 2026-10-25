@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.mock.web.MockHttpServletResponse;
 
-import com.raxim.myscoutee.domain.platform.api.OperatorBootstrapRequestSupport;
+import com.raxim.myscoutee.domain.accounts.api.SessionRequestSupport;
 import com.raxim.myscoutee.domain.platform.config.ConfigProperties;
 import jakarta.servlet.http.Cookie;
 
@@ -41,50 +41,14 @@ class SessionMongoRoutingFilterTest {
         assertThat(modeInside(filter, request)).isEqualTo(MongoSessionMode.REAL);
     }
 
-    @Test
-    void bootstrapLoginAndHeaderAlwaysRouteToRealMongo() throws Exception {
-        ConfigProperties properties = new ConfigProperties();
-        properties.setFirebaseEnabled(false);
-        SessionMongoRoutingFilter filter =
-                new SessionMongoRoutingFilter(properties);
-
-        MockHttpServletRequest login = new MockHttpServletRequest(
-                "POST",
-                OperatorBootstrapRequestSupport.LOGIN_PATH);
-        login.addHeader(
-                DemoSessionRequestSupport.SESSION_KIND_HEADER,
-                "demo");
-        assertThat(modeInside(filter, login))
-                .isEqualTo(MongoSessionMode.REAL);
-
-        MockHttpServletRequest authorized =
-                new MockHttpServletRequest(
-                        "GET",
-                        "/operator/configuration");
-        authorized.addHeader(
-                "Authorization",
-                "OperatorBootstrap signed-token");
-        authorized.addHeader(
-                DemoSessionRequestSupport.SESSION_KIND_HEADER,
-                "demo");
-        assertThat(modeInside(filter, authorized))
-                .isEqualTo(MongoSessionMode.REAL);
-    }
-
-    @Test
-    void firebaseDisabledOperatorWithoutBootstrapKeepsDemoRouting()
-            throws Exception {
-        ConfigProperties properties = new ConfigProperties();
-        properties.setFirebaseEnabled(false);
-        SessionMongoRoutingFilter filter =
-                new SessionMongoRoutingFilter(properties);
-        MockHttpServletRequest request = new MockHttpServletRequest(
-                "GET",
-                "/operator/configuration");
-        request.setParameter("token", "query-token-is-not-auth");
-
-        assertThat(modeInside(filter, request))
-                .isEqualTo(MongoSessionMode.DEMO);
+    @Test void allAccountRolesUseExplicitSessionRealm() throws Exception {
+        var filter = new SessionMongoRoutingFilter(new ConfigProperties());
+        for (String path : java.util.List.of("/auth/session/login", "/auth/me", "/operator/configuration", "/admin/probe")) {
+            var request = new MockHttpServletRequest("POST", path);
+            assertThat(modeInside(filter, request)).isEqualTo(MongoSessionMode.REAL);
+            request.addHeader(DemoSessionRequestSupport.SESSION_KIND_HEADER, "demo");
+            assertThat(modeInside(filter, request)).isEqualTo(MongoSessionMode.DEMO);
+        }
     }
 
     @Test

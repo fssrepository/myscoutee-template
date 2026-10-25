@@ -30,7 +30,7 @@
     ],
     [
       "/api/auth/me",
-      403
+      401
     ],
     [
       "/api/_internal/v1/accounts/selected-profile",

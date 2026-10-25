@@ -1,4 +1,7 @@
-package com.raxim.myscoutee.domain.accounts.security.firebase;
+package com.raxim.myscoutee.domain.accounts.security.session;
+
+import com.raxim.myscoutee.domain.accounts.security.firebase.FirebaseService;
+import com.raxim.myscoutee.domain.accounts.security.firebase.FirebaseAuthenticationToken;
 
 import java.io.IOException;
 
@@ -8,10 +11,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.util.StringUtils;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import com.raxim.myscoutee.domain.platform.api.OperatorBootstrapRequestSupport;
-import com.raxim.myscoutee.domain.accounts.security.firebase.dto.FirebaseCredential;
+import com.raxim.myscoutee.domain.accounts.api.SessionRequestSupport;
 import com.raxim.myscoutee.domain.accounts.security.firebase.dto.FirebasePrincipal;
-import com.raxim.myscoutee.domain.accounts.security.firebase.exception.FirebaseTokenInvalidException;
 import com.raxim.myscoutee.common.config.mongo.DemoSessionRequestSupport;
 import com.raxim.myscoutee.domain.platform.api.RuntimeConfiguration;
 import com.raxim.myscoutee.domain.accounts.service.UserLoginSessionService;
@@ -22,27 +23,22 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-public class FirebaseFilter extends OncePerRequestFilter {
-    private static final String AUTH_FIREBASE = "X-Authorization-Firebase";
+public class AccountSessionFilter extends OncePerRequestFilter {
     private static final String AUTH_LINK = "X-Authorization-Link";
-    private static final String AUTHORIZATION = "Authorization";
     private static final String DEMO_USER_ID = "X-Demo-User-Id";
 
     private final FirebaseService firebaseService;
     private final RuntimeConfiguration configProperties;
-    private final FirebaseTokenVerifier firebaseTokenVerifier;
     private final UserLoginSessionService userLoginSessionService;
     private final MediaSessionAccess mediaSessionAccess;
 
-    public FirebaseFilter(
+    public AccountSessionFilter(
             FirebaseService firebaseService,
             RuntimeConfiguration configProperties,
-            FirebaseTokenVerifier firebaseTokenVerifier,
             UserLoginSessionService userLoginSessionService,
             MediaSessionAccess mediaSessionAccess) {
         this.firebaseService = firebaseService;
         this.configProperties = configProperties;
-        this.firebaseTokenVerifier = firebaseTokenVerifier;
         this.userLoginSessionService = userLoginSessionService;
         this.mediaSessionAccess = mediaSessionAccess;
     }
@@ -63,9 +59,10 @@ public class FirebaseFilter extends OncePerRequestFilter {
             filterChain.doFilter(request, response);
             return;
         }
-        // A fresh local-operator login must not be rejected because the browser
-        // still carries an expired Firebase credential from an earlier session.
-        if (OperatorBootstrapRequestSupport.isLoginRequest(request)) {
+        // Credential verification is owned by the common login endpoint. A stale
+        // app credential must not block signing in with a different account.
+        if (SessionRequestSupport.isLoginRequest(request)) {
+            if (DemoSessionRequestSupport.isDemoSessionRequest(request)) authenticateDemoUser(request);
             filterChain.doFilter(request, response);
             return;
         }
@@ -73,62 +70,59 @@ public class FirebaseFilter extends OncePerRequestFilter {
             filterChain.doFilter(request, response);
             return;
         }
-        Authentication existing =
-                SecurityContextHolder.getContext().getAuthentication();
+        Authentication existing = SecurityContextHolder.getContext().getAuthentication();
         if (existing != null && existing.isAuthenticated()) {
-            // API keys and OAuth grants were verified by the integration filter.
-            // They have their own expiry/revocation and never carry a browser
-            // session ID, even when their owner has an enrolled app session.
             if (existing.getDetails() instanceof com.raxim.myscoutee.domain.integrations.api.IntegrationClientIdentity
-                    && existing.getAuthorities().stream().anyMatch(a -> "INTEGRATION".equals(a.getAuthority()))
-                    && request.getRequestURI().matches("/(?:api/)?integrations/v1/.*")) {
+                    && ((existing.getAuthorities().stream().anyMatch(a -> "INTEGRATION".equals(a.getAuthority()))
+                         && request.getRequestURI().matches("/(?:api/)?integrations/v1/.*"))
+                        || (existing.getAuthorities().stream().anyMatch(a -> "ADMIN_CLIENT".equals(a.getAuthority()))
+                         && request.getRequestURI().matches("/(?:api/)?admin-client/v1/.*")))) {
                 filterChain.doFilter(request, response);
                 return;
             }
             continueIfSessionActive(request, response, filterChain);
             return;
         }
-        // Demo routing selects a database, not administrator authority. Protected
-        // admin routes must still verify Firebase credentials when it is enabled.
-        if (DemoSessionRequestSupport.isDemoSessionRequest(request)
-                && (!configProperties.isFirebaseEnabled()
-                    || DemoSessionRequestSupport.isAllowedDemoSessionRequest(request)
-                    || DemoSessionRequestSupport.isOperatorRequest(request))) {
-            if (DemoSessionRequestSupport.isOperatorRequest(request)) {
-                authenticateDemoOperator(request);
-            } else {
-                authenticateDemoUser(request);
+        if (DemoSessionRequestSupport.isDemoSessionRequest(request)) {
+            if (SessionRequestSupport.bearerToken(request) != null) {
+                response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Conflicting app session credentials.");
+                return;
             }
+            authenticateDemoUser(request);
             continueIfSessionActive(request, response, filterChain);
             return;
         }
-
-        if (!configProperties.isFirebaseEnabled()) {
-            authenticateWithoutFirebase(request);
-            continueIfSessionActive(request, response, filterChain);
+        String token = SessionRequestSupport.bearerToken(request);
+        if (token != null) {
+            AccountSessionCredential session = userLoginSessionService.authenticateAccessToken(token);
+            if (session == null) {
+                response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "App session is not active.");
+                return;
+            }
+            String requestedSessionId = request.getHeader(UserLoginSessionService.SESSION_ID_HEADER);
+            if (!StringUtils.hasText(requestedSessionId) && isWebSocketTokenRequest(request)) {
+                requestedSessionId = request.getParameter("sessionId");
+            }
+            if (StringUtils.hasText(requestedSessionId) && !session.sessionId().equals(requestedSessionId)) {
+                response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "App session identity does not match.");
+                return;
+            }
+            var account = firebaseService.loadUserById(session.userId());
+            if (!(account instanceof FirebasePrincipal principal) || principal.getUser() == null) {
+                response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Account is unavailable.");
+                return;
+            }
+            var verified = new FirebasePrincipal(principal.getUserId(), principal.getEmail(),
+                    principal.getAuthorities().stream().map(a -> a.getAuthority()).toList(),
+                    principal.getUser(), session.emailVerified());
+            setAuthentication(verified, session);
+            mediaSessionAccess.issueForProfileRead(request, response,
+                    SecurityContextHolder.getContext().getAuthentication());
+            filterChain.doFilter(request, response);
             return;
         }
-
-        String firebaseToken = extractFirebaseToken(request);
-        if (firebaseToken == null || firebaseToken.isBlank()) {
-            continueIfSessionActive(request, response, filterChain);
-            return;
-        }
-
-        try {
-            FirebaseCredential credential = parseToken(firebaseToken);
-            String xLink = request.getHeader(AUTH_LINK);
-
-            UserDetails userDetails = firebaseService.loadUserByCredential(credential, xLink, request.getRequestURI());
-            setAuthentication(userDetails, credential);
-            continueIfSessionActive(request, response, filterChain);
-        } catch (FirebaseTokenInvalidException e) {
-            response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Invalid Firebase token.");
-        }
-    }
-
-    public FirebaseCredential parseToken(String firebaseToken) {
-        return firebaseTokenVerifier.verify(firebaseToken);
+        if (!configProperties.isFirebaseEnabled()) authenticateWithoutFirebase(request);
+        continueIfSessionActive(request, response, filterChain);
     }
 
     private void authenticateWithoutFirebase(HttpServletRequest request) {
@@ -150,20 +144,6 @@ public class FirebaseFilter extends OncePerRequestFilter {
                     memberUser,
                     request.getHeader(AUTH_LINK),
                     request.getRequestURI());
-        }
-        setAuthentication(userDetails, null);
-    }
-
-    private void authenticateDemoOperator(HttpServletRequest request) {
-        String requestedUserId = request == null ? null : request.getHeader(DEMO_USER_ID);
-        if (!StringUtils.hasText(requestedUserId)) {
-            return;
-        }
-        UserDetails userDetails = firebaseService.loadDemoOperatorById(requestedUserId.trim());
-        if (userDetails == null
-                || userDetails.getAuthorities().stream()
-                        .noneMatch(authority -> "O".equals(authority.getAuthority()))) {
-            return;
         }
         setAuthentication(userDetails, null);
     }
@@ -193,22 +173,6 @@ public class FirebaseFilter extends OncePerRequestFilter {
         }
         String normalizedUserId = requestedUserId.trim();
         return normalizedUserId.isEmpty() ? null : normalizedUserId;
-    }
-
-    private String extractFirebaseToken(HttpServletRequest request) {
-        String token = request.getHeader(AUTH_FIREBASE);
-        if (token != null && !token.isBlank()) {
-            return token;
-        }
-        String authorization = request.getHeader(AUTHORIZATION);
-        if (authorization != null && authorization.startsWith("Bearer ")) {
-            return authorization.substring("Bearer ".length()).trim();
-        }
-        String queryToken = request.getParameter("token");
-        if (queryToken != null && !queryToken.isBlank()) {
-            return isWebSocketTokenRequest(request) ? queryToken.trim() : null;
-        }
-        return null;
     }
 
     private boolean isWebSocketTokenRequest(HttpServletRequest request) {
@@ -292,8 +256,7 @@ public class FirebaseFilter extends OncePerRequestFilter {
     }
 
     private boolean isSessionLoginRequest(HttpServletRequest request) {
-        String requestUri = request == null ? "" : request.getRequestURI();
-        return requestUri.endsWith("/auth/session/login");
+        return SessionRequestSupport.isLoginRequest(request);
     }
 
     private void setAuthentication(UserDetails userDetails, Object credentials) {

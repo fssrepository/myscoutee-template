@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1.7
 
 ARG NODE_BASE_IMAGE=node:22-alpine
-ARG NGINX_BASE_IMAGE=ghcr.io/fssrepository/myscoutee-nginx:1.5.0@sha256:7ec3ba085e30314d5536401ac22e14064d30a5461bfc1a9ccbe0e6340b6c6c24
+ARG NGINX_BASE_IMAGE=ghcr.io/fssrepository/myscoutee-nginx:1.5.0@sha256:19c669eb613b68731e18e5e9b32874af437f82efc7d2c3285c815ca6d6ba00ca
 
 FROM ${NODE_BASE_IMAGE} AS frontend-builder
 

@@ -1,6 +1,6 @@
-# Template release 1.4.5
+# Template release 1.5.0
 
-The current compatible source/image release is **1.4.5**: updated API/nginx, own EN/HU catalogs, migration 019 and standalone build. [Release notes](release-1.4.5.md). The signed Debian baseline remains 1.4.1.
+The **1.5.0** candidate uses the released shared 1.5.0 dependencies and includes the session-storage and removed-class compatibility fixes. See [release notes](release-1.5.0.md). The signed Debian release remains a draft until its owner uploads the exact signed DEB and the complete asset set is verified.
 
 ## Signed template release 1.4.1
 
@@ -53,7 +53,7 @@ The [1.4.0 release](https://github.com/fssrepository/myscoutee-template/releases
 
 The compatibility range above is the tested template range, not a universal migration policy. Older 1.0.0 installations use the documented signed-client migration path in [migrations](../../../config/packaging/migrations/README.md).
 
-Package builds, signing and image publication use local tooling. The frontend Pages workflow deploys committed `docs/`; it does not build or sign Debian packages. GHCR images require registry authentication. See the [operator guide](../../publication/manuals/MyScoutee_Template_Getting_Started_EN.pdf) for install and recovery commands.
+Package builds, signing and image publication use local tooling. The frontend Pages workflow installs locked dependencies, builds `docs/` with `npm run build:github`, and deploys it; it does not build or sign Debian packages. GHCR images require registry authentication. See the [operator guide](../../publication/manuals/MyScoutee_Template_Getting_Started_EN.pdf) for install and recovery commands.
 
 The package-managed nginx IP blocklist and per-address response messages are
 documented in [the operator blocklist guide](nginx-blocklist.md).

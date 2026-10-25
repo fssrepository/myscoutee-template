@@ -63,7 +63,8 @@ class UserLoginSessionServiceTest {
         assertThat(result.activeSessionCount()).isEqualTo(3);
         assertThat(result.maxActiveSessions()).isEqualTo(-1);
         verify(outbox).enqueueOnce(eq("security-login:attempt-c"), argThat(intent -> intent.body().equals("New login from Browser on unknown OS desktop.")));
-        verify(mongo, never()).updateFirst(any(Query.class), any(Update.class), eq(UserSessionState.class));
+        verify(mongo).updateFirst(argThat(q -> q.getQueryObject().getString("_id").equals("user")),
+                argThat(u -> u.getUpdateObject().containsKey("$pull")), eq(UserSessionState.class));
     }
 
     @Test
@@ -139,7 +140,7 @@ class UserLoginSessionServiceTest {
     }
 
     private UserSessionLoginRequestDto login(String attempt) {
-        return new UserSessionLoginRequestDto(attempt, "demo");
+        return new UserSessionLoginRequestDto(attempt, "demo", null, null);
     }
 
     private UserSessionState state(String... ids) {
