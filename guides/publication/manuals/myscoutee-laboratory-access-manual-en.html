@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MyScoutee Laboratory Access Manual · MSC-LAB-001</title>
+  <link rel="stylesheet" href="manuals.css">
+  <style>.lab-page { break-before: page; } .lab-page > h2:first-child { margin-top: 0; } .lab-table { font-size: 9pt; } .page-ref { float: right; } .toc li { margin-bottom: .6em; } .document-control .toc { page-break-after: auto; } #workflow th:first-child { width: 27%; } #workflow table { font-size: 9.4pt; } #verification { font-size: 9.7pt; } #verification h3 { margin-top: .8em; } #owners { font-size: 9.5pt; } #owners .lab-table { font-size: 8.5pt; }</style>
+</head>
+<body><article class="manual">
+<section class="cover" aria-labelledby="document-title">
+  <div class="cover-brand"><div class="cover-brand-name" aria-label="MyScoutee"><img src="../../../frontend/src/assets/logo/heart.png" alt="" aria-hidden="true"><span>yScoutee</span></div><div class="cover-brand-subtitle">Official Product Documentation</div></div>
+  <div class="cover-title-block"><div class="cover-kicker">Laboratory Operations</div><h1 id="document-title">Laboratory<br>Access Manual</h1><p class="cover-lead">Where services run, how to sign in, and how the versioned GitLab laboratory connects builds, infrastructure and deployments.</p></div>
+  <div class="cover-meta">
+    <div><strong>Document ID</strong><span>MSC-LAB-001</span></div><div><strong>Document version</strong><span>1.0.0</span></div>
+    <div><strong>Applicable source baseline</strong><span>MyScoutee 1.5.0 / MSC-129</span></div><div><strong>Status</strong><span class="cover-status"><span class="status-dot"></span>Released</span></div>
+    <div><strong>Release date</strong><time datetime="2026-10-26">2026-10-26</time></div><div><strong>Language</strong><span>EN</span></div>
+  </div>
+</section>
+<section class="document-control" id="document-control">
+<h2>Document Control</h2>
+<table><tbody>
+<tr><th>Owner / audience</th><td>MyScoutee project / local laboratory operators</td></tr>
+<tr><th>Document version</th><td>1.0.0, released 2026-10-26</td></tr>
+<tr><th>Scope</th><td>MSC-129 GitLab lab, main backend and template. This is an access and workflow reference, not a production installation certificate.</td></tr>
+<tr><th>Security boundary</th><td>No password, token or private key is included. Paths identify the owning local configuration. A fresh clone needs the operator's own credentials.</td></tr>
+</tbody></table>
+<nav class="toc" aria-labelledby="contents-title"><h2 id="contents-title">Table of Contents</h2><ol>
+<li><a href="#addresses">Service addresses and ports <span class="page-ref">3</span></a></li>
+<li><a href="#credentials">Sign-in and credential locations <span class="page-ref">4</span></a></li>
+<li><a href="#workflow">Build, deployment and release controls <span class="page-ref">5</span></a></li>
+<li><a href="#infrastructure">Infrastructure, registries and Kubernetes <span class="page-ref">6</span></a></li>
+<li><a href="#verification">Verification and accepted results <span class="page-ref">7</span></a></li>
+<li><a href="#owners">Configuration owners and reproduction <span class="page-ref">8</span></a></li>
+</ol></nav>
+<aside class="callout"><h3>Read addresses as configured endpoints</h3><p><code>localhost</code> means the developer host running GitLab and the tunnels. An address only responds while its service or forwarding process is running. Run the application targets sequentially on this host; starting two application stacks together is not part of this laboratory workflow.</p></aside>
+<p>Snapshot at acceptance: template VMware is running; template monolith and all KVM test guests are stopped with data retained. The backend service inside VMware is stopped. Later operator actions can change this state.</p>
+</section>
+<section class="lab-page" id="addresses"><h2>1. Service Addresses and Ports</h2>
+<table class="lab-table"><thead><tr><th>Service</th><th>Local address / port</th><th>Versioned setting owner</th></tr></thead><tbody>
+<tr><td>GitLab / group</td><td><a href="http://localhost:8929">http://localhost:8929</a><br><a href="http://localhost:8929/myscoutee">/myscoutee</a></td><td>CI <code>.env.example</code><br><code>GITLAB_HTTP_PORT</code></td></tr>
+<tr><td>Git SSH</td><td><code>localhost:2224</code></td><td><code>GITLAB_SSH_PORT</code></td></tr>
+<tr><td>Container Registry</td><td><code>localhost:5050</code><br>Docker endpoint, not a web dashboard</td><td><code>GITLAB_REGISTRY_PORT</code></td></tr>
+<tr><td>Backend monolith</td><td><a href="https://localhost:18443">https://localhost:18443</a><br>HTTP 18081; STUN 13479</td><td>Backend <code>config/ci/monolith.json</code></td></tr>
+<tr><td>Template monolith</td><td><a href="https://localhost:18444">https://localhost:18444</a><br>HTTP 18082; STUN 13480</td><td>Template <code>config/ci/monolith.json</code></td></tr>
+<tr><td>Backend KVM</td><td><a href="http://localhost:18029">http://localhost:18029</a></td><td>Backend <code>config/ci/kvm.json</code></td></tr>
+<tr><td>Template KVM</td><td><a href="http://localhost:18030">http://localhost:18030</a></td><td>Template <code>config/ci/kvm.json</code></td></tr>
+<tr><td>Backend VMware</td><td><a href="https://localhost:8443">https://localhost:8443</a><br>HTTP 8080</td><td>Backend <code>config/ci/variables.json</code></td></tr>
+<tr><td>Template VMware</td><td><a href="https://localhost:18445">https://localhost:18445</a><br>HTTP 18083</td><td>Template <code>config/ci/variables.json</code></td></tr>
+<tr><td>Shared SonarQube</td><td><a href="http://localhost:9000">http://localhost:9000</a></td><td>SonarQube <code>server.json</code></td></tr>
+<tr><td>KVM Grafana</td><td>Backend: <code>http://localhost:13029</code><br>Template: <code>http://localhost:13030</code></td><td>Product <code>config/ci/kvm.json</code>; requires monitoring startup</td></tr>
+<tr><td>KVM Prometheus</td><td>Backend: <code>http://localhost:19029</code><br>Template: <code>http://localhost:19030</code></td><td>Same monitoring configuration</td></tr>
+</tbody></table>
+<p>These are the CI target defaults, not the separate native-development ports. Environment overrides are mapped in each product's <code>config/ci/variables.json</code> from the CI repository's ignored <code>.env</code>.</p>
+<p><strong>VMware:</strong> open the HTTPS address directly. Guest port 80 may redirect to HTTPS port 443 without preserving a custom host tunnel port. The versioned forwarding helper maps host ports to guest ports; it does not rewrite application redirects.</p>
+</section>
+<section class="lab-page" id="credentials"><h2>2. Sign-in and Credential Locations</h2>
+<table class="lab-table"><thead><tr><th>Access</th><th>Where to find the local input</th></tr></thead><tbody>
+<tr><td>GitLab administrator</td><td>User <code>root</code>. Generated initial password: CI <code>.local/state/root-password</code>, or the equivalent location under <code>LAB_STATE_DIR</code>. If changed through GitLab, use the current operator-managed password.</td></tr>
+<tr><td>GitLab API / runner</td><td>CI ignored state and provisioning scripts. <code>scripts/local_gitlab.py</code> resolves the API credential. Runner tokens are managed by setup; they are not application login passwords.</td></tr>
+<tr><td>GitHub / npm / Gradle / Docker</td><td>CI <code>.env</code> contains file locators such as <code>GITHUB_TOKEN_FILE</code>, <code>LAB_NPMRC_FILE</code>, <code>LAB_GRADLE_PROPERTIES_FILE</code> and <code>LAB_DOCKER_CONFIG_FILE</code>. Follow each locator locally. Do not paste file contents into logs.</td></tr>
+<tr><td>VMware SSH and TLS</td><td>Each product owns <code>config/packaging/client-tools/vmware.local.env</code> and ignored <code>.local/private/vmware/</code>: SSH key, known hosts, CA certificate and release public key. The target/user come from the local install configuration.</td></tr>
+<tr><td>Release signing</td><td>Each product's ignored <code>.local/private/config/release/</code>; CI receives the configured signing-key FILE variable. A public verification key cannot replace a private signing key.</td></tr>
+<tr><td>Installed application Operator</td><td>On the guest: <code>/etc/&lt;project&gt;/&lt;project&gt;.env</code> and <code>&lt;project&gt;.secrets.env</code>. See <code>OPERATOR_USER</code>, <code>OPERATOR_BOOTSTRAP_EMAIL</code> and the password hash. The initial plaintext password is emitted when generated; it cannot be recovered from its hash.</td></tr>
+<tr><td>SonarQube</td><td>SonarQube repo <code>.state/myscoutee/.env</code>. <code>SONAR_ADMIN_PASSWORD</code> is an optional private record of the password already set in the UI; <code>SONAR_TOKEN</code> authenticates scans. The database password is not the UI password.</td></tr>
+<tr><td>Grafana</td><td>The selected product's effective runtime <code>lab.grafanaPassword</code> and generated monitoring configuration. Existing lab defaults are local-only. Use the deployment's actual value, not a credential copied from another product.</td></tr>
+</tbody></table>
+<p><code>&lt;project&gt;</code> is <code>myscoutee</code> or <code>myscoutee-template</code>. Ordinary application users use the configured application sign-in method; a GitLab or SSH account grants no application role.</p>
+<p>Private values belong to their owning repository's ignored local files. Public defaults, file-variable mappings and helper scripts belong in Git. Check a local file with <code>git check-ignore -v PATH</code> before storing a secret there. Never publish credential files as CI artifacts.</p>
+</section>
+<section class="lab-page" id="workflow"><h2>3. Build, Deployment and Release Controls</h2>
+<p>Open the product in GitLab, then <strong>Build &gt; Pipelines</strong> and select a pipeline. The graph belongs to a pipeline run, not to the repository overview. Job names describe the operation; the play button runs a manual job.</p>
+<table><thead><tr><th>Operation</th><th>Expected behavior</th></tr></thead><tbody>
+<tr><td>Normal build</td><td>Automatic after a qualifying source push or dependency trigger. Feature branches can build and be tested. A merge rebuilds master.</td></tr>
+<tr><td>Tests</td><td>Optional manual jobs. Skipping them does not certify that tests passed.</td></tr>
+<tr><td><code>package:kvm</code><br><code>package:deb</code></td><td>Manual resource-intensive assembly. KVM uses the product's domain groups and reuses unchanged images. A full DEB is a separate deployment artifact, not an implicit part of every release.</td></tr>
+<tr><td><code>infra:start</code></td><td>Optional manual preparation/startup. Checks current assets and infrastructure first. An existing target does not require clicking it again.</td></tr>
+<tr><td><code>deploy:monolith</code><br><code>deploy:kvm</code><br><code>deploy:vmware</code></td><td>Manual, target-specific deployment. Can use an unpublished candidate. Checks actual prerequisites; it does not require infra to have run in this pipeline.</td></tr>
+<tr><td><code>deploy:agent</code></td><td>Installs/configures the GitLab Kubernetes agent. This is a deployment operation, not simply an application health check.</td></tr>
+<tr><td><code>verify:*</code></td><td>Checks the selected deployed target and records passed, failed and skipped checks. Read the job report before treating the target as ready.</td></tr>
+<tr><td>Release / publish</td><td>Manual integrated version change, build/publication, source tag and GitHub release. Release work uses a release branch and integration back to master; feature-branch test deployment is not a release.</td></tr>
+</tbody></table>
+<h3>Runners and concurrency</h3><p>Two runner registrations have different roles: isolated validation and trusted native builds. The native runner can execute <strong>four concurrent build jobs</strong>; four visible runner entries are not required. Target-mutating jobs use resource locks. Four slots do not authorize running both application environments together on this host.</p>
+<h3>GitHub Actions boundary</h3><p>The newly supplied conversion stays in <code>config/ci/github-actions.yml</code>, outside the active workflow directory. It is a presentation conversion, not a qualified runtime. Existing GitHub workflows keep their prior behavior. Pages publication remains manual.</p>
+</section>
+<section class="lab-page" id="infrastructure"><h2>4. Infrastructure, Registries and Kubernetes</h2>
+<table><thead><tr><th>GitLab area</th><th>What it contains</th></tr></thead><tbody>
+<tr><td>Package Registry</td><td>Generic infrastructure inputs such as Ubuntu cloud image, Terraform executable/provider and k3s binary/offline images, plus versioned release packages. A candidate build normally stays in job artifacts/local cache.</td></tr>
+<tr><td>Container Registry</td><td>Versioned released application images. Build candidates can be reused from the native Docker cache. The release adapter publishes configured release images to GitLab and GitHub's container registry (GHCR).</td></tr>
+<tr><td>Terraform Module Registry</td><td>The small reusable <code>labkvm/libvirt</code> module owned by <code>myscoutee-microservices</code>. It is not the Ubuntu installer or VM disk. Module publication is automatic; its version is independent of an application candidate version.</td></tr>
+<tr><td>Terraform state</td><td>Private deployment state in the product's GitLab project when the GitLab backend is selected. Backend and template use separate state even when both state names are <code>kvm</code>.</td></tr>
+<tr><td>Kubernetes / Environments</td><td>Agent connection and the configured environment dashboard. The agent is declared in the CI repository; product configuration supplies context and namespace. It does not create a second application runtime.</td></tr>
+</tbody></table>
+<h3>Registry-first infrastructure preparation</h3><p>The manual infrastructure flow checks the registry for the pinned assets. Missing inputs can be downloaded, checksum-verified and uploaded for reuse. Existing registry entries avoid repeating upstream multi-gigabyte downloads. On another machine, the required bytes still have to move from the registry to that machine.</p>
+<p>The separate <code>scripts/import-infra-assets.py</code> operator tool can seed the registry from an already downloaded local file. Its source is committed. It supports the initial cache population; deployment does not silently replace this with an upstream download.</p>
+<h3>One shared module, independent product configuration</h3><p>The current implementation has one reusable Terraform module with two independent consumers, rather than two duplicated modules. Each product owns <code>config/ci/kvm.json</code> and <code>config/microservices/deploy/runtime.json</code>, its VM identity, state and composition. The backend native memory setting is 8192 MiB; the template has its own setting. CI does not reintroduce the removed 5 GiB override.</p>
+<h3>Kubernetes dashboard</h3><p>In the product, open <strong>Operate &gt; Environments</strong> and the KVM environment. The configured agent/context supplies access; no per-visit server URL entry is needed. Template's qualified dashboard is <a href="http://localhost:8929/myscoutee/myscoutee-template/-/environments/7">environment 7</a>. It can show disconnected after the VM is stopped. The group Kubernetes page lists agents; it is not the installer registry.</p>
+</section>
+<section class="lab-page" id="verification"><h2>5. Verification and Accepted Results</h2>
+<p>The operator accepted all three template targets on 26 October 2026. Each target was reviewed before the next one started. These are recorded runs, not a claim that every optional test or every future deployment has passed.</p>
+<table><thead><tr><th>Target</th><th>Recorded GitLab evidence</th><th>Result</th></tr></thead><tbody>
+<tr><td>Template monolith</td><td>Pipeline 563<br>Build 2201<br>Deploy 2210<br>Verify 2215</td><td>14 passed, 0 failed, 0 skipped.<br>Browser accepted.<br>Stopped; volumes retained.</td></tr>
+<tr><td>Template KVM</td><td>Pipeline 567<br>Package 2228; infra 2231<br>Deploy 2232; verify 2237<br>Agent retry 2241</td><td>10 public checks passed.<br>All four domain images reused.<br>Agent connected; browser accepted.<br>Stopped; data retained.</td></tr>
+<tr><td>Template VMware</td><td>Pipeline 571<br>Build 2245<br>Deploy 2253<br>Verify 2258</td><td>11 passed, 0 failed, 3 skipped.<br>Three HTTP checks skipped with the custom HTTPS tunnel.<br>Browser accepted; left running.</td></tr>
+</tbody></table>
+<h3>What readiness means</h3><p>The deployed runtime was checked beyond the web server returning a page: application runtime readiness, API health and the applicable public asset/localization/document checks. A page loading alone is insufficient. The VMware result also confirmed <code>/api/runtime-status</code> with <code>ready: true</code> and <code>known: true</code>.</p>
+<h3>Recorded release and packaging exercises</h3><p>SonarQube pipeline 488 / release job 2159 exercised the integrated release path. Backend pipeline 489 / job 2165 exercised DEB packaging and actual Debian metadata inspection. Trial publications were withdrawn; source/package baseline remains 1.5.0. Qualification candidate directories may carry an internal next-patch version without constituting a public release.</p>
+<h3>Boundaries</h3><p>No Netcup deployment is part of MSC-129. The newly added GitHub Actions conversion was not executed. No new backend or DEB rerun was required for this final documentation. Monitoring ports are documented configuration, not an independent monitoring qualification.</p>
+<h3>If the application appears offline</h3><ol><li>Confirm the intended target is running and the correct HTTPS/HTTP port is selected.</li><li>Read that target's latest deploy and verify job output.</li><li>Check runtime readiness and the target's service/pod health before changing source or restarting unrelated targets.</li><li>For a stopped KVM, manually run infra if needed. For a missing installer, use manual asset preparation; do not hide it inside application deployment.</li></ol>
+</section>
+<section class="lab-page" id="owners"><h2>6. Configuration Owners and Reproduction</h2>
+<table class="lab-table"><thead><tr><th>Repository / path</th><th>Purpose</th></tr></thead><tbody>
+<tr><td>CI <code>.env.example</code>, <code>compose.yaml</code></td><td>GitLab service, port and runner defaults; local overrides in ignored <code>.env</code>.</td></tr>
+<tr><td>CI <code>ci/projects.json</code>, <code>examples/variables.json</code></td><td>Project/dependency catalog, source pins and variable declarations.</td></tr>
+<tr><td>Product <code>config/ci/</code></td><td>Pipeline entry, release name, deploy targets, public ports and private input mappings.</td></tr>
+<tr><td>CI <code>scripts/configure.py</code></td><td>Applies declared GitLab variables and library pins through the API.</td></tr>
+<tr><td>CI <code>scripts/runner-host.py</code>, <code>guides/development/ci/runner-host.md</code></td><td>Dedicated host account and scoped provisioning; example in <code>examples/</code>, actual input in ignored <code>.local/private/runner-host.env</code>.</td></tr>
+<tr><td>CI <code>scripts/remote.sh</code>, <code>deploy.sh</code>, <code>verify-remote.sh</code></td><td>Existing remote deployment and verification flow.</td></tr>
+<tr><td>Packaging <code>client-tools/forward-localhost.sh</code>, <code>remote-transport.sh</code></td><td>Versioned forwarding and SSH transport. Product <code>config/packaging/client-tools/manifest.json</code> selects the shipped tools.</td></tr>
+<tr><td>CI <code>ci/retention.json</code>, <code>scripts/retention.py</code></td><td>Lab retention/cleanup policy. Maintenance is separate from the application deployment pipeline.</td></tr>
+<tr><td>CI <code>guides/development/ci/verification.md</code>, <code>guides/development/ci/MSC-129-plan.md</code></td><td>Detailed evidence and final task checklist.</td></tr>
+</tbody></table>
+<h3>Reproduce configuration</h3><p>From the CI checkout, after supplying its local inputs:</p>
+<pre><code>bash scripts/lab.sh init
+python3 scripts/setup.py
+# Later, preview and reconcile declared variables:
+python3 scripts/configure.py
+python3 scripts/configure.py --apply</code></pre>
+<p>Setup mutates the local GitLab configuration and imports source; it does not publish an application release or deploy a target. Refer to the CI README for prerequisites and the dedicated host-account setup.</p>
+<h3>Rebuild this document</h3><p>From this backend or template checkout, using the installed frontend documentation dependencies and local Chrome/Chromium:</p>
+<pre><code>node guides/publication/manuals/build-manuals.mjs MSC-LAB-001</code></pre>
+<p>The catalog and HTML source live beside this PDF. This laboratory manual is maintained in the backend and template guides; both catalog entries disable copying to their frontend repositories. Keep the document version, cover, catalog and links aligned when changing the manual.</p>
+<p><a href="https://github.com/fssrepository/myscoutee-ci">CI source and operating instructions</a> · <a href="https://github.com/fssrepository/myscoutee-roadmap/issues/168">MSC-129 task</a></p>
+</section>
+</article></body></html>

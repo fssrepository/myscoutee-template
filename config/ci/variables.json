@@ -1,0 +1,339 @@
+{
+  "gitlab": [
+    {
+      "environment": "kvm",
+      "key": "LAB_KAS_ADDRESS",
+      "from_env": "TEMPLATE_KAS_ADDRESS"
+    },
+    {
+      "environment": "kvm",
+      "key": "LAB_KVM_RUNTIME_CONFIG",
+      "from_env": "TEMPLATE_KVM_RUNTIME_CONFIG_FILE",
+      "from_file": true,
+      "variable_type": "file"
+    },
+    {
+      "environment": "monolith",
+      "key": "LAB_MONOLITH_MODE",
+      "from_env": "TEMPLATE_MONOLITH_MODE",
+      "value": "compose",
+      "protected": false
+    },
+    {
+      "environment": "kvm",
+      "key": "GRADLE_OPTS",
+      "from_env": "KVM_GRADLE_OPTS",
+      "value": "-Dorg.gradle.jvmargs=-Xmx2g",
+      "protected": false
+    },
+    {
+      "key": "LAB_SIGNING_KEY",
+      "from_env": "TEMPLATE_SIGNING_KEY_FILE",
+      "from_file": true,
+      "variable_type": "file"
+    },
+    {
+      "environment": "kvm",
+      "key": "LAB_TERRAFORM_STATE_NAME",
+      "from_env": "TEMPLATE_TERRAFORM_STATE_NAME",
+      "value": "kvm",
+      "protected": false
+    },
+    {
+      "environment": "kvm",
+      "key": "LAB_KVM_STATE_ROOT",
+      "from_env": "TEMPLATE_KVM_STATE_ROOT",
+      "protected": false
+    },
+    {
+      "environment": "kvm",
+      "key": "LAB_KVM_HTTP_PORT",
+      "from_env": "TEMPLATE_KVM_HTTP_PORT",
+      "protected": false
+    },
+    {
+      "environment": "kvm",
+      "key": "LAB_KVM_GRAFANA_PORT",
+      "from_env": "TEMPLATE_KVM_GRAFANA_PORT",
+      "protected": false
+    },
+    {
+      "environment": "kvm",
+      "key": "LAB_KVM_PROMETHEUS_PORT",
+      "from_env": "TEMPLATE_KVM_PROMETHEUS_PORT",
+      "protected": false
+    },
+    {
+      "environment": "monolith",
+      "key": "LAB_MONOLITH_HTTP_PORT",
+      "from_env": "TEMPLATE_MONOLITH_HTTP_PORT",
+      "protected": false
+    },
+    {
+      "environment": "monolith",
+      "key": "LAB_MONOLITH_HTTPS_PORT",
+      "from_env": "TEMPLATE_MONOLITH_HTTPS_PORT",
+      "protected": false
+    },
+    {
+      "environment": "monolith",
+      "key": "LAB_MONOLITH_STUN_PORT",
+      "from_env": "TEMPLATE_MONOLITH_STUN_PORT",
+      "protected": false
+    },
+    {
+      "environment": "vmware",
+      "key": "LAB_INSTALL_CONFIG",
+      "from_env": "TEMPLATE_VMWARE_INSTALL_CONFIG_FILE",
+      "from_file": true,
+      "variable_type": "file"
+    },
+    {
+      "environment": "vmware",
+      "key": "LAB_TRUSTED_PUBLIC_KEY",
+      "from_env": "TEMPLATE_VMWARE_PUBLIC_KEY_FILE",
+      "from_file": true,
+      "variable_type": "file"
+    },
+    {
+      "environment": "vmware",
+      "key": "LAB_TRUSTED_KEY_FINGERPRINT",
+      "from_env": "TEMPLATE_VMWARE_KEY_FINGERPRINT"
+    },
+    {
+      "environment": "vmware",
+      "key": "LAB_DEPLOY_FORMAT",
+      "from_env": "TEMPLATE_VMWARE_DEPLOY_FORMAT",
+      "value": "partial",
+      "protected": false
+    },
+    {
+      "environment": "vmware",
+      "key": "LAB_PARTIAL_SERVICES",
+      "from_env": "TEMPLATE_VMWARE_PARTIAL_SERVICES",
+      "value": "nginx,profilemanagement",
+      "protected": false
+    },
+    {
+      "environment": "vmware",
+      "key": "LAB_EXISTING_INSTALLATION",
+      "from_env": "TEMPLATE_VMWARE_EXISTING_INSTALLATION",
+      "value": "true",
+      "protected": false
+    },
+    {
+      "environment": "vmware",
+      "key": "LAB_VERIFY_URL",
+      "from_env": "TEMPLATE_VMWARE_VERIFY_URL",
+      "value": "https://localhost:18445",
+      "protected": false
+    },
+    {
+      "environment": "vmware",
+      "key": "LAB_SIGNING_KEY",
+      "from_env": "TEMPLATE_VMWARE_SIGNING_KEY_FILE",
+      "from_file": true,
+      "variable_type": "file"
+    },
+    {
+      "environment": "vmware",
+      "key": "LAB_SSH_PRIVATE_KEY",
+      "from_env": "TEMPLATE_VMWARE_SSH_PRIVATE_KEY_FILE",
+      "from_file": true,
+      "variable_type": "file"
+    },
+    {
+      "environment": "vmware",
+      "key": "LAB_SSH_KNOWN_HOSTS",
+      "from_env": "TEMPLATE_VMWARE_SSH_KNOWN_HOSTS_FILE",
+      "from_file": true,
+      "variable_type": "file"
+    },
+    {
+      "environment": "vmware",
+      "key": "NODE_EXTRA_CA_CERTS",
+      "from_env": "TEMPLATE_VMWARE_CA_CERT_FILE",
+      "from_file": true,
+      "variable_type": "file"
+    },
+    {
+      "environment": "vmware",
+      "key": "LAB_FORWARD_PORTS",
+      "from_env": "TEMPLATE_VMWARE_FORWARD_PORTS",
+      "value": "18083:80,18445:443",
+      "protected": false
+    }
+  ],
+  "github": [
+    {
+      "environment": "kvm",
+      "key": "LAB_KAS_ADDRESS",
+      "from_env": "TEMPLATE_KAS_ADDRESS"
+    },
+    {
+      "environment": "kvm",
+      "key": "LAB_KVM_RUNTIME_CONFIG",
+      "from_env": "TEMPLATE_KVM_RUNTIME_CONFIG_FILE",
+      "from_file": true,
+      "secret": true
+    },
+    {
+      "environment": "kvm",
+      "key": "LAB_KUBE_AGENT_TOKEN",
+      "from_env": "TEMPLATE_KUBE_AGENT_TOKEN_FILE",
+      "from_file": true,
+      "secret": true
+    },
+    {
+      "environment": "monolith",
+      "key": "LAB_MONOLITH_MODE",
+      "from_env": "TEMPLATE_MONOLITH_MODE",
+      "value": "compose",
+      "protected": false
+    },
+    {
+      "environment": "kvm",
+      "key": "GRADLE_OPTS",
+      "from_env": "KVM_GRADLE_OPTS",
+      "value": "-Dorg.gradle.jvmargs=-Xmx2g",
+      "protected": false
+    },
+    {
+      "key": "LAB_SIGNING_KEY",
+      "from_env": "TEMPLATE_SIGNING_KEY_FILE",
+      "from_file": true,
+      "secret": true
+    },
+    {
+      "environment": "kvm",
+      "key": "LAB_TERRAFORM_STATE_NAME",
+      "from_env": "TEMPLATE_TERRAFORM_STATE_NAME",
+      "value": "kvm",
+      "protected": false
+    },
+    {
+      "environment": "kvm",
+      "key": "LAB_KVM_STATE_ROOT",
+      "from_env": "TEMPLATE_KVM_STATE_ROOT",
+      "protected": false
+    },
+    {
+      "environment": "kvm",
+      "key": "LAB_KVM_HTTP_PORT",
+      "from_env": "TEMPLATE_KVM_HTTP_PORT",
+      "protected": false
+    },
+    {
+      "environment": "kvm",
+      "key": "LAB_KVM_GRAFANA_PORT",
+      "from_env": "TEMPLATE_KVM_GRAFANA_PORT",
+      "protected": false
+    },
+    {
+      "environment": "kvm",
+      "key": "LAB_KVM_PROMETHEUS_PORT",
+      "from_env": "TEMPLATE_KVM_PROMETHEUS_PORT",
+      "protected": false
+    },
+    {
+      "environment": "monolith",
+      "key": "LAB_MONOLITH_HTTP_PORT",
+      "from_env": "TEMPLATE_MONOLITH_HTTP_PORT",
+      "protected": false
+    },
+    {
+      "environment": "monolith",
+      "key": "LAB_MONOLITH_HTTPS_PORT",
+      "from_env": "TEMPLATE_MONOLITH_HTTPS_PORT",
+      "protected": false
+    },
+    {
+      "environment": "monolith",
+      "key": "LAB_MONOLITH_STUN_PORT",
+      "from_env": "TEMPLATE_MONOLITH_STUN_PORT",
+      "protected": false
+    },
+    {
+      "environment": "vmware",
+      "key": "LAB_INSTALL_CONFIG",
+      "from_env": "TEMPLATE_VMWARE_INSTALL_CONFIG_FILE",
+      "from_file": true,
+      "secret": true
+    },
+    {
+      "environment": "vmware",
+      "key": "LAB_TRUSTED_PUBLIC_KEY",
+      "from_env": "TEMPLATE_VMWARE_PUBLIC_KEY_FILE",
+      "from_file": true,
+      "secret": true
+    },
+    {
+      "environment": "vmware",
+      "key": "LAB_TRUSTED_KEY_FINGERPRINT",
+      "from_env": "TEMPLATE_VMWARE_KEY_FINGERPRINT"
+    },
+    {
+      "environment": "vmware",
+      "key": "LAB_DEPLOY_FORMAT",
+      "from_env": "TEMPLATE_VMWARE_DEPLOY_FORMAT",
+      "value": "partial",
+      "protected": false
+    },
+    {
+      "environment": "vmware",
+      "key": "LAB_PARTIAL_SERVICES",
+      "from_env": "TEMPLATE_VMWARE_PARTIAL_SERVICES",
+      "value": "nginx,profilemanagement",
+      "protected": false
+    },
+    {
+      "environment": "vmware",
+      "key": "LAB_EXISTING_INSTALLATION",
+      "from_env": "TEMPLATE_VMWARE_EXISTING_INSTALLATION",
+      "value": "true",
+      "protected": false
+    },
+    {
+      "environment": "vmware",
+      "key": "LAB_VERIFY_URL",
+      "from_env": "TEMPLATE_VMWARE_VERIFY_URL",
+      "value": "https://localhost:18445",
+      "protected": false
+    },
+    {
+      "environment": "vmware",
+      "key": "LAB_SIGNING_KEY",
+      "from_env": "TEMPLATE_VMWARE_SIGNING_KEY_FILE",
+      "from_file": true,
+      "secret": true
+    },
+    {
+      "environment": "vmware",
+      "key": "LAB_SSH_PRIVATE_KEY",
+      "from_env": "TEMPLATE_VMWARE_SSH_PRIVATE_KEY_FILE",
+      "from_file": true,
+      "secret": true
+    },
+    {
+      "environment": "vmware",
+      "key": "LAB_SSH_KNOWN_HOSTS",
+      "from_env": "TEMPLATE_VMWARE_SSH_KNOWN_HOSTS_FILE",
+      "from_file": true,
+      "secret": true
+    },
+    {
+      "environment": "vmware",
+      "key": "NODE_EXTRA_CA_CERTS",
+      "from_env": "TEMPLATE_VMWARE_CA_CERT_FILE",
+      "from_file": true,
+      "secret": true
+    },
+    {
+      "environment": "vmware",
+      "key": "LAB_FORWARD_PORTS",
+      "from_env": "TEMPLATE_VMWARE_FORWARD_PORTS",
+      "value": "18083:80,18445:443",
+      "protected": false
+    }
+  ]
+}

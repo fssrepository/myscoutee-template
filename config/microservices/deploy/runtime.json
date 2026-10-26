@@ -1,11 +1,15 @@
 {
   "schemaVersion": 1,
+  "rolloutTimeoutSeconds": 600,
   "mongoCpuLimit": 3,
   "mongoReplicaSet": true,
   "namespace": "myscoutee-template",
   "frontendReplicas": 1,
   "frontendNodePort": 30080,
   "localPort": 18080,
+  "volumeImages": {
+    "mongo-seed": "myscoutee-template-service-mongo-seed:1.5.0"
+  },
   "dependencies": {
     "frontend": "myscoutee-template-service-frontend:1.5.0",
     "mongodb": "mongo:8.0.4",
@@ -35,7 +39,7 @@
     "buildTag": "1.5.0",
     "immutableVersion": "1.5.0",
     "frontendBase": "myscoutee-template-frontend-runtime-base:1.5.0",
-    "nginxBase": "ghcr.io/fssrepository/myscoutee-nginx:1.5.0@sha256:355b6b8b49e841a4954e795831c8a58b84bdf063a3bec6641fea50e6dbd28900",
+    "nginxBase": "ghcr.io/fssrepository/myscoutee-nginx:1.5.0@sha256:9ab49ea949afaee5164e828b699c102dca38a2766d7573c4f342984e8da74774",
     "supportSources": {
       "mcp": "config/mcp",
       "stun": "../myscoutee-microservices/deploy/stun"

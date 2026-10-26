@@ -6,5 +6,7 @@
   "purge.sh",
   "forward-localhost.sh",
   "remote-transport.sh",
-  "verify-release.sh"
+  "verify-release.sh",
+  "install-temporary-frontend.sh",
+  "install-temporary-image.sh"
 ]

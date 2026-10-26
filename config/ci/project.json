@@ -1,0 +1,29 @@
+{
+  "project": "myscoutee-template",
+  "type": "application",
+  "depends_on": [
+    "myscoutee-template-frontend",
+    "myscoutee-base",
+    "myscoutee-packaging",
+    "myscoutee-nginx",
+    "myscoutee-mcp",
+    "myscoutee-microservices",
+    "myscoutee-e2e",
+    "myscoutee-qa"
+  ],
+  "frontend": "myscoutee-template-frontend",
+  "deploy": [
+    "kvm",
+    "vmware",
+    "monolith",
+    "netcup"
+  ],
+  "variables": {
+    "LAB_GITHUB_REPOSITORY": "fssrepository/myscoutee-template",
+    "LAB_KUBE_CONTEXT": "myscoutee/ci:template-kvm",
+    "LAB_KUBE_NAMESPACE": "myscoutee-template",
+    "MYSCOUTEE_COMPATIBLE_PACKAGE_VERSIONS": "1.5.0"
+  },
+  "release_notes": "guides/releases/v{version}.md",
+  "release_name": "MyScoutee Template"
+}

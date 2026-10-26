@@ -1,0 +1,13 @@
+{
+  "localPort": 18030,
+  "lab": {
+    "vmName": "myscoutee-template-ci",
+    "stateDirectory": "myscoutee-template/ci",
+    "bridge": "virbr-tmpl-ci",
+    "networkCidr": "192.168.176.0/24",
+    "macAddress": "52:54:00:12:90:02",
+    "monitoringProject": "msc129-template-observability",
+    "grafanaPort": 13030,
+    "prometheusPort": 19030
+  }
+}

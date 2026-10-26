@@ -52,13 +52,17 @@ services:
     pull_policy: build
     restart: unless-stopped
     build:
+      labels:
+        io.myscoutee.service: nginx
+        io.myscoutee.package-version: ${MYSCOUTEE_VERSION:-1.5.0}
+        io.myscoutee.compatible-package-versions: ${MYSCOUTEE_COMPATIBLE_PACKAGE_VERSIONS:-}
       context: docker
       dockerfile: images/nginx/prod/Dockerfile
       additional_contexts:
         nginx-config: ../config/nginx
         frontend-prod: ../frontend/prod
       args:
-        NGINX_BASE_IMAGE: ${NGINX_BASE_IMAGE:-ghcr.io/fssrepository/myscoutee-nginx:1.5.0@sha256:19c669eb613b68731e18e5e9b32874af437f82efc7d2c3285c815ca6d6ba00ca}
+        NGINX_BASE_IMAGE: ${NGINX_BASE_IMAGE:-ghcr.io/fssrepository/myscoutee-nginx:1.5.0@sha256:9ab49ea949afaee5164e828b699c102dca38a2766d7573c4f342984e8da74774}
         MYSCOUTEE_VERSION: ${MYSCOUTEE_VERSION:-1.5.0}
         TZ: ${CONTAINER_TIMEZONE:-Europe/Brussels}
     environment:
@@ -185,6 +189,10 @@ services:
     pull_policy: build
     restart: unless-stopped
     build:
+      labels:
+        io.myscoutee.service: profilemanagement
+        io.myscoutee.package-version: ${MYSCOUTEE_VERSION:-1.5.0}
+        io.myscoutee.compatible-package-versions: ${MYSCOUTEE_COMPATIBLE_PACKAGE_VERSIONS:-}
       context: projects/profile/build/libs
       dockerfile: ../../../../docker/images/profilemanagement/prod/Dockerfile
       args:

@@ -9,6 +9,15 @@
       "documentId": "T-START-001",
       "documentVersion": "1.4.1",
       "releaseDate": "2026-10-12"
+    },
+    {
+      "source": "myscoutee-laboratory-access-manual-en.html",
+      "output": "MyScoutee_Laboratory_Access_Manual_EN.pdf",
+      "title": "Laboratory Access Manual",
+      "documentId": "MSC-LAB-001",
+      "documentVersion": "1.0.0",
+      "releaseDate": "2026-10-26",
+      "publishToFrontend": false
     }
   ]
 }

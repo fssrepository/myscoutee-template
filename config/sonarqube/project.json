@@ -1,6 +1,9 @@
 {
   "id": "template",
-  "privateDirectories": ["server/data"],
+  "privateDirectories": [
+    "server/data",
+    ".local"
+  ],
   "modules": {
     "backend": "server/projects/profile",
     "frontend": "frontend",

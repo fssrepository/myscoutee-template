@@ -18,3 +18,7 @@ its pages before committing. Update the document version in the HTML and
 The same renderer accepts `--catalog /path/to/manuals.json` for the shared
 components guide. Paths in a catalogue are relative to that catalogue.
 This runs only the document renderer, not an application build or server.
+
+## Laboratory access
+
+[Laboratory Access Manual](MyScoutee_Laboratory_Access_Manual_EN.pdf) (MSC-LAB-001, document version 1.0.0) documents both products with distinct ports. Rebuild with `node guides/publication/manuals/build-manuals.mjs MSC-LAB-001` from this repository root. Its catalog entry sets `publishToFrontend: false`; it stays in the backend/template guides.

@@ -1,0 +1,8 @@
+# Inactive example: GitHub reads this only at .github/dependabot.yml.
+# Gradle settings, wrapper and version catalog belong to /server.
+version: 2
+updates:
+  - package-ecosystem: "gradle"
+    directory: "/server"
+    schedule:
+      interval: "weekly"

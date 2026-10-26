@@ -166,7 +166,7 @@ try {
 
 const publicManualDirectory = path.join(repositoryRoot, 'frontend', 'guides', 'manuals');
 if (catalog.publishToFrontend) await fs.mkdir(publicManualDirectory, { recursive: true });
-for (const manual of catalog.publishToFrontend ? generatedManuals : []) {
+for (const manual of generatedManuals.filter(manual => manual.publishToFrontend ?? catalog.publishToFrontend)) {
   const publicPath = path.join(publicManualDirectory, manual.output);
   await fs.copyFile(manual.outputPath, publicPath);
   process.stdout.write(`Published: ${path.relative(repositoryRoot, publicPath)}\n`);

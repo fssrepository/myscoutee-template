@@ -34,3 +34,6 @@ config/microservices/**/*.local.env
 
 # Local client deployment credentials
 /config/packaging/client-tools/*.env
+
+# Local credentials, private evidence and runtime state; never publish.
+/.local/

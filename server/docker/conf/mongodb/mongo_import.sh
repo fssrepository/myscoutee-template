@@ -238,8 +238,9 @@ import_single_file() {
 if [ -n "${single_file}" ]; then
   import_single_file "${db_name}" "${single_file}"
 elif [ "${MONGO_IMPORT_ALL_SEED_DATABASES:-false}" = "true" ]; then
-  import_seed_directory "demo_db" "demo_db"
-  if [ "${db_name}" != "demo_db" ]; then
+  demo_db_name="${MONGO_DEMO_DATABASE:-demo_db}"
+  import_seed_directory "${demo_db_name}" "demo_db"
+  if [ "${db_name}" != "${demo_db_name}" ]; then
     import_seed_directory "${db_name}" "${seed_dir_name}"
   fi
 else

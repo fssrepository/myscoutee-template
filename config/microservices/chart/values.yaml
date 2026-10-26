@@ -25,7 +25,6 @@ actorDelegation:
   clients: {}
 shared:
   metricsUpstreamRoutes: ''
-  mongoInitScript: ''
   responsePolicy: ''
   runtimeStatusLocation: ''
 publicBaseUrl: http://localhost:18080

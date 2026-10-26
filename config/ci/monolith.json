@@ -1,0 +1,16 @@
+{
+  "project": "myscoutee-template-ci-monolith",
+  "compose": "server/docker-compose.e2e.yml",
+  "httpPort": 18082,
+  "httpsPort": 18444,
+  "stunPort": 13480,
+  "images": {
+    "profilemanagement": "profilemanagement",
+    "nginx": "nginx",
+    "minio": "minio",
+    "mcp": "mcp"
+  },
+  "apiEnvironment": {
+    "MEMBER_USER": ""
+  }
+}
